@@ -1,1 +1,260 @@
-<h1>سلام به اولین سایت کرمی خوش آمدید<h1/>
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سایت کرمی</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      color: #172554;
+      text-align: center;
+      direction: rtl;
+      transition: 0.4s;
+    }
+
+    body.dark {
+      background: #0f172a;
+      color: white;
+    }
+
+    nav {
+      background-color: #172554;
+      padding: 18px 8px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 7px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .box {
+      background-color: white;
+      max-width: 550px;
+      margin: 40px auto;
+      padding: 30px 20px;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px #777;
+    }
+
+    body.dark .box {
+      background-color: #1e293b;
+      color: white;
+    }
+
+    .profile {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid #74ebd5;
+    }
+
+    h1 {
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .card {
+      background-color: #e0f2fe;
+      width: 130px;
+      padding: 18px 10px;
+      border-radius: 18px;
+      font-weight: bold;
+    }
+
+    body.dark .card {
+      background-color: #334155;
+      color: white;
+    }
+
+    button {
+      background-color: #172554;
+      color: white;
+      border: none;
+      padding: 14px 25px;
+      border-radius: 30px;
+      font-size: 17px;
+      margin: 10px;
+    }
+
+    .theme {
+      background-color: #f59e0b;
+    }
+
+    .phone {
+      display: inline-block;
+      background-color: #16a34a;
+      color: white;
+      padding: 14px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 18px;
+      margin-top: 15px;
+    }
+
+    .project {
+      background-color: #f1f5f9;
+      margin: 15px 0;
+      padding: 20px;
+      border-radius: 18px;
+    }
+
+    body.dark .project {
+      background-color: #334155;
+    }
+
+    .page {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#" onclick="showPage('home')">🏠 خانه</a>
+    <a href="#" onclick="showPage('about')">👨‍💻 درباره من</a>
+    <a href="#" onclick="showPage('skills')">🛠️ مهارت‌ها</a>
+    <a href="#" onclick="showPage('projects')">📁 نمونه‌کارها</a>
+    <a href="#" onclick="showPage('contact')">📞 تماس</a>
+  </nav>
+
+  <div class="box">
+
+    <div id="home" class="page active">
+
+      <img
+        class="profile"
+        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400"
+        alt="تصویر">
+
+      <h1>سلام 👋</h1>
+
+      <p>
+        به سایت شخصی <strong>پارسا کرمی</strong> خوش آمدید 🌟
+      </p>
+
+      <p>
+        اینجا جاییه که مسیر یادگیری و پروژه‌های من رو می‌بینید.
+      </p>
+
+      <button onclick="alert('به سایت کرمی خوش آمدید ❤️')">
+        ورود به سایت
+      </button>
+
+      <button class="theme" onclick="darkMode()">
+        🌙 حالت شب
+      </button>
+
+    </div>
+
+    <div id="about" class="page">
+
+      <h1>درباره من 👨‍💻</h1>
+
+      <p>سلام! من پارسا کرمی هستم.</p>
+
+      <p>
+        در حال یادگیری مهارت‌های کامپیوتری و طراحی سایت هستم
+        و این سایت اولین پروژه شخصی منه.
+      </p>
+
+      <p>
+        هدفم اینه که مهارت‌هام رو بیشتر کنم و وارد بازار کار بشم. 🚀
+      </p>
+
+    </div>
+
+    <div id="skills" class="page">
+
+      <h1>مهارت‌های من 🛠️</h1>
+
+      <div class="cards">
+
+        <div class="card">📊<br>Excel</div>
+        <div class="card">📄<br>Word</div>
+        <div class="card">🎞️<br>PowerPoint</div>
+        <div class="card">💻<br>طراحی سایت</div>
+
+      </div>
+
+    </div>
+
+    <div id="projects" class="page">
+
+      <h1>نمونه‌کارهای من 📁</h1>
+
+      <div class="project">
+        <h2>📊 پروژه Excel</h2>
+        <p>ساخت جدول، فیلتر، نمودار و گزارش‌گیری با Excel.</p>
+      </div>
+
+      <div class="project">
+        <h2>🌐 اولین سایت من</h2>
+        <p>همین سایتی که الان در حال ساختنش هستیم!</p>
+      </div>
+
+      <div class="project">
+        <h2>🚀 پروژه‌های آینده</h2>
+        <p>به‌زودی پروژه‌های بیشتری اضافه می‌کنم.</p>
+      </div>
+
+    </div>
+
+    <div id="contact" class="page">
+
+      <h1>تماس با من 📱</h1>
+
+      <p>برای ارتباط با من می‌توانید با شماره زیر تماس بگیرید:</p>
+
+      <a class="phone" href="tel:09302869446">
+        📞 09302869446
+      </a>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    function showPage(pageId) {
+
+      document.querySelectorAll('.page').forEach(function(page) {
+        page.classList.remove('active');
+      });
+
+      document.getElementById(pageId).classList.add('active');
+
+    }
+
+    function darkMode() {
+      document.body.classList.toggle('dark');
+    }
+
+  </script>
+
+</body>
+</html>
