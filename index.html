@@ -2,21 +2,12 @@
 <html lang="fa" dir="rtl">
 
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>
-پارسا کرمی | مرکز حقوقی و خدمات
-</title>
+<title>پارسا کرمی | مرکز حقوقی و خدمات</title>
 
 <style>
-
-/* =========================
-   RESET
-========================= */
 
 *{
     margin:0;
@@ -29,2726 +20,487 @@ html{
 }
 
 body{
-    font-family:
-    Tahoma,
-    Arial,
-    sans-serif;
-
+    font-family:Tahoma,Arial,sans-serif;
     background:
-    radial-gradient(
-        circle at top right,
-        #183b5b 0%,
-        #071421 38%,
-        #030a11 100%
-    );
-
+    radial-gradient(circle at top right,#183b5b 0%,#071421 40%,#030a11 100%);
     color:#fff;
-
     min-height:100vh;
-
     line-height:1.8;
 }
 
-
-/* =========================
-   HEADER
-========================= */
-
 header{
-
     position:sticky;
-
     top:0;
-
     z-index:1000;
-
-    background:
-    rgba(3,10,17,.88);
-
+    background:rgba(3,10,17,.90);
     backdrop-filter:blur(18px);
-
-    border-bottom:
-    1px solid
-    rgba(255,215,0,.15);
-
-    box-shadow:
-    0 10px 35px
-    rgba(0,0,0,.25);
+    border-bottom:1px solid rgba(255,215,0,.15);
+    box-shadow:0 10px 35px rgba(0,0,0,.30);
 }
-
 
 .header-inner{
-
     max-width:1250px;
-
     margin:auto;
-
     min-height:82px;
-
-    padding:
-    12px 25px;
-
+    padding:12px 25px;
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
     gap:20px;
+    flex-wrap:wrap;
 }
 
-
-/* =========================
-   LOGO
-========================= */
-
 .logo{
-
     display:flex;
-
     align-items:center;
-
     gap:12px;
-
-    text-decoration:none;
-
-    color:#fff;
+    cursor:pointer;
 }
 
 .logo-icon{
-
     width:48px;
-
     height:48px;
-
     border-radius:15px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
-    background:
-    linear-gradient(
-        135deg,
-        #ffd700,
-        #a87500
-    );
-
+    background:linear-gradient(135deg,#ffd700,#a87500);
     color:#111;
-
     font-size:25px;
-
-    box-shadow:
-    0 8px 25px
-    rgba(255,215,0,.2);
+    box-shadow:0 8px 25px rgba(255,215,0,.20);
 }
 
 .logo-text{
-
     font-size:18px;
-
     font-weight:bold;
-
     color:#ffd700;
 }
 
 .logo-sub{
-
-    font-size:11px;
-
-    color:#aaa;
-
     display:block;
+    color:#aaa;
+    font-size:11px;
 }
 
-
-/* =========================
-   NAV
-========================= */
-
 .nav{
-
     display:flex;
-
     align-items:center;
-
-    justify-content:flex-start;
-
     gap:7px;
-
     flex-wrap:wrap;
 }
 
 .nav button{
-
-    border:
-
-    1px solid
-    rgba(255,255,255,.08);
-
-    background:
-    rgba(255,255,255,.045);
-
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.045);
     color:#ddd;
-
-    padding:
-    9px 13px;
-
+    padding:9px 13px;
     border-radius:12px;
-
     cursor:pointer;
-
-    transition:
-    .25s ease;
-
+    transition:.25s;
     font-size:13px;
 }
 
-.nav button:hover{
-
-    background:#ffd700;
-
-    color:#111;
-
-    border-color:#ffd700;
-
-    transform:
-    translateY(-2px);
-
-    box-shadow:
-    0 7px 20px
-    rgba(255,215,0,.18);
-}
-
+.nav button:hover,
 .nav button.active{
-
-    background:
-    linear-gradient(
-        135deg,
-        #ffd700,
-        #c89500
-    );
-
+    background:linear-gradient(135deg,#ffd700,#bd8d00);
     color:#111;
-
     border-color:#ffd700;
-
     font-weight:bold;
+    transform:translateY(-2px);
 }
-
-
-/* =========================
-   MOBILE MENU
-========================= */
 
 .menu-btn{
-
     display:none;
-
     border:0;
-
-    background:
-    rgba(255,255,255,.08);
-
+    background:rgba(255,255,255,.08);
     color:#ffd700;
-
     width:45px;
-
     height:45px;
-
     border-radius:13px;
-
     font-size:23px;
-
     cursor:pointer;
 }
 
-
-/* =========================
-   HERO
-========================= */
-
 .hero{
-
     max-width:1200px;
-
     margin:auto;
-
-    padding:
-    85px 25px
-    55px;
-
+    padding:85px 25px 55px;
     text-align:center;
-
-    position:relative;
 }
 
 .hero-badge{
-
     display:inline-block;
-
-    padding:
-    7px 15px;
-
+    padding:7px 15px;
     border-radius:30px;
-
-    background:
-    rgba(255,215,0,.08);
-
-    border:
-    1px solid
-    rgba(255,215,0,.25);
-
+    background:rgba(255,215,0,.08);
+    border:1px solid rgba(255,215,0,.25);
     color:#ffd700;
-
     font-size:13px;
-
     margin-bottom:20px;
 }
 
 .hero h1{
-
-    font-size:
-    clamp(30px,5vw,55px);
-
+    font-size:clamp(30px,5vw,55px);
     line-height:1.35;
-
     margin-bottom:18px;
-
-    background:
-    linear-gradient(
-        90deg,
-        #fff,
-        #ffd700
-    );
-
+    background:linear-gradient(90deg,#fff,#ffd700);
     -webkit-background-clip:text;
-
     -webkit-text-fill-color:transparent;
 }
 
 .hero p{
-
-    max-width:750px;
-
+    max-width:780px;
     margin:auto;
-
     color:#bfc8d1;
-
     font-size:16px;
 }
 
-
-/* =========================
-   WELCOME
-========================= */
-
-.welcome-box{
-
-    display:none;
-
-    max-width:650px;
-
-    margin:
-    30px auto 0;
-
-    padding:25px;
-
-    border-radius:22px;
-
-    background:
-    linear-gradient(
-        135deg,
-        rgba(255,215,0,.10),
-        rgba(255,255,255,.04)
-    );
-
-    border:
-    1px solid
-    rgba(255,215,0,.25);
-
-    animation:
-    appear .5s ease;
-}
-
-.welcome-heart{
-
-    font-size:48px;
-
-    animation:
-    heart 1.2s infinite;
-}
-
-.welcome-box h2{
-
-    color:#ffd700;
-
-    margin:8px 0;
-}
-
-
-/* =========================
-   BUTTON
-========================= */
-
 .gold-btn{
-
     border:0;
-
     cursor:pointer;
-
-    padding:
-    13px 23px;
-
+    padding:13px 23px;
     border-radius:13px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #ffd700,
-        #bd8d00
-    );
-
+    background:linear-gradient(135deg,#ffd700,#bd8d00);
     color:#111;
-
     font-weight:bold;
-
     margin-top:22px;
-
     transition:.25s;
-
-    box-shadow:
-    0 10px 25px
-    rgba(255,215,0,.13);
+    box-shadow:0 10px 25px rgba(255,215,0,.13);
 }
 
 .gold-btn:hover{
-
-    transform:
-    translateY(-3px);
-
-    box-shadow:
-    0 15px 30px
-    rgba(255,215,0,.2);
+    transform:translateY(-3px);
+    box-shadow:0 15px 30px rgba(255,215,0,.22);
 }
 
+.welcome-box{
+    display:none;
+    max-width:650px;
+    margin:30px auto 0;
+    padding:25px;
+    border-radius:22px;
+    background:linear-gradient(135deg,rgba(255,215,0,.10),rgba(255,255,255,.04));
+    border:1px solid rgba(255,215,0,.25);
+    animation:appear .5s ease;
+}
 
-/* =========================
-   CONTAINER
-========================= */
+.welcome-heart{
+    font-size:48px;
+    animation:heart 1.2s infinite;
+}
+
+.welcome-box h2{
+    color:#ffd700;
+}
 
 .container{
-
-    width:
-    min(1150px,92%);
-
+    width:min(1150px,92%);
     margin:auto;
 }
 
-
-/* =========================
-   SECTIONS
-========================= */
-
 .section{
-
     display:none;
-
-    padding:
-    35px 0 65px;
-
-    animation:
-    appear .4s ease;
+    padding:35px 0 65px;
+    animation:appear .4s ease;
 }
 
 .section.active{
-
     display:block;
 }
 
 .section-title{
-
     text-align:center;
-
     margin-bottom:32px;
 }
 
 .section-title span{
-
     display:block;
-
     color:#ffd700;
-
     font-size:12px;
-
     margin-bottom:5px;
-
     letter-spacing:1px;
 }
 
 .section-title h2{
-
     font-size:29px;
-
-    color:#fff;
 }
 
 .section-title p{
-
     color:#9da8b3;
-
     font-size:14px;
-
-    margin-top:5px;
 }
 
-
-/* =========================
-   CARDS
-========================= */
-
 .grid{
-
     display:grid;
-
-    grid-template-columns:
-    repeat(
-        auto-fit,
-        minmax(230px,1fr)
-    );
-
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
     gap:18px;
 }
 
 .card{
-
     position:relative;
-
     overflow:hidden;
-
-    background:
-    linear-gradient(
-        145deg,
-        rgba(255,255,255,.075),
-        rgba(255,255,255,.025)
-    );
-
-    border:
-    1px solid
-    rgba(255,255,255,.08);
-
+    background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));
+    border:1px solid rgba(255,255,255,.08);
     border-radius:22px;
-
     padding:25px;
-
-    transition:
-    .3s ease;
-
-    box-shadow:
-    0 15px 35px
-    rgba(0,0,0,.16);
-}
-
-.card::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    right:0;
-
-    width:80px;
-
-    height:80px;
-
-    background:
-    radial-gradient(
-        circle,
-        rgba(255,215,0,.12),
-        transparent 70%
-    );
+    transition:.3s;
+    box-shadow:0 15px 35px rgba(0,0,0,.16);
 }
 
 .card:hover{
-
-    transform:
-    translateY(-6px);
-
-    border-color:
-    rgba(255,215,0,.35);
-
-    box-shadow:
-    0 20px 45px
-    rgba(0,0,0,.25);
+    transform:translateY(-6px);
+    border-color:rgba(255,215,0,.35);
 }
 
 .card-icon{
-
     width:52px;
-
     height:52px;
-
     border-radius:16px;
-
-    background:
-    rgba(255,215,0,.10);
-
+    background:rgba(255,215,0,.10);
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     font-size:25px;
-
     margin-bottom:15px;
 }
 
 .card h3{
-
     color:#ffd700;
-
     margin-bottom:8px;
-
-    font-size:18px;
 }
 
 .card p{
-
     color:#b9c2cb;
-
     font-size:14px;
 }
 
-
-/* =========================
-   LAWYER
-========================= */
-
 .lawyer-card{
-
-    max-width:750px;
-
+    max-width:760px;
     margin:auto;
-
     text-align:center;
-
     padding:40px 30px;
 }
 
 .lawyer-avatar{
-
     width:105px;
-
     height:105px;
-
     border-radius:50%;
-
-    margin:
-    0 auto 20px;
-
+    margin:0 auto 20px;
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
-    background:
-    linear-gradient(
-        135deg,
-        #ffd700,
-        #956d00
-    );
-
+    background:linear-gradient(135deg,#ffd700,#956d00);
     color:#111;
-
     font-size:45px;
-
-    border:
-    5px solid
-    rgba(255,215,0,.12);
-
-    box-shadow:
-    0 10px 35px
-    rgba(255,215,0,.15);
+    border:5px solid rgba(255,215,0,.12);
 }
 
 .lawyer-name{
-
     font-size:30px;
-
-    color:#fff;
-
-    margin-bottom:5px;
 }
 
 .lawyer-title{
-
     color:#ffd700;
-
-    font-size:16px;
-
-    margin-bottom:25px;
 }
 
 .info-list{
-
     display:grid;
-
     gap:10px;
-
     margin-top:20px;
 }
 
 .info-row{
-
-    background:
-    rgba(255,255,255,.045);
-
-    border:
-    1px solid
-    rgba(255,255,255,.06);
-
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.06);
     padding:13px;
-
     border-radius:13px;
-
     color:#cbd3da;
 }
 
 .info-row strong{
-
     color:#fff;
 }
 
+.notice{
+    background:rgba(255,215,0,.06);
+    border-right:4px solid #ffd700;
+    border-radius:12px;
+    padding:14px 18px;
+    color:#c5ced6;
+    font-size:13px;
+    margin-bottom:20px;
+}
 
-/* =========================
-   LAW ACCORDION
-========================= */
+.search-box{
+    margin-bottom:25px;
+}
 
-.law-item{
+.search-box input{
+    width:100%;
+    padding:16px;
+    border-radius:15px;
+    border:1px solid rgba(255,255,255,.12);
+    background:#101f2d;
+    color:#fff;
+    outline:none;
+    font-size:15px;
+}
 
-    margin-bottom:11px;
+.search-box input:focus{
+    border-color:#ffd700;
+}
 
-    border:
-    1px solid
-    rgba(255,255,255,.08);
+.category-bar{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
 
-    border-radius:16px;
+.category-bar button{
+    background:rgba(255,255,255,.05);
+    color:#ccc;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:12px;
+    padding:9px 14px;
+    cursor:pointer;
+}
 
-    overflow:hidden;
+.category-bar button.active{
+    background:#ffd700;
+    color:#111;
+}
 
-    background:
-    rgba(255,255,255,.035);
+.law-card{
+    margin-bottom:12px;
+    padding:0;
 }
 
 .law-head{
-
-    padding:
-    16px 18px;
-
+    padding:18px;
     cursor:pointer;
-
     display:flex;
-
-    justify-content:space-between;
-
     align-items:center;
+    justify-content:space-between;
+}
 
+.law-head strong{
     color:#ffd700;
-
-    font-weight:bold;
-
-    transition:.2s;
 }
 
-.law-head:hover{
-
-    background:
-    rgba(255,215,0,.06);
-}
-
-.law-content{
-
+.law-body{
     display:none;
-
-    padding:
-    17px 20px;
-
-    color:#c3ccd5;
-
-    background:
-    rgba(0,0,0,.12);
-
-    font-size:14px;
+    padding:0 18px 18px;
+    color:#bdc6cf;
+    border-top:1px solid rgba(255,255,255,.05);
 }
 
-.law-content.open{
-
+.law-body.open{
     display:block;
-
-    animation:
-    appear .25s ease;
 }
 
-.plus{
-
-    font-size:20px;
+.law-number{
+    color:#ffd700;
+    font-size:12px;
 }
 
-
-/* =========================
-   QUIZ
-========================= */
+.tip-number{
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    background:rgba(255,215,0,.12);
+    color:#ffd700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    margin-bottom:12px;
+}
 
 .quiz{
-
     margin-bottom:20px;
-
     padding:25px;
-
     border-radius:20px;
-
-    background:
-    rgba(255,255,255,.045);
-
-    border:
-    1px solid
-    rgba(255,255,255,.08);
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.08);
 }
 
 .quiz h3{
-
     color:#ffd700;
-
     margin-bottom:10px;
 }
 
 .option{
-
     display:block;
-
-    margin:
-    9px 0;
-
+    margin:9px 0;
     padding:12px;
-
-    background:
-    rgba(255,255,255,.035);
-
+    background:rgba(255,255,255,.035);
     border-radius:11px;
-
     cursor:pointer;
-
     color:#ccc;
 }
 
-.option:hover{
-
-    background:
-    rgba(255,215,0,.07);
-}
-
 .result{
-
     margin-top:13px;
-
     font-weight:bold;
 }
-
-
-/* =========================
-   FORMS
-========================= */
 
 input,
 select{
-
     width:100%;
-
     padding:13px;
-
-    margin:
-    7px 0;
-
+    margin:7px 0;
     border-radius:12px;
-
-    border:
-    1px solid
-    rgba(255,255,255,.12);
-
-    background:
-    #101f2d;
-
+    border:1px solid rgba(255,255,255,.12);
+    background:#101f2d;
     color:#fff;
-
     outline:none;
 }
 
-input:focus,
-select:focus{
-
-    border-color:#ffd700;
-}
-
-
-/* =========================
-   PRICE
-========================= */
-
 .price{
-
     font-size:23px;
-
     color:#ffd700;
-
     font-weight:bold;
-
-    margin:10px 0;
 }
 
-
-/* =========================
-   ABOUT
-========================= */
-
-.about-box{
-
+.about-box,
+.contact-box{
     max-width:800px;
-
     margin:auto;
-
     text-align:center;
 }
 
 .about-avatar{
-
     width:100px;
-
     height:100px;
-
     margin:auto;
-
     border-radius:50%;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
-    background:
-    linear-gradient(
-        135deg,
-        #ffd700,
-        #8f6800
-    );
-
+    background:linear-gradient(135deg,#ffd700,#8f6800);
     color:#111;
-
     font-size:40px;
-
     font-weight:bold;
 }
 
 .about-name{
-
     color:#ffd700;
-
     font-size:28px;
-
-    margin:
-    15px 0 3px;
-}
-
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact-box{
-
-    max-width:650px;
-
-    margin:auto;
-
-    text-align:center;
+    margin:15px 0 3px;
 }
 
 .contact-number{
-
     font-size:22px;
-
     color:#ffd700;
-
     direction:ltr;
-
     display:inline-block;
-
-    margin-top:10px;
 }
-
-
-/* =========================
-   NOTICE
-========================= */
-
-.notice{
-
-    background:
-    rgba(255,215,0,.06);
-
-    border-right:
-    4px solid #ffd700;
-
-    border-radius:12px;
-
-    padding:
-    14px 18px;
-
-    color:#c5ced6;
-
-    font-size:13px;
-
-    margin-bottom:20px;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
 
 footer{
-
     margin-top:40px;
-
-    padding:
-    35px 20px;
-
+    padding:35px 20px;
     text-align:center;
-
-    background:
-    rgba(0,0,0,.35);
-
-    border-top:
-    1px solid
-    rgba(255,255,255,.06);
-
+    background:rgba(0,0,0,.35);
+    border-top:1px solid rgba(255,255,255,.06);
     color:#8f99a3;
-
-    font-size:13px;
-}
-
-footer strong{
-
-    color:#ffd700;
-}
-
-
-/* =========================
-   ANIMATIONS
-========================= */
-
-@keyframes appear{
-
-    from{
-
-        opacity:0;
-
-        transform:
-        translateY(15px);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-        translateY(0);
-    }
-}
-
-@keyframes heart{
-
-    0%,100%{
-
-        transform:
-        scale(1);
-    }
-
-    50%{
-
-        transform:
-        scale(1.18);
-    }
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:850px){
-
-    .header-inner{
-
-        min-height:70px;
-    }
-
-    .menu-btn{
-
-        display:block;
-    }
-
-    .nav{
-
-        display:none;
-
-        width:100%;
-
-        padding:
-        10px 0 15px;
-
-        grid-template-columns:
-        repeat(2,1fr);
-
-        gap:8px;
-    }
-
-    .nav.open{
-
-        display:grid;
-    }
-
-    .nav button{
-
-        width:100%;
-
-        padding:12px 8px;
-    }
-
-    .header-inner{
-
-        flex-wrap:wrap;
-    }
-
-    .logo-text{
-
-        font-size:15px;
-    }
-
-    .logo-sub{
-
-        font-size:9px;
-    }
-}
-
-@media(max-width:500px){
-
-    .hero{
-
-        padding-top:55px;
-    }
-
-    .hero h1{
-
-        font-size:30px;
-    }
-
-    .hero p{
-
-        font-size:14px;
-    }
-
-    .section-title h2{
-
-        font-size:24px;
-    }
-
-    .card{
-
-        padding:20px;
-    }
-
-}
-
-</style>
-
-</head>
-
-
-<body>
-
-
-<!-- =========================
-     HEADER
-========================= -->
-
-<header>
-
-<div class="header-inner">
-
-
-<a class="logo"
-onclick="showSection('home')">
-
-<div class="logo-icon">
-⚖️
-</div>
-
-<div>
-
-<div class="logo-text">
-پارسا کرمی
-</div>
-
-<span class="logo-sub">
-مرکز حقوقی و خدمات
-</span>
-
-</div>
-
-</a>
-
-
-<button
-class="menu-btn"
-onclick="toggleMenu()">
-
-☰
-
-</button>
-
-
-<nav
-class="nav"
-id="mainNav">
-
-<button
-onclick="showSection('home',this)"
-class="active">
-
-🏠 خانه
-
-</button>
-
-<button
-onclick="showSection('lawyer',this)">
-
-👨‍⚖️ وکیل
-
-</button>
-
-<button
-onclick="showSection('legal',this)">
-
-⚖️ حقوق و قانون
-
-</button>
-
-<button
-onclick="showSection('articles',this)">
-
-📚 نکات حقوقی
-
-</button>
-
-<button
-onclick="showSection('tests',this)">
-
-📝 آزمون‌ها
-
-</button>
-
-<button
-onclick="showSection('internet',this)">
-
-📱 شارژ و اینترنت
-
-</button>
-
-<button
-onclick="showSection('about',this)">
-
-👤 درباره ما
-
-</button>
-
-<button
-onclick="showSection('contact',this)">
-
-☎️ تماس
-
-</button>
-
-</nav>
-
-</div>
-
-</header>
-
-
-
-<!-- =========================
-     HERO
-========================= -->
-
-<section
-class="hero"
-id="home">
-
-<div class="hero-badge">
-
-⚖️ مرکز تخصصی حقوق و خدمات
-
-</div>
-
-<h1>
-
-دانش حقوق،
-<br>
-با دسترسی ساده و حرفه‌ای
-
-</h1>
-
-<p>
-
-به وب‌سایت رسمی پارسا کرمی خوش آمدید.
-در این مجموعه می‌توانید به مطالب آموزشی حقوق،
-مواد قانونی، آزمون‌ها و خدمات مختلف دسترسی داشته باشید.
-
-</p>
-
-<button
-class="gold-btn"
-onclick="welcomeUser()">
-
-✨ ورود به مرکز
-
-</button>
-
-
-<div
-class="welcome-box"
-id="welcome">
-
-<div class="welcome-heart">
-❤️
-</div>
-
-<h2>
-کاربر عزیز خوش آمدید
-</h2>
-
-<p>
-از حضور شما در سایت پارسا کرمی خوشحالیم.
-برای مشاهده بخش‌های مختلف،
-از منوی بالای صفحه استفاده کنید.
-</p>
-
-</div>
-
-</section>
-
-
-
-<div class="container">
-
-
-
-<!-- =========================
-     LAWYER
-========================= -->
-
-<section
-class="section"
-id="lawyer">
-
-<div class="section-title">
-
-<span>
-LEGAL PROFESSIONAL
-</span>
-
-<h2>
-👨‍⚖️ وکیل پایه یک دادگستری
-</h2>
-
-<p>
-اطلاعات تماس و معرفی وکیل
-</p>
-
-</div>
-
-
-<div class="card lawyer-card">
-
-<div class="lawyer-avatar">
-⚖️
-</div>
-
-<div class="lawyer-name">
-حشمت کرمی
-</div>
-
-<div class="lawyer-title">
-وکیل پایه یک دادگستری
-</div>
-
-
-<div class="info-list">
-
-<div class="info-row">
-
-👨‍⚖️ نام و نام خانوادگی:
-<strong>
-حشمت کرمی
-</strong>
-
-</div>
-
-<div class="info-row">
-
-⚖️ عنوان:
-<strong>
-وکیل پایه یک دادگستری
-</strong>
-
-</div>
-
-<div class="info-row">
-
-📱 شماره تماس:
-<strong dir="ltr">
-09127068454
-</strong>
-
-</div>
-
-</div>
-
-
-<a
-href="tel:09127068454"
-class="gold-btn"
-style="
-display:inline-block;
-text-decoration:none;
-margin-top:25px;
-">
-
-📞 تماس با وکیل
-
-</a>
-
-</div>
-
-
-<div class="notice"
-style="margin-top:20px;">
-
-توجه: اطلاعات این بخش بر اساس اطلاعات ارائه‌شده
-برای درج در وب‌سایت تنظیم شده است.
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     LEGAL
-========================= -->
-
-<section
-class="section"
-id="legal">
-
-<div class="section-title">
-
-<span>
-LAW & REGULATIONS
-</span>
-
-<h2>
-⚖️ حقوق و قوانین
-</h2>
-
-<p>
-موضوعات مهم حقوقی و مواد قانونی
-</p>
-
-</div>
-
-
-<div class="grid">
-
-
-<div class="card">
-
-<div class="card-icon">
-📜
-</div>
-
-<h3>
-حقوق مدنی
-</h3>
-
-<p>
-قراردادها، تعهدات،
-مالکیت، معاملات و مسئولیت مدنی.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">
-⚔️
-</div>
-
-<h3>
-حقوق کیفری
-</h3>
-
-<p>
-جرایم، مجازات‌ها،
-مسئولیت کیفری و مفاهیم حقوق جزا.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">
-👨‍👩‍👧
-</div>
-
-<h3>
-حقوق خانواده
-</h3>
-
-<p>
-ازدواج، طلاق، مهریه،
-نفقه، حضانت و مسائل خانوادگی.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">
-🏢
-</div>
-
-<h3>
-حقوق تجارت
-</h3>
-
-<p>
-شرکت‌ها، اسناد تجاری،
-ورشکستگی و تجارت.
-</p>
-
-</div>
-
-</div>
-
-
-<br>
-
-
-<div class="section-title">
-
-<span>
-IMPORTANT ARTICLES
-</span>
-
-<h2>
-📜 مواد قانونی
-</h2>
-
-</div>
-
-
-<div class="law-item">
-
-<div
-class="law-head"
-onclick="toggleLaw(this)">
-
-<span>
-ماده ۱۰ قانون مدنی
-</span>
-
-<span class="plus">
-+
-</span>
-
-</div>
-
-<div class="law-content">
-
-قراردادهای خصوصی نسبت به کسانی که آن را منعقد
-نموده‌اند، در صورتی که مخالف صریح قانون نباشد نافذ است.
-
-</div>
-
-</div>
-
-
-<div class="law-item">
-
-<div
-class="law-head"
-onclick="toggleLaw(this)">
-
-<span>
-ماده ۳۰ قانون مدنی
-</span>
-
-<span class="plus">
-+
-</span>
-
-</div>
-
-<div class="law-content">
-
-هر مالکی نسبت به مایملک خود حق همه‌گونه تصرف
-و انتفاع دارد مگر در مواردی که قانون استثنا کرده باشد.
-
-</div>
-
-</div>
-
-
-<div class="law-item">
-
-<div
-class="law-head"
-onclick="toggleLaw(this)">
-
-<span>
-ماده ۳۱ قانون مدنی
-</span>
-
-<span class="plus">
-+
-</span>
-
-</div>
-
-<div class="law-content">
-
-هیچ مالی را از تصرف صاحب آن نمی‌توان بیرون کرد
-مگر به حکم قانون.
-
-</div>
-
-</div>
-
-
-<div class="law-item">
-
-<div
-class="law-head"
-onclick="toggleLaw(this)">
-
-<span>
-ماده ۲۱۹ قانون مدنی
-</span>
-
-<span class="plus">
-+
-</span>
-
-</div>
-
-<div class="law-content">
-
-عقودی که بر طبق قانون واقع شده باشد بین متعاملین
-و قائم‌مقام آنها لازم‌الاتباع است مگر اینکه به رضای
-طرفین اقاله یا به علت قانونی فسخ شود.
-
-</div>
-
-</div>
-
-
-<div class="law-item">
-
-<div
-class="law-head"
-onclick="toggleLaw(this)">
-
-<span>
-ماده ۲۲۰ قانون مدنی
-</span>
-
-<span class="plus">
-+
-</span>
-
-</div>
-
-<div class="law-content">
-
-عقود نه فقط متعاملین را به اجرای چیزی که در آن
-تصریح شده است ملزم می‌نماید، بلکه متعاملین به
-کلیه نتایجی که به موجب عرف و عادت یا قانون از عقد
-حاصل می‌شود نیز ملزم هستند.
-
-</div>
-
-</div>
-
-
-<div class="law-item">
-
-<div
-class="law-head"
-onclick="toggleLaw(this)">
-
-<span>
-ماده ۲۲۱ قانون مدنی
-</span>
-
-<span class="plus">
-+
-</span>
-
-</div>
-
-<div class="law-content">
-
-اگر کسی تعهد اقدام به امری را بکند یا تعهد نماید
-که از انجام امری خودداری کند، در صورت تخلف
-مسئول جبران خسارت طرف مقابل است.
-
-</div>
-
-</div>
-
-
-</section>
-
-
-
-<!-- =========================
-     ARTICLES
-========================= -->
-
-<section
-class="section"
-id="articles">
-
-<div class="section-title">
-
-<span>
-LEGAL TIPS
-</span>
-
-<h2>
-📚 نکات و اصلاحات حقوقی
-</h2>
-
-<p>
-نکات کاربردی برای افزایش آگاهی حقوقی
-</p>
-
-</div>
-
-
-<div class="grid">
-
-
-<div class="card">
-
-<div class="card-icon">
-✍️
-</div>
-
-<h3>
-قرارداد
-</h3>
-
-<p>
-قبل از امضای هر قرارداد، موضوع،
-مبلغ، تعهدات، ضمانت اجرا و شرایط
-فسخ را بررسی کنید.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">
-🏠
-</div>
-
-<h3>
-اجاره
-</h3>
-
-<p>
-مبلغ ودیعه، اجاره‌بها، مدت قرارداد
-و شرایط تخلیه را به‌صورت دقیق مشخص کنید.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">
-💳
-</div>
-
-<h3>
-چک
-</h3>
-
-<p>
-اطلاعات چک و اسناد مرتبط را
-با دقت بررسی و نگهداری کنید.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">
-👨‍👩‍👧
-</div>
-
-<h3>
-خانواده
-</h3>
-
-<p>
-آگاهی از حقوق قانونی طرفین
-می‌تواند از بسیاری اختلافات جلوگیری کند.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">
-🤝
-</div>
-
-<h3>
-شراکت
-</h3>
-
-<p>
-سهم، مسئولیت، نحوه تصمیم‌گیری
-و شرایط خروج از شراکت را مشخص کنید.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">
-⚠️
-</div>
-
-<h3>
-هشدار حقوقی
-</h3>
-
-<p>
-مطالب آموزشی جایگزین بررسی تخصصی
-پرونده توسط وکیل یا مشاور حقوقی نیستند.
-</p>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     TESTS
-========================= -->
-
-<section
-class="section"
-id="tests">
-
-<div class="section-title">
-
-<span>
-LEGAL QUIZ
-</span>
-
-<h2>
-📝 آزمون حقوقی
-</h2>
-
-<p>
-دانش حقوقی خود را امتحان کنید
-</p>
-
-</div>
-
-
-<div class="quiz">
-
-<h3>
-آزمون اول
-</h3>
-
-<p>
-کدام ماده درباره قراردادهای خصوصی است؟
-</p>
-
-
-<label class="option">
-
-<input
-type="radio"
-name="q1"
-value="wrong">
-
-ماده ۳۰
-
-</label>
-
-
-<label class="option">
-
-<input
-type="radio"
-name="q1"
-value="correct">
-
-ماده ۱۰
-
-</label>
-
-
-<label class="option">
-
-<input
-type="radio"
-name="q1"
-value="wrong">
-
-ماده ۳۱
-
-</label>
-
-
-<button
-class="gold-btn"
-onclick="checkAnswer('q1','r1')">
-
-بررسی پاسخ
-
-</button>
-
-
-<div
-class="result"
-id="r1">
-</div>
-
-</div>
-
-
-
-<div class="quiz">
-
-<h3>
-آزمون دوم
-</h3>
-
-<p>
-کدام ماده درباره حق مالک نسبت به مال خود است؟
-</p>
-
-
-<label class="option">
-
-<input
-type="radio"
-name="q2"
-value="correct">
-
-ماده ۳۰ قانون مدنی
-
-</label>
-
-
-<label class="option">
-
-<input
-type="radio"
-name="q2"
-value="wrong">
-
-ماده ۱۰ قانون مدنی
-
-</label>
-
-
-<label class="option">
-
-<input
-type="radio"
-name="q2"
-value="wrong">
-
-ماده ۲۱۹ قانون مدنی
-
-</label>
-
-
-<button
-class="gold-btn"
-onclick="checkAnswer('q2','r2')">
-
-بررسی پاسخ
-
-</button>
-
-
-<div
-class="result"
-id="r2">
-</div>
-
-</div>
-
-
-
-<div class="quiz">
-
-<h3>
-آزمون سوم
-</h3>
-
-<p>
-ماده ۲۱۹ قانون مدنی درباره چیست؟
-</p>
-
-
-<label class="option">
-
-<input
-type="radio"
-name="q3"
-value="wrong">
-
-مالکیت
-
-</label>
-
-
-<label class="option">
-
-<input
-type="radio"
-name="q3"
-value="correct">
-
-لازم‌الاتباع بودن عقود
-
-</label>
-
-
-<label class="option">
-
-<input
-type="radio"
-name="q3"
-value="wrong">
-
-حضانت
-
-</label>
-
-
-<button
-class="gold-btn"
-onclick="checkAnswer('q3','r3')">
-
-بررسی پاسخ
-
-</button>
-
-
-<div
-class="result"
-id="r3">
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     INTERNET
-========================= -->
-
-<section
-class="section"
-id="internet">
-
-<div class="section-title">
-
-<span>
-DIGITAL SERVICES
-</span>
-
-<h2>
-📱 شارژ و بسته اینترنت
-</h2>
-
-<p>
-خدمات دیجیتال در یک محیط ساده
-</p>
-
-</div>
-
-
-<div class="notice">
-
-در این نسخه قسمت خرید به‌صورت نمایشی طراحی شده است.
-برای خرید واقعی باید درگاه پرداخت و سرویس معتبر
-شارژ و اینترنت به سایت متصل شود.
-
-</div>
-
-
-<div class="grid">
-
-
-<div class="card">
-
-<div class="card-icon">
-📞
-</div>
-
-<h3>
-شارژ همراه اول
-</h3>
-
-<div class="price">
-شارژ اعتباری
-</div>
-
-<select>
-
-<option>
-۱۰ هزار تومان
-</option>
-
-<option>
-۲۰ هزار تومان
-</option>
-
-<option>
-۵۰ هزار تومان
-</option>
-
-<option>
-۱۰۰ هزار تومان
-</option>
-
-</select>
-
-
-<input
-type="tel"
-placeholder="شماره موبایل">
-
-
-<button
-class="gold-btn"
-onclick="fakePurchase()">
-
-ادامه خرید
-
-</button>
-
-</div>
-
-
-
-<div class="card">
-
-<div class="card-icon">
-📶
-</div>
-
-<h3>
-بسته اینترنت همراه اول
-</h3>
-
-<div class="price">
-بسته اینترنت
-</div>
-
-<select>
-
-<option>
-۱ گیگابایت
-</option>
-
-<option>
-۳ گیگابایت
-</option>
-
-<option>
-۵ گیگابایت
-</option>
-
-<option>
-۱۰ گیگابایت
-</option>
-
-</select>
-
-
-<input
-type="tel"
-placeholder="شماره موبایل">
-
-
-<button
-class="gold-btn"
-onclick="fakePurchase()">
-
-ادامه خرید
-
-</button>
-
-</div>
-
-
-
-<div class="card">
-
-<div class="card-icon">
-📞
-</div>
-
-<h3>
-شارژ ایرانسل
-</h3>
-
-<div class="price">
-شارژ اعتباری
-</div>
-
-<select>
-
-<option>
-۱۰ هزار تومان
-</option>
-
-<option>
-۲۰ هزار تومان
-</option>
-
-<option>
-۵۰ هزار تومان
-</option>
-
-<option>
-۱۰۰ هزار تومان
-</option>
-
-</select>
-
-
-<input
-type="tel"
-placeholder="شماره موبایل">
-
-
-<button
-class="gold-btn"
-onclick="fakePurchase()">
-
-ادامه خرید
-
-</button>
-
-</div>
-
-
-
-<div class="card">
-
-<div class="card-icon">
-📶
-</div>
-
-<h3>
-بسته اینترنت ایرانسل
-</h3>
-
-<div class="price">
-بسته اینترنت
-</div>
-
-<select>
-
-<option>
-۱ گیگابایت
-</option>
-
-<option>
-۳ گیگابایت
-</option>
-
-<option>
-۵ گیگابایت
-</option>
-
-<option>
-۱۰ گیگابایت
-</option>
-
-</select>
-
-
-<input
-type="tel"
-placeholder="شماره موبایل">
-
-
-<button
-class="gold-btn"
-onclick="fakePurchase()">
-
-ادامه خرید
-
-</button>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     ABOUT
-========================= -->
-
-<section
-class="section"
-id="about">
-
-<div class="section-title">
-
-<span>
-ABOUT
-</span>
-
-<h2>
-👤 درباره ما
-</h2>
-
-</div>
-
-
-<div class="card about-box">
-
-<div class="about-avatar">
-پ
-</div>
-
-<div class="about-name">
-پارسا کرمی
-</div>
-
-<p>
-دانشجوی رشته حقوق
-</p>
-
-<br>
-
-<p>
-
-این وب‌سایت با هدف ایجاد یک محیط
-ساده، زیبا و کاربردی برای دسترسی به
-مطالب آموزشی حقوق و خدمات دیجیتال
-طراحی شده است.
-
-</p>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section
-class="section"
-id="contact">
-
-<div class="section-title">
-
-<span>
-CONTACT
-</span>
-
-<h2>
-☎️ ارتباط با ما
-</h2>
-
-<p>
-راه‌های ارتباطی
-</p>
-
-</div>
-
-
-<div class="card contact-box">
-
-<div class="card-icon"
-style="margin:auto;">
-
-📞
-
-</div>
-
-<h3>
-پارسا کرمی
-</h3>
-
-<p>
-دانشجوی رشته حقوق
-</p>
-
-<p>
-شماره تماس
-</p>
-
-<div class="contact-number">
-09302869446
-</div>
-
-<br>
-
-<p style="margin-top:15px;">
-ایمیل
-</p>
-
-<p style="color:#ffd700;">
-parsakaramisarabii@gmail.com
-</p>
-
-</div>
-
-</section>
-
-
-</div>
-
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-<p>
-
-© 2026
-
-<strong>
-پارسا کرمی
-</strong>
-
-</p>
-
-<p>
-مرکز حقوقی و خدمات دیجیتال
-</p>
-
-<p style="margin-top:8px;">
-ساخته شده با ❤️
-</p>
-
-</footer>
-
-
-
-<script>
-
-
-/* =========================
-   SECTION NAVIGATION
-========================= */
-
-function showSection(id,button){
-
-    const sections =
-    document.querySelectorAll('.section');
-
-    sections.forEach(function(section){
-
-        section.classList.remove('active');
-
-    });
-
-
-    const selected =
-    document.getElementById(id);
-
-    if(selected){
-
-        selected.classList.add('active');
-
-    }
-
-
-    const buttons =
-    document.querySelectorAll('.nav button');
-
-    buttons.forEach(function(btn){
-
-        btn.classList.remove('active');
-
-    });
-
-
-    if(button){
-
-        button.classList.add('active');
-
-    }
-
-
-    document
-    .getElementById('mainNav')
-    .classList.remove('open');
-
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:'smooth'
-
-    });
-
-}
-
-
-/* =========================
-   MOBILE MENU
-========================= */
-
-function toggleMenu(){
-
-    const nav =
-    document.getElementById('mainNav');
-
-    nav.classList.toggle('open');
-
-}
-
-
-/* =========================
-   WELCOME
-========================= */
-
-function welcomeUser(){
-
-    const box =
-    document.getElementById('welcome');
-
-    box.style.display='block';
-
-    box.scrollIntoView({
-
-        behavior:'smooth',
-
-        block:'center'
-
-    });
-
-}
-
-
-/* =========================
-   LAW ACCORDION
-========================= */
-
-function toggleLaw(element){
-
-    const content =
-    element.nextElementSibling;
-
-    const plus =
-    element.querySelector('.plus');
-
-
-    document
-    .querySelectorAll('.law-content')
-    .forEach(function(item){
-
-        if(item !== content){
-
-            item.classList.remove('open');
-
-        }
-
-    });
-
-
-    document
-    .querySelectorAll('.plus')
-    .forEach(function(item){
-
-        if(item !== plus){
-
-            item.textContent='+';
-
-        }
-
-    });
-
-
-    if(content.classList.contains('open')){
-
-        content.classList.remove('open');
-
-        plus.textContent='+';
-
-    }else{
-
-        content.classList.add('open');
-
-        plus.textContent='−';
-
-    }
-
-}
-
-
-/* =========================
-   QUIZ
-========================= */
-
-function checkAnswer(question,result){
-
-    const answers =
-    document.getElementsByName(question);
-
-    let selected=null;
-
-
-    answers.forEach(function(answer){
-
-        if(answer.checked){
-
-            selected=answer.value;
-
-        }
-
-    });
-
-
-    const resultBox =
-    document.getElementById(result);
-
-
-    if(!selected){
-
-        resultBox.innerHTML=
-        '⚠️ لطفاً یک گزینه را انتخاب کنید.';
-
-        resultBox.style.color='#ffd700';
-
-        return;
-
-    }
-
-
-    if(selected==='correct'){
-
-        resultBox.innerHTML=
-        '✅ آفرین! پاسخ شما صحیح است.';
-
-        resultBox.style.color='#4cff88';
-
-    }else{
-
-        resultBox.innerHTML=
-        '❌ پاسخ اشتباه است. دوباره تلاش کنید.';
-
-        resultBox.style.color='#ff6b6b';
-
-    }
-
-}
-
-
-/* =========================
-   PURCHASE DEMO
-========================= */
-
-function fakePurchase(){
-
-    alert(
-
-        '📱 درخواست شما ثبت شد.\n\n' +
-
-        'این بخش فعلاً نمایشی است.\n' +
-
-        'برای خرید واقعی باید درگاه پرداخت ' +
-
-        'و سرویس معتبر اپراتور متصل شود.'
-
-    );
-
-}
-
-
-/* =========================
-   INITIAL PAGE
-========================= */
-
-showSection('home',
-document.querySelector('.nav button'));
-
-</script>
-
-
-</body>
-
-</html>
