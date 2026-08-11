@@ -2,334 +2,550 @@
 <html lang="fa" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>سایت شخصی پارسا کرمی</title>
+<title>پارسا کرمی | فروشگاه و وب‌سایت شخصی</title>
 
 <style>
 
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
-font-family:Tahoma,Arial,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-background:linear-gradient(135deg,#141e30,#243b55);
-color:white;
-line-height:1.8;
+    font-family:Tahoma,Arial,sans-serif;
+    background:#07111f;
+    color:#f5f5f5;
+    line-height:1.9;
 }
+
+/* HEADER */
 
 header{
-background:rgba(0,0,0,.4);
-backdrop-filter:blur(10px);
-padding:18px;
-text-align:center;
-position:sticky;
-top:0;
-z-index:100;
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(5,13,24,.97);
+    border-bottom:1px solid #b99a52;
+
+    box-shadow:0 5px 25px rgba(0,0,0,.4);
 }
 
-header h1{
-color:#00e5ff;
-font-size:27px;
+.header-content{
+    max-width:1150px;
+    margin:auto;
+    padding:17px 25px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
 }
 
-header p{
-color:#ddd;
+.logo{
+    color:#d4af63;
+    font-size:22px;
+    font-weight:bold;
 }
+
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:5px;
+}
+
+nav a{
+    color:#ddd;
+    text-decoration:none;
+    padding:7px 12px;
+    font-size:14px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#d4af63;
+}
+
+
+/* HERO */
 
 .hero{
-min-height:500px;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:40px 20px;
+    min-height:600px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:80px 20px;
+
+    background:
+    radial-gradient(circle at top,#172c47 0%,#07111f 60%);
 }
 
-.hero-box{
-background:rgba(255,255,255,.08);
-border:1px solid rgba(255,255,255,.15);
-border-radius:25px;
-padding:45px 25px;
-max-width:750px;
-width:100%;
-box-shadow:0 20px 60px rgba(0,0,0,.35);
+.hero-content{
+    max-width:850px;
 }
 
-.hero h2{
-font-size:38px;
-margin-bottom:15px;
+.gold-line{
+    width:70px;
+    height:2px;
+    background:#d4af63;
+    margin:0 auto 25px;
 }
 
-.hero h2 span{
-color:#00e5ff;
+.hero h1{
+    font-size:44px;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#d4af63;
 }
 
 .hero p{
-color:#ddd;
-font-size:18px;
-margin-bottom:25px;
+    color:#c7ccd4;
+    font-size:17px;
+    margin-bottom:30px;
 }
 
-.welcome-btn{
-border:none;
-background:linear-gradient(45deg,#00c6ff,#0072ff);
-color:white;
-padding:15px 35px;
-border-radius:50px;
-font-size:17px;
-cursor:pointer;
-transition:.3s;
-box-shadow:0 8px 25px rgba(0,114,255,.4);
+.gold-button{
+    display:inline-block;
+
+    padding:12px 28px;
+
+    background:#d4af63;
+    color:#07111f;
+
+    text-decoration:none;
+
+    border-radius:5px;
+
+    font-weight:bold;
+
+    transition:.3s;
 }
 
-.welcome-btn:hover{
-transform:scale(1.08);
+.gold-button:hover{
+    background:#efd080;
+    transform:translateY(-3px);
 }
 
-#welcomeMessage{
-margin-top:25px;
-font-size:25px;
-color:#00e5ff;
-min-height:45px;
+
+/* CONTAINER */
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
 }
 
-.heart{
-position:fixed;
-font-size:35px;
-animation:fly 2s ease-out forwards;
-pointer-events:none;
-z-index:999;
-}
-
-@keyframes fly{
-0%{
-transform:translateY(0) scale(.5);
-opacity:1;
-}
-100%{
-transform:translateY(-300px) scale(1.5);
-opacity:0;
-}
-}
-
-.section{
-max-width:1000px;
-margin:auto;
-padding:60px 20px;
+section{
+    padding:75px 0;
 }
 
 .section-title{
-text-align:center;
-font-size:30px;
-color:#00e5ff;
-margin-bottom:35px;
+    text-align:center;
+    margin-bottom:45px;
 }
 
-.about{
-background:rgba(255,255,255,.07);
-padding:30px;
-border-radius:20px;
-text-align:center;
-box-shadow:0 10px 35px rgba(0,0,0,.2);
+.section-title span{
+    color:#d4af63;
+    font-size:12px;
+    letter-spacing:2px;
 }
 
-.about p{
-color:#eee;
-font-size:17px;
+.section-title h2{
+    font-size:28px;
+    margin-top:5px;
 }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+.section-line{
+    width:45px;
+    height:2px;
+    background:#d4af63;
+    margin:12px auto;
 }
 
-.card{
-background:rgba(255,255,255,.08);
-padding:25px;
-border-radius:20px;
-text-align:center;
-transition:.3s;
-border:1px solid rgba(255,255,255,.1);
+
+/* ABOUT */
+
+.about-box{
+    background:#0c1929;
+    border:1px solid #1d3048;
+
+    border-radius:10px;
+
+    padding:35px;
+
+    text-align:center;
 }
 
-.card:hover{
-transform:translateY(-8px);
-background:rgba(0,229,255,.12);
+.about-box p{
+    color:#c8ced7;
+    margin:8px;
 }
 
-.card h3{
-color:#00e5ff;
-margin-bottom:10px;
+.about-box strong{
+    color:#d4af63;
 }
 
-.card p{
-color:#ddd;
+
+/* PRODUCTS */
+
+.products{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(240px,1fr));
+
+    gap:25px;
 }
 
-.icon{
-font-size:40px;
-margin-bottom:10px;
+.product{
+    background:#0c1929;
+
+    border:1px solid #1d3048;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    transition:.3s;
 }
 
-.resume{
-background:rgba(255,255,255,.08);
-padding:30px;
-border-radius:20px;
+.product:hover{
+    transform:translateY(-7px);
+
+    border-color:#b99a52;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.35);
 }
 
-.resume-item{
-border-right:3px solid #00e5ff;
-padding:15px 20px;
-margin-bottom:20px;
+
+/* PRODUCT IMAGE */
+
+.product-image{
+    width:100%;
+    height:210px;
+
+    object-fit:cover;
+
+    display:block;
 }
 
-.resume-item h3{
-color:#00e5ff;
+
+/* PRODUCT BODY */
+
+.product-body{
+    padding:22px;
 }
 
-.resume-item p{
-color:#ddd;
+.product-body h3{
+    font-size:19px;
+    margin-bottom:8px;
 }
 
-.skill{
-margin-bottom:20px;
+.product-body p{
+    color:#aeb7c3;
+    font-size:13px;
+
+    min-height:55px;
 }
 
-.skill-title{
-display:flex;
-justify-content:space-between;
-margin-bottom:7px;
+.price{
+    display:block;
+
+    margin-top:15px;
+
+    color:#d4af63;
+
+    font-size:18px;
+
+    font-weight:bold;
 }
 
-.skill-bar{
-height:12px;
-background:rgba(255,255,255,.15);
-border-radius:20px;
-overflow:hidden;
+.product-button{
+    display:block;
+
+    text-align:center;
+
+    margin-top:18px;
+
+    padding:9px;
+
+    color:#d4af63;
+
+    border:1px solid #d4af63;
+
+    border-radius:5px;
+
+    text-decoration:none;
+
+    transition:.3s;
 }
 
-.skill-progress{
-height:100%;
-background:linear-gradient(90deg,#00e5ff,#0072ff);
-border-radius:20px;
+.product-button:hover{
+    background:#d4af63;
+    color:#07111f;
 }
+
+
+/* ORDER */
+
+.tracking{
+    background:#0c1929;
+
+    border:1px solid #1d3048;
+
+    border-radius:10px;
+
+    padding:40px;
+
+    text-align:center;
+}
+
+input{
+    width:90%;
+    max-width:400px;
+
+    padding:13px;
+
+    margin-top:20px;
+
+    background:#07111f;
+
+    border:1px solid #30445c;
+
+    border-radius:5px;
+
+    color:white;
+
+    text-align:center;
+
+    outline:none;
+}
+
+input:focus{
+    border-color:#d4af63;
+}
+
+.tracking button{
+    margin-top:15px;
+
+    padding:11px 25px;
+
+    background:#d4af63;
+
+    color:#07111f;
+
+    border:none;
+
+    border-radius:5px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+#trackingResult{
+    color:#d4af63;
+
+    margin-top:20px;
+}
+
+
+/* CONTACT */
 
 .contact{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(230px,1fr));
+
+    gap:20px;
 }
 
-.contact-box{
-background:rgba(255,255,255,.08);
-padding:25px;
-border-radius:20px;
-text-align:center;
-transition:.3s;
+.contact-item{
+    background:#0c1929;
+
+    border:1px solid #1d3048;
+
+    border-radius:10px;
+
+    padding:25px;
+
+    text-align:center;
 }
 
-.contact-box:hover{
-transform:translateY(-5px);
-background:rgba(0,229,255,.1);
+.contact-item h3{
+    color:#d4af63;
+
+    margin-bottom:8px;
 }
 
-.contact-box h3{
-color:#00e5ff;
-margin-bottom:8px;
+.contact-item a{
+    color:#ddd;
+
+    text-decoration:none;
 }
 
-.contact-box p{
-color:#eee;
-direction:ltr;
+.contact-item a:hover{
+    color:#d4af63;
 }
+
+
+/* FOOTER */
 
 footer{
-text-align:center;
-padding:30px 15px;
-background:rgba(0,0,0,.3);
-color:#aaa;
-margin-top:30px;
+    background:#050c15;
+
+    border-top:1px solid #1d3048;
+
+    text-align:center;
+
+    padding:25px;
+
+    color:#8993a1;
+
+    font-size:13px;
 }
 
 footer span{
-color:#ff4b6e;
+    color:#d4af63;
 }
 
-@media(max-width:600px){
 
-.hero h2{
-font-size:28px;
-}
+/* MOBILE */
 
-.hero p{
-font-size:15px;
-}
+@media(max-width:750px){
 
-.section-title{
-font-size:25px;
-}
+    .header-content{
+        flex-direction:column;
+    }
 
-.hero-box{
-padding:35px 18px;
-}
+    .hero h1{
+        font-size:32px;
+    }
+
+    .hero{
+        min-height:500px;
+    }
+
+    section{
+        padding:55px 0;
+    }
 
 }
 
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
 
-<h1>پارسا کرمی</h1>
+<div class="header-content">
 
-<p>سایت شخصی من 🌟</p>
+<div class="logo">
+پارسا کرمی
+</div>
+
+<nav>
+
+<a href="#home">خانه</a>
+
+<a href="#about">درباره من</a>
+
+<a href="#shop">فروشگاه</a>
+
+<a href="#orders">پیگیری سفارش</a>
+
+<a href="#payment">پرداخت</a>
+
+<a href="#contact">تماس</a>
+
+</nav>
+
+</div>
 
 </header>
 
 
-<section class="hero">
 
-<div class="hero-box">
+<!-- HERO -->
 
-<h2>
-سلام، من <span>پارسا</span> هستم 👋
-</h2>
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="gold-line"></div>
+
+<h1>
+به وب‌سایت <span>پارسا کرمی</span> خوش آمدید
+</h1>
 
 <p>
-به اولین سایت شخصی من خوش آمدید.
-اینجا می‌توانید با من، مهارت‌ها و رزومه‌ام آشنا شوید.
+وب‌سایت شخصی، فروشگاهی و خدماتی
 </p>
 
-<button class="welcome-btn" onclick="welcome()">
-✨ کلیک کن!
-</button>
-
-<div id="welcomeMessage"></div>
+<a href="#shop" class="gold-button">
+مشاهده محصولات
+</a>
 
 </div>
 
 </section>
 
 
-<section class="section">
 
-<h2 class="section-title">👤 درباره من</h2>
+<div class="container">
 
-<div class="about">
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="section-title">
+
+<span>ABOUT ME</span>
+
+<h2>درباره من</h2>
+
+<div class="section-line"></div>
+
+</div>
+
+<div class="about-box">
 
 <p>
-من پارسا کرمی هستم و دانشجوی رشته حقوق می‌باشم.
-در کنار تحصیل، به یادگیری مهارت‌های کامپیوتری،
-طراحی سایت و برنامه‌نویسی علاقه‌مند هستم.
-هدف من پیشرفت، یادگیری مداوم و ساختن آینده‌ای حرفه‌ای است. 🚀
+نام و نام خانوادگی:
+<strong>پارسا کرمی</strong>
+</p>
+
+<p>
+🎓 دانشجوی رشته حقوق
+</p>
+
+<p>
+فعال در زمینه یادگیری، فناوری و فعالیت‌های حرفه‌ای
 </p>
 
 </div>
@@ -337,266 +553,386 @@ padding:35px 18px;
 </section>
 
 
-<section class="section">
 
-<h2 class="section-title">💻 مهارت‌ها و علاقه‌مندی‌ها</h2>
+<!-- SHOP -->
 
-<div class="cards">
+<section id="shop">
 
-<div class="card">
+<div class="section-title">
 
-<div class="icon">⚖️</div>
+<span>ONLINE STORE</span>
 
-<h3>رشته حقوق</h3>
+<h2>محصولات فنی</h2>
 
-<p>
-دانشجوی رشته حقوق و علاقه‌مند به حوزه‌های مختلف حقوقی
-</p>
+<div class="section-line"></div>
 
 </div>
 
 
-<div class="card">
+<div class="products">
 
-<div class="icon">📊</div>
 
-<h3>Excel</h3>
+<!-- LAPTOP -->
+
+<div class="product">
+
+<img
+class="product-image"
+src="https://images.pexels.com/photos/18105/pexels-photo.jpg"
+alt="لپ تاپ"
+>
+
+<div class="product-body">
+
+<h3>
+لپ‌تاپ حرفه‌ای
+</h3>
 
 <p>
-یادگیری Excel، فرمول‌ها، جدول‌ها، Pivot Table و نمودارها
+مناسب برای کارهای روزمره، دانشجویی، برنامه‌نویسی و کارهای اداری.
 </p>
+
+<span class="price">
+۴۵,۰۰۰,۰۰۰ تومان
+</span>
+
+<a
+href="#payment"
+class="product-button"
+onclick="buyProduct('لپ‌تاپ حرفه‌ای')"
+>
+خرید محصول
+</a>
+
+</div>
 
 </div>
 
 
-<div class="card">
 
-<div class="icon">📝</div>
+<!-- SMARTPHONE -->
 
-<h3>Word</h3>
+<div class="product">
+
+<img
+class="product-image"
+src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80"
+alt="گوشی هوشمند"
+>
+
+<div class="product-body">
+
+<h3>
+گوشی هوشمند
+</h3>
 
 <p>
-کار با Word و آماده‌سازی اسناد و فایل‌های اداری
+گوشی مدرن با طراحی زیبا و مناسب استفاده روزمره و کاری.
 </p>
+
+<span class="price">
+۲۸,۰۰۰,۰۰۰ تومان
+</span>
+
+<a
+href="#payment"
+class="product-button"
+onclick="buyProduct('گوشی هوشمند')"
+>
+خرید محصول
+</a>
+
+</div>
 
 </div>
 
 
-<div class="card">
 
-<div class="icon">🌐</div>
+<!-- HEADPHONES -->
 
-<h3>طراحی سایت</h3>
+<div class="product">
+
+<img
+class="product-image"
+src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80"
+alt="هدفون"
+>
+
+<div class="product-body">
+
+<h3>
+هدفون بی‌سیم
+</h3>
 
 <p>
-یادگیری HTML و CSS و ساخت صفحات وب
+هدفون بی‌سیم با طراحی مدرن، مناسب موسیقی و تماس‌های روزانه.
 </p>
 
+<span class="price">
+۶,۵۰۰,۰۰۰ تومان
+</span>
+
+<a
+href="#payment"
+class="product-button"
+onclick="buyProduct('هدفون بی‌سیم')"
+>
+خرید محصول
+</a>
+
 </div>
+
+</div>
+
+
+
+<!-- SMARTWATCH -->
+
+<div class="product">
+
+<img
+class="product-image"
+src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80"
+alt="ساعت هوشمند"
+>
+
+<div class="product-body">
+
+<h3>
+ساعت هوشمند
+</h3>
+
+<p>
+ساعت هوشمند با طراحی شیک برای استفاده روزمره و ورزشی.
+</p>
+
+<span class="price">
+۸,۹۰۰,۰۰۰ تومان
+</span>
+
+<a
+href="#payment"
+class="product-button"
+onclick="buyProduct('ساعت هوشمند')"
+>
+خرید محصول
+</a>
+
+</div>
+
+</div>
+
 
 </div>
 
 </section>
 
 
-<section class="section">
 
-<h2 class="section-title">📄 رزومه</h2>
+<!-- ORDER TRACKING -->
 
-<div class="resume">
+<section id="orders">
 
-<div class="resume-item">
+<div class="section-title">
 
-<h3>🎓 تحصیلات</h3>
+<span>ORDER TRACKING</span>
+
+<h2>پیگیری سفارش</h2>
+
+<div class="section-line"></div>
+
+</div>
+
+
+<div class="tracking">
 
 <p>
-دانشجوی رشته حقوق
+کد سفارش خود را وارد کنید.
 </p>
 
-</div>
-
-
-<div class="resume-item">
-
-<h3>💻 مهارت‌های کامپیوتری</h3>
-
-<p>
-در حال یادگیری و تقویت مهارت‌های Excel، Word،
-طراحی سایت و برنامه‌نویسی
-</p>
-
-</div>
-
-
-<div class="resume-item">
-
-<h3>🚀 هدف شغلی</h3>
-
-<p>
-پیشرفت فردی، یادگیری مهارت‌های جدید و پیدا کردن
-فرصت شغلی مناسب
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<h2 class="section-title">📈 مهارت‌های در حال توسعه</h2>
-
-<div class="about">
-
-<div class="skill">
-
-<div class="skill-title">
-
-<span>Excel</span>
-<span>70%</span>
-
-</div>
-
-<div class="skill-bar">
-
-<div class="skill-progress" style="width:70%"></div>
-
-</div>
-
-</div>
-
-
-<div class="skill">
-
-<div class="skill-title">
-
-<span>Word</span>
-<span>75%</span>
-
-</div>
-
-<div class="skill-bar">
-
-<div class="skill-progress" style="width:75%"></div>
-
-</div>
-
-</div>
-
-
-<div class="skill">
-
-<div class="skill-title">
-
-<span>HTML / CSS</span>
-<span>60%</span>
-
-</div>
-
-<div class="skill-bar">
-
-<div class="skill-progress" style="width:60%"></div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<h2 class="section-title">📞 ارتباط با من</h2>
-
-<div class="contact">
-
-<div class="contact-box">
-
-<h3>📱 شماره تلفن</h3>
-
-<p>
-09302869446
-</p>
-
-</div>
-
-
-<div class="contact-box">
-
-<h3>📧 ایمیل</h3>
-
-<p>
-parsakaramisarabii@gmail.com
-</p>
-
-</div>
-
-
-<div class="contact-box">
-
-<h3>🎓 تحصیلات</h3>
-
-<p>
-دانشجوی رشته حقوق
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<footer>
-
-ساخته شده با <span>❤️</span> توسط پارسا کرمی
+<input
+type="text"
+id="orderCode"
+placeholder="مثلاً 10025"
+>
 
 <br>
 
-© 2026 تمامی حقوق محفوظ است
+<button onclick="trackOrder()">
+پیگیری سفارش
+</button>
+
+<div id="trackingResult"></div>
+
+</div>
+
+</section>
+
+
+
+<!-- PAYMENT -->
+
+<section id="payment">
+
+<div class="section-title">
+
+<span>PAYMENT</span>
+
+<h2>پرداخت</h2>
+
+<div class="section-line"></div>
+
+</div>
+
+
+<div class="about-box">
+
+<p>
+برای پرداخت سفارش می‌توانید از لینک پرداخت استفاده کنید.
+</p>
+
+<br>
+
+<a
+href="#"
+class="gold-button"
+onclick="paymentMessage()"
+>
+ورود به درگاه پرداخت
+</a>
+
+<p style="font-size:13px;margin-top:20px;">
+درگاه واقعی در مرحله بعدی به سایت متصل خواهد شد.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="section-title">
+
+<span>CONTACT</span>
+
+<h2>ارتباط با من</h2>
+
+<div class="section-line"></div>
+
+</div>
+
+
+<div class="contact">
+
+
+<div class="contact-item">
+
+<h3>
+تلفن
+</h3>
+
+<a href="tel:09302869446">
+09302869446
+</a>
+
+</div>
+
+
+<div class="contact-item">
+
+<h3>
+ایمیل
+</h3>
+
+<a href="mailto:parsakaramisarabii@gmail.com">
+parsakaramisarabii@gmail.com
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+</div>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 تمامی حقوق محفوظ است |
+
+<span>
+پارسا کرمی
+</span>
 
 </footer>
 
 
+
 <script>
 
-function welcome(){
 
-const message=document.getElementById("welcomeMessage");
+function buyProduct(product){
 
-message.innerHTML="🎉 خوش آمدید! ❤️";
+alert(
+"محصول انتخاب شد:\n\n" +
+product +
+"\n\nبرای ادامه خرید به بخش پرداخت هدایت می‌شوید."
+);
 
-for(let i=0;i<12;i++){
+}
 
-const heart=document.createElement("div");
 
-heart.className="heart";
 
-heart.innerHTML="❤️";
+function trackOrder(){
 
-heart.style.left=Math.random()*90+"%";
+let code =
+document.getElementById("orderCode").value;
 
-heart.style.top="65%";
+let result =
+document.getElementById("trackingResult");
 
-heart.style.animationDelay=(i*.1)+"s";
 
-document.body.appendChild(heart);
+if(code.trim()===""){
 
-setTimeout(function(){
+result.innerHTML=
+"لطفاً کد سفارش را وارد کنید.";
 
-heart.remove();
+}else{
 
-},2200);
+result.innerHTML=
+"سفارش شماره " +
+code +
+" در سیستم ثبت شده و در حال بررسی است.";
 
 }
 
 }
+
+
+
+function paymentMessage(){
+
+alert(
+"درگاه پرداخت\n\n" +
+"این بخش فعلاً نمایشی است.\n" +
+"در مرحله بعد می‌توانیم لینک پرداخت واقعی را اضافه کنیم."
+);
+
+}
+
 
 </script>
+
 
 </body>
 
