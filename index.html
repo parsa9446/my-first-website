@@ -1,260 +1,326 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>سایت کرمی</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
-      color: #172554;
-      text-align: center;
-      direction: rtl;
-      transition: 0.4s;
-    }
+    <title>سایت پارسا</title>
 
-    body.dark {
-      background: #0f172a;
-      color: white;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    nav {
-      background-color: #172554;
-      padding: 18px 8px;
-    }
+        body {
+            min-height: 100vh;
+            font-family: Tahoma, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 7px;
-      font-size: 16px;
-      font-weight: bold;
-    }
+            background: linear-gradient(
+                135deg,
+                #0f2027,
+                #203a43,
+                #2c5364,
+                #6a11cb,
+                #2575fc
+            );
 
-    .box {
-      background-color: white;
-      max-width: 550px;
-      margin: 40px auto;
-      padding: 30px 20px;
-      border-radius: 25px;
-      box-shadow: 0 10px 30px #777;
-    }
+            background-size: 400% 400%;
+            animation: backgroundMove 12s ease infinite;
+        }
 
-    body.dark .box {
-      background-color: #1e293b;
-      color: white;
-    }
+        @keyframes backgroundMove {
+            0% {
+                background-position: 0% 50%;
+            }
 
-    .profile {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 6px solid #74ebd5;
-    }
+            50% {
+                background-position: 100% 50%;
+            }
 
-    h1 {
-      font-size: 30px;
-    }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
 
-    p {
-      font-size: 18px;
-      line-height: 1.8;
-    }
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(3px);
+            opacity: 0.35;
+            animation: float 8s infinite ease-in-out;
+        }
 
-    .cards {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
+        .circle.one {
+            width: 220px;
+            height: 220px;
+            background: #00f2fe;
+            top: 5%;
+            left: 5%;
+        }
 
-    .card {
-      background-color: #e0f2fe;
-      width: 130px;
-      padding: 18px 10px;
-      border-radius: 18px;
-      font-weight: bold;
-    }
+        .circle.two {
+            width: 180px;
+            height: 180px;
+            background: #ff00cc;
+            bottom: 5%;
+            right: 5%;
+            animation-delay: 2s;
+        }
 
-    body.dark .card {
-      background-color: #334155;
-      color: white;
-    }
+        .circle.three {
+            width: 120px;
+            height: 120px;
+            background: #ffff00;
+            bottom: 20%;
+            left: 15%;
+            animation-delay: 4s;
+        }
 
-    button {
-      background-color: #172554;
-      color: white;
-      border: none;
-      padding: 14px 25px;
-      border-radius: 30px;
-      font-size: 17px;
-      margin: 10px;
-    }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
 
-    .theme {
-      background-color: #f59e0b;
-    }
+            50% {
+                transform: translateY(-35px) translateX(20px);
+            }
+        }
 
-    .phone {
-      display: inline-block;
-      background-color: #16a34a;
-      color: white;
-      padding: 14px 25px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 18px;
-      margin-top: 15px;
-    }
+        .card {
+            position: relative;
+            z-index: 2;
 
-    .project {
-      background-color: #f1f5f9;
-      margin: 15px 0;
-      padding: 20px;
-      border-radius: 18px;
-    }
+            width: 90%;
+            max-width: 600px;
 
-    body.dark .project {
-      background-color: #334155;
-    }
+            padding: 55px 35px;
 
-    .page {
-      display: none;
-    }
+            text-align: center;
 
-    .active {
-      display: block;
-    }
-  </style>
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+
+            border-radius: 30px;
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, 0.35);
+
+            color: white;
+
+            animation: cardAppear 1.2s ease;
+        }
+
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .emoji {
+            font-size: 65px;
+            margin-bottom: 20px;
+
+            animation: wave 2s infinite;
+        }
+
+        @keyframes wave {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(12deg);
+            }
+
+            75% {
+                transform: rotate(-12deg);
+            }
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+
+            text-shadow:
+                0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 2;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        .clock {
+            display: inline-block;
+
+            padding: 10px 20px;
+
+            margin-bottom: 25px;
+
+            border-radius: 50px;
+
+            background: rgba(255, 255, 255, 0.15);
+
+            font-size: 18px;
+        }
+
+        button {
+            border: none;
+            outline: none;
+
+            padding: 15px 35px;
+
+            border-radius: 50px;
+
+            background: white;
+            color: #333;
+
+            font-size: 17px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.25);
+
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-5px) scale(1.05);
+
+            box-shadow:
+                0 15px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            min-height: 30px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 13px;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 500px) {
+            .card {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 19px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+
+            .emoji {
+                font-size: 50px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <nav>
-    <a href="#" onclick="showPage('home')">🏠 خانه</a>
-    <a href="#" onclick="showPage('about')">👨‍💻 درباره من</a>
-    <a href="#" onclick="showPage('skills')">🛠️ مهارت‌ها</a>
-    <a href="#" onclick="showPage('projects')">📁 نمونه‌کارها</a>
-    <a href="#" onclick="showPage('contact')">📞 تماس</a>
-  </nav>
+    <div class="circle one"></div>
+    <div class="circle two"></div>
+    <div class="circle three"></div>
 
-  <div class="box">
+    <div class="card">
 
-    <div id="home" class="page active">
+        <div class="emoji">👋</div>
 
-      <img
-        class="profile"
-        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400"
-        alt="تصویر">
+        <h1>سلام!</h1>
 
-      <h1>سلام 👋</h1>
+        <h2>به اولین سایت پارسا خوش آمدید 🚀</h2>
 
-      <p>
-        به سایت شخصی <strong>پارسا کرمی</strong> خوش آمدید 🌟
-      </p>
+        <p>
+            این سایت رو خودم ساختم و تازه اول راهه!
+            <br>
+            قراره هر روز جذاب‌تر و حرفه‌ای‌ترش کنم 😎
+        </p>
 
-      <p>
-        اینجا جاییه که مسیر یادگیری و پروژه‌های من رو می‌بینید.
-      </p>
+        <div class="clock" id="clock">
+            ساعت: در حال بارگذاری...
+        </div>
 
-      <button onclick="alert('به سایت کرمی خوش آمدید ❤️')">
-        ورود به سایت
-      </button>
+        <br>
 
-      <button class="theme" onclick="darkMode()">
-        🌙 حالت شب
-      </button>
+        <button onclick="showMessage()">
+            ✨ کلیک کن!
+        </button>
 
-    </div>
+        <div id="message"></div>
 
-    <div id="about" class="page">
-
-      <h1>درباره من 👨‍💻</h1>
-
-      <p>سلام! من پارسا کرمی هستم.</p>
-
-      <p>
-        در حال یادگیری مهارت‌های کامپیوتری و طراحی سایت هستم
-        و این سایت اولین پروژه شخصی منه.
-      </p>
-
-      <p>
-        هدفم اینه که مهارت‌هام رو بیشتر کنم و وارد بازار کار بشم. 🚀
-      </p>
+        <div class="footer">
+            ساخته شده با ❤️ و کمی کدنویسی
+        </div>
 
     </div>
 
-    <div id="skills" class="page">
+    <script>
+        function updateClock() {
+            const now = new Date();
 
-      <h1>مهارت‌های من 🛠️</h1>
+            const time =
+                now.getHours().toString().padStart(2, "0")
+                + ":"
+                +
+                now.getMinutes().toString().padStart(2, "0")
+                + ":"
+                +
+                now.getSeconds().toString().padStart(2, "0");
 
-      <div class="cards">
+            document.getElementById("clock").innerText =
+                "🕐 ساعت: " + time;
+        }
 
-        <div class="card">📊<br>Excel</div>
-        <div class="card">📄<br>Word</div>
-        <div class="card">🎞️<br>PowerPoint</div>
-        <div class="card">💻<br>طراحی سایت</div>
+        setInterval(updateClock, 1000);
 
-      </div>
+        updateClock();
 
-    </div>
-
-    <div id="projects" class="page">
-
-      <h1>نمونه‌کارهای من 📁</h1>
-
-      <div class="project">
-        <h2>📊 پروژه Excel</h2>
-        <p>ساخت جدول، فیلتر، نمودار و گزارش‌گیری با Excel.</p>
-      </div>
-
-      <div class="project">
-        <h2>🌐 اولین سایت من</h2>
-        <p>همین سایتی که الان در حال ساختنش هستیم!</p>
-      </div>
-
-      <div class="project">
-        <h2>🚀 پروژه‌های آینده</h2>
-        <p>به‌زودی پروژه‌های بیشتری اضافه می‌کنم.</p>
-      </div>
-
-    </div>
-
-    <div id="contact" class="page">
-
-      <h1>تماس با من 📱</h1>
-
-      <p>برای ارتباط با من می‌توانید با شماره زیر تماس بگیرید:</p>
-
-      <a class="phone" href="tel:09302869446">
-        📞 09302869446
-      </a>
-
-    </div>
-
-  </div>
-
-  <script>
-
-    function showPage(pageId) {
-
-      document.querySelectorAll('.page').forEach(function(page) {
-        page.classList.remove('active');
-      });
-
-      document.getElementById(pageId).classList.add('active');
-
-    }
-
-    function darkMode() {
-      document.body.classList.toggle('dark');
-    }
-
-  </script>
+        function showMessage() {
+            document.getElementById("message").innerText =
+                "🎉 آفرین! سایتت زنده‌ست 😎🔥";
+        }
+    </script>
 
 </body>
 </html>
