@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>پارسا کرمی | مرکز حقوقی و خدمات</title>
+<title>پارسا کرمی | مرکز حقوقی و خدمات هوشمند</title>
 
 <style>
 
@@ -22,19 +22,17 @@ scroll-behavior:smooth;
 body{
 font-family:Tahoma,Arial,sans-serif;
 background:
-radial-gradient(circle at top right,#183b5b,#071421 45%,#02080d);
-color:white;
+radial-gradient(circle at 90% 0%,#193c5b 0%,#081725 38%,#02070c 75%);
+color:#fff;
 min-height:100vh;
 line-height:1.9;
 }
 
-/* HEADER */
-
 header{
 position:sticky;
 top:0;
-z-index:999;
-background:rgba(3,10,17,.94);
+z-index:9999;
+background:rgba(2,9,16,.95);
 backdrop-filter:blur(18px);
 border-bottom:1px solid rgba(255,215,0,.18);
 }
@@ -42,7 +40,7 @@ border-bottom:1px solid rgba(255,215,0,.18);
 .header-inner{
 max-width:1250px;
 margin:auto;
-padding:14px 22px;
+padding:13px 20px;
 display:flex;
 align-items:center;
 justify-content:space-between;
@@ -67,6 +65,7 @@ justify-content:center;
 background:linear-gradient(135deg,#ffd700,#a87500);
 color:#111;
 font-size:25px;
+box-shadow:0 8px 25px rgba(255,215,0,.12);
 }
 
 .logo-text{
@@ -76,9 +75,9 @@ font-weight:bold;
 }
 
 .logo-sub{
-font-size:10px;
-color:#aaa;
 display:block;
+font-size:10px;
+color:#8f9ba5;
 }
 
 .nav{
@@ -95,6 +94,7 @@ padding:9px 12px;
 border-radius:12px;
 cursor:pointer;
 transition:.25s;
+font-family:inherit;
 }
 
 .nav button:hover,
@@ -102,6 +102,7 @@ transition:.25s;
 background:linear-gradient(135deg,#ffd700,#b98a00);
 color:#111;
 font-weight:bold;
+transform:translateY(-2px);
 }
 
 .menu-btn{
@@ -116,8 +117,6 @@ border-radius:13px;
 cursor:pointer;
 }
 
-/* HERO */
-
 .hero{
 max-width:1150px;
 margin:auto;
@@ -127,7 +126,7 @@ text-align:center;
 
 .badge{
 display:inline-block;
-padding:7px 15px;
+padding:7px 16px;
 border-radius:30px;
 border:1px solid rgba(255,215,0,.25);
 background:rgba(255,215,0,.08);
@@ -145,7 +144,7 @@ background:linear-gradient(90deg,#fff,#ffd700);
 }
 
 .hero p{
-max-width:750px;
+max-width:780px;
 margin:20px auto;
 color:#bdc6ce;
 font-size:16px;
@@ -162,6 +161,7 @@ font-weight:bold;
 cursor:pointer;
 margin-top:15px;
 transition:.25s;
+font-family:inherit;
 text-decoration:none;
 }
 
@@ -188,8 +188,6 @@ animation:pulse 1.2s infinite;
 .welcome h2{
 color:#ffd700;
 }
-
-/* SECTIONS */
 
 .container{
 width:min(1150px,92%);
@@ -224,8 +222,6 @@ font-size:30px;
 color:#9da8b3;
 font-size:14px;
 }
-
-/* CARDS */
 
 .grid{
 display:grid;
@@ -269,8 +265,6 @@ color:#bac4cc;
 font-size:14px;
 }
 
-/* LAWYER */
-
 .lawyer{
 max-width:750px;
 margin:auto;
@@ -310,8 +304,6 @@ background:rgba(255,255,255,.04);
 border-radius:12px;
 }
 
-/* SEARCH */
-
 .search{
 margin-bottom:20px;
 }
@@ -325,13 +317,12 @@ border-radius:14px;
 color:white;
 outline:none;
 font-size:14px;
+font-family:inherit;
 }
 
 .search input:focus{
 border-color:#ffd700;
 }
-
-/* CATEGORY */
 
 .categories{
 display:flex;
@@ -347,14 +338,13 @@ color:#ccc;
 padding:9px 14px;
 border-radius:12px;
 cursor:pointer;
+font-family:inherit;
 }
 
 .categories button.active{
 background:#ffd700;
 color:#111;
 }
-
-/* LAW */
 
 .law{
 padding:0;
@@ -394,8 +384,6 @@ margin-bottom:20px;
 font-size:13px;
 }
 
-/* TIPS */
-
 .tip-number{
 width:36px;
 height:36px;
@@ -408,8 +396,6 @@ justify-content:center;
 font-weight:bold;
 margin-bottom:10px;
 }
-
-/* QUIZ */
 
 .quiz{
 margin-bottom:18px;
@@ -429,8 +415,6 @@ margin-top:12px;
 font-weight:bold;
 }
 
-/* INPUT */
-
 select,
 .card input{
 width:100%;
@@ -441,9 +425,196 @@ border:1px solid rgba(255,255,255,.12);
 border-radius:12px;
 color:white;
 outline:none;
+font-family:inherit;
 }
 
-/* CONTACT */
+/* بیمه */
+
+.insurance-hero{
+position:relative;
+overflow:hidden;
+padding:32px;
+border-radius:28px;
+background:
+linear-gradient(135deg,rgba(255,215,0,.12),rgba(255,255,255,.035));
+border:1px solid rgba(255,215,0,.2);
+margin-bottom:25px;
+}
+
+.insurance-hero:after{
+content:"🛡️";
+position:absolute;
+left:25px;
+top:20px;
+font-size:80px;
+opacity:.08;
+}
+
+.insurance-hero h3{
+font-size:28px;
+color:#ffd700;
+margin-bottom:10px;
+}
+
+.insurance-hero p{
+color:#c2ccd4;
+max-width:800px;
+}
+
+.simple-flow{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:12px;
+margin:25px 0;
+}
+
+.flow-box{
+text-align:center;
+padding:20px 12px;
+background:rgba(255,255,255,.045);
+border:1px solid rgba(255,255,255,.07);
+border-radius:18px;
+}
+
+.flow-number{
+width:38px;
+height:38px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:0 auto 10px;
+background:#ffd700;
+color:#111;
+font-weight:bold;
+}
+
+.flow-box h4{
+color:#fff;
+margin-bottom:5px;
+}
+
+.flow-box p{
+font-size:12px;
+color:#9da8b3;
+}
+
+.plan-card{
+position:relative;
+overflow:hidden;
+}
+
+.plan-icon{
+font-size:45px;
+margin-bottom:10px;
+}
+
+.plan-tag{
+position:absolute;
+left:15px;
+top:15px;
+font-size:10px;
+padding:5px 9px;
+border-radius:20px;
+background:rgba(255,255,255,.08);
+color:#ccc;
+}
+
+.plan-card.gold{
+border-color:rgba(255,215,0,.3);
+}
+
+.plan-card.silver{
+border-color:rgba(210,220,230,.25);
+}
+
+.plan-card.copper{
+border-color:rgba(190,100,45,.3);
+}
+
+.plan-list{
+list-style:none;
+margin-top:15px;
+color:#bfc8d0;
+font-size:13px;
+}
+
+.plan-list li{
+margin:7px 0;
+}
+
+.calculator{
+margin-top:25px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.calc-box{
+background:rgba(255,255,255,.045);
+border:1px solid rgba(255,255,255,.08);
+border-radius:22px;
+padding:24px;
+}
+
+.calc-box h3{
+color:#ffd700;
+}
+
+.calc-result{
+margin-top:18px;
+padding:20px;
+border-radius:17px;
+background:rgba(255,215,0,.08);
+border:1px solid rgba(255,215,0,.2);
+text-align:center;
+}
+
+.calc-result strong{
+display:block;
+font-size:26px;
+color:#ffd700;
+margin-top:8px;
+}
+
+.disclaimer{
+margin-top:20px;
+padding:18px;
+border-radius:17px;
+background:rgba(255,100,80,.07);
+border:1px solid rgba(255,100,80,.18);
+color:#c7cfd5;
+font-size:13px;
+}
+
+.faq{
+margin-top:25px;
+}
+
+.faq-item{
+margin-bottom:10px;
+}
+
+.faq-question{
+cursor:pointer;
+padding:15px;
+background:rgba(255,255,255,.045);
+border-radius:14px;
+color:#ffd700;
+}
+
+.faq-answer{
+display:none;
+padding:14px;
+color:#bfc8d0;
+font-size:13px;
+background:rgba(255,255,255,.025);
+border-radius:0 0 14px 14px;
+}
+
+.faq-answer.open{
+display:block;
+}
 
 .contact{
 max-width:750px;
@@ -459,8 +630,6 @@ display:inline-block;
 margin-top:5px;
 }
 
-/* FOOTER */
-
 footer{
 margin-top:40px;
 padding:35px 20px;
@@ -474,8 +643,6 @@ font-size:13px;
 footer strong{
 color:#ffd700;
 }
-
-/* ANIMATION */
 
 @keyframes show{
 from{
@@ -497,8 +664,6 @@ transform:scale(1.18);
 }
 }
 
-/* MOBILE */
-
 @media(max-width:850px){
 
 .menu-btn{
@@ -517,6 +682,14 @@ display:grid;
 
 .nav button{
 width:100%;
+}
+
+.simple-flow{
+grid-template-columns:repeat(2,1fr);
+}
+
+.calculator{
+grid-template-columns:1fr;
 }
 
 }
@@ -539,6 +712,14 @@ font-size:25px;
 padding:20px;
 }
 
+.simple-flow{
+grid-template-columns:1fr;
+}
+
+.insurance-hero h3{
+font-size:23px;
+}
+
 }
 
 </style>
@@ -547,8 +728,6 @@ padding:20px;
 
 <body>
 
-
-<!-- HEADER -->
 
 <header>
 
@@ -567,7 +746,7 @@ padding:20px;
 </div>
 
 <span class="logo-sub">
-مرکز حقوقی و خدمات
+مرکز حقوقی و خدمات هوشمند
 </span>
 
 </div>
@@ -602,6 +781,10 @@ padding:20px;
 📝 آزمون
 </button>
 
+<button onclick="showSection('insurance',this)">
+🛡️ بیمه هوشمند
+</button>
+
 <button onclick="showSection('internet',this)">
 📱 شارژ و اینترنت
 </button>
@@ -621,9 +804,6 @@ padding:20px;
 </header>
 
 
-
-<!-- HOME -->
-
 <section class="hero" id="home">
 
 <div class="badge">
@@ -633,20 +813,18 @@ padding:20px;
 <h1>
 دانش حقوق،
 <br>
-ساده و حرفه‌ای
+ساده، هوشمند و حرفه‌ای
 </h1>
 
 <p>
 به وب‌سایت پارسا کرمی خوش آمدید.
-در این سایت می‌توانید به بخش‌های حقوقی،
-مواد قانونی، نکات آموزشی، آزمون‌ها و خدمات
-دیجیتال دسترسی داشته باشید.
+در اینجا می‌توانید به مطالب حقوقی، مواد قانونی،
+آزمون‌ها، خدمات دیجیتال و ایده‌های نوآورانه دسترسی داشته باشید.
 </p>
 
 <button class="gold-btn" onclick="welcome()">
 ✨ ورود به سایت
 </button>
-
 
 <div class="welcome" id="welcome">
 
@@ -668,11 +846,8 @@ padding:20px;
 </section>
 
 
-
 <div class="container">
 
-
-<!-- LAWYER -->
 
 <section class="section" id="lawyer">
 
@@ -692,7 +867,6 @@ LEGAL PROFESSIONAL
 
 </div>
 
-
 <div class="card lawyer">
 
 <div class="avatar">
@@ -706,7 +880,6 @@ LEGAL PROFESSIONAL
 <div class="lawyer-title">
 وکیل پایه یک دادگستری
 </div>
-
 
 <div class="info">
 
@@ -727,7 +900,6 @@ LEGAL PROFESSIONAL
 
 </div>
 
-
 <a
 href="tel:09127068454"
 class="gold-btn">
@@ -740,9 +912,6 @@ class="gold-btn">
 
 </section>
 
-
-
-<!-- LAWS -->
 
 <section class="section" id="laws">
 
@@ -762,14 +931,12 @@ LAW DATABASE
 
 </div>
 
-
 <div class="notice">
 
 ⚠️ این بخش آموزشی است. برای استفاده حرفه‌ای،
 متن رسمی و آخرین اصلاحات قوانین را بررسی کنید.
 
 </div>
-
 
 <div class="search">
 
@@ -779,7 +946,6 @@ placeholder="🔎 جست‌وجو در مواد قانونی..."
 oninput="renderLaws()">
 
 </div>
-
 
 <div class="categories">
 
@@ -806,14 +972,10 @@ onclick="setCategory('همه',this)">
 
 </div>
 
-
 <div id="lawList"></div>
 
 </section>
 
-
-
-<!-- TIPS -->
 
 <section class="section" id="tips">
 
@@ -833,7 +995,6 @@ LEGAL TIPS
 
 </div>
 
-
 <div class="search">
 
 <input
@@ -843,14 +1004,10 @@ oninput="renderTips()">
 
 </div>
 
-
 <div class="grid" id="tipList"></div>
 
 </section>
 
-
-
-<!-- QUIZ -->
 
 <section class="section" id="quiz">
 
@@ -870,14 +1027,507 @@ LEGAL QUIZ
 
 </div>
 
-
 <div id="quizList"></div>
 
 </section>
 
 
+<!-- بیمه بیکاری هوشمند -->
 
-<!-- INTERNET -->
+<section class="section" id="insurance">
+
+<div class="section-title">
+
+<span>
+SMART UNEMPLOYMENT INSURANCE
+</span>
+
+<h2>
+🛡️ بیمه بیکاری هوشمند
+</h2>
+
+<p>
+یک ایده نوآورانه برای ایجاد پشتوانه مالی در زمان بیکاری
+</p>
+
+</div>
+
+
+<div class="insurance-hero">
+
+<h3>
+🥇 بیمه بیکاری مبتنی بر طلا، نقره و مس
+</h3>
+
+<p>
+ایده این طرح ساده است:
+فرد در دوران اشتغال یا زمانی که درآمد دارد،
+مبلغی را برای ایجاد پشتوانه بیکاری اختصاص می‌دهد.
+در مدل مفهومی این سایت، این پشتوانه می‌تواند
+به‌صورت ترکیبی از طلا، نقره و مس در نظر گرفته شود.
+</p>
+
+<br>
+
+<p>
+هدف این ایده این است که فرد فقط به دریافت پول نقد
+وابسته نباشد و بخشی از پشتوانه مالی او در قالب
+دارایی‌های مختلف تعریف شود.
+</p>
+
+</div>
+
+
+<div class="section-title">
+
+<h2>
+🔄 این طرح چطور کار می‌کند؟
+</h2>
+
+</div>
+
+
+<div class="simple-flow">
+
+<div class="flow-box">
+
+<div class="flow-number">
+1
+</div>
+
+<h4>
+ثبت‌نام
+</h4>
+
+<p>
+فرد نوع طرح و میزان پرداخت خود را انتخاب می‌کند.
+</p>
+
+</div>
+
+
+<div class="flow-box">
+
+<div class="flow-number">
+2
+</div>
+
+<h4>
+ایجاد پشتوانه
+</h4>
+
+<p>
+در مدل مفهومی، مبالغ به دارایی‌هایی مانند طلا، نقره یا مس اختصاص داده می‌شوند.
+</p>
+
+</div>
+
+
+<div class="flow-box">
+
+<div class="flow-number">
+3
+</div>
+
+<h4>
+دوران بیکاری
+</h4>
+
+<p>
+در صورت تحقق شرایط قرارداد، فرد درخواست استفاده از حمایت را ثبت می‌کند.
+</p>
+
+</div>
+
+
+<div class="flow-box">
+
+<div class="flow-number">
+4
+</div>
+
+<h4>
+پرداخت حمایت
+</h4>
+
+<p>
+بر اساس قرارداد و ارزش دارایی، حمایت مالی محاسبه و پرداخت می‌شود.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="section-title">
+
+<span>
+THREE PLANS
+</span>
+
+<h2>
+انتخاب نوع پشتوانه
+</h2>
+
+<p>
+سه مدل پیشنهادی برای نمایش ایده
+</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<div class="card plan-card gold">
+
+<span class="plan-tag">
+طرح ۱
+</span>
+
+<div class="plan-icon">
+🥇
+</div>
+
+<h3>
+طرح طلایی
+</h3>
+
+<p>
+تمرکز بیشتر بر طلا به عنوان دارایی اصلی پشتوانه.
+</p>
+
+<ul class="plan-list">
+
+<li>✓ مناسب افراد علاقه‌مند به طلا</li>
+<li>✓ امکان تعریف سهم طلا در قرارداد</li>
+<li>✓ نمایش ارزش تقریبی پشتوانه</li>
+<li>✓ مناسب برای مدل‌های بلندمدت</li>
+
+</ul>
+
+<button
+class="gold-btn"
+onclick="selectPlan('طلا')">
+
+انتخاب طرح طلا
+
+</button>
+
+</div>
+
+
+<div class="card plan-card silver">
+
+<span class="plan-tag">
+طرح ۲
+</span>
+
+<div class="plan-icon">
+🥈
+</div>
+
+<h3>
+طرح نقره‌ای
+</h3>
+
+<p>
+پشتوانه‌ای با تمرکز بیشتر بر نقره.
+</p>
+
+<ul class="plan-list">
+
+<li>✓ ورود با مبالغ قابل تنظیم</li>
+<li>✓ امکان تعیین سهم نقره</li>
+<li>✓ قابلیت ترکیب با طلا و مس</li>
+<li>✓ مناسب مدل‌های متنوع</li>
+
+</ul>
+
+<button
+class="gold-btn"
+onclick="selectPlan('نقره')">
+
+انتخاب طرح نقره
+
+</button>
+
+</div>
+
+
+<div class="card plan-card copper">
+
+<span class="plan-tag">
+طرح ۳
+</span>
+
+<div class="plan-icon">
+🥉
+</div>
+
+<h3>
+طرح مسی
+</h3>
+
+<p>
+مدلی با تمرکز بیشتر بر مس و امکان ترکیب با سایر دارایی‌ها.
+</p>
+
+<ul class="plan-list">
+
+<li>✓ امکان شروع با مبالغ متفاوت</li>
+<li>✓ قابلیت ترکیب دارایی‌ها</li>
+<li>✓ تنوع در پشتوانه</li>
+<li>✓ مناسب مدل‌های ترکیبی</li>
+
+</ul>
+
+<button
+class="gold-btn"
+onclick="selectPlan('مس')">
+
+انتخاب طرح مس
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="section-title" style="margin-top:50px;">
+
+<span>
+SMART CALCULATOR
+</span>
+
+<h2>
+🧮 محاسبه‌گر نمونه
+</h2>
+
+<p>
+برای درک ساده‌تر سازوکار ایده
+</p>
+
+</div>
+
+
+<div class="calculator">
+
+
+<div class="calc-box">
+
+<h3>
+اطلاعات اولیه
+</h3>
+
+<label>
+مبلغ ماهانه:
+</label>
+
+<input
+type="number"
+id="monthly"
+placeholder="مثلاً 1000000">
+
+<label>
+مدت پرداخت:
+</label>
+
+<select id="months">
+
+<option value="6">
+۶ ماه
+</option>
+
+<option value="12">
+۱۲ ماه
+</option>
+
+<option value="24">
+۲۴ ماه
+</option>
+
+<option value="36">
+۳۶ ماه
+</option>
+
+</select>
+
+<label>
+نوع پشتوانه:
+</label>
+
+<select id="asset">
+
+<option value="ترکیبی">
+ترکیبی؛ طلا + نقره + مس
+</option>
+
+<option value="طلا">
+تمرکز بر طلا
+</option>
+
+<option value="نقره">
+تمرکز بر نقره
+</option>
+
+<option value="مس">
+تمرکز بر مس
+</option>
+
+</select>
+
+<button
+class="gold-btn"
+onclick="calculateInsurance()">
+
+محاسبه نمونه
+
+</button>
+
+</div>
+
+
+<div class="calc-box">
+
+<h3>
+📊 نتیجه تقریبی
+</h3>
+
+<div class="calc-result">
+
+مجموع مبالغ پرداختی نمونه:
+
+<strong id="totalResult">
+۰ تومان
+</strong>
+
+<p id="assetResult">
+نوع پشتوانه: ترکیبی
+</p>
+
+</div>
+
+<p style="margin-top:15px;color:#9da8b3;font-size:12px;">
+این عدد صرفاً برای نمایش ایده است و
+به معنی مبلغ واقعی بیمه یا تعهد پرداخت نیست.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="disclaimer">
+
+⚠️ <strong>توضیح بسیار مهم:</strong>
+
+این بخش در حال حاضر یک
+<strong>ایده و نمونه مفهومی</strong>
+برای نمایش در وب‌سایت است.
+این صفحه به‌تنهایی قرارداد بیمه ایجاد نمی‌کند،
+قیمت طلا، نقره یا مس را تضمین نمی‌کند،
+سود سرمایه‌گذاری را تضمین نمی‌کند و
+به‌عنوان بیمه‌نامه واقعی قابل استفاده نیست.
+
+برای تبدیل این ایده به یک محصول واقعی،
+باید ساختار حقوقی، مقررات بیمه‌ای، نحوه نگهداری دارایی،
+روش ارزش‌گذاری، شرایط دریافت مزایا،
+ریسک نوسان قیمت و مجوزهای لازم به‌صورت تخصصی بررسی شود.
+
+</div>
+
+
+<div class="faq">
+
+<div class="section-title">
+
+<h2>
+❓ سؤال‌های متداول
+</h2>
+
+</div>
+
+
+<div class="faq-item">
+
+<div class="faq-question"
+onclick="toggleFaq(this)">
+آیا فرد پول خود را مستقیماً طلا، نقره و مس می‌کند؟
+</div>
+
+<div class="faq-answer">
+
+در این ایده، هدف ایجاد یک پشتوانه مبتنی بر دارایی است.
+نحوه واقعی خرید، نگهداری، مالکیت و ارزش‌گذاری دارایی‌ها
+باید در قرارداد و چارچوب قانونی مشخص شود.
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<div class="faq-question"
+onclick="toggleFaq(this)">
+اگر فرد بیکار نشود چه اتفاقی می‌افتد؟
+</div>
+
+<div class="faq-answer">
+
+این موضوع باید در مدل واقعی محصول از ابتدا مشخص شود؛
+مثلاً می‌توان برای پایان دوره، تمدید، برداشت،
+انتقال یا ادامه پوشش شرایط مشخصی تعریف کرد.
+این سایت فقط ایده را نمایش می‌دهد.
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<div class="faq-question"
+onclick="toggleFaq(this)">
+اگر قیمت طلا یا نقره کاهش پیدا کند چه می‌شود؟
+</div>
+
+<div class="faq-answer">
+
+این یکی از مهم‌ترین ریسک‌های طرح است.
+در محصول واقعی باید روش مدیریت نوسان قیمت،
+حداقل تعهد، ذخیره احتیاطی و نحوه محاسبه مزایا
+به‌صورت دقیق در قرارداد مشخص شود.
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<div class="faq-question"
+onclick="toggleFaq(this)">
+آیا این طرح همین الان بیمه واقعی است؟
+</div>
+
+<div class="faq-answer">
+
+خیر. این قسمت یک نمونه مفهومی برای معرفی ایده است
+و تا زمانی که ساختار حقوقی، مجوزها، قراردادها و
+زیرساخت اجرایی آن ایجاد نشده باشد، نباید به‌عنوان
+بیمه واقعی یا تضمین مالی معرفی شود.
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
 
 <section class="section" id="internet">
 
@@ -897,7 +1547,6 @@ DIGITAL SERVICES
 
 </div>
 
-
 <div class="notice">
 
 این بخش فعلاً نمایشی است.
@@ -905,7 +1554,6 @@ DIGITAL SERVICES
 اپراتورها به سایت متصل شود.
 
 </div>
-
 
 <div class="grid">
 
@@ -922,21 +1570,10 @@ DIGITAL SERVICES
 
 <select>
 
-<option>
-۱۰ هزار تومان
-</option>
-
-<option>
-۲۰ هزار تومان
-</option>
-
-<option>
-۵۰ هزار تومان
-</option>
-
-<option>
-۱۰۰ هزار تومان
-</option>
+<option>۱۰ هزار تومان</option>
+<option>۲۰ هزار تومان</option>
+<option>۵۰ هزار تومان</option>
+<option>۱۰۰ هزار تومان</option>
 
 </select>
 
@@ -967,21 +1604,10 @@ onclick="purchase()">
 
 <select>
 
-<option>
-۱ گیگابایت
-</option>
-
-<option>
-۳ گیگابایت
-</option>
-
-<option>
-۵ گیگابایت
-</option>
-
-<option>
-۱۰ گیگابایت
-</option>
+<option>۱ گیگابایت</option>
+<option>۳ گیگابایت</option>
+<option>۵ گیگابایت</option>
+<option>۱۰ گیگابایت</option>
 
 </select>
 
@@ -1012,21 +1638,10 @@ onclick="purchase()">
 
 <select>
 
-<option>
-۱۰ هزار تومان
-</option>
-
-<option>
-۲۰ هزار تومان
-</option>
-
-<option>
-۵۰ هزار تومان
-</option>
-
-<option>
-۱۰۰ هزار تومان
-</option>
+<option>۱۰ هزار تومان</option>
+<option>۲۰ هزار تومان</option>
+<option>۵۰ هزار تومان</option>
+<option>۱۰۰ هزار تومان</option>
 
 </select>
 
@@ -1057,21 +1672,10 @@ onclick="purchase()">
 
 <select>
 
-<option>
-۱ گیگابایت
-</option>
-
-<option>
-۳ گیگابایت
-</option>
-
-<option>
-۵ گیگابایت
-</option>
-
-<option>
-۱۰ گیگابایت
-</option>
+<option>۱ گیگابایت</option>
+<option>۳ گیگابایت</option>
+<option>۵ گیگابایت</option>
+<option>۱۰ گیگابایت</option>
 
 </select>
 
@@ -1089,14 +1693,10 @@ onclick="purchase()">
 
 </div>
 
-
 </div>
 
 </section>
 
-
-
-<!-- ABOUT -->
 
 <section class="section" id="about">
 
@@ -1111,7 +1711,6 @@ ABOUT
 </h2>
 
 </div>
-
 
 <div class="card contact">
 
@@ -1132,17 +1731,14 @@ ABOUT
 <p>
 این وب‌سایت با هدف ایجاد محیطی ساده،
 زیبا و کاربردی برای مطالعه حقوق،
-آشنایی با قوانین، آزمون و خدمات دیجیتال
-طراحی شده است.
+آشنایی با قوانین، آزمون، خدمات دیجیتال
+و معرفی ایده‌های نوآورانه طراحی شده است.
 </p>
 
 </div>
 
 </section>
 
-
-
-<!-- CONTACT -->
 
 <section class="section" id="contact">
 
@@ -1157,7 +1753,6 @@ CONTACT
 </h2>
 
 </div>
-
 
 <div class="card contact">
 
@@ -1197,7 +1792,6 @@ parsakaramisarabii@gmail.com
 </div>
 
 
-
 <footer>
 
 <p>
@@ -1205,7 +1799,7 @@ parsakaramisarabii@gmail.com
 </p>
 
 <p>
-مرکز حقوقی و خدمات دیجیتال
+مرکز حقوقی و خدمات هوشمند
 </p>
 
 <p>
@@ -1215,17 +1809,9 @@ parsakaramisarabii@gmail.com
 </footer>
 
 
-
 <script>
 
-/* ==========================
-   DATA
-========================== */
-
-
-/* مواد قانونی */
-
-const laws = [
+const laws=[
 
 ["مدنی","ماده 1","انتشار قوانین","قواعد مربوط به انتشار و اجرای قوانین."],
 ["مدنی","ماده 2","اجرای قانون","قواعد مربوط به لازم‌الاجرا شدن قانون."],
@@ -1284,8 +1870,6 @@ const laws = [
 ];
 
 
-/* ۵۰ نکته */
-
 const tips=[
 
 "قبل از امضای قرارداد تمام صفحات را مطالعه کنید.",
@@ -1342,88 +1926,38 @@ const tips=[
 ];
 
 
-/* ۲۰ آزمون */
-
 const quizzes=[
 
-["ماده ۱۰ قانون مدنی درباره چیست?",
-["قراردادهای خصوصی","حضانت","جرم","ثبت شرکت"],0],
-
-["کدام مورد شرط اساسی معامله است?",
-["قصد و رضا","رنگ قرارداد","تعداد صفحات","نوع کاغذ"],0],
-
-["ماده ۲۱۹ قانون مدنی درباره چیست?",
-["لزوم قرارداد","حضانت","ثبت شرکت","جرم"],0],
-
-["تاجر چه کسی است?",
-["کسی که شغل معمولی خود را معاملات تجارتی قرار دهد","هر کارمند","هر دانشجو","هر مالک"],0],
-
-["انواع مجازات در قانون مجازات اسلامی شامل چیست?",
-["حد، قصاص، دیه و تعزیر","مالیات","عوارض","اجاره"],0],
-
-["دادگاه خانواده به چه موضوعاتی رسیدگی می‌کند?",
-["دعاوی خانوادگی","فقط جرایم رانندگی","فقط مالیات","ثبت شرکت"],0],
-
-["در قرارداد مهم چه کاری بهتر است?",
-["مطالعه کامل قرارداد","امضای فوری","حذف صفحات","خالی گذاشتن مبلغ"],0],
-
-["در معامله ملک چه چیزی مهم است?",
-["بررسی مدارک مالکیت","رنگ ساختمان","تعداد پنجره","نوع کفپوش"],0],
-
-["در اختلاف حقوقی چه کاری مفید است?",
-["جمع‌آوری مدارک","حذف پیام‌ها","از بین بردن رسید","نادیده گرفتن ابلاغیه"],0],
-
-["در قرارداد اجاره چه چیزی باید مشخص باشد?",
-["مدت و مبلغ","رنگ دیوار","تعداد مهمان","نوع تلفن"],0],
-
-["در شراکت چه چیزی باید مشخص شود?",
-["سهم و وظایف شرکا","رنگ دفتر","برنامه تعطیلات","غذای مورد علاقه"],0],
-
-["وجه التزام معمولاً برای چیست?",
-["تخلف از تعهد","تغییر سایت","انتخاب نام","خرید اینترنت"],0],
-
-["قانون تجارت بیشتر درباره چیست?",
-["امور تجاری","ازدواج","حضانت","رانندگی"],0],
-
-["قانون حمایت خانواده درباره چیست?",
-["امور خانوادگی","شرکت‌ها","مالیات","گمرک"],0],
-
-["در پرونده قضایی چه چیزی مهم است?",
-["ابلاغیه‌ها","رنگ لباس","مدل گوشی","رنگ خودرو"],0],
-
-["در معاملات مهم چه چیزی را نگه داریم?",
-["رسید و اسناد","تبلیغات","عکس بی‌ربط","پیام‌های غیرمرتبط"],0],
-
-["برای پرونده تخصصی چه اقدامی بهتر است?",
-["مشورت با متخصص حقوقی","حدس زدن قانون","حذف مدارک","نادیده گرفتن پرونده"],0],
-
-["در قرارداد چه چیزی باید روشن باشد?",
-["تعهدات طرفین","رنگ لباس","برنامه سفر","تعداد دوستان"],0],
-
-["در معامله خودرو چه چیزی باید بررسی شود?",
-["شماره شاسی و مدارک","رنگ صندلی","نوع لاستیک فقط","رنگ فرمان"],0],
-
-["در اسناد مهم چه کاری مناسب است?",
-["نگهداری نسخه و رسید","دور انداختن","حذف اطلاعات","امضای بدون مطالعه"],0]
+["ماده ۱۰ قانون مدنی درباره چیست?",["قراردادهای خصوصی","حضانت","جرم","ثبت شرکت"],0],
+["کدام مورد شرط اساسی معامله است?",["قصد و رضا","رنگ قرارداد","تعداد صفحات","نوع کاغذ"],0],
+["ماده ۲۱۹ قانون مدنی درباره چیست?",["لزوم قرارداد","حضانت","ثبت شرکت","جرم"],0],
+["تاجر چه کسی است?",["کسی که شغل معمولی خود را معاملات تجارتی قرار دهد","هر کارمند","هر دانشجو","هر مالک"],0],
+["انواع مجازات در قانون مجازات اسلامی شامل چیست?",["حد، قصاص، دیه و تعزیر","مالیات","عوارض","اجاره"],0],
+["دادگاه خانواده به چه موضوعاتی رسیدگی می‌کند?",["دعاوی خانوادگی","فقط جرایم رانندگی","فقط مالیات","ثبت شرکت"],0],
+["در قرارداد مهم چه کاری بهتر است?",["مطالعه کامل قرارداد","امضای فوری","حذف صفحات","خالی گذاشتن مبلغ"],0],
+["در معامله ملک چه چیزی مهم است?",["بررسی مدارک مالکیت","رنگ ساختمان","تعداد پنجره","نوع کفپوش"],0],
+["در اختلاف حقوقی چه کاری مفید است?",["جمع‌آوری مدارک","حذف پیام‌ها","از بین بردن رسید","نادیده گرفتن ابلاغیه"],0],
+["در قرارداد اجاره چه چیزی باید مشخص باشد?",["مدت و مبلغ","رنگ دیوار","تعداد مهمان","نوع تلفن"],0],
+["در شراکت چه چیزی باید مشخص شود?",["سهم و وظایف شرکا","رنگ دفتر","برنامه تعطیلات","غذای مورد علاقه"],0],
+["وجه التزام معمولاً برای چیست?",["تخلف از تعهد","تغییر سایت","انتخاب نام","خرید اینترنت"],0],
+["قانون تجارت بیشتر درباره چیست?",["امور تجاری","ازدواج","حضانت","رانندگی"],0],
+["قانون حمایت خانواده درباره چیست?",["امور خانوادگی","شرکت‌ها","مالیات","گمرک"],0],
+["در پرونده قضایی چه چیزی مهم است?",["ابلاغیه‌ها","رنگ لباس","مدل گوشی","رنگ خودرو"],0],
+["در معاملات مهم چه چیزی را نگه داریم?",["رسید و اسناد","تبلیغات","عکس بی‌ربط","پیام‌های غیرمرتبط"],0],
+["برای پرونده تخصصی چه اقدامی بهتر است?",["مشورت با متخصص حقوقی","حدس زدن قانون","حذف مدارک","نادیده گرفتن پرونده"],0],
+["در قرارداد چه چیزی باید روشن باشد?",["تعهدات طرفین","رنگ لباس","برنامه سفر","تعداد دوستان"],0],
+["در معامله خودرو چه چیزی باید بررسی شود?",["شماره شاسی و مدارک","رنگ صندلی","نوع لاستیک فقط","رنگ فرمان"],0],
+["در اسناد مهم چه کاری مناسب است?",["نگهداری نسخه و رسید","دور انداختن","حذف اطلاعات","امضای بدون مطالعه"],0]
 
 ];
 
 
-/* ==========================
-   VARIABLES
-========================== */
-
 let category="همه";
 
 
-/* ==========================
-   MENU
-========================== */
-
 function toggleMenu(){
 
-document.getElementById("nav")
-.classList.toggle("open");
+document.getElementById("nav").classList.toggle("open");
 
 }
 
@@ -1432,33 +1966,23 @@ function showSection(id,button){
 
 document.querySelectorAll(".section")
 .forEach(function(section){
-
 section.classList.remove("active");
-
 });
 
 if(id!=="home"){
-
-document.getElementById(id)
-.classList.add("active");
-
+document.getElementById(id).classList.add("active");
 }
 
 document.querySelectorAll(".nav button")
 .forEach(function(btn){
-
 btn.classList.remove("active");
-
 });
 
 if(button){
-
 button.classList.add("active");
-
 }
 
-document.getElementById("nav")
-.classList.remove("open");
+document.getElementById("nav").classList.remove("open");
 
 window.scrollTo({
 top:0,
@@ -1472,9 +1996,7 @@ function goHome(){
 
 document.querySelectorAll(".section")
 .forEach(function(section){
-
 section.classList.remove("active");
-
 });
 
 window.scrollTo({
@@ -1485,17 +2007,11 @@ behavior:"smooth"
 }
 
 
-/* ==========================
-   WELCOME
-========================== */
-
 function welcome(){
 
-document.getElementById("welcome")
-.style.display="block";
+document.getElementById("welcome").style.display="block";
 
-document.getElementById("welcome")
-.scrollIntoView({
+document.getElementById("welcome").scrollIntoView({
 behavior:"smooth",
 block:"center"
 });
@@ -1503,19 +2019,13 @@ block:"center"
 }
 
 
-/* ==========================
-   LAWS
-========================== */
-
 function setCategory(value,button){
 
 category=value;
 
 document.querySelectorAll(".categories button")
 .forEach(function(btn){
-
 btn.classList.remove("active");
-
 });
 
 button.classList.add("active");
@@ -1529,9 +2039,7 @@ function renderLaws(){
 
 let list=document.getElementById("lawList");
 
-let search=document.getElementById("lawSearch")
-.value
-.toLowerCase();
+let search=document.getElementById("lawSearch").value.toLowerCase();
 
 list.innerHTML="";
 
@@ -1540,43 +2048,29 @@ let found=0;
 laws.forEach(function(law){
 
 let cat=law[0];
-
 let number=law[1];
-
 let title=law[2];
-
 let desc=law[3];
 
-
 if(category!=="همه" && cat!==category){
-
 return;
-
 }
 
-
-let text=(cat+" "+number+" "+title+" "+desc)
-.toLowerCase();
+let text=(cat+" "+number+" "+title+" "+desc).toLowerCase();
 
 if(search && !text.includes(search)){
-
 return;
-
 }
 
-
 found++;
-
 
 let div=document.createElement("div");
 
 div.className="card law";
 
-
 div.innerHTML=`
 
-<div class="law-title"
-onclick="openLaw(this)">
+<div class="law-title" onclick="openLaw(this)">
 
 <div>
 
@@ -1599,7 +2093,6 @@ ${title}
 
 </div>
 
-
 <div class="law-content">
 
 <p>
@@ -1616,11 +2109,9 @@ ${desc}
 
 `;
 
-
 list.appendChild(div);
 
 });
-
 
 if(found===0){
 
@@ -1639,23 +2130,18 @@ list.innerHTML=`
 
 function openLaw(element){
 
-let content=
-element.nextElementSibling;
+let content=element.nextElementSibling;
 
-let sign=
-element.querySelector("span:last-child");
-
+let sign=element.querySelector("span:last-child");
 
 if(content.classList.contains("open")){
 
 content.classList.remove("open");
-
 sign.innerText="+";
 
 }else{
 
 content.classList.add("open");
-
 sign.innerText="−";
 
 }
@@ -1663,32 +2149,19 @@ sign.innerText="−";
 }
 
 
-/* ==========================
-   TIPS
-========================== */
-
 function renderTips(){
 
 let list=document.getElementById("tipList");
 
-let search=document.getElementById("tipSearch")
-.value
-.toLowerCase();
+let search=document.getElementById("tipSearch").value.toLowerCase();
 
 list.innerHTML="";
 
-
 tips.forEach(function(tip,index){
 
-if(
-search &&
-!tip.toLowerCase().includes(search)
-){
-
+if(search && !tip.toLowerCase().includes(search)){
 return;
-
 }
-
 
 let div=document.createElement("div");
 
@@ -1717,16 +2190,11 @@ list.appendChild(div);
 }
 
 
-/* ==========================
-   QUIZ
-========================== */
-
 function renderQuiz(){
 
 let list=document.getElementById("quizList");
 
 list.innerHTML="";
-
 
 quizzes.forEach(function(q,index){
 
@@ -1743,7 +2211,6 @@ ${q[0]}
 </p>
 
 `;
-
 
 q[1].forEach(function(option,i){
 
@@ -1764,7 +2231,6 @@ ${option}
 
 });
 
-
 html+=`
 
 <button
@@ -1784,7 +2250,6 @@ id="result${index}">
 
 `;
 
-
 let div=document.createElement("div");
 
 div.innerHTML=html;
@@ -1798,32 +2263,23 @@ list.appendChild(div);
 
 function check(index,correct){
 
-let answers=
-document.getElementsByName("quiz"+index);
+let answers=document.getElementsByName("quiz"+index);
 
 let selected=null;
-
 
 answers.forEach(function(answer){
 
 if(answer.checked){
-
-selected=
-Number(answer.value);
-
+selected=Number(answer.value);
 }
 
 });
 
-
-let result=
-document.getElementById("result"+index);
-
+let result=document.getElementById("result"+index);
 
 if(selected===null){
 
-result.innerText=
-"⚠️ یک گزینه انتخاب کنید.";
+result.innerText="⚠️ یک گزینه انتخاب کنید.";
 
 result.style.color="#ffd700";
 
@@ -1831,18 +2287,15 @@ return;
 
 }
 
-
 if(selected===correct){
 
-result.innerText=
-"✅ پاسخ صحیح است.";
+result.innerText="✅ پاسخ صحیح است.";
 
 result.style.color="#4cff88";
 
 }else{
 
-result.innerText=
-"❌ پاسخ اشتباه است.";
+result.innerText="❌ پاسخ اشتباه است.";
 
 result.style.color="#ff6b6b";
 
@@ -1851,9 +2304,59 @@ result.style.color="#ff6b6b";
 }
 
 
-/* ==========================
-   PURCHASE
-========================== */
+function selectPlan(plan){
+
+document.getElementById("asset").value=plan;
+
+document.getElementById("monthly").focus();
+
+alert(
+"طرح «"+plan+"» انتخاب شد.\n\n"+
+"حالا مبلغ ماهانه و مدت پرداخت را انتخاب کنید."
+);
+
+}
+
+
+function calculateInsurance(){
+
+let monthly=Number(
+document.getElementById("monthly").value
+);
+
+let months=Number(
+document.getElementById("months").value
+);
+
+let asset=document.getElementById("asset").value;
+
+if(!monthly || monthly<=0){
+
+alert("لطفاً مبلغ ماهانه را وارد کنید.");
+
+return;
+
+}
+
+let total=monthly*months;
+
+document.getElementById("totalResult").innerText=
+total.toLocaleString("fa-IR")+" تومان";
+
+document.getElementById("assetResult").innerText=
+"نوع پشتوانه انتخاب‌شده: "+asset;
+
+}
+
+
+function toggleFaq(element){
+
+let answer=element.nextElementSibling;
+
+answer.classList.toggle("open");
+
+}
+
 
 function purchase(){
 
@@ -1865,10 +2368,6 @@ alert(
 
 }
 
-
-/* ==========================
-   START
-========================== */
 
 renderLaws();
 
