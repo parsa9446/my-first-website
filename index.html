@@ -10,581 +10,551 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:Tahoma,Arial,sans-serif;
-    background:
-    radial-gradient(circle at top right,#183b5b 0%,#071421 40%,#030a11 100%);
-    color:#fff;
-    min-height:100vh;
-    line-height:1.8;
+font-family:Tahoma,Arial,sans-serif;
+background:
+radial-gradient(circle at top right,#183b5b,#071421 45%,#02080d);
+color:white;
+min-height:100vh;
+line-height:1.9;
 }
 
+/* HEADER */
+
 header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(3,10,17,.90);
-    backdrop-filter:blur(18px);
-    border-bottom:1px solid rgba(255,215,0,.15);
-    box-shadow:0 10px 35px rgba(0,0,0,.30);
+position:sticky;
+top:0;
+z-index:999;
+background:rgba(3,10,17,.94);
+backdrop-filter:blur(18px);
+border-bottom:1px solid rgba(255,215,0,.18);
 }
 
 .header-inner{
-    max-width:1250px;
-    margin:auto;
-    min-height:82px;
-    padding:12px 25px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-    flex-wrap:wrap;
+max-width:1250px;
+margin:auto;
+padding:14px 22px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
+flex-wrap:wrap;
 }
 
 .logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    cursor:pointer;
+display:flex;
+align-items:center;
+gap:10px;
+cursor:pointer;
 }
 
 .logo-icon{
-    width:48px;
-    height:48px;
-    border-radius:15px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:linear-gradient(135deg,#ffd700,#a87500);
-    color:#111;
-    font-size:25px;
-    box-shadow:0 8px 25px rgba(255,215,0,.20);
+width:48px;
+height:48px;
+border-radius:15px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg,#ffd700,#a87500);
+color:#111;
+font-size:25px;
 }
 
 .logo-text{
-    font-size:18px;
-    font-weight:bold;
-    color:#ffd700;
+color:#ffd700;
+font-size:18px;
+font-weight:bold;
 }
 
 .logo-sub{
-    display:block;
-    color:#aaa;
-    font-size:11px;
+font-size:10px;
+color:#aaa;
+display:block;
 }
 
 .nav{
-    display:flex;
-    align-items:center;
-    gap:7px;
-    flex-wrap:wrap;
+display:flex;
+gap:7px;
+flex-wrap:wrap;
 }
 
 .nav button{
-    border:1px solid rgba(255,255,255,.08);
-    background:rgba(255,255,255,.045);
-    color:#ddd;
-    padding:9px 13px;
-    border-radius:12px;
-    cursor:pointer;
-    transition:.25s;
-    font-size:13px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+color:#ddd;
+padding:9px 12px;
+border-radius:12px;
+cursor:pointer;
+transition:.25s;
 }
 
 .nav button:hover,
 .nav button.active{
-    background:linear-gradient(135deg,#ffd700,#bd8d00);
-    color:#111;
-    border-color:#ffd700;
-    font-weight:bold;
-    transform:translateY(-2px);
+background:linear-gradient(135deg,#ffd700,#b98a00);
+color:#111;
+font-weight:bold;
 }
 
 .menu-btn{
-    display:none;
-    border:0;
-    background:rgba(255,255,255,.08);
-    color:#ffd700;
-    width:45px;
-    height:45px;
-    border-radius:13px;
-    font-size:23px;
-    cursor:pointer;
+display:none;
+background:rgba(255,255,255,.08);
+border:0;
+color:#ffd700;
+font-size:23px;
+width:45px;
+height:45px;
+border-radius:13px;
+cursor:pointer;
 }
+
+/* HERO */
 
 .hero{
-    max-width:1200px;
-    margin:auto;
-    padding:85px 25px 55px;
-    text-align:center;
+max-width:1150px;
+margin:auto;
+padding:85px 20px 55px;
+text-align:center;
 }
 
-.hero-badge{
-    display:inline-block;
-    padding:7px 15px;
-    border-radius:30px;
-    background:rgba(255,215,0,.08);
-    border:1px solid rgba(255,215,0,.25);
-    color:#ffd700;
-    font-size:13px;
-    margin-bottom:20px;
+.badge{
+display:inline-block;
+padding:7px 15px;
+border-radius:30px;
+border:1px solid rgba(255,215,0,.25);
+background:rgba(255,215,0,.08);
+color:#ffd700;
+font-size:13px;
+margin-bottom:20px;
 }
 
 .hero h1{
-    font-size:clamp(30px,5vw,55px);
-    line-height:1.35;
-    margin-bottom:18px;
-    background:linear-gradient(90deg,#fff,#ffd700);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+font-size:clamp(32px,5vw,58px);
+line-height:1.35;
+background:linear-gradient(90deg,#fff,#ffd700);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .hero p{
-    max-width:780px;
-    margin:auto;
-    color:#bfc8d1;
-    font-size:16px;
+max-width:750px;
+margin:20px auto;
+color:#bdc6ce;
+font-size:16px;
 }
 
 .gold-btn{
-    border:0;
-    cursor:pointer;
-    padding:13px 23px;
-    border-radius:13px;
-    background:linear-gradient(135deg,#ffd700,#bd8d00);
-    color:#111;
-    font-weight:bold;
-    margin-top:22px;
-    transition:.25s;
-    box-shadow:0 10px 25px rgba(255,215,0,.13);
+display:inline-block;
+border:0;
+background:linear-gradient(135deg,#ffd700,#b98500);
+color:#111;
+padding:13px 24px;
+border-radius:13px;
+font-weight:bold;
+cursor:pointer;
+margin-top:15px;
+transition:.25s;
+text-decoration:none;
 }
 
 .gold-btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 15px 30px rgba(255,215,0,.22);
+transform:translateY(-3px);
+box-shadow:0 12px 30px rgba(255,215,0,.2);
 }
 
-.welcome-box{
-    display:none;
-    max-width:650px;
-    margin:30px auto 0;
-    padding:25px;
-    border-radius:22px;
-    background:linear-gradient(135deg,rgba(255,215,0,.10),rgba(255,255,255,.04));
-    border:1px solid rgba(255,215,0,.25);
-    animation:appear .5s ease;
+.welcome{
+display:none;
+max-width:650px;
+margin:30px auto;
+padding:25px;
+border-radius:22px;
+background:rgba(255,215,0,.08);
+border:1px solid rgba(255,215,0,.25);
 }
 
-.welcome-heart{
-    font-size:48px;
-    animation:heart 1.2s infinite;
+.heart{
+font-size:50px;
+animation:pulse 1.2s infinite;
 }
 
-.welcome-box h2{
-    color:#ffd700;
+.welcome h2{
+color:#ffd700;
 }
+
+/* SECTIONS */
 
 .container{
-    width:min(1150px,92%);
-    margin:auto;
+width:min(1150px,92%);
+margin:auto;
 }
 
 .section{
-    display:none;
-    padding:35px 0 65px;
-    animation:appear .4s ease;
+display:none;
+padding:40px 0 70px;
+animation:show .4s ease;
 }
 
 .section.active{
-    display:block;
+display:block;
 }
 
 .section-title{
-    text-align:center;
-    margin-bottom:32px;
+text-align:center;
+margin-bottom:30px;
 }
 
 .section-title span{
-    display:block;
-    color:#ffd700;
-    font-size:12px;
-    margin-bottom:5px;
-    letter-spacing:1px;
+color:#ffd700;
+font-size:12px;
 }
 
 .section-title h2{
-    font-size:29px;
+font-size:30px;
 }
 
 .section-title p{
-    color:#9da8b3;
-    font-size:14px;
+color:#9da8b3;
+font-size:14px;
 }
 
+/* CARDS */
+
 .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:18px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:18px;
 }
 
 .card{
-    position:relative;
-    overflow:hidden;
-    background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:22px;
-    padding:25px;
-    transition:.3s;
-    box-shadow:0 15px 35px rgba(0,0,0,.16);
+background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));
+border:1px solid rgba(255,255,255,.08);
+border-radius:22px;
+padding:25px;
+transition:.3s;
+box-shadow:0 15px 35px rgba(0,0,0,.18);
 }
 
 .card:hover{
-    transform:translateY(-6px);
-    border-color:rgba(255,215,0,.35);
+transform:translateY(-5px);
+border-color:rgba(255,215,0,.35);
 }
 
-.card-icon{
-    width:52px;
-    height:52px;
-    border-radius:16px;
-    background:rgba(255,215,0,.10);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:25px;
-    margin-bottom:15px;
+.icon{
+width:52px;
+height:52px;
+border-radius:16px;
+background:rgba(255,215,0,.1);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:25px;
+margin-bottom:15px;
 }
 
 .card h3{
-    color:#ffd700;
-    margin-bottom:8px;
+color:#ffd700;
+margin-bottom:8px;
 }
 
 .card p{
-    color:#b9c2cb;
-    font-size:14px;
+color:#bac4cc;
+font-size:14px;
 }
 
-.lawyer-card{
-    max-width:760px;
-    margin:auto;
-    text-align:center;
-    padding:40px 30px;
+/* LAWYER */
+
+.lawyer{
+max-width:750px;
+margin:auto;
+text-align:center;
 }
 
-.lawyer-avatar{
-    width:105px;
-    height:105px;
-    border-radius:50%;
-    margin:0 auto 20px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:linear-gradient(135deg,#ffd700,#956d00);
-    color:#111;
-    font-size:45px;
-    border:5px solid rgba(255,215,0,.12);
+.avatar{
+width:110px;
+height:110px;
+border-radius:50%;
+margin:auto auto 20px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg,#ffd700,#936c00);
+color:#111;
+font-size:45px;
 }
 
 .lawyer-name{
-    font-size:30px;
+font-size:30px;
 }
 
 .lawyer-title{
-    color:#ffd700;
+color:#ffd700;
 }
 
-.info-list{
-    display:grid;
-    gap:10px;
-    margin-top:20px;
+.info{
+margin-top:20px;
+display:grid;
+gap:10px;
 }
 
-.info-row{
-    background:rgba(255,255,255,.045);
-    border:1px solid rgba(255,255,255,.06);
-    padding:13px;
-    border-radius:13px;
-    color:#cbd3da;
+.info div{
+padding:12px;
+background:rgba(255,255,255,.04);
+border-radius:12px;
 }
 
-.info-row strong{
-    color:#fff;
+/* SEARCH */
+
+.search{
+margin-bottom:20px;
+}
+
+.search input{
+width:100%;
+padding:15px;
+background:#101f2d;
+border:1px solid rgba(255,255,255,.12);
+border-radius:14px;
+color:white;
+outline:none;
+font-size:14px;
+}
+
+.search input:focus{
+border-color:#ffd700;
+}
+
+/* CATEGORY */
+
+.categories{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin-bottom:20px;
+}
+
+.categories button{
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+color:#ccc;
+padding:9px 14px;
+border-radius:12px;
+cursor:pointer;
+}
+
+.categories button.active{
+background:#ffd700;
+color:#111;
+}
+
+/* LAW */
+
+.law{
+padding:0;
+margin-bottom:10px;
+}
+
+.law-title{
+padding:17px;
+cursor:pointer;
+display:flex;
+justify-content:space-between;
+gap:10px;
+}
+
+.law-title strong{
+color:#ffd700;
+}
+
+.law-content{
+display:none;
+padding:0 18px 18px;
+border-top:1px solid rgba(255,255,255,.06);
+color:#bcc6ce;
+}
+
+.law-content.open{
+display:block;
 }
 
 .notice{
-    background:rgba(255,215,0,.06);
-    border-right:4px solid #ffd700;
-    border-radius:12px;
-    padding:14px 18px;
-    color:#c5ced6;
-    font-size:13px;
-    margin-bottom:20px;
+background:rgba(255,215,0,.06);
+border-right:4px solid #ffd700;
+padding:14px;
+border-radius:12px;
+color:#c5ced6;
+margin-bottom:20px;
+font-size:13px;
 }
 
-.search-box{
-    margin-bottom:25px;
-}
-
-.search-box input{
-    width:100%;
-    padding:16px;
-    border-radius:15px;
-    border:1px solid rgba(255,255,255,.12);
-    background:#101f2d;
-    color:#fff;
-    outline:none;
-    font-size:15px;
-}
-
-.search-box input:focus{
-    border-color:#ffd700;
-}
-
-.category-bar{
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
-    margin-bottom:20px;
-}
-
-.category-bar button{
-    background:rgba(255,255,255,.05);
-    color:#ccc;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:12px;
-    padding:9px 14px;
-    cursor:pointer;
-}
-
-.category-bar button.active{
-    background:#ffd700;
-    color:#111;
-}
-
-.law-card{
-    margin-bottom:12px;
-    padding:0;
-}
-
-.law-head{
-    padding:18px;
-    cursor:pointer;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.law-head strong{
-    color:#ffd700;
-}
-
-.law-body{
-    display:none;
-    padding:0 18px 18px;
-    color:#bdc6cf;
-    border-top:1px solid rgba(255,255,255,.05);
-}
-
-.law-body.open{
-    display:block;
-}
-
-.law-number{
-    color:#ffd700;
-    font-size:12px;
-}
+/* TIPS */
 
 .tip-number{
-    width:35px;
-    height:35px;
-    border-radius:50%;
-    background:rgba(255,215,0,.12);
-    color:#ffd700;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:bold;
-    margin-bottom:12px;
+width:36px;
+height:36px;
+border-radius:50%;
+background:rgba(255,215,0,.12);
+color:#ffd700;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:bold;
+margin-bottom:10px;
 }
+
+/* QUIZ */
 
 .quiz{
-    margin-bottom:20px;
-    padding:25px;
-    border-radius:20px;
-    background:rgba(255,255,255,.045);
-    border:1px solid rgba(255,255,255,.08);
-}
-
-.quiz h3{
-    color:#ffd700;
-    margin-bottom:10px;
+margin-bottom:18px;
 }
 
 .option{
-    display:block;
-    margin:9px 0;
-    padding:12px;
-    background:rgba(255,255,255,.035);
-    border-radius:11px;
-    cursor:pointer;
-    color:#ccc;
+display:block;
+padding:11px;
+margin:8px 0;
+border-radius:11px;
+background:rgba(255,255,255,.04);
+cursor:pointer;
 }
 
 .result{
-    margin-top:13px;
-    font-weight:bold;
+margin-top:12px;
+font-weight:bold;
 }
 
-input,
-select{
-    width:100%;
-    padding:13px;
-    margin:7px 0;
-    border-radius:12px;
-    border:1px solid rgba(255,255,255,.12);
-    background:#101f2d;
-    color:#fff;
-    outline:none;
+/* INPUT */
+
+select,
+.card input{
+width:100%;
+padding:13px;
+margin:7px 0;
+background:#101f2d;
+border:1px solid rgba(255,255,255,.12);
+border-radius:12px;
+color:white;
+outline:none;
 }
 
-.price{
-    font-size:23px;
-    color:#ffd700;
-    font-weight:bold;
+/* CONTACT */
+
+.contact{
+max-width:750px;
+margin:auto;
+text-align:center;
 }
 
-.about-box,
-.contact-box{
-    max-width:800px;
-    margin:auto;
-    text-align:center;
+.phone{
+font-size:22px;
+color:#ffd700;
+direction:ltr;
+display:inline-block;
+margin-top:5px;
 }
 
-.about-avatar{
-    width:100px;
-    height:100px;
-    margin:auto;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(135deg,#ffd700,#8f6800);
-    color:#111;
-    font-size:40px;
-    font-weight:bold;
-}
-
-.about-name{
-    color:#ffd700;
-    font-size:28px;
-    margin:15px 0 3px;
-}
-
-.contact-number{
-    font-size:22px;
-    color:#ffd700;
-    direction:ltr;
-    display:inline-block;
-}
+/* FOOTER */
 
 footer{
-    margin-top:40px;
-    padding:35px 20px;
-    text-align:center;
-    background:rgba(0,0,0,.35);
-    border-top:1px solid rgba(255,255,255,.06);
-    color:#8f99a3;
-    font-size:13px;
+margin-top:40px;
+padding:35px 20px;
+text-align:center;
+background:rgba(0,0,0,.35);
+border-top:1px solid rgba(255,255,255,.06);
+color:#8f99a3;
+font-size:13px;
 }
 
 footer strong{
-    color:#ffd700;
+color:#ffd700;
 }
 
-@keyframes appear{
-    from{
-        opacity:0;
-        transform:translateY(15px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+/* ANIMATION */
+
+@keyframes show{
+from{
+opacity:0;
+transform:translateY(15px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
-@keyframes heart{
-    0%,100%{transform:scale(1);}
-    50%{transform:scale(1.18);}
+@keyframes pulse{
+0%,100%{
+transform:scale(1);
 }
+50%{
+transform:scale(1.18);
+}
+}
+
+/* MOBILE */
 
 @media(max-width:850px){
 
-    .menu-btn{
-        display:block;
-    }
+.menu-btn{
+display:block;
+}
 
-    .nav{
-        display:none;
-        width:100%;
-        grid-template-columns:repeat(2,1fr);
-        gap:8px;
-    }
+.nav{
+display:none;
+width:100%;
+grid-template-columns:repeat(2,1fr);
+}
 
-    .nav.open{
-        display:grid;
-    }
+.nav.open{
+display:grid;
+}
 
-    .nav button{
-        width:100%;
-    }
+.nav button{
+width:100%;
+}
 
-    .header-inner{
-        flex-wrap:wrap;
-    }
 }
 
 @media(max-width:500px){
 
-    .hero h1{
-        font-size:30px;
-    }
+.hero h1{
+font-size:31px;
+}
 
-    .hero p{
-        font-size:14px;
-    }
+.hero p{
+font-size:14px;
+}
 
-    .section-title h2{
-        font-size:24px;
-    }
+.section-title h2{
+font-size:25px;
+}
 
-    .card{
-        padding:20px;
-    }
+.card{
+padding:20px;
+}
+
 }
 
 </style>
-
 </head>
 
 
 <body>
 
 
+<!-- HEADER -->
+
 <header>
 
 <div class="header-inner">
 
-<div class="logo" onclick="showSection('home')">
+<div class="logo" onclick="goHome()">
 
 <div class="logo-icon">
 ⚖️
@@ -610,7 +580,7 @@ footer strong{
 </button>
 
 
-<nav class="nav" id="mainNav">
+<nav class="nav" id="nav">
 
 <button class="active" onclick="showSection('home',this)">
 🏠 خانه
@@ -620,16 +590,16 @@ footer strong{
 👨‍⚖️ وکیل
 </button>
 
-<button onclick="showSection('legal',this)">
+<button onclick="showSection('laws',this)">
 ⚖️ مواد قانونی
 </button>
 
 <button onclick="showSection('tips',this)">
-📚 اصلاحات حقوقی
+📚 نکات حقوقی
 </button>
 
-<button onclick="showSection('tests',this)">
-📝 آزمون‌ها
+<button onclick="showSection('quiz',this)">
+📝 آزمون
 </button>
 
 <button onclick="showSection('internet',this)">
@@ -652,32 +622,35 @@ footer strong{
 
 
 
+<!-- HOME -->
+
 <section class="hero" id="home">
 
-<div class="hero-badge">
-⚖️ مرکز تخصصی حقوق و خدمات
+<div class="badge">
+⚖️ مرکز حقوقی و خدمات دیجیتال
 </div>
 
 <h1>
 دانش حقوق،
 <br>
-ساده، مرتب و حرفه‌ای
+ساده و حرفه‌ای
 </h1>
 
 <p>
-به وب‌سایت رسمی پارسا کرمی خوش آمدید.
-در این مجموعه بخش‌های آموزشی حقوق،
-مواد قانونی، نکات کاربردی، آزمون و خدمات دیجیتال
-در اختیار شما قرار گرفته است.
+به وب‌سایت پارسا کرمی خوش آمدید.
+در این سایت می‌توانید به بخش‌های حقوقی،
+مواد قانونی، نکات آموزشی، آزمون‌ها و خدمات
+دیجیتال دسترسی داشته باشید.
 </p>
 
-<button class="gold-btn" onclick="welcomeUser()">
-✨ ورود به مرکز
+<button class="gold-btn" onclick="welcome()">
+✨ ورود به سایت
 </button>
 
-<div class="welcome-box" id="welcome">
 
-<div class="welcome-heart">
+<div class="welcome" id="welcome">
+
+<div class="heart">
 ❤️
 </div>
 
@@ -687,7 +660,7 @@ footer strong{
 
 <p>
 از حضور شما در سایت پارسا کرمی خوشحالیم.
-برای ورود به بخش‌های مختلف از منوی بالای سایت استفاده کنید.
+برای ورود به بخش‌های مختلف از منوی بالا استفاده کنید.
 </p>
 
 </div>
@@ -699,7 +672,7 @@ footer strong{
 <div class="container">
 
 
-<!-- وکیل -->
+<!-- LAWYER -->
 
 <section class="section" id="lawyer">
 
@@ -714,15 +687,15 @@ LEGAL PROFESSIONAL
 </h2>
 
 <p>
-اطلاعات تماس و معرفی وکیل
+اطلاعات تماس و معرفی
 </p>
 
 </div>
 
 
-<div class="card lawyer-card">
+<div class="card lawyer">
 
-<div class="lawyer-avatar">
+<div class="avatar">
 ⚖️
 </div>
 
@@ -734,28 +707,30 @@ LEGAL PROFESSIONAL
 وکیل پایه یک دادگستری
 </div>
 
-<div class="info-list">
 
-<div class="info-row">
+<div class="info">
+
+<div>
 👨‍⚖️ نام:
 <strong>حشمت کرمی</strong>
 </div>
 
-<div class="info-row">
+<div>
 ⚖️ عنوان:
 <strong>وکیل پایه یک دادگستری</strong>
 </div>
 
-<div class="info-row">
+<div>
 📱 شماره تماس:
 <strong dir="ltr">09127068454</strong>
 </div>
 
 </div>
 
-<a href="tel:09127068454"
-class="gold-btn"
-style="display:inline-block;text-decoration:none;">
+
+<a
+href="tel:09127068454"
+class="gold-btn">
 
 📞 تماس با وکیل
 
@@ -767,9 +742,9 @@ style="display:inline-block;text-decoration:none;">
 
 
 
-<!-- مواد قانونی -->
+<!-- LAWS -->
 
-<section class="section" id="legal">
+<section class="section" id="laws">
 
 <div class="section-title">
 
@@ -782,7 +757,7 @@ LAW DATABASE
 </h2>
 
 <p>
-مواد منتخب قوانین مهم ایران
+مطالب حقوقی دسته‌بندی شده
 </p>
 
 </div>
@@ -790,44 +765,42 @@ LAW DATABASE
 
 <div class="notice">
 
-این بخش برای مطالعه آموزشی طراحی شده است.
-برای استفاده حرفه‌ای از قوانین، متن رسمی و آخرین اصلاحات
-هر قانون باید بررسی شود.
+⚠️ این بخش آموزشی است. برای استفاده حرفه‌ای،
+متن رسمی و آخرین اصلاحات قوانین را بررسی کنید.
 
 </div>
 
 
-<div class="search-box">
+<div class="search">
 
 <input
 id="lawSearch"
-type="text"
-placeholder="🔎 جست‌وجو در شماره ماده، قانون یا موضوع..."
-oninput="searchLaws()">
+placeholder="🔎 جست‌وجو در مواد قانونی..."
+oninput="renderLaws()">
 
 </div>
 
 
-<div class="category-bar">
+<div class="categories">
 
 <button class="active"
-onclick="filterLaw('all',this)">
+onclick="setCategory('همه',this)">
 همه
 </button>
 
-<button onclick="filterLaw('مدنی',this)">
+<button onclick="setCategory('مدنی',this)">
 مدنی
 </button>
 
-<button onclick="filterLaw('کیفری',this)">
+<button onclick="setCategory('کیفری',this)">
 کیفری
 </button>
 
-<button onclick="filterLaw('تجارت',this)">
+<button onclick="setCategory('تجارت',this)">
 تجارت
 </button>
 
-<button onclick="filterLaw('خانواده',this)">
+<button onclick="setCategory('خانواده',this)">
 خانواده
 </button>
 
@@ -840,7 +813,7 @@ onclick="filterLaw('all',this)">
 
 
 
-<!-- اصلاحات -->
+<!-- TIPS -->
 
 <section class="section" id="tips">
 
@@ -851,36 +824,35 @@ LEGAL TIPS
 </span>
 
 <h2>
-📚 اصلاحات و نکات حقوقی
+📚 ۵۰ نکته حقوقی
 </h2>
 
 <p>
-۵۰ نکته کاربردی برای افزایش آگاهی حقوقی
+نکات کاربردی برای افزایش آگاهی حقوقی
 </p>
 
 </div>
 
 
-<div class="search-box">
+<div class="search">
 
 <input
 id="tipSearch"
-type="text"
-placeholder="🔎 جست‌وجوی نکته حقوقی..."
-oninput="searchTips()">
+placeholder="🔎 جست‌وجوی نکته..."
+oninput="renderTips()">
 
 </div>
 
 
-<div class="grid" id="tipsList"></div>
+<div class="grid" id="tipList"></div>
 
 </section>
 
 
 
-<!-- آزمون -->
+<!-- QUIZ -->
 
-<section class="section" id="tests">
+<section class="section" id="quiz">
 
 <div class="section-title">
 
@@ -889,7 +861,7 @@ LEGAL QUIZ
 </span>
 
 <h2>
-📝 آزمون حقوقی
+📝 ۲۰ آزمون حقوقی
 </h2>
 
 <p>
@@ -898,13 +870,14 @@ LEGAL QUIZ
 
 </div>
 
+
 <div id="quizList"></div>
 
 </section>
 
 
 
-<!-- اینترنت -->
+<!-- INTERNET -->
 
 <section class="section" id="internet">
 
@@ -927,18 +900,19 @@ DIGITAL SERVICES
 
 <div class="notice">
 
-درگاه پرداخت واقعی در این نسخه فعال نیست.
-برای خرید واقعی باید سرویس معتبر و درگاه پرداخت
-به سایت متصل شود.
+این بخش فعلاً نمایشی است.
+برای پرداخت واقعی باید درگاه پرداخت و سرویس معتبر
+اپراتورها به سایت متصل شود.
 
 </div>
 
 
 <div class="grid">
 
+
 <div class="card">
 
-<div class="card-icon">
+<div class="icon">
 📞
 </div>
 
@@ -946,21 +920,36 @@ DIGITAL SERVICES
 شارژ همراه اول
 </h3>
 
-<div class="price">
-شارژ اعتباری
-</div>
-
 <select>
-<option>۱۰ هزار تومان</option>
-<option>۲۰ هزار تومان</option>
-<option>۵۰ هزار تومان</option>
-<option>۱۰۰ هزار تومان</option>
+
+<option>
+۱۰ هزار تومان
+</option>
+
+<option>
+۲۰ هزار تومان
+</option>
+
+<option>
+۵۰ هزار تومان
+</option>
+
+<option>
+۱۰۰ هزار تومان
+</option>
+
 </select>
 
-<input type="tel" placeholder="شماره موبایل">
+<input
+type="tel"
+placeholder="شماره موبایل">
 
-<button class="gold-btn" onclick="fakePurchase()">
+<button
+class="gold-btn"
+onclick="purchase()">
+
 ادامه خرید
+
 </button>
 
 </div>
@@ -968,7 +957,7 @@ DIGITAL SERVICES
 
 <div class="card">
 
-<div class="card-icon">
+<div class="icon">
 📶
 </div>
 
@@ -976,21 +965,36 @@ DIGITAL SERVICES
 بسته اینترنت همراه اول
 </h3>
 
-<div class="price">
-بسته اینترنت
-</div>
-
 <select>
-<option>۱ گیگابایت</option>
-<option>۳ گیگابایت</option>
-<option>۵ گیگابایت</option>
-<option>۱۰ گیگابایت</option>
+
+<option>
+۱ گیگابایت
+</option>
+
+<option>
+۳ گیگابایت
+</option>
+
+<option>
+۵ گیگابایت
+</option>
+
+<option>
+۱۰ گیگابایت
+</option>
+
 </select>
 
-<input type="tel" placeholder="شماره موبایل">
+<input
+type="tel"
+placeholder="شماره موبایل">
 
-<button class="gold-btn" onclick="fakePurchase()">
+<button
+class="gold-btn"
+onclick="purchase()">
+
 ادامه خرید
+
 </button>
 
 </div>
@@ -998,7 +1002,7 @@ DIGITAL SERVICES
 
 <div class="card">
 
-<div class="card-icon">
+<div class="icon">
 📞
 </div>
 
@@ -1006,21 +1010,36 @@ DIGITAL SERVICES
 شارژ ایرانسل
 </h3>
 
-<div class="price">
-شارژ اعتباری
-</div>
-
 <select>
-<option>۱۰ هزار تومان</option>
-<option>۲۰ هزار تومان</option>
-<option>۵۰ هزار تومان</option>
-<option>۱۰۰ هزار تومان</option>
+
+<option>
+۱۰ هزار تومان
+</option>
+
+<option>
+۲۰ هزار تومان
+</option>
+
+<option>
+۵۰ هزار تومان
+</option>
+
+<option>
+۱۰۰ هزار تومان
+</option>
+
 </select>
 
-<input type="tel" placeholder="شماره موبایل">
+<input
+type="tel"
+placeholder="شماره موبایل">
 
-<button class="gold-btn" onclick="fakePurchase()">
+<button
+class="gold-btn"
+onclick="purchase()">
+
 ادامه خرید
+
 </button>
 
 </div>
@@ -1028,7 +1047,7 @@ DIGITAL SERVICES
 
 <div class="card">
 
-<div class="card-icon">
+<div class="icon">
 📶
 </div>
 
@@ -1036,24 +1055,40 @@ DIGITAL SERVICES
 بسته اینترنت ایرانسل
 </h3>
 
-<div class="price">
-بسته اینترنت
-</div>
-
 <select>
-<option>۱ گیگابایت</option>
-<option>۳ گیگابایت</option>
-<option>۵ گیگابایت</option>
-<option>۱۰ گیگابایت</option>
+
+<option>
+۱ گیگابایت
+</option>
+
+<option>
+۳ گیگابایت
+</option>
+
+<option>
+۵ گیگابایت
+</option>
+
+<option>
+۱۰ گیگابایت
+</option>
+
 </select>
 
-<input type="tel" placeholder="شماره موبایل">
+<input
+type="tel"
+placeholder="شماره موبایل">
 
-<button class="gold-btn" onclick="fakePurchase()">
+<button
+class="gold-btn"
+onclick="purchase()">
+
 ادامه خرید
+
 </button>
 
 </div>
+
 
 </div>
 
@@ -1061,7 +1096,7 @@ DIGITAL SERVICES
 
 
 
-<!-- درباره -->
+<!-- ABOUT -->
 
 <section class="section" id="about">
 
@@ -1078,15 +1113,15 @@ ABOUT
 </div>
 
 
-<div class="card about-box">
+<div class="card contact">
 
-<div class="about-avatar">
+<div class="avatar">
 پ
 </div>
 
-<div class="about-name">
+<h2 style="color:#ffd700;margin-top:15px;">
 پارسا کرمی
-</div>
+</h2>
 
 <p>
 دانشجوی رشته حقوق
@@ -1097,8 +1132,8 @@ ABOUT
 <p>
 این وب‌سایت با هدف ایجاد محیطی ساده،
 زیبا و کاربردی برای مطالعه حقوق،
-قوانین، آزمون‌ها و دسترسی به خدمات
-دیجیتال طراحی شده است.
+آشنایی با قوانین، آزمون و خدمات دیجیتال
+طراحی شده است.
 </p>
 
 </div>
@@ -1107,7 +1142,7 @@ ABOUT
 
 
 
-<!-- تماس -->
+<!-- CONTACT -->
 
 <section class="section" id="contact">
 
@@ -1118,15 +1153,15 @@ CONTACT
 </span>
 
 <h2>
-☎️ ارتباط با ما
+☎️ تماس با ما
 </h2>
 
 </div>
 
 
-<div class="card contact-box">
+<div class="card contact">
 
-<div class="card-icon" style="margin:auto;">
+<div class="icon" style="margin:auto;">
 📞
 </div>
 
@@ -1139,15 +1174,15 @@ CONTACT
 </p>
 
 <p>
-شماره تماس
+شماره تماس:
 </p>
 
-<div class="contact-number">
+<div class="phone">
 09302869446
 </div>
 
 <p style="margin-top:15px;">
-ایمیل
+ایمیل:
 </p>
 
 <p style="color:#ffd700;">
@@ -1183,889 +1218,663 @@ parsakaramisarabii@gmail.com
 
 <script>
 
+/* ==========================
+   DATA
+========================== */
 
-/* =========================
-   مواد قانونی
-========================= */
+
+/* مواد قانونی */
 
 const laws = [
 
-/* مدنی */
-
-["مدنی","ماده 1","انتشار قوانین","قواعد مربوط به انتشار قوانین و زمان اجرای آنها."],
-["مدنی","ماده 2","اجرای قانون","قواعد مربوط به لازم‌الاجرا شدن قوانین."],
-["مدنی","ماده 10","قراردادهای خصوصی","اعتبار قراردادهای خصوصی در حدود قانون."],
-["مدنی","ماده 30","مالکیت","حق تصرف و انتفاع مالک از مال خود در حدود قانون."],
-["مدنی","ماده 31","تصرف مالک","منع خارج کردن مال از تصرف صاحب آن بدون حکم قانون."],
-["مدنی","ماده 35","تصرف","اماره قانونی بودن تصرف در شرایط مقرر."],
-["مدنی","ماده 190","شرایط اساسی معامله","قصد و رضا، اهلیت، موضوع معین و مشروعیت جهت."],
-["مدنی","ماده 191","قصد انشاء","تشکیل عقد با قصد انشاء و شرایط مربوط."],
-["مدنی","ماده 192","عقد با اشاره","احکام مربوط به اعلام اراده اشخاصی که قادر به تکلم نیستند."],
-["مدنی","ماده 193","اعمال دلالت‌کننده","امکان تحقق معامله با اعمالی که مبین قصد و رضا باشند."],
-["مدنی","ماده 194","تطابق ایجاب و قبول","لزوم مطابقت موضوع ایجاب و قبول."],
-["مدنی","ماده 195","اشتباه در عقد","اثر اشتباه یا فقدان قصد در معامله."],
-["مدنی","ماده 196","معامله برای خود یا دیگری","قواعد اقدام شخص به نام خود یا به نمایندگی."],
-["مدنی","ماده 197","رضایت معامله","قواعد مربوط به رضایت طرفین."],
-["مدنی","ماده 198","معامله با نمایندگی","احکام معامله توسط نماینده."],
-["مدنی","ماده 199","رضایت ناشی از اشتباه","احکام مربوط به اشتباه و اکراه."],
-["مدنی","ماده 200","اشتباه مؤثر","شرایط اشتباه مؤثر در معامله."],
-["مدنی","ماده 201","اشتباه در شخص","اثر اشتباه در شخصیت طرف معامله."],
-["مدنی","ماده 202","اکراه","تعریف و شرایط اکراه در معاملات."],
-["مدنی","ماده 203","اثر اکراه","احکام معامله ناشی از اکراه."],
-["مدنی","ماده 204","اکراه‌کننده","احکام مربوط به شخص مکرِه."],
-["مدنی","ماده 205","تهدید","شرایط مؤثر بودن تهدید در اکراه."],
-["مدنی","ماده 206","معامله اضطراری","تفکیک اضطرار از اکراه."],
-["مدنی","ماده 207","معامله اضطراری","اثر معامله اضطراری در شرایط مقرر."],
-["مدنی","ماده 208","تهدید نامشروع","احکام مربوط به تهدید."],
-["مدنی","ماده 209","رضایت بعدی","احکام تنفیذ معامله پس از رفع اکراه."],
-["مدنی","ماده 210","اهلیت","لزوم اهلیت طرفین معامله."],
-["مدنی","ماده 211","اهلیت قانونی","تعریف شخص دارای اهلیت."],
-["مدنی","ماده 212","فقدان اهلیت","اثر فقدان اهلیت در معاملات."],
-["مدنی","ماده 213","معامله محجور","قواعد مربوط به معاملات محجورین."],
-["مدنی","ماده 214","موضوع معامله","لزوم مشخص بودن موضوع تعهد."],
-["مدنی","ماده 215","مشروعیت موضوع","لزوم مشروع بودن موضوع معامله."],
-["مدنی","ماده 216","ابهام در معامله","شرایط مربوط به معلوم بودن موضوع معامله."],
-["مدنی","ماده 217","جهت معامله","احکام مربوط به جهت معامله."],
-["مدنی","ماده 218","معامله به قصد فرار از دین","قواعد مربوط به معاملات با قصد فرار از دین."],
-["مدنی","ماده 219","لزوم قرارداد","عقود قانونی برای طرفین لازم‌الاتباع هستند مگر موارد قانونی."],
-["مدنی","ماده 220","آثار عقد","تعهدات ناشی از تصریح، عرف و قانون."],
+["مدنی","ماده 1","انتشار قوانین","قواعد مربوط به انتشار و اجرای قوانین."],
+["مدنی","ماده 2","اجرای قانون","قواعد مربوط به لازم‌الاجرا شدن قانون."],
+["مدنی","ماده 10","قراردادهای خصوصی","قراردادهای خصوصی در حدود قانون معتبر هستند."],
+["مدنی","ماده 190","شرایط معامله","قصد و رضا، اهلیت، موضوع معین و مشروعیت جهت."],
+["مدنی","ماده 191","قصد انشاء","تشکیل عقد با قصد انشاء."],
+["مدنی","ماده 219","لزوم قرارداد","عقود قانونی برای طرفین لازم‌الاتباع هستند."],
+["مدنی","ماده 220","آثار عقد","تعهدات ناشی از قرارداد، عرف و قانون."],
 ["مدنی","ماده 221","تخلف از تعهد","مسئولیت ناشی از تخلف از تعهد."],
-["مدنی","ماده 222","انجام تعهد","امکان درخواست اجرای تعهد در موارد مقرر."],
-["مدنی","ماده 223","اصل صحت","اصل بر صحت معاملات واقع‌شده است."],
-["مدنی","ماده 224","تفسیر قرارداد","تفسیر الفاظ قرارداد بر اساس عرف."],
-["مدنی","ماده 225","عرف و عادت","اثر عرف متعارف در قرارداد."],
-["مدنی","ماده 226","خسارت عدم انجام تعهد","شرایط مطالبه خسارت در صورت عدم اجرای تعهد."],
-["مدنی","ماده 227","علت خارجی","شرایط معافیت متعهد در صورت وجود علت خارجی."],
-["مدنی","ماده 228","خسارت تأخیر","قواعد خسارت ناشی از تأخیر در اجرای تعهد."],
-["مدنی","ماده 229","حوادث غیرقابل دفع","اثر حوادث خارج از اختیار متعهد."],
-["مدنی","ماده 230","وجه التزام","اثر مبلغ تعیین‌شده در قرارداد برای تخلف."],
-["مدنی","ماده 231","اثر قرارداد","اصل نسبی بودن آثار قرارداد."],
-["مدنی","ماده 232","شروط باطل","برخی شروطی که موجب بطلان عقد نمی‌شوند."],
-["مدنی","ماده 233","شروط باطل و مبطل","شروطی که ممکن است عقد را نیز باطل کنند."],
-["مدنی","ماده 234","انواع شرط","شرط صفت، نتیجه و فعل."],
-["مدنی","ماده 235","شرط صفت","احکام تخلف از شرط صفت."],
-["مدنی","ماده 237","شرط فعل","امکان اجبار مشروط‌علیه به انجام شرط."],
-["مدنی","ماده 238","انجام شرط توسط دیگری","امکان انجام شرط به هزینه متعهد در موارد مقرر."],
-["مدنی","ماده 239","فسخ به علت تخلف شرط","شرایط استفاده از حق فسخ."],
-["مدنی","ماده 240","تعذر شرط","احکام شرطی که انجام آن غیرممکن شود."],
-["مدنی","ماده 241","شرط نتیجه","قواعد مربوط به شرط نتیجه."],
-["مدنی","ماده 242","شرط صفت","احکام مربوط به عدم وجود صفت."],
-["مدنی","ماده 243","خیار تخلف شرط","حق فسخ در شرایط قانونی."],
-["مدنی","ماده 244","اسقاط شرط","احکام اسقاط شرط."],
-["مدنی","ماده 245","اسقاط حق","احکام مربوط به اسقاط حق ناشی از شرط."],
-["مدنی","ماده 246","اثر فسخ شرط","آثار انحلال شرط."],
-["مدنی","ماده 247","معامله فضولی","معامله نسبت به مال غیر بدون اجازه مالک."],
-["مدنی","ماده 248","اجازه مالک","نحوه اعلام اجازه معامله فضولی."],
-["مدنی","ماده 249","سکوت مالک","شرایط اثر نداشتن سکوت مالک."],
-["مدنی","ماده 250","اجازه و رد","قواعد مربوط به اجازه یا رد معامله فضولی."],
-["مدنی","ماده 251","رد معامله","شرایط رد معامله فضولی."],
-["مدنی","ماده 252","اجازه معامله","شرایط اعلام اجازه."],
-["مدنی","ماده 253","نمایندگی","قواعد مربوط به معامله توسط نماینده."],
-["مدنی","ماده 254","معامله فضولی","احکام خاص معامله فضولی."],
-["مدنی","ماده 255","فروش مال غیر","احکام مربوط به انتقال مال دیگری."],
-["مدنی","ماده 256","معامله فضولی","آثار معامله فضولی نسبت به مالک."],
-["مدنی","ماده 257","انتقال مال","احکام انتقال مال موضوع معامله فضولی."],
-["مدنی","ماده 258","ثمن معامله","قواعد مربوط به ثمن در معامله فضولی."],
-["مدنی","ماده 259","منافع مال","احکام منافع مال مورد معامله فضولی."],
-["مدنی","ماده 260","رد معامله","آثار رد معامله فضولی."],
-["مدنی","ماده 261","خسارت","مسئولیت‌های ناشی از معامله فضولی."],
-["مدنی","ماده 262","رد و اجازه","آثار تصمیم مالک."],
-["مدنی","ماده 263","غرامت","احکام مربوط به خسارت در معامله فضولی."],
-["مدنی","ماده 264","اسباب سقوط تعهدات","وفای به عهد، ابراء، تهاتر، تبدیل تعهد و موارد قانونی."],
-["مدنی","ماده 265","اصل عدم تبرع","اصل مربوط به پرداخت مال و عدم تبرع."],
-["مدنی","ماده 266","وفای به عهد","قواعد مربوط به پرداخت دین."],
-["مدنی","ماده 267","پرداخت دین دیگری","امکان پرداخت دین توسط شخص ثالث."],
-["مدنی","ماده 268","انجام تعهد توسط دیگری","احکام مربوط به اجرای تعهد."],
-["مدنی","ماده 269","وفای به عهد","شرایط صحت وفای به عهد."],
-["مدنی","ماده 270","ابراء","قواعد مربوط به ابراء دین."],
-["مدنی","ماده 271","پرداخت به طلبکار","احکام پرداخت دین به صاحب حق."],
-["مدنی","ماده 272","پرداخت به نماینده","پرداخت به اشخاص دارای اختیار."],
-["مدنی","ماده 273","پرداخت به شخص ثالث","قواعد پرداخت به غیر طلبکار."],
-["مدنی","ماده 274","پرداخت دین","شرایط پرداخت صحیح."],
-["مدنی","ماده 275","ابراء","قواعد مربوط به ابراء."],
-["مدنی","ماده 276","تهاتر","مفهوم و شرایط تهاتر."],
-["مدنی","ماده 277","مهلت برای پرداخت","اختیار دادگاه در موارد قانونی."],
-["مدنی","ماده 278","وفای به عهد","قواعد اجرای تعهد."],
-["مدنی","ماده 279","تعهد به مال کلی","احکام تعیین مصداق."],
-["مدنی","ماده 280","محل انجام تعهد","قواعد تعیین محل اجرای تعهد."],
-["مدنی","ماده 281","هزینه انجام تعهد","مسئولیت هزینه‌های مربوط به اجرای تعهد."],
-["مدنی","ماده 282","تهاتر","آثار تهاتر در روابط بدهکار و طلبکار."],
-["مدنی","ماده 283","اقاله","امکان برهم زدن معامله با توافق طرفین."],
-["مدنی","ماده 284","اقاله نسبت به بعض","احکام اقاله نسبت به بخشی از معامله."],
-["مدنی","ماده 285","اقاله","قواعد مربوط به اقاله."],
-["مدنی","ماده 286","اقاله","اثر اقاله بر عوضین."],
-["مدنی","ماده 287","اقاله","احکام افزایش یا کاهش عوضین."],
-["مدنی","ماده 288","اقاله","آثار تلف یا تغییر مورد معامله."],
-["مدنی","ماده 289","ابراء","تعریف ابراء و آثار آن."],
-["مدنی","ماده 290","تهاتر","قواعد تهاتر."],
-["مدنی","ماده 291","تهاتر","شرایط تحقق تهاتر."],
-["مدنی","ماده 292","تبدیل تعهد","احکام تبدیل تعهد."],
-["مدنی","ماده 293","تبدیل تعهد","آثار تبدیل تعهد."],
-["مدنی","ماده 294","تهاتر","احکام تهاتر در شرایط مختلف."],
-["مدنی","ماده 295","تهاتر","شرایط قانونی تهاتر."],
-["مدنی","ماده 296","تهاتر","اثر تهاتر بر دیون."],
-["مدنی","ماده 297","تهاتر","قواعد مربوط به چند دین."],
-["مدنی","ماده 298","تهاتر","احکام خاص تهاتر."],
-["مدنی","ماده 299","تهاتر","اثر تهاتر بر تضمین‌ها."],
-["مدنی","ماده 300","تهاتر","احکام مربوط به تهاتر."],
+["مدنی","ماده 223","اصل صحت","اصل بر صحت معاملات است."],
+["مدنی","ماده 224","تفسیر قرارداد","الفاظ قرارداد بر اساس عرف تفسیر می‌شوند."],
+["مدنی","ماده 225","عرف","عرف متعارف می‌تواند در تفسیر قرارداد مؤثر باشد."],
+["مدنی","ماده 226","خسارت","شرایط مطالبه خسارت ناشی از عدم انجام تعهد."],
+["مدنی","ماده 230","وجه التزام","مبلغ تعیین‌شده قراردادی برای تخلف."],
+["مدنی","ماده 247","معامله فضولی","معامله نسبت به مال دیگری بدون اجازه مالک."],
+["مدنی","ماده 264","سقوط تعهدات","وفای به عهد، ابراء، تهاتر و موارد قانونی."],
+["مدنی","ماده 265","اصل عدم تبرع","پرداخت مال اصولاً بدون قصد تبرع تلقی می‌شود."],
 
-/* کیفری */
-
-["کیفری","ماده 1","مجازات اسلامی","ساختار کلی قانون مجازات اسلامی."],
-["کیفری","ماده 2","تعریف جرم","رفتار دارای مجازات قانونی جرم محسوب می‌شود."],
-["کیفری","ماده 3","قلمرو اجرای قانون","قواعد اجرای قوانین کیفری در قلمرو ایران."],
-["کیفری","ماده 4","جرم خارج از ایران","قواعد خاص اعمال قانون کیفری نسبت به جرایم خارج از کشور."],
-["کیفری","ماده 5","صلاحیت کیفری","موارد خاص صلاحیت قانون کیفری ایران."],
-["کیفری","ماده 6","قوانین کیفری زمان وقوع جرم","قاعده کلی در تعیین قانون قابل اجرا."],
-["کیفری","ماده 7","اتباع ایران","قواعد خاص جرایم اتباع ایرانی در خارج از کشور."],
-["کیفری","ماده 8","جرایم علیه منافع ایران","قواعد صلاحیت در جرایم خاص."],
-["کیفری","ماده 9","دادگاه صالح","قواعد صلاحیت در موارد مقرر."],
-["کیفری","ماده 10","قانون مساعدتر","اثر قانون جدید مساعدتر به حال مرتکب."],
-["کیفری","ماده 11","اجرای قوانین شکلی","قواعد اجرای قوانین مربوط به دادرسی."],
-["کیفری","ماده 12","مجازات قانونی","لزوم تعیین مجازات به موجب قانون."],
-["کیفری","ماده 13","اقدامات تأمینی","قواعد اقدامات تأمینی و تربیتی."],
+["کیفری","ماده 2","تعریف جرم","هر رفتاری که قانون برای آن مجازات تعیین کرده باشد."],
 ["کیفری","ماده 14","انواع مجازات","حد، قصاص، دیه و تعزیر."],
-["کیفری","ماده 15","حد","مفهوم مجازات حد."],
-["کیفری","ماده 16","قصاص","مفهوم قصاص."],
-["کیفری","ماده 17","دیه","مفهوم دیه."],
-["کیفری","ماده 18","تعزیر","تعریف مجازات تعزیری."],
-["کیفری","ماده 19","درجات مجازات تعزیری","تقسیم مجازات‌های تعزیری به درجات."],
-["کیفری","ماده 20","مجازات اشخاص حقوقی","قواعد مجازات اشخاص حقوقی."],
-["کیفری","ماده 21","اشخاص حقوقی","احکام مسئولیت کیفری اشخاص حقوقی."],
-["کیفری","ماده 22","تخفیف مجازات","موارد کلی تخفیف مجازات."],
-["کیفری","ماده 23","مجازات تکمیلی","امکان تعیین مجازات تکمیلی در شرایط قانونی."],
-["کیفری","ماده 24","اجرای مجازات تکمیلی","احکام اجرای مجازات تکمیلی."],
-["کیفری","ماده 25","محرومیت از حقوق اجتماعی","قواعد محرومیت تبعی."],
-["کیفری","ماده 26","حقوق اجتماعی","تعریف برخی حقوق اجتماعی."],
-["کیفری","ماده 27","مدت مجازات","قواعد مربوط به مدت حبس و سایر مجازات‌ها."],
-["کیفری","ماده 28","جزای نقدی","قواعد تعدیل جزای نقدی."],
-["کیفری","ماده 29","مجازات جایگزین","قواعد مرتبط با مجازات‌های جایگزین."],
-["کیفری","ماده 30","مصادره","قواعد مربوط به مصادره در موارد قانونی."],
-["کیفری","ماده 31","مجازات‌ها","احکام عمومی مجازات."],
-["کیفری","ماده 32","قرار تأمین","برخی قواعد مرتبط با تأمین."],
-["کیفری","ماده 33","تعلیق","احکام تعلیق اجرای مجازات."],
-["کیفری","ماده 34","تعلیق","قواعد تکمیلی تعلیق."],
-["کیفری","ماده 35","تکرار جرم","احکام مرتبط با تکرار جرم."],
-["کیفری","ماده 36","اعلام محکومیت","موارد انتشار حکم محکومیت."],
-["کیفری","ماده 37","تخفیف","موارد و نحوه تخفیف مجازات."],
+["کیفری","ماده 18","تعزیر","مجازات تعزیری در موارد قانونی."],
+["کیفری","ماده 19","درجات تعزیر","تقسیم مجازات‌های تعزیری به درجات."],
+["کیفری","ماده 20","اشخاص حقوقی","قواعد مسئولیت کیفری اشخاص حقوقی."],
+["کیفری","ماده 22","تخفیف مجازات","امکان تخفیف در موارد قانونی."],
+["کیفری","ماده 23","مجازات تکمیلی","امکان تعیین مجازات تکمیلی."],
+["کیفری","ماده 25","حقوق اجتماعی","قواعد محرومیت تبعی از حقوق اجتماعی."],
+["کیفری","ماده 37","تخفیف","قواعد کلی تخفیف مجازات."],
 ["کیفری","ماده 38","جهات تخفیف","برخی جهات قانونی تخفیف."],
-["کیفری","ماده 39","معافیت","معافیت از مجازات در موارد مقرر."],
-["کیفری","ماده 40","تعویق صدور حکم","شرایط کلی تعویق صدور حکم."],
-["کیفری","ماده 41","تعویق","احکام مربوط به تعویق صدور حکم."],
-["کیفری","ماده 42","تعویق مراقبتی","قواعد تعویق مراقبتی."],
-["کیفری","ماده 43","دستورهای دادگاه","دستورهای قابل تعیین در تعویق."],
-["کیفری","ماده 44","لغو تعویق","احکام لغو تعویق."],
-["کیفری","ماده 45","توبه","قواعد کلی اثر توبه در موارد قانونی."],
-["کیفری","ماده 46","تعلیق اجرای مجازات","شرایط تعلیق اجرای مجازات."],
-["کیفری","ماده 47","موارد منع تعلیق","جرایمی که شرایط خاصی برای تعلیق دارند."],
-["کیفری","ماده 48","نظارت الکترونیکی","احکام مرتبط با نظارت الکترونیکی."],
-["کیفری","ماده 49","اطفال و نوجوانان","قواعد مسئولیت کیفری اطفال."],
-["کیفری","ماده 50","اطفال","احکام مربوط به وضعیت کیفری طفل."],
+["کیفری","ماده 40","تعویق صدور حکم","شرایط تعویق صدور حکم."],
+["کیفری","ماده 46","تعلیق","شرایط تعلیق اجرای مجازات."],
+["کیفری","ماده 49","اطفال","قواعد مسئولیت کیفری اطفال."],
 ["کیفری","ماده 51","جنون","اثر جنون بر مسئولیت کیفری."],
 ["کیفری","ماده 52","اکراه","اثر اکراه در مسئولیت کیفری."],
-["کیفری","ماده 53","مستی","احکام مسئولیت کیفری در حالت مستی."],
-["کیفری","ماده 54","اجبار","اثر اجبار در مسئولیت کیفری."],
-["کیفری","ماده 55","اضطرار","قواعد اضطرار."],
-["کیفری","ماده 56","دفاع مشروع","مفهوم کلی دفاع مشروع."],
-["کیفری","ماده 57","دفاع مشروع","شرایط و آثار دفاع مشروع."],
-["کیفری","ماده 58","مسئولیت کیفری","قواعد عمومی مسئولیت."],
-["کیفری","ماده 59","رضایت","اثر رضایت در موارد قانونی."],
-["کیفری","ماده 60","اشتباه","قواعد مربوط به اشتباه."],
+["کیفری","ماده 55","اضطرار","قواعد مربوط به اضطرار."],
+["کیفری","ماده 56","دفاع مشروع","مفهوم دفاع مشروع."],
 
-/* تجارت */
-
-["تجارت","ماده 1","تاجر","تعریف تاجر."],
-["تجارت","ماده 2","معاملات تجارتی","انواع معاملات تجارتی."],
-["تجارت","ماده 3","اعمال تجارتی","اعمالی که تجارتی محسوب می‌شوند."],
-["تجارت","ماده 4","معاملات غیرمنقول","قواعد مربوط به معاملات اموال غیرمنقول."],
-["تجارت","ماده 5","معاملات تجاری","احکام تکمیلی معاملات تجاری."],
-["تجارت","ماده 6","دفاتر تجارتی","لزوم و قواعد دفاتر تجارتی."],
-["تجارت","ماده 7","دفاتر تجارتی","انواع دفاتر تجارتی."],
-["تجارت","ماده 8","دفتر روزنامه","قواعد دفتر روزنامه."],
-["تجارت","ماده 9","دفتر کل","قواعد دفتر کل."],
-["تجارت","ماده 10","دفتر دارایی","قواعد دفتر دارایی."],
-["تجارت","ماده 11","دفاتر تجارتی","الزامات نگهداری دفاتر."],
-["تجارت","ماده 12","دفاتر تجارتی","احکام مربوط به دفاتر."],
-["تجارت","ماده 13","دفاتر تجارتی","ضوابط ثبت مطالب در دفاتر."],
-["تجارت","ماده 14","دفاتر تجارتی","احکام نگهداری اسناد تجاری."],
-["تجارت","ماده 15","دفاتر تجارتی","قواعد مربوط به ارائه دفاتر."],
-["تجارت","ماده 16","دفاتر تجارتی","آثار رعایت مقررات دفاتر."],
-["تجارت","ماده 17","دفاتر تجارتی","احکام تکمیلی دفاتر."],
-["تجارت","ماده 18","دفاتر تجارتی","قواعد قانونی دفاتر."],
-["تجارت","ماده 19","دفاتر تجارتی","ضوابط ثبت و نگهداری."],
+["تجارت","ماده 1","تاجر","تعریف قانونی تاجر."],
+["تجارت","ماده 2","اعمال تجارتی","انواع اعمال تجارتی."],
+["تجارت","ماده 3","اعمال تجارتی","برخی اعمال تجارتی."],
+["تجارت","ماده 6","دفاتر تجارتی","الزام و قواعد دفاتر تجارتی."],
 ["تجارت","ماده 20","شرکت‌های تجاری","انواع شرکت‌های تجاری."],
-["تجارت","ماده 21","شرکت سهامی","قواعد شرکت سهامی."],
-["تجارت","ماده 22","شرکت سهامی","احکام شرکت سهامی."],
-["تجارت","ماده 23","شرکت تجاری","قواعد تشکیل شرکت."],
-["تجارت","ماده 24","شرکت سهامی","تعریف سهم."],
+["تجارت","ماده 24","سهم","مفهوم سهم در شرکت."],
 ["تجارت","ماده 25","سهام","قواعد مربوط به سهام."],
-["تجارت","ماده 26","سهام","احکام انتقال سهام."],
-["تجارت","ماده 27","سهام","ضوابط سهام."],
-["تجارت","ماده 28","شرکت","قواعد سرمایه شرکت."],
-["تجارت","ماده 29","شرکت","احکام افزایش سرمایه."],
-["تجارت","ماده 30","شرکت","احکام سرمایه شرکت."],
-["تجارت","ماده 31","شرکت","قواعد مدیریتی."],
-["تجارت","ماده 32","شرکت","احکام مربوط به سهام."],
-["تجارت","ماده 33","شرکت","ضوابط سهام."],
-["تجارت","ماده 34","شرکت","تعهدات مربوط به سهام."],
-["تجارت","ماده 35","شرکت","پرداخت مبلغ سهام."],
-["تجارت","ماده 36","شرکت","مسئولیت سهامداران."],
-["تجارت","ماده 37","شرکت","احکام سهام."],
-["تجارت","ماده 38","شرکت","قواعد سرمایه."],
-["تجارت","ماده 39","شرکت","انتقال سهام."],
-["تجارت","ماده 40","شرکت","قواعد ثبت انتقال."],
-
-/* خانواده */
+["تجارت","ماده 40","انتقال سهام","قواعد انتقال سهام."],
 
 ["خانواده","ماده 1 قانون حمایت خانواده","دادگاه خانواده","تشکیل دادگاه خانواده."],
-["خانواده","ماده 2 قانون حمایت خانواده","قضات دادگاه خانواده","قواعد اختصاصی دادگاه خانواده."],
-["خانواده","ماده 3 قانون حمایت خانواده","قضات مشاور زن","پیش‌بینی قاضی مشاور زن در دادگاه خانواده."],
-["خانواده","ماده 4 قانون حمایت خانواده","صلاحیت دادگاه خانواده","موضوعات قابل رسیدگی در دادگاه خانواده."],
-["خانواده","ماده 5 قانون حمایت خانواده","معافیت هزینه دادرسی","قواعد معافیت افراد واجد شرایط."],
-["خانواده","ماده 6 قانون حمایت خانواده","معاضدت حقوقی","حمایت از اشخاص فاقد توان مالی."],
+["خانواده","ماده 4 قانون حمایت خانواده","صلاحیت","موضوعات قابل رسیدگی در دادگاه خانواده."],
 ["خانواده","ماده 7 قانون حمایت خانواده","دستور موقت","امکان صدور دستور موقت در امور خانوادگی."],
-["خانواده","ماده 8 قانون حمایت خانواده","نحوه رسیدگی","قواعد رسیدگی به دعاوی خانوادگی."],
-["خانواده","ماده 9 قانون حمایت خانواده","دادگاه خانواده","احکام تکمیلی صلاحیت."],
-["خانواده","ماده 10 قانون حمایت خانواده","نشانی زوجین","قواعد مربوط به اقامت و ابلاغ."],
-["خانواده","ماده 11 قانون حمایت خانواده","ابلاغ","قواعد ابلاغ در دعاوی خانوادگی."],
-["خانواده","ماده 12 قانون حمایت خانواده","اقامتگاه","صلاحیت بر اساس اقامتگاه در موارد قانونی."],
-["خانواده","ماده 13 قانون حمایت خانواده","دعاوی خانوادگی","قواعد صلاحیت در برخی دعاوی."],
-["خانواده","ماده 14 قانون حمایت خانواده","داوری","قواعد داوری در اختلافات خانوادگی."],
-["خانواده","ماده 15 قانون حمایت خانواده","داوری طلاق","احکام داوری در طلاق."],
-["خانواده","ماده 16 قانون حمایت خانواده","داوران","شرایط و نحوه انتخاب داور."],
-["خانواده","ماده 17 قانون حمایت خانواده","مشاوره خانواده","نقش مراکز مشاوره خانواده."],
-["خانواده","ماده 18 قانون حمایت خانواده","مشاوره","احکام مراکز مشاوره."],
-["خانواده","ماده 19 قانون حمایت خانواده","مرکز مشاوره","قواعد تشکیل و فعالیت مراکز."],
-["خانواده","ماده 20 قانون حمایت خانواده","ثبت ازدواج","قواعد ثبت نکاح."],
-["خانواده","ماده 21 قانون حمایت خانواده","ثبت نکاح دائم","لزوم ثبت نکاح دائم."],
+["خانواده","ماده 21 قانون حمایت خانواده","ثبت نکاح","قواعد ثبت نکاح دائم."],
 ["خانواده","ماده 22 قانون حمایت خانواده","مهریه","قواعد قانونی مرتبط با مهریه."],
-["خانواده","ماده 23 قانون حمایت خانواده","نکاح مجدد","احکام مرتبط با ازدواج مجدد."],
-["خانواده","ماده 24 قانون حمایت خانواده","ثبت طلاق","قواعد ثبت طلاق."],
-["خانواده","ماده 25 قانون حمایت خانواده","طلاق توافقی","ارجاع به مرکز مشاوره در موارد قانونی."],
-["خانواده","ماده 26 قانون حمایت خانواده","گواهی عدم امکان سازش","قواعد صدور گواهی."],
-["خانواده","ماده 27 قانون حمایت خانواده","داوری طلاق","ارجاع امر به داوری در موارد مقرر."],
-["خانواده","ماده 28 قانون حمایت خانواده","داوری","احکام داوری زوجین."],
-["خانواده","ماده 29 قانون حمایت خانواده","حقوق مالی زوجین","تعیین تکلیف حقوق مالی در رأی طلاق."],
-["خانواده","ماده 30 قانون حمایت خانواده","اموال زوجین","احکام مربوط به ادعای مالکیت اموال."],
-["خانواده","ماده 31 قانون حمایت خانواده","ثبت طلاق","احکام مربوط به مدارک لازم."],
-["خانواده","ماده 32 قانون حمایت خانواده","طلاق","قواعد ثبت و اجرای طلاق."],
-["خانواده","ماده 33 قانون حمایت خانواده","مدت اعتبار حکم","قواعد اعتبار احکام و گواهی‌ها."],
-["خانواده","ماده 34 قانون حمایت خانواده","گواهی عدم امکان سازش","مدت اعتبار گواهی."],
-["خانواده","ماده 35 قانون حمایت خانواده","اجرای طلاق","احکام عدم مراجعه برای اجرای طلاق."],
-["خانواده","ماده 36 قانون حمایت خانواده","اجرای صیغه طلاق","قواعد اجرای طلاق."],
-["خانواده","ماده 37 قانون حمایت خانواده","حقوق فرزندان","قواعد مربوط به فرزندان."],
-["خانواده","ماده 38 قانون حمایت خانواده","حضانت","احکام مرتبط با حضانت."],
-["خانواده","ماده 39 قانون حمایت خانواده","سرپرستی","قواعد سرپرستی در موارد مقرر."],
-["خانواده","ماده 40 قانون حمایت خانواده","حضانت","ضمانت اجرای ممانعت از ملاقات."],
+["خانواده","ماده 25 قانون حمایت خانواده","طلاق توافقی","قواعد مربوط به مشاوره در طلاق توافقی."],
+["خانواده","ماده 29 قانون حمایت خانواده","حقوق مالی","تعیین تکلیف حقوق مالی در رأی طلاق."],
+["خانواده","ماده 40 قانون حمایت خانواده","حضانت","ضمانت اجرای ممانعت از ملاقات طفل."],
 ["خانواده","ماده 41 قانون حمایت خانواده","ملاقات طفل","قواعد تعیین نحوه ملاقات طفل."],
-["خانواده","ماده 42 قانون حمایت خانواده","خروج طفل","قواعد مرتبط با خروج طفل از محل اقامت."],
-["خانواده","ماده 43 قانون حمایت خانواده","حضانت","احکام تکمیلی حضانت."],
-["خانواده","ماده 44 قانون حمایت خانواده","نفقه","قواعد حمایت از افراد واجد شرایط."],
-["خانواده","ماده 45 قانون حمایت خانواده","مصلحت طفل","لزوم رعایت مصلحت کودکان و نوجوانان."],
-["خانواده","ماده 46 قانون حمایت خانواده","ثبت وقایع","احکام ثبت وقایع خانوادگی."],
-["خانواده","ماده 47 قانون حمایت خانواده","نفقه","قواعد پرداخت نفقه در موارد مقرر."],
-["خانواده","ماده 48 قانون حمایت خانواده","حقوق بازنشستگی","احکام مربوط به مستمری و حقوق."],
-["خانواده","ماده 49 قانون حمایت خانواده","جرایم","برخی ضمانت اجراهای کیفری قانون."],
-["خانواده","ماده 50 قانون حمایت خانواده","ازدواج با دختر نابالغ","ضمانت اجرای برخی تخلفات."],
-["خانواده","ماده 51 قانون حمایت خانواده","ثبت نکاح","ضمانت اجراهای قانونی."],
-["خانواده","ماده 52 قانون حمایت خانواده","تخلفات","برخی تخلفات و ضمانت اجراها."],
-["خانواده","ماده 53 قانون حمایت خانواده","نفقه","ضمانت اجرای ترک انفاق."],
-["خانواده","ماده 54 قانون حمایت خانواده","تخلفات قضایی","احکام ضمانت اجرا."],
-["خانواده","ماده 55 قانون حمایت خانواده","هزینه‌ها","قواعد مربوط به هزینه‌های قانونی."],
-["خانواده","ماده 56 قانون حمایت خانواده","ثبت ازدواج","احکام مرتبط با ثبت."],
-["خانواده","ماده 57 قانون حمایت خانواده","آیین‌نامه","احکام مربوط به آیین‌نامه اجرایی."],
-["خانواده","ماده 58 قانون حمایت خانواده","نسخ قوانین سابق","احکام نسخ مقررات مغایر."]
+["خانواده","ماده 45 قانون حمایت خانواده","مصلحت طفل","رعایت مصلحت کودکان و نوجوانان."]
 ];
 
 
-/* =========================
-   ۵۰ نکته حقوقی
-========================= */
+/* ۵۰ نکته */
 
-const tips = [
+const tips=[
 
-"قبل از امضای قرارداد، تمام صفحات و پیوست‌ها را مطالعه کنید.",
+"قبل از امضای قرارداد تمام صفحات را مطالعه کنید.",
 "مشخصات کامل طرفین قرارداد را دقیق وارد کنید.",
-"موضوع قرارداد باید روشن و قابل تعیین باشد.",
-"مبلغ قرارداد را هم به عدد و هم به حروف درج کنید.",
-"شرایط پرداخت را دقیق و مرحله‌بندی‌شده بنویسید.",
-"برای تعهدات مهم، ضمانت اجرای مشخص تعیین کنید.",
-"تاریخ شروع و پایان قرارداد را مشخص کنید.",
-"شرایط فسخ قرارداد را از قبل تعیین کنید.",
-"برای اختلافات مهم، روش حل اختلاف را مشخص کنید.",
-"رسید پرداخت‌ها و اسناد مالی را نگهداری کنید.",
-"در معاملات ملکی، مدارک مالکیت را بررسی کنید.",
-"قبل از خرید ملک، وضعیت ثبتی آن را بررسی کنید.",
-"در اجاره، مبلغ ودیعه و اجاره‌بها را دقیق بنویسید.",
-"زمان تخلیه ملک را در قرارداد مشخص کنید.",
-"صورت‌جلسه تحویل ملک را تهیه کنید.",
-"در قرارداد شراکت، سهم هر شریک را روشن کنید.",
-"وظایف هر شریک را کتبی مشخص کنید.",
-"شرایط خروج شریک از کسب‌وکار را بنویسید.",
-"در معاملات خودرو، مدارک خودرو را بررسی کنید.",
-"شماره شاسی و موتور خودرو را با مدارک تطبیق دهید.",
-"چک را بدون ثبت و بررسی اطلاعات آن دریافت نکنید.",
-"برای پرداخت‌های مهم، رسید معتبر دریافت کنید.",
-"اسناد مهم را در محل امن نگهداری کنید.",
-"در اختلافات خانوادگی ابتدا موضوع حقوقی دقیق را مشخص کنید.",
-"در موضوع حضانت، مصلحت طفل اهمیت اساسی دارد.",
-"در مطالبه نفقه، مدارک و مستندات را حفظ کنید.",
-"در موضوع مهریه، شرایط قانونی روز را بررسی کنید.",
-"در طلاق توافقی، حقوق مالی طرفین را روشن کنید.",
-"قبل از طرح دعوا، مدارک لازم را جمع‌آوری کنید.",
-"خواسته دعوا را دقیق تعیین کنید.",
-"مرجع صالح رسیدگی را بررسی کنید.",
+"موضوع قرارداد باید کاملاً مشخص باشد.",
+"مبلغ قرارداد را دقیق درج کنید.",
+"شرایط پرداخت را مشخص کنید.",
+"تاریخ شروع و پایان قرارداد را بنویسید.",
+"شرایط فسخ قرارداد را مشخص کنید.",
+"ضمانت اجرای تعهدات مهم را مشخص کنید.",
+"برای پرداخت‌ها رسید دریافت کنید.",
+"مدارک مهم را نگهداری کنید.",
+"در معاملات ملکی مدارک مالکیت را بررسی کنید.",
+"وضعیت ثبتی ملک را بررسی کنید.",
+"در اجاره مبلغ ودیعه را دقیق بنویسید.",
+"مبلغ اجاره را مشخص کنید.",
+"مدت اجاره را دقیق تعیین کنید.",
+"زمان تخلیه را مشخص کنید.",
+"صورت‌جلسه تحویل ملک تهیه کنید.",
+"در شراکت سهم هر شریک را بنویسید.",
+"وظایف شرکا را مشخص کنید.",
+"شرایط خروج شریک را تعیین کنید.",
+"در معامله خودرو مدارک خودرو را بررسی کنید.",
+"شماره شاسی را با مدارک تطبیق دهید.",
+"شماره موتور را بررسی کنید.",
+"رسید پرداخت‌ها را حفظ کنید.",
+"چک را بدون بررسی دریافت نکنید.",
+"در پرونده خانوادگی مدارک را حفظ کنید.",
+"در موضوع حضانت مصلحت طفل اهمیت دارد.",
+"مدارک مربوط به نفقه را نگهداری کنید.",
+"شرایط مهریه را بررسی کنید.",
+"حقوق مالی در طلاق را مشخص کنید.",
+"قبل از طرح دعوا مدارک را جمع کنید.",
+"خواسته دعوا را دقیق مشخص کنید.",
+"مرجع صالح را بررسی کنید.",
 "مهلت‌های قانونی را از دست ندهید.",
 "ابلاغیه‌های قضایی را به‌موقع بررسی کنید.",
-"شماره پرونده و شعبه رسیدگی‌کننده را ثبت کنید.",
-"در جلسه دادگاه، مدارک مرتبط را همراه داشته باشید.",
-"اظهارات خود را دقیق و بدون تناقض بیان کنید.",
-"از امضای اسناد نامفهوم خودداری کنید.",
-"در اسناد رسمی، مفاد سند را پیش از امضا بخوانید.",
-"برای پرونده‌های تخصصی از وکیل یا مشاور حقوقی کمک بگیرید.",
-"هر پیام یا سند مرتبط با اختلاف را حفظ کنید.",
-"در اختلافات اینترنتی، از اطلاعات و مکاتبات نسخه پشتیبان بگیرید.",
-"در معاملات آنلاین، هویت طرف مقابل را بررسی کنید.",
-"شرایط بازگشت یا فسخ معامله را بررسی کنید.",
-"برای تعهدات شفاهی مهم، مستند کتبی تهیه کنید.",
-"شاهدان و مدارک مربوط به قرارداد را ثبت کنید.",
-"در پرونده کیفری، عنوان اتهام را دقیق بررسی کنید.",
-"قبل از دفاع، مدارک پرونده را مطالعه کنید.",
-"حقوق قانونی خود را از منابع معتبر بررسی کنید.",
-"اطلاعات حقوقی سایت را با آخرین اصلاحات قوانین تطبیق دهید.",
-"مطالب آموزشی سایت جایگزین بررسی تخصصی پرونده نیست."
+"شماره پرونده را نگهداری کنید.",
+"مدارک جلسه دادگاه را آماده کنید.",
+"اظهارات خود را دقیق بیان کنید.",
+"اسناد نامفهوم را بدون مطالعه امضا نکنید.",
+"مفاد سند رسمی را قبل از امضا بخوانید.",
+"در پرونده تخصصی از متخصص حقوقی کمک بگیرید.",
+"پیام‌های مرتبط با اختلاف را حفظ کنید.",
+"از اسناد الکترونیکی نسخه پشتیبان بگیرید.",
+"در معاملات آنلاین هویت طرف مقابل را بررسی کنید.",
+"شرایط فسخ خرید اینترنتی را بررسی کنید.",
+"برای تعهدات شفاهی مهم سند کتبی تهیه کنید.",
+"شاهدان قرارداد را مشخص کنید.",
+"در پرونده کیفری عنوان اتهام را بررسی کنید.",
+"مدارک پرونده را مطالعه کنید.",
+"قوانین را از منابع معتبر بررسی کنید.",
+"اطلاعات حقوقی سایت جایگزین مشاوره تخصصی نیست."
 ];
 
 
-/* =========================
-   آزمون‌ها
-========================= */
+/* ۲۰ آزمون */
 
-const quizzes = [
+const quizzes=[
 
-["کدام ماده قانون مدنی درباره قراردادهای خصوصی است?",
-["ماده ۱۰","ماده ۳۰","ماده ۳۱","ماده ۴۰"],0],
+["ماده ۱۰ قانون مدنی درباره چیست?",
+["قراردادهای خصوصی","حضانت","جرم","ثبت شرکت"],0],
 
-["کدام مورد از شرایط اساسی صحت معامله است?",
+["کدام مورد شرط اساسی معامله است?",
 ["قصد و رضا","رنگ قرارداد","تعداد صفحات","نوع کاغذ"],0],
 
-["ماده ۲۱۹ قانون مدنی بیشتر با کدام مفهوم مرتبط است?",
-["لزوم قراردادها","حضانت","مالکیت فکری","ثبت شرکت"],0],
+["ماده ۲۱۹ قانون مدنی درباره چیست?",
+["لزوم قرارداد","حضانت","ثبت شرکت","جرم"],0],
 
-["تاجر در قانون تجارت چه کسی است?",
-["شخصی که شغل معمولی خود را معاملات تجارتی قرار دهد","هر کارمند","هر مالک ملک","هر دانشجو"],0],
+["تاجر چه کسی است?",
+["کسی که شغل معمولی خود را معاملات تجارتی قرار دهد","هر کارمند","هر دانشجو","هر مالک"],0],
 
-["کدام مورد از انواع مجازات در قانون مجازات اسلامی است?",
-["حد","مالیات","عوارض","اجاره"],0],
+["انواع مجازات در قانون مجازات اسلامی شامل چیست?",
+["حد، قصاص، دیه و تعزیر","مالیات","عوارض","اجاره"],0],
 
-["ماده ۱۹ قانون مجازات اسلامی درباره چیست?",
-["درجات مجازات تعزیری","ثبت ازدواج","مالکیت","اجاره"],0],
+["دادگاه خانواده به چه موضوعاتی رسیدگی می‌کند?",
+["دعاوی خانوادگی","فقط جرایم رانندگی","فقط مالیات","ثبت شرکت"],0],
 
-["کدام موضوع در دادگاه خانواده رسیدگی می‌شود?",
-["برخی دعاوی خانوادگی","تمام جرایم رانندگی","تمام دعاوی مالیاتی","ثبت شرکت"],0],
+["در قرارداد مهم چه کاری بهتر است?",
+["مطالعه کامل قرارداد","امضای فوری","حذف صفحات","خالی گذاشتن مبلغ"],0],
 
-["برای یک قرارداد مهم کدام کار بهتر است?",
-["مطالعه دقیق مفاد قرارداد","امضای فوری","حذف پیوست‌ها","خالی گذاشتن مبلغ"],0],
-
-["در معامله ملک بررسی کدام مورد مهم است?",
-["مدارک مالکیت","رنگ ساختمان","تعداد پنجره‌ها","نوع کفپوش"],0],
+["در معامله ملک چه چیزی مهم است?",
+["بررسی مدارک مالکیت","رنگ ساختمان","تعداد پنجره","نوع کفپوش"],0],
 
 ["در اختلاف حقوقی چه کاری مفید است?",
-["جمع‌آوری اسناد و مدارک","حذف پیام‌ها","از بین بردن رسیدها","نادیده گرفتن ابلاغیه"],0],
-
-["کدام مورد در قرارداد بهتر است دقیق نوشته شود?",
-["تعهدات طرفین","سلیقه شخصی","رنگ لباس","نام دوستان"],0],
-
-["وجه التزام معمولاً برای چه موضوعی در قرارداد تعیین می‌شود?",
-["تخلف از تعهد","انتخاب نام","تغییر آدرس سایت","خرید اینترنت"],0],
-
-["قانون مدنی مربوط به کدام حوزه است?",
-["روابط مدنی و خصوصی","فقط جرایم","فقط مالیات","فقط ورزش"],0],
-
-["قانون تجارت بیشتر درباره چیست?",
-["امور و معاملات تجاری","ازدواج","حضانت","رانندگی"],0],
-
-["قانون حمایت خانواده درباره چه حوزه‌ای است?",
-["امور خانوادگی","شرکت‌ها","مالیات","گمرک"],0],
-
-["کدام مورد برای پیگیری پرونده قضایی اهمیت دارد?",
-["ابلاغیه‌ها","رنگ لباس","نوع گوشی","مدل خودرو"],0],
+["جمع‌آوری مدارک","حذف پیام‌ها","از بین بردن رسید","نادیده گرفتن ابلاغیه"],0],
 
 ["در قرارداد اجاره چه چیزی باید مشخص باشد?",
-["مدت و مبلغ اجاره","رنگ دیوار","تعداد مهمان","نوع تلفن"],0],
+["مدت و مبلغ","رنگ دیوار","تعداد مهمان","نوع تلفن"],0],
 
-["در شراکت بهتر است چه چیزی کتبی شود?",
-["سهم و وظایف شرکا","علایق شخصی","برنامه تعطیلات","رنگ دفتر"],0],
+["در شراکت چه چیزی باید مشخص شود?",
+["سهم و وظایف شرکا","رنگ دفتر","برنامه تعطیلات","غذای مورد علاقه"],0],
 
-["در معاملات مهم نگهداری کدام مورد مفید است?",
-["رسید و اسناد","پیام‌های بی‌ربط","عکس‌های غیرمرتبط","تبلیغات"],0],
+["وجه التزام معمولاً برای چیست?",
+["تخلف از تعهد","تغییر سایت","انتخاب نام","خرید اینترنت"],0],
 
-["برای پرونده تخصصی چه اقدامی مناسب‌تر است?",
-["مشورت با متخصص حقوقی","حدس زدن قانون","نادیده گرفتن پرونده","حذف مدارک"],0]
+["قانون تجارت بیشتر درباره چیست?",
+["امور تجاری","ازدواج","حضانت","رانندگی"],0],
+
+["قانون حمایت خانواده درباره چیست?",
+["امور خانوادگی","شرکت‌ها","مالیات","گمرک"],0],
+
+["در پرونده قضایی چه چیزی مهم است?",
+["ابلاغیه‌ها","رنگ لباس","مدل گوشی","رنگ خودرو"],0],
+
+["در معاملات مهم چه چیزی را نگه داریم?",
+["رسید و اسناد","تبلیغات","عکس بی‌ربط","پیام‌های غیرمرتبط"],0],
+
+["برای پرونده تخصصی چه اقدامی بهتر است?",
+["مشورت با متخصص حقوقی","حدس زدن قانون","حذف مدارک","نادیده گرفتن پرونده"],0],
+
+["در قرارداد چه چیزی باید روشن باشد?",
+["تعهدات طرفین","رنگ لباس","برنامه سفر","تعداد دوستان"],0],
+
+["در معامله خودرو چه چیزی باید بررسی شود?",
+["شماره شاسی و مدارک","رنگ صندلی","نوع لاستیک فقط","رنگ فرمان"],0],
+
+["در اسناد مهم چه کاری مناسب است?",
+["نگهداری نسخه و رسید","دور انداختن","حذف اطلاعات","امضای بدون مطالعه"],0]
 
 ];
 
 
-/* =========================
-   نمایش مواد
-========================= */
+/* ==========================
+   VARIABLES
+========================== */
 
-let currentCategory="all";
+let category="همه";
 
-function renderLaws(){
 
-    const list=document.getElementById("lawList");
-
-    const search=
-    document.getElementById("lawSearch").value
-    .trim()
-    .toLowerCase();
-
-    list.innerHTML="";
-
-    let count=0;
-
-    laws.forEach(function(law,index){
-
-        const category=law[0];
-        const number=law[1];
-        const title=law[2];
-        const desc=law[3];
-
-        if(
-            currentCategory!=="all" &&
-            category!==currentCategory
-        ){
-            return;
-        }
-
-        const text=
-        (category+" "+number+" "+title+" "+desc)
-        .toLowerCase();
-
-        if(search && !text.includes(search)){
-            return;
-        }
-
-        count++;
-
-        const div=document.createElement("div");
-
-        div.className="card law-card";
-
-        div.innerHTML=`
-
-        <div
-        class="law-head"
-        onclick="toggleLawCard(this)">
-
-        <div>
-
-        <span class="law-number">
-        ${category}
-        </span>
-
-        <br>
-
-        <strong>
-        ${number}
-        </strong>
-
-        —
-        ${title}
-
-        </div>
-
-        <span>+</span>
-
-        </div>
-
-        <div class="law-body">
-
-        <p>
-        <strong style="color:#ffd700;">
-        خلاصه آموزشی:
-        </strong>
-        </p>
-
-        <p>
-        ${desc}
-        </p>
-
-        </div>
-
-        `;
-
-        list.appendChild(div);
-
-    });
-
-    if(count===0){
-
-        list.innerHTML=`
-        <div class="notice">
-        موردی پیدا نشد.
-        </div>
-        `;
-
-    }
-
-}
-
-
-/* =========================
-   فیلتر مواد
-========================= */
-
-function filterLaw(category,button){
-
-    currentCategory=category;
-
-    document
-    .querySelectorAll(".category-bar button")
-    .forEach(function(btn){
-
-        btn.classList.remove("active");
-
-    });
-
-    button.classList.add("active");
-
-    renderLaws();
-
-}
-
-
-/* =========================
-   جستجوی مواد
-========================= */
-
-function searchLaws(){
-    renderLaws();
-}
-
-
-/* =========================
-   باز و بسته شدن ماده
-========================= */
-
-function toggleLawCard(element){
-
-    const body=
-    element.nextElementSibling;
-
-    const icon=
-    element.querySelector("span:last-child");
-
-    if(body.classList.contains("open")){
-
-        body.classList.remove("open");
-
-        icon.textContent="+";
-
-    }else{
-
-        body.classList.add("open");
-
-        icon.textContent="−";
-
-    }
-
-}
-
-
-/* =========================
-   نمایش ۵۰ نکته
-========================= */
-
-function renderTips(){
-
-    const list=
-    document.getElementById("tipsList");
-
-    const search=
-    document.getElementById("tipSearch")
-    .value
-    .trim()
-    .toLowerCase();
-
-    list.innerHTML="";
-
-    tips.forEach(function(tip,index){
-
-        if(
-            search &&
-            !tip.toLowerCase().includes(search)
-        ){
-            return;
-        }
-
-        const card=
-        document.createElement("div");
-
-        card.className="card";
-
-        card.innerHTML=`
-
-        <div class="tip-number">
-        ${index+1}
-        </div>
-
-        <h3>
-        نکته حقوقی ${index+1}
-        </h3>
-
-        <p>
-        ${tip}
-        </p>
-
-        `;
-
-        list.appendChild(card);
-
-    });
-
-}
-
-function searchTips(){
-    renderTips();
-}
-
-
-/* =========================
-   آزمون‌ها
-========================= */
-
-function renderQuizzes(){
-
-    const list=
-    document.getElementById("quizList");
-
-    list.innerHTML="";
-
-    quizzes.forEach(function(q,index){
-
-        const question=q[0];
-        const options=q[1];
-        const correct=q[2];
-
-        const div=
-        document.createElement("div");
-
-        div.className="quiz";
-
-        let html=`
-
-        <h3>
-        آزمون ${index+1}
-        </h3>
-
-        <p>
-        ${question}
-        </p>
-        `;
-
-        options.forEach(function(option,i){
-
-            html+=`
-
-            <label class="option">
-
-            <input
-            type="radio"
-            name="quiz${index}"
-            value="${i}">
-
-            ${option}
-
-            </label>
-
-            `;
-
-        });
-
-        html+=`
-
-        <button
-        class="gold-btn"
-        onclick="checkQuiz(${index},${correct})">
-
-        بررسی پاسخ
-
-        </button>
-
-        <div
-        class="result"
-        id="result${index}">
-        </div>
-
-        `;
-
-        div.innerHTML=html;
-
-        list.appendChild(div);
-
-    });
-
-}
-
-
-function checkQuiz(index,correct){
-
-    const answers=
-    document.getElementsByName("quiz"+index);
-
-    let selected=null;
-
-    answers.forEach(function(answer){
-
-        if(answer.checked){
-
-            selected=
-            Number(answer.value);
-
-        }
-
-    });
-
-    const result=
-    document.getElementById("result"+index);
-
-    if(selected===null){
-
-        result.textContent=
-        "⚠️ لطفاً یک گزینه انتخاب کنید.";
-
-        result.style.color="#ffd700";
-
-        return;
-
-    }
-
-    if(selected===correct){
-
-        result.textContent=
-        "✅ پاسخ صحیح است.";
-
-        result.style.color="#4cff88";
-
-    }else{
-
-        result.textContent=
-        "❌ پاسخ اشتباه است.";
-
-        result.style.color="#ff6b6b";
-
-    }
-
-}
-
-
-/* =========================
-   منو
-========================= */
+/* ==========================
+   MENU
+========================== */
 
 function toggleMenu(){
 
-    document
-    .getElementById("mainNav")
-    .classList.toggle("open");
+document.getElementById("nav")
+.classList.toggle("open");
 
 }
 
 
 function showSection(id,button){
 
-    document
-    .querySelectorAll(".section")
-    .forEach(function(section){
+document.querySelectorAll(".section")
+.forEach(function(section){
 
-        section.classList.remove("active");
+section.classList.remove("active");
 
-    });
+});
 
-    if(id!=="home"){
+if(id!=="home"){
 
-        document
-        .getElementById(id)
-        .classList.add("active");
+document.getElementById(id)
+.classList.add("active");
 
-    }
+}
 
+document.querySelectorAll(".nav button")
+.forEach(function(btn){
 
-    document
-    .querySelectorAll(".nav button")
-    .forEach(function(btn){
+btn.classList.remove("active");
 
-        btn.classList.remove("active");
+});
 
-    });
+if(button){
 
+button.classList.add("active");
 
-    if(button){
+}
 
-        button.classList.add("active");
+document.getElementById("nav")
+.classList.remove("open");
 
-    }
-
-
-    document
-    .getElementById("mainNav")
-    .classList.remove("open");
-
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
 }
 
 
-/* =========================
-   خوش آمدگویی
-========================= */
+function goHome(){
 
-function welcomeUser(){
+document.querySelectorAll(".section")
+.forEach(function(section){
 
-    const box=
-    document.getElementById("welcome");
+section.classList.remove("active");
 
-    box.style.display="block";
+});
 
-    box.scrollIntoView({
-        behavior:"smooth",
-        block:"center"
-    });
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
 }
 
 
-/* =========================
-   خرید نمایشی
-========================= */
+/* ==========================
+   WELCOME
+========================== */
 
-function fakePurchase(){
+function welcome(){
 
-    alert(
-    "📱 درخواست شما ثبت شد.\n\n"+
-    "این قسمت فعلاً نمایشی است.\n"+
-    "برای خرید واقعی باید درگاه پرداخت "+
-    "و سرویس معتبر اپراتور متصل شود."
-    );
+document.getElementById("welcome")
+.style.display="block";
+
+document.getElementById("welcome")
+.scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
 
 }
 
 
-/* =========================
-   شروع سایت
-========================= */
+/* ==========================
+   LAWS
+========================== */
+
+function setCategory(value,button){
+
+category=value;
+
+document.querySelectorAll(".categories button")
+.forEach(function(btn){
+
+btn.classList.remove("active");
+
+});
+
+button.classList.add("active");
+
+renderLaws();
+
+}
+
+
+function renderLaws(){
+
+let list=document.getElementById("lawList");
+
+let search=document.getElementById("lawSearch")
+.value
+.toLowerCase();
+
+list.innerHTML="";
+
+let found=0;
+
+laws.forEach(function(law){
+
+let cat=law[0];
+
+let number=law[1];
+
+let title=law[2];
+
+let desc=law[3];
+
+
+if(category!=="همه" && cat!==category){
+
+return;
+
+}
+
+
+let text=(cat+" "+number+" "+title+" "+desc)
+.toLowerCase();
+
+if(search && !text.includes(search)){
+
+return;
+
+}
+
+
+found++;
+
+
+let div=document.createElement("div");
+
+div.className="card law";
+
+
+div.innerHTML=`
+
+<div class="law-title"
+onclick="openLaw(this)">
+
+<div>
+
+<span style="color:#ffd700;font-size:12px;">
+${cat}
+</span>
+
+<br>
+
+<strong>
+${number}
+</strong>
+
+-
+${title}
+
+</div>
+
+<span>+</span>
+
+</div>
+
+
+<div class="law-content">
+
+<p>
+<strong style="color:#ffd700;">
+خلاصه آموزشی:
+</strong>
+</p>
+
+<p>
+${desc}
+</p>
+
+</div>
+
+`;
+
+
+list.appendChild(div);
+
+});
+
+
+if(found===0){
+
+list.innerHTML=`
+
+<div class="notice">
+موردی پیدا نشد.
+</div>
+
+`;
+
+}
+
+}
+
+
+function openLaw(element){
+
+let content=
+element.nextElementSibling;
+
+let sign=
+element.querySelector("span:last-child");
+
+
+if(content.classList.contains("open")){
+
+content.classList.remove("open");
+
+sign.innerText="+";
+
+}else{
+
+content.classList.add("open");
+
+sign.innerText="−";
+
+}
+
+}
+
+
+/* ==========================
+   TIPS
+========================== */
+
+function renderTips(){
+
+let list=document.getElementById("tipList");
+
+let search=document.getElementById("tipSearch")
+.value
+.toLowerCase();
+
+list.innerHTML="";
+
+
+tips.forEach(function(tip,index){
+
+if(
+search &&
+!tip.toLowerCase().includes(search)
+){
+
+return;
+
+}
+
+
+let div=document.createElement("div");
+
+div.className="card";
+
+div.innerHTML=`
+
+<div class="tip-number">
+${index+1}
+</div>
+
+<h3>
+نکته حقوقی ${index+1}
+</h3>
+
+<p>
+${tip}
+</p>
+
+`;
+
+list.appendChild(div);
+
+});
+
+}
+
+
+/* ==========================
+   QUIZ
+========================== */
+
+function renderQuiz(){
+
+let list=document.getElementById("quizList");
+
+list.innerHTML="";
+
+
+quizzes.forEach(function(q,index){
+
+let html=`
+
+<div class="card quiz">
+
+<h3>
+آزمون ${index+1}
+</h3>
+
+<p>
+${q[0]}
+</p>
+
+`;
+
+
+q[1].forEach(function(option,i){
+
+html+=`
+
+<label class="option">
+
+<input
+type="radio"
+name="quiz${index}"
+value="${i}">
+
+${option}
+
+</label>
+
+`;
+
+});
+
+
+html+=`
+
+<button
+class="gold-btn"
+onclick="check(${index},${q[2]})">
+
+بررسی پاسخ
+
+</button>
+
+<div
+class="result"
+id="result${index}">
+</div>
+
+</div>
+
+`;
+
+
+let div=document.createElement("div");
+
+div.innerHTML=html;
+
+list.appendChild(div);
+
+});
+
+}
+
+
+function check(index,correct){
+
+let answers=
+document.getElementsByName("quiz"+index);
+
+let selected=null;
+
+
+answers.forEach(function(answer){
+
+if(answer.checked){
+
+selected=
+Number(answer.value);
+
+}
+
+});
+
+
+let result=
+document.getElementById("result"+index);
+
+
+if(selected===null){
+
+result.innerText=
+"⚠️ یک گزینه انتخاب کنید.";
+
+result.style.color="#ffd700";
+
+return;
+
+}
+
+
+if(selected===correct){
+
+result.innerText=
+"✅ پاسخ صحیح است.";
+
+result.style.color="#4cff88";
+
+}else{
+
+result.innerText=
+"❌ پاسخ اشتباه است.";
+
+result.style.color="#ff6b6b";
+
+}
+
+}
+
+
+/* ==========================
+   PURCHASE
+========================== */
+
+function purchase(){
+
+alert(
+"📱 درخواست شما ثبت شد.\n\n"+
+"این بخش فعلاً نمایشی است.\n"+
+"برای خرید واقعی باید درگاه پرداخت و سرویس اپراتور متصل شود."
+);
+
+}
+
+
+/* ==========================
+   START
+========================== */
 
 renderLaws();
 
 renderTips();
 
-renderQuizzes();
+renderQuiz();
 
 </script>
 
