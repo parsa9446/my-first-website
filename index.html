@@ -1,2381 +1,923 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>پارسا کرمی | مرکز حقوقی و خدمات هوشمند</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:Tahoma,Arial,sans-serif;
-background:
-radial-gradient(circle at 90% 0%,#193c5b 0%,#081725 38%,#02070c 75%);
-color:#fff;
-min-height:100vh;
-line-height:1.9;
-}
-
-header{
-position:sticky;
-top:0;
-z-index:9999;
-background:rgba(2,9,16,.95);
-backdrop-filter:blur(18px);
-border-bottom:1px solid rgba(255,215,0,.18);
-}
-
-.header-inner{
-max-width:1250px;
-margin:auto;
-padding:13px 20px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:15px;
-flex-wrap:wrap;
-}
-
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
-cursor:pointer;
-}
-
-.logo-icon{
-width:48px;
-height:48px;
-border-radius:15px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:linear-gradient(135deg,#ffd700,#a87500);
-color:#111;
-font-size:25px;
-box-shadow:0 8px 25px rgba(255,215,0,.12);
-}
-
-.logo-text{
-color:#ffd700;
-font-size:18px;
-font-weight:bold;
-}
-
-.logo-sub{
-display:block;
-font-size:10px;
-color:#8f9ba5;
-}
-
-.nav{
-display:flex;
-gap:7px;
-flex-wrap:wrap;
-}
-
-.nav button{
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.08);
-color:#ddd;
-padding:9px 12px;
-border-radius:12px;
-cursor:pointer;
-transition:.25s;
-font-family:inherit;
-}
-
-.nav button:hover,
-.nav button.active{
-background:linear-gradient(135deg,#ffd700,#b98a00);
-color:#111;
-font-weight:bold;
-transform:translateY(-2px);
-}
-
-.menu-btn{
-display:none;
-background:rgba(255,255,255,.08);
-border:0;
-color:#ffd700;
-font-size:23px;
-width:45px;
-height:45px;
-border-radius:13px;
-cursor:pointer;
-}
-
-.hero{
-max-width:1150px;
-margin:auto;
-padding:85px 20px 55px;
-text-align:center;
-}
-
-.badge{
-display:inline-block;
-padding:7px 16px;
-border-radius:30px;
-border:1px solid rgba(255,215,0,.25);
-background:rgba(255,215,0,.08);
-color:#ffd700;
-font-size:13px;
-margin-bottom:20px;
-}
-
-.hero h1{
-font-size:clamp(32px,5vw,58px);
-line-height:1.35;
-background:linear-gradient(90deg,#fff,#ffd700);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.hero p{
-max-width:780px;
-margin:20px auto;
-color:#bdc6ce;
-font-size:16px;
-}
-
-.gold-btn{
-display:inline-block;
-border:0;
-background:linear-gradient(135deg,#ffd700,#b98500);
-color:#111;
-padding:13px 24px;
-border-radius:13px;
-font-weight:bold;
-cursor:pointer;
-margin-top:15px;
-transition:.25s;
-font-family:inherit;
-text-decoration:none;
-}
-
-.gold-btn:hover{
-transform:translateY(-3px);
-box-shadow:0 12px 30px rgba(255,215,0,.2);
-}
-
-.welcome{
-display:none;
-max-width:650px;
-margin:30px auto;
-padding:25px;
-border-radius:22px;
-background:rgba(255,215,0,.08);
-border:1px solid rgba(255,215,0,.25);
-}
-
-.heart{
-font-size:50px;
-animation:pulse 1.2s infinite;
-}
-
-.welcome h2{
-color:#ffd700;
-}
-
-.container{
-width:min(1150px,92%);
-margin:auto;
-}
-
-.section{
-display:none;
-padding:40px 0 70px;
-animation:show .4s ease;
-}
-
-.section.active{
-display:block;
-}
-
-.section-title{
-text-align:center;
-margin-bottom:30px;
-}
-
-.section-title span{
-color:#ffd700;
-font-size:12px;
-}
-
-.section-title h2{
-font-size:30px;
-}
-
-.section-title p{
-color:#9da8b3;
-font-size:14px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:18px;
-}
-
-.card{
-background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));
-border:1px solid rgba(255,255,255,.08);
-border-radius:22px;
-padding:25px;
-transition:.3s;
-box-shadow:0 15px 35px rgba(0,0,0,.18);
-}
-
-.card:hover{
-transform:translateY(-5px);
-border-color:rgba(255,215,0,.35);
-}
-
-.icon{
-width:52px;
-height:52px;
-border-radius:16px;
-background:rgba(255,215,0,.1);
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:25px;
-margin-bottom:15px;
-}
-
-.card h3{
-color:#ffd700;
-margin-bottom:8px;
-}
-
-.card p{
-color:#bac4cc;
-font-size:14px;
-}
-
-.lawyer{
-max-width:750px;
-margin:auto;
-text-align:center;
-}
-
-.avatar{
-width:110px;
-height:110px;
-border-radius:50%;
-margin:auto auto 20px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:linear-gradient(135deg,#ffd700,#936c00);
-color:#111;
-font-size:45px;
-}
-
-.lawyer-name{
-font-size:30px;
-}
-
-.lawyer-title{
-color:#ffd700;
-}
-
-.info{
-margin-top:20px;
-display:grid;
-gap:10px;
-}
-
-.info div{
-padding:12px;
-background:rgba(255,255,255,.04);
-border-radius:12px;
-}
-
-.search{
-margin-bottom:20px;
-}
-
-.search input{
-width:100%;
-padding:15px;
-background:#101f2d;
-border:1px solid rgba(255,255,255,.12);
-border-radius:14px;
-color:white;
-outline:none;
-font-size:14px;
-font-family:inherit;
-}
-
-.search input:focus{
-border-color:#ffd700;
-}
-
-.categories{
-display:flex;
-flex-wrap:wrap;
-gap:8px;
-margin-bottom:20px;
-}
-
-.categories button{
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.08);
-color:#ccc;
-padding:9px 14px;
-border-radius:12px;
-cursor:pointer;
-font-family:inherit;
-}
-
-.categories button.active{
-background:#ffd700;
-color:#111;
-}
-
-.law{
-padding:0;
-margin-bottom:10px;
-}
-
-.law-title{
-padding:17px;
-cursor:pointer;
-display:flex;
-justify-content:space-between;
-gap:10px;
-}
-
-.law-title strong{
-color:#ffd700;
-}
-
-.law-content{
-display:none;
-padding:0 18px 18px;
-border-top:1px solid rgba(255,255,255,.06);
-color:#bcc6ce;
-}
-
-.law-content.open{
-display:block;
-}
-
-.notice{
-background:rgba(255,215,0,.06);
-border-right:4px solid #ffd700;
-padding:14px;
-border-radius:12px;
-color:#c5ced6;
-margin-bottom:20px;
-font-size:13px;
-}
-
-.tip-number{
-width:36px;
-height:36px;
-border-radius:50%;
-background:rgba(255,215,0,.12);
-color:#ffd700;
-display:flex;
-align-items:center;
-justify-content:center;
-font-weight:bold;
-margin-bottom:10px;
-}
-
-.quiz{
-margin-bottom:18px;
-}
-
-.option{
-display:block;
-padding:11px;
-margin:8px 0;
-border-radius:11px;
-background:rgba(255,255,255,.04);
-cursor:pointer;
-}
-
-.result{
-margin-top:12px;
-font-weight:bold;
-}
-
-select,
-.card input{
-width:100%;
-padding:13px;
-margin:7px 0;
-background:#101f2d;
-border:1px solid rgba(255,255,255,.12);
-border-radius:12px;
-color:white;
-outline:none;
-font-family:inherit;
-}
-
-/* بیمه */
-
-.insurance-hero{
-position:relative;
-overflow:hidden;
-padding:32px;
-border-radius:28px;
-background:
-linear-gradient(135deg,rgba(255,215,0,.12),rgba(255,255,255,.035));
-border:1px solid rgba(255,215,0,.2);
-margin-bottom:25px;
-}
-
-.insurance-hero:after{
-content:"🛡️";
-position:absolute;
-left:25px;
-top:20px;
-font-size:80px;
-opacity:.08;
-}
-
-.insurance-hero h3{
-font-size:28px;
-color:#ffd700;
-margin-bottom:10px;
-}
-
-.insurance-hero p{
-color:#c2ccd4;
-max-width:800px;
-}
-
-.simple-flow{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:12px;
-margin:25px 0;
-}
-
-.flow-box{
-text-align:center;
-padding:20px 12px;
-background:rgba(255,255,255,.045);
-border:1px solid rgba(255,255,255,.07);
-border-radius:18px;
-}
-
-.flow-number{
-width:38px;
-height:38px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-margin:0 auto 10px;
-background:#ffd700;
-color:#111;
-font-weight:bold;
-}
-
-.flow-box h4{
-color:#fff;
-margin-bottom:5px;
-}
-
-.flow-box p{
-font-size:12px;
-color:#9da8b3;
-}
-
-.plan-card{
-position:relative;
-overflow:hidden;
-}
-
-.plan-icon{
-font-size:45px;
-margin-bottom:10px;
-}
-
-.plan-tag{
-position:absolute;
-left:15px;
-top:15px;
-font-size:10px;
-padding:5px 9px;
-border-radius:20px;
-background:rgba(255,255,255,.08);
-color:#ccc;
-}
-
-.plan-card.gold{
-border-color:rgba(255,215,0,.3);
-}
-
-.plan-card.silver{
-border-color:rgba(210,220,230,.25);
-}
-
-.plan-card.copper{
-border-color:rgba(190,100,45,.3);
-}
-
-.plan-list{
-list-style:none;
-margin-top:15px;
-color:#bfc8d0;
-font-size:13px;
-}
-
-.plan-list li{
-margin:7px 0;
-}
-
-.calculator{
-margin-top:25px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
-}
-
-.calc-box{
-background:rgba(255,255,255,.045);
-border:1px solid rgba(255,255,255,.08);
-border-radius:22px;
-padding:24px;
-}
-
-.calc-box h3{
-color:#ffd700;
-}
-
-.calc-result{
-margin-top:18px;
-padding:20px;
-border-radius:17px;
-background:rgba(255,215,0,.08);
-border:1px solid rgba(255,215,0,.2);
-text-align:center;
-}
-
-.calc-result strong{
-display:block;
-font-size:26px;
-color:#ffd700;
-margin-top:8px;
-}
-
-.disclaimer{
-margin-top:20px;
-padding:18px;
-border-radius:17px;
-background:rgba(255,100,80,.07);
-border:1px solid rgba(255,100,80,.18);
-color:#c7cfd5;
-font-size:13px;
-}
-
-.faq{
-margin-top:25px;
-}
-
-.faq-item{
-margin-bottom:10px;
-}
-
-.faq-question{
-cursor:pointer;
-padding:15px;
-background:rgba(255,255,255,.045);
-border-radius:14px;
-color:#ffd700;
-}
-
-.faq-answer{
-display:none;
-padding:14px;
-color:#bfc8d0;
-font-size:13px;
-background:rgba(255,255,255,.025);
-border-radius:0 0 14px 14px;
-}
-
-.faq-answer.open{
-display:block;
-}
-
-.contact{
-max-width:750px;
-margin:auto;
-text-align:center;
-}
-
-.phone{
-font-size:22px;
-color:#ffd700;
-direction:ltr;
-display:inline-block;
-margin-top:5px;
-}
-
-footer{
-margin-top:40px;
-padding:35px 20px;
-text-align:center;
-background:rgba(0,0,0,.35);
-border-top:1px solid rgba(255,255,255,.06);
-color:#8f99a3;
-font-size:13px;
-}
-
-footer strong{
-color:#ffd700;
-}
-
-@keyframes show{
-from{
-opacity:0;
-transform:translateY(15px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-@keyframes pulse{
-0%,100%{
-transform:scale(1);
-}
-50%{
-transform:scale(1.18);
-}
-}
-
-@media(max-width:850px){
-
-.menu-btn{
-display:block;
-}
-
-.nav{
-display:none;
-width:100%;
-grid-template-columns:repeat(2,1fr);
-}
-
-.nav.open{
-display:grid;
-}
-
-.nav button{
-width:100%;
-}
-
-.simple-flow{
-grid-template-columns:repeat(2,1fr);
-}
-
-.calculator{
-grid-template-columns:1fr;
-}
-
-}
-
-@media(max-width:500px){
-
-.hero h1{
-font-size:31px;
-}
-
-.hero p{
-font-size:14px;
-}
-
-.section-title h2{
-font-size:25px;
-}
-
-.card{
-padding:20px;
-}
-
-.simple-flow{
-grid-template-columns:1fr;
-}
-
-.insurance-hero h3{
-font-size:23px;
-}
-
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="پارسا کرمی | مرکز حقوقی و خدمات هوشمند">
+  <title>پارسا کرمی | مرکز حقوقی و خدمات هوشمند</title>
+
+  <style>
+    :root {
+      --navy: #071525;
+      --navy-2: #0c2038;
+      --navy-3: #102d4a;
+      --gold: #d4af37;
+      --gold-light: #f1d77a;
+      --silver: #c7cbd1;
+      --copper: #b87333;
+      --white: #f7f7f5;
+      --muted: #b8c1cc;
+      --card: #0d223a;
+      --border: rgba(212, 175, 55, 0.25);
+      --danger: #d96c6c;
+      --success: #67c587;
+      --shadow: 0 15px 45px rgba(0, 0, 0, .28);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,.08), transparent 35%),
+        linear-gradient(135deg, var(--navy), #04101d);
+      color: var(--white);
+      line-height: 1.9;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1150px, 92%);
+      margin: auto;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 21, 37, .94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      width: 45px;
+      height: 45px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--gold-light);
+      font-size: 22px;
+      box-shadow: 0 0 20px rgba(212,175,55,.15);
+    }
+
+    .brand h1 {
+      font-size: 18px;
+      color: var(--gold-light);
+    }
+
+    .brand span {
+      display: block;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    nav a {
+      padding: 8px 12px;
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      transition: .25s;
+    }
+
+    nav a:hover {
+      background: rgba(212,175,55,.1);
+      color: var(--gold-light);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 90px 0 70px;
+      min-height: 550px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 13px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      color: var(--gold-light);
+      background: rgba(212,175,55,.06);
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
+
+    .hero h2 {
+      font-size: clamp(30px, 5vw, 52px);
+      line-height: 1.35;
+      margin-bottom: 20px;
+    }
+
+    .hero h2 strong {
+      color: var(--gold-light);
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 700px;
+      font-size: 16px;
+    }
+
+    .hero-card {
+      padding: 35px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: linear-gradient(145deg, rgba(16,45,74,.9), rgba(8,25,43,.9));
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .hero-card .symbol {
+      font-size: 70px;
+      margin-bottom: 15px;
+    }
+
+    .hero-card h3 {
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+
+    .hero-card p {
+      font-size: 13px;
+    }
+
+    /* Sections */
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-title h2 {
+      color: var(--gold-light);
+      font-size: 29px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+/* Notice */
+    .notice {
+      border: 1px solid rgba(217,108,108,.5);
+      background: rgba(217,108,108,.07);
+      padding: 18px 20px;
+      border-radius: 14px;
+      margin-bottom: 35px;
+    }
+
+    .notice strong {
+      color: #ff9a9a;
+    }
+
+    .notice p {
+      color: #e3caca;
+      font-size: 13px;
+      margin-top: 5px;
+    }
+
+    /* Legal cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      padding: 25px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.15);
+    }
+
+    .card-icon {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      color: var(--gold-light);
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Insurance explanation */
+    .concept {
+      background:
+        linear-gradient(145deg, rgba(212,175,55,.08), rgba(12,32,56,.8));
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 35px;
+      margin-bottom: 35px;
+    }
+
+    .concept h3 {
+      color: var(--gold-light);
+      margin-bottom: 15px;
+    }
+
+    .concept p {
+      color: #d3d9e0;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .metal-flow {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .metal {
+      padding: 24px;
+      border-radius: 15px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .metal.gold {
+      background: rgba(212,175,55,.09);
+    }
+
+    .metal.silver {
+      background: rgba(199,203,209,.08);
+    }
+
+    .metal.copper {
+      background: rgba(184,115,51,.09);
+    }
+
+    .metal .emoji {
+      font-size: 38px;
+    }
+
+    .metal h4 {
+      margin: 8px 0;
+    }
+
+    .metal p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* Plans */
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .plan {
+      position: relative;
+      overflow: hidden;
+      padding: 30px;
+      border-radius: 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+
+    .plan.featured {
+      transform: translateY(-7px);
+      box-shadow: 0 18px 45px rgba(212,175,55,.13);
+    }
+
+    .plan .plan-label {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      margin-bottom: 14px;
+    }
+
+    .plan.gold .plan-label {
+      background: rgba(212,175,55,.16);
+      color: var(--gold-light);
+    }
+
+    .plan.silver .plan-label {
+      background: rgba(199,203,209,.14);
+      color: #e1e3e7;
+    }
+
+    .plan.combo .plan-label {
+      background: rgba(184,115,51,.15);
+      color: #e4a66d;
+    }
+
+    .plan h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .plan ul {
+      list-style: none;
+      margin: 20px 0;
+    }
+
+    .plan li {
+      color: var(--muted);
+      font-size: 13px;
+      padding: 7px 0;
+      border-bottom: 1px dashed rgba(255,255,255,.08);
+    }
+
+    .plan li::before {
+      content: "✓";
+      color: var(--gold);
+      margin-left: 7px;
+    }
+
+    /* Calculator */
+    .calculator {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      align-items: start;
+    }
+
+    .form-box,
+    .result-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+    }
+
+    label {
+      display: block;
+      color: #dce1e7;
+      font-size: 13px;
+      margin-bottom: 7px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 13px 14px;
+      margin-bottom: 18px;
+      border: 1px solid rgba(255,255,255,.13);
+      background: #071827;
+      color: var(--white);
+      border-radius: 10px;
+      outline: none;
+      font-family: inherit;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--gold);
+    }
+
+.btn {
+      width: 100%;
+      border: 0;
+      padding: 13px 18px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--gold), #a98218);
+      color: #101010;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: inherit;
+      transition: .25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(212,175,55,.18);
+    }
+
+    .result-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .result-item span:first-child {
+      color: var(--muted);
+    }
+
+    .result-item strong {
+      color: var(--gold-light);
+    }
+
+    .total {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 13px;
+      background: rgba(212,175,55,.08);
+      text-align: center;
+    }
+
+    .total small {
+      display: block;
+      color: var(--muted);
+    }
+
+    .total strong {
+      display: block;
+      color: var(--gold-light);
+      font-size: 27px;
+      margin-top: 5px;
+    }
+
+    /* Purchase */
+    .purchase-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 25px;
+    }
+
+    .preview {
+      min-height: 100%;
+      background: #f4f0df;
+      color: #1d2731;
+      border-radius: 18px;
+      padding: 30px;
+      border: 5px solid #b9972d;
+      box-shadow: var(--shadow);
+    }
+
+    .preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #b9aa75;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+
+    .preview h3 {
+      color: #76601a;
+    }
+
+    .preview p {
+      font-size: 13px;
+      margin: 10px 0;
+    }
+
+    .preview .contract-box {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px dashed #8e7a32;
+      border-radius: 10px;
+      background: rgba(255,255,255,.4);
+    }
+
+    .preview .disclaimer {
+      margin-top: 22px;
+      font-size: 11px;
+      color: #795f5f;
+    }
+
+    .empty-preview {
+      color: #776;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      background: #040d17;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    footer h3 {
+      color: var(--gold-light);
+      margin-bottom: 10px;
+    }
+
+    footer p,
+    footer li {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.06);
+      color: #758291;
+      font-size: 11px;
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid,
+      .calculator,
+      .purchase-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards,
+      .plans,
+      .metal-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .plan.featured {
+        transform: none;
+      }
+
+      .nav {
+        flex-direction: column;
+        padding: 12px 0;
+      }
+
+      nav {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
 
-<header>
+      <a href="#home" class="brand">
+        <div class="brand-icon">⚖</div>
+        <div>
+          <h1>پارسا کرمی</h1>
+          <span>مرکز حقوقی و خدمات هوشمند</span>
+        </div>
+      </a>
 
-<div class="header-inner">
+      <nav>
+        <a href="#home">خانه</a>
+        <a href="#legal">خدمات حقوقی</a>
+        <a href="#insurance">بیمه بیکاری فلزات</a>
+        <a href="#calculator">محاسبه‌گر</a>
+        <a href="#purchase">خرید نمایشی</a>
+        <a href="#contact">ارتباط</a>
+      </nav>
 
-<div class="logo" onclick="goHome()">
-
-<div class="logo-icon">
-⚖️
-</div>
-
-<div>
-
-<div class="logo-text">
-پارسا کرمی
-</div>
-
-<span class="logo-sub">
-مرکز حقوقی و خدمات هوشمند
-</span>
-
-</div>
-
-</div>
-
-
-<button class="menu-btn" onclick="toggleMenu()">
-☰
-</button>
+    </div>
+  </header>
 
 
-<nav class="nav" id="nav">
+  <!-- HERO -->
+  <main>
 
-<button class="active" onclick="showSection('home',this)">
-🏠 خانه
-</button>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
 
-<button onclick="showSection('lawyer',this)">
-👨‍⚖️ وکیل
-</button>
+        <div>
+          <span class="badge">مرکز حقوقی و خدمات هوشمند</span>
 
-<button onclick="showSection('laws',this)">
-⚖️ مواد قانونی
-</button>
-
-<button onclick="showSection('tips',this)">
-📚 نکات حقوقی
-</button>
-
-<button onclick="showSection('quiz',this)">
-📝 آزمون
-</button>
-
-<button onclick="showSection('insurance',this)">
-🛡️ بیمه هوشمند
-</button>
-
-<button onclick="showSection('internet',this)">
-📱 شارژ و اینترنت
-</button>
-
-<button onclick="showSection('about',this)">
-👤 درباره ما
-</button>
-
-<button onclick="showSection('contact',this)">
-☎️ تماس
-</button>
-
-</nav>
-
-</div>
-
-</header>
-
-
-<section class="hero" id="home">
-
-<div class="badge">
-⚖️ مرکز حقوقی و خدمات دیجیتال
-</div>
-
-<h1>
-دانش حقوق،
-<br>
-ساده، هوشمند و حرفه‌ای
-</h1>
+          <h2>
+            راهکارهای نوین برای
+            <strong>امنیت مالی و حقوقی</strong>
+          </h2>
 
 <p>
-به وب‌سایت پارسا کرمی خوش آمدید.
-در اینجا می‌توانید به مطالب حقوقی، مواد قانونی،
-آزمون‌ها، خدمات دیجیتال و ایده‌های نوآورانه دسترسی داشته باشید.
-</p>
-
-<button class="gold-btn" onclick="welcome()">
-✨ ورود به سایت
-</button>
-
-<div class="welcome" id="welcome">
-
-<div class="heart">
-❤️
-</div>
-
-<h2>
-کاربر عزیز خوش آمدید
-</h2>
-
-<p>
-از حضور شما در سایت پارسا کرمی خوشحالیم.
-برای ورود به بخش‌های مختلف از منوی بالا استفاده کنید.
-</p>
-
-</div>
-
-</section>
-
-
-<div class="container">
-
-
-<section class="section" id="lawyer">
-
-<div class="section-title">
-
-<span>
-LEGAL PROFESSIONAL
-</span>
-
-<h2>
-👨‍⚖️ وکیل پایه یک دادگستری
-</h2>
-
-<p>
-اطلاعات تماس و معرفی
-</p>
-
-</div>
-
-<div class="card lawyer">
-
-<div class="avatar">
-⚖️
-</div>
-
-<div class="lawyer-name">
-حشمت کرمی
-</div>
-
-<div class="lawyer-title">
-وکیل پایه یک دادگستری
-</div>
-
-<div class="info">
-
-<div>
-👨‍⚖️ نام:
-<strong>حشمت کرمی</strong>
-</div>
-
-<div>
-⚖️ عنوان:
-<strong>وکیل پایه یک دادگستری</strong>
-</div>
-
-<div>
-📱 شماره تماس:
-<strong dir="ltr">09127068454</strong>
-</div>
-
-</div>
-
-<a
-href="tel:09127068454"
-class="gold-btn">
-
-📞 تماس با وکیل
-
-</a>
-
-</div>
-
-</section>
-
-
-<section class="section" id="laws">
-
-<div class="section-title">
-
-<span>
-LAW DATABASE
-</span>
-
-<h2>
-⚖️ بانک مواد قانونی
-</h2>
-
-<p>
-مطالب حقوقی دسته‌بندی شده
-</p>
-
-</div>
-
-<div class="notice">
-
-⚠️ این بخش آموزشی است. برای استفاده حرفه‌ای،
-متن رسمی و آخرین اصلاحات قوانین را بررسی کنید.
-
-</div>
-
-<div class="search">
-
-<input
-id="lawSearch"
-placeholder="🔎 جست‌وجو در مواد قانونی..."
-oninput="renderLaws()">
-
-</div>
-
-<div class="categories">
-
-<button class="active"
-onclick="setCategory('همه',this)">
-همه
-</button>
-
-<button onclick="setCategory('مدنی',this)">
-مدنی
-</button>
-
-<button onclick="setCategory('کیفری',this)">
-کیفری
-</button>
-
-<button onclick="setCategory('تجارت',this)">
-تجارت
-</button>
-
-<button onclick="setCategory('خانواده',this)">
-خانواده
-</button>
-
-</div>
-
-<div id="lawList"></div>
-
-</section>
-
-
-<section class="section" id="tips">
-
-<div class="section-title">
-
-<span>
-LEGAL TIPS
-</span>
-
-<h2>
-📚 ۵۰ نکته حقوقی
-</h2>
-
-<p>
-نکات کاربردی برای افزایش آگاهی حقوقی
-</p>
-
-</div>
-
-<div class="search">
-
-<input
-id="tipSearch"
-placeholder="🔎 جست‌وجوی نکته..."
-oninput="renderTips()">
-
-</div>
-
-<div class="grid" id="tipList"></div>
-
-</section>
-
-
-<section class="section" id="quiz">
-
-<div class="section-title">
-
-<span>
-LEGAL QUIZ
-</span>
-
-<h2>
-📝 ۲۰ آزمون حقوقی
-</h2>
-
-<p>
-دانش حقوقی خود را امتحان کنید
-</p>
-
-</div>
-
-<div id="quizList"></div>
-
-</section>
-
-
-<!-- بیمه بیکاری هوشمند -->
-
-<section class="section" id="insurance">
-
-<div class="section-title">
-
-<span>
-SMART UNEMPLOYMENT INSURANCE
-</span>
-
-<h2>
-🛡️ بیمه بیکاری هوشمند
-</h2>
-
-<p>
-یک ایده نوآورانه برای ایجاد پشتوانه مالی در زمان بیکاری
-</p>
-
-</div>
-
-
-<div class="insurance-hero">
-
-<h3>
-🥇 بیمه بیکاری مبتنی بر طلا، نقره و مس
-</h3>
-
-<p>
-ایده این طرح ساده است:
-فرد در دوران اشتغال یا زمانی که درآمد دارد،
-مبلغی را برای ایجاد پشتوانه بیکاری اختصاص می‌دهد.
-در مدل مفهومی این سایت، این پشتوانه می‌تواند
-به‌صورت ترکیبی از طلا، نقره و مس در نظر گرفته شود.
-</p>
-
-<br>
-
-<p>
-هدف این ایده این است که فرد فقط به دریافت پول نقد
-وابسته نباشد و بخشی از پشتوانه مالی او در قالب
-دارایی‌های مختلف تعریف شود.
-</p>
-
-</div>
-
-
-<div class="section-title">
-
-<h2>
-🔄 این طرح چطور کار می‌کند؟
-</h2>
-
-</div>
-
-
-<div class="simple-flow">
-
-<div class="flow-box">
-
-<div class="flow-number">
-1
-</div>
-
-<h4>
-ثبت‌نام
-</h4>
-
-<p>
-فرد نوع طرح و میزان پرداخت خود را انتخاب می‌کند.
-</p>
-
-</div>
-
-
-<div class="flow-box">
-
-<div class="flow-number">
-2
-</div>
-
-<h4>
-ایجاد پشتوانه
-</h4>
-
-<p>
-در مدل مفهومی، مبالغ به دارایی‌هایی مانند طلا، نقره یا مس اختصاص داده می‌شوند.
-</p>
-
-</div>
-
-
-<div class="flow-box">
-
-<div class="flow-number">
-3
-</div>
-
-<h4>
-دوران بیکاری
-</h4>
-
-<p>
-در صورت تحقق شرایط قرارداد، فرد درخواست استفاده از حمایت را ثبت می‌کند.
-</p>
-
-</div>
-
-
-<div class="flow-box">
-
-<div class="flow-number">
-4
-</div>
-
-<h4>
-پرداخت حمایت
-</h4>
-
-<p>
-بر اساس قرارداد و ارزش دارایی، حمایت مالی محاسبه و پرداخت می‌شود.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="section-title">
-
-<span>
-THREE PLANS
-</span>
-
-<h2>
-انتخاب نوع پشتوانه
-</h2>
-
-<p>
-سه مدل پیشنهادی برای نمایش ایده
-</p>
-
-</div>
-
-
-<div class="grid">
-
-
-<div class="card plan-card gold">
-
-<span class="plan-tag">
-طرح ۱
-</span>
-
-<div class="plan-icon">
-🥇
-</div>
-
-<h3>
-طرح طلایی
-</h3>
-
-<p>
-تمرکز بیشتر بر طلا به عنوان دارایی اصلی پشتوانه.
-</p>
-
-<ul class="plan-list">
-
-<li>✓ مناسب افراد علاقه‌مند به طلا</li>
-<li>✓ امکان تعریف سهم طلا در قرارداد</li>
-<li>✓ نمایش ارزش تقریبی پشتوانه</li>
-<li>✓ مناسب برای مدل‌های بلندمدت</li>
-
-</ul>
-
-<button
-class="gold-btn"
-onclick="selectPlan('طلا')">
-
-انتخاب طرح طلا
-
-</button>
-
-</div>
-
-
-<div class="card plan-card silver">
-
-<span class="plan-tag">
-طرح ۲
-</span>
-
-<div class="plan-icon">
-🥈
-</div>
-
-<h3>
-طرح نقره‌ای
-</h3>
-
-<p>
-پشتوانه‌ای با تمرکز بیشتر بر نقره.
-</p>
-
-<ul class="plan-list">
-
-<li>✓ ورود با مبالغ قابل تنظیم</li>
-<li>✓ امکان تعیین سهم نقره</li>
-<li>✓ قابلیت ترکیب با طلا و مس</li>
-<li>✓ مناسب مدل‌های متنوع</li>
-
-</ul>
-
-<button
-class="gold-btn"
-onclick="selectPlan('نقره')">
-
-انتخاب طرح نقره
-
-</button>
-
-</div>
-
-
-<div class="card plan-card copper">
-
-<span class="plan-tag">
-طرح ۳
-</span>
-
-<div class="plan-icon">
-🥉
-</div>
-
-<h3>
-طرح مسی
-</h3>
-
-<p>
-مدلی با تمرکز بیشتر بر مس و امکان ترکیب با سایر دارایی‌ها.
-</p>
-
-<ul class="plan-list">
-
-<li>✓ امکان شروع با مبالغ متفاوت</li>
-<li>✓ قابلیت ترکیب دارایی‌ها</li>
-<li>✓ تنوع در پشتوانه</li>
-<li>✓ مناسب مدل‌های ترکیبی</li>
-
-</ul>
-
-<button
-class="gold-btn"
-onclick="selectPlan('مس')">
-
-انتخاب طرح مس
-
-</button>
-
-</div>
-
-</div>
-
-
-<div class="section-title" style="margin-top:50px;">
-
-<span>
-SMART CALCULATOR
-</span>
-
-<h2>
-🧮 محاسبه‌گر نمونه
-</h2>
-
-<p>
-برای درک ساده‌تر سازوکار ایده
-</p>
-
-</div>
-
-
-<div class="calculator">
-
-
-<div class="calc-box">
-
-<h3>
-اطلاعات اولیه
-</h3>
-
-<label>
-مبلغ ماهانه:
-</label>
-
-<input
-type="number"
-id="monthly"
-placeholder="مثلاً 1000000">
-
-<label>
-مدت پرداخت:
-</label>
-
-<select id="months">
-
-<option value="6">
-۶ ماه
-</option>
-
-<option value="12">
-۱۲ ماه
-</option>
-
-<option value="24">
-۲۴ ماه
-</option>
-
-<option value="36">
-۳۶ ماه
-</option>
-
-</select>
-
-<label>
-نوع پشتوانه:
-</label>
-
-<select id="asset">
-
-<option value="ترکیبی">
-ترکیبی؛ طلا + نقره + مس
-</option>
-
-<option value="طلا">
-تمرکز بر طلا
-</option>
-
-<option value="نقره">
-تمرکز بر نقره
-</option>
-
-<option value="مس">
-تمرکز بر مس
-</option>
-
-</select>
-
-<button
-class="gold-btn"
-onclick="calculateInsurance()">
-
-محاسبه نمونه
-
-</button>
-
-</div>
-
-
-<div class="calc-box">
-
-<h3>
-📊 نتیجه تقریبی
-</h3>
-
-<div class="calc-result">
-
-مجموع مبالغ پرداختی نمونه:
-
-<strong id="totalResult">
-۰ تومان
-</strong>
-
-<p id="assetResult">
-نوع پشتوانه: ترکیبی
-</p>
-
-</div>
-
-<p style="margin-top:15px;color:#9da8b3;font-size:12px;">
-این عدد صرفاً برای نمایش ایده است و
-به معنی مبلغ واقعی بیمه یا تعهد پرداخت نیست.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="disclaimer">
-
-⚠️ <strong>توضیح بسیار مهم:</strong>
-
-این بخش در حال حاضر یک
-<strong>ایده و نمونه مفهومی</strong>
-برای نمایش در وب‌سایت است.
-این صفحه به‌تنهایی قرارداد بیمه ایجاد نمی‌کند،
-قیمت طلا، نقره یا مس را تضمین نمی‌کند،
-سود سرمایه‌گذاری را تضمین نمی‌کند و
-به‌عنوان بیمه‌نامه واقعی قابل استفاده نیست.
-
-برای تبدیل این ایده به یک محصول واقعی،
-باید ساختار حقوقی، مقررات بیمه‌ای، نحوه نگهداری دارایی،
-روش ارزش‌گذاری، شرایط دریافت مزایا،
-ریسک نوسان قیمت و مجوزهای لازم به‌صورت تخصصی بررسی شود.
-
-</div>
-
-
-<div class="faq">
-
-<div class="section-title">
-
-<h2>
-❓ سؤال‌های متداول
-</h2>
-
-</div>
-
-
-<div class="faq-item">
-
-<div class="faq-question"
-onclick="toggleFaq(this)">
-آیا فرد پول خود را مستقیماً طلا، نقره و مس می‌کند؟
-</div>
-
-<div class="faq-answer">
-
-در این ایده، هدف ایجاد یک پشتوانه مبتنی بر دارایی است.
-نحوه واقعی خرید، نگهداری، مالکیت و ارزش‌گذاری دارایی‌ها
-باید در قرارداد و چارچوب قانونی مشخص شود.
-
-</div>
-
-</div>
-
-
-<div class="faq-item">
-
-<div class="faq-question"
-onclick="toggleFaq(this)">
-اگر فرد بیکار نشود چه اتفاقی می‌افتد؟
-</div>
-
-<div class="faq-answer">
-
-این موضوع باید در مدل واقعی محصول از ابتدا مشخص شود؛
-مثلاً می‌توان برای پایان دوره، تمدید، برداشت،
-انتقال یا ادامه پوشش شرایط مشخصی تعریف کرد.
-این سایت فقط ایده را نمایش می‌دهد.
-
-</div>
-
-</div>
-
-
-<div class="faq-item">
-
-<div class="faq-question"
-onclick="toggleFaq(this)">
-اگر قیمت طلا یا نقره کاهش پیدا کند چه می‌شود؟
-</div>
-
-<div class="faq-answer">
-
-این یکی از مهم‌ترین ریسک‌های طرح است.
-در محصول واقعی باید روش مدیریت نوسان قیمت،
-حداقل تعهد، ذخیره احتیاطی و نحوه محاسبه مزایا
-به‌صورت دقیق در قرارداد مشخص شود.
-
-</div>
-
-</div>
-
-
-<div class="faq-item">
-
-<div class="faq-question"
-onclick="toggleFaq(this)">
-آیا این طرح همین الان بیمه واقعی است؟
-</div>
-
-<div class="faq-answer">
-
-خیر. این قسمت یک نمونه مفهومی برای معرفی ایده است
-و تا زمانی که ساختار حقوقی، مجوزها، قراردادها و
-زیرساخت اجرایی آن ایجاد نشده باشد، نباید به‌عنوان
-بیمه واقعی یا تضمین مالی معرفی شود.
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section" id="internet">
-
-<div class="section-title">
-
-<span>
-DIGITAL SERVICES
-</span>
-
-<h2>
-📱 شارژ و بسته اینترنت
-</h2>
-
-<p>
-خدمات دیجیتال
-</p>
-
-</div>
-
-<div class="notice">
-
-این بخش فعلاً نمایشی است.
-برای پرداخت واقعی باید درگاه پرداخت و سرویس معتبر
-اپراتورها به سایت متصل شود.
-
-</div>
-
-<div class="grid">
-
-
-<div class="card">
-
-<div class="icon">
-📞
-</div>
-
-<h3>
-شارژ همراه اول
-</h3>
-
-<select>
-
-<option>۱۰ هزار تومان</option>
-<option>۲۰ هزار تومان</option>
-<option>۵۰ هزار تومان</option>
-<option>۱۰۰ هزار تومان</option>
-
-</select>
-
-<input
-type="tel"
-placeholder="شماره موبایل">
-
-<button
-class="gold-btn"
-onclick="purchase()">
-
-ادامه خرید
-
-</button>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">
-📶
-</div>
-
-<h3>
-بسته اینترنت همراه اول
-</h3>
-
-<select>
-
-<option>۱ گیگابایت</option>
-<option>۳ گیگابایت</option>
-<option>۵ گیگابایت</option>
-<option>۱۰ گیگابایت</option>
-
-</select>
-
-<input
-type="tel"
-placeholder="شماره موبایل">
-
-<button
-class="gold-btn"
-onclick="purchase()">
-
-ادامه خرید
-
-</button>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">
-📞
-</div>
-
-<h3>
-شارژ ایرانسل
-</h3>
-
-<select>
-
-<option>۱۰ هزار تومان</option>
-<option>۲۰ هزار تومان</option>
-<option>۵۰ هزار تومان</option>
-<option>۱۰۰ هزار تومان</option>
-
-</select>
-
-<input
-type="tel"
-placeholder="شماره موبایل">
-
-<button
-class="gold-btn"
-onclick="purchase()">
-
-ادامه خرید
-
-</button>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">
-📶
-</div>
-
-<h3>
-بسته اینترنت ایرانسل
-</h3>
-
-<select>
-
-<option>۱ گیگابایت</option>
-<option>۳ گیگابایت</option>
-<option>۵ گیگابایت</option>
-<option>۱۰ گیگابایت</option>
-
-</select>
-
-<input
-type="tel"
-placeholder="شماره موبایل">
-
-<button
-class="gold-btn"
-onclick="purchase()">
-
-ادامه خرید
-
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section" id="about">
-
-<div class="section-title">
-
-<span>
-ABOUT
-</span>
-
-<h2>
-👤 درباره ما
-</h2>
-
-</div>
-
-<div class="card contact">
-
-<div class="avatar">
-پ
-</div>
-
-<h2 style="color:#ffd700;margin-top:15px;">
-پارسا کرمی
-</h2>
-
-<p>
-دانشجوی رشته حقوق
-</p>
-
-<br>
-
-<p>
-این وب‌سایت با هدف ایجاد محیطی ساده،
-زیبا و کاربردی برای مطالعه حقوق،
-آشنایی با قوانین، آزمون، خدمات دیجیتال
-و معرفی ایده‌های نوآورانه طراحی شده است.
-</p>
-
-</div>
-
-</section>
-
-
-<section class="section" id="contact">
-
-<div class="section-title">
-
-<span>
-CONTACT
-</span>
-
-<h2>
-☎️ تماس با ما
-</h2>
-
-</div>
-
-<div class="card contact">
-
-<div class="icon" style="margin:auto;">
-📞
-</div>
-
-<h3>
-پارسا کرمی
-</h3>
-
-<p>
-دانشجوی رشته حقوق
-</p>
-
-<p>
-شماره تماس:
-</p>
-
-<div class="phone">
-09302869446
-</div>
-
-<p style="margin-top:15px;">
-ایمیل:
-</p>
-
-<p style="color:#ffd700;">
-parsakaramisarabii@gmail.com
-</p>
-
-</div>
-
-</section>
-
-
-</div>
-
-
-<footer>
-
-<p>
-© 2026 <strong>پارسا کرمی</strong>
-</p>
-
-<p>
-مرکز حقوقی و خدمات هوشمند
-</p>
-
-<p>
-ساخته شده با ❤️
-</p>
-
-</footer>
-
-
-<script>
-
-const laws=[
-
-["مدنی","ماده 1","انتشار قوانین","قواعد مربوط به انتشار و اجرای قوانین."],
-["مدنی","ماده 2","اجرای قانون","قواعد مربوط به لازم‌الاجرا شدن قانون."],
-["مدنی","ماده 10","قراردادهای خصوصی","قراردادهای خصوصی در حدود قانون معتبر هستند."],
-["مدنی","ماده 190","شرایط معامله","قصد و رضا، اهلیت، موضوع معین و مشروعیت جهت."],
-["مدنی","ماده 191","قصد انشاء","تشکیل عقد با قصد انشاء."],
-["مدنی","ماده 219","لزوم قرارداد","عقود قانونی برای طرفین لازم‌الاتباع هستند."],
-["مدنی","ماده 220","آثار عقد","تعهدات ناشی از قرارداد، عرف و قانون."],
-["مدنی","ماده 221","تخلف از تعهد","مسئولیت ناشی از تخلف از تعهد."],
-["مدنی","ماده 223","اصل صحت","اصل بر صحت معاملات است."],
-["مدنی","ماده 224","تفسیر قرارداد","الفاظ قرارداد بر اساس عرف تفسیر می‌شوند."],
-["مدنی","ماده 225","عرف","عرف متعارف می‌تواند در تفسیر قرارداد مؤثر باشد."],
-["مدنی","ماده 226","خسارت","شرایط مطالبه خسارت ناشی از عدم انجام تعهد."],
-["مدنی","ماده 230","وجه التزام","مبلغ تعیین‌شده قراردادی برای تخلف."],
-["مدنی","ماده 247","معامله فضولی","معامله نسبت به مال دیگری بدون اجازه مالک."],
-["مدنی","ماده 264","سقوط تعهدات","وفای به عهد، ابراء، تهاتر و موارد قانونی."],
-["مدنی","ماده 265","اصل عدم تبرع","پرداخت مال اصولاً بدون قصد تبرع تلقی می‌شود."],
-
-["کیفری","ماده 2","تعریف جرم","هر رفتاری که قانون برای آن مجازات تعیین کرده باشد."],
-["کیفری","ماده 14","انواع مجازات","حد، قصاص، دیه و تعزیر."],
-["کیفری","ماده 18","تعزیر","مجازات تعزیری در موارد قانونی."],
-["کیفری","ماده 19","درجات تعزیر","تقسیم مجازات‌های تعزیری به درجات."],
-["کیفری","ماده 20","اشخاص حقوقی","قواعد مسئولیت کیفری اشخاص حقوقی."],
-["کیفری","ماده 22","تخفیف مجازات","امکان تخفیف در موارد قانونی."],
-["کیفری","ماده 23","مجازات تکمیلی","امکان تعیین مجازات تکمیلی."],
-["کیفری","ماده 25","حقوق اجتماعی","قواعد محرومیت تبعی از حقوق اجتماعی."],
-["کیفری","ماده 37","تخفیف","قواعد کلی تخفیف مجازات."],
-["کیفری","ماده 38","جهات تخفیف","برخی جهات قانونی تخفیف."],
-["کیفری","ماده 40","تعویق صدور حکم","شرایط تعویق صدور حکم."],
-["کیفری","ماده 46","تعلیق","شرایط تعلیق اجرای مجازات."],
-["کیفری","ماده 49","اطفال","قواعد مسئولیت کیفری اطفال."],
-["کیفری","ماده 51","جنون","اثر جنون بر مسئولیت کیفری."],
-["کیفری","ماده 52","اکراه","اثر اکراه در مسئولیت کیفری."],
-["کیفری","ماده 55","اضطرار","قواعد مربوط به اضطرار."],
-["کیفری","ماده 56","دفاع مشروع","مفهوم دفاع مشروع."],
-
-["تجارت","ماده 1","تاجر","تعریف قانونی تاجر."],
-["تجارت","ماده 2","اعمال تجارتی","انواع اعمال تجارتی."],
-["تجارت","ماده 3","اعمال تجارتی","برخی اعمال تجارتی."],
-["تجارت","ماده 6","دفاتر تجارتی","الزام و قواعد دفاتر تجارتی."],
-["تجارت","ماده 20","شرکت‌های تجاری","انواع شرکت‌های تجاری."],
-["تجارت","ماده 24","سهم","مفهوم سهم در شرکت."],
-["تجارت","ماده 25","سهام","قواعد مربوط به سهام."],
-["تجارت","ماده 40","انتقال سهام","قواعد انتقال سهام."],
-
-["خانواده","ماده 1 قانون حمایت خانواده","دادگاه خانواده","تشکیل دادگاه خانواده."],
-["خانواده","ماده 4 قانون حمایت خانواده","صلاحیت","موضوعات قابل رسیدگی در دادگاه خانواده."],
-["خانواده","ماده 7 قانون حمایت خانواده","دستور موقت","امکان صدور دستور موقت در امور خانوادگی."],
-["خانواده","ماده 21 قانون حمایت خانواده","ثبت نکاح","قواعد ثبت نکاح دائم."],
-["خانواده","ماده 22 قانون حمایت خانواده","مهریه","قواعد قانونی مرتبط با مهریه."],
-["خانواده","ماده 25 قانون حمایت خانواده","طلاق توافقی","قواعد مربوط به مشاوره در طلاق توافقی."],
-["خانواده","ماده 29 قانون حمایت خانواده","حقوق مالی","تعیین تکلیف حقوق مالی در رأی طلاق."],
-["خانواده","ماده 40 قانون حمایت خانواده","حضانت","ضمانت اجرای ممانعت از ملاقات طفل."],
-["خانواده","ماده 41 قانون حمایت خانواده","ملاقات طفل","قواعد تعیین نحوه ملاقات طفل."],
-["خانواده","ماده 45 قانون حمایت خانواده","مصلحت طفل","رعایت مصلحت کودکان و نوجوانان."]
-];
-
-
-const tips=[
-
-"قبل از امضای قرارداد تمام صفحات را مطالعه کنید.",
-"مشخصات کامل طرفین قرارداد را دقیق وارد کنید.",
-"موضوع قرارداد باید کاملاً مشخص باشد.",
-"مبلغ قرارداد را دقیق درج کنید.",
-"شرایط پرداخت را مشخص کنید.",
-"تاریخ شروع و پایان قرارداد را بنویسید.",
-"شرایط فسخ قرارداد را مشخص کنید.",
-"ضمانت اجرای تعهدات مهم را مشخص کنید.",
-"برای پرداخت‌ها رسید دریافت کنید.",
-"مدارک مهم را نگهداری کنید.",
-"در معاملات ملکی مدارک مالکیت را بررسی کنید.",
-"وضعیت ثبتی ملک را بررسی کنید.",
-"در اجاره مبلغ ودیعه را دقیق بنویسید.",
-"مبلغ اجاره را مشخص کنید.",
-"مدت اجاره را دقیق تعیین کنید.",
-"زمان تخلیه را مشخص کنید.",
-"صورت‌جلسه تحویل ملک تهیه کنید.",
-"در شراکت سهم هر شریک را بنویسید.",
-"وظایف شرکا را مشخص کنید.",
-"شرایط خروج شریک را تعیین کنید.",
-"در معامله خودرو مدارک خودرو را بررسی کنید.",
-"شماره شاسی را با مدارک تطبیق دهید.",
-"شماره موتور را بررسی کنید.",
-"رسید پرداخت‌ها را حفظ کنید.",
-"چک را بدون بررسی دریافت نکنید.",
-"در پرونده خانوادگی مدارک را حفظ کنید.",
-"در موضوع حضانت مصلحت طفل اهمیت دارد.",
-"مدارک مربوط به نفقه را نگهداری کنید.",
-"شرایط مهریه را بررسی کنید.",
-"حقوق مالی در طلاق را مشخص کنید.",
-"قبل از طرح دعوا مدارک را جمع کنید.",
-"خواسته دعوا را دقیق مشخص کنید.",
-"مرجع صالح را بررسی کنید.",
-"مهلت‌های قانونی را از دست ندهید.",
-"ابلاغیه‌های قضایی را به‌موقع بررسی کنید.",
-"شماره پرونده را نگهداری کنید.",
-"مدارک جلسه دادگاه را آماده کنید.",
-"اظهارات خود را دقیق بیان کنید.",
-"اسناد نامفهوم را بدون مطالعه امضا نکنید.",
-"مفاد سند رسمی را قبل از امضا بخوانید.",
-"در پرونده تخصصی از متخصص حقوقی کمک بگیرید.",
-"پیام‌های مرتبط با اختلاف را حفظ کنید.",
-"از اسناد الکترونیکی نسخه پشتیبان بگیرید.",
-"در معاملات آنلاین هویت طرف مقابل را بررسی کنید.",
-"شرایط فسخ خرید اینترنتی را بررسی کنید.",
-"برای تعهدات شفاهی مهم سند کتبی تهیه کنید.",
-"شاهدان قرارداد را مشخص کنید.",
-"در پرونده کیفری عنوان اتهام را بررسی کنید.",
-"مدارک پرونده را مطالعه کنید.",
-"قوانین را از منابع معتبر بررسی کنید.",
-"اطلاعات حقوقی سایت جایگزین مشاوره تخصصی نیست."
-];
-
-
-const quizzes=[
-
-["ماده ۱۰ قانون مدنی درباره چیست?",["قراردادهای خصوصی","حضانت","جرم","ثبت شرکت"],0],
-["کدام مورد شرط اساسی معامله است?",["قصد و رضا","رنگ قرارداد","تعداد صفحات","نوع کاغذ"],0],
-["ماده ۲۱۹ قانون مدنی درباره چیست?",["لزوم قرارداد","حضانت","ثبت شرکت","جرم"],0],
-["تاجر چه کسی است?",["کسی که شغل معمولی خود را معاملات تجارتی قرار دهد","هر کارمند","هر دانشجو","هر مالک"],0],
-["انواع مجازات در قانون مجازات اسلامی شامل چیست?",["حد، قصاص، دیه و تعزیر","مالیات","عوارض","اجاره"],0],
-["دادگاه خانواده به چه موضوعاتی رسیدگی می‌کند?",["دعاوی خانوادگی","فقط جرایم رانندگی","فقط مالیات","ثبت شرکت"],0],
-["در قرارداد مهم چه کاری بهتر است?",["مطالعه کامل قرارداد","امضای فوری","حذف صفحات","خالی گذاشتن مبلغ"],0],
-["در معامله ملک چه چیزی مهم است?",["بررسی مدارک مالکیت","رنگ ساختمان","تعداد پنجره","نوع کفپوش"],0],
-["در اختلاف حقوقی چه کاری مفید است?",["جمع‌آوری مدارک","حذف پیام‌ها","از بین بردن رسید","نادیده گرفتن ابلاغیه"],0],
-["در قرارداد اجاره چه چیزی باید مشخص باشد?",["مدت و مبلغ","رنگ دیوار","تعداد مهمان","نوع تلفن"],0],
-["در شراکت چه چیزی باید مشخص شود?",["سهم و وظایف شرکا","رنگ دفتر","برنامه تعطیلات","غذای مورد علاقه"],0],
-["وجه التزام معمولاً برای چیست?",["تخلف از تعهد","تغییر سایت","انتخاب نام","خرید اینترنت"],0],
-["قانون تجارت بیشتر درباره چیست?",["امور تجاری","ازدواج","حضانت","رانندگی"],0],
-["قانون حمایت خانواده درباره چیست?",["امور خانوادگی","شرکت‌ها","مالیات","گمرک"],0],
-["در پرونده قضایی چه چیزی مهم است?",["ابلاغیه‌ها","رنگ لباس","مدل گوشی","رنگ خودرو"],0],
-["در معاملات مهم چه چیزی را نگه داریم?",["رسید و اسناد","تبلیغات","عکس بی‌ربط","پیام‌های غیرمرتبط"],0],
-["برای پرونده تخصصی چه اقدامی بهتر است?",["مشورت با متخصص حقوقی","حدس زدن قانون","حذف مدارک","نادیده گرفتن پرونده"],0],
-["در قرارداد چه چیزی باید روشن باشد?",["تعهدات طرفین","رنگ لباس","برنامه سفر","تعداد دوستان"],0],
-["در معامله خودرو چه چیزی باید بررسی شود?",["شماره شاسی و مدارک","رنگ صندلی","نوع لاستیک فقط","رنگ فرمان"],0],
-["در اسناد مهم چه کاری مناسب است?",["نگهداری نسخه و رسید","دور انداختن","حذف اطلاعات","امضای بدون مطالعه"],0]
-
-];
-
-
-let category="همه";
-
-
-function toggleMenu(){
-
-document.getElementById("nav").classList.toggle("open");
-
-}
-
-
-function showSection(id,button){
-
-document.querySelectorAll(".section")
-.forEach(function(section){
-section.classList.remove("active");
-});
-
-if(id!=="home"){
-document.getElementById(id).classList.add("active");
-}
-
-document.querySelectorAll(".nav button")
-.forEach(function(btn){
-btn.classList.remove("active");
-});
-
-if(button){
-button.classList.add("active");
-}
-
-document.getElementById("nav").classList.remove("open");
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-}
-
-
-function goHome(){
-
-document.querySelectorAll(".section")
-.forEach(function(section){
-section.classList.remove("active");
-});
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-}
-
-
-function welcome(){
-
-document.getElementById("welcome").style.display="block";
-
-document.getElementById("welcome").scrollIntoView({
-behavior:"smooth",
-block:"center"
-});
-
-}
-
-
-function setCategory(value,button){
-
-category=value;
-
-document.querySelectorAll(".categories button")
-.forEach(function(btn){
-btn.classList.remove("active");
-});
-
-button.classList.add("active");
-
-renderLaws();
-
-}
-
-
-function renderLaws(){
-
-let list=document.getElementById("lawList");
-
-let search=document.getElementById("lawSearch").value.toLowerCase();
-
-list.innerHTML="";
-
-let found=0;
-
-laws.forEach(function(law){
-
-let cat=law[0];
-let number=law[1];
-let title=law[2];
-let desc=law[3];
-
-if(category!=="همه" && cat!==category){
-return;
-}
-
-let text=(cat+" "+number+" "+title+" "+desc).toLowerCase();
-
-if(search && !text.includes(search)){
-return;
-}
-
-found++;
-
-let div=document.createElement("div");
-
-div.className="card law";
-
-div.innerHTML=`
-
-<div class="law-title" onclick="openLaw(this)">
-
-<div>
-
-<span style="color:#ffd700;font-size:12px;">
-${cat}
-</span>
-
-<br>
-
-<strong>
-${number}
-</strong>
-
--
-${title}
-
-</div>
-
-<span>+</span>
-
-</div>
-
-<div class="law-content">
-
-<p>
-<strong style="color:#ffd700;">
-خلاصه آموزشی:
-</strong>
-</p>
-
-<p>
-${desc}
-</p>
-
-</div>
-
-`;
-
-list.appendChild(div);
-
-});
-
-if(found===0){
-
-list.innerHTML=`
-
-<div class="notice">
-موردی پیدا نشد.
-</div>
-
-`;
-
-}
-
-}
-
-
-function openLaw(element){
-
-let content=element.nextElementSibling;
-
-let sign=element.querySelector("span:last-child");
-
-if(content.classList.contains("open")){
-
-content.classList.remove("open");
-sign.innerText="+";
-
-}else{
-
-content.classList.add("open");
-sign.innerText="−";
-
-}
-
-}
-
-
-function renderTips(){
-
-let list=document.getElementById("tipList");
-
-let search=document.getElementById("tipSearch").value.toLowerCase();
-
-list.innerHTML="";
-
-tips.forEach(function(tip,index){
-
-if(search && !tip.toLowerCase().includes(search)){
-return;
-}
-
-let div=document.createElement("div");
-
-div.className="card";
-
-div.innerHTML=`
-
-<div class="tip-number">
-${index+1}
-</div>
-
-<h3>
-نکته حقوقی ${index+1}
-</h3>
-
-<p>
-${tip}
-</p>
-
-`;
-
-list.appendChild(div);
-
-});
-
-}
-
-
-function renderQuiz(){
-
-let list=document.getElementById("quizList");
-
-list.innerHTML="";
-
-quizzes.forEach(function(q,index){
-
-let html=`
-
-<div class="card quiz">
-
-<h3>
-آزمون ${index+1}
-</h3>
-
-<p>
-${q[0]}
-</p>
-
-`;
-
-q[1].forEach(function(option,i){
-
-html+=`
-
-<label class="option">
-
-<input
-type="radio"
-name="quiz${index}"
-value="${i}">
-
-${option}
-
-</label>
-
-`;
-
-});
-
-html+=`
-
-<button
-class="gold-btn"
-onclick="check(${index},${q[2]})">
-
-بررسی پاسخ
-
-</button>
-
-<div
-class="result"
-id="result${index}">
-</div>
-
-</div>
-
-`;
-
-let div=document.createElement("div");
-
-div.innerHTML=html;
-
-list.appendChild(div);
-
-});
-
-}
-
-
-function check(index,correct){
-
-let answers=document.getElementsByName("quiz"+index);
-
-let selected=null;
-
-answers.forEach(function(answer){
-
-if(answer.checked){
-selected=Number(answer.value);
-}
-
-});
-
-let result=document.getElementById("result"+index);
-
-if(selected===null){
-
-result.innerText="⚠️ یک گزینه انتخاب کنید.";
-
-result.style.color="#ffd700";
-
-return;
-
-}
-
-if(selected===correct){
-
-result.innerText="✅ پاسخ صحیح است.";
-
-result.style.color="#4cff88";
-
-}else{
-
-result.innerText="❌ پاسخ اشتباه است.";
-
-result.style.color="#ff6b6b";
-
-}
-
-}
-
-
-function selectPlan(plan){
-
-document.getElementById("asset").value=plan;
-
-document.getElementById("monthly").focus();
-
-alert(
-"طرح «"+plan+"» انتخاب شد.\n\n"+
-"حالا مبلغ ماهانه و مدت پرداخت را انتخاب کنید."
-);
-
-}
-
-
-function calculateInsurance(){
-
-let monthly=Number(
-document.getElementById("monthly").value
-);
-
-let months=Number(
-document.getElementById("months").value
-);
-
-let asset=document.getElementById("asset").value;
-
-if(!monthly || monthly<=0){
-
-alert("لطفاً مبلغ ماهانه را وارد کنید.");
-
-return;
-
-}
-
-let total=monthly*months;
-
-document.getElementById("totalResult").innerText=
-total.toLocaleString("fa-IR")+" تومان";
-
-document.getElementById("assetResult").innerText=
-"نوع پشتوانه انتخاب‌شده: "+asset;
-
-}
-
-
-function toggleFaq(element){
-
-let answer=element.nextElementSibling;
-
-answer.classList.toggle("open");
-
-}
-
-
-function purchase(){
-
-alert(
-"📱 درخواست شما ثبت شد.\n\n"+
-"این بخش فعلاً نمایشی است.\n"+
-"برای خرید واقعی باید درگاه پرداخت و سرویس اپراتور متصل شود."
-);
-
-}
-
-
-renderLaws();
-
-renderTips();
-
-renderQuiz();
-
-</script>
-
-</body>
-</html>
+            پارسا کرمی با تمرکز بر خدمات حقوقی، ایده‌های نوآورانه
+            و ابزارهای هوشمند، بستری برای آشنایی و بررسی راهکارهای
+            جدید مالی و قراردادی فراهم می‌کند.
+          </p>
+        </div>
+
+        <div class="hero-card">
+          <div class="symbol">⚖️</div>
+          <h3>پارسا کرمی</h3>
+          <p>
+            مرکز حقوقی و خدمات هوشمند
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- LEGAL SERVICES -->
+    <section id="legal">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>⚖️ خدمات حقوقی</h2>
+          <p>
+            بخشی از خدمات و موضوعات قابل بررسی در مرکز حقوقی
+          </p>
+        </div>
+
+        <div class="cards">
+
+          <div class="card">
+            <div class="card-icon">📄</div>
+            <h3>مشاوره حقوقی</h3>
+            <p>
+              بررسی مسائل و موضوعات حقوقی، قراردادی و اداری
+              و ارائه راهنمایی اولیه برای تصمیم‌گیری آگاهانه.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">📝</div>
+            <h3>بررسی قراردادها</h3>
+            <p>
+              بررسی ساختار قراردادها، تعهدات طرفین، ریسک‌های
+              احتمالی و نکات مهم پیش از امضا.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🏛️</div>
+            <h3>امور حقوقی و اداری</h3>
+            <p>
+              ارائه اطلاعات و راهنمایی عمومی درباره فرآیندهای
+              حقوقی، اداری و قراردادی.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- INSURANCE -->
+    <section id="insurance">
+
+      <div class="container">
+
+        <div class="section-title">
+          <h2>🛡️ بیمه بیکاری فلزات</h2>
+          <p>
+            ایده‌ای مفهومی برای پیوند دادن پس‌انداز فلزی با حمایت مالی
+          </p>
+        </div>
+
+        <div class="notice">
+          <strong>⚠️ توجه مهم: این بخش صرفاً یک نمونه مفهومی است.</strong>
+          <p>
+            «بیمه بیکاری فلزات» در این صفحه یک ایده و شبیه‌سازی آموزشی است
+            و در وضعیت فعلی بیمه واقعی، قرارداد بیمه، محصول سرمایه‌گذاری،
+            سپرده مالی یا تضمین پرداخت محسوب نمی‌شود. هیچ مبلغی در این
+            صفحه دریافت نمی‌شود و اعداد نمایش‌داده‌شده صرفاً نمونه هستند.
+          </p>
+        </div>
+
+        <div class="concept">
+
+          <h3>ایده «بیمه بیکاری فلزات» چیست؟</h3>
+
+          <p>
+            ایده این طرح بر این فرض مفهومی استوار است که فرد به‌جای
+            پرداخت صرف یک حق‌بیمه نقدی، بخشی از پرداخت دوره‌ای خود را
+            به یک سبد فرضی متشکل از فلزات ارزشمند اختصاص دهد.
+          </p>
+
+          <p>
+            در این مدل مفهومی، سه دارایی اصلی یعنی
+            <strong>طلا، نقره و مس</strong> در نظر گرفته می‌شوند.
+            هدف، ایجاد یک سازوکار فرضی برای تشکیل ذخیره‌ای از ارزش است
+            که در صورت بروز شرایط مشخص‌شده در یک قرارداد واقعی،
+            می‌تواند مبنای حمایت مالی از فرد قرار گیرد.
+          </p>
+
+          <p>
+            برای مثال، شخص می‌تواند ماهانه مبلغ مشخصی را به طرح انتخابی
+            اختصاص دهد. سیستم سپس به‌صورت نمایشی نشان می‌دهد که این مبلغ
+            چگونه میان فلز موردنظر توزیع شده و مجموع پرداختی طی مدت
+            قرارداد چقدر خواهد بود.
+          </p>
+
+          <p>
+            در یک نسخه واقعی، اجرای چنین محصولی نیازمند طراحی حقوقی،
+            محاسبات اکچوئری، مقررات بیمه‌ای، تعیین متولی دارایی،
+            سازوکار قیمت‌گذاری، شرایط دریافت مزایا و اخذ مجوزهای لازم
+            خواهد بود.
+          </p>
+
+          <div class="metal-flow">
+
+            <div class="metal gold">
+              <div class="emoji">🥇</div>
+              <h4>طلا</h4>
+              <p>
+                دارایی با ارزش بالا و نقش فرضی به‌عنوان بخش اصلی
+                ذخیره ارزش در این مدل.
+              </p>
+            </div>
+
+            <div class="metal silver">
+              <div class="emoji">🥈</div>
+              <h4>نقره</h4>
+              <p>
+                فلزی با ارزش کمتر از طلا که در این ایده می‌تواند
+                وزن بیشتری برای پرداخت‌های کوچک‌تر داشته باشد.
+              </p>
+            </div>
+
+<div class="metal copper">
+              <div class="emoji">🟠</div>
+              <h4>مس</h4>
+              <p>
+                فلزی صنعتی و کم‌هزینه‌تر که در مدل ترکیبی می‌تواند
+                برای ایجاد تنوع مفهومی استفاده شود.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- PLANS -->
+        <div class="section-title">
+          <h2>طرح‌های پیشنهادی</h2>
+          <p>
+            سه نمونه مفهومی برای شبیه‌سازی نحوه طراحی محصول
+          </p>
+        </div>
+
+        <div class="plans">
+
+          <div class="plan gold featured">
+            <span class="plan-label">طرح اول</span>
+            <h3>🥇 طرح طلایی</h3>
+
+            <ul>
+              <li>تمرکز مفهومی بر طلا</li>
+              <li>مناسب برای ذخیره ارزش فرضی</li>
+              <li>پرداخت ماهانه قابل انتخاب</li>
+              <li>امکان تعیین دوره قرارداد</li>
+              <li>محاسبه مجموع پرداختی</li>
+            </ul>
+          </div>
+
+          <div class="plan silver">
+            <span class="plan-label">طرح دوم</span>
+            <h3>🥈 طرح نقره‌ای</h3>
+
+            <ul>
+              <li>تمرکز مفهومی بر نقره</li>
+              <li>مناسب برای پرداخت‌های کوچک‌تر</li>
+              <li>پرداخت ماهانه قابل انتخاب</li>
+              <li>امکان تعیین دوره قرارداد</li>
+              <li>محاسبه مجموع پرداختی</li>
+            </ul>
+          </div>
+
+          <div class="plan combo">
+            <span class="plan-label">طرح سوم</span>
+            <h3>🪙 طرح ترکیبی</h3>
+
+            <ul>
+              <li>ترکیب مفهومی طلا، نقره و مس</li>
+              <li>تنوع بیشتر در سبد فرضی</li>
+              <li>پرداخت ماهانه قابل انتخاب</li>
+              <li>امکان تعیین دوره قرارداد</li>
+              <li>محاسبه مجموع پرداختی</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CALCULATOR -->
+    <section id="calculator">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>🧮 محاسبه‌گر حق‌بیمه</h2>
+          <p>
+            محاسبه آزمایشی مبلغ ماهانه و مجموع پرداختی
+          </p>
+        </div>
+
+        <div class="calculator">
+
+          <div class="form-box">
+
+            <label for="calcPlan">طرح موردنظر</label>
+
+            <select id="calcPlan">
+              <option value="gold">🥇 طرح طلایی</option>
+              <option value="silver">🥈 طرح نقره‌ای</option>
+              <option value="combo">🪙 طرح ترکیبی</option>
+            </select>
+
+            <label for="baseAmount">
+              مبلغ پایه ماهانه (تومان)
+            </label>
+
+            <input
+              type="number"
+              id="baseAmount"
+              min="100000"
+              value="1000000"
+              placeholder="مثلاً ۱,۰۰۰,۰۰۰"
+            >
+
+            <label for="calcMonths">
+              مدت (ماه)
+            </label>
+
+            <input
+              type="number"
+              id="calcMonths"
+              min="1"
+              max="120"
+              value="12"
+              placeholder="مثلاً ۱۲"
+            >
+
+            <button class="btn" onclick="calculateInsurance()">
+              محاسبه
+            </button>
+
+          </div>
+
+
+          <div class="result-box">
+
+            <div class="result-item">
+              <span>طرح انتخابی</span>
+              <strong id="resultPlan">طرح طلایی</strong>
+            </div>
+
+            <div class="result-item">
+              <span>حق‌بیمه ماهانه</span>
+              <strong id="resultMonthly">۰ تومان</strong>
+            </div>
+
+            <div class="result-item">
+              <span>مدت</span>
+              <strong id="resultMonths">۰ ماه</strong>
+            </div>
+
+            <div class="result-item">
+              <span>سهم فرضی طلا</span>
+              <strong id="goldS
