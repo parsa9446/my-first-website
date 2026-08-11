@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>مرکز حقوقی و خدمات پارسا کرمی</title>
+<title>پارسا کرمی | مرکز حقوقی و فروشگاه</title>
 
 <style>
 
@@ -17,7 +17,7 @@
 }
 
 body{
-    background:linear-gradient(135deg,#07111f,#102a43,#07111f);
+    background:linear-gradient(135deg,#07111f,#10243d,#07111f);
     color:white;
     min-height:100vh;
 }
@@ -25,27 +25,26 @@ body{
 /* هدر */
 
 header{
-    background:rgba(5,15,28,0.95);
-    padding:20px;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 5px 25px rgba(0,0,0,0.4);
-}
-
-.header-content{
-    max-width:1200px;
-    margin:auto;
+    padding:25px 7%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    gap:20px;
+    background:rgba(0,0,0,.35);
+    border-bottom:1px solid rgba(255,255,255,.1);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(12px);
 }
 
 .logo{
-    font-size:24px;
+    font-size:25px;
     font-weight:bold;
-    color:#f4c95d;
+    color:#00e5ff;
+}
+
+.logo span{
+    color:white;
 }
 
 /* منوی سمت راست */
@@ -54,248 +53,273 @@ nav{
     display:flex;
     gap:10px;
     flex-wrap:wrap;
+    justify-content:flex-start;
 }
 
 nav button{
-    background:#152f48;
+    background:rgba(255,255,255,.08);
     color:white;
-    border:1px solid #31516d;
-    padding:10px 15px;
+    border:1px solid rgba(255,255,255,.15);
+    padding:11px 17px;
     border-radius:12px;
     cursor:pointer;
-    transition:0.3s;
+    transition:.3s;
+    font-size:14px;
 }
 
 nav button:hover{
-    background:#f4c95d;
-    color:#07111f;
+    background:#00bcd4;
     transform:translateY(-2px);
 }
 
 /* صفحه اصلی */
 
 .hero{
-    max-width:1100px;
-    margin:50px auto;
-    padding:50px 25px;
     text-align:center;
-    background:linear-gradient(145deg,rgba(20,50,75,.9),rgba(7,17,31,.9));
-    border-radius:30px;
-    box-shadow:0 20px 50px rgba(0,0,0,.35);
+    padding:80px 20px 50px;
 }
 
 .hero h1{
-    color:#f4c95d;
-    font-size:38px;
-    margin-bottom:15px;
+    font-size:42px;
+    margin-bottom:20px;
+    color:#00e5ff;
 }
 
 .hero p{
-    color:#d7e1eb;
     font-size:18px;
+    color:#d6e2ef;
     line-height:2;
 }
 
-.welcome-btn{
-    margin-top:25px;
-    padding:15px 30px;
-    border:none;
-    border-radius:15px;
-    background:linear-gradient(135deg,#f4c95d,#dba92e);
-    color:#07111f;
-    font-size:17px;
-    font-weight:bold;
-    cursor:pointer;
-    box-shadow:0 8px 25px rgba(244,201,93,.25);
-}
+/* پیام خوش آمدگویی */
 
-.welcome-btn:hover{
-    transform:scale(1.05);
-}
-
-/* قلب */
-
-#heart{
+.welcome{
+    max-width:700px;
+    margin:25px auto;
+    background:linear-gradient(135deg,#00bcd4,#0077ff);
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,188,212,.25);
     display:none;
-    font-size:55px;
-    margin-top:20px;
+    animation:showWelcome .5s ease;
+}
+
+.welcome h2{
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+.heart{
+    font-size:45px;
     animation:heartBeat 1s infinite;
 }
 
-@keyframes heartBeat{
-    0%{transform:scale(1)}
-    50%{transform:scale(1.25)}
-    100%{transform:scale(1)}
+@keyframes showWelcome{
+    from{
+        opacity:0;
+        transform:translateY(-20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
-/* پیام خوش آمد */
-
-#welcomeMessage{
-    margin-top:20px;
-    font-size:23px;
-    color:#f4c95d;
-    font-weight:bold;
+@keyframes heartBeat{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.25);}
 }
 
 /* بخش ها */
 
 .section{
-    max-width:1100px;
-    margin:35px auto;
-    padding:35px 25px;
-    background:rgba(10,27,44,.9);
-    border-radius:25px;
-    box-shadow:0 15px 40px rgba(0,0,0,.3);
+    display:none;
+    padding:50px 7%;
 }
 
-.section h2{
-    color:#f4c95d;
-    margin-bottom:20px;
-    font-size:28px;
+.section.active{
+    display:block;
+    animation:fade .4s ease;
 }
 
-.section p{
-    line-height:2;
-    color:#dce6ef;
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.section-title{
+    text-align:center;
+    font-size:30px;
+    margin-bottom:35px;
+    color:#00e5ff;
 }
 
 /* کارت ها */
 
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
     gap:20px;
 }
 
 .card{
-    background:linear-gradient(145deg,#15334d,#0d2236);
-    padding:25px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.12);
     border-radius:20px;
-    border:1px solid #294d68;
+    padding:25px;
     transition:.3s;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
 }
 
 .card:hover{
     transform:translateY(-7px);
-    border-color:#f4c95d;
+    border-color:#00e5ff;
 }
 
 .card h3{
-    color:#f4c95d;
-    margin-bottom:12px;
+    color:#00e5ff;
+    margin-bottom:15px;
+    font-size:20px;
 }
 
 .card p{
-    font-size:14px;
+    color:#d7e0e8;
+    line-height:2;
 }
 
-/* فرم */
+/* شارژ و اینترنت */
+
+.operator{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.operator button{
+    padding:14px 25px;
+    margin:7px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.2);
+    background:#152c46;
+    color:white;
+    cursor:pointer;
+    font-size:15px;
+    transition:.3s;
+}
+
+.operator button:hover{
+    background:#00bcd4;
+}
 
 .form-box{
-    background:#102b42;
-    padding:25px;
+    max-width:600px;
+    margin:auto;
+    background:rgba(255,255,255,.07);
+    padding:30px;
     border-radius:20px;
-    margin-top:20px;
 }
 
 input,select{
     width:100%;
-    padding:13px;
-    margin:8px 0;
+    padding:14px;
+    margin:10px 0;
     border-radius:10px;
-    border:1px solid #41627b;
-    background:#071827;
-    color:white;
+    border:none;
     outline:none;
+    background:#eef5f9;
+    color:#111;
+    font-size:15px;
 }
 
-input:focus,select:focus{
-    border-color:#f4c95d;
-}
-
-.action-btn{
+.main-btn{
     width:100%;
     padding:14px;
-    margin-top:10px;
     border:none;
     border-radius:12px;
-    background:#f4c95d;
-    color:#07111f;
-    font-weight:bold;
+    background:linear-gradient(90deg,#00bcd4,#0077ff);
+    color:white;
+    font-size:16px;
     cursor:pointer;
+    margin-top:10px;
 }
 
-.action-btn:hover{
-    background:#ffd978;
+.main-btn:hover{
+    opacity:.85;
 }
 
-/* نتیجه */
+/* آزمون */
 
-.result{
-    margin-top:20px;
-    padding:15px;
-    border-radius:12px;
-    background:#0a1d2d;
-    color:#f4c95d;
-    display:none;
-    line-height:2;
+.quiz-question{
+    margin-bottom:25px;
 }
 
-/* قوانین */
+.quiz-question h3{
+    margin-bottom:15px;
+}
 
-.law{
-    padding:15px;
-    margin:10px 0;
-    background:#102b42;
-    border-radius:12px;
-    border-right:4px solid #f4c95d;
+.quiz-option{
+    display:block;
+    width:100%;
+    padding:13px;
+    margin:8px 0;
+    background:#13263d;
+    border:1px solid rgba(255,255,255,.1);
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+    text-align:right;
+}
+
+.quiz-option:hover{
+    background:#00bcd4;
+}
+
+/* اطلاعات تماس */
+
+.contact{
+    text-align:center;
+    line-height:2.3;
+}
+
+.contact strong{
+    color:#00e5ff;
 }
 
 /* فوتر */
 
 footer{
-    margin-top:50px;
-    padding:30px;
     text-align:center;
-    background:#050f1b;
-    color:#aebdca;
-    line-height:2;
-}
-
-footer strong{
-    color:#f4c95d;
+    padding:30px;
+    margin-top:60px;
+    background:rgba(0,0,0,.3);
+    color:#b8c5d1;
 }
 
 /* موبایل */
 
-@media(max-width:700px){
+@media(max-width:800px){
 
-    .header-content{
+    header{
         flex-direction:column;
-        align-items:flex-start;
+        gap:20px;
     }
 
     nav{
-        width:100%;
+        justify-content:center;
     }
 
     nav button{
-        flex:1;
-        min-width:100px;
+        font-size:12px;
+        padding:9px 11px;
     }
 
     .hero h1{
-        font-size:28px;
-    }
-
-    .hero{
-        margin:25px 12px;
-        padding:35px 18px;
-    }
-
-    .section{
-        margin:20px 12px;
-        padding:25px 18px;
+        font-size:30px;
     }
 
 }
@@ -303,363 +327,444 @@ footer strong{
 </style>
 </head>
 
-
 <body>
-
 
 <header>
 
-<div class="header-content">
+    <div class="logo">
+        پارسا کرمی <span>| مرکز حقوقی</span>
+    </div>
 
-<div class="logo">
-⚖️ پارسا کرمی
-</div>
+    <nav>
 
-<nav>
+        <button onclick="showSection('home')">
+            🏠 خانه
+        </button>
 
-<button onclick="goTo('home')">🏠 خانه</button>
+        <button onclick="showSection('law')">
+            ⚖️ مرکز حقوقی
+        </button>
 
-<button onclick="goTo('law')">⚖️ حقوق</button>
+        <button onclick="showSection('reforms')">
+            📚 اصلاحات حقوقی
+        </button>
 
-<button onclick="goTo('laws')">📚 قوانین</button>
+        <button onclick="showSection('articles')">
+            📖 مواد قانونی
+        </button>
 
-<button onclick="goTo('quiz')">📝 آزمون</button>
+        <button onclick="showSection('quiz')">
+            📝 آزمون حقوقی
+        </button>
 
-<button onclick="goTo('mobile')">📱 شارژ و اینترنت</button>
+        <button onclick="showSection('charge')">
+            📱 شارژ و اینترنت
+        </button>
 
-<button onclick="goTo('contact')">📞 تماس</button>
+        <button onclick="showSection('about')">
+            👤 درباره من
+        </button>
 
-</nav>
+        <button onclick="showSection('contact')">
+            ☎️ تماس
+        </button>
 
-</div>
+    </nav>
 
 </header>
 
 
-
 <!-- صفحه اصلی -->
 
-<section class="hero" id="home">
+<section id="home" class="section active">
 
-<h1>
-به مرکز حقوقی و خدمات پارسا کرمی خوش آمدید
-</h1>
+    <div class="hero">
 
-<p>
-مرجع آموزشی حقوق، قوانین، آزمون‌های حقوقی و خدمات کاربردی
-</p>
+        <h1>
+            مرکز حقوقی و خدمات پارسا کرمی
+        </h1>
 
-<button class="welcome-btn" onclick="welcomeUser()">
-👋 ورود به سایت
-</button>
+        <p>
+            آموزش حقوق، قوانین مهم، آزمون‌های حقوقی
+            و خدمات کاربردی در یک سایت
+        </p>
 
-<div id="welcomeMessage"></div>
+        <button class="main-btn" style="max-width:300px"
+                onclick="welcomeUser()">
+            ورود به سایت ❤️
+        </button>
 
-<div id="heart">
-❤️
-</div>
+        <div id="welcome" class="welcome">
 
-</section>
+            <h2>
+                کاربر عزیز، خوش آمدید
+            </h2>
 
+            <div class="heart">
+                ❤️
+            </div>
 
+            <p>
+                از حضور شما در سایت ما خوشحالیم.
+            </p>
 
-<!-- معرفی -->
+        </div>
 
-<section class="section" id="law">
-
-<h2>⚖️ مرکز حقوقی</h2>
-
-<p>
-این بخش برای آموزش مفاهیم حقوقی، آشنایی با قوانین،
-اصطلاحات مهم و مطالب آموزشی حقوق طراحی شده است.
-</p>
-
-<br>
-
-<div class="cards">
-
-<div class="card">
-<h3>⚖️ مشاوره حقوقی</h3>
-<p>
-آشنایی با موضوعات مختلف حقوقی و نکات مهم قانونی.
-</p>
-</div>
-
-<div class="card">
-<h3>📚 آموزش حقوق</h3>
-<p>
-مطالب آموزشی ساده و کاربردی برای دانشجویان حقوق.
-</p>
-</div>
-
-<div class="card">
-<h3>📝 آمادگی آزمون</h3>
-<p>
-تمرین و تست برای افزایش آمادگی آزمون‌های حقوقی.
-</p>
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
+<!-- مرکز حقوقی -->
 
-<!-- قوانین -->
+<section id="law" class="section">
 
-<section class="section" id="laws">
+    <h2 class="section-title">
+        ⚖️ مرکز حقوقی
+    </h2>
 
-<h2>📚 قوانین مهم</h2>
+    <div class="cards">
 
-<div class="law">
-<strong>ماده ۱ قانون مدنی:</strong>
-قوانین باید در سراسر قلمرو کشور اجرا شوند مگر اینکه قانون ترتیب دیگری مقرر کرده باشد.
-</div>
+        <div class="card">
+            <h3>قوانین مهم</h3>
+            <p>
+                دسترسی آسان به مهم‌ترین مواد و قوانین کاربردی حقوقی.
+            </p>
+        </div>
 
-<div class="law">
-<strong>ماده ۲ قانون مدنی:</strong>
-قوانین پانزده روز پس از انتشار در روزنامه رسمی لازم‌الاجرا می‌شوند مگر اینکه در خود قانون ترتیب خاصی مقرر شده باشد.
-</div>
+        <div class="card">
+            <h3>آموزش حقوق</h3>
+            <p>
+                مطالب آموزشی ساده و قابل فهم برای دانشجویان حقوق.
+            </p>
+        </div>
 
-<div class="law">
-<strong>ماده ۱۰ قانون مدنی:</strong>
-قراردادهای خصوصی نسبت به کسانی که آن را منعقد نموده‌اند، در صورتی که مخالف صریح قانون نباشد نافذ است.
-</div>
+        <div class="card">
+            <h3>مشاوره و اطلاعات</h3>
+            <p>
+                مطالب عمومی و آموزشی درباره موضوعات مختلف حقوقی.
+            </p>
+        </div>
 
-<div class="law">
-<strong>ماده ۲۱۹ قانون مدنی:</strong>
-عقودی که بر طبق قانون واقع شده باشد بین متعاملین و قائم‌مقام آنها لازم‌الاتباع است.
-</div>
+    </div>
 
 </section>
 
+
+<!-- اصلاحات حقوقی -->
+
+<section id="reforms" class="section">
+
+    <h2 class="section-title">
+        📚 اصلاحات حقوقی
+    </h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>اصلاحات قانون مدنی</h3>
+            <p>
+                بررسی تغییرات و نکات مهم قانون مدنی.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>اصلاحات کیفری</h3>
+            <p>
+                آشنایی با تغییرات مهم در قوانین کیفری.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>اصلاحات آیین دادرسی</h3>
+            <p>
+                نکات مهم مربوط به آیین دادرسی و تغییرات آن.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- مواد قانونی -->
+
+<section id="articles" class="section">
+
+    <h2 class="section-title">
+        📖 مواد قانونی مهم
+    </h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>قانون مدنی</h3>
+            <p>
+                مجموعه‌ای از مواد مهم و کاربردی قانون مدنی.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>قانون مجازات</h3>
+            <p>
+                مواد مهم و آموزشی قانون مجازات اسلامی.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>آیین دادرسی</h3>
+            <p>
+                مواد مهم آیین دادرسی مدنی و کیفری.
+            </p>
+        </div>
+
+    </div>
+
+</section>
 
 
 <!-- آزمون -->
 
-<section class="section" id="quiz">
+<section id="quiz" class="section">
 
-<h2>📝 آزمون حقوقی</h2>
+    <h2 class="section-title">
+        📝 آزمون حقوقی
+    </h2>
 
-<div class="form-box">
+    <div class="form-box">
 
-<p>
-کدام گزینه درباره ماده ۱۰ قانون مدنی صحیح است؟
-</p>
+        <div class="quiz-question">
 
-<br>
+            <h3>
+                سؤال نمونه: قانون اساسی ایران چند اصل دارد؟
+            </h3>
 
-<select id="answer">
+            <button class="quiz-option"
+                    onclick="checkAnswer(false)">
+                ۱۰۰ اصل
+            </button>
 
-<option value="">
-انتخاب پاسخ
-</option>
+            <button class="quiz-option"
+                    onclick="checkAnswer(true)">
+                ۱۷۷ اصل
+            </button>
 
-<option value="wrong">
-تمام قراردادها باطل هستند.
-</option>
+            <button class="quiz-option"
+                    onclick="checkAnswer(false)">
+                ۲۰۰ اصل
+            </button>
 
-<option value="correct">
-قراردادهای خصوصی در صورت مخالفت نداشتن با قانون نافذ هستند.
-</option>
+        </div>
 
-<option value="wrong">
-قرارداد خصوصی هیچ اعتبار قانونی ندارد.
-</option>
+        <p id="quizResult"></p>
 
-</select>
-
-<button class="action-btn" onclick="checkAnswer()">
-بررسی پاسخ
-</button>
-
-<div class="result" id="quizResult"></div>
-
-</div>
+    </div>
 
 </section>
-
 
 
 <!-- شارژ و اینترنت -->
 
-<section class="section" id="mobile">
+<section id="charge" class="section">
 
-<h2>📱 خرید شارژ و بسته اینترنت</h2>
+    <h2 class="section-title">
+        📱 شارژ و بسته اینترنت
+    </h2>
 
-<p>
-در این قسمت می‌توانید نوع خدمات موردنظر خود را انتخاب کنید.
-</p>
+    <div class="form-box">
 
+        <div class="operator">
 
-<div class="cards">
+            <h3>
+                اپراتور خود را انتخاب کنید
+            </h3>
 
-<div class="card">
+            <button onclick="selectOperator('همراه اول')">
+                📱 همراه اول
+            </button>
 
-<h3>🔋 خرید شارژ</h3>
+            <button onclick="selectOperator('ایرانسل')">
+                🟡 ایرانسل
+            </button>
 
-<p>
-شارژ مستقیم سیم‌کارت خود را انتخاب کنید.
-</p>
+            <button onclick="selectOperator('رایتل')">
+                🟣 رایتل
+            </button>
 
-<div class="form-box">
+        </div>
 
-<select id="chargeOperator">
+        <p id="operatorName"
+           style="text-align:center;margin:20px 0;color:#00e5ff;">
+            هنوز اپراتوری انتخاب نشده است
+        </p>
 
-<option value="">اپراتور را انتخاب کنید</option>
-<option>همراه اول</option>
-<option>ایرانسل</option>
-<option>رایتل</option>
+        <label>
+            شماره موبایل
+        </label>
 
-</select>
+        <input
+            type="tel"
+            id="mobile"
+            placeholder="مثلاً 09123456789"
+        >
 
-<input
-type="tel"
-id="chargeNumber"
-placeholder="شماره موبایل"
->
+        <label>
+            نوع خدمت
+        </label>
 
-<select id="chargeAmount">
+        <select id="service">
 
-<option value="">مبلغ شارژ</option>
-<option>۲۰,۰۰۰ تومان</option>
-<option>۵۰,۰۰۰ تومان</option>
-<option>۱۰۰,۰۰۰ تومان</option>
-<option>۲۰۰,۰۰۰ تومان</option>
+            <option>
+                شارژ مستقیم
+            </option>
 
-</select>
+            <option>
+                بسته اینترنت
+            </option>
 
-<button class="action-btn" onclick="chargeDemo()">
-💳 ادامه خرید
-</button>
+            <option>
+                بسته مکالمه
+            </option>
 
-<div class="result" id="chargeResult"></div>
+        </select>
 
-</div>
+        <label>
+            مبلغ / بسته
+        </label>
 
-</div>
+        <select>
 
+            <option>
+                ۱۰ هزار تومان
+            </option>
 
+            <option>
+                ۲۰ هزار تومان
+            </option>
 
-<div class="card">
+            <option>
+                ۵۰ هزار تومان
+            </option>
 
-<h3>🌐 بسته اینترنت</h3>
+            <option>
+                ۱۰۰ هزار تومان
+            </option>
 
-<p>
-بسته اینترنت موردنظر خود را انتخاب کنید.
-</p>
+            <option>
+                بسته اینترنت ۱۰ گیگ
+            </option>
 
-<div class="form-box">
+            <option>
+                بسته اینترنت ۲۰ گیگ
+            </option>
 
-<select id="internetOperator">
+        </select>
 
-<option value="">اپراتور را انتخاب کنید</option>
-<option>همراه اول</option>
-<option>ایرانسل</option>
-<option>رایتل</option>
+        <button class="main-btn"
+                onclick="startPayment()">
+            💳 ادامه و پرداخت
+        </button>
 
-</select>
+        <p id="paymentMessage"
+           style="text-align:center;margin-top:20px;">
+        </p>
 
-<input
-type="tel"
-id="internetNumber"
-placeholder="شماره موبایل"
->
-
-<select id="internetPackage">
-
-<option value="">انتخاب بسته</option>
-<option>۱ گیگابایت - ۷ روزه</option>
-<option>۵ گیگابایت - ۳۰ روزه</option>
-<option>۱۰ گیگابایت - ۳۰ روزه</option>
-<option>۲۰ گیگابایت - ۳۰ روزه</option>
-
-</select>
-
-<button class="action-btn" onclick="internetDemo()">
-💳 ادامه خرید
-</button>
-
-<div class="result" id="internetResult"></div>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
+
+<!-- درباره من -->
+
+<section id="about" class="section">
+
+    <h2 class="section-title">
+        👤 درباره من
+    </h2>
+
+    <div class="form-box contact">
+
+        <p>
+            <strong>نام:</strong>
+            پارسا کرمی
+        </p>
+
+        <p>
+            <strong>رشته:</strong>
+            دانشجوی رشته حقوق
+        </p>
+
+        <p>
+            <strong>شماره تماس:</strong>
+            09302869446
+        </p>
+
+        <p>
+            <strong>ایمیل:</strong>
+            parsakaramisarabii@gmail.com
+        </p>
+
+    </div>
+
+</section>
 
 
 <!-- تماس -->
 
-<section class="section" id="contact">
+<section id="contact" class="section">
 
-<h2>📞 ارتباط با ما</h2>
+    <h2 class="section-title">
+        ☎️ تماس با من
+    </h2>
 
-<div class="cards">
+    <div class="form-box contact">
 
-<div class="card">
+        <p>
+            برای ارتباط می‌توانید از اطلاعات زیر استفاده کنید.
+        </p>
 
-<h3>👨‍⚖️ پارسا کرمی</h3>
+        <p>
+            📞 <strong>09302869446</strong>
+        </p>
 
-<p>
-دانشجوی رشته حقوق
-</p>
+        <p>
+            📧 <strong>parsakaramisarabii@gmail.com</strong>
+        </p>
 
-</div>
-
-
-<div class="card">
-
-<h3>📱 تلفن</h3>
-
-<p>
-09302869446
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>📧 ایمیل</h3>
-
-<p>
-parsakaramisarabii@gmail.com
-</p>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
-
 <footer>
 
-<p>
-© تمامی حقوق این سایت متعلق به <strong>پارسا کرمی</strong> است.
-</p>
-
-<p>
-طراحی و توسعه با ❤️
-</p>
+    © 2026 پارسا کرمی
+    <br>
+    مرکز حقوقی و خدمات آنلاین
 
 </footer>
 
 
-
 <script>
 
-/* رفتن به بخش ها */
+/* نمایش بخش ها */
 
-function goTo(id){
+function showSection(sectionId){
 
-    document.getElementById(id).scrollIntoView({
-        behavior:"smooth"
+    const sections =
+        document.querySelectorAll('.section');
+
+    sections.forEach(section => {
+        section.classList.remove('active');
+    });
+
+    document
+        .getElementById(sectionId)
+        .classList.add('active');
+
+    window.scrollTo({
+        top:0,
+        behavior:'smooth'
     });
 
 }
@@ -669,125 +774,84 @@ function goTo(id){
 
 function welcomeUser(){
 
-    document.getElementById("welcomeMessage").innerHTML =
-    "کاربر عزیز، خوش آمدید 🌹";
+    const welcome =
+        document.getElementById('welcome');
 
-    document.getElementById("heart").style.display = "block";
+    welcome.style.display = 'block';
+
+}
+
+
+/* انتخاب اپراتور */
+
+function selectOperator(operator){
+
+    document
+        .getElementById('operatorName')
+        .innerHTML =
+        'اپراتور انتخاب شده: <strong>' +
+        operator +
+        '</strong>';
+
+}
+
+
+/* پرداخت */
+
+function startPayment(){
+
+    const mobile =
+        document.getElementById('mobile').value;
+
+    const message =
+        document.getElementById('paymentMessage');
+
+    if(mobile.length < 10){
+
+        message.innerHTML =
+        '❌ لطفاً شماره موبایل را صحیح وارد کنید.';
+
+        message.style.color = '#ff6b6b';
+
+        return;
+    }
+
+    message.innerHTML =
+        '✅ اطلاعات ثبت شد. درگاه پرداخت در مرحله بعد متصل می‌شود.';
+
+    message.style.color = '#00e5ff';
 
 }
 
 
 /* آزمون */
 
-function checkAnswer(){
+function checkAnswer(correct){
 
-    let answer =
-    document.getElementById("answer").value;
+    const result =
+        document.getElementById('quizResult');
 
-    let result =
-    document.getElementById("quizResult");
-
-    result.style.display = "block";
-
-    if(answer === "correct"){
+    if(correct){
 
         result.innerHTML =
-        "🎉 آفرین! پاسخ شما صحیح است ❤️";
+            '🎉 آفرین! پاسخ شما صحیح است.';
 
-    }
+        result.style.color =
+            '#00ff9d';
 
-    else if(answer === "wrong"){
-
-        result.innerHTML =
-        "❌ پاسخ اشتباه است. دوباره تلاش کنید.";
-
-    }
-
-    else{
+    }else{
 
         result.innerHTML =
-        "⚠️ لطفاً ابتدا یک گزینه انتخاب کنید.";
+            '❌ پاسخ اشتباه است. دوباره تلاش کنید.';
+
+        result.style.color =
+            '#ff6b6b';
 
     }
-
-}
-
-
-/* خرید شارژ نمایشی */
-
-function chargeDemo(){
-
-    let operator =
-    document.getElementById("chargeOperator").value;
-
-    let number =
-    document.getElementById("chargeNumber").value;
-
-    let amount =
-    document.getElementById("chargeAmount").value;
-
-    let result =
-    document.getElementById("chargeResult");
-
-    result.style.display = "block";
-
-    if(!operator || !number || !amount){
-
-        result.innerHTML =
-        "⚠️ لطفاً همه اطلاعات را کامل کنید.";
-
-        return;
-
-    }
-
-    result.innerHTML =
-    "✅ سفارش شما آماده است.<br>" +
-    "اپراتور: " + operator + "<br>" +
-    "شماره: " + number + "<br>" +
-    "مبلغ: " + amount +
-    "<br><br>💳 در نسخه بعدی می‌توان درگاه پرداخت واقعی را به این قسمت متصل کرد.";
-
-}
-
-
-/* خرید اینترنت نمایشی */
-
-function internetDemo(){
-
-    let operator =
-    document.getElementById("internetOperator").value;
-
-    let number =
-    document.getElementById("internetNumber").value;
-
-    let pack =
-    document.getElementById("internetPackage").value;
-
-    let result =
-    document.getElementById("internetResult");
-
-    result.style.display = "block";
-
-    if(!operator || !number || !pack){
-
-        result.innerHTML =
-        "⚠️ لطفاً همه اطلاعات را کامل کنید.";
-
-        return;
-
-    }
-
-    result.innerHTML =
-    "✅ سفارش شما آماده است.<br>" +
-    "اپراتور: " + operator + "<br>" +
-    "شماره: " + number + "<br>" +
-    "بسته: " + pack +
-    "<br><br>💳 در نسخه بعدی می‌توان درگاه پرداخت واقعی را به این قسمت متصل کرد.";
 
 }
 
 </script>
-
 
 </body>
 </html>
