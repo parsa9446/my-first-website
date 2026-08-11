@@ -21,22 +21,18 @@ body{
     color:#172033;
 }
 
-/* ================= HEADER ================= */
-
 header{
     background:#101c35;
     color:white;
-    padding:0 6%;
-    height:78px;
-
+    padding:15px 5%;
+    min-height:78px;
     display:flex;
     align-items:center;
     justify-content:space-between;
-
+    gap:20px;
     position:sticky;
     top:0;
     z-index:999;
-
     box-shadow:0 4px 20px rgba(0,0,0,.15);
 }
 
@@ -50,25 +46,22 @@ header{
     color:#d6ad55;
 }
 
-/* منو */
-
 nav{
     display:flex;
     align-items:center;
-    gap:7px;
+    justify-content:flex-start;
+    gap:6px;
+    flex-wrap:wrap;
 }
 
 nav button{
     border:none;
     background:transparent;
     color:#e9edf5;
-
-    padding:12px 13px;
+    padding:11px 12px;
     border-radius:8px;
-
     cursor:pointer;
     font-size:13px;
-
     transition:.25s;
 }
 
@@ -78,23 +71,24 @@ nav button.active{
     color:#101c35;
 }
 
-/* ================= HERO ================= */
+.section{
+    display:none;
+    min-height:600px;
+}
+
+.section.active{
+    display:block;
+}
 
 .hero{
-    min-height:560px;
-
+    min-height:calc(100vh - 78px);
     background:
-    linear-gradient(
-        rgba(16,28,53,.93),
-        rgba(16,28,53,.88)
-    );
-
+    linear-gradient(rgba(16,28,53,.95),rgba(16,28,53,.93));
     display:flex;
     align-items:center;
     justify-content:center;
-
     text-align:center;
-    padding:70px 20px;
+    padding:60px 20px;
 }
 
 .hero-content{
@@ -106,7 +100,6 @@ nav button.active{
     padding:8px 18px;
     border:1px solid #d6ad55;
     border-radius:30px;
-
     color:#e3bd68;
     margin-bottom:22px;
     font-size:13px;
@@ -134,13 +127,10 @@ nav button.active{
     border:none;
     background:#d6ad55;
     color:#101c35;
-
     padding:14px 30px;
     border-radius:9px;
-
     font-weight:bold;
     cursor:pointer;
-
     transition:.25s;
 }
 
@@ -149,23 +139,15 @@ nav button.active{
     box-shadow:0 8px 25px rgba(214,173,85,.3);
 }
 
-/* ================= WELCOME ================= */
-
 .welcome{
     display:none;
-
     max-width:600px;
     margin:30px auto 0;
-
     background:white;
     color:#172033;
-
     padding:25px;
     border-radius:15px;
-
     box-shadow:0 15px 40px rgba(0,0,0,.25);
-
-    animation:welcome .4s ease;
 }
 
 .welcome h2{
@@ -174,9 +156,7 @@ nav button.active{
 }
 
 .welcome-heart{
-    font-size:42px;
-    margin-top:8px;
-
+    font-size:45px;
     animation:heart 1s infinite;
 }
 
@@ -186,112 +166,55 @@ nav button.active{
     }
 }
 
-@keyframes welcome{
-    from{
-        opacity:0;
-        transform:translateY(-15px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-/* ================= SECTIONS ================= */
-
-.section{
-    display:none;
-    padding:70px 7%;
-    min-height:500px;
-}
-
-.section.active{
-    display:block;
-    animation:sectionShow .35s ease;
-}
-
-@keyframes sectionShow{
-    from{
-        opacity:0;
-        transform:translateY(10px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+.content{
+    padding:65px 6%;
 }
 
 .section-title{
     text-align:center;
     color:#101c35;
-
     font-size:30px;
-
-    margin-bottom:45px;
+    margin-bottom:38px;
 }
 
 .section-title::after{
     content:"";
     display:block;
-
     width:55px;
     height:3px;
-
     background:#d6ad55;
-
     margin:15px auto 0;
 }
 
-/* ================= CARDS ================= */
-
 .cards{
     display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(240px,1fr));
-
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
     gap:22px;
 }
 
 .card{
     background:white;
-
     padding:28px;
-
     border-radius:14px;
-
     border:1px solid #e2e6ec;
-
-    box-shadow:
-    0 8px 25px rgba(16,28,53,.07);
-
+    box-shadow:0 8px 25px rgba(16,28,53,.07);
     transition:.25s;
 }
 
 .card:hover{
     transform:translateY(-5px);
-
     border-color:#d6ad55;
-
-    box-shadow:
-    0 15px 35px rgba(16,28,53,.12);
 }
 
 .card-icon{
     width:48px;
     height:48px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     background:#f8f1df;
-
     border-radius:10px;
-
     font-size:23px;
-
     margin-bottom:18px;
 }
 
@@ -306,29 +229,105 @@ nav button.active{
     font-size:14px;
 }
 
-/* ================= ABOUT ================= */
+.toolbar{
+    max-width:1000px;
+    margin:0 auto 25px;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
 
-.about-box{
-    max-width:800px;
+.toolbar input,
+.toolbar select{
+    flex:1;
+    min-width:220px;
+}
+
+input,
+select{
+    width:100%;
+    padding:13px;
+    border:1px solid #dce1e8;
+    border-radius:9px;
+    outline:none;
+    font-size:14px;
+    background:#fafbfc;
+}
+
+input:focus,
+select:focus{
+    border-color:#d6ad55;
+}
+
+.legal-list{
+    max-width:1000px;
     margin:auto;
+    display:grid;
+    gap:14px;
+}
 
-    background:white;
-
-    padding:35px;
-
-    border-radius:15px;
-
+.legal-item{
+    background:#fff;
     border:1px solid #e2e6ec;
+    border-radius:13px;
+    padding:20px;
+    box-shadow:0 6px 20px rgba(16,28,53,.05);
+}
 
+.legal-item h3{
+    color:#101c35;
+    margin-bottom:10px;
+}
+
+.tag{
+    display:inline-block;
+    background:#f8f1df;
+    color:#8b6b20;
+    border-radius:20px;
+    padding:5px 10px;
+    font-size:11px;
+    margin-bottom:10px;
+}
+
+.legal-item p{
+    color:#586477;
+    line-height:2;
+}
+
+.note{
+    margin-top:12px;
+    padding:10px 12px;
+    background:#f7f8fa;
+    border-right:3px solid #d6ad55;
+    line-height:2;
+    color:#596477;
+}
+
+.empty{
+    display:none;
+    text-align:center;
+    background:#fff;
+    padding:35px;
+    border-radius:13px;
+    color:#687386;
+}
+
+.about-box,
+.form-box,
+.payment-box{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    border:1px solid #e2e6ec;
     box-shadow:0 10px 30px rgba(16,28,53,.07);
 }
 
 .info-row{
     display:flex;
     justify-content:space-between;
-
-    padding:16px 0;
-
+    padding:15px 0;
     border-bottom:1px solid #edf0f4;
 }
 
@@ -345,112 +344,43 @@ nav button.active{
     color:#687386;
 }
 
-/* ================= CHARGE ================= */
-
-.form-box{
-    max-width:650px;
-    margin:auto;
-
-    background:white;
-
-    padding:35px;
-
-    border-radius:15px;
-
-    border:1px solid #e2e6ec;
-
-    box-shadow:0 10px 30px rgba(16,28,53,.07);
-}
-
-label{
-    display:block;
-
-    color:#101c35;
-
-    font-size:14px;
-    font-weight:bold;
-
-    margin-top:15px;
-    margin-bottom:7px;
-}
-
-input,
-select{
-    width:100%;
-
-    padding:14px;
-
-    border:1px solid #dce1e8;
-
-    border-radius:9px;
-
-    outline:none;
-
-    font-size:14px;
-
-    background:#fafbfc;
-}
-
-input:focus,
-select:focus{
-    border-color:#d6ad55;
-}
-
-.operator-title{
-    text-align:center;
-
-    color:#101c35;
-
-    margin-bottom:18px;
-}
-
 .operator-buttons{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-
     gap:10px;
-
-    margin-bottom:25px;
+    margin:18px 0;
 }
 
 .operator-buttons button{
     padding:13px;
-
     border:1px solid #dce1e8;
-
     background:white;
-
     border-radius:9px;
-
     cursor:pointer;
-
-    transition:.2s;
 }
 
-.operator-buttons button:hover,
 .operator-buttons button.selected{
     background:#101c35;
     color:white;
-    border-color:#101c35;
+}
+
+label{
+    display:block;
+    color:#101c35;
+    font-size:14px;
+    font-weight:bold;
+    margin:15px 0 7px;
 }
 
 .submit-btn{
     width:100%;
-
     margin-top:22px;
-
     padding:14px;
-
     border:none;
-
     border-radius:9px;
-
     background:#101c35;
-
     color:white;
-
     cursor:pointer;
-
     font-weight:bold;
 }
 
@@ -459,152 +389,82 @@ select:focus{
     color:#101c35;
 }
 
-/* ================= QUIZ ================= */
+.payment-notice{
+    background:#fff8e8;
+    border-right:4px solid #d6ad55;
+    padding:15px;
+    line-height:2;
+    color:#66521f;
+    margin-bottom:20px;
+}
 
 .quiz-container{
-    max-width:750px;
+    max-width:800px;
     margin:auto;
-}
-
-.quiz-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    margin-bottom:15px;
-
-    color:#687386;
-
-    font-size:14px;
-}
-
-.progress{
-    width:100%;
-    height:7px;
-
-    background:#e6e9ee;
-
-    border-radius:10px;
-
-    overflow:hidden;
-
-    margin-bottom:25px;
-}
-
-.progress-bar{
-    height:100%;
-    width:0%;
-
-    background:#d6ad55;
-
-    transition:.3s;
 }
 
 .quiz-card{
     background:white;
-
-    padding:35px;
-
+    padding:30px;
     border-radius:15px;
-
     border:1px solid #e2e6ec;
-
     box-shadow:0 10px 30px rgba(16,28,53,.08);
 }
 
-.quiz-card h3{
+.question{
+    font-size:18px;
+    font-weight:bold;
     color:#101c35;
-
     line-height:2;
-
-    margin-bottom:25px;
-}
-
-.options{
-    display:grid;
-    gap:11px;
+    margin-bottom:20px;
 }
 
 .option{
+    display:block;
     width:100%;
-
     text-align:right;
-
-    padding:15px;
-
+    padding:14px;
+    margin:10px 0;
     border:1px solid #dce1e8;
-
     background:#fafbfc;
-
     border-radius:9px;
-
     cursor:pointer;
-
     transition:.2s;
 }
 
 .option:hover{
     border-color:#d6ad55;
+    background:#fffaf0;
 }
 
 .option.correct{
-    background:#e7f7ee;
-    border-color:#27ae60;
-    color:#176b3b;
+    background:#eaf7ee;
+    border-color:#45a363;
 }
 
 .option.wrong{
-    background:#fdeaea;
-    border-color:#e74c3c;
-    color:#8b2922;
-}
-
-.answer-box{
-    display:none;
-
-    margin-top:22px;
-
-    padding:18px;
-
-    border-radius:10px;
-
-    line-height:2;
-
-    background:#f7f8fa;
-
-    border-right:4px solid #d6ad55;
-}
-
-.answer-box.show{
-    display:block;
+    background:#fff0f0;
+    border-color:#d9534f;
 }
 
 .quiz-buttons{
     display:flex;
-    justify-content:space-between;
-
-    gap:12px;
-
+    gap:10px;
     margin-top:25px;
 }
 
 .quiz-buttons button{
     flex:1;
-
     padding:13px;
-
     border:none;
-
     border-radius:9px;
-
     cursor:pointer;
-
     font-weight:bold;
 }
 
 .prev-btn{
-    background:#e9edf2;
-    color:#101c35;
+    background:#e7eaf0;
+    color:#172033;
 }
 
 .next-btn{
@@ -612,39 +472,115 @@ select:focus{
     color:white;
 }
 
-.quiz-result{
+.result{
+    margin-top:20px;
+    padding:15px;
+    border-radius:10px;
     display:none;
+    line-height:2;
+}
 
+/* =========================
+   بخش وکیل
+========================= */
+
+.lawyer-card{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    border:1px solid #e2e6ec;
+    border-radius:18px;
+    padding:35px;
     text-align:center;
-
-    padding:40px;
+    box-shadow:0 12px 35px rgba(16,28,53,.10);
+    position:relative;
+    overflow:hidden;
 }
 
-.quiz-result h2{
-    color:#101c35;
-    margin-bottom:15px;
+.lawyer-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    right:0;
+    left:0;
+    height:5px;
+    background:#d6ad55;
 }
 
-.score{
+.lawyer-icon{
+    width:85px;
+    height:85px;
+    margin:0 auto 20px;
+    border-radius:50%;
+    background:#f8f1df;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     font-size:42px;
-    color:#d6ad55;
-
-    font-weight:bold;
-
-    margin:20px;
 }
 
-/* ================= FOOTER ================= */
+.lawyer-card h3{
+    color:#101c35;
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+.lawyer-title{
+    color:#8b6b20;
+    font-weight:bold;
+    margin-bottom:25px;
+}
+
+.lawyer-info{
+    background:#f8f9fb;
+    border-radius:12px;
+    padding:18px;
+    text-align:right;
+    margin-top:20px;
+}
+
+.lawyer-info-row{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    padding:13px 5px;
+    border-bottom:1px solid #e5e8ed;
+}
+
+.lawyer-info-row:last-child{
+    border-bottom:none;
+}
+
+.lawyer-info-row strong{
+    color:#101c35;
+}
+
+.lawyer-info-row span{
+    color:#687386;
+}
+
+.phone-button{
+    display:block;
+    margin-top:25px;
+    padding:14px;
+    background:#101c35;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+    transition:.25s;
+}
+
+.phone-button:hover{
+    background:#d6ad55;
+    color:#101c35;
+}
 
 footer{
     background:#101c35;
-
     color:#aeb8c7;
-
     text-align:center;
-
     padding:35px 20px;
-
     line-height:2;
 }
 
@@ -652,26 +588,20 @@ footer strong{
     color:#d6ad55;
 }
 
-/* ================= MOBILE ================= */
-
 @media(max-width:900px){
 
     header{
-        height:auto;
-
         padding:15px;
-
         flex-direction:column;
+        align-items:stretch;
+    }
 
-        gap:15px;
+    .logo{
+        text-align:center;
     }
 
     nav{
-        width:100%;
-
         justify-content:center;
-
-        flex-wrap:wrap;
     }
 
     .hero h1{
@@ -682,1156 +612,1546 @@ footer strong{
         grid-template-columns:1fr;
     }
 
+    .info-row{
+        gap:10px;
+        flex-direction:column;
+    }
+
+    .lawyer-info-row{
+        flex-direction:column;
+        gap:5px;
+    }
+
 }
 
 </style>
 </head>
 
-
 <body>
-
-
-<!-- ================= HEADER ================= -->
 
 <header>
 
-    <div class="logo">
-        پارسا کرمی
-        <span> | مرکز حقوقی</span>
-    </div>
+<div class="logo">
+پارسا کرمی <span>| مرکز حقوقی</span>
+</div>
 
-    <nav>
+<nav>
 
-        <button class="active"
-                onclick="showSection('home',this)">
-            خانه
-        </button>
+<button class="active" onclick="showSection('home',this)">
+خانه
+</button>
 
-        <button onclick="showSection('law',this)">
-            مرکز حقوقی
-        </button>
+<button onclick="showSection('law',this)">
+مرکز حقوقی
+</button>
 
-        <button onclick="showSection('reforms',this)">
-            اصلاحات حقوقی
-        </button>
+<button onclick="showSection('reforms',this)">
+اصلاحات حقوقی
+</button>
 
-        <button onclick="showSection('articles',this)">
-            مواد قانونی
-        </button>
+<button onclick="showSection('articles',this)">
+مواد قانونی
+</button>
 
-        <button onclick="showSection('quiz',this)">
-            آزمون حقوقی
-        </button>
+<button onclick="showSection('quiz',this)">
+آزمون حقوقی
+</button>
 
-        <button onclick="showSection('charge',this)">
-            شارژ و اینترنت
-        </button>
+<button onclick="showSection('lawyer',this)">
+وکیل
+</button>
 
-        <button onclick="showSection('about',this)">
-            درباره من
-        </button>
+<button onclick="showSection('charge',this)">
+شارژ و اینترنت
+</button>
 
-        <button onclick="showSection('contact',this)">
-            تماس
-        </button>
+<button onclick="showSection('payment',this)">
+درگاه پرداخت
+</button>
 
-    </nav>
+<button onclick="showSection('about',this)">
+درباره من
+</button>
+
+<button onclick="showSection('contact',this)">
+تماس
+</button>
+
+</nav>
 
 </header>
 
 
-<!-- ================= HOME ================= -->
+<!-- HOME -->
 
 <section id="home" class="section active">
 
-    <div class="hero">
+<div class="hero">
 
-        <div class="hero-content">
+<div class="hero-content">
 
-            <div class="badge">
-                مرکز آموزش و خدمات حقوقی
-            </div>
+<div class="badge">
+مرکز آموزش و خدمات حقوقی
+</div>
 
-            <h1>
-                به مرکز حقوقی
-                <span>پارسا کرمی</span>
-                خوش آمدید
-            </h1>
+<h1>
+به مرکز حقوقی
+<span>پارسا کرمی</span>
+خوش آمدید
+</h1>
 
-            <p>
-                مرجعی برای آموزش حقوق، آشنایی با قوانین،
-                آزمون‌های حقوقی و خدمات کاربردی آنلاین
-            </p>
+<p>
+آموزش حقوق، قوانین مهم، اصلاحات و نکات کاربردی،
+آزمون‌های حقوقی و خدمات آنلاین
+</p>
 
-            <button class="primary-btn"
-                    onclick="welcomeUser()">
+<button class="primary-btn" onclick="welcomeUser()">
+ورود به سایت
+</button>
 
-                ورود به سایت
+<div id="welcome" class="welcome">
 
-            </button>
+<h2>
+کاربر عزیز، خوش آمدید
+</h2>
 
-            <div id="welcome" class="welcome">
+<div class="welcome-heart">
+❤️
+</div>
 
-                <h2>
-                    کاربر عزیز، خوش آمدید
-                </h2>
+<p>
+از حضور شما در سایت ما خوشحالیم.
+</p>
 
-                <div class="welcome-heart">
-                    ❤️
-                </div>
+</div>
 
-                <p>
-                    از حضور شما در سایت ما خوشحالیم.
-                </p>
+</div>
 
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- ================= LAW ================= -->
+<!-- LAW CENTER -->
 
 <section id="law" class="section">
 
-    <h2 class="section-title">
-        مرکز حقوقی
-    </h2>
+<div class="content">
 
-    <div class="cards">
+<h2 class="section-title">
+مرکز حقوقی
+</h2>
 
-        <div class="card">
+<div class="cards">
 
-            <div class="card-icon">
-                ⚖️
-            </div>
+<div class="card">
 
-            <h3>
-                آموزش حقوق
-            </h3>
+<div class="card-icon">
+⚖️
+</div>
 
-            <p>
-                مطالب آموزشی حقوقی به زبان ساده
-                برای دانشجویان و علاقه‌مندان.
-            </p>
+<h3>
+آموزش حقوق
+</h3>
 
-        </div>
+<p>
+مطالب آموزشی حقوقی به زبان ساده برای دانشجویان
+و علاقه‌مندان به علم حقوق.
+</p>
 
+</div>
 
-        <div class="card">
+<div class="card">
 
-            <div class="card-icon">
-                📚
-            </div>
+<div class="card-icon">
+📚
+</div>
 
-            <h3>
-                قوانین مهم
-            </h3>
+<h3>
+مواد قانونی
+</h3>
 
-            <p>
-                آشنایی با قوانین و مقررات مهم
-                و کاربردی.
-            </p>
+<p>
+مجموعه‌ای از مواد مهم قوانین مدنی و کیفری
+برای مطالعه و مرور سریع.
+</p>
 
-        </div>
+</div>
 
+<div class="card">
 
-        <div class="card">
+<div class="card-icon">
+📝
+</div>
 
-            <div class="card-icon">
-                🏛️
-            </div>
+<h3>
+آزمون حقوقی
+</h3>
 
-            <h3>
-                موضوعات حقوقی
-            </h3>
+<p>
+آزمون‌های چندگزینه‌ای همراه با پاسخ صحیح
+و امکان رفتن به سؤال بعدی و قبلی.
+</p>
 
-            <p>
-                دسته‌بندی موضوعات مختلف حقوقی
-                برای دسترسی آسان‌تر.
-            </p>
+</div>
 
-        </div>
+<div class="card">
 
-    </div>
+<div class="card-icon">
+👨‍⚖️
+</div>
+
+<h3>
+وکیل
+</h3>
+
+<p>
+مشاهده اطلاعات و راه ارتباطی وکیل معرفی‌شده
+در سایت.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon">
+💳
+</div>
+
+<h3>
+خدمات آنلاین
+</h3>
+
+<p>
+شارژ، اینترنت و بخش پرداخت آنلاین در یک محیط
+مرتب و ساده.
+</p>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ================= REFORMS ================= -->
+<!-- REFORMS -->
 
 <section id="reforms" class="section">
 
-    <h2 class="section-title">
-        اصلاحات حقوقی
-    </h2>
+<div class="content">
 
-    <div class="cards">
+<h2 class="section-title">
+اصلاحات و نکات قانونی
+</h2>
 
-        <div class="card">
+<div class="toolbar">
 
-            <div class="card-icon">
-                📜
-            </div>
+<input
+id="reformSearch"
+oninput="renderReforms()"
+placeholder="جست‌وجو در اصلاحات و نکات..."
+>
 
-            <h3>
-                اصلاحات قانون مدنی
-            </h3>
+<select id="reformCat" onchange="renderReforms()">
 
-            <p>
-                بررسی نکات و تغییرات مهم قانون مدنی.
-            </p>
+<option value="">
+همه دسته‌ها
+</option>
 
-        </div>
+<option>
+قانون مدنی
+</option>
 
+<option>
+قانون مجازات
+</option>
 
-        <div class="card">
+<option>
+آیین دادرسی
+</option>
 
-            <div class="card-icon">
-                ⚔️
-            </div>
+<option>
+خانواده
+</option>
 
-            <h3>
-                اصلاحات کیفری
-            </h3>
+<option>
+تجارت و اسناد
+</option>
 
-            <p>
-                آشنایی با تغییرات مهم قوانین کیفری.
-            </p>
+</select>
 
-        </div>
+</div>
 
+<div id="reformList" class="legal-list"></div>
 
-        <div class="card">
+<div id="reformEmpty" class="empty">
+موردی پیدا نشد.
+</div>
 
-            <div class="card-icon">
-                🏛️
-            </div>
-
-            <h3>
-                آیین دادرسی
-            </h3>
-
-            <p>
-                مطالب مرتبط با آیین دادرسی مدنی
-                و کیفری.
-            </p>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- ================= ARTICLES ================= -->
+<!-- ARTICLES -->
 
 <section id="articles" class="section">
 
-    <h2 class="section-title">
-        مواد قانونی مهم
-    </h2>
+<div class="content">
 
-    <div class="cards">
+<h2 class="section-title">
+مواد قانونی مهم
+</h2>
 
-        <div class="card">
+<div class="toolbar">
 
-            <div class="card-icon">
-                📖
-            </div>
+<input
+id="articleSearch"
+oninput="renderArticles()"
+placeholder="مثلاً ۲۱۹ یا قرارداد یا مالکیت..."
+>
 
-            <h3>
-                قانون مدنی
-            </h3>
+<select id="articleCat" onchange="renderArticles()">
 
-            <p>
-                مواد مهم و کاربردی قانون مدنی.
-            </p>
+<option value="">
+همه قوانین
+</option>
 
-        </div>
+<option>
+قانون مدنی
+</option>
 
+<option>
+قانون مجازات اسلامی
+</option>
 
-        <div class="card">
+</select>
 
-            <div class="card-icon">
-                ⚖️
-            </div>
+</div>
 
-            <h3>
-                قانون مجازات
-            </h3>
+<div id="articleList" class="legal-list"></div>
 
-            <p>
-                مواد منتخب و آموزشی قوانین کیفری.
-            </p>
+<div id="articleEmpty" class="empty">
+ماده‌ای با این مشخصات پیدا نشد.
+</div>
 
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                📑
-            </div>
-
-            <h3>
-                آیین دادرسی
-            </h3>
-
-            <p>
-                مواد مهم آیین دادرسی مدنی و کیفری.
-            </p>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- ================= QUIZ ================= -->
+<!-- QUIZ -->
 
 <section id="quiz" class="section">
 
-    <h2 class="section-title">
-        آزمون حقوقی
-    </h2>
+<div class="content">
 
+<h2 class="section-title">
+آزمون حقوقی
+</h2>
 
-    <div class="quiz-container">
+<div class="quiz-container">
 
-        <div class="quiz-top">
+<div class="quiz-card">
 
-            <span id="questionNumber">
-                سؤال ۱ از ۵
-            </span>
+<div id="quizNumber"></div>
 
-            <span id="scoreText">
-                امتیاز: ۰
-            </span>
+<div id="question" class="question"></div>
 
-        </div>
+<div id="options"></div>
 
+<div id="answerResult" class="result"></div>
 
-        <div class="progress">
+<div class="quiz-buttons">
 
-            <div id="progressBar"
-                 class="progress-bar">
-            </div>
+<button
+class="prev-btn"
+onclick="previousQuestion()"
+>
+سؤال قبلی
+</button>
 
-        </div>
+<button
+class="next-btn"
+onclick="nextQuestion()"
+>
+سؤال بعدی
+</button>
 
+</div>
 
-        <div id="quizCard"
-             class="quiz-card">
+</div>
 
-            <h3 id="question">
-                سؤال
-            </h3>
+</div>
 
-            <div id="options"
-                 class="options">
-            </div>
-
-
-            <div id="answerBox"
-                 class="answer-box">
-
-                <strong>
-                    پاسخ صحیح:
-                </strong>
-
-                <span id="correctAnswer">
-                </span>
-
-                <br>
-
-                <strong>
-                    توضیح:
-                </strong>
-
-                <span id="explanation">
-                </span>
-
-            </div>
-
-
-            <div class="quiz-buttons">
-
-                <button
-                    class="prev-btn"
-                    onclick="previousQuestion()">
-
-                    ← سؤال قبلی
-
-                </button>
-
-
-                <button
-                    class="next-btn"
-                    onclick="nextQuestion()">
-
-                    سؤال بعدی →
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div id="quizResult"
-             class="quiz-card quiz-result">
-
-            <h2>
-                آزمون به پایان رسید
-            </h2>
-
-            <div class="score"
-                 id="finalScore">
-                ۰ از ۵
-            </div>
-
-            <p id="finalMessage">
-            </p>
-
-            <button
-                class="primary-btn"
-                onclick="restartQuiz()">
-
-                شروع مجدد آزمون
-
-            </button>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- ================= CHARGE ================= -->
+<!-- LAWYER -->
+
+<section id="lawyer" class="section">
+
+<div class="content">
+
+<h2 class="section-title">
+وکیل
+</h2>
+
+<div class="lawyer-card">
+
+<div class="lawyer-icon">
+⚖️
+</div>
+
+<h3>
+حشمت‌الله کرمی
+</h3>
+
+<div class="lawyer-title">
+وکیل پایه یک دادگستری
+</div>
+
+<div class="lawyer-info">
+
+<div class="lawyer-info-row">
+
+<strong>
+نام و نام خانوادگی
+</strong>
+
+<span>
+حشمت‌الله کرمی
+</span>
+
+</div>
+
+<div class="lawyer-info-row">
+
+<strong>
+سمت
+</strong>
+
+<span>
+وکیل پایه یک دادگستری
+</span>
+
+</div>
+
+<div class="lawyer-info-row">
+
+<strong>
+شماره تماس
+</strong>
+
+<span>
+09127068454
+</span>
+
+</div>
+
+</div>
+
+<a
+class="phone-button"
+href="tel:09127068454"
+>
+📞 تماس با وکیل
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CHARGE -->
 
 <section id="charge" class="section">
 
-    <h2 class="section-title">
-        شارژ و اینترنت
-    </h2>
+<div class="content">
 
+<h2 class="section-title">
+شارژ و اینترنت
+</h2>
 
-    <div class="form-box">
+<div class="form-box">
 
-        <h3 class="operator-title">
-            انتخاب اپراتور
-        </h3>
+<h3 style="text-align:center;color:#101c35">
+انتخاب اپراتور
+</h3>
 
+<div class="operator-buttons">
 
-        <div class="operator-buttons">
+<button onclick="selectOperator(this,'همراه اول')">
+همراه اول
+</button>
 
-            <button onclick="selectOperator(this,'همراه اول')">
-                همراه اول
-            </button>
+<button onclick="selectOperator(this,'ایرانسل')">
+ایرانسل
+</button>
 
-            <button onclick="selectOperator(this,'ایرانسل')">
-                ایرانسل
-            </button>
+<button onclick="selectOperator(this,'رایتل')">
+رایتل
+</button>
 
-            <button onclick="selectOperator(this,'رایتل')">
-                رایتل
-            </button>
+</div>
 
-        </div>
+<p
+id="operatorText"
+style="text-align:center;color:#687386"
+>
+لطفاً اپراتور را انتخاب کنید.
+</p>
 
+<label>
+شماره موبایل
+</label>
 
-        <p id="operatorText"
-           style="text-align:center;color:#687386">
+<input
+id="mobile"
+type="tel"
+placeholder="09123456789"
+>
 
-            لطفاً اپراتور خود را انتخاب کنید.
+<label>
+نوع خدمت
+</label>
 
-        </p>
+<select id="serviceType">
 
+<option>
+شارژ مستقیم
+</option>
 
-        <label>
-            شماره موبایل
-        </label>
+<option>
+بسته اینترنت
+</option>
 
-        <input
-            type="tel"
-            id="mobile"
-            placeholder="09123456789"
-        >
+<option>
+بسته مکالمه
+</option>
 
+</select>
 
-        <label>
-            نوع خدمت
-        </label>
+<label>
+مبلغ یا بسته
+</label>
 
-        <select>
+<select id="serviceAmount">
 
-            <option>
-                شارژ مستقیم
-            </option>
+<option>
+۱۰ هزار تومان
+</option>
 
-            <option>
-                بسته اینترنت
-            </option>
+<option>
+۲۰ هزار تومان
+</option>
 
-            <option>
-                بسته مکالمه
-            </option>
+<option>
+۵۰ هزار تومان
+</option>
 
-        </select>
+<option>
+۱۰۰ هزار تومان
+</option>
 
+<option>
+بسته اینترنت ۱۰ گیگ
+</option>
 
-        <label>
-            مبلغ یا بسته
-        </label>
+<option>
+بسته اینترنت ۲۰ گیگ
+</option>
 
-        <select>
+</select>
 
-            <option>
-                ۱۰ هزار تومان
-            </option>
+<button
+class="submit-btn"
+onclick="goToPayment()"
+>
+ادامه به درگاه پرداخت
+</button>
 
-            <option>
-                ۲۰ هزار تومان
-            </option>
+</div>
 
-            <option>
-                ۵۰ هزار تومان
-            </option>
-
-            <option>
-                ۱۰۰ هزار تومان
-            </option>
-
-            <option>
-                بسته اینترنت ۱۰ گیگ
-            </option>
-
-            <option>
-                بسته اینترنت ۲۰ گیگ
-            </option>
-
-        </select>
-
-
-        <button class="submit-btn"
-                onclick="payment()">
-
-            ادامه و پرداخت
-
-        </button>
-
-
-        <p id="paymentMessage"
-           style="text-align:center;margin-top:15px">
-        </p>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- ================= ABOUT ================= -->
+<!-- PAYMENT -->
+
+<section id="payment" class="section">
+
+<div class="content">
+
+<h2 class="section-title">
+درگاه پرداخت
+</h2>
+
+<div class="payment-box">
+
+<div class="payment-notice">
+
+<strong>
+توجه:
+</strong>
+
+این قسمت ظاهر و فرم درگاه را آماده می‌کند.
+برای پرداخت بانکی واقعی باید API یک درگاه پرداخت
+و یک سرور امن به سایت متصل شود.
+
+</div>
+
+<label>
+مبلغ پرداخت
+</label>
+
+<input
+id="payAmount"
+type="number"
+placeholder="مثلاً 100000"
+>
+
+<label>
+توضیحات پرداخت
+</label>
+
+<input
+id="payDescription"
+placeholder="پرداخت خدمات سایت"
+>
+
+<button
+class="submit-btn"
+onclick="startPayment()"
+>
+پرداخت
+</button>
+
+<p
+id="payMessage"
+style="text-align:center;margin-top:15px;line-height:2"
+></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
 
 <section id="about" class="section">
 
-    <h2 class="section-title">
-        درباره من
-    </h2>
+<div class="content">
 
+<h2 class="section-title">
+درباره من
+</h2>
 
-    <div class="about-box">
+<div class="about-box">
 
-        <div class="info-row">
+<div class="info-row">
 
-            <span class="info-title">
-                نام
-            </span>
+<span class="info-title">
+نام
+</span>
 
-            <span class="info-value">
-                پارسا کرمی
-            </span>
+<span class="info-value">
+پارسا کرمی
+</span>
 
-        </div>
+</div>
 
+<div class="info-row">
 
-        <div class="info-row">
+<span class="info-title">
+رشته تحصیلی
+</span>
 
-            <span class="info-title">
-                رشته تحصیلی
-            </span>
+<span class="info-value">
+دانشجوی رشته حقوق
+</span>
 
-            <span class="info-value">
-                دانشجوی رشته حقوق
-            </span>
+</div>
 
-        </div>
+<div class="info-row">
 
+<span class="info-title">
+شماره تماس
+</span>
 
-        <div class="info-row">
+<span class="info-value">
+09302869446
+</span>
 
-            <span class="info-title">
-                شماره تماس
-            </span>
+</div>
 
-            <span class="info-value">
-                09302869446
-            </span>
+<div class="info-row">
 
-        </div>
+<span class="info-title">
+ایمیل
+</span>
 
+<span class="info-value">
+parsakaramisarabii@gmail.com
+</span>
 
-        <div class="info-row">
+</div>
 
-            <span class="info-title">
-                ایمیل
-            </span>
+</div>
 
-            <span class="info-value">
-                parsakaramisarabii@gmail.com
-            </span>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- ================= CONTACT ================= -->
+<!-- CONTACT -->
 
 <section id="contact" class="section">
 
-    <h2 class="section-title">
-        تماس با ما
-    </h2>
+<div class="content">
 
+<h2 class="section-title">
+تماس با ما
+</h2>
 
-    <div class="about-box"
-         style="text-align:center;line-height:2.5">
+<div class="about-box" style="text-align:center;line-height:2.5">
 
-        <p>
-            برای ارتباط می‌توانید از راه‌های زیر استفاده کنید.
-        </p>
+<p>
+📞 09302869446
+</p>
 
-        <p>
-            📞 09302869446
-        </p>
+<p>
+📧 parsakaramisarabii@gmail.com
+</p>
 
-        <p>
-            📧 parsakaramisarabii@gmail.com
-        </p>
+</div>
 
-    </div>
+</div>
 
 </section>
 
 
-<!-- ================= FOOTER ================= -->
-
 <footer>
 
-    <strong>
-        پارسا کرمی
-    </strong>
+<strong>
+پارسا کرمی
+</strong>
 
-    <br>
+<br>
 
-    مرکز آموزش و خدمات حقوقی
+مرکز آموزش و خدمات حقوقی
 
-    <br>
+<br>
 
-    © 2026 تمامی حقوق محفوظ است.
+© 2026 تمامی حقوق محفوظ است.
 
 </footer>
 
 
 <script>
 
-/* ================= MENU ================= */
+/* =========================
+   جابه‌جایی بین بخش‌ها
+========================= */
 
 function showSection(id,button){
 
-    document
-    .querySelectorAll('.section')
-    .forEach(section => {
+document.querySelectorAll('.section')
+.forEach(function(section){
 
-        section.classList.remove('active');
+section.classList.remove('active');
 
-    });
+});
 
+document.getElementById(id)
+.classList.add('active');
 
-    document
-    .getElementById(id)
-    .classList.add('active');
+document.querySelectorAll('nav button')
+.forEach(function(btn){
 
+btn.classList.remove('active');
 
-    document
-    .querySelectorAll('nav button')
-    .forEach(btn => {
+});
 
-        btn.classList.remove('active');
+if(button){
 
-    });
+button.classList.add('active');
 
+}
 
-    if(button){
-        button.classList.add('active');
-    }
-
-
-    window.scrollTo({
-        top:0,
-        behavior:'smooth'
-    });
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
 
 }
 
 
-/* ================= WELCOME ================= */
+/* =========================
+   خوش آمدگویی
+========================= */
 
 function welcomeUser(){
 
-    document
-    .getElementById('welcome')
-    .style.display='block';
+document.getElementById('welcome')
+.style.display='block';
 
 }
 
 
-/* ================= OPERATOR ================= */
+/* =========================
+   انتخاب اپراتور
+========================= */
 
 function selectOperator(button,name){
 
-    document
-    .querySelectorAll('.operator-buttons button')
-    .forEach(btn => {
+document
+.querySelectorAll('.operator-buttons button')
+.forEach(function(btn){
 
-        btn.classList.remove('selected');
+btn.classList.remove('selected');
 
-    });
+});
 
+button.classList.add('selected');
 
-    button.classList.add('selected');
-
-
-    document
-    .getElementById('operatorText')
-    .innerHTML =
-    'اپراتور انتخاب شده: <strong>'
-    + name +
-    '</strong>';
+document.getElementById('operatorText')
+.innerHTML =
+'اپراتور انتخاب شده: <strong>'
++ name +
+'</strong>';
 
 }
 
 
-/* ================= PAYMENT ================= */
+/* =========================
+   انتقال به پرداخت
+========================= */
 
-function payment(){
+function goToPayment(){
 
-    const mobile =
-        document.getElementById('mobile').value;
+let mobile =
+document.getElementById('mobile').value;
 
-    const message =
-        document.getElementById('paymentMessage');
+if(mobile.length < 10){
 
+alert('لطفاً شماره موبایل را صحیح وارد کنید.');
 
-    if(mobile.length < 10){
+return;
 
-        message.innerHTML =
-        'لطفاً شماره موبایل را صحیح وارد کنید.';
+}
 
-        message.style.color='#d33';
+showSection('payment');
 
-        return;
-    }
-
-
-    message.innerHTML =
-    'اطلاعات با موفقیت ثبت شد. درگاه پرداخت در مرحله بعد متصل می‌شود.';
-
-    message.style.color='#198754';
+document.getElementById('payDescription')
+.value =
+'پرداخت شارژ یا اینترنت شماره '
++ mobile;
 
 }
 
 
-/* ================= QUIZ DATA ================= */
+/* =========================
+   پرداخت
+========================= */
 
-const questions = [
+function startPayment(){
 
-{
-    question:
-    'قانون اساسی جمهوری اسلامی ایران چند اصل دارد؟',
+const amount =
+document.getElementById('payAmount').value;
 
-    options:[
-        '۱۰۰ اصل',
-        '۱۷۷ اصل',
-        '۲۰۰ اصل',
-        '۲۵۰ اصل'
-    ],
+const message =
+document.getElementById('payMessage');
 
-    answer:1,
+if(!amount || Number(amount)<=0){
 
-    explanation:
-    'قانون اساسی جمهوری اسلامی ایران دارای ۱۷۷ اصل است.'
-},
+message.innerHTML =
+'لطفاً مبلغ معتبر وارد کنید.';
 
+message.style.color='#b42318';
 
-{
-    question:
-    'قوه مقننه جمهوری اسلامی ایران از چه نهادی تشکیل می‌شود؟',
+return;
 
-    options:[
-        'مجلس شورای اسلامی',
-        'قوه قضائیه',
-        'هیئت وزیران',
-        'شورای شهر'
-    ],
-
-    answer:0,
-
-    explanation:
-    'مجلس شورای اسلامی نهاد اصلی قوه مقننه است.'
-},
-
-
-{
-    question:
-    'سن مسئولیت کیفری در قانون ایران چگونه تعیین می‌شود؟',
-
-    options:[
-        'فقط بر اساس شغل',
-        'بر اساس شرایط و مقررات قانونی',
-        'بر اساس درآمد',
-        'بر اساس محل سکونت'
-    ],
-
-    answer:1,
-
-    explanation:
-    'مسئولیت کیفری تابع شرایط و مقررات مقرر در قوانین مربوط است.'
-},
-
-
-{
-    question:
-    'قانون مدنی بیشتر مربوط به چه حوزه‌ای است؟',
-
-    options:[
-        'روابط خصوصی اشخاص',
-        'امور نظامی',
-        'بودجه کشور',
-        'روابط بین‌الملل'
-    ],
-
-    answer:0,
-
-    explanation:
-    'قانون مدنی بخش مهمی از روابط حقوقی خصوصی اشخاص را تنظیم می‌کند.'
-},
-
-
-{
-    question:
-    'کدام مورد از منابع مهم حقوق در ایران محسوب می‌شود؟',
-
-    options:[
-        'قانون',
-        'تبلیغات',
-        'شبکه‌های اجتماعی',
-        'شایعات'
-    ],
-
-    answer:0,
-
-    explanation:
-    'قانون یکی از مهم‌ترین منابع حقوق در نظام حقوقی ایران است.'
 }
+
+message.innerHTML =
+'فرم پرداخت آماده است. برای پرداخت واقعی باید API درگاه پرداخت و سرور امن به سایت متصل شود.';
+
+message.style.color='#8b6b20';
+
+}
+
+
+/* =========================
+   مواد قانونی
+========================= */
+
+const articles = [
+
+["قانون مدنی","ماده ۱۰",
+"قراردادهای خصوصی، اگر مخالف صریح قانون نباشند، نسبت به طرفین نافذ هستند.",
+"قراردادها"],
+
+["قانون مدنی","ماده ۱۱",
+"اموال به دو دسته کلی منقول و غیرمنقول تقسیم می‌شوند.",
+"اموال"],
+
+["قانون مدنی","ماده ۱۲",
+"مال غیرمنقول مالی است که جابه‌جایی آن بدون خرابی یا نقص خود مال یا محل ممکن نباشد.",
+"اموال"],
+
+["قانون مدنی","ماده ۲۲",
+"پس از ثبت ملک در دفتر املاک، دولت شخص ثبت‌شده را مالک می‌شناسد مگر خلاف آن به موجب قانون ثابت شود.",
+"ثبت و مالکیت"],
+
+["قانون مدنی","ماده ۳۰",
+"مالک نسبت به مال خود حق هرگونه تصرف و انتفاع دارد مگر در مواردی که قانون استثنا کرده باشد.",
+"مالکیت"],
+
+["قانون مدنی","ماده ۳۱",
+"هیچ مالی را نمی‌توان از تصرف صاحب آن خارج کرد مگر به حکم قانون.",
+"مالکیت"],
+
+["قانون مدنی","ماده ۳۵",
+"تصرف به عنوان مالکیت، در اصل دلیل مالکیت است مگر خلاف آن ثابت شود.",
+"مالکیت"],
+
+["قانون مدنی","ماده ۴۰",
+"حق انتفاع حقی است که شخص می‌تواند از مالی که عین آن متعلق به دیگری است استفاده کند.",
+"حقوق عینی"],
+
+["قانون مدنی","ماده ۶۵۶",
+"وکالت عقدی است که به موجب آن یکی از طرفین دیگری را برای انجام امری نایب خود می‌کند.",
+"وکالت"],
+
+["قانون مدنی","ماده ۶۶۳",
+"وکیل نمی‌تواند خارج از حدود اختیار خود اقدام کند.",
+"وکالت"],
+
+["قانون مدنی","ماده ۶۶۷",
+"وکیل باید مصلحت موکل را رعایت کند و از حدود اختیار و عرف تجاوز نکند.",
+"وکالت"],
+
+["قانون مدنی","ماده ۶۷۴",
+"موکل باید تعهداتی را که وکیل در حدود وکالت انجام داده است، اجرا کند.",
+"وکالت"],
+
+["قانون مدنی","ماده ۷۵۲",
+"صلح می‌تواند برای رفع یا پیشگیری از اختلاف موجود یا احتمالی واقع شود.",
+"صلح"],
+
+["قانون مدنی","ماده ۷۷۱",
+"رهن قراردادی است که به موجب آن مدیون مالی را برای وثیقه به طلبکار می‌دهد.",
+"رهن"],
+
+["قانون مدنی","ماده ۷۹۳",
+"راهن نمی‌تواند در مال مرهون تصرفی کند که با حق مرتهن منافات داشته باشد مگر با اجازه او.",
+"رهن"],
+
+["قانون مدنی","ماده ۷۹۵",
+"هبه عقدی است که به موجب آن یک نفر مالی را مجاناً به دیگری تملیک می‌کند.",
+"هبه"],
+
+["قانون مدنی","ماده ۸۶۱",
+"موجب ارث به طور کلی نسب و سبب است.",
+"ارث"],
+
+["قانون مدنی","ماده ۸۶۷",
+"ارث با فوت حقیقی یا فرضی مورث تحقق پیدا می‌کند.",
+"ارث"],
+
+["قانون مدنی","ماده ۸۶۸",
+"مالکیت ورثه نسبت به ترکه پس از ادای حقوق و دیون متعلق به ترکه مستقر می‌شود.",
+"ارث"],
+
+["قانون مدنی","ماده ۱۰۸۲",
+"به مجرد وقوع عقد نکاح، زن مالک مهر می‌شود و می‌تواند در آن تصرف مالکانه کند.",
+"خانواده"],
+
+["قانون مدنی","ماده ۱۱۰۲",
+"پس از وقوع صحیح نکاح، حقوق و تکالیف زوجین در برابر یکدیگر ایجاد می‌شود.",
+"خانواده"],
+
+["قانون مدنی","ماده ۱۱۰۳",
+"زن و شوهر مکلف به حسن معاشرت با یکدیگر هستند.",
+"خانواده"],
+
+["قانون مدنی","ماده ۱۱۰۶",
+"در عقد دائم، نفقه زن بر عهده شوهر است.",
+"خانواده"],
+
+["قانون مدنی","ماده ۱۱۰۷",
+"نفقه شامل نیازهای متعارف و متناسب با وضعیت زن از جمله مسکن، خوراک و پوشاک است.",
+"خانواده"],
+
+["قانون مدنی","ماده ۱۱۶۸",
+"نگهداری اطفال هم حق و هم تکلیف ابوین است.",
+"خانواده"],
+
+["قانون مدنی","ماده ۱۱۷۳",
+"در صورت وجود شرایط مقرر قانونی و خطر برای سلامت جسمی یا تربیت اخلاقی طفل، دادگاه می‌تواند درباره حضانت تصمیم مناسب بگیرد.",
+"خانواده"],
+
+["قانون مدنی","ماده ۱۲۵۷",
+"هرکس مدعی حقی باشد باید آن را اثبات کند.",
+"ادله"],
+
+["قانون مدنی","ماده ۲۱۹",
+"عقودی که مطابق قانون واقع شده‌اند لازم‌الاتباع‌اند مگر با تراضی یا علت قانونی فسخ شوند.",
+"قراردادها"],
+
+["قانون مدنی","ماده ۲۲۰",
+"عقد فقط به مفاد صریح خود محدود نیست و آثار قانونی و عرفی آن نیز می‌تواند برای طرفین الزام‌آور باشد.",
+"قراردادها"],
+
+["قانون مدنی","ماده ۲۲۱",
+"در صورت تخلف از تعهد، در شرایط قانونی، متعهد می‌تواند مسئول جبران خسارت باشد.",
+"تعهدات"],
+
+["قانون مدنی","ماده ۲۲۳",
+"اصل بر صحت معامله است مگر فساد آن ثابت شود.",
+"قراردادها"],
+
+["قانون مدنی","ماده ۲۲۴",
+"الفاظ قراردادها بر معانی عرفی حمل می‌شوند.",
+"قراردادها"],
+
+["قانون مدنی","ماده ۲۲۵",
+"عرف مسلم می‌تواند در تفسیر قرارداد در حکم امر تصریح‌شده قرار گیرد.",
+"قراردادها"],
+
+["قانون مدنی","ماده ۲۳۰",
+"اگر در قرارداد مبلغ مشخصی به عنوان خسارت تعیین شده باشد، مفاد شرط باید طبق قانون بررسی شود.",
+"تعهدات"],
+
+["قانون مجازات اسلامی","ماده ۱",
+"قانون مجازات اسلامی مقررات مربوط به حدود، قصاص، دیات، تعزیرات و قواعد مسئولیت کیفری را در بر می‌گیرد.",
+"کلیات کیفری"],
+
+["قانون مجازات اسلامی","ماده ۲",
+"هر رفتار اعم از فعل یا ترک فعل که قانون برای آن مجازات تعیین کرده باشد، جرم محسوب می‌شود.",
+"کلیات کیفری"],
+
+["قانون مجازات اسلامی","ماده ۳",
+"قوانین جزایی ایران در قلمرو حاکمیت ایران اعمال می‌شوند مگر قانون ترتیب دیگری مقرر کرده باشد.",
+"قلمرو"],
+
+["قانون مجازات اسلامی","ماده ۱۰",
+"در شرایط مقرر قانونی، قانون مؤخر مساعدتر به حال متهم می‌تواند نسبت به جرایم سابق اثر داشته باشد.",
+"قواعد کیفری"],
+
+["قانون مجازات اسلامی","ماده ۱۴",
+"مجازات‌های مقرر در قانون شامل حدود، قصاص، دیات، تعزیرات و اقدامات قانونی مرتبط است.",
+"مجازات‌ها"],
+
+["قانون مجازات اسلامی","ماده ۱۸",
+"تعزیر مجازاتی است که نوع و مقدار آن در شرع تعیین نشده و قانون آن را برای جرایم مقرر می‌کند.",
+"تعزیرات"],
+
+["قانون مجازات اسلامی","ماده ۲۷",
+"مدت بازداشت قبلی محکوم‌علیه طبق شرایط قانونی در میزان مجازات قابل احتساب است.",
+"اجرای مجازات"]
 
 ];
 
 
+/* =========================
+   اصلاحات و نکات
+========================= */
+
+const reforms = [
+
+["قانون مدنی","قراردادهای خصوصی",
+"قراردادهای خصوصی در صورت مخالفت نداشتن با قانون، اصولاً معتبر هستند.",
+"قراردادها"],
+
+["قانون مدنی","اصل لزوم قرارداد",
+"قرارداد صحیح اصولاً لازم‌الاتباع است و برهم‌زدن آن نیازمند مبنای قانونی یا توافق طرفین است.",
+"قراردادها"],
+
+["قانون مدنی","اصل صحت معامله",
+"اصل بر صحت معامله است مگر فساد آن اثبات شود.",
+"قراردادها"],
+
+["قانون مدنی","خسارت قراردادی",
+"برای مطالبه خسارت ناشی از قرارداد باید شرایط قانونی مسئولیت و تخلف بررسی شود.",
+"تعهدات"],
+
+["قانون مدنی","وجه التزام",
+"اگر طرفین برای تخلف مبلغ مشخصی تعیین کنند، مفاد شرط و شرایط قانونی آن باید بررسی شود.",
+"تعهدات"],
+
+["قانون مدنی","مالکیت",
+"در معاملات املاک، بررسی سند و وضعیت ثبتی پیش از معامله اهمیت زیادی دارد.",
+"اموال"],
+
+["قانون مدنی","وکالت",
+"وکیل فقط در حدود اختیار اعطایی می‌تواند اقدام کند.",
+"وکالت"],
+
+["قانون مدنی","رهن",
+"مال موضوع وثیقه باید قابلیت قانونی داشته باشد و تصرفات راهن نباید حق مرتهن را بی‌اثر کند.",
+"رهن"],
+
+["قانون مدنی","هبه",
+"رجوع از هبه همیشه ممکن نیست و استثناهای قانونی باید بررسی شود.",
+"هبه"],
+
+["قانون مدنی","ارث",
+"قبل از تقسیم ترکه باید دیون و حقوق متعلق به ترکه مطابق قانون بررسی شود.",
+"ارث"],
+
+["خانواده","مهر",
+"با وقوع نکاح صحیح، زن مالک مهر می‌شود و شرایط مطالبه آن باید با توجه به وضعیت پرونده بررسی شود.",
+"خانواده"],
+
+["خانواده","نفقه",
+"در نکاح دائم، نفقه زوجه تابع شرایط قانونی و وضعیت متعارف زندگی است.",
+"خانواده"],
+
+["خانواده","حضانت",
+"حضانت هم حق و هم تکلیف والدین است و مصلحت طفل اهمیت اساسی دارد.",
+"خانواده"],
+
+["خانواده","طلاق",
+"طلاق دارای تشریفات قانونی است و نوع طلاق بر آثار حقوقی آن اثر می‌گذارد.",
+"خانواده"],
+
+["خانواده","عده",
+"پس از انحلال برخی نکاح‌ها، رعایت عده طبق قانون ضروری است.",
+"خانواده"],
+
+["قانون مجازات","اصل قانونی بودن جرم و مجازات",
+"جرم و مجازات باید مستند به قانون باشد.",
+"کیفری"],
+
+["قانون مجازات","مسئولیت کیفری",
+"برای انتساب کیفری، شرایط قانونی و عناصر جرم باید بررسی شود.",
+"کیفری"],
+
+["قانون مجازات","تعزیرات",
+"نوع و میزان بسیاری از مجازات‌های تعزیری مستقیماً به متن قانون و شرایط پرونده وابسته است.",
+"کیفری"],
+
+["آیین دادرسی","صلاحیت",
+"قبل از طرح دعوا باید صلاحیت ذاتی و محلی مرجع رسیدگی بررسی شود.",
+"دادرسی"],
+
+["آیین دادرسی","ابلاغ",
+"مهلت بسیاری از اقدامات قضایی از تاریخ ابلاغ محاسبه می‌شود.",
+"دادرسی"],
+
+["آیین دادرسی","مهلت‌ها",
+"از دست دادن مهلت‌های قانونی ممکن است موجب از بین رفتن امکان انجام یک اقدام قضایی شود.",
+"دادرسی"],
+
+["آیین دادرسی","ادله",
+"دلیل باید در چارچوب قانون ارائه و ارزیابی شود.",
+"دادرسی"],
+
+["آیین دادرسی","دادخواست",
+"در دعاوی مدنی، خواسته و مشخصات طرفین و دلایل باید صحیح درج شود.",
+"دادرسی"],
+
+["آیین دادرسی","تجدیدنظر",
+"قابلیت تجدیدنظر تابع نوع رأی و شرایط قانونی است.",
+"دادرسی"],
+
+["تجارت و اسناد","چک",
+"در دعاوی مرتبط با چک، تاریخ‌ها، گواهی عدم پرداخت و مهلت‌های قانونی اهمیت دارد.",
+"اسناد"],
+
+["تجارت و اسناد","سفته",
+"سفته سند تجاری است و رعایت تشریفات و مهلت‌های قانونی اهمیت دارد.",
+"اسناد"],
+
+["تجارت و اسناد","قرارداد تجاری",
+"در قراردادهای تجاری، موضوع، تعهدات، ضمانت اجرا و مرجع حل اختلاف را روشن کنید.",
+"تجارت"],
+
+["تجارت و اسناد","شرکت‌ها",
+"برای بررسی مسئولیت شرکا یا مدیران، نوع شرکت و مقررات اختصاصی همان شرکت باید مشخص شود.",
+"تجارت"]
+
+];
+
+
+/* نمایش اصلاحات */
+
+function renderReforms(){
+
+const q =
+document.getElementById('reformSearch')
+.value
+.trim()
+.toLowerCase();
+
+const cat =
+document.getElementById('reformCat')
+.value;
+
+const list =
+document.getElementById('reformList');
+
+list.innerHTML='';
+
+const filtered =
+reforms.filter(function(x){
+
+return
+(!cat || x[0]===cat)
+&&
+(!q || x.join(' ').toLowerCase().includes(q));
+
+});
+
+filtered.forEach(function(x,index){
+
+list.innerHTML += `
+
+<article class="legal-item">
+
+<span class="tag">
+${x[0]} | ${x[3]}
+</span>
+
+<h3>
+${index+1}. ${x[1]}
+</h3>
+
+<p>
+${x[2]}
+</p>
+
+<div class="note">
+
+<strong>
+نکته:
+</strong>
+
+این بخش آموزشی است و برای استفاده رسمی باید
+متن قانون و آخرین اصلاحات بررسی شود.
+
+</div>
+
+</article>
+
+`;
+
+});
+
+document.getElementById('reformEmpty')
+.style.display =
+filtered.length ? 'none' : 'block';
+
+}
+
+
+/* نمایش مواد */
+
+function renderArticles(){
+
+const q =
+document.getElementById('articleSearch')
+.value
+.trim()
+.toLowerCase();
+
+const cat =
+document.getElementById('articleCat')
+.value;
+
+const list =
+document.getElementById('articleList');
+
+list.innerHTML='';
+
+const filtered =
+articles.filter(function(x){
+
+return
+(!cat || x[0]===cat)
+&&
+(!q || x.join(' ').toLowerCase().includes(q));
+
+});
+
+filtered.forEach(function(x){
+
+list.innerHTML += `
+
+<article class="legal-item">
+
+<span class="tag">
+${x[0]} | ${x[3]}
+</span>
+
+<h3>
+${x[1]}
+</h3>
+
+<p>
+${x[2]}
+</p>
+
+<div class="note">
+
+<strong>
+توضیح:
+</strong>
+
+این متن برای مطالعه آموزشی خلاصه شده است.
+برای استناد رسمی، متن قانون و آخرین اصلاحات بررسی شود.
+
+</div>
+
+</article>
+
+`;
+
+});
+
+document.getElementById('articleEmpty')
+.style.display =
+filtered.length ? 'none' : 'block';
+
+}
+
+
+/* =========================
+   آزمون
+========================= */
+
+const quiz = [
+
+{
+question:
+"مطابق قانون مدنی، عقودی که مطابق قانون واقع شده‌اند چه وضعیتی دارند؟",
+
+options:[
+"اصولاً لازم‌الاتباع هستند",
+"همیشه باطل هستند",
+"فقط یک روز اعتبار دارند",
+"فقط در صورت شفاهی بودن معتبرند"
+],
+
+answer:0
+},
+
+{
+question:
+"کدام مورد از حقوق مرتبط با مالکیت است؟",
+
+options:[
+"حق تصرف و انتفاع در حدود قانون",
+"ممنوعیت کامل استفاده از مال",
+"از بین رفتن مالکیت با قرارداد",
+"عدم امکان انتقال مال"
+],
+
+answer:0
+},
+
+{
+question:
+"وکالت چیست؟",
+
+options:[
+"عقدی برای نیابت در انجام امر",
+"نوعی مجازات",
+"نوعی سند مالکیت",
+"نوعی مالیات"
+],
+
+answer:0
+},
+
+{
+question:
+"مطابق قانون مدنی، نگهداری اطفال چه وضعیتی دارد؟",
+
+options:[
+"هم حق و هم تکلیف ابوین است",
+"فقط وظیفه دادگاه است",
+"فقط حق پدر است",
+"هیچ‌کس مسئول آن نیست"
+],
+
+answer:0
+},
+
+{
+question:
+"اصل بر صحت معامله به چه معناست؟",
+
+options:[
+"معامله صحیح فرض می‌شود مگر فساد آن ثابت شود",
+"همه معاملات باطل‌اند",
+"معامله نیاز به شاهد ندارد",
+"هر معامله‌ای جرم است"
+],
+
+answer:0
+}
+
+];
+
 let currentQuestion=0;
-
 let score=0;
-
 let answered=false;
-
-
-/* ================= LOAD QUIZ ================= */
 
 function loadQuestion(){
 
-    const q =
-        questions[currentQuestion];
+const q=quiz[currentQuestion];
 
+document.getElementById('quizNumber')
+.innerHTML =
+`<span class="tag">سؤال ${currentQuestion+1} از ${quiz.length}</span>`;
 
-    document
-    .getElementById('question')
-    .innerText =
-    q.question;
+document.getElementById('question')
+.innerText=q.question;
 
+const options=
+document.getElementById('options');
 
-    document
-    .getElementById('questionNumber')
-    .innerText =
-    'سؤال '
-    +(currentQuestion+1)
-    +' از '
-    +questions.length;
+options.innerHTML='';
 
+answered=false;
 
-    document
-    .getElementById('scoreText')
-    .innerText =
-    'امتیاز: '+score;
+document.getElementById('answerResult')
+.style.display='none';
 
+q.options.forEach(function(option,index){
 
-    document
-    .getElementById('progressBar')
-    .style.width =
-    ((currentQuestion+1)/questions.length*100)
-    +'%';
+const btn=document.createElement('button');
 
+btn.className='option';
 
-    const options =
-        document.getElementById('options');
+btn.innerText=option;
 
+btn.onclick=function(){
 
-    options.innerHTML='';
+checkAnswer(index,btn);
 
+};
 
-    document
-    .getElementById('answerBox')
-    .classList.remove('show');
+options.appendChild(btn);
 
-
-    answered=false;
-
-
-    q.options.forEach((option,index)=>{
-
-        const btn =
-            document.createElement('button');
-
-
-        btn.className='option';
-
-
-        btn.innerText=option;
-
-
-        btn.onclick=function(){
-
-            chooseAnswer(index,btn);
-
-        };
-
-
-        options.appendChild(btn);
-
-    });
+});
 
 }
 
+function checkAnswer(index,button){
 
-/* ================= ANSWER ================= */
+if(answered) return;
 
-function chooseAnswer(index,button){
+answered=true;
 
-    if(answered) return;
+const q=quiz[currentQuestion];
 
+const all=
+document.querySelectorAll('.option');
 
-    answered=true;
+all.forEach(function(btn,i){
 
+if(i===q.answer){
 
-    const q =
-        questions[currentQuestion];
-
-
-    const allOptions =
-        document
-        .querySelectorAll('.option');
-
-
-    allOptions.forEach(btn=>{
-        btn.disabled=true;
-    });
-
-
-    if(index===q.answer){
-
-        button.classList.add('correct');
-
-        score++;
-
-    }else{
-
-        button.classList.add('wrong');
-
-        allOptions[q.answer]
-        .classList.add('correct');
-
-    }
-
-
-    document
-    .getElementById('scoreText')
-    .innerText =
-    'امتیاز: '+score;
-
-
-    document
-    .getElementById('correctAnswer')
-    .innerText =
-    q.options[q.answer];
-
-
-    document
-    .getElementById('explanation')
-    .innerText =
-    q.explanation;
-
-
-    document
-    .getElementById('answerBox')
-    .classList.add('show');
+btn.classList.add('correct');
 
 }
 
+});
 
-/* ================= NEXT ================= */
+const result=
+document.getElementById('answerResult');
+
+result.style.display='block';
+
+if(index===q.answer){
+
+score++;
+
+result.innerHTML=
+'✅ پاسخ شما صحیح است.';
+
+result.style.background='#eaf7ee';
+
+result.style.color='#287a42';
+
+}else{
+
+button.classList.add('wrong');
+
+result.innerHTML=
+'❌ پاسخ شما نادرست است. پاسخ صحیح: '
++ q.options[q.answer];
+
+result.style.background='#fff0f0';
+
+result.style.color='#a52a27';
+
+}
+
+}
 
 function nextQuestion(){
 
-    if(!answered){
+if(currentQuestion < quiz.length-1){
 
-        alert('لطفاً ابتدا یک گزینه را انتخاب کنید.');
+currentQuestion++;
 
-        return;
+loadQuestion();
 
-    }
+}else{
 
+document.getElementById('question')
+.innerText=
+'آزمون به پایان رسید';
 
-    if(currentQuestion <
-       questions.length-1){
-
-        currentQuestion++;
-
-        loadQuestion();
-
-    }else{
-
-        finishQuiz();
-
-    }
+document.getElementById('options')
+.innerHTML=
+`<div class="result" style="display:block;background:#fff8e8;color:#66521f">
+امتیاز شما: ${score} از ${quiz.length}
+</div>`;
 
 }
 
-
-/* ================= PREVIOUS ================= */
+}
 
 function previousQuestion(){
 
-    if(currentQuestion>0){
+if(currentQuestion>0){
 
-        currentQuestion--;
+currentQuestion--;
 
-        loadQuestion();
+loadQuestion();
 
-    }
+}
 
 }
 
 
-/* ================= FINISH ================= */
+/* =========================
+   شروع سایت
+========================= */
 
-function finishQuiz(){
+renderReforms();
 
-    document
-    .getElementById('quizCard')
-    .style.display='none';
-
-
-    document
-    .getElementById('quizResult')
-    .style.display='block';
-
-
-    document
-    .getElementById('finalScore')
-    .innerText =
-    score+' از '+questions.length;
-
-
-    let message='';
-
-
-    if(score===questions.length){
-
-        message=
-        'عالی بود! همه پاسخ‌ها صحیح بود.';
-
-    }
-
-    else if(score>=3){
-
-        message=
-        'آفرین! نتیجه خوبی گرفتید.';
-
-    }
-
-    else{
-
-        message=
-        'نیاز به مرور بیشتر مطالب دارید. دوباره تلاش کنید.';
-
-    }
-
-
-    document
-    .getElementById('finalMessage')
-    .innerText=message;
-
-}
-
-
-/* ================= RESTART ================= */
-
-function restartQuiz(){
-
-    currentQuestion=0;
-
-    score=0;
-
-    answered=false;
-
-
-    document
-    .getElementById('quizCard')
-    .style.display='block';
-
-
-    document
-    .getElementById('quizResult')
-    .style.display='none';
-
-
-    loadQuestion();
-
-}
-
-
-/* اجرای اولیه */
+renderArticles();
 
 loadQuestion();
 
 </script>
 
 </body>
+
 </html>
