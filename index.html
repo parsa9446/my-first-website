@@ -1,30 +1,53 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>مرکز حقوقی و سرمایه‌گذاری فلزات | پارسا کرمی</title>
 
 <meta name="description"
-content="سامانه رسمی اطلاعات حقوقی، بیمه، سرمایه‌گذاری و بازار فلزات">
+content="مرکز حقوقی، بیمه و سرمایه‌گذاری فلزات پارسا کرمی">
 
 <style>
+
+/* =====================================================
+   ROOT
+===================================================== */
+
 :root{
-    --bg:#050505;
-    --bg2:#0b0b0b;
-    --card:#101010;
-    --card2:#15130d;
+
+    --bg:#030303;
+    --bg2:#080808;
+
+    --card:#0d0d0d;
+    --card2:#151108;
+
     --gold:#d9b45a;
     --gold2:#f5d77c;
     --gold3:#9b7627;
-    --text:#f4f1e8;
-    --muted:#a7a29a;
+    --gold4:#6f531b;
+
+    --white:#f5f2e9;
+    --text:#ddd8cc;
+    --muted:#969188;
+
     --green:#55d889;
     --red:#ff6868;
+    --blue:#67b7ff;
+
     --border:rgba(217,180,90,.25);
-    --shadow:0 18px 50px rgba(0,0,0,.45);
+
+    --shadow:
+        0 20px 70px rgba(0,0,0,.55);
 }
+
+
+/* =====================================================
+   RESET
+===================================================== */
 
 *{
     box-sizing:border-box;
@@ -37,6 +60,7 @@ html{
 }
 
 body{
+
     font-family:
     Tahoma,
     "Segoe UI",
@@ -45,60 +69,164 @@ body{
 
     color:var(--text);
 
+    min-height:100vh;
+
+    overflow-x:hidden;
+
     background:
+
     radial-gradient(
         circle at 15% 0%,
-        rgba(143,104,24,.22),
+        rgba(143,104,24,.20),
         transparent 28%
     ),
+
     radial-gradient(
         circle at 90% 10%,
-        rgba(212,170,60,.11),
+        rgba(212,170,60,.10),
         transparent 25%
     ),
+
     linear-gradient(
         135deg,
         #020202,
-        #080706 45%,
-        #030303
+        #090806 45%,
+        #020202
     );
-
-    min-height:100vh;
 }
 
-/* ================= HEADER ================= */
+
+/* =====================================================
+   FLOATING LIGHTS
+===================================================== */
+
+body::before,
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:450px;
+    height:450px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    filter:blur(12px);
+}
+
+body::before{
+
+    top:-170px;
+    right:-200px;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(245,215,124,.15),
+        transparent 68%
+    );
+
+    animation:
+    orbOne 10s ease-in-out infinite;
+}
+
+body::after{
+
+    bottom:-170px;
+    left:-200px;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(155,118,39,.14),
+        transparent 68%
+    );
+
+    animation:
+    orbTwo 13s ease-in-out infinite;
+}
+
+@keyframes orbOne{
+
+    0%,100%{
+        transform:translate(0,0) scale(1);
+    }
+
+    50%{
+        transform:
+        translate(-100px,130px)
+        scale(1.3);
+    }
+}
+
+@keyframes orbTwo{
+
+    0%,100%{
+        transform:translate(0,0) scale(1);
+    }
+
+    50%{
+        transform:
+        translate(120px,-110px)
+        scale(1.25);
+    }
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 header{
+
     position:relative;
+
     overflow:hidden;
 
-    padding:55px 20px 45px;
+    padding:
+    55px 20px
+    48px;
 
     text-align:center;
 
     background:
+
+    radial-gradient(
+        circle at 50% 0%,
+        rgba(245,215,124,.10),
+        transparent 35%
+    ),
+
     linear-gradient(
         135deg,
-        #050505,
+        #040404,
         #171207,
-        #050505
+        #040404
     );
 
-    border-bottom:1px solid var(--border);
+    border-bottom:
+    1px solid var(--border);
 
     box-shadow:
-    0 15px 50px rgba(0,0,0,.45);
+    0 20px 60px rgba(0,0,0,.55);
 }
 
-header:before{
+header::before{
+
     content:"";
+
     position:absolute;
 
     width:500px;
     height:500px;
 
     top:-300px;
-    left:-150px;
+    left:-170px;
 
     border-radius:50%;
 
@@ -108,41 +236,160 @@ header:before{
         rgba(245,215,124,.12),
         transparent 65%
     );
+
+    animation:
+    headerOrb 9s ease-in-out infinite;
+}
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:0;
+    left:-30%;
+
+    width:30%;
+    height:2px;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        var(--gold2),
+        transparent
+    );
+
+    box-shadow:
+    0 0 25px var(--gold2);
+
+    animation:
+    headerBeam 5s linear infinite;
+}
+
+@keyframes headerOrb{
+
+    50%{
+        transform:
+        translate(150px,120px)
+        scale(1.3);
+    }
+}
+
+@keyframes headerBeam{
+
+    from{
+        left:-30%;
+    }
+
+    to{
+        left:100%;
+    }
 }
 
 .header-badge{
+
+    position:relative;
+    z-index:2;
+
     display:inline-flex;
+
     align-items:center;
+
     gap:8px;
 
-    padding:8px 16px;
+    padding:
+    9px 17px;
 
-    border:1px solid var(--border);
+    border:
+    1px solid var(--border);
+
     border-radius:999px;
 
     color:var(--gold2);
-    background:rgba(255,255,255,.025);
+
+    background:
+    rgba(255,255,255,.025);
 
     font-size:12px;
 
     margin-bottom:18px;
+
+    animation:
+    badgeIn 1s ease both;
+}
+
+@keyframes badgeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(-15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 .logo{
+
     position:relative;
+    z-index:2;
 
     color:var(--gold2);
 
     font-size:34px;
+
     font-weight:900;
 
     letter-spacing:-1px;
 
-    text-shadow:
-    0 0 25px rgba(245,215,124,.18);
+    animation:
+    logoIn 1.2s ease both,
+    logoGlow 4s ease-in-out infinite;
+}
+
+@keyframes logoIn{
+
+    from{
+        opacity:0;
+        transform:
+        translateY(-25px)
+        scale(.9);
+    }
+
+    to{
+        opacity:1;
+        transform:
+        translateY(0)
+        scale(1);
+    }
+}
+
+@keyframes logoGlow{
+
+    0%,100%{
+        text-shadow:
+        0 0 15px
+        rgba(245,215,124,.1);
+    }
+
+    50%{
+        text-shadow:
+        0 0 35px
+        rgba(245,215,124,.5),
+        0 0 70px
+        rgba(217,180,90,.15);
+    }
 }
 
 .subtitle{
+
+    position:relative;
+    z-index:2;
+
     margin-top:13px;
 
     color:#c8c0aa;
@@ -151,7 +398,11 @@ header:before{
 }
 
 .header-line{
-    width:90px;
+
+    position:relative;
+    z-index:2;
+
+    width:100px;
     height:2px;
 
     margin:24px auto 0;
@@ -165,15 +416,23 @@ header:before{
     );
 }
 
-/* ================= NAV ================= */
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 nav{
+
     position:sticky;
+
     top:0;
+
     z-index:1000;
 
     display:flex;
+
     flex-wrap:wrap;
+
     justify-content:center;
 
     gap:8px;
@@ -181,17 +440,23 @@ nav{
     padding:12px;
 
     background:
-    rgba(4,4,4,.92);
+    rgba(3,3,3,.90);
 
-    border-bottom:1px solid var(--border);
+    border-bottom:
+    1px solid var(--border);
 
-    backdrop-filter:blur(15px);
+    backdrop-filter:
+    blur(18px);
 }
 
 nav button{
+
     position:relative;
 
-    border:1px solid rgba(217,180,90,.25);
+    overflow:hidden;
+
+    border:
+    1px solid rgba(217,180,90,.25);
 
     background:
     linear-gradient(
@@ -204,20 +469,55 @@ nav button{
 
     border-radius:12px;
 
-    padding:10px 15px;
+    padding:
+    10px 15px;
 
     cursor:pointer;
 
-    transition:.25s;
+    transition:.3s;
 
     font-family:inherit;
 }
 
+nav button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:70%;
+
+    height:100%;
+
+    transform:skewX(-20deg);
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.25),
+        transparent
+    );
+}
+
+nav button:hover::before{
+
+    left:140%;
+
+    transition:.7s;
+}
+
 nav button:hover,
 nav button.active{
+
     color:#050505;
 
-    border-color:var(--gold2);
+    border-color:
+    var(--gold2);
 
     background:
     linear-gradient(
@@ -226,87 +526,123 @@ nav button.active{
         var(--gold)
     );
 
-    transform:translateY(-2px);
+    transform:
+    translateY(-3px);
 
     box-shadow:
-    0 7px 25px rgba(217,180,90,.16);
+    0 8px 30px
+    rgba(217,180,90,.20);
 }
 
-/* ================= MAIN ================= */
+
+/* =====================================================
+   MAIN
+===================================================== */
 
 main{
+
     width:min(1250px,94%);
 
     margin:auto;
 
-    padding:35px 0 70px;
+    padding:
+    35px 0 70px;
 }
 
 .section{
+
     display:none;
 
     animation:
-    fade .35s ease;
+    sectionIn .5s ease;
 }
 
 .section.active{
+
     display:block;
 }
 
-@keyframes fade{
+@keyframes sectionIn{
+
     from{
         opacity:0;
-        transform:translateY(12px);
+        transform:
+        translateY(20px)
+        scale(.99);
     }
 
     to{
         opacity:1;
-        transform:translateY(0);
+        transform:
+        translateY(0)
+        scale(1);
     }
 }
 
+
+/* =====================================================
+   HEADINGS
+===================================================== */
+
 .section-heading{
+
     margin-bottom:25px;
 }
 
 .section-kicker{
+
     color:var(--gold);
 
-    font-size:12px;
+    font-size:11px;
 
     margin-bottom:8px;
 
-    letter-spacing:1px;
+    letter-spacing:2px;
 }
 
 h2{
+
     color:var(--gold2);
 
     font-size:25px;
 
-    border-right:4px solid var(--gold);
+    border-right:
+    4px solid var(--gold);
 
     padding-right:13px;
+
+    text-shadow:
+    0 0 20px
+    rgba(245,215,124,.08);
 }
 
-/* ================= HERO ================= */
+
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
+
     position:relative;
+
     overflow:hidden;
 
-    padding:65px 30px;
+    padding:
+    65px 30px;
 
-    border:1px solid var(--border);
+    border:
+    1px solid var(--border);
 
     border-radius:28px;
 
     background:
+
     radial-gradient(
         circle at 85% 20%,
-        rgba(217,180,90,.12),
+        rgba(217,180,90,.13),
         transparent 30%
     ),
+
     linear-gradient(
         145deg,
         #171208,
@@ -314,37 +650,96 @@ h2{
     );
 
     box-shadow:var(--shadow);
+
+    animation:
+    heroIn 1s
+    cubic-bezier(.2,.8,.2,1);
 }
 
-.hero:after{
+@keyframes heroIn{
+
+    from{
+        opacity:0;
+        transform:
+        translateY(35px)
+        scale(.97);
+    }
+
+    to{
+        opacity:1;
+        transform:
+        translateY(0)
+        scale(1);
+    }
+}
+
+.hero::after{
+
     content:"⚖";
 
     position:absolute;
 
     left:30px;
-    bottom:-40px;
 
-    font-size:180px;
+    bottom:-50px;
+
+    font-size:190px;
 
     color:var(--gold);
 
     opacity:.035;
+
+    animation:
+    balanceFloat 5s ease-in-out infinite;
+}
+
+@keyframes balanceFloat{
+
+    50%{
+        transform:
+        translateY(-15px)
+        rotate(3deg);
+    }
 }
 
 .hero-content{
+
     position:relative;
+
     z-index:2;
 
-    max-width:800px;
+    max-width:820px;
 }
 
 .hero-icon{
-    font-size:52px;
+
+    display:inline-block;
+
+    font-size:54px;
 
     margin-bottom:15px;
+
+    animation:
+    scaleFloat 3s ease-in-out infinite;
+}
+
+@keyframes scaleFloat{
+
+    0%,100%{
+        transform:
+        rotate(-4deg)
+        translateY(0);
+    }
+
+    50%{
+        transform:
+        rotate(4deg)
+        translateY(-8px);
+    }
 }
 
 .hero h1{
+
     color:var(--gold2);
 
     font-size:35px;
@@ -353,6 +748,7 @@ h2{
 }
 
 .hero p{
+
     color:#ddd7c9;
 
     line-height:2.2;
@@ -361,7 +757,9 @@ h2{
 }
 
 .hero-actions{
+
     display:flex;
+
     flex-wrap:wrap;
 
     gap:10px;
@@ -369,13 +767,22 @@ h2{
     margin-top:25px;
 }
 
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
 .primary-btn,
 .secondary-btn{
+
     display:inline-flex;
+
     align-items:center;
+
     justify-content:center;
 
-    padding:12px 20px;
+    padding:
+    12px 20px;
 
     border-radius:11px;
 
@@ -384,12 +791,18 @@ h2{
     text-decoration:none;
 
     font-family:inherit;
+
     font-weight:bold;
 
-    transition:.25s;
+    transition:.3s;
 }
 
 .primary-btn{
+
+    position:relative;
+
+    overflow:hidden;
+
     border:0;
 
     color:#090909;
@@ -400,10 +813,55 @@ h2{
         var(--gold2),
         #a47d24
     );
+
+    box-shadow:
+    0 8px 25px
+    rgba(217,180,90,.15);
+}
+
+.primary-btn::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:70%;
+
+    height:100%;
+
+    transform:skewX(-20deg);
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.45),
+        transparent
+    );
+
+    animation:
+    buttonShine 4s infinite;
+}
+
+@keyframes buttonShine{
+
+    0%,45%{
+        left:-120%;
+    }
+
+    65%,100%{
+        left:130%;
+    }
 }
 
 .secondary-btn{
-    border:1px solid var(--border);
+
+    border:
+    1px solid var(--border);
 
     color:var(--gold2);
 
@@ -412,12 +870,26 @@ h2{
 
 .primary-btn:hover,
 .secondary-btn:hover{
-    transform:translateY(-2px);
+
+    transform:
+    translateY(-4px)
+    scale(1.02);
 }
 
-/* ================= STATS ================= */
+.primary-btn:hover{
+
+    box-shadow:
+    0 0 35px
+    rgba(245,215,124,.3);
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
 
 .stats{
+
     display:grid;
 
     grid-template-columns:
@@ -429,9 +901,15 @@ h2{
 }
 
 .stat{
+
+    position:relative;
+
+    overflow:hidden;
+
     padding:20px;
 
-    border:1px solid var(--border);
+    border:
+    1px solid var(--border);
 
     border-radius:17px;
 
@@ -441,22 +919,80 @@ h2{
         #121212,
         #080808
     );
+
+    transition:.4s;
+
+    animation:
+    cardIn .7s both;
+}
+
+.stat:nth-child(1){
+    animation-delay:.1s;
+}
+
+.stat:nth-child(2){
+    animation-delay:.2s;
+}
+
+.stat:nth-child(3){
+    animation-delay:.3s;
+}
+
+.stat:nth-child(4){
+    animation-delay:.4s;
+}
+
+@keyframes cardIn{
+
+    from{
+        opacity:0;
+        transform:
+        translateY(25px)
+        scale(.95);
+    }
+
+    to{
+        opacity:1;
+        transform:
+        translateY(0)
+        scale(1);
+    }
+}
+
+.stat:hover{
+
+    transform:
+    translateY(-8px)
+    scale(1.02);
+
+    border-color:
+    rgba(245,215,124,.6);
+
+    box-shadow:
+    0 20px 45px
+    rgba(0,0,0,.55),
+    0 0 30px
+    rgba(217,180,90,.1);
 }
 
 .stat-icon{
-    font-size:24px;
+
+    font-size:25px;
 }
 
 .stat-value{
+
     color:var(--gold2);
 
     font-size:22px;
+
     font-weight:bold;
 
     margin-top:8px;
 }
 
 .stat-label{
+
     color:var(--muted);
 
     font-size:12px;
@@ -464,9 +1000,13 @@ h2{
     margin-top:5px;
 }
 
-/* ================= CARDS ================= */
+
+/* =====================================================
+   CARDS
+===================================================== */
 
 .card-grid{
+
     display:grid;
 
     grid-template-columns:
@@ -476,9 +1016,15 @@ h2{
 }
 
 .card{
+
+    position:relative;
+
+    overflow:hidden;
+
     padding:21px;
 
-    border:1px solid var(--border);
+    border:
+    1px solid var(--border);
 
     border-radius:18px;
 
@@ -490,19 +1036,61 @@ h2{
     );
 
     box-shadow:
-    0 8px 25px rgba(0,0,0,.25);
+    0 8px 25px
+    rgba(0,0,0,.25);
 
-    transition:.25s;
+    transition:.4s;
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-100%;
+
+    left:-100%;
+
+    width:70%;
+
+    height:250%;
+
+    transform:rotate(25deg);
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(245,215,124,.07),
+        transparent
+    );
+
+    transition:.8s;
+}
+
+.card:hover::before{
+
+    left:130%;
 }
 
 .card:hover{
-    transform:translateY(-4px);
+
+    transform:
+    translateY(-7px);
 
     border-color:
     rgba(245,215,124,.5);
+
+    box-shadow:
+    0 18px 50px
+    rgba(0,0,0,.45),
+    0 0 25px
+    rgba(217,180,90,.08);
 }
 
 .card-title{
+
     color:var(--gold2);
 
     font-weight:bold;
@@ -511,28 +1099,37 @@ h2{
 }
 
 .card p{
+
     color:#c9c6bd;
 
     line-height:2;
 }
 
-/* ================= PRICE ================= */
+
+/* =====================================================
+   PRICE
+===================================================== */
 
 .price-card{
+
     position:relative;
+
     overflow:hidden;
 }
 
-.price-card:before{
+.price-card::after{
+
     content:"";
 
     position:absolute;
 
-    width:80px;
-    height:80px;
+    width:100px;
 
-    left:-35px;
-    top:-35px;
+    height:100px;
+
+    top:-50px;
+
+    left:-50px;
 
     border-radius:50%;
 
@@ -545,12 +1142,14 @@ h2{
 }
 
 .price-title{
+
     color:#c9bc9b;
 
     font-size:13px;
 }
 
 .price{
+
     color:var(--gold2);
 
     font-size:25px;
@@ -562,17 +1161,31 @@ h2{
     text-align:right;
 
     margin-top:13px;
+
+    animation:
+    priceGlow 3s ease-in-out infinite;
 }
 
-.price.success{
-    color:var(--gold2);
+@keyframes priceGlow{
+
+    0%,100%{
+        text-shadow:none;
+    }
+
+    50%{
+        text-shadow:
+        0 0 20px
+        rgba(245,215,124,.35);
+    }
 }
 
 .price.error{
+
     color:var(--red);
 }
 
 .unit{
+
     color:#777;
 
     font-size:11px;
@@ -581,6 +1194,7 @@ h2{
 }
 
 .update{
+
     color:#777;
 
     font-size:10px;
@@ -588,16 +1202,23 @@ h2{
     margin-top:12px;
 }
 
-/* ================= ALERT ================= */
+
+/* =====================================================
+   NOTICE
+===================================================== */
 
 .notice{
+
     margin-top:18px;
 
-    padding:17px 19px;
+    padding:
+    17px 19px;
 
     border-radius:15px;
 
-    border:1px solid rgba(217,180,90,.2);
+    border:
+    1px solid
+    rgba(217,180,90,.2);
 
     background:
     rgba(217,180,90,.045);
@@ -608,12 +1229,17 @@ h2{
 }
 
 .notice strong{
+
     color:var(--gold2);
 }
 
-/* ================= INPUT ================= */
+
+/* =====================================================
+   INPUT
+===================================================== */
 
 label{
+
     display:block;
 
     color:#d2c9b3;
@@ -625,13 +1251,15 @@ label{
 
 input,
 select{
+
     width:100%;
 
     padding:13px;
 
     margin-top:7px;
 
-    border:1px solid #453719;
+    border:
+    1px solid #453719;
 
     border-radius:10px;
 
@@ -646,12 +1274,21 @@ select{
 
 input:focus,
 select:focus{
+
     border-color:var(--gold);
+
+    box-shadow:
+    0 0 15px
+    rgba(217,180,90,.08);
 }
 
-/* ================= PORTFOLIO ================= */
+
+/* =====================================================
+   PORTFOLIO
+===================================================== */
 
 .mode-grid{
+
     display:grid;
 
     grid-template-columns:
@@ -663,21 +1300,24 @@ select:focus{
 }
 
 .mode{
+
     padding:18px;
 
     border-radius:15px;
 
-    border:1px solid #423515;
+    border:
+    1px solid #423515;
 
     background:#0b0b0b;
 
     cursor:pointer;
 
-    transition:.25s;
+    transition:.3s;
 }
 
 .mode:hover,
 .mode.selected{
+
     border-color:var(--gold);
 
     background:
@@ -686,9 +1326,13 @@ select:focus{
         #211a09,
         #090909
     );
+
+    transform:
+    translateY(-3px);
 }
 
 .mode b{
+
     display:block;
 
     color:var(--gold2);
@@ -697,15 +1341,18 @@ select:focus{
 }
 
 .portfolio-result{
+
     margin-top:18px;
 }
 
 .total-box{
+
     text-align:center;
 
     padding:27px;
 
-    border:1px solid var(--gold3);
+    border:
+    1px solid var(--gold3);
 
     border-radius:20px;
 
@@ -715,13 +1362,18 @@ select:focus{
         #1b1508,
         #070707
     );
+
+    animation:
+    sectionIn .6s ease;
 }
 
 .total-label{
+
     color:#bfb293;
 }
 
 .total-value{
+
     color:var(--gold2);
 
     font-size:30px;
@@ -732,11 +1384,13 @@ select:focus{
 }
 
 .portfolio-row{
+
     margin-top:10px;
 
     padding:16px;
 
-    border:1px solid #312711;
+    border:
+    1px solid #312711;
 
     border-radius:13px;
 
@@ -744,10 +1398,12 @@ select:focus{
 }
 
 .portfolio-row b{
+
     color:var(--gold2);
 }
 
 .progress{
+
     height:8px;
 
     margin-top:10px;
@@ -760,6 +1416,7 @@ select:focus{
 }
 
 .progress-bar{
+
     height:100%;
 
     background:
@@ -769,16 +1426,21 @@ select:focus{
         var(--gold2)
     );
 
-    transition:.6s;
+    transition:.8s;
 }
 
-/* ================= LAWS ================= */
+
+/* =====================================================
+   LAWS
+===================================================== */
 
 .search-box{
+
     margin-bottom:18px;
 }
 
 .law-list{
+
     display:grid;
 
     grid-template-columns:
@@ -788,9 +1450,15 @@ select:focus{
 }
 
 .law{
+
+    position:relative;
+
+    overflow:hidden;
+
     padding:17px;
 
-    border:1px solid #3b3019;
+    border:
+    1px solid #3b3019;
 
     border-radius:14px;
 
@@ -799,22 +1467,39 @@ select:focus{
     line-height:2;
 
     color:#c9c5ba;
+
+    transition:.35s;
+}
+
+.law:hover{
+
+    transform:
+    translateY(-5px);
+
+    border-color:
+    rgba(245,215,124,.5);
 }
 
 .law-number{
+
     color:var(--gold2);
 
     font-weight:bold;
 }
 
-/* ================= TERMS ================= */
+
+/* =====================================================
+   TERMS
+===================================================== */
 
 .term{
+
     padding:15px;
 
     margin-bottom:8px;
 
-    border-right:3px solid var(--gold3);
+    border-right:
+    3px solid var(--gold3);
 
     border-radius:9px;
 
@@ -823,46 +1508,105 @@ select:focus{
     line-height:2;
 
     color:#c8c5bd;
+
+    transition:.3s;
+}
+
+.term:hover{
+
+    transform:
+    translateX(-5px);
+
+    border-right-color:
+    var(--gold2);
 }
 
 .term b{
+
     color:var(--gold2);
 }
 
-/* ================= QUIZ ================= */
+
+/* =====================================================
+   QUIZ
+===================================================== */
 
 .quiz{
-    padding:20px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:22px;
 
     margin-bottom:14px;
 
-    border:1px solid #3d321a;
+    border:
+    1px solid #3d321a;
 
-    border-radius:16px;
+    border-radius:18px;
 
-    background:#0d0d0d;
+    background:
+    linear-gradient(
+        145deg,
+        #11100d,
+        #080808
+    );
+
+    box-shadow:
+    0 10px 35px
+    rgba(0,0,0,.3);
+
+    animation:
+    quizIn .55s ease;
+}
+
+@keyframes quizIn{
+
+    from{
+        opacity:0;
+        transform:
+        translateY(25px)
+        scale(.97);
+    }
+
+    to{
+        opacity:1;
+        transform:
+        translateY(0)
+        scale(1);
+    }
 }
 
 .quiz h3{
+
     color:var(--gold2);
 
-    margin-bottom:10px;
+    margin-bottom:14px;
+
+    line-height:1.9;
 }
 
 .quiz-option{
+
     display:block;
+
+    position:relative;
+
+    overflow:hidden;
 
     width:100%;
 
-    margin-top:7px;
+    margin-top:8px;
 
-    padding:11px 14px;
+    padding:13px 15px;
 
     text-align:right;
 
-    border:1px solid #3c321d;
+    border:
+    1px solid #3c321d;
 
-    border-radius:9px;
+    border-radius:10px;
 
     background:#161616;
 
@@ -872,39 +1616,103 @@ select:focus{
 
     font-family:inherit;
 
-    transition:.2s;
+    transition:.3s;
 }
 
 .quiz-option:hover{
-    border-color:var(--gold);
+
+    border-color:
+    var(--gold);
 
     color:var(--gold2);
+
+    transform:
+    translateX(-4px);
+}
+
+.quiz-option.correct{
+
+    border-color:
+    var(--green);
+
+    color:#78e8a0;
+
+    background:
+    rgba(85,216,137,.10);
+
+    animation:
+    correctPulse .5s;
+}
+
+.quiz-option.wrong{
+
+    border-color:
+    var(--red);
+
+    color:#ff8989;
+
+    background:
+    rgba(255,104,104,.10);
+
+    animation:
+    shake .45s;
+}
+
+@keyframes correctPulse{
+
+    50%{
+        transform:scale(1.025);
+    }
+}
+
+@keyframes shake{
+
+    0%,100%{
+        transform:translateX(0);
+    }
+
+    25%{
+        transform:translateX(-7px);
+    }
+
+    75%{
+        transform:translateX(7px);
+    }
 }
 
 .result{
+
     margin-top:12px;
 
     font-weight:bold;
 }
 
-/* ================= LAWYER ================= */
+
+/* =====================================================
+   LAWYER
+===================================================== */
 
 .lawyer{
+
     position:relative;
+
     overflow:hidden;
 
     padding:38px;
 
-    border:1px solid var(--gold3);
+    border:
+    1px solid var(--gold3);
 
     border-radius:27px;
 
     background:
+
     radial-gradient(
         circle at 85% 10%,
         rgba(217,180,90,.13),
         transparent 27%
     ),
+
     linear-gradient(
         145deg,
         #171208,
@@ -915,6 +1723,7 @@ select:focus{
 }
 
 .lawyer-top{
+
     display:flex;
 
     align-items:center;
@@ -925,24 +1734,40 @@ select:focus{
 }
 
 .lawyer-icon{
+
     width:90px;
     height:90px;
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
-    border:1px solid var(--gold3);
+    border:
+    1px solid var(--gold3);
 
     border-radius:50%;
 
     background:#090909;
 
     font-size:43px;
+
+    animation:
+    lawyerFloat 3s ease-in-out infinite;
+}
+
+@keyframes lawyerFloat{
+
+    50%{
+        transform:
+        translateY(-7px)
+        rotate(3deg);
+    }
 }
 
 .lawyer-name{
+
     color:var(--gold2);
 
     font-size:28px;
@@ -951,12 +1776,14 @@ select:focus{
 }
 
 .lawyer-title{
+
     color:#aaa38f;
 
     margin-top:6px;
 }
 
 .lawyer-description{
+
     color:#d2cec3;
 
     line-height:2.2;
@@ -965,6 +1792,7 @@ select:focus{
 }
 
 .qualities{
+
     display:grid;
 
     grid-template-columns:
@@ -976,9 +1804,11 @@ select:focus{
 }
 
 .quality{
+
     padding:16px;
 
-    border:1px solid #3d321c;
+    border:
+    1px solid #3d321c;
 
     border-radius:13px;
 
@@ -990,6 +1820,7 @@ select:focus{
 }
 
 .quality b{
+
     display:block;
 
     color:var(--gold2);
@@ -998,6 +1829,7 @@ select:focus{
 }
 
 .phone{
+
     direction:ltr;
 
     color:var(--gold2);
@@ -1007,12 +1839,86 @@ select:focus{
     margin-top:24px;
 }
 
-/* ================= FOOTER ================= */
+
+/* =====================================================
+   INSURANCE
+===================================================== */
+
+.insurance-visual{
+
+    display:grid;
+
+    grid-template-columns:
+    4fr 1fr;
+
+    gap:10px;
+
+    margin-top:20px;
+}
+
+.insurance-client{
+
+    padding:22px;
+
+    text-align:center;
+
+    border:
+    1px solid
+    rgba(85,216,137,.35);
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(85,216,137,.10),
+        #080808
+    );
+}
+
+.insurance-owner{
+
+    padding:22px;
+
+    text-align:center;
+
+    border:
+    1px solid
+    rgba(245,215,124,.4);
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(245,215,124,.10),
+        #080808
+    );
+}
+
+.insurance-percent{
+
+    display:block;
+
+    font-size:30px;
+
+    font-weight:900;
+
+    margin-bottom:7px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer{
-    border-top:1px solid var(--border);
 
-    padding:30px 15px;
+    border-top:
+    1px solid var(--border);
+
+    padding:
+    30px 15px;
 
     text-align:center;
 
@@ -1024,19 +1930,51 @@ footer{
 }
 
 .footer-gold{
+
     color:var(--gold2);
 }
 
-/* ================= RESPONSIVE ================= */
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar{
+
+    width:9px;
+}
+
+::-webkit-scrollbar-track{
+
+    background:#030303;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:
+    linear-gradient(
+        #f5d77c,
+        #80601e
+    );
+
+    border-radius:20px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
 @media(max-width:850px){
 
     .stats{
+
         grid-template-columns:
         repeat(2,1fr);
     }
 
     .qualities{
+
         grid-template-columns:
         repeat(2,1fr);
     }
@@ -1046,71 +1984,104 @@ footer{
 @media(max-width:650px){
 
     header{
-        padding:40px 15px;
+
+        padding:
+        40px 15px;
     }
 
     .logo{
+
         font-size:23px;
     }
 
     nav{
+
         gap:5px;
     }
 
     nav button{
+
         font-size:10px;
 
-        padding:8px 10px;
+        padding:
+        8px 10px;
     }
 
     main{
+
         width:94%;
     }
 
     .hero{
-        padding:35px 20px;
+
+        padding:
+        35px 20px;
     }
 
     .hero h1{
+
         font-size:25px;
     }
 
     .stats{
-        grid-template-columns:1fr 1fr;
+
+        grid-template-columns:
+        1fr 1fr;
     }
 
     .mode-grid{
-        grid-template-columns:1fr;
+
+        grid-template-columns:
+        1fr;
     }
 
     .qualities{
-        grid-template-columns:1fr;
+
+        grid-template-columns:
+        1fr;
     }
 
     .lawyer{
+
         padding:23px;
     }
 
     .lawyer-top{
+
         flex-direction:column;
 
         text-align:center;
     }
 
     .lawyer-name{
+
         font-size:23px;
     }
 
+    .insurance-visual{
+
+        grid-template-columns:
+        1fr;
+    }
+
 }
+
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
 <div class="header-badge">
-    ⚖️ سامانه تخصصی حقوق و بازار فلزات
+    ⚖️ سامانه تخصصی حقوق، بیمه و بازار فلزات
 </div>
 
 <div class="logo">
@@ -1125,47 +2096,66 @@ footer{
 
 </header>
 
+
+<!-- =====================================================
+     NAV
+===================================================== -->
+
 <nav>
 
-<button class="active" onclick="showSection('home',this)">
+<button class="active"
+onclick="showSection('home',this)">
 🏠 خانه
 </button>
 
-<button onclick="showSection('prices',this)">
+<button
+onclick="showSection('prices',this)">
 📈 بازار
 </button>
 
-<button onclick="showSection('portfolio',this)">
+<button
+onclick="showSection('portfolio',this)">
 🧮 سبد سرمایه‌گذاری
 </button>
 
-<button onclick="showSection('insurance',this)">
-🛡 بیمه
+<button
+onclick="showSection('insurance',this)">
+🛡 بیمه فلزات
 </button>
 
-<button onclick="showSection('laws',this)">
+<button
+onclick="showSection('laws',this)">
 ⚖️ دانش حقوقی
 </button>
 
-<button onclick="showSection('terms',this)">
+<button
+onclick="showSection('terms',this)">
 📚 اصطلاحات
 </button>
 
-<button onclick="showSection('quiz',this)">
+<button
+onclick="showSection('quiz',this)">
 📝 آزمون
 </button>
 
-<button onclick="showSection('lawyer',this)">
+<button
+onclick="showSection('lawyer',this)">
 👨‍⚖️ مشاور حقوقی
 </button>
 
 </nav>
 
+
 <main>
 
-<!-- ================= HOME ================= -->
 
-<section id="home" class="section active">
+<!-- =====================================================
+     HOME
+===================================================== -->
+
+<section
+id="home"
+class="section active">
 
 <div class="hero">
 
@@ -1180,9 +2170,9 @@ footer{
 </h1>
 
 <p>
-این سامانه با هدف ارائه اطلاعات آموزشی و ابزارهای
-محاسباتی در حوزه حقوق، بیمه، بازار فلزات و مدیریت
-سبد سرمایه‌گذاری طراحی شده است.
+یک سامانه یکپارچه برای آشنایی با مفاهیم حقوقی،
+مدل مفهومی بیمه فلزات، بررسی بازار فلزات،
+محاسبه سبد سرمایه‌گذاری و سنجش دانش حقوقی.
 </p>
 
 <div class="hero-actions">
@@ -1203,6 +2193,14 @@ onclick="showSection('portfolio')">
 
 </button>
 
+<button
+class="secondary-btn"
+onclick="showSection('quiz')">
+
+📝 آزمون حقوقی
+
+</button>
+
 </div>
 
 </div>
@@ -1214,21 +2212,26 @@ onclick="showSection('portfolio')">
 
 <div class="stat">
 
-<div class="stat-icon">⚖️</div>
+<div class="stat-icon">
+⚖️
+</div>
 
 <div class="stat-value">
 حقوق
 </div>
 
 <div class="stat-label">
-آموزش و آشنایی با مفاهیم حقوقی
+آموزش مفاهیم و موضوعات حقوقی
 </div>
 
 </div>
+
 
 <div class="stat">
 
-<div class="stat-icon">🪙</div>
+<div class="stat-icon">
+🪙
+</div>
 
 <div class="stat-value">
 فلزات
@@ -1240,23 +2243,29 @@ onclick="showSection('portfolio')">
 
 </div>
 
+
 <div class="stat">
 
-<div class="stat-icon">🧮</div>
+<div class="stat-icon">
+🧮
+</div>
 
 <div class="stat-value">
 محاسبه
 </div>
 
 <div class="stat-label">
-ابزار ساخت سبد سرمایه‌گذاری
+ساخت سبد سرمایه‌گذاری آموزشی
 </div>
 
 </div>
+
 
 <div class="stat">
 
-<div class="stat-icon">🛡</div>
+<div class="stat-icon">
+🛡
+</div>
 
 <div class="stat-value">
 بیمه
@@ -1270,17 +2279,32 @@ onclick="showSection('portfolio')">
 
 </div>
 
+
+<div class="notice">
+
+<strong>توجه:</strong>
+
+اطلاعات این سامانه جنبه آموزشی و محاسباتی دارد
+و نباید جایگزین مشاوره تخصصی حقوقی، بیمه‌ای
+یا سرمایه‌گذاری تلقی شود.
+
+</div>
+
 </section>
 
 
-<!-- ================= PRICES ================= -->
+<!-- =====================================================
+     PRICES
+===================================================== -->
 
-<section id="prices" class="section">
+<section
+id="prices"
+class="section">
 
 <div class="section-heading">
 
 <div class="section-kicker">
-MARKET DATA
+LIVE MARKET
 </div>
 
 <h2>
@@ -1292,6 +2316,7 @@ MARKET DATA
 
 <div class="card-grid">
 
+
 <div class="card price-card">
 
 <div class="price-title">
@@ -1302,7 +2327,7 @@ MARKET DATA
 id="usdPrice"
 class="price">
 
-در حال دریافت...
+در انتظار منبع قیمت
 
 </div>
 
@@ -1314,8 +2339,7 @@ class="price">
 id="usdUpdate"
 class="update">
 
-در حال دریافت...
-
+API متصل نیست
 </div>
 
 </div>
@@ -1331,7 +2355,7 @@ class="update">
 id="gold18Price"
 class="price">
 
-در دسترس نیست
+در انتظار منبع قیمت
 
 </div>
 
@@ -1343,7 +2367,7 @@ class="price">
 id="gold18Update"
 class="update">
 
-نیازمند منبع معتبر
+API متصل نیست
 </div>
 
 </div>
@@ -1359,7 +2383,7 @@ class="update">
 id="goldOuncePrice"
 class="price">
 
-در دسترس نیست
+در انتظار منبع قیمت
 
 </div>
 
@@ -1371,7 +2395,7 @@ class="price">
 id="goldOunceUpdate"
 class="update">
 
-نیازمند API Key
+API متصل نیست
 </div>
 
 </div>
@@ -1387,7 +2411,7 @@ class="update">
 id="xagPrice"
 class="price">
 
-در دسترس نیست
+در انتظار منبع قیمت
 
 </div>
 
@@ -1399,7 +2423,7 @@ class="price">
 id="xagUpdate"
 class="update">
 
-نیازمند API Key
+API متصل نیست
 </div>
 
 </div>
@@ -1415,7 +2439,7 @@ class="update">
 id="hgPrice"
 class="price">
 
-در دسترس نیست
+در انتظار منبع قیمت
 
 </div>
 
@@ -1423,8 +2447,11 @@ class="price">
 قیمت جهانی
 </div>
 
-<div class="update">
-منبع عمومی معتبر تعریف نشده
+<div
+id="hgUpdate"
+class="update">
+
+API متصل نیست
 </div>
 
 </div>
@@ -1434,22 +2461,24 @@ class="price">
 
 <div class="notice">
 
-<strong>نکته مهم:</strong>
+<strong>قیمت لحظه‌ای:</strong>
 
-قیمت‌های بازار متغیر هستند. این صفحه نباید
-به‌عنوان مبنای قطعی معامله یا تضمین قیمت استفاده شود.
-
-برای داده‌های جهانی می‌توان سرویس دارای API Key
-را به سامانه متصل کرد.
+برای نمایش قیمت واقعی باید API معتبر بازار
+به بخش داده‌های سایت متصل شود. این نسخه
+عمداً قیمت ساختگی نمایش نمی‌دهد.
 
 </div>
 
 </section>
 
 
-<!-- ================= PORTFOLIO ================= -->
+<!-- =====================================================
+     PORTFOLIO
+===================================================== -->
 
-<section id="portfolio" class="section">
+<section
+id="portfolio"
+class="section">
 
 <div class="section-heading">
 
@@ -1466,12 +2495,10 @@ PORTFOLIO
 
 <div class="card">
 
-<p style="line-height:2;color:#c8c4ba">
+<p style="line-height:2">
 
-مبلغ سرمایه‌گذاری را وارد کنید و مشخص کنید
-چه درصدی از سرمایه به طلا، نقره و مس اختصاص یابد.
-
-این ابزار صرفاً برای محاسبه و آموزش است.
+مبلغ سرمایه‌گذاری را وارد کنید و درصد موردنظر
+برای هر فلز را تعیین کنید.
 
 </p>
 
@@ -1484,8 +2511,7 @@ PORTFOLIO
 id="investmentAmount"
 type="number"
 min="0"
-placeholder="مثلاً ۲۰۰۰۰۰۰۰۰"
-/>
+placeholder="مثلاً 200000000">
 
 
 <label>
@@ -1534,7 +2560,7 @@ onclick="selectMode('smart')">
 🤖 ترکیب پیشنهادی
 </b>
 
-سامانه یک ترکیب نمونه آموزشی پیشنهاد می‌دهد.
+یک ترکیب نمونه آموزشی پیشنهاد می‌شود.
 
 </div>
 
@@ -1552,8 +2578,7 @@ id="goldPercent"
 type="number"
 min="0"
 max="100"
-value="40"
-/>
+value="40">
 
 
 <label>
@@ -1565,8 +2590,7 @@ id="silverPercent"
 type="number"
 min="0"
 max="100"
-value="35"
-/>
+value="35">
 
 
 <label>
@@ -1578,15 +2602,17 @@ id="copperPercent"
 type="number"
 min="0"
 max="100"
-value="25"
-/>
+value="25">
 
 </div>
 
 
 <button
 class="primary-btn"
-style="width:100%;margin-top:20px"
+style="
+width:100%;
+margin-top:20px;
+"
 onclick="calculatePortfolio()">
 
 محاسبه سبد
@@ -1604,29 +2630,32 @@ class="portfolio-result">
 
 <div class="notice">
 
-<strong>تذکر:</strong>
+<strong>مدل پیشنهادی:</strong>
 
-«سبد هوشمند» در این نسخه یک مدل آموزشی است.
-این ابزار مشاوره سرمایه‌گذاری، تضمین سود یا اجرای
-خودکار معامله نیست.
+در این نسخه ترکیب پیشنهادی صرفاً یک مدل آموزشی
+است و تضمین سود یا توصیه خرید و فروش نیست.
 
 </div>
 
 </section>
 
 
-<!-- ================= INSURANCE ================= -->
+<!-- =====================================================
+     INSURANCE
+===================================================== -->
 
-<section id="insurance" class="section">
+<section
+id="insurance"
+class="section">
 
 <div class="section-heading">
 
 <div class="section-kicker">
-INSURANCE MODEL
+METAL INSURANCE
 </div>
 
 <h2>
-🛡 مدل مفهومی بیمه مبتنی بر فلزات
+🛡 بیمه مبتنی بر فلزات
 </h2>
 
 </div>
@@ -1635,62 +2664,104 @@ INSURANCE MODEL
 <div class="card">
 
 <h3 class="card-title">
-طرح پیشنهادی
+طرح مفهومی بیمه فلزات
 </h3>
 
 <p>
-در این مدل مفهومی، بخشی از ارزش قرارداد بیمه
-می‌تواند با شاخصی مبتنی بر ارزش فلزات گران‌بها
-و صنعتی سنجیده شود.
+
+در مدل پیشنهادی، به جای نگاه صرفاً نقدی به ارزش
+ذخیره یا سرمایه، می‌توان از ترکیبی از طلا،
+نقره و مس به عنوان مبنای ارزش‌گذاری استفاده کرد.
+
 </p>
 
 <p style="margin-top:12px">
 
-در نمونه آموزشی این سامانه، نسبت فرضی
-۸۰٪ برای مشتری و ۲۰٪ برای ارائه‌دهنده در نظر
-گرفته شده است.
+در سناریوی پیشنهادی این سامانه، سود یا ارزش
+ایجادشده به صورت نمونه آموزشی با نسبت
+<strong style="color:var(--gold2)">
+۸۰٪ برای مشتری
+</strong>
+و
+<strong style="color:var(--gold2)">
+۲۰٪ برای صاحب طرح
+</strong>
+محاسبه می‌شود.
 
 </p>
 
 </div>
 
 
-<div class="card-grid" style="margin-top:15px">
+<div class="insurance-visual">
 
-<div class="card">
+<div class="insurance-client">
 
-<div class="card-title">
-🥇 طلا
-</div>
+<span class="insurance-percent"
+style="color:var(--green)">
+۸۰٪
+</span>
 
-<p>
-دارایی گران‌بها با نقش بالقوه در حفظ ارزش.
-</p>
+مشتری
 
-</div>
+<br>
 
-<div class="card">
-
-<div class="card-title">
-🥈 نقره
-</div>
-
-<p>
-فلزی گران‌بها با کاربردهای صنعتی و سرمایه‌گذاری.
-</p>
+سهم فرضی از سود یا ارزش ایجادشده
 
 </div>
 
-<div class="card">
 
-<div class="card-title">
-🟠 مس
+<div class="insurance-owner">
+
+<span class="insurance-percent"
+style="color:var(--gold2)">
+۲۰٪
+</span>
+
+صاحب طرح
+
+<br>
+
+سهم فرضی مدیریت طرح
+
 </div>
 
-<p>
-فلزی صنعتی وابسته به تولید، مصرف و شرایط اقتصاد جهانی.
-</p>
+</div>
 
+
+<div class="card"
+style="margin-top:15px">
+
+<h3 class="card-title">
+🧮 محاسبه نمونه سهم
+</h3>
+
+<label>
+سود یا ارزش ایجادشده
+</label>
+
+<input
+id="insuranceProfit"
+type="number"
+placeholder="مثلاً 10000000">
+
+<button
+class="primary-btn"
+style="
+width:100%;
+margin-top:15px;
+"
+onclick="calculateInsurance()">
+
+محاسبه سهم ۸۰ / ۲۰
+
+</button>
+
+<div
+id="insuranceResult"
+style="
+margin-top:18px;
+">
 </div>
 
 </div>
@@ -1698,22 +2769,27 @@ INSURANCE MODEL
 
 <div class="notice">
 
-<strong>هشدار حقوقی:</strong>
+<strong>تذکر بسیار مهم:</strong>
 
-این صفحه یک طرح مفهومی است و به‌خودی‌خود
-محصول بیمه‌ای قابل عرضه محسوب نمی‌شود.
-اجرای واقعی چنین مدلی نیازمند بررسی مقررات،
-مجوزها، قرارداد، ساختار مالی و الزامات نهادهای
-ذی‌صلاح است.
+این قسمت یک مدل مفهومی و آموزشی برای بررسی ایده
+بیمه مبتنی بر فلزات است و به معنی وجود چنین
+قرارداد بیمه‌ای یا مجوز فعالیت بیمه‌ای نیست.
+
+اجرای واقعی چنین طرحی نیازمند بررسی حقوقی،
+بیمه‌ای، مالی و اخذ مجوزهای لازم خواهد بود.
 
 </div>
 
 </section>
 
 
-<!-- ================= LAWS ================= -->
+<!-- =====================================================
+     LAWS
+===================================================== -->
 
-<section id="laws" class="section">
+<section
+id="laws"
+class="section">
 
 <div class="section-heading">
 
@@ -1722,22 +2798,18 @@ LEGAL KNOWLEDGE
 </div>
 
 <h2>
-⚖️ نکات حقوقی آموزشی
+⚖️ ۲۰۰ موضوع مهم حقوقی
 </h2>
 
 </div>
 
 
-<div class="search-box">
-
 <input
+class="search-box"
 id="lawSearch"
 type="text"
-placeholder="🔎 جست‌وجو در نکات حقوقی..."
-oninput="searchLaws()"
-/>
-
-</div>
+placeholder="🔎 جستجو در موضوعات حقوقی..."
+oninput="searchLaws()">
 
 
 <div
@@ -1748,53 +2820,50 @@ class="law-list">
 
 <div class="notice">
 
-<strong>توجه:</strong>
+<strong>توجه حقوقی:</strong>
 
-مطالب این بخش آموزشی هستند و جایگزین بررسی
-متن قانون، آخرین اصلاحات، آرای قضایی یا
-مشاوره تخصصی برای پرونده واقعی نیستند.
+این قسمت برای آموزش و آشنایی اولیه طراحی شده است.
+برای استناد رسمی، متن به‌روز قانون و اصلاحات آن
+باید از منبع رسمی بررسی شود.
 
 </div>
 
 </section>
 
 
-<!-- ================= TERMS ================= -->
+<!-- =====================================================
+     TERMS
+===================================================== -->
 
-<section id="terms" class="section">
+<section
+id="terms"
+class="section">
 
 <div class="section-heading">
 
 <div class="section-kicker">
-LEGAL DICTIONARY
+LEGAL TERMS
 </div>
 
 <h2>
-📚 فرهنگ اصطلاحات حقوقی
+📚 ۵۰ اصطلاح و نکته حقوقی
 </h2>
 
 </div>
 
 
-<input
-id="termSearch"
-type="text"
-placeholder="🔎 جست‌وجوی اصطلاح..."
-oninput="searchTerms()"
-/>
-
-
-<div
-id="termList"
-style="margin-top:15px">
-</div>
+<div id="termsList"></div>
 
 </section>
 
 
-<!-- ================= QUIZ ================= -->
+<!-- =====================================================
+     QUIZ
+===================================================== -->
 
-<section id="quiz" class="section">
+<section
+id="quiz"
+class="section">
 
 <div class="section-heading">
 
@@ -1809,51 +2878,46 @@ LEGAL QUIZ
 </div>
 
 
-<div class="card">
-
-<div style="color:#aaa;line-height:2">
-
-با پاسخ دادن به سؤالات زیر، دانش حقوقی
-خود را در زمینه مفاهیم پایه ارزیابی کنید.
-
+<div
+id="quizContainer">
 </div>
 
+
 <div
-id="quizScore"
 style="
-color:var(--gold2);
-font-size:22px;
-font-weight:bold;
-margin-top:15px;
+text-align:center;
+margin-top:18px;
 ">
 
-امتیاز: ۰
+<button
+class="primary-btn"
+onclick="createQuiz()">
 
-</div>
+⚡ شروع آزمون جدید
 
-</div>
+</button>
 
-
-<div
-id="quizList"
-style="margin-top:15px">
 </div>
 
 </section>
 
 
-<!-- ================= LAWYER ================= -->
+<!-- =====================================================
+     LAWYER
+===================================================== -->
 
-<section id="lawyer" class="section">
+<section
+id="lawyer"
+class="section">
 
 <div class="section-heading">
 
 <div class="section-kicker">
-LEGAL CONSULTATION
+LEGAL CONSULTANT
 </div>
 
 <h2>
-👨‍⚖️ مشاوره و خدمات حقوقی
+👨‍⚖️ مشاور حقوقی
 </h2>
 
 </div>
@@ -1874,7 +2938,7 @@ LEGAL CONSULTATION
 </div>
 
 <div class="lawyer-title">
-مشاوره و خدمات حقوقی
+مشاور و همراه حقوقی
 </div>
 
 </div>
@@ -1884,22 +2948,10 @@ LEGAL CONSULTATION
 
 <div class="lawyer-description">
 
-<p>
-
-ارائه خدمات و مشاوره حقوقی با رویکردی
-<b style="color:var(--gold2)">
-دقیق، مسئولانه و حرفه‌ای
-</b>
-در مسیر بررسی مسائل و تصمیم‌گیری‌های حقوقی.
-
-</p>
-
-<p style="margin-top:15px">
-
-پیش از هرگونه اقدام حقوقی، بررسی مستندات،
-تشخیص موضوع و شناخت مسیر قانونی اهمیت ویژه‌ای دارد.
-
-</p>
+ارائه اطلاعات و راهنمایی اولیه در زمینه موضوعات
+حقوقی و قراردادی. برای مسائل تخصصی، بررسی
+مستندات و دریافت مشاوره حرفه‌ای، لازم است
+موضوع به صورت دقیق بررسی شود.
 
 </div>
 
@@ -1908,33 +2960,36 @@ LEGAL CONSULTATION
 
 <div class="quality">
 
-<b>🎯 دقت</b>
+<b>⚖️ حقوقی</b>
 
-بررسی جزئیات و مستندات موضوع.
-
-</div>
-
-<div class="quality">
-
-<b>🤝 مسئولیت</b>
-
-ارائه توضیحات روشن و قابل فهم.
+بررسی اولیه مسائل و مفاهیم حقوقی
 
 </div>
 
+
 <div class="quality">
 
-<b>📑 نظم</b>
+<b>📄 قرارداد</b>
 
-پیگیری منظم موضوع و مستندات.
+آشنایی و بررسی اولیه ساختار قراردادها
 
 </div>
 
+
 <div class="quality">
 
-<b>🔎 تحلیل</b>
+<b>🏛 پیگیری</b>
 
-بررسی جوانب مختلف پیش از تصمیم‌گیری.
+راهنمایی اولیه برای مسیرهای حقوقی
+
+</div>
+
+
+<div class="quality">
+
+<b>🔐 محرمانگی</b>
+
+اهمیت حفظ اسناد و اطلاعات پرونده
 
 </div>
 
@@ -1942,42 +2997,38 @@ LEGAL CONSULTATION
 
 
 <div class="phone">
-09127068454
+
+📞 09127068454
+
 </div>
-
-
-<a
-class="primary-btn"
-href="tel:09127068454"
-style="margin-top:15px">
-
-📞 تماس برای مشاوره
-
-</a>
 
 </div>
 
 </section>
 
+
 </main>
 
 
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
 
-<div class="footer-gold">
+<div>
+<span class="footer-gold">
 مرکز حقوقی، بیمه و سرمایه‌گذاری فلزات
+</span>
 </div>
 
+<div>
 پارسا کرمی
+</div>
 
-<br>
-
-این سامانه با هدف اطلاع‌رسانی و آموزش عمومی طراحی شده است.
-
-<br>
-
-تمامی اطلاعات بازار باید پیش از استفاده عملی
-از منابع معتبر بررسی شوند.
+<div>
+این سامانه جنبه آموزشی و اطلاعاتی دارد.
+</div>
 
 </footer>
 
@@ -1996,12 +3047,21 @@ function showSection(id,button){
         section.classList.remove("active");
     });
 
-    const section =
-    document.getElementById(id);
 
-    if(section){
-        section.classList.add("active");
+    const target =
+        document.getElementById(id);
+
+
+    if(target){
+
+        target.classList.add("active");
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
     }
+
 
     document
     .querySelectorAll("nav button")
@@ -2009,265 +3069,77 @@ function showSection(id,button){
         btn.classList.remove("active");
     });
 
+
     if(button){
+
         button.classList.add("active");
-    }
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-}
+    }else{
 
+        const navButton =
+            [...document.querySelectorAll("nav button")]
+            .find(btn =>
+                btn.getAttribute("onclick")
+                ?.includes(
+                    "'" + id + "'"
+                )
+            );
 
-/* =====================================================
-   FORMAT
-===================================================== */
-
-function formatNumber(value){
-
-    if(
-        value === null ||
-        value === undefined ||
-        isNaN(Number(value))
-    ){
-        return "---";
-    }
-
-    return Number(value).toLocaleString(
-        "fa-IR",
-        {
-            maximumFractionDigits:2
-        }
-    );
-}
-
-
-function toman(value){
-
-    return formatNumber(value) + " تومان";
-}
-
-
-function updateTime(){
-
-    return new Date().toLocaleTimeString(
-        "fa-IR"
-    );
-}
-
-
-/* =====================================================
-   MARKET DATA
-===================================================== */
-
-const PRICE_API =
-"https://api.priceto.day/v1/latest/irr/usd";
-
-
-async function getUSD(){
-
-    const response =
-    await fetch(
-        PRICE_API,
-        {
-            cache:"no-store"
-        }
-    );
-
-    if(!response.ok){
-        throw new Error("API error");
-    }
-
-    const data =
-    await response.json();
-
-    let value = null;
-
-    if(typeof data === "number"){
-        value = Number(data);
-    }
-
-    if(data.price !== undefined){
-        value = Number(data.price);
-    }
-
-    if(data.value !== undefined){
-        value = Number(data.value);
-    }
-
-    if(data.rate !== undefined){
-        value = Number(data.rate);
-    }
-
-    if(
-        data.data &&
-        data.data.price !== undefined
-    ){
-        value =
-        Number(data.data.price);
-    }
-
-    if(!value || isNaN(value)){
-        throw new Error(
-            "USD price not found"
-        );
-    }
-
-    /*
-       PriceToDay uses IRR.
-       Display in Toman.
-    */
-
-    return value / 10;
-}
-
-
-async function loadUSD(){
-
-    const price =
-    document.getElementById(
-        "usdPrice"
-    );
-
-    const update =
-    document.getElementById(
-        "usdUpdate"
-    );
-
-    try{
-
-        price.innerText =
-        "در حال دریافت...";
-
-        const value =
-        await getUSD();
-
-        price.className =
-        "price success";
-
-        price.innerText =
-        formatNumber(value);
-
-        update.innerText =
-        "آخرین دریافت: " +
-        updateTime();
-
-    }
-    catch(error){
-
-        price.className =
-        "price error";
-
-        price.innerText =
-        "در دسترس نیست";
-
-        update.innerText =
-        "خطا در دریافت منبع بازار";
-
+        if(navButton)
+            navButton.classList.add("active");
     }
 }
-
-
-/* =====================================================
-   GLOBAL METAL API
-   بدون API KEY عدد ساختگی نمایش نمی‌دهیم
-===================================================== */
-
-function setUnavailable(
-    priceId,
-    updateId,
-    message
-){
-
-    document.getElementById(
-        priceId
-    ).className =
-    "price error";
-
-    document.getElementById(
-        priceId
-    ).innerText =
-    "در دسترس نیست";
-
-    document.getElementById(
-        updateId
-    ).innerText =
-    message;
-}
-
-
-function loadUnavailableMetals(){
-
-    setUnavailable(
-        "gold18Price",
-        "gold18Update",
-        "برای قیمت معتبر به منبع داخلی متصل شوید"
-    );
-
-    setUnavailable(
-        "goldOuncePrice",
-        "goldOunceUpdate",
-        "برای قیمت جهانی API معتبر لازم است"
-    );
-
-    setUnavailable(
-        "xagPrice",
-        "xagUpdate",
-        "برای قیمت جهانی API معتبر لازم است"
-    );
-}
-
-
-loadUSD();
-
-loadUnavailableMetals();
 
 
 /* =====================================================
    PORTFOLIO
 ===================================================== */
 
-let portfolioMode =
-"manual";
+let selectedMode="manual";
 
 
 function selectMode(mode){
 
-    portfolioMode =
-    mode;
+    selectedMode=mode;
+
 
     document
     .getElementById("manualMode")
-    .classList.remove("selected");
+    .classList.toggle(
+        "selected",
+        mode==="manual"
+    );
+
 
     document
     .getElementById("smartMode")
-    .classList.remove("selected");
+    .classList.toggle(
+        "selected",
+        mode==="smart"
+    );
 
-    if(mode === "manual"){
 
-        document
-        .getElementById("manualMode")
-        .classList.add("selected");
+    document
+    .getElementById("manualSettings")
+    .style.display =
+        mode==="manual"
+        ? "block"
+        : "none";
 
-        document
-        .getElementById("manualSettings")
-        .style.display =
-        "block";
 
-    }
-    else{
+    if(mode==="smart"){
 
-        document
-        .getElementById("smartMode")
-        .classList.add("selected");
+        document.getElementById(
+            "goldPercent"
+        ).value=50;
 
-        document
-        .getElementById("manualSettings")
-        .style.display =
-        "none";
+        document.getElementById(
+            "silverPercent"
+        ).value=30;
 
+        document.getElementById(
+            "copperPercent"
+        ).value=20;
     }
 }
 
@@ -2275,16 +3147,14 @@ function selectMode(mode){
 function calculatePortfolio(){
 
     const amount =
-    Number(
-        document.getElementById(
-            "investmentAmount"
-        ).value
-    );
+        Number(
+            document.getElementById(
+                "investmentAmount"
+            ).value
+        );
 
-    if(
-        !amount ||
-        amount <= 0
-    ){
+
+    if(!amount || amount<=0){
 
         alert(
             "لطفاً مبلغ سرمایه‌گذاری را وارد کنید."
@@ -2294,723 +3164,1279 @@ function calculatePortfolio(){
     }
 
 
-    let gold = 40;
-    let silver = 35;
-    let copper = 25;
-
-
-    if(portfolioMode === "manual"){
-
-        gold =
+    const gold =
         Number(
             document.getElementById(
                 "goldPercent"
             ).value
         );
 
-        silver =
+
+    const silver =
         Number(
             document.getElementById(
                 "silverPercent"
             ).value
         );
 
-        copper =
+
+    const copper =
         Number(
             document.getElementById(
                 "copperPercent"
             ).value
         );
 
-    }
-
 
     const total =
-    gold + silver + copper;
+        gold + silver + copper;
 
 
-    if(
-        [gold,silver,copper].some(
-            value =>
-            value < 0 ||
-            value > 100 ||
-            isNaN(value)
-        )
-    ){
+    if(total!==100){
 
         alert(
-            "درصدها باید بین صفر و صد باشند."
+            "مجموع درصد طلا، نقره و مس باید دقیقاً ۱۰۰٪ باشد."
         );
 
         return;
     }
 
 
-    if(
-        Math.abs(total - 100) > .001
-    ){
+    const goldValue =
+        amount * gold / 100;
 
-        alert(
-            "مجموع درصدها باید دقیقاً ۱۰۰٪ باشد."
-        );
+    const silverValue =
+        amount * silver / 100;
 
-        return;
-    }
+    const copperValue =
+        amount * copper / 100;
 
 
-    const goldAmount =
-    amount * gold / 100;
-
-    const silverAmount =
-    amount * silver / 100;
-
-    const copperAmount =
-    amount * copper / 100;
-
-
-    document
-    .getElementById(
+    document.getElementById(
         "portfolioResult"
-    )
-    .innerHTML = `
+    ).innerHTML=`
 
-    <div class="total-box">
+        <div class="total-box">
 
-        <div class="total-label">
-            ارزش کل سبد
+            <div class="total-label">
+                ارزش کل سبد
+            </div>
+
+            <div class="total-value">
+                ${formatMoney(amount)}
+                تومان
+            </div>
+
         </div>
 
-        <div class="total-value">
-            ${toman(amount)}
-        </div>
 
-    </div>
+        ${portfolioRow(
+            "🥇 طلا",
+            gold,
+            goldValue
+        )}
 
-    ${portfolioRow(
-        "🥇",
-        "طلا",
-        gold,
-        goldAmount
-    )}
+        ${portfolioRow(
+            "🥈 نقره",
+            silver,
+            silverValue
+        )}
 
-    ${portfolioRow(
-        "🥈",
-        "نقره",
-        silver,
-        silverAmount
-    )}
-
-    ${portfolioRow(
-        "🟠",
-        "مس",
-        copper,
-        copperAmount
-    )}
+        ${portfolioRow(
+            "🟠 مس",
+            copper,
+            copperValue
+        )}
 
     `;
-
 }
 
 
 function portfolioRow(
-    icon,
-    title,
+    name,
     percent,
-    amount
+    value
 ){
 
     return `
 
-    <div class="portfolio-row">
+        <div class="portfolio-row">
 
-        <b>
-            ${icon} ${title}
-        </b>
+            <b>${name}</b>
 
-        <br>
+            <span style="
+                float:left;
+                color:var(--gold2)
+            ">
 
-        ${formatNumber(percent)}٪
+                ${formatMoney(value)}
+                تومان
 
-        |
+            </span>
 
-        ${toman(amount)}
+            <div class="progress">
 
-        <div class="progress">
+                <div
+                class="progress-bar"
+                style="
+                width:${percent}%
+                ">
+                </div>
 
-            <div
-            class="progress-bar"
-            style="width:${percent}%">
             </div>
+
+            <small style="
+                color:var(--muted)
+            ">
+
+                ${percent}٪
+
+            </small>
 
         </div>
 
-    </div>
+    `;
+}
+
+
+function formatMoney(number){
+
+    return Number(number)
+    .toLocaleString("fa-IR");
+}
+
+
+/* =====================================================
+   INSURANCE
+===================================================== */
+
+function calculateInsurance(){
+
+    const profit =
+        Number(
+            document.getElementById(
+                "insuranceProfit"
+            ).value
+        );
+
+
+    if(!profit || profit<=0){
+
+        alert(
+            "مبلغ سود یا ارزش ایجادشده را وارد کنید."
+        );
+
+        return;
+    }
+
+
+    const client =
+        profit * .80;
+
+    const owner =
+        profit * .20;
+
+
+    document.getElementById(
+        "insuranceResult"
+    ).innerHTML=`
+
+        <div class="portfolio-row">
+
+            <b style="color:var(--green)">
+                سهم مشتری: ۸۰٪
+            </b>
+
+            <span style="float:left">
+                ${formatMoney(client)}
+                تومان
+            </span>
+
+        </div>
+
+
+        <div class="portfolio-row">
+
+            <b>
+                سهم صاحب طرح: ۲۰٪
+            </b>
+
+            <span style="float:left">
+                ${formatMoney(owner)}
+                تومان
+            </span>
+
+        </div>
 
     `;
 }
 
 
 /* =====================================================
-   LEGAL TOPICS
+   ۲۰۰ موضوع حقوقی آموزشی
 ===================================================== */
 
-const legalTopics = [
+const lawTopics = [
 
-{
-title:"قرارداد",
-text:"پیش از امضای قرارداد، موضوع، تعهدات، مبلغ، مدت، ضمانت اجرا و شرایط فسخ باید به‌صورت روشن بررسی شود."
-},
+/* مدنی */
 
-{
-title:"تعهد",
-text:"تعهد می‌تواند منشأ قراردادی یا قانونی داشته باشد و حدود آن باید بر اساس مستندات و مقررات مربوط مشخص شود."
-},
+["حقوق مدنی","اهلیت اشخاص و توانایی قانونی"],
+["حقوق مدنی","قصد و رضا در معاملات"],
+["حقوق مدنی","اشتباه در معامله"],
+["حقوق مدنی","اکراه و آثار آن"],
+["حقوق مدنی","اهلیت طرفین قرارداد"],
+["حقوق مدنی","موضوع معامله"],
+["حقوق مدنی","جهت معامله"],
+["حقوق مدنی","شرایط صحت قرارداد"],
+["حقوق مدنی","اصل آزادی قراردادها"],
+["حقوق مدنی","اصل لزوم قراردادها"],
+["حقوق مدنی","اصل صحت معاملات"],
+["حقوق مدنی","اصل نسبی بودن قراردادها"],
+["حقوق مدنی","اثر قرارداد نسبت به طرفین"],
+["حقوق مدنی","فسخ قرارداد"],
+["حقوق مدنی","اقاله قرارداد"],
+["حقوق مدنی","ابطال معامله"],
+["حقوق مدنی","بطلان قرارداد"],
+["حقوق مدنی","خیارات در معاملات"],
+["حقوق مدنی","خیار مجلس"],
+["حقوق مدنی","خیار شرط"],
+["حقوق مدنی","خیار غبن"],
+["حقوق مدنی","خیار عیب"],
+["حقوق مدنی","خیار تدلیس"],
+["حقوق مدنی","خیار تبعض صفقه"],
+["حقوق مدنی","خیار تخلف وصف"],
+["حقوق مدنی","خیار تأخیر ثمن"],
+["حقوق مدنی","تعهد به انجام کار"],
+["حقوق مدنی","تعهد به پرداخت"],
+["حقوق مدنی","وجه التزام"],
+["حقوق مدنی","خسارت ناشی از عدم انجام تعهد"],
+["حقوق مدنی","خسارت تأخیر در انجام تعهد"],
+["حقوق مدنی","ضمان قهری"],
+["حقوق مدنی","غصب"],
+["حقوق مدنی","اتلاف مال"],
+["حقوق مدنی","تسبیب"],
+["حقوق مدنی","استیفاء"],
+["حقوق مدنی","مالکیت"],
+["حقوق مدنی","مالکیت مشاع"],
+["حقوق مدنی","اشاعه"],
+["حقوق مدنی","حق انتفاع"],
 
-{
-title:"فسخ",
-text:"فسخ در مواردی امکان‌پذیر است که قانون یا قرارداد چنین اختیاری را ایجاد کرده باشد."
-},
+/* قراردادها */
 
-{
-title:"اقاله",
-text:"اقاله به برهم زدن قرارداد با توافق طرفین گفته می‌شود."
-},
+["قراردادها","بیع"],
+["قراردادها","اجاره"],
+["قراردادها","صلح"],
+["قراردادها","هبه"],
+["قراردادها","وکالت"],
+["قراردادها","مضاربه"],
+["قراردادها","مزارعه"],
+["قراردادها","مساقات"],
+["قراردادها","جعاله"],
+["قراردادها","قرض"],
+["قراردادها","ودیعه"],
+["قراردادها","عاریه"],
+["قراردادها","رهن"],
+["قراردادها","ضمان"],
+["قراردادها","حواله"],
+["قراردادها","کفالت"],
+["قراردادها","شرکت"],
+["قراردادها","فسخ اجاره"],
+["قراردادها","تخلیه مورد اجاره"],
+["قراردادها","سرقفلی"],
+["قراردادها","حق کسب و پیشه"],
+["قراردادها","تضمین اجرای تعهد"],
+["قراردادها","ضمانت انجام تعهد"],
+["قراردادها","ضمانت پرداخت"],
+["قراردادها","شرط ضمن عقد"],
+["قراردادها","شرط فعل"],
+["قراردادها","شرط صفت"],
+["قراردادها","شرط نتیجه"],
+["قراردادها","فسخ یک‌طرفه"],
+["قراردادها","اقاله دوطرفه"],
 
-{
-title:"وکالت",
-text:"حدود اختیارات وکیل باید در وکالت‌نامه به‌دقت بررسی شود."
-},
+/* خانواده */
 
-{
-title:"اظهارنامه",
-text:"اظهارنامه ابزار رسمی برای اعلام یک موضوع یا مطالبه حق در چارچوب قانونی است."
-},
+["خانواده","نکاح"],
+["خانواده","مهریه"],
+["خانواده","نفقه زوجه"],
+["خانواده","نفقه فرزند"],
+["خانواده","تمکین"],
+["خانواده","حضانت"],
+["خانواده","ولایت قهری"],
+["خانواده","جهیزیه"],
+["خانواده","اجرت‌المثل"],
+["خانواده","شروط ضمن عقد نکاح"],
+["خانواده","طلاق توافقی"],
+["خانواده","طلاق به درخواست زوج"],
+["خانواده","طلاق به درخواست زوجه"],
+["خانواده","عده"],
+["خانواده","رجوع"],
+["خانواده","فسخ نکاح"],
+["خانواده","ازدواج موقت"],
+["خانواده","ارث زوجین"],
+["خانواده","نسب"],
+["خانواده","اثبات زوجیت"],
 
-{
-title:"دادخواست",
-text:"طرح بسیاری از دعاوی حقوقی نیازمند تنظیم و ثبت دادخواست مطابق مقررات است."
-},
+/* ارث */
 
-{
-title:"تأمین دلیل",
-text:"تأمین دلیل برای حفظ و ثبت وضعیتی است که ممکن است استفاده از آن در آینده دشوار شود."
-},
+["ارث","موجبات ارث"],
+["ارث","طبقات ارث"],
+["ارث","حجب"],
+["ارث","سهم پدر"],
+["ارث","سهم مادر"],
+["ارث","سهم فرزندان"],
+["ارث","سهم همسر"],
+["ارث","وصیت"],
+["ارث","ثلث ترکه"],
+["ارث","وصیت مازاد بر ثلث"],
+["ارث","تحریر ترکه"],
+["ارث","قبول ترکه"],
+["ارث","رد ترکه"],
+["ارث","تقسیم ترکه"],
+["ارث","دیون متوفی"],
 
-{
-title:"خسارت",
-text:"مطالبه خسارت نیازمند بررسی مبنای قانونی، رابطه سببیت و شرایط مقرر قانونی است."
-},
+/* کیفری */
 
-{
-title:"مسئولیت مدنی",
-text:"مسئولیت مدنی در شرایط قانونی می‌تواند موجب الزام به جبران زیان واردشده شود."
-},
+["کیفری","عنصر قانونی جرم"],
+["کیفری","عنصر مادی جرم"],
+["کیفری","عنصر معنوی جرم"],
+["کیفری","مسئولیت کیفری"],
+["کیفری","قصد مجرمانه"],
+["کیفری","شروع به جرم"],
+["کیفری","مشارکت در جرم"],
+["کیفری","معاونت در جرم"],
+["کیفری","دفاع مشروع"],
+["کیفری","اضطرار"],
+["کیفری","اکراه در امور کیفری"],
+["کیفری","توبه"],
+["کیفری","تعدد جرم"],
+["کیفری","تکرار جرم"],
+["کیفری","کلاهبرداری"],
+["کیفری","خیانت در امانت"],
+["کیفری","سرقت"],
+["کیفری","صدور چک بلامحل"],
+["کیفری","جعل"],
+["کیفری","استفاده از سند مجعول"],
 
-{
-title:"چک",
-text:"چک دارای مقررات خاص حقوقی و کیفری است و شرایط آن باید مطابق قوانین جاری بررسی شود."
-},
+/* آیین دادرسی */
 
-{
-title:"سفته",
-text:"سفته سندی برای تعهد پرداخت است و نحوه تنظیم و استفاده از آن اهمیت حقوقی دارد."
-},
+["آیین دادرسی","صلاحیت ذاتی"],
+["آیین دادرسی","صلاحیت محلی"],
+["آیین دادرسی","دادخواست"],
+["آیین دادرسی","خواهان"],
+["آیین دادرسی","خوانده"],
+["آیین دادرسی","ابلاغ"],
+["آیین دادرسی","ابلاغ واقعی"],
+["آیین دادرسی","ابلاغ قانونی"],
+["آیین دادرسی","مهلت‌های قانونی"],
+["آیین دادرسی","واخواهی"],
+["آیین دادرسی","تجدیدنظرخواهی"],
+["آیین دادرسی","فرجام‌خواهی"],
+["آیین دادرسی","اعاده دادرسی"],
+["آیین دادرسی","دستور موقت"],
+["آیین دادرسی","تأمین خواسته"],
+["آیین دادرسی","کارشناسی"],
+["آیین دادرسی","معاینه محل"],
+["آیین دادرسی","تحقیق محلی"],
+["آیین دادرسی","استماع شهادت"],
+["آیین دادرسی","سوگند"],
 
-{
-title:"رهن",
-text:"رهن می‌تواند برای تضمین یک تعهد یا دین در شرایط مقرر قانونی مورد استفاده قرار گیرد."
-},
+/* تجارت */
 
-{
-title:"اجاره",
-text:"در قرارداد اجاره، مدت، اجاره‌بها، تعهدات طرفین و شرایط تخلیه اهمیت ویژه‌ای دارند."
-},
+["تجارت","تاجر"],
+["تجارت","اعمال تجاری"],
+["تجارت","شرکت تجاری"],
+["تجارت","شرکت سهامی"],
+["تجارت","شرکت با مسئولیت محدود"],
+["تجارت","شرکت تضامنی"],
+["تجارت","شرکت مختلط"],
+["تجارت","شرکت تعاونی"],
+["تجارت","سهام"],
+["تجارت","مجمع عمومی"],
+["تجارت","هیئت مدیره"],
+["تجارت","بازرس شرکت"],
+["تجارت","چک"],
+["تجارت","سفته"],
+["تجارت","برات"],
+["تجارت","ظهرنویسی"],
+["تجارت","ورشکستگی"],
+["تجارت","توقف از پرداخت"],
+["تجارت","تصفیه شرکت"],
+["تجارت","مسئولیت مدیران"],
 
-{
-title:"بیع",
-text:"در معامله فروش، مشخصات مورد معامله، ثمن، نحوه پرداخت و تعهدات طرفین باید روشن باشد."
-},
+/* کار */
 
-{
-title:"ضمان",
-text:"ضمان می‌تواند موجب ایجاد مسئولیت برای شخصی نسبت به دین یا تعهد دیگری شود."
-},
+["کار","قرارداد کار"],
+["کار","کارگر"],
+["کار","کارفرما"],
+["کار","حق‌السعی"],
+["کار","حداقل مزد"],
+["کار","ساعات کار"],
+["کار","اضافه‌کاری"],
+["کار","مرخصی"],
+["کار","مرخصی استعلاجی"],
+["کار","تعطیلات رسمی"],
+["کار","بیمه کارگر"],
+["کار","حادثه ناشی از کار"],
+["کار","اخراج کارگر"],
+["کار","استعفا"],
+["کار","شورای اسلامی کار"],
+["کار","هیات تشخیص"],
+["کار","هیات حل اختلاف"],
+["کار","سنوات"],
+["کار","عیدی"],
+["کار","قرارداد موقت"],
 
-{
-title:"بیمه",
-text:"حقوق و تعهدات بیمه‌گذار و بیمه‌گر باید بر اساس قرارداد و مقررات مربوط بررسی شود."
-},
+/* مالی و اسناد */
 
-{
-title:"تجدیدنظر",
-text:"اعتراض به برخی آرای قضایی در مهلت و شرایط مقرر قانونی امکان‌پذیر است."
-},
+["اسناد","سند رسمی"],
+["اسناد","سند عادی"],
+["اسناد","اعتبار سند رسمی"],
+["اسناد","انکار سند"],
+["اسناد","تردید در سند"],
+["اسناد","ادعای جعل"],
+["اسناد","وکالت‌نامه"],
+["اسناد","اقرار"],
+["اسناد","رسید"],
+["اسناد","امضای الکترونیکی"],
 
-{
-title:"اصل برائت",
-text:"اصل برائت از اصول مهم حقوقی است و آثار آن باید با توجه به نوع پرونده بررسی شود."
-},
+/* ملک */
 
-{
-title:"شخص حقوقی",
-text:"شخص حقوقی موجودیتی است که قانون برای آن شخصیت مستقل حقوقی شناسایی می‌کند."
-}
+["املاک","سند مالکیت"],
+["املاک","قولنامه"],
+["املاک","مبایعه‌نامه"],
+["املاک","انتقال ملک"],
+["املاک","افراز"],
+["املاک","تفکیک"],
+["املاک","تصرف عدوانی"],
+["املاک","مزاحمت ملکی"],
+["املاک","ممانعت از حق"],
+["املاک","تخلیه ملک"],
+
+/* بیمه */
+
+["بیمه","قرارداد بیمه"],
+["بیمه","بیمه‌گذار"],
+["بیمه","بیمه‌گر"],
+["بیمه","ذی‌نفع"],
+["بیمه","حق بیمه"],
+["بیمه","خطر بیمه‌شده"],
+["بیمه","سرمایه بیمه"],
+["بیمه","خسارت بیمه‌ای"],
+["بیمه","فرانشیز"],
+["بیمه","بیمه شخص ثالث"],
+
+/* سرمایه */
+
+["سرمایه‌گذاری","ریسک"],
+["سرمایه‌گذاری","بازده"],
+["سرمایه‌گذاری","تنوع‌بخشی"],
+["سرمایه‌گذاری","سبد سرمایه‌گذاری"],
+["سرمایه‌گذاری","طلا"],
+["سرمایه‌گذاری","نقره"],
+["سرمایه‌گذاری","مس"],
+["سرمایه‌گذاری","دارایی پایه"],
+["سرمایه‌گذاری","نقدشوندگی"],
+["سرمایه‌گذاری","افق سرمایه‌گذاری"],
+
+/* مالیات */
+
+["مالیات","مالیات بر درآمد"],
+["مالیات","مالیات بر ارزش افزوده"],
+["مالیات","اظهارنامه مالیاتی"],
+["مالیات","مودی مالیاتی"],
+["مالیات","شماره اقتصادی"],
+["مالیات","جرایم مالیاتی"],
+["مالیات","رسیدگی مالیاتی"],
+["مالیات","اعتراض مالیاتی"],
+["مالیات","برگ تشخیص مالیات"],
+["مالیات","برگ قطعی مالیات"],
+
+/* حقوق دیجیتال */
+
+["فناوری","جرایم رایانه‌ای"],
+["فناوری","داده شخصی"],
+["فناوری","حریم خصوصی"],
+["فناوری","کلاهبرداری اینترنتی"],
+["فناوری","دسترسی غیرمجاز"],
+["فناوری","امضای دیجیتال"],
+["فناوری","قرارداد الکترونیکی"],
+["فناوری","ادله الکترونیکی"],
+["فناوری","هویت دیجیتال"],
+["فناوری","مسئولیت پلتفرم‌ها"]
 
 ];
 
 
-const lawList =
-document.getElementById(
-    "lawList"
-);
+/* =====================================================
+   RENDER LAWS
+===================================================== */
+
+function renderLaws(list=lawTopics){
+
+    const container =
+        document.getElementById(
+            "lawList"
+        );
 
 
-function renderLaws(list){
+    container.innerHTML =
+        list.map(
+            (item,index)=>`
 
-    lawList.innerHTML = "";
+            <div class="law">
 
-    list.forEach(
-        (law,index)=>{
+                <div class="law-number">
+                    ${index+1}.
+                    ${item[0]}
+                </div>
 
-            const div =
-            document.createElement(
-                "div"
-            );
+                <div>
+                    ${item[1]}
+                </div>
 
-            div.className =
-            "law";
+                <small style="
+                    color:#777;
+                ">
+                    خلاصه آموزشی موضوع
+                </small>
 
-            div.innerHTML = `
-
-            <div class="law-number">
-                ${index+1}. ${law.title}
             </div>
 
-            <div>
-                ${law.text}
-            </div>
-
-            `;
-
-            lawList.appendChild(div);
-
-        }
-    );
+        `
+        ).join("");
 }
-
-
-renderLaws(legalTopics);
 
 
 function searchLaws(){
 
-    const value =
-    document.getElementById(
-        "lawSearch"
-    ).value
-    .trim()
-    .toLowerCase();
+    const query =
+        document
+        .getElementById("lawSearch")
+        .value
+        .trim()
+        .toLowerCase();
 
-    const filtered =
-    legalTopics.filter(
-        law =>
-        (
-            law.title +
-            " " +
-            law.text
-        )
-        .toLowerCase()
-        .includes(value)
-    );
 
-    renderLaws(filtered);
+    if(!query){
+
+        renderLaws();
+
+        return;
+    }
+
+
+    const result =
+        lawTopics.filter(
+            item =>
+            item[0].includes(query) ||
+            item[1].includes(query)
+        );
+
+
+    renderLaws(result);
 }
 
 
 /* =====================================================
-   TERMS
+   ۵۰ اصطلاح
 ===================================================== */
 
-const terms = [
+const terms=[
 
-["عقد","توافقی که می‌تواند آثار حقوقی ایجاد کند."],
-["تعهد","الزام قانونی یا قراردادی به انجام یا ترک کاری."],
-["قرارداد","توافقی که برای طرفین حقوق و تعهد ایجاد می‌کند."],
-["فسخ","برهم زدن قرارداد در موارد قانونی یا قراردادی."],
+["اهلیت","توانایی قانونی شخص برای دارا شدن یا اجرای حقوق."],
+["قصد","اراده آگاهانه برای انجام عمل حقوقی."],
+["رضا","تمایل و رضایت شخص نسبت به انجام معامله."],
+["اکراه","وارد کردن فشار نامشروع برای انجام عمل حقوقی."],
+["عقد","توافق اراده‌های دو یا چند طرف برای ایجاد اثر حقوقی."],
+["ایجاب","پیشنهاد انجام معامله با شرایط مشخص."],
+["قبول","پذیرش ایجاب از سوی طرف مقابل."],
+["فسخ","برهم زدن قرارداد در مواردی که قانون یا قرارداد اجازه دهد."],
 ["اقاله","برهم زدن قرارداد با توافق طرفین."],
-["بطلان","بی‌اعتباری حقوقی یک عمل یا قرارداد."],
-["خیار","اختیار قانونی یا قراردادی برای فسخ معامله."],
-["وکالت","اعطای اختیار انجام امور مشخص به شخص دیگر."],
-["ضمان","تعهد شخص نسبت به دین یا تعهد شخص دیگر در شرایط قانونی."],
+["بطلان","بی‌اعتباری حقوقی معامله از ابتدا."],
+["خیار","اختیار قانونی یا قراردادی برای برهم زدن معامله."],
+["تدلیس","فریب طرف معامله از طریق عملیات یا رفتار مؤثر."],
+["غبن","ضرر غیرمتعارف یکی از طرفین معامله."],
+["عیب","نقص مؤثر در مورد معامله."],
+["ضمان","بر عهده گرفتن مسئولیت یا دین دیگری."],
+["وکالت","اختیار دادن به شخص دیگر برای انجام امر مشخص."],
 ["رهن","وثیقه قرار دادن مال برای تضمین دین."],
-["اجاره","واگذاری منافع مال برای مدت مشخص در برابر عوض."],
+["اجاره","واگذاری منافع مال یا خدمات برای مدت معین در برابر عوض."],
 ["بیع","انتقال مالکیت مال در برابر عوض."],
-["صلح","قراردادی برای سازش یا ایجاد و انتقال برخی حقوق."],
-["هبه","بخشیدن مال به شخص دیگر در شرایط قانونی."],
-["ارث","انتقال دارایی و حقوق متوفی طبق مقررات قانونی."],
-["وصیت","تعیین تکلیف نسبت به امور یا اموال برای پس از فوت."],
-["خواهان","شخصی که دعوای حقوقی را مطرح می‌کند."],
+["صلح","قراردادی برای رفع اختلاف یا ایجاد توافق حقوقی."],
+["تعهد","الزام شخص به انجام یا ترک یک امر."],
+["وجه التزام","مبلغی که برای تخلف از تعهد در قرارداد تعیین می‌شود."],
+["خسارت","زیان قابل مطالبه طبق شرایط قانونی."],
+["ضمان قهری","مسئولیتی که بدون قرارداد و به حکم قانون ایجاد می‌شود."],
+["غصب","استیلا بر حق یا مال دیگری به نحو غیرمجاز."],
+["اتلاف","از بین بردن مال دیگری."],
+["تسبیب","ایجاد سبب ورود خسارت به دیگری."],
+["استیفاء","بهره‌مند شدن از مال یا عمل دیگری در شرایط قانونی."],
+["دعوای حقوقی","درخواست رسیدگی قضایی برای احقاق یک حق."],
+["دادخواست","درخواست رسمی شروع رسیدگی حقوقی."],
+["خواهان","شخصی که دعوا را مطرح می‌کند."],
 ["خوانده","شخصی که دعوا علیه او مطرح شده است."],
-["شاکی","شخصی که از وقوع جرم شکایت می‌کند."],
-["متهم","شخصی که اتهام ارتکاب جرم به او نسبت داده شده است."],
-["دادخواست","درخواست رسمی برای طرح دعوای حقوقی."],
-["اظهارنامه","اعلام رسمی یک موضوع به شخص دیگر."],
-["ابلاغ","رساندن رسمی اوراق یا تصمیمات قضایی."],
-["تأمین دلیل","ثبت و حفظ دلیل برای استفاده قانونی در آینده."],
-["کارشناس","متخصصی که درباره موضوع فنی نظر تخصصی ارائه می‌دهد."],
-["حکم","تصمیم قضایی درباره موضوع مورد رسیدگی."],
-["قرار","تصمیم قضایی که الزاماً حکم ماهوی نیست."],
-["تجدیدنظر","اعتراض و بررسی رأی در مرجع بالاتر طبق قانون."],
-["فرجام","رسیدگی در موارد مقرر قانونی توسط مرجع مربوط."],
-["اعاده دادرسی","درخواست رسیدگی دوباره در شرایط خاص قانونی."],
-["چک","سندی برای پرداخت یا تعهد پرداخت وجه طبق مقررات."],
-["سفته","سندی متضمن تعهد پرداخت مبلغ مشخص."],
-["ظهرنویسی","نوشتن پشت سند برای انتقال یا تضمین آن."],
-["بیمه‌گذار","شخصی که قرارداد بیمه را منعقد می‌کند."],
-["بیمه‌گر","طرفی که تعهدات بیمه‌ای را طبق قرارداد بر عهده می‌گیرد."],
-["ذی‌نفع","شخصی که از یک حق یا قرارداد منفعت می‌برد."],
-["خسارت","زیان واردشده که ممکن است طبق قانون قابل مطالبه باشد."],
-["مسئولیت مدنی","الزام جبران خسارت در شرایط مقرر قانونی."],
-["جرم","رفتاری که قانون برای آن مجازات تعیین کرده است."],
-["مجازات","واکنش قانونی نسبت به جرم طبق قانون."],
-["شرکت","قالب قانونی برای فعالیت مشترک اشخاص."],
-["شخص حقوقی","موجودیت قانونی مستقل از اشخاص تشکیل‌دهنده."],
-["شخص حقیقی","انسان دارای حقوق و تکالیف قانونی."],
-["حق حبس","حق خودداری از انجام تعهد در شرایط مقرر قانونی."],
-["اصل برائت","اصل حقوقی که آثار آن باید مطابق مقررات مربوط بررسی شود."]
+["ابلاغ","رساندن رسمی اوراق و تصمیمات قضایی."],
+["تأمین خواسته","توقیف مال برای حفظ امکان اجرای حق خواهان."],
+["دستور موقت","تصمیم موقت دادگاه برای جلوگیری از ضرر یا حفظ وضعیت."],
+["واخواهی","اعتراض به رأی غیابی در شرایط قانونی."],
+["تجدیدنظر","درخواست بررسی رأی توسط مرجع بالاتر."],
+["فرجام","بررسی رأی از جهت انطباق با مقررات در موارد قانونی."],
+["اعاده دادرسی","درخواست رسیدگی مجدد در موارد خاص قانونی."],
+["شهادت","گواهی شخص درباره موضوعی که مشاهده یا ادراک کرده است."],
+["اقرار","اعلام یک شخص به وجود حق یا امری به زیان خود."],
+["سند رسمی","سندی که طبق تشریفات قانونی نزد مأمور رسمی تنظیم شده باشد."],
+["سند عادی","سندی که شرایط سند رسمی را ندارد."],
+["جعل","ساختن یا تغییر متقلبانه سند یا نوشته با قصد فریب."],
+["کلاهبرداری","بردن مال دیگری از طریق وسایل متقلبانه."],
+["خیانت در امانت","تصاحب یا تلف یا استعمال مال سپرده‌شده برخلاف اذن."],
+["سرقت","ربودن مال متعلق به دیگری در شرایط قانونی."],
+["ریسک","احتمال وقوع نتیجه نامطلوب یا متفاوت از انتظار."],
+["تنوع‌بخشی","پخش سرمایه میان دارایی‌های مختلف برای مدیریت ریسک."],
+["نقدشوندگی","سهولت تبدیل دارایی به وجه نقد."]
 ];
 
 
-const termList =
-document.getElementById(
-    "termList"
-);
+function renderTerms(){
 
+    document.getElementById(
+        "termsList"
+    ).innerHTML =
 
-function renderTerms(list){
+    terms.map(
+        (term,index)=>`
 
-    termList.innerHTML = "";
-
-    list.forEach(
-        (item,index)=>{
-
-            const div =
-            document.createElement(
-                "div"
-            );
-
-            div.className =
-            "term";
-
-            div.innerHTML = `
+        <div class="term">
 
             <b>
-                ${index+1}. ${item[0]}
+                ${index+1}.
+                ${term[0]}
             </b>
 
             <br>
 
-            ${item[1]}
+            ${term[1]}
 
-            `;
+        </div>
 
-            termList.appendChild(div);
-
-        }
-    );
-}
-
-
-renderTerms(terms);
-
-
-function searchTerms(){
-
-    const value =
-    document.getElementById(
-        "termSearch"
-    ).value
-    .trim()
-    .toLowerCase();
-
-    renderTerms(
-        terms.filter(
-            item =>
-            (
-                item[0] +
-                " " +
-                item[1]
-            )
-            .toLowerCase()
-            .includes(value)
-        )
-    );
+        `
+    ).join("");
 }
 
 
 /* =====================================================
-   QUIZ
+   ۲۰ آزمون
 ===================================================== */
 
-const quizzes = [
+const quizData=[
 
 {
-q:"قرارداد چیست؟",
-a:[
-"توافق دارای آثار حقوقی",
-"یک پیام ساده",
-"فقط یک نامه",
-"هیچ‌کدام"
+q:"کدام گزینه از شرایط اساسی صحت معامله است؟",
+o:[
+"قصد و رضا",
+"وجود دو شاهد",
+"انتشار قرارداد",
+"داشتن مهر رسمی"
 ],
-correct:0
+a:0
 },
 
 {
-q:"فسخ به چه معناست؟",
-a:[
-"برهم زدن قرارداد در شرایط قانونی یا قراردادی",
-"امضای قرارداد",
-"پرداخت مالیات",
-"ثبت شرکت"
+q:"کدام مورد نمونه مال منقول است؟",
+o:[
+"زمین",
+"آپارتمان",
+"خودرو",
+"حق ارتفاق"
 ],
-correct:0
+a:2
+},
+
+{
+q:"مسئولیت قراردادی معمولاً در چه حالتی مطرح می‌شود؟",
+o:[
+"صرفاً در جرایم کیفری",
+"نقض تعهد قراردادی",
+"فقط در معاملات ملکی",
+"فقط با شاهد"
+],
+a:1
+},
+
+{
+q:"ایجاب در قرارداد به چه معناست؟",
+o:[
+"پیشنهاد انجام معامله",
+"فسخ معامله",
+"پرداخت مالیات",
+"ثبت رسمی ملک"
+],
+a:0
+},
+
+{
+q:"قبول در قرارداد چیست؟",
+o:[
+"اعتراض به قرارداد",
+"پذیرش ایجاب",
+"فسخ قرارداد",
+"ضمانت قرارداد"
+],
+a:1
+},
+
+{
+q:"کدام مورد نمونه تعهد قراردادی است؟",
+o:[
+"پرداخت ثمن",
+"تغییر نام",
+"صدور شناسنامه",
+"ثبت تولد"
+],
+a:0
+},
+
+{
+q:"وکالت معمولاً به چه معناست؟",
+o:[
+"انتقال مالکیت",
+"اختیار دادن برای انجام امر",
+"پرداخت بدهی",
+"فسخ معامله"
+],
+a:1
+},
+
+{
+q:"رهن معمولاً برای چه هدفی استفاده می‌شود؟",
+o:[
+"تضمین دین",
+"انتقال تابعیت",
+"ثبت شرکت",
+"فسخ نکاح"
+],
+a:0
+},
+
+{
+q:"کدام گزینه با مفهوم خیار ارتباط دارد؟",
+o:[
+"اختیار برهم زدن معامله در موارد قانونی",
+"مالیات",
+"شهادت",
+"صلاحیت دادگاه"
+],
+a:0
+},
+
+{
+q:"دعوای حقوقی معمولاً با چه چیزی آغاز می‌شود؟",
+o:[
+"دادخواست",
+"گزارش هواشناسی",
+"اعلام شفاهی در خیابان",
+"تبلیغات"
+],
+a:0
 },
 
 {
 q:"خواهان چه کسی است؟",
-a:[
-"شخصی که دعوا را مطرح می‌کند",
+o:[
 "قاضی",
+"شخص مطرح‌کننده دعوا",
 "کارشناس",
 "شاهد"
 ],
-correct:0
+a:1
 },
 
 {
 q:"خوانده چه کسی است؟",
-a:[
+o:[
 "شخصی که دعوا علیه او مطرح شده",
 "قاضی",
 "وکیل",
 "کارشناس"
 ],
-correct:0
+a:0
 },
 
 {
-q:"اظهارنامه چیست؟",
-a:[
-"اعلام رسمی یک موضوع",
-"رأی دادگاه",
-"حکم کیفری",
-"سند مالکیت"
+q:"تأمین خواسته با چه هدفی انجام می‌شود؟",
+o:[
+"حفظ امکان اجرای حق",
+"افزایش مالیات",
+"ثبت ازدواج",
+"صدور گواهینامه"
 ],
-correct:0
+a:0
 },
 
 {
-q:"رهن معمولاً چه کاربردی دارد؟",
-a:[
-"تضمین دین",
-"ثبت تولد",
-"ثبت شرکت",
-"صدور گذرنامه"
+q:"سند رسمی نزد چه شخص یا مرجعی تنظیم می‌شود؟",
+o:[
+"مأمور رسمی در حدود صلاحیت",
+"هر فرد عادی",
+"شاهد",
+"دوست طرفین"
 ],
-correct:0
+a:0
 },
 
 {
-q:"اجاره مربوط به چیست؟",
-a:[
-"واگذاری منافع مال برای مدت مشخص",
-"انتقال تابعیت",
-"صدور حکم",
-"ثبت جرم"
+q:"کلاهبرداری اساساً با چه چیزی ارتباط دارد؟",
+o:[
+"وسایل متقلبانه و بردن مال",
+"صرف اختلاف خانوادگی",
+"اجاره ملک",
+"ارث"
 ],
-correct:0
+a:0
 },
 
 {
-q:"کارشناس چه وظیفه‌ای دارد؟",
-a:[
-"ارائه نظر تخصصی",
-"صدور حکم",
-"اجرای مجازات",
-"تصویب قانون"
+q:"خیانت در امانت با کدام مفهوم ارتباط دارد؟",
+o:[
+"تصرف برخلاف اذن در مال سپرده‌شده",
+"خرید ملک",
+"ازدواج",
+"ثبت شرکت"
 ],
-correct:0
+a:0
 },
 
 {
-q:"تجدیدنظر چیست؟",
-a:[
-"اعتراض و بررسی رأی در مرجع بالاتر طبق قانون",
-"تنظیم قرارداد",
-"ثبت ملک",
-"پرداخت مالیات"
+q:"تنوع‌بخشی در سرمایه‌گذاری برای چه استفاده می‌شود؟",
+o:[
+"مدیریت ریسک",
+"افزایش مالیات",
+"ثبت سند",
+"صدور حکم"
 ],
-correct:0
+a:0
 },
 
 {
-q:"اصل برائت چه مفهومی دارد؟",
-a:[
-"تا اثبات قانونی جرم، آثار اصل برائت باید رعایت شود",
-"هر متهمی مجرم است",
-"قاضی همیشه مقصر است",
-"هیچ‌کس حق دفاع ندارد"
+q:"نقدشوندگی یعنی چه؟",
+o:[
+"سهولت تبدیل دارایی به وجه نقد",
+"میزان مالیات",
+"ارزش سند",
+"مدت قرارداد"
 ],
-correct:0
+a:0
+},
+
+{
+q:"در مدل مفهومی این سایت سهم مشتری از سود فرضی چقدر است؟",
+o:[
+"۲۰٪",
+"۵۰٪",
+"۸۰٪",
+"۱۰۰٪"
+],
+a:2
+},
+
+{
+q:"در مدل مفهومی این سایت سهم صاحب طرح چقدر در نظر گرفته شده است؟",
+o:[
+"۸۰٪",
+"۲۰٪",
+"۷۰٪",
+"۱۰٪"
+],
+a:1
 }
 
 ];
 
 
-let quizAnswered = 0;
-let quizScore = 0;
+/* =====================================================
+   SHUFFLE
+===================================================== */
+
+function shuffle(array){
+
+    const arr=[...array];
+
+    for(
+        let i=arr.length-1;
+        i>0;
+        i--
+    ){
+
+        const j=
+            Math.floor(
+                Math.random()*(i+1)
+            );
+
+        [
+            arr[i],
+            arr[j]
+        ]=[
+            arr[j],
+            arr[i]
+        ];
+    }
+
+    return arr;
+}
 
 
-const quizList =
-document.getElementById(
-    "quizList"
-);
+let activeQuiz=[];
+let currentQuestion=0;
+let score=0;
 
 
-quizzes.forEach(
-    (quiz,index)=>{
+function prepareQuiz(){
 
-        const div =
-        document.createElement(
-            "div"
+    activeQuiz =
+        quizData.map(question=>{
+
+            const options =
+                question.o.map(
+                    (text,index)=>({
+                        text,
+                        original:index
+                    })
+                );
+
+
+            const shuffled =
+                shuffle(options);
+
+
+            return {
+
+                q:question.q,
+
+                options:shuffled,
+
+                correct:
+                shuffled.findIndex(
+                    item =>
+                    item.original ===
+                    question.a
+                )
+            };
+
+        });
+}
+
+
+function createQuiz(){
+
+    prepareQuiz();
+
+    currentQuestion=0;
+
+    score=0;
+
+    renderQuestion();
+}
+
+
+function renderQuestion(){
+
+    const box =
+        document.getElementById(
+            "quizContainer"
         );
 
-        div.className =
-        "quiz";
 
-        let html = `
-
-        <h3>
-            آزمون ${index+1}
-        </h3>
-
-        <p style="line-height:2">
-            ${quiz.q}
-        </p>
-
-        `;
+    const q =
+        activeQuiz[
+            currentQuestion
+        ];
 
 
-        quiz.a.forEach(
-            (answer,answerIndex)=>{
-
-                html += `
-
-                <button
-                class="quiz-option"
-                onclick="
-                checkQuiz(
-                    ${index},
-                    ${answerIndex},
-                    this
-                )">
-
-                ${answer}
-
-                </button>
-
-                `;
-
-            }
-        );
+    const letters=[
+        "الف",
+        "ب",
+        "ج",
+        "د"
+    ];
 
 
-        html += `
+    box.innerHTML=`
 
-        <div
-        id="quizResult${index}"
-        class="result">
+    <div class="quiz">
+
+        <div style="
+            color:var(--muted);
+            font-size:12px;
+            margin-bottom:10px;
+        ">
+
+            سؤال
+            ${currentQuestion+1}
+            از
+            ${activeQuiz.length}
+
         </div>
 
-        `;
 
-        div.innerHTML =
-        html;
-
-        quizList.appendChild(div);
-
-    }
-);
+        <h3>
+            ${q.q}
+        </h3>
 
 
-function checkQuiz(
-    quizIndex,
-    answerIndex,
-    button
-){
+        ${q.options.map(
+            (option,index)=>`
 
-    const quiz =
-    quizzes[quizIndex];
+            <button
+            class="quiz-option"
+            onclick="
+            answerQuiz(${index})
+            ">
 
-    const result =
-    document.getElementById(
-        "quizResult" +
-        quizIndex
+                <strong style="
+                    color:var(--gold2);
+                    margin-left:7px;
+                ">
+
+                    ${letters[index]}
+
+                </strong>
+
+                ${option.text}
+
+            </button>
+
+            `
+        ).join("")}
+
+    </div>
+
+    `;
+}
+
+
+function answerQuiz(selected){
+
+    const q =
+        activeQuiz[
+            currentQuestion
+        ];
+
+
+    const buttons =
+        document.querySelectorAll(
+            "#quizContainer .quiz-option"
+        );
+
+
+    buttons.forEach(
+        button =>
+        button.disabled=true
     );
 
 
-    if(button.dataset.answered){
-        return;
-    }
-
-    button.dataset.answered =
-    "true";
-
-    quizAnswered++;
-
-
     if(
-        answerIndex ===
-        quiz.correct
+        selected ===
+        q.correct
     ){
 
-        quizScore++;
+        score++;
 
-        result.innerHTML =
-        "✅ پاسخ صحیح است.";
+        buttons[selected]
+        .classList.add(
+            "correct"
+        );
 
-        result.style.color =
-        "var(--green)";
+    }else{
 
+        buttons[selected]
+        .classList.add(
+            "wrong"
+        );
+
+        buttons[q.correct]
+        .classList.add(
+            "correct"
+        );
     }
-    else{
 
-        result.innerHTML =
-        "❌ پاسخ نادرست است.";
 
-        result.style.color =
-        "var(--red)";
+    setTimeout(()=>{
 
+        currentQuestion++;
+
+
+        if(
+            currentQuestion <
+            activeQuiz.length
+        ){
+
+            renderQuestion();
+
+        }else{
+
+            showQuizResult();
+        }
+
+    },900);
+}
+
+
+function showQuizResult(){
+
+    const percent =
+        Math.round(
+            score /
+            activeQuiz.length *
+            100
+        );
+
+
+    let message="";
+
+
+    if(percent>=90){
+
+        message=
+        "🏆 فوق‌العاده! تسلط بسیار خوبی دارید.";
+
+    }else if(percent>=70){
+
+        message=
+        "🥇 بسیار خوب! کمی تمرین بیشتر نتیجه عالی می‌دهد.";
+
+    }else if(percent>=50){
+
+        message=
+        "📚 قابل قبول است؛ مطالب را دوباره مرور کنید.";
+
+    }else{
+
+        message=
+        "💡 پیشنهاد می‌شود ابتدا بخش اصطلاحات و دانش حقوقی را مطالعه کنید.";
     }
 
 
     document.getElementById(
-        "quizScore"
-    ).innerText =
-    "امتیاز: " +
-    quizScore +
-    " از " +
-    quizAnswered;
+        "quizContainer"
+    ).innerHTML=`
+
+    <div class="quiz"
+    style="
+        text-align:center;
+        padding:40px;
+    ">
+
+        <div style="
+            font-size:65px;
+            animation:scaleFloat 2s infinite;
+        ">
+
+            ${percent>=70 ? "🏆":"📚"}
+
+        </div>
+
+
+        <h3>
+            آزمون به پایان رسید
+        </h3>
+
+
+        <div style="
+            color:var(--gold2);
+            font-size:45px;
+            font-weight:900;
+            margin:15px;
+        ">
+
+            ${score}
+            /
+            ${activeQuiz.length}
+
+        </div>
+
+
+        <div style="
+            color:var(--green);
+            font-size:22px;
+            margin-bottom:15px;
+        ">
+
+            ${percent}٪
+
+        </div>
+
+
+        <p style="
+            color:#c9c5ba;
+            margin-bottom:20px;
+        ">
+
+            ${message}
+
+        </p>
+
+
+        <button
+        class="primary-btn"
+        onclick="createQuiz()">
+
+            🔄 آزمون مجدد
+
+        </button>
+
+    </div>
+
+    `;
 }
 
 
 /* =====================================================
-   START
+   INITIALIZATION
 ===================================================== */
 
-selectMode("manual");
+renderLaws();
+
+renderTerms();
+
+createQuiz();
+
+
+/* =====================================================
+   DEMO MARKET STATUS
+===================================================== */
+
+function marketUnavailable(){
+
+    const ids=[
+        "usdPrice",
+        "gold18Price",
+        "goldOuncePrice",
+        "xagPrice",
+        "hgPrice"
+    ];
+
+
+    ids.forEach(id=>{
+
+        const element =
+            document.getElementById(id);
+
+        if(element){
+
+            element.classList.add(
+                "error"
+            );
+        }
+
+    });
+}
+
+
+marketUnavailable();
 
 </script>
 
+
 </body>
+
 </html>
