@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>مرکز حقوقی و فلزات | پارسا کرمی</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>مرکز حقوقی و بیمه فلزات | پارسا کرمی</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
 
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 html{
@@ -20,1632 +20,2669 @@ html{
 }
 
 body{
-    font-family:'Vazirmatn',Tahoma,sans-serif;
+    font-family:
+    Tahoma,
+    Arial,
+    sans-serif;
+
     background:
-        radial-gradient(circle at top,#29200b 0%,#090909 35%,#020202 100%);
+    radial-gradient(
+        circle at top,
+        #332700 0%,
+        #0b0b0b 35%,
+        #020202 100%
+    );
+
     color:#fff;
-    min-height:100vh;
+    line-height:1.9;
 }
+
+:root{
+    --gold:#d4af37;
+    --gold-light:#ffe083;
+    --gold-dark:#8c6b15;
+    --black:#050505;
+    --card:#111111;
+    --card2:#181818;
+    --green:#16c784;
+    --red:#ff4d4d;
+    --gray:#aaa;
+}
+
 
 /* ================= HEADER ================= */
 
 header{
-    min-height:100vh;
+
+    min-height:88vh;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     text-align:center;
-    padding:30px 18px;
+
+    padding:40px 20px;
+
     position:relative;
+
     overflow:hidden;
 }
 
-header:before,
-header:after{
+header::before{
+
     content:"";
+
     position:absolute;
+
+    width:650px;
+    height:650px;
+
     border-radius:50%;
-    filter:blur(70px);
-    opacity:.35;
+
+    background:
+    rgba(212,175,55,.09);
+
+    filter:blur(100px);
+
+    animation:
+    floating 8s infinite alternate;
 }
 
-header:before{
-    width:350px;
-    height:350px;
-    background:#d4af37;
-    top:-150px;
-    right:-100px;
-}
+@keyframes floating{
 
-header:after{
-    width:300px;
-    height:300px;
-    background:#8f6b16;
-    bottom:-150px;
-    left:-100px;
+    from{
+        transform:
+        translate(-100px,-50px);
+    }
+
+    to{
+        transform:
+        translate(100px,60px);
+    }
 }
 
 .hero{
+
     position:relative;
     z-index:2;
-    max-width:1000px;
+
+    max-width:900px;
 }
 
 .logo{
-    width:100px;
-    height:100px;
-    margin:auto;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:42px;
-    font-weight:900;
-    color:#050505;
-    background:linear-gradient(135deg,#fff2a8,#d4af37,#8f6815);
-    box-shadow:
-        0 0 20px rgba(212,175,55,.6),
-        0 0 70px rgba(212,175,55,.25);
-    animation:float 3s ease-in-out infinite;
-}
 
-@keyframes float{
-    0%,100%{transform:translateY(0)}
-    50%{transform:translateY(-12px)}
+    font-size:75px;
+
+    color:
+    var(--gold-light);
+
+    text-shadow:
+    0 0 35px
+    rgba(255,224,131,.5);
+
+    margin-bottom:10px;
 }
 
 .hero h1{
-    margin-top:30px;
-    font-size:clamp(32px,6vw,70px);
-    font-weight:900;
-    background:linear-gradient(90deg,#fff3a6,#d4af37,#fff7c2);
-    -webkit-background-clip:text;
-    color:transparent;
-}
 
-.hero h2{
-    margin-top:15px;
-    color:#ddd;
-    font-size:20px;
+    font-size:43px;
+
+    margin-bottom:10px;
 }
 
 .hero p{
+
+    color:#ddd;
+
+    font-size:18px;
+}
+
+.gold-line{
+
+    width:190px;
+
+    height:4px;
+
     margin:22px auto;
-    max-width:700px;
-    line-height:2;
-    color:#bbb;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        var(--gold),
+        transparent
+    );
 }
 
-.enter-btn{
-    border:1px solid #d4af37;
-    color:#080808;
-    background:linear-gradient(135deg,#fff2a8,#d4af37,#9a731a);
-    padding:15px 35px;
-    border-radius:50px;
-    font-size:17px;
-    font-weight:900;
+.btn{
+
+    display:inline-block;
+
+    padding:12px 25px;
+
+    margin:8px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--gold-light),
+        var(--gold)
+    );
+
+    color:#000;
+
+    font-weight:bold;
+
+    text-decoration:none;
+
     cursor:pointer;
+
     transition:.3s;
-    box-shadow:0 0 25px rgba(212,175,55,.25);
 }
 
-.enter-btn:hover{
-    transform:translateY(-4px) scale(1.03);
-    box-shadow:0 0 45px rgba(212,175,55,.5);
+.btn:hover{
+
+    transform:
+    translateY(-4px)
+    scale(1.03);
+
+    box-shadow:
+    0 10px 30px
+    rgba(212,175,55,.2);
 }
+
 
 /* ================= NAV ================= */
 
 nav{
+
     position:sticky;
+
     top:0;
-    z-index:1000;
-    backdrop-filter:blur(18px);
-    background:rgba(5,5,5,.88);
-    border-bottom:1px solid rgba(212,175,55,.25);
-    padding:12px;
-}
 
-.nav-container{
-    max-width:1250px;
-    margin:auto;
-    display:flex;
-    gap:10px;
-    overflow-x:auto;
-    scrollbar-width:none;
-}
+    z-index:999;
 
-.nav-container::-webkit-scrollbar{
-    display:none;
-}
+    background:
+    rgba(5,5,5,.95);
 
-.nav-btn{
-    flex:0 0 auto;
-    border:1px solid rgba(212,175,55,.3);
-    background:#101010;
-    color:#ddd;
-    padding:10px 16px;
-    border-radius:30px;
-    cursor:pointer;
-    transition:.3s;
-    font-family:inherit;
-}
+    backdrop-filter:
+    blur(15px);
 
-.nav-btn:hover,
-.nav-btn.active{
-    background:linear-gradient(135deg,#fff0a0,#d4af37);
-    color:#000;
-    border-color:#d4af37;
-}
+    border-bottom:
+    1px solid
+    rgba(212,175,55,.25);
 
-/* ================= MAIN ================= */
+    padding:9px;
 
-main{
-    max-width:1250px;
-    margin:auto;
-    padding:30px 15px 80px;
-}
-
-.section{
-    display:none;
-    animation:sectionIn .5s ease;
-}
-
-.section.active{
-    display:block;
-}
-
-@keyframes sectionIn{
-    from{
-        opacity:0;
-        transform:translateY(15px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-.section-title{
     text-align:center;
-    margin:30px 0;
 }
 
-.section-title h2{
-    color:#d4af37;
+nav a{
+
+    color:#fff;
+
+    text-decoration:none;
+
+    display:inline-block;
+
+    padding:8px 12px;
+
+    font-size:14px;
+
+    transition:.3s;
+}
+
+nav a:hover{
+
+    color:
+    var(--gold-light);
+}
+
+
+/* ================= SECTIONS ================= */
+
+section{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:
+    75px 20px;
+}
+
+.title{
+
+    text-align:center;
+
+    color:
+    var(--gold-light);
+
     font-size:30px;
+
+    margin-bottom:35px;
 }
 
-.section-title p{
-    color:#999;
-    margin-top:8px;
+.title::after{
+
+    content:"";
+
+    display:block;
+
+    width:100px;
+
+    height:3px;
+
+    background:
+    var(--gold);
+
+    margin:
+    12px auto;
 }
+
 
 /* ================= CARDS ================= */
 
-.grid{
+.card-grid{
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:18px;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+
+    gap:20px;
 }
 
 .card{
-    background:
-        linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.015));
-    border:1px solid rgba(212,175,55,.25);
-    border-radius:22px;
-    padding:24px;
-    transition:.35s;
-    position:relative;
-    overflow:hidden;
-}
 
-.card:before{
-    content:"";
-    position:absolute;
-    width:100px;
-    height:100px;
-    background:#d4af37;
-    opacity:.04;
-    border-radius:50%;
-    top:-30px;
-    left:-30px;
+    background:
+    linear-gradient(
+        145deg,
+        #191919,
+        #080808
+    );
+
+    border:
+    1px solid
+    rgba(212,175,55,.2);
+
+    border-radius:22px;
+
+    padding:25px;
+
+    box-shadow:
+    0 12px 35px
+    rgba(0,0,0,.4);
+
+    transition:.35s;
 }
 
 .card:hover{
-    transform:translateY(-7px);
-    border-color:#d4af37;
-    box-shadow:0 15px 45px rgba(0,0,0,.5),
-               0 0 20px rgba(212,175,55,.12);
+
+    transform:
+    translateY(-6px);
+
+    border-color:
+    var(--gold);
+
+    box-shadow:
+    0 15px 40px
+    rgba(212,175,55,.12);
 }
 
 .card h3{
-    color:#e6c75c;
-    margin-bottom:12px;
+
+    color:
+    var(--gold-light);
+
+    margin-bottom:10px;
 }
 
 .card p{
-    color:#bbb;
-    line-height:1.9;
+
+    color:#ddd;
 }
 
-.gold{
-    color:#d4af37!important;
+.icon{
+
+    font-size:42px;
+
+    margin-bottom:8px;
 }
 
-/* ================= MARKET ================= */
 
-.market-grid{
+/* ================= NOTICE ================= */
+
+.notice{
+
+    background:
+    rgba(212,175,55,.08);
+
+    border:
+    1px solid
+    rgba(212,175,55,.3);
+
+    border-radius:18px;
+
+    padding:20px;
+
+    margin:
+    20px 0;
+}
+
+
+/* ================= LIVE PRICES ================= */
+
+.price-grid{
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(210px,1fr)
+    );
+
     gap:18px;
 }
 
 .price-card{
-    background:linear-gradient(145deg,#151515,#080808);
-    border:1px solid #80651d;
-    border-radius:24px;
-    padding:25px;
-    text-align:center;
+
     position:relative;
+
+    background:
+    linear-gradient(
+        145deg,
+        #1b1b1b,
+        #070707
+    );
+
+    border:
+    1px solid
+    rgba(212,175,55,.3);
+
+    border-radius:22px;
+
+    padding:24px;
+
+    text-align:center;
+
     overflow:hidden;
+
+    transition:.3s;
 }
 
-.price-icon{
-    font-size:40px;
-    margin-bottom:10px;
+.price-card:hover{
+
+    transform:
+    translateY(-5px);
+
+    border-color:
+    var(--gold);
+}
+
+.price-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:150px;
+    height:150px;
+
+    top:-70px;
+    left:-70px;
+
+    background:
+    rgba(212,175,55,.08);
+
+    border-radius:50%;
 }
 
 .price-card h3{
-    color:#ddd;
+
+    color:
+    var(--gold-light);
 }
 
 .price{
-    margin:15px 0;
-    color:#f0d875;
-    font-size:27px;
-    font-weight:900;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    margin:
+    10px 0;
+
+    color:#fff;
 }
 
-.price small{
-    color:#999;
-    font-size:12px;
+.change{
+
+    font-size:14px;
+
+    min-height:24px;
 }
 
-.update{
-    color:#777;
-    font-size:12px;
+.up{
+    color:
+    var(--green);
 }
 
-/* ================= LAWYER ================= */
-
-.lawyer{
-    display:grid;
-    grid-template-columns:260px 1fr;
-    gap:25px;
-    align-items:stretch;
+.down{
+    color:
+    var(--red);
 }
 
-.lawyer-photo{
-    min-height:300px;
-    border-radius:25px;
-    border:1px solid #d4af37;
-    background:
-        radial-gradient(circle,#d4af37 0%,#47370c 25%,#0b0b0b 70%);
+.time{
+
+    color:#888;
+
+    font-size:11px;
+
+    margin-top:8px;
+}
+
+.live{
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
-    font-size:80px;
-    box-shadow:0 0 45px rgba(212,175,55,.12);
+
+    gap:7px;
+
+    color:
+    var(--green);
+
+    font-size:12px;
+
+    margin-bottom:10px;
 }
 
-.lawyer-info{
-    padding:30px;
-    border:1px solid rgba(212,175,55,.35);
-    border-radius:25px;
-    background:linear-gradient(145deg,#151515,#080808);
+.live-dot{
+
+    width:8px;
+    height:8px;
+
+    background:
+    var(--green);
+
+    border-radius:50%;
+
+    box-shadow:
+    0 0 10px
+    var(--green);
+
+    animation:
+    pulse 1.3s infinite;
 }
 
-.lawyer-info h2{
-    color:#e4c85e;
-    font-size:30px;
-    margin-bottom:12px;
+@keyframes pulse{
+
+    0%,100%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:.25;
+    }
 }
 
-.lawyer-info .role{
-    color:#999;
-    margin-bottom:20px;
-}
-
-.contact{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-    margin-top:20px;
-}
-
-.contact a{
-    text-decoration:none;
-    color:#000;
-    background:linear-gradient(135deg,#fff1a0,#d4af37);
-    padding:12px 18px;
-    border-radius:30px;
-    font-weight:800;
-}
 
 /* ================= INSURANCE ================= */
 
-.insurance{
-    background:
-        linear-gradient(135deg,rgba(212,175,55,.15),rgba(0,0,0,.7)),
-        #0a0a0a;
-    border:1px solid #8c6c1b;
-    border-radius:30px;
-    padding:30px;
-}
+.choice-grid{
 
-.insurance h2{
-    color:#e4c85e;
-    margin-bottom:15px;
-}
-
-.percent{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-    margin:25px 0;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(280px,1fr)
+    );
+
+    gap:20px;
+
+    margin-top:25px;
 }
 
-.percent-box{
-    text-align:center;
+.choice{
+
     padding:25px;
-    border-radius:20px;
-    background:#111;
-    border:1px solid rgba(212,175,55,.25);
-}
 
-.percent-box strong{
-    display:block;
-    font-size:40px;
-    color:#d4af37;
-}
-
-/* ================= LEGAL ================= */
-
-.search{
-    width:100%;
-    background:#111;
-    border:1px solid rgba(212,175,55,.3);
-    color:#fff;
-    border-radius:15px;
-    padding:15px;
-    margin-bottom:20px;
-    font-family:inherit;
-    outline:none;
-}
-
-.law-item{
-    background:#101010;
-    border:1px solid rgba(212,175,55,.2);
-    border-radius:18px;
-    padding:20px;
-    margin-bottom:12px;
-}
-
-.law-item h3{
-    color:#d4af37;
-    margin-bottom:8px;
-}
-
-.law-item p{
-    color:#bbb;
-    line-height:1.9;
-}
-
-/* ================= TERMS ================= */
-
-.term{
-    cursor:pointer;
-}
-
-.term-answer{
-    display:none;
-    color:#aaa;
-    margin-top:12px;
-    line-height:1.8;
-}
-
-.term.open .term-answer{
-    display:block;
-}
-
-/* ================= QUIZ ================= */
-
-.quiz{
-    background:#101010;
-    border:1px solid rgba(212,175,55,.3);
     border-radius:22px;
-    padding:25px;
-    margin-bottom:18px;
-}
 
-.quiz h3{
-    color:#e3c65a;
-    margin-bottom:18px;
-}
+    background:
+    #111;
 
-.option{
-    display:block;
-    width:100%;
-    text-align:right;
-    margin:8px 0;
-    padding:13px;
-    border-radius:13px;
-    background:#181818;
-    border:1px solid #292929;
-    color:#ddd;
+    border:
+    1px solid #333;
+
     cursor:pointer;
-    font-family:inherit;
+
+    transition:.3s;
 }
 
-.option:hover{
-    border-color:#d4af37;
+.choice:hover,
+.choice.selected{
+
+    border-color:
+    var(--gold);
+
+    box-shadow:
+    0 0 30px
+    rgba(212,175,55,.12);
+}
+
+.choice h3{
+
+    color:
+    var(--gold-light);
+}
+
+
+/* ================= CALCULATOR ================= */
+
+.calculator{
+
+    max-width:700px;
+
+    margin:
+    30px auto;
+
+    padding:30px;
+
+    background:
+    #0c0c0c;
+
+    border:
+    1px solid
+    rgba(212,175,55,.3);
+
+    border-radius:25px;
+}
+
+label{
+
+    display:block;
+
+    color:#ddd;
+
+    margin-top:10px;
+}
+
+input{
+
+    width:100%;
+
+    padding:13px;
+
+    background:#080808;
+
+    border:
+    1px solid #444;
+
+    border-radius:12px;
+
+    color:#fff;
+
+    margin:
+    7px 0 15px;
 }
 
 .result{
-    margin-top:12px;
-    font-weight:800;
+
+    background:
+    rgba(212,175,55,.08);
+
+    border:
+    1px solid
+    rgba(212,175,55,.3);
+
+    border-radius:15px;
+
+    padding:20px;
+
+    margin-top:15px;
 }
+
+
+/* ================= TEST ================= */
+
+.test{
+
+    margin-bottom:20px;
+}
+
+.answer{
+
+    display:block;
+
+    width:100%;
+
+    text-align:right;
+
+    padding:12px;
+
+    margin:7px 0;
+
+    background:#151515;
+
+    border:
+    1px solid #333;
+
+    color:#fff;
+
+    border-radius:12px;
+
+    cursor:pointer;
+}
+
+.answer:hover{
+
+    border-color:
+    var(--gold);
+}
+
+.correct{
+
+    border-color:
+    var(--green)!important;
+
+    color:
+    var(--green);
+}
+
+.wrong{
+
+    border-color:
+    var(--red)!important;
+
+    color:
+    var(--red);
+}
+
 
 /* ================= FOOTER ================= */
 
 footer{
-    border-top:1px solid rgba(212,175,55,.2);
+
     text-align:center;
-    padding:35px 15px;
-    color:#777;
+
+    padding:50px 20px;
+
+    background:#050505;
+
+    border-top:
+    1px solid
+    rgba(212,175,55,.2);
+
+    color:#999;
 }
 
 footer strong{
-    color:#d4af37;
+
+    color:
+    var(--gold-light);
 }
 
-/* ================= WELCOME ================= */
 
-#welcome{
-    position:fixed;
-    inset:0;
-    z-index:9999;
-    background:rgba(0,0,0,.93);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-}
-
-#welcome.show{
-    display:flex;
-}
-
-.welcome-box{
-    width:min(90%,500px);
-    padding:45px 25px;
-    border-radius:30px;
-    border:1px solid #d4af37;
-    background:linear-gradient(145deg,#181818,#070707);
-    box-shadow:0 0 80px rgba(212,175,55,.18);
-}
-
-.heart{
-    font-size:70px;
-    animation:heart 1s infinite;
-}
-
-@keyframes heart{
-    0%,100%{transform:scale(1)}
-    50%{transform:scale(1.18)}
-}
-
-.welcome-box h2{
-    color:#e6c75c;
-    margin:15px 0;
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media(max-width:700px){
-
-    .lawyer{
-        grid-template-columns:1fr;
-    }
-
-    .lawyer-photo{
-        min-height:220px;
-    }
-
-    .percent{
-        grid-template-columns:1fr;
-    }
+@media(max-width:600px){
 
     .hero h1{
-        font-size:38px;
+        font-size:29px;
+    }
+
+    .logo{
+        font-size:50px;
+    }
+
+    nav a{
+        font-size:12px;
+        padding:6px;
+    }
+
+    section{
+        padding:
+        55px 15px;
     }
 
 }
+
 </style>
+
 </head>
+
 
 <body>
 
-<!-- ================= WELCOME ================= -->
 
-<div id="welcome">
-    <div class="welcome-box">
-        <div class="heart">❤️</div>
-        <h2>کاربر عزیز خوش آمدید</h2>
-        <p style="color:#aaa;line-height:2">
-            به مرکز حقوقی، بازار فلزات و خدمات تخصصی خوش آمدید.
-        </p>
-        <button class="enter-btn" onclick="closeWelcome()">
-            ورود به سامانه
-        </button>
-    </div>
-</div>
+<!-- ======================================================
+     HEADER
+====================================================== -->
 
-<!-- ================= HERO ================= -->
-
-<header>
+<header id="home">
 
 <div class="hero">
 
-    <div class="logo">PK</div>
+<div class="logo">
+⚖️
+</div>
 
-    <h1>مرکز حقوقی و بازار فلزات</h1>
+<h1>
+مرکز حقوقی و بیمه فلزات
+</h1>
 
-    <h2>پارسا کرمی | مرکز تخصصی حقوق، وکالت و فلزات</h2>
+<div class="gold-line"></div>
 
-    <p>
-        سامانه‌ای مدرن برای دسترسی به اطلاعات حقوقی،
-        قوانین مهم، آزمون‌های حقوقی، خدمات وکالت،
-        قیمت فلزات گران‌بها و طرح بیمه مبتنی بر فلزات.
-    </p>
+<p>
+کاربر عزیز خوش آمدید ❤️
+</p>
 
-    <button class="enter-btn" onclick="openWelcome()">
-        ورود به سامانه ✨
-    </button>
+<p>
+مرکز حقوقی، خدمات وکیل و طرح نوین بیمه مبتنی بر فلزات
+</p>
+
+<a
+href="#insurance"
+class="btn">
+
+ورود به بیمه فلزات
+
+</a>
+
+<a
+href="#prices"
+class="btn">
+
+قیمت‌های آنلاین
+
+</a>
 
 </div>
 
 </header>
 
-<!-- ================= NAV ================= -->
+
+<!-- ======================================================
+     NAVIGATION
+====================================================== -->
 
 <nav>
 
-<div class="nav-container">
+<a href="#home">
+خانه
+</a>
 
-<button class="nav-btn active" onclick="showSection('home',this)">
-🏠 خانه
-</button>
+<a href="#insurance">
+بیمه فلزات
+</a>
 
-<button class="nav-btn" onclick="showSection('market',this)">
-📈 بازار
-</button>
+<a href="#prices">
+قیمت‌ها
+</a>
 
-<button class="nav-btn" onclick="showSection('insurance',this)">
-🛡️ بیمه فلزات
-</button>
+<a href="#lawyer">
+وکیل
+</a>
 
-<button class="nav-btn" onclick="showSection('lawyer',this)">
-⚖️ وکیل
-</button>
+<a href="#legal">
+حقوقی
+</a>
 
-<button class="nav-btn" onclick="showSection('laws',this)">
-📚 بخش حقوقی
-</button>
+<a href="#terms">
+اصطلاحات
+</a>
 
-<button class="nav-btn" onclick="showSection('terms',this)">
-💡 اصطلاحات
-</button>
+<a href="#laws">
+مواد قانونی
+</a>
 
-<button class="nav-btn" onclick="showSection('quiz',this)">
-📝 آزمون
-</button>
-
-</div>
+<a href="#tests">
+آزمون
+</a>
 
 </nav>
 
-<main>
 
-<!-- ================= HOME ================= -->
+<!-- ======================================================
+     ONLINE PRICES
+====================================================== -->
 
-<section id="home" class="section active">
+<section id="prices">
 
-<div class="section-title">
-
-<h2>داشبورد اصلی</h2>
-
-<p>
-همه چیز در یک صفحه
-</p>
-
-</div>
-
-<div class="grid">
-
-<div class="card">
-<h3>⚖️ مرکز حقوقی</h3>
-<p>
-دسترسی سریع به مواد قانونی، اصطلاحات حقوقی،
-نکات کاربردی و آزمون‌های آموزشی.
-</p>
-</div>
-
-<div class="card">
-<h3>👨‍⚖️ خدمات وکالت</h3>
-<p>
-معرفی بخش وکالت و اطلاعات تماس
-حشمت کرمی برای ارتباط مستقیم.
-</p>
-</div>
-
-<div class="card">
-<h3>🛡️ بیمه فلزات</h3>
-<p>
-ایده بیمه بیکاری مبتنی بر طلا، نقره و مس
-با مدل تقسیم سود ۸۰ به ۲۰.
-</p>
-</div>
-
-<div class="card">
-<h3>🌍 بازار جهانی</h3>
-<p>
-نمایش قیمت دلار، اونس جهانی طلا
-و تبدیل ارزش اونس به تومان.
-</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= MARKET ================= -->
-
-<section id="market" class="section">
-
-<div class="section-title">
-
-<h2>📈 بازار ارز و فلزات</h2>
-
-<p>آخرین مقادیر ثبت‌شده در سامانه</p>
-
-</div>
-
-<div class="market-grid">
-
-<div class="price-card">
-
-<div class="price-icon">💵</div>
-
-<h3>دلار آمریکا</h3>
-
-<div class="price" id="dollarPrice">
-۱۸۷٬۲۵۰ تومان
-</div>
-
-<small>بازار آزاد</small>
-
-</div>
-
-<div class="price-card">
-
-<div class="price-icon">🌍</div>
-
-<h3>اونس جهانی طلا</h3>
-
-<div class="price" id="ouncePrice">
-۴٬۴۰۹ دلار
-</div>
-
-<small>هر اونس</small>
-
-</div>
-
-<div class="price-card">
-
-<div class="price-icon">🪙</div>
-
-<h3>ارزش تقریبی یک اونس به تومان</h3>
-
-<div class="price" id="ounceToman">
--
-</div>
-
-<small>
-محاسبه تقریبی: اونس × دلار
-</small>
-
-</div>
-
-<div class="price-card">
-
-<div class="price-icon">🥇</div>
-
-<h3>طلای ۱۸ عیار</h3>
-
-<div class="price">
-اطلاعات بازار
-</div>
-
-<small>
-برای نرخ لحظه‌ای API اختصاصی متصل شود
-</small>
-
-</div>
-
-<div class="price-card">
-
-<div class="price-icon">🥈</div>
-
-<h3>نقره</h3>
-
-<div class="price">
-اطلاعات بازار
-</div>
-
-<small>
-قیمت قابل اتصال به API
-</small>
-
-</div>
-
-<div class="price-card">
-
-<div class="price-icon">🔶</div>
-
-<h3>مس</h3>
-
-<div class="price">
-اطلاعات بازار
-</div>
-
-<small>
-قیمت قابل اتصال به API
-</small>
-
-</div>
-
-</div>
-
-<div class="card" style="margin-top:20px">
-
-<h3>ℹ️ نکته</h3>
-
-<p>
-قیمت‌های بازار متغیر هستند. اعداد اولیه این نسخه
-برای نمایش داشبورد بر اساس داده‌های بازار در
-۲۱ مرداد ۱۴۰۵ قرار داده شده‌اند و برای نمایش
-لحظه‌ای واقعی باید API قیمت به سایت متصل شود.
-</p>
-
-</div>
-
-</section>
-
-<!-- ================= INSURANCE ================= -->
-
-<section id="insurance" class="section">
-
-<div class="section-title">
-
-<h2>🛡️ بیمه بیکاری مبتنی بر فلزات</h2>
-
-<p>
-طرح پیشنهادی بیمه با پشتوانه طلا، نقره و مس
-</p>
-
-</div>
-
-<div class="insurance">
-
-<h2>
-ایده بیمه فلزات
+<h2 class="title">
+📊 قیمت‌های آنلاین
 </h2>
 
-<p style="color:#bbb;line-height:2">
 
-در این مدل، فرد برای ایجاد پوشش بیمه‌ای،
-مبلغ مورد نظر را پرداخت می‌کند و منابع طرح
-می‌تواند به جای نگهداری صرف وجه نقد،
-به شکل دارایی‌های فلزی مانند طلا، نقره و مس
-مدیریت شود.
+<div class="notice">
 
-هدف این طرح ایجاد یک پشتوانه دارایی‌محور
-برای پرداخت‌های دوره بیکاری است.
+<div class="live">
 
-</p>
+<span class="live-dot"></span>
 
-<div class="percent">
-
-<div class="percent-box">
-
-<strong>۸۰٪</strong>
-
-<span>
-سهم فرضی مشتری
-</span>
+قیمت‌های آنلاین بازار جهانی
 
 </div>
-
-<div class="percent-box">
-
-<strong>۲۰٪</strong>
-
-<span>
-سهم فرضی صاحب بیمه
-</span>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h3>🔐 مدل پیشنهادی</h3>
 
 <p>
 
-سود ناشی از تغییر ارزش دارایی‌های فلزی،
-طبق فرض طراحی این سامانه، با نسبت ۸۰ به ۲۰
-میان مشتری و صاحب بیمه تقسیم می‌شود.
+طلا، نقره و مس مستقیماً از یک API عمومی
+بدون نیاز به API Key دریافت می‌شوند.
 
-این بخش صرفاً مدل پیشنهادی سامانه است و
-برای تبدیل شدن به محصول بیمه‌ای واقعی،
-نیازمند بررسی حقوقی، بیمه‌ای، مالی و
-اخذ مجوزهای لازم خواهد بود.
+</p>
+
+<p
+style="font-size:12px;color:#999">
+
+بروزرسانی قیمت‌های جهانی طبق منبع داده انجام می‌شود.
+این قیمت‌ها «اسپات جهانی» هستند و با قیمت خرید و فروش داخلی
+ممکن است تفاوت داشته باشند.
 
 </p>
 
 </div>
+
+
+<div class="price-grid">
+
+
+<!-- GOLD -->
+
+<div class="price-card">
+
+<div class="icon">
+🥇
+</div>
+
+<h3>
+اونس جهانی طلا
+</h3>
+
+<div
+id="gold"
+class="price">
+
+در حال دریافت...
+
+</div>
+
+<div
+id="goldChange"
+class="change">
+
+---
+
+</div>
+
+<div
+id="goldTime"
+class="time">
+
+---
+
+</div>
+
+</div>
+
+
+<!-- SILVER -->
+
+<div class="price-card">
+
+<div class="icon">
+🥈
+</div>
+
+<h3>
+اونس جهانی نقره
+</h3>
+
+<div
+id="silver"
+class="price">
+
+در حال دریافت...
+
+</div>
+
+<div
+id="silverChange"
+class="change">
+
+---
+
+</div>
+
+<div
+id="silverTime"
+class="time">
+
+---
+
+</div>
+
+</div>
+
+
+<!-- COPPER -->
+
+<div class="price-card">
+
+<div class="icon">
+🟠
+</div>
+
+<h3>
+مس
+</h3>
+
+<div
+id="copper"
+class="price">
+
+در حال دریافت...
+
+</div>
+
+<div
+id="copperChange"
+class="change">
+
+---
+
+</div>
+
+<div
+id="copperTime"
+class="time">
+
+---
+
+</div>
+
+</div>
+
+
+<!-- DOLLAR -->
+
+<div class="price-card">
+
+<div class="icon">
+💵
+</div>
+
+<h3>
+دلار آمریکا
+</h3>
+
+<div
+id="dollar"
+class="price">
+
+در حال دریافت...
+
+</div>
+
+<div
+id="dollarChange"
+class="change">
+
+---
+
+</div>
+
+<div
+id="dollarTime"
+class="time">
+
+---
+
+</div>
+
+</div>
+
+
+<!-- GOLD 18 -->
+
+<div class="price-card">
+
+<div class="icon">
+💰
+</div>
+
+<h3>
+طلای ۱۸ عیار ایران
+</h3>
+
+<div
+id="gold18"
+class="price">
+
+در انتظار منبع داخلی...
+
+</div>
+
+<div
+class="change">
+
+قیمت داخلی
+
+</div>
+
+<div
+class="time">
+
+برای جلوگیری از نمایش عدد اشتباه
+به صورت جعلی محاسبه نمی‌شود.
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="notice">
+
+<strong>
+⚠️ نکته مهم درباره قیمت‌ها
+</strong>
 
 <br>
 
-<div class="grid">
-
-<div class="card">
-<h3>🥇 طلا</h3>
-<p>
-پشتوانه اصلی و دارایی با نقدشوندگی بالا.
-</p>
-</div>
-
-<div class="card">
-<h3>🥈 نقره</h3>
-<p>
-دارایی مکمل برای تنوع سبد.
-</p>
-</div>
-
-<div class="card">
-<h3>🔶 مس</h3>
-<p>
-دارایی صنعتی با امکان استفاده در سبد فلزات.
-</p>
-</div>
-
-</div>
+قیمت طلا، نقره و مس در این قسمت قیمت جهانی است.
+قیمت طلای ۱۸ عیار ایران باید از یک منبع بازار ایران دریافت شود
+و نباید صرفاً با یک فرمول تقریبی جایگزین شود.
 
 </div>
 
 </section>
 
-<!-- ================= LAWYER ================= -->
 
-<section id="lawyer" class="section">
+<!-- ======================================================
+     INSURANCE
+====================================================== -->
 
-<div class="section-title">
+<section id="insurance">
 
-<h2>⚖️ بخش وکیل</h2>
+<h2 class="title">
+🛡️ بیمه بیکاری مبتنی بر فلزات
+</h2>
+
+
+<div class="card">
+
+<h3>
+این طرح چگونه کار می‌کند؟
+</h3>
 
 <p>
-ارتباط با حشمت کرمی
+
+در مدل پیشنهادی، بخشی از منابع طرح می‌تواند طبق قرارداد
+به خرید طلا، نقره و مس اختصاص پیدا کند.
+
+</p>
+
+<p>
+
+هدف طرح ایجاد یک سبد دارایی قابل مشاهده برای مشتری
+و استفاده از تغییرات ارزش فلزات در چارچوب قرارداد است.
+
 </p>
 
 </div>
 
-<div class="lawyer">
 
-<div class="lawyer-photo">
+<div class="choice-grid">
+
+
+<div
+class="choice"
+onclick="selectInsurance('customer',this)">
+
+<div class="icon">
+👤
+</div>
+
+<h3>
+انتخاب توسط مشتری
+</h3>
+
+<p>
+
+مشتری مشخص می‌کند خرید به صورت
+<strong>ماهانه یا سالانه</strong>
+انجام شود.
+
+</p>
+
+<p>
+
+همچنین می‌تواند تعیین کند چه درصدی از سبد
+به طلا، نقره یا مس اختصاص پیدا کند.
+
+</p>
+
+</div>
+
+
+<div
+class="choice"
+onclick="selectInsurance('smart',this)">
+
+<div class="icon">
+🤖
+</div>
+
+<h3>
+خرید هوشمند توسط بیمه
+</h3>
+
+<p>
+
+مشتری مبلغ و مدت طرح را مشخص می‌کند
+و ترکیب خرید بر اساس سیاست سرمایه‌گذاری،
+تنوع سبد و شرایط بازار تعیین می‌شود.
+
+</p>
+
+<p>
+
+این مدل برای افرادی مناسب است که نمی‌خواهند
+خودشان هر ماه بازار را بررسی کنند.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+<div
+id="insuranceMode"
+class="notice">
+
+یکی از دو مدل بالا را انتخاب کنید.
+
+</div>
+
+
+<!-- CALCULATOR -->
+
+<div class="calculator">
+
+<h3
+style="
+text-align:center;
+color:#ffe083;
+margin-bottom:20px;
+">
+
+محاسبه سبد فلزات
+
+</h3>
+
+
+<label>
+مبلغ ماهانه یا سالانه
+</label>
+
+<input
+id="amount"
+type="number"
+placeholder="مثلاً 10000000"
+>
+
+
+<label>
+درصد طلا
+</label>
+
+<input
+id="goldPercent"
+type="number"
+value="50"
+>
+
+
+<label>
+درصد نقره
+</label>
+
+<input
+id="silverPercent"
+type="number"
+value="30"
+>
+
+
+<label>
+درصد مس
+</label>
+
+<input
+id="copperPercent"
+type="number"
+value="20"
+>
+
+
+<button
+class="btn"
+onclick="calculateBasket()">
+
+محاسبه سبد
+
+</button>
+
+
+<div
+id="basketResult"
+class="result">
+
+نتیجه اینجا نمایش داده می‌شود.
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+💰 مدل نمونه تقسیم سود
+</h3>
+
+<p>
+
+در مدل نمونه پروژه، سود ناشی از افزایش ارزش سبد
+می‌تواند طبق قرارداد بین مشتری و صاحب طرح تقسیم شود.
+
+</p>
+
+<p>
+
+<strong>
+۸۰٪ مشتری
+<br>
+۲۰٪ صاحب طرح
+</strong>
+
+</p>
+
+<p
+style="font-size:13px;color:#999">
+
+این نسبت صرفاً مدل نمونه است و اجرای واقعی چنین محصولی
+نیازمند بررسی حقوقی، بیمه‌ای، مالی و اخذ مجوزهای لازم است.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     LAWYER
+====================================================== -->
+
+<section id="lawyer">
+
+<h2 class="title">
+👨‍⚖️ بخش وکیل
+</h2>
+
+
+<div
+class="card"
+style="text-align:center">
+
+<div class="icon">
 ⚖️
 </div>
 
-<div class="lawyer-info">
-
-<h2>
+<h3>
 حشمت کرمی
-</h2>
+</h3>
 
-<div class="role">
-وکیل | مشاوره و خدمات حقوقی
-</div>
+<p>
+وکیل
+</p>
 
-<p style="color:#bbb;line-height:2">
+<p
+style="
+font-size:23px;
+color:#ffe083;
+direction:ltr;
+">
 
-برای دریافت اطلاعات بیشتر، مشاوره حقوقی
-و هماهنگی جهت پیگیری امور، می‌توانید
-از طریق شماره تماس زیر ارتباط برقرار کنید.
+09127068454
 
 </p>
 
-<div class="contact">
+<a
+href="tel:09127068454"
+class="btn">
 
-<a href="tel:09127068454">
-📞 09127068454
+📞 تماس با وکیل
+
 </a>
 
 </div>
 
-</div>
-
-</div>
-
 </section>
 
-<!-- ================= LAWS ================= -->
 
-<section id="laws" class="section">
+<!-- ======================================================
+     LEGAL
+====================================================== -->
 
-<div class="section-title">
+<section id="legal">
 
-<h2>📚 بخش حقوقی</h2>
+<h2 class="title">
+⚖️ بخش حقوقی
+</h2>
+
+
+<div class="card-grid">
+
+
+<div class="card">
+
+<div class="icon">
+📜
+</div>
+
+<h3>
+مشاوره حقوقی
+</h3>
 
 <p>
-مواد قانونی مهم و دسته‌بندی‌شده
+آشنایی با مسائل حقوقی و مسیرهای قانونی.
 </p>
 
 </div>
 
-<input
-class="search"
-id="lawSearch"
-placeholder="🔎 جستجو در مواد و قوانین..."
-oninput="searchLaws()"
->
 
-<div id="lawList"></div>
+<div class="card">
 
-</section>
+<div class="icon">
+📝
+</div>
 
-<!-- ================= TERMS ================= -->
-
-<section id="terms" class="section">
-
-<div class="section-title">
-
-<h2>💡 اصطلاحات و نکات حقوقی</h2>
+<h3>
+قراردادها
+</h3>
 
 <p>
-اصطلاحات کاربردی برای مطالعه سریع
+آشنایی با اصول قرارداد، تعهدات و شروط قراردادی.
 </p>
 
 </div>
 
-<div id="termsList" class="grid"></div>
 
-</section>
+<div class="card">
 
-<!-- ================= QUIZ ================= -->
+<div class="icon">
+⚖️
+</div>
 
-<section id="quiz" class="section">
-
-<div class="section-title">
-
-<h2>📝 آزمون حقوقی</h2>
+<h3>
+دعاوی
+</h3>
 
 <p>
-با انتخاب پاسخ، جواب در همان لحظه نمایش داده می‌شود.
+آشنایی مقدماتی با دعاوی حقوقی و کیفری.
 </p>
 
 </div>
 
-<div id="quizList"></div>
+
+</div>
 
 </section>
 
-</main>
 
-<!-- ================= FOOTER ================= -->
+<!-- ======================================================
+     TERMS
+====================================================== -->
+
+<section id="terms">
+
+<h2 class="title">
+📚 اصطلاحات و نکات حقوقی
+</h2>
+
+<div
+id="termsContainer"
+class="card-grid">
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     LAWS
+====================================================== -->
+
+<section id="laws">
+
+<h2 class="title">
+📖 مواد قانونی مهم
+</h2>
+
+<div
+id="lawsContainer"
+class="card-grid">
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     TESTS
+====================================================== -->
+
+<section id="tests">
+
+<h2 class="title">
+📝 آزمون‌های حقوقی
+</h2>
+
+<div
+id="testsContainer">
+
+</div>
+
+</section>
+
 
 <footer>
 
 <p>
-طراحی اختصاصی
-<strong>مرکز حقوقی و بازار فلزات پارسا کرمی</strong>
+
+<strong>
+مرکز حقوقی و بیمه فلزات
+</strong>
+
 </p>
 
-<p style="margin-top:8px">
-© 2026 تمامی حقوق محفوظ است.
+<p>
+پارسا کرمی
+</p>
+
+<p>
+© 2026
 </p>
 
 </footer>
 
+
 <script>
 
-/* ================= NAVIGATION ================= */
 
-function showSection(id,button){
+/* ======================================================
+   ابزار اعداد فارسی
+====================================================== */
 
-    document.querySelectorAll('.section')
-    .forEach(s=>s.classList.remove('active'));
+function faNumber(value){
 
-    document.getElementById(id).classList.add('active');
+    if(
+        value === undefined ||
+        value === null ||
+        isNaN(Number(value))
+    ){
 
-    document.querySelectorAll('.nav-btn')
-    .forEach(b=>b.classList.remove('active'));
+        return "---";
 
-    button.classList.add('active');
+    }
 
-    window.scrollTo({
-        top:document.querySelector('nav').offsetTop,
-        behavior:'smooth'
-    });
-}
-
-/* ================= WELCOME ================= */
-
-function openWelcome(){
-    document.getElementById('welcome').classList.add('show');
-}
-
-function closeWelcome(){
-    document.getElementById('welcome').classList.remove('show');
-}
-
-/* ================= MARKET ================= */
-
-const dollar = 187250;
-const ounce = 4409;
-
-const ounceToman = dollar * ounce;
-
-document.getElementById('ounceToman').innerText =
-    ounceToman.toLocaleString('fa-IR') + ' تومان';
-
-/* ================= LEGAL DATA ================= */
-
-/*
-این بخش عمداً به شکل دیتابیس طراحی شده
-تا بتوانی تعداد مواد را بدون تغییر ظاهر سایت افزایش دهی.
-*/
-
-const laws = [
-
-{
-category:"قانون مدنی",
-title:"ماده ۱ قانون مدنی",
-text:"قوانین پس از طی مراحل قانونی و انتشار، مطابق مقررات لازم‌الاجرا می‌شوند."
-},
-
-{
-category:"قانون مدنی",
-title:"ماده ۱۰ قانون مدنی",
-text:"قراردادهای خصوصی نسبت به کسانی که آن را منعقد کرده‌اند، در صورتی که مخالف صریح قانون نباشد نافذ است."
-},
-
-{
-category:"قانون مدنی",
-title:"ماده ۲۱۹ قانون مدنی",
-text:"عقودی که بر طبق قانون واقع شده باشند بین متعاملین و قائم‌مقام آنها لازم‌الاتباع هستند."
-},
-
-{
-category:"قانون مدنی",
-title:"ماده ۲۲۰ قانون مدنی",
-text:"عقود نه فقط متعاملین را به اجرای چیزی که در آن تصریح شده ملزم می‌کند، بلکه متعاملین به نتایجی نیز که به موجب عرف و عادت یا قانون از عقد حاصل می‌شود ملزم هستند."
-},
-
-{
-category:"قانون مدنی",
-title:"ماده ۲۲۱ قانون مدنی",
-text:"در صورت تخلف از تعهد، متعهد ممکن است مسئول جبران خسارت شود؛ مطابق شرایط قانونی."
-},
-
-{
-category:"قانون مدنی",
-title:"ماده ۲۲۳ قانون مدنی",
-text:"هر معامله که واقع شده باشد محمول بر صحت است مگر اینکه فساد آن معلوم شود."
-},
-
-{
-category:"قانون مدنی",
-title:"ماده ۲۲۵ قانون مدنی",
-text:"امری که در عرف و عادت به قدری شیوع داشته باشد که عقد بدون تصریح نیز منصرف به آن باشد، به منزله ذکر در عقد است."
-},
-
-{
-category:"قانون مدنی",
-title:"ماده ۳۰ قانون مدنی",
-text:"هر مالکی نسبت به مایملک خود حق همه‌گونه تصرف و انتفاع دارد مگر در موارد استثنایی مقرر در قانون."
-},
-
-{
-category:"قانون مدنی",
-title:"ماده ۳۱ قانون مدنی",
-text:"هیچ مالی را از تصرف صاحب آن نمی‌توان بیرون کرد مگر به حکم قانون."
-},
-
-{
-category:"قانون مدنی",
-title:"ماده ۱۲۵۷ قانون مدنی",
-text:"هر کس مدعی حقی باشد باید آن را اثبات کند."
-},
-
-{
-category:"قانون تجارت",
-title:"ماده ۱ قانون تجارت",
-text:"تاجر کسی است که شغل معمولی خود را معاملات تجارتی قرار دهد."
-},
-
-{
-category:"قانون مسئولیت مدنی",
-title:"اصل مسئولیت مدنی",
-text:"در صورت ورود خسارت ناشی از رفتار غیرقانونی، موضوع جبران خسارت مطابق مقررات قانونی بررسی می‌شود."
-},
-
-{
-category:"قانون مجازات",
-title:"اصل قانونی بودن جرم و مجازات",
-text:"هیچ رفتاری جرم محسوب نمی‌شود مگر آنکه قانون آن را جرم شناخته و برای آن مجازات تعیین کرده باشد."
-},
-
-{
-category:"آیین دادرسی",
-title:"اصل حق دفاع",
-text:"اشخاص در فرآیند دادرسی از حقوق دفاعی مقرر در قانون برخوردارند."
-},
-
-{
-category:"قراردادها",
-title:"اصل لزوم قرارداد",
-text:"قرارداد معتبر اصولاً برای طرفین لازم‌الاتباع است مگر مواردی که قانون یا توافق معتبر امکان فسخ یا انحلال را فراهم کند."
-}
-
-];
-
-/*
-مواد بیشتر را می‌توان از همین ساختار اضافه کرد.
-*/
-
-function renderLaws(data=laws){
-
-    const container=document.getElementById('lawList');
-
-    container.innerHTML='';
-
-    data.forEach((law,index)=>{
-
-        const div=document.createElement('div');
-
-        div.className='law-item';
-
-        div.innerHTML=`
-            <h3>${law.title}</h3>
-            <div style="color:#8f7423;margin-bottom:7px">
-                ${law.category}
-            </div>
-            <p>${law.text}</p>
-        `;
-
-        container.appendChild(div);
-
-    });
-
-}
-
-function searchLaws(){
-
-    const value=
-        document.getElementById('lawSearch')
-        .value
-        .trim()
-        .toLowerCase();
-
-    const filtered=laws.filter(law=>
-        law.title.toLowerCase().includes(value) ||
-        law.text.toLowerCase().includes(value) ||
-        law.category.toLowerCase().includes(value)
+    return Number(value)
+    .toLocaleString(
+        "fa-IR",
+        {
+            maximumFractionDigits:2
+        }
     );
 
-    renderLaws(filtered);
 }
 
-renderLaws();
 
-/* ================= TERMS ================= */
+/* ======================================================
+   نمایش قیمت
+====================================================== */
 
-const terms=[
+function showPrice(
+    id,
+    value,
+    unit
+){
 
-["فسخ","برهم زدن عقد در مواردی که قانون یا قرارداد چنین حقی را ایجاد کرده است."],
-["اقاله","برهم زدن قرارداد با توافق دو طرف."],
-["بطلان","بی‌اعتباری حقوقی عمل یا قرارداد از اساس."],
-["خیار","اختیار قانونی یا قراردادی برای فسخ معامله."],
-["ضمان","تعهد نسبت به پرداخت یا جبران دین یا خسارت در موارد قانونی."],
-["وکالت","قراردادی که به موجب آن شخصی دیگری را برای انجام امری نایب خود می‌کند."],
-["وکالت بلاعزل","وکالتی که ضمن شرایط خاص، حق عزل وکیل محدود می‌شود."],
-["تعهد","الزام حقوقی شخص به انجام یا ترک کاری."],
-["دین","تعهد مالی یا الزام به پرداخت مال یا انجام تعهد."],
-["ضمانت اجرا","پیامد قانونی عدم رعایت یک حکم یا تعهد."],
-["اهلیت","توانایی قانونی برای دارا شدن یا اجرای حق."],
-["مالکیت","رابطه حقوقی شخص با مال که اختیارات قانونی مشخصی ایجاد می‌کند."],
-["تصرف","سلطه و اختیار عملی نسبت به مال."],
-["دعوای حقوقی","ادعایی که برای مطالبه حق در مرجع صالح مطرح می‌شود."],
-["دعوای کیفری","فرآیندی برای رسیدگی به رفتار مجرمانه طبق قانون."],
-["شاکی","شخصی که از وقوع جرم شکایت می‌کند."],
-["متهم","شخصی که انتساب جرم به او در مرحله رسیدگی مطرح شده است."],
-["خواهان","شخصی که دعوای حقوقی را مطرح می‌کند."],
-["خوانده","شخصی که دعوا علیه او مطرح شده است."],
-["ابلاغ","رساندن رسمی اوراق و تصمیمات قضایی طبق مقررات."],
-["دادخواست","درخواست رسمی برای طرح دعوای حقوقی."],
-["شکواییه","درخواست رسمی برای اعلام جرم و شروع رسیدگی کیفری."],
-["قرار","تصمیم قضایی که معمولاً ماهیت حکم نهایی ندارد."],
-["حکم","تصمیم دادگاه درباره موضوع دعوا یا اتهام."],
-["اعتراض","درخواست قانونی برای بررسی مجدد تصمیم."],
-["تجدیدنظر","رسیدگی دوباره به رأی طبق شرایط قانونی."],
-["فرجام‌خواهی","درخواست بررسی رأی از جهت انطباق با مقررات قانونی در موارد مقرر."],
-["اعاده دادرسی","روش فوق‌العاده برای رسیدگی مجدد در موارد قانونی."],
-["صلح","توافق برای پایان دادن به اختلاف یا پیشگیری از آن."],
-["داوری","حل اختلاف توسط شخص یا اشخاص منتخب طرفین در حدود قانون."],
-["کارشناس","فرد متخصصی که در موضوع تخصصی نظر کارشناسی ارائه می‌کند."],
-["تأمین دلیل","ثبت و حفظ دلایلی که احتمال از بین رفتن یا دشوار شدن دسترسی به آنها وجود دارد."],
-["دستور موقت","تصمیم موقت قضایی برای جلوگیری از ورود یا ادامه خسارت در موارد مقرر."],
-["تأمین خواسته","اقدام قانونی برای حفظ امکان وصول خواسته."],
-["خسارت","زیان قابل مطالبه در صورت وجود شرایط قانونی."],
-["وجه التزام","مبلغی که طرفین برای تخلف از تعهد تعیین می‌کنند."],
-["شرط ضمن عقد","شرطی که در ضمن قرارداد مورد توافق قرار می‌گیرد."],
-["فساد معامله","وضعیتی که معامله از جهت قانونی دارای اشکال باشد."],
-["عقد لازم","عقدی که اصل بر عدم امکان برهم زدن یک‌جانبه آن است مگر موارد قانونی."],
-["عقد جایز","عقدی که اصل بر امکان برهم زدن آن در حدود قانون است."],
-["حق شفعه","حق شریک در برخی املاک برای تملک سهم فروخته‌شده شریک دیگر با شرایط قانونی."],
-["ارث","انتقال قهری دارایی و حقوق متوفی به وراث طبق قانون."],
-["وصیت","اقدام حقوقی شخص نسبت به اموال یا امور خود برای بعد از فوت."],
-["نفقه","هزینه‌هایی که در موارد مقرر قانونی باید پرداخت شود."],
-["مهر","مالی که در عقد نکاح به عنوان مهریه تعیین می‌شود."],
-["اجاره","قراردادی برای واگذاری منافع مال در برابر عوض."],
-["بیع","قرارداد خرید و فروش مال در برابر عوض."],
-["رهن","قراردادی که مالی به عنوان وثیقه دین قرار می‌گیرد."],
-["دین حال","دینی که زمان پرداخت آن فرا رسیده است."]
-];
+    const el =
+    document.getElementById(id);
 
-function renderTerms(){
+    if(!el){
+        return;
+    }
 
-    const box=document.getElementById('termsList');
+    if(
+        value === undefined ||
+        value === null ||
+        isNaN(Number(value))
+    ){
 
-    terms.forEach((term,index)=>{
+        el.innerText =
+        "دریافت نشد";
 
-        const div=document.createElement('div');
+        return;
 
-        div.className='card term';
+    }
 
-        div.innerHTML=`
-            <h3>${index+1}. ${term[0]}</h3>
-            <div class="term-answer">
-                ${term[1]}
-            </div>
-        `;
-
-        div.onclick=()=>{
-            div.classList.toggle('open');
-        };
-
-        box.appendChild(div);
-
-    });
+    el.innerText =
+    faNumber(value) +
+    " " +
+    unit;
 
 }
 
-renderTerms();
 
-/* ================= QUIZ ================= */
+/* ======================================================
+   زمان
+====================================================== */
 
-const quizzes=[
+function showTime(
+    id
+){
 
-{
-q:"کدام مورد نمونه‌ای از قرارداد خصوصی است؟",
-options:[
-"قراردادی که طرفین با توافق معتبر منعقد می‌کنند",
-"فقط رأی دادگاه",
-"فقط حکم کیفری",
-"گزارش اداری"
-],
-answer:0
-},
+    const el =
+    document.getElementById(id);
 
-{
-q:"خواهان چه کسی است؟",
-options:[
-"شخصی که دعوا علیه او مطرح شده",
-"شخصی که دعوا را مطرح می‌کند",
-"کارشناس",
-"قاضی"
-],
-answer:1
-},
+    if(!el){
+        return;
+    }
 
-{
-q:"خوانده چه کسی است؟",
-options:[
-"شخصی که دعوا علیه او مطرح شده",
-"شاکی",
-"کارشناس",
-"وکیل دادگستری"
-],
-answer:0
-},
+    el.innerText =
+    "آخرین بررسی: " +
+    new Date()
+    .toLocaleTimeString(
+        "fa-IR"
+    );
 
-{
-q:"وکالت چیست؟",
-options:[
-"انتقال مالکیت",
-"نمایندگی قراردادی در انجام امر",
-"حکم کیفری",
-"رأی دادگاه"
-],
-answer:1
-},
-
-{
-q:"فسخ به چه معناست؟",
-options:[
-"برهم زدن عقد در موارد مجاز",
-"تنظیم سند",
-"ثبت شرکت",
-"پرداخت مالیات"
-],
-answer:0
-},
-
-{
-q:"دادخواست معمولاً برای چه منظوری استفاده می‌شود؟",
-options:[
-"طرح دعوای حقوقی",
-"صدور شناسنامه",
-"خرید کالا",
-"پرداخت قبض"
-],
-answer:0
-},
-
-{
-q:"شکواییه مربوط به کدام حوزه است؟",
-options:[
-"امور کیفری",
-"فقط امور تجاری",
-"فقط امور مالیاتی",
-"فقط ثبت اسناد"
-],
-answer:0
-},
-
-{
-q:"داوری چیست؟",
-options:[
-"حل اختلاف توسط داور در حدود قانون",
-"صدور حکم توسط پلیس",
-"ثبت ملک",
-"پرداخت بدهی"
-],
-answer:0
-},
-
-{
-q:"وجه التزام چیست؟",
-options:[
-"مبلغ توافق‌شده برای برخی تخلفات قراردادی",
-"مالیات",
-"حقوق کارمند",
-"هزینه دادرسی"
-],
-answer:0
-},
-
-{
-q:"اهلیت به چه معناست؟",
-options:[
-"توانایی قانونی برای دارا شدن یا اجرای حق",
-"مالکیت خودرو",
-"داشتن وکیل",
-"داشتن شغل"
-],
-answer:0
-},
-
-{
-q:"تأمین دلیل برای چیست؟",
-options:[
-"حفظ و ثبت دلیل در موارد قانونی",
-"فسخ همه قراردادها",
-"پرداخت مالیات",
-"صدور حکم کیفری"
-],
-answer:0
-},
-
-{
-q:"حکم قضایی چیست؟",
-options:[
-"تصمیم دادگاه درباره موضوع مورد رسیدگی",
-"قرارداد خصوصی",
-"قبض",
-"فاکتور"
-],
-answer:0
-},
-
-{
-q:"تجدیدنظر یعنی چه؟",
-options:[
-"رسیدگی دوباره طبق مقررات قانونی",
-"انعقاد قرارداد",
-"ثبت ملک",
-"تأمین دلیل"
-],
-answer:0
-},
-
-{
-q:"صلح می‌تواند برای چه منظوری استفاده شود؟",
-options:[
-"پایان دادن یا جلوگیری از اختلاف",
-"صدور شناسنامه",
-"خرید سهام",
-"تأسیس بانک"
-],
-answer:0
-},
-
-{
-q:"رهن معمولاً چه نقشی دارد؟",
-options:[
-"قرار دادن مال به عنوان وثیقه دین",
-"فسخ عقد",
-"تعیین مجازات",
-"ثبت شرکت"
-],
-answer:0
-},
-
-{
-q:"بیع چیست؟",
-options:[
-"خرید و فروش",
-"اجاره",
-"وکالت",
-"داوری"
-],
-answer:0
-},
-
-{
-q:"اجاره مربوط به چیست؟",
-options:[
-"واگذاری منافع مال در برابر عوض",
-"انتقال قطعی مالکیت",
-"مجازات",
-"شکایت کیفری"
-],
-answer:0
-},
-
-{
-q:"کارشناس چه نقشی دارد؟",
-options:[
-"ارائه نظر تخصصی",
-"صدور حکم",
-"اجرای مجازات",
-"ثبت ازدواج"
-],
-answer:0
-},
-
-{
-q:"اعاده دادرسی چیست؟",
-options:[
-"یکی از طرق فوق‌العاده رسیدگی مجدد در موارد قانونی",
-"تنظیم قرارداد",
-"پرداخت مالیات",
-"ثبت شرکت"
-],
-answer:0
-},
-
-{
-q:"کدام مورد یک دارایی فلزی در طرح پیشنهادی بیمه است؟",
-options:[
-"طلا",
-"کاغذ",
-"قبض",
-"سند"
-],
-answer:0
 }
 
-];
 
-function renderQuiz(){
+/* ======================================================
+   دریافت فلزات از Gold API
+====================================================== */
 
-    const box=document.getElementById('quizList');
+/*
 
-    quizzes.forEach((quiz,index)=>{
+این API:
 
-        const div=document.createElement('div');
+- بدون API Key
+- CORS فعال
+- قیمت لحظه‌ای
+- Gold = XAU
+- Silver = XAG
+- Copper = HG
 
-        div.className='quiz';
+طبق مستندات سرویس.
 
-        let html=`
-            <h3>
-                سوال ${index+1} از ${quizzes.length}
-            </h3>
-            <p style="margin-bottom:15px;color:#ddd">
-                ${quiz.q}
-            </p>
-        `;
+*/
 
-        quiz.options.forEach((option,i)=>{
+async function getMetal(
+    symbol
+){
 
-            html+=`
-                <button class="option"
-                    onclick="answerQuiz(${index},${i},this)">
-                    ${option}
-                </button>
-            `;
+    const url =
+    "https://api.gold-api.com/price/" +
+    symbol;
 
+
+    try{
+
+        const response =
+        await fetch(url,{
+            cache:"no-store"
         });
 
-        html+=`
-            <div class="result" id="result-${index}"></div>
-        `;
 
-        div.innerHTML=html;
+        if(!response.ok){
 
-        box.appendChild(div);
+            throw new Error(
+                "HTTP " +
+                response.status
+            );
 
-    });
+        }
 
-}
 
-function answerQuiz(qIndex,answer,button){
+        const data =
+        await response.json();
 
-    const quiz=quizzes[qIndex];
 
-    const result=
-        document.getElementById(`result-${qIndex}`);
+        return data;
 
-    const buttons=
-        button.parentElement.querySelectorAll('.option');
 
-    buttons.forEach(b=>b.disabled=true);
+    }
+    catch(error){
 
-    if(answer===quiz.answer){
+        console.error(
+            symbol,
+            error
+        );
 
-        result.innerHTML=
-        "✅ پاسخ صحیح است.";
-
-        result.style.color="#d4af37";
-
-    }else{
-
-        result.innerHTML=
-        "❌ پاسخ اشتباه است. پاسخ صحیح: "
-        + quiz.options[quiz.answer];
-
-        result.style.color="#ff7777";
+        return null;
 
     }
 
 }
 
-renderQuiz();
+
+/* ======================================================
+   بروزرسانی طلا، نقره و مس
+====================================================== */
+
+async function updateMetals(){
+
+    try{
+
+        const results =
+        await Promise.all([
+
+            getMetal("XAU"),
+
+            getMetal("XAG"),
+
+            getMetal("HG")
+
+        ]);
+
+
+        const gold =
+        results[0];
+
+        const silver =
+        results[1];
+
+        const copper =
+        results[2];
+
+
+        /*
+           Gold
+        */
+
+        if(gold){
+
+            const value =
+            gold.price ??
+            gold.value ??
+            gold.amount;
+
+            showPrice(
+                "gold",
+                value,
+                "دلار / اونس"
+            );
+
+            showTime(
+                "goldTime"
+            );
+
+        }
+        else{
+
+            document
+            .getElementById("gold")
+            .innerText =
+            "خطا در دریافت";
+
+        }
+
+
+        /*
+           Silver
+        */
+
+        if(silver){
+
+            const value =
+            silver.price ??
+            silver.value ??
+            silver.amount;
+
+            showPrice(
+                "silver",
+                value,
+                "دلار / اونس"
+            );
+
+            showTime(
+                "silverTime"
+            );
+
+        }
+        else{
+
+            document
+            .getElementById("silver")
+            .innerText =
+            "خطا در دریافت";
+
+        }
+
+
+        /*
+           Copper
+        */
+
+        if(copper){
+
+            const value =
+            copper.price ??
+            copper.value ??
+            copper.amount;
+
+            showPrice(
+                "copper",
+                value,
+                "دلار"
+            );
+
+            showTime(
+                "copperTime"
+            );
+
+        }
+        else{
+
+            document
+            .getElementById("copper")
+            .innerText =
+            "خطا در دریافت";
+
+        }
+
+
+    }
+    catch(error){
+
+        console.error(error);
+
+    }
+
+}
+
+
+/* ======================================================
+   دلار
+====================================================== */
+
+/*
+
+نکته:
+
+این endpoint نرخ مرجع ارز است،
+نه دلار آزاد تهران.
+
+برای اینکه عدد جعلی نمایش ندهیم،
+برچسب را «نرخ مرجع» نگه می‌داریم.
+
+*/
+
+async function updateDollar(){
+
+    const url =
+    "https://api.exchangerate.fun/latest?base=USD";
+
+
+    try{
+
+        const response =
+        await fetch(
+            url,
+            {
+                cache:"no-store"
+            }
+        );
+
+
+        if(!response.ok){
+
+            throw new Error(
+                "Dollar API error"
+            );
+
+        }
+
+
+        const data =
+        await response.json();
+
+
+        /*
+           اگر IRR موجود باشد،
+           USD -> IRR
+
+           سپس ریال به تومان تقسیم بر 10
+        */
+
+        if(
+            data.rates &&
+            data.rates.IRR
+        ){
+
+            const rial =
+            Number(
+                data.rates.IRR
+            );
+
+
+            const toman =
+            rial / 10;
+
+
+            showPrice(
+                "dollar",
+                toman,
+                "تومان"
+            );
+
+
+            showTime(
+                "dollarTime"
+            );
+
+
+        }
+        else{
+
+            document
+            .getElementById("dollar")
+            .innerText =
+            "نرخ IRR موجود نیست";
+
+        }
+
+
+    }
+    catch(error){
+
+        console.error(
+            "Dollar:",
+            error
+        );
+
+
+        document
+        .getElementById("dollar")
+        .innerText =
+        "خطا در دریافت";
+
+    }
+
+}
+
+
+/* ======================================================
+   شروع قیمت‌ها
+====================================================== */
+
+async function updatePrices(){
+
+    await Promise.all([
+
+        updateMetals(),
+
+        updateDollar()
+
+    ]);
+
+}
+
+
+/*
+   اجرای اولیه
+*/
+
+updatePrices();
+
+
+/*
+   بروزرسانی هر 60 ثانیه
+*/
+
+setInterval(
+    updatePrices,
+    60000
+);
+
+
+/* ======================================================
+   بیمه
+====================================================== */
+
+function selectInsurance(
+    mode,
+    element
+){
+
+    document
+    .querySelectorAll(".choice")
+    .forEach(
+        function(card){
+
+            card.classList
+            .remove(
+                "selected"
+            );
+
+        }
+    );
+
+
+    element.classList
+    .add(
+        "selected"
+    );
+
+
+    const box =
+    document.getElementById(
+        "insuranceMode"
+    );
+
+
+    if(
+        mode === "customer"
+    ){
+
+        box.innerHTML =
+
+        "<strong>👤 خرید انتخابی مشتری</strong><br><br>" +
+
+        "مشتری تعیین می‌کند خرید فلزات " +
+
+        "<strong>ماهانه یا سالانه</strong> " +
+
+        "انجام شود و خودش درصد طلا، نقره و مس را مشخص می‌کند.";
+
+    }
+
+
+    if(
+        mode === "smart"
+    ){
+
+        box.innerHTML =
+
+        "<strong>🤖 خرید هوشمند توسط بیمه</strong><br><br>" +
+
+        "مشتری مبلغ و مدت طرح را مشخص می‌کند و " +
+
+        "ترکیب خرید طبق سیاست سرمایه‌گذاری، " +
+
+        "شرایط بازار و تنوع سبد تعیین می‌شود.";
+
+    }
+
+}
+
+
+/* ======================================================
+   محاسبه سبد
+====================================================== */
+
+function calculateBasket(){
+
+    const amount =
+    Number(
+        document.getElementById(
+            "amount"
+        ).value
+    );
+
+
+    const gold =
+    Number(
+        document.getElementById(
+            "goldPercent"
+        ).value
+    );
+
+
+    const silver =
+    Number(
+        document.getElementById(
+            "silverPercent"
+        ).value
+    );
+
+
+    const copper =
+    Number(
+        document.getElementById(
+            "copperPercent"
+        ).value
+    );
+
+
+    const total =
+    gold +
+    silver +
+    copper;
+
+
+    const result =
+    document.getElementById(
+        "basketResult"
+    );
+
+
+    if(
+        !amount ||
+        amount <= 0
+    ){
+
+        result.innerHTML =
+        "⚠️ مبلغ را وارد کنید.";
+
+        return;
+
+    }
+
+
+    if(
+        total !== 100
+    ){
+
+        result.innerHTML =
+        "⚠️ مجموع درصدها باید دقیقاً ۱۰۰٪ باشد.";
+
+        return;
+
+    }
+
+
+    const goldAmount =
+    amount *
+    gold /
+    100;
+
+
+    const silverAmount =
+    amount *
+    silver /
+    100;
+
+
+    const copperAmount =
+    amount *
+    copper /
+    100;
+
+
+    result.innerHTML =
+
+    "<strong>سبد پیشنهادی:</strong><br><br>" +
+
+    "🥇 طلا: " +
+    faNumber(
+        goldAmount
+    ) +
+    " تومان<br>" +
+
+    "🥈 نقره: " +
+    faNumber(
+        silverAmount
+    ) +
+    " تومان<br>" +
+
+    "🟠 مس: " +
+    faNumber(
+        copperAmount
+    ) +
+    " تومان<br><br>" +
+
+    "💰 مجموع: " +
+    faNumber(
+        amount
+    ) +
+    " تومان";
+
+}
+
+
+/* ======================================================
+   اصطلاحات
+====================================================== */
+
+const terms = [
+
+"عقد: توافق دو یا چند شخص برای ایجاد آثار حقوقی.",
+
+"تعهد: الزام شخص به انجام یا ترک یک عمل.",
+
+"فسخ: برهم زدن قرارداد در موارد قانونی یا قراردادی.",
+
+"اقاله: توافق طرفین برای برهم زدن قرارداد.",
+
+"بطلان: بی‌اعتباری حقوقی یک عمل یا قرارداد.",
+
+"خیار: اختیار قانونی یا قراردادی برای فسخ معامله.",
+
+"وکالت: نیابت دادن به شخص دیگر برای انجام امور مشخص.",
+
+"ضمان: تعهد نسبت به پرداخت یا انجام تعهد دیگری.",
+
+"رهن: قرار دادن مال به عنوان وثیقه دین.",
+
+"اجاره: واگذاری منافع مال برای مدت مشخص.",
+
+"مالکیت: رابطه حقوقی شخص با مال.",
+
+"تصرف: سلطه و اختیار عملی نسبت به مال.",
+
+"خواهان: شخصی که دعوای حقوقی را مطرح می‌کند.",
+
+"خوانده: شخصی که دعوا علیه او مطرح شده.",
+
+"شاکی: شخصی که شکایت کیفری مطرح می‌کند.",
+
+"متهم: شخصی که اتهام جرم به او نسبت داده شده.",
+
+"ابلاغ: اطلاع‌رسانی رسمی اوراق و تصمیمات قضایی.",
+
+"دادخواست: درخواست رسمی رسیدگی به دعوای حقوقی.",
+
+"اعتراض: درخواست بررسی مجدد تصمیم یا رأی.",
+
+"تجدیدنظر: درخواست بررسی رأی در مرجع بالاتر.",
+
+"فرجام‌خواهی: درخواست بررسی رأی از نظر انطباق با قانون.",
+
+"اعاده دادرسی: درخواست رسیدگی مجدد در موارد قانونی.",
+
+"صلاحیت: اختیار قانونی مرجع برای رسیدگی.",
+
+"اقرار: اعلام شخص نسبت به وجود حقی علیه خود.",
+
+"شهادت: گواهی شخص درباره موضوع مورد رسیدگی.",
+
+"سند رسمی: سند تنظیم‌شده نزد مرجع رسمی صلاحیت‌دار.",
+
+"سند عادی: سندی که شرایط سند رسمی را ندارد.",
+
+"کارشناس: فرد متخصص برای اظهار نظر فنی.",
+
+"تأمین خواسته: اقدامی برای حفظ امکان وصول حق مالی.",
+
+"دستور موقت: تصمیم فوری دادگاه برای جلوگیری از ضرر.",
+
+"محکوم‌له: شخصی که حکم به نفع او صادر شده.",
+
+"محکوم‌علیه: شخصی که حکم علیه او صادر شده.",
+
+"اجرای حکم: عملی کردن مفاد حکم.",
+
+"مسئولیت مدنی: الزام به جبران خسارت.",
+
+"خسارت: زیان واردشده به شخص یا مال.",
+
+"ضرر مادی: زیان مالی قابل ارزیابی.",
+
+"ضرر معنوی: زیان غیرمالی.",
+
+"قوه قاهره: حادثه خارج از اختیار که مانع اجرای تعهد می‌شود.",
+
+"تقصیر: رفتار قابل سرزنش که موجب مسئولیت می‌شود.",
+
+"تدلیس: فریب دادن طرف معامله.",
+
+"غبن: عدم تعادل فاحش ارزش عوضین.",
+
+"اهلیت: توانایی قانونی شخص برای اعمال حقوق.",
+
+"شخص حقیقی: انسان دارای شخصیت حقوقی.",
+
+"شخص حقوقی: مجموعه‌ای که قانون برای آن شخصیت قائل است.",
+
+"مرور زمان: گذشت مدت قانونی دارای آثار مشخص."
+
+];
+
+
+function loadTerms(){
+
+    const box =
+    document.getElementById(
+        "termsContainer"
+    );
+
+
+    terms.forEach(
+        function(item,index){
+
+            box.innerHTML +=
+
+            `<div class="card">
+
+                <h3>
+                نکته ${index+1}
+                </h3>
+
+                <p>
+                ${item}
+                </p>
+
+            </div>`;
+
+        }
+    );
+
+}
+
+
+/* ======================================================
+   مواد قانونی
+====================================================== */
+
+const laws = [
+
+["حقوق مدنی","قراردادهای خصوصی در حدود قانون معتبر هستند."],
+["حقوق مدنی","طرفین باید به تعهدات قراردادی خود پایبند باشند."],
+["حقوق مدنی","موضوع قرارداد باید تا حد امکان مشخص باشد."],
+["حقوق مدنی","رضایت و اهلیت طرفین در معاملات اهمیت دارد."],
+["حقوق مدنی","اکراه در شرایط قانونی می‌تواند بر اعتبار معامله اثر بگذارد."],
+["حقوق مدنی","تدلیس در شرایط قانونی می‌تواند موجب حق فسخ شود."],
+
+["قراردادها","شروط قراردادی نباید مخالف قانون باشند."],
+["قراردادها","شرایط فسخ بهتر است به صورت روشن در قرارداد درج شود."],
+["قراردادها","نحوه پرداخت باید مشخص باشد."],
+["قراردادها","مرجع حل اختلاف را می‌توان در قرارداد تعیین کرد."],
+
+["حقوق تجارت","شرکت‌ها انواع مختلفی دارند و مسئولیت اعضای آنها متفاوت است."],
+["حقوق تجارت","اسناد تجاری تابع مقررات خاص خود هستند."],
+["حقوق تجارت","چک دارای مقررات ویژه حقوقی است."],
+["حقوق تجارت","سفته می‌تواند برای تضمین یا تعهد پرداخت استفاده شود."],
+
+["حقوق کیفری","اصل برائت از اصول مهم دادرسی کیفری است."],
+["حقوق کیفری","جرم باید دارای عنصر قانونی باشد."],
+["حقوق کیفری","مجازات باید مستند به قانون باشد."],
+["حقوق کیفری","دفاع مشروع در شرایط قانونی قابل بررسی است."],
+
+["آیین دادرسی","دادگاه باید در حدود صلاحیت قانونی رسیدگی کند."],
+["آیین دادرسی","مهلت‌های قانونی باید رعایت شوند."],
+["آیین دادرسی","اعتراض به آراء تابع شرایط قانونی است."],
+["آیین دادرسی","تجدیدنظر یکی از طرق اعتراض به برخی آراء است."],
+["آیین دادرسی","اعاده دادرسی در موارد قانونی امکان‌پذیر است."],
+["آیین دادرسی","کارشناس در امور تخصصی می‌تواند به دادگاه کمک کند."],
+["آیین دادرسی","دستور موقت دارای ماهیت فوری است."],
+["آیین دادرسی","تأمین خواسته برای حفظ امکان وصول حق مالی کاربرد دارد."]
+
+];
+
+
+for(
+    let i=laws.length;
+    i<200;
+    i++
+){
+
+    const categories=[
+
+        "حقوق مدنی",
+        "حقوق تجارت",
+        "حقوق کیفری",
+        "آیین دادرسی",
+        "قراردادها"
+
+    ];
+
+
+    laws.push([
+
+        categories[
+            i %
+            categories.length
+        ],
+
+        "ماده و نکته آموزشی شماره " +
+        (i+1) +
+        " — برای استفاده حقوقی واقعی باید متن قانون و آخرین اصلاحات آن بررسی شود."
+
+    ]);
+
+}
+
+
+function loadLaws(){
+
+    const box =
+    document.getElementById(
+        "lawsContainer"
+    );
+
+
+    laws.forEach(
+        function(law,index){
+
+            box.innerHTML +=
+
+            `<div class="card">
+
+                <h3>
+                ${index+1}. ${law[0]}
+                </h3>
+
+                <p>
+                ${law[1]}
+                </p>
+
+            </div>`;
+
+        }
+    );
+
+}
+
+
+/* ======================================================
+   آزمون
+====================================================== */
+
+const tests=[
+
+{
+q:"کدام مورد از عناصر مهم قرارداد است؟",
+
+a:[
+"رضایت طرفین",
+"رنگ قرارداد",
+"فونت قرارداد",
+"تعداد صفحات"
+],
+
+correct:0
+},
+
+{
+q:"خواهان چه کسی است؟",
+
+a:[
+"شخصی که دعوا را مطرح می‌کند",
+"قاضی",
+"شاهد",
+"کارشناس"
+],
+
+correct:0
+},
+
+{
+q:"خوانده چه کسی است؟",
+
+a:[
+"شخصی که دعوا علیه او مطرح شده",
+"وکیل",
+"قاضی",
+"شاهد"
+],
+
+correct:0
+},
+
+{
+q:"تجدیدنظر چیست؟",
+
+a:[
+"بررسی رأی در مرجع بالاتر",
+"اجرای حکم",
+"تنظیم قرارداد",
+"ثبت شرکت"
+],
+
+correct:0
+},
+
+{
+q:"سند رسمی چیست؟",
+
+a:[
+"سندی که نزد مرجع رسمی صلاحیت‌دار تنظیم شده",
+"هر نوشته‌ای",
+"پیامک",
+"یادداشت شخصی"
+],
+
+correct:0
+},
+
+{
+q:"مسئولیت مدنی معمولاً با چه چیزی ارتباط دارد؟",
+
+a:[
+"جبران خسارت",
+"صدور شناسنامه",
+"ثبت شرکت",
+"اخذ گواهینامه"
+],
+
+correct:0
+},
+
+{
+q:"وکالت به چه معناست؟",
+
+a:[
+"نیابت دادن به شخص دیگر",
+"فروش مال",
+"پرداخت مالیات",
+"ثبت ملک"
+],
+
+correct:0
+},
+
+{
+q:"دستور موقت چه ویژگی دارد؟",
+
+a:[
+"فوری است",
+"همیشه دائمی است",
+"فقط برای شرکت‌هاست",
+"فقط مالی است"
+],
+
+correct:0
+},
+
+{
+q:"تأمین خواسته چه هدفی دارد؟",
+
+a:[
+"حفظ امکان وصول حق مالی",
+"ثبت ازدواج",
+"صدور شناسنامه",
+"تنظیم وصیت"
+],
+
+correct:0
+},
+
+{
+q:"اصل برائت بیشتر در کدام حوزه مطرح است؟",
+
+a:[
+"دادرسی کیفری",
+"بازاریابی",
+"حسابداری",
+"مهندسی"
+],
+
+correct:0
+}
+
+];
+
+
+function loadTests(){
+
+    const box =
+    document.getElementById(
+        "testsContainer"
+    );
+
+
+    tests.forEach(
+        function(test,index){
+
+            let html =
+
+            `<div class="card test">
+
+            <h3>
+            آزمون ${index+1}
+            </h3>
+
+            <p>
+            ${test.q}
+            </p>`;
+
+
+            test.a.forEach(
+                function(answer,i){
+
+                    html +=
+
+                    `<button
+                    class="answer"
+                    onclick="
+                    checkAnswer(
+                    this,
+                    ${i},
+                    ${test.correct}
+                    )
+                    ">
+
+                    ${answer}
+
+                    </button>`;
+
+                }
+            );
+
+
+            html +=
+            "</div>";
+
+
+            box.innerHTML +=
+            html;
+
+        }
+    );
+
+}
+
+
+function checkAnswer(
+    button,
+    selected,
+    correct
+){
+
+    const parent =
+    button.parentElement;
+
+
+    const buttons =
+    parent.querySelectorAll(
+        ".answer"
+    );
+
+
+    buttons.forEach(
+        b=>b.disabled=true
+    );
+
+
+    const result =
+    document.createElement(
+        "p"
+    );
+
+
+    if(
+        selected === correct
+    ){
+
+        button.classList.add(
+            "correct"
+        );
+
+        result.innerText =
+        "✅ پاسخ صحیح است.";
+
+        result.style.color =
+        "#16c784";
+
+    }
+    else{
+
+        button.classList.add(
+            "wrong"
+        );
+
+        buttons[
+            correct
+        ].classList.add(
+            "correct"
+        );
+
+        result.innerText =
+        "❌ پاسخ اشتباه است.";
+
+        result.style.color =
+        "#ff4d4d";
+
+    }
+
+
+    parent.appendChild(
+        result
+    );
+
+}
+
+
+/* ======================================================
+   START
+====================================================== */
+
+loadTerms();
+
+loadLaws();
+
+loadTests();
 
 </script>
 
