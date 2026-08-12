@@ -4,1726 +4,1502 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>پارسا کرمی | مرکز حقوقی و بیمه بیکاری فلزات</title>
+<title>پارسا کرمی | مرکز حقوقی و بیمه نوین</title>
 
 <style>
-
-:root{
---navy:#071525;
---navy2:#0c2038;
---card:#0d223a;
---gold:#d4af37;
---gold2:#f1d77a;
---silver:#c7cbd1;
---copper:#b87333;
---white:#f7f7f5;
---muted:#b8c1cc;
---green:#67c587;
---red:#d96c6c;
---border:rgba(212,175,55,.25);
-}
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
 
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:Tahoma,Arial,sans-serif;
-background:
-radial-gradient(circle at top right,rgba(212,175,55,.09),transparent 35%),
-linear-gradient(135deg,var(--navy),#04101d);
-color:var(--white);
-line-height:1.9;
+    font-family:'Vazirmatn',Tahoma,sans-serif;
+    background:#07111f;
+    color:#eef4fb;
+    line-height:1.9;
 }
 
-a{
-color:inherit;
-text-decoration:none;
-}
-
-.container{
-width:min(1150px,92%);
-margin:auto;
-}
-
-/* HEADER */
+/* ===== HEADER ===== */
 
 header{
-position:sticky;
-top:0;
-z-index:1000;
-background:rgba(7,21,37,.96);
-backdrop-filter:blur(12px);
-border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:rgba(7,17,31,.94);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(212,175,55,.25);
 }
 
-.nav{
-min-height:76px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:20px;
+.navbar{
+    max-width:1250px;
+    margin:auto;
+    padding:14px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
 }
 
-.brand{
-display:flex;
-align-items:center;
-gap:12px;
+.logo{
+    color:#d8b44a;
+    font-size:21px;
+    font-weight:900;
+    white-space:nowrap;
 }
 
-.brand-icon{
-width:45px;
-height:45px;
-border:1px solid var(--gold);
-border-radius:50%;
-display:grid;
-place-items:center;
-font-size:22px;
-color:var(--gold2);
+.logo span{
+    color:white;
+    font-weight:500;
 }
 
-.brand h1{
-font-size:18px;
-color:var(--gold2);
+.menu{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:7px;
 }
 
-.brand span{
-font-size:11px;
-color:var(--muted);
-display:block;
+.menu button{
+    border:none;
+    color:#dfe8f3;
+    background:#101d2d;
+    padding:9px 13px;
+    border-radius:12px;
+    cursor:pointer;
+    font-family:inherit;
+    font-size:13px;
+    transition:.25s;
 }
 
-nav{
-display:flex;
-flex-wrap:wrap;
-gap:7px;
+.menu button:hover,
+.menu button.active{
+    background:#d8b44a;
+    color:#07111f;
+    transform:translateY(-2px);
 }
 
-nav a{
-padding:8px 12px;
-border-radius:8px;
-color:var(--muted);
-font-size:13px;
-transition:.25s;
+/* ===== MAIN ===== */
+
+main{
+    max-width:1250px;
+    margin:auto;
+    padding:30px 18px 70px;
 }
 
-nav a:hover{
-background:rgba(212,175,55,.1);
-color:var(--gold2);
+.page{
+    display:none;
+    animation:fade .35s ease;
 }
 
-/* HERO */
+.page.active{
+    display:block;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(12px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ===== HERO ===== */
 
 .hero{
-padding:90px 0 70px;
+    min-height:470px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    border:1px solid rgba(212,175,55,.2);
+    border-radius:30px;
+    background:
+      radial-gradient(circle at 20% 20%,rgba(216,180,74,.13),transparent 28%),
+      radial-gradient(circle at 80% 80%,rgba(37,99,235,.12),transparent 28%),
+      linear-gradient(145deg,#0c1a2c,#091321);
+    box-shadow:0 25px 80px rgba(0,0,0,.35);
 }
 
-.hero-grid{
-display:grid;
-grid-template-columns:1.25fr .75fr;
-gap:45px;
-align-items:center;
+.hero-content{
+    max-width:850px;
+    padding:50px 20px;
 }
 
 .badge{
-display:inline-block;
-padding:6px 13px;
-border:1px solid var(--border);
-border-radius:30px;
-color:var(--gold2);
-background:rgba(212,175,55,.06);
-font-size:12px;
-margin-bottom:18px;
+    display:inline-block;
+    border:1px solid rgba(216,180,74,.4);
+    color:#e8c85f;
+    background:rgba(216,180,74,.08);
+    padding:7px 18px;
+    border-radius:30px;
+    font-size:13px;
+    margin-bottom:18px;
 }
 
-.hero h2{
-font-size:clamp(30px,5vw,52px);
-line-height:1.35;
-margin-bottom:20px;
+.hero h1{
+    font-size:clamp(30px,6vw,62px);
+    line-height:1.25;
+    margin-bottom:18px;
 }
 
-.hero h2 strong{
-color:var(--gold2);
+.gold{
+    color:#d8b44a;
 }
 
 .hero p{
-color:var(--muted);
-font-size:16px;
+    color:#b7c5d5;
+    max-width:720px;
+    margin:auto;
+    font-size:16px;
 }
 
-.hero-card{
-padding:35px;
-border:1px solid var(--border);
-border-radius:22px;
-background:linear-gradient(145deg,rgba(16,45,74,.9),rgba(8,25,43,.9));
-text-align:center;
+.hero-actions{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:30px;
 }
 
-.hero-card .symbol{
-font-size:70px;
+/* ===== BUTTON ===== */
+
+.btn{
+    display:inline-block;
+    border:none;
+    border-radius:13px;
+    padding:12px 20px;
+    font-family:inherit;
+    cursor:pointer;
+    font-weight:700;
+    transition:.25s;
 }
 
-.hero-card h3{
-color:var(--gold2);
+.btn-gold{
+    background:#d8b44a;
+    color:#07111f;
 }
 
-/* SECTIONS */
-
-section{
-padding:70px 0;
+.btn-dark{
+    background:#17263a;
+    color:white;
+    border:1px solid #29405d;
 }
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+/* ===== SECTION ===== */
 
 .section-title{
-text-align:center;
-margin-bottom:40px;
+    margin:10px 0 25px;
 }
 
 .section-title h2{
-color:var(--gold2);
-font-size:29px;
-margin-bottom:10px;
+    font-size:29px;
+    color:#f2f6fb;
 }
 
 .section-title p{
-color:var(--muted);
-font-size:14px;
+    color:#8fa1b5;
+    margin-top:4px;
 }
 
-/* CARDS */
+/* ===== CARDS ===== */
 
-.cards{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:18px;
 }
 
 .card{
-background:var(--card);
-border:1px solid var(--border);
-border-radius:17px;
-padding:25px;
+    background:linear-gradient(145deg,#0e1c2e,#0b1726);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:20px;
+    padding:22px;
+    box-shadow:0 12px 35px rgba(0,0,0,.18);
+    transition:.25s;
 }
 
-.card-icon{
-font-size:35px;
-margin-bottom:10px;
+.card:hover{
+    transform:translateY(-5px);
+    border-color:rgba(216,180,74,.3);
 }
 
 .card h3{
-color:var(--gold2);
-margin-bottom:10px;
+    color:#e6c65c;
+    margin-bottom:9px;
 }
 
 .card p{
-color:var(--muted);
-font-size:13px;
+    color:#aebdcd;
+    font-size:14px;
 }
 
-/* NOTICE */
+/* ===== STATS ===== */
 
-.notice{
-border:1px solid rgba(217,108,108,.5);
-background:rgba(217,108,108,.07);
-padding:18px 20px;
-border-radius:14px;
-margin-bottom:30px;
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:14px;
+    margin:25px 0;
 }
 
-.notice strong{
-color:#ff9a9a;
+.stat{
+    text-align:center;
+    background:#0d1b2c;
+    border:1px solid rgba(216,180,74,.15);
+    border-radius:18px;
+    padding:20px;
 }
 
-.notice p{
-color:#e3caca;
-font-size:13px;
+.stat strong{
+    display:block;
+    font-size:27px;
+    color:#d8b44a;
 }
 
-/* CONCEPT */
-
-.concept{
-background:linear-gradient(
-145deg,
-rgba(212,175,55,.08),
-rgba(12,32,56,.8)
-);
-border:1px solid var(--border);
-border-radius:22px;
-padding:35px;
-}
-
-.concept h3{
-color:var(--gold2);
-margin-bottom:15px;
-}
-
-.concept p{
-color:#d3d9e0;
-font-size:14px;
-margin-bottom:12px;
-}
-
-/* METALS */
-
-.metal-flow{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px;
-margin-top:25px;
-}
-
-.metal{
-padding:24px;
-border-radius:15px;
-text-align:center;
-border:1px solid rgba(255,255,255,.1);
-}
-
-.metal.gold{
-background:rgba(212,175,55,.09);
-}
-
-.metal.silver{
-background:rgba(199,203,209,.08);
-}
-
-.metal.copper{
-background:rgba(184,115,51,.09);
-}
-
-.metal .emoji{
-font-size:40px;
-}
-
-.metal h4{
-margin:8px 0;
-}
-
-.metal p{
-font-size:12px;
-color:var(--muted);
-}
-
-/* PRICE BOX */
-
-.price-section{
-margin-top:35px;
-}
+/* ===== PRICE ===== */
 
 .price-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
 }
 
 .price-card{
-background:var(--card);
-border:1px solid var(--border);
-border-radius:18px;
-padding:25px;
-text-align:center;
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(145deg,#101f32,#0b1624);
+    border:1px solid rgba(216,180,74,.22);
+    border-radius:22px;
+    padding:25px;
 }
 
-.price-card .price-icon{
-font-size:40px;
+.price-icon{
+    font-size:40px;
 }
 
-.price-card h3{
-margin:8px 0;
+.price-name{
+    font-size:20px;
+    font-weight:800;
+    margin:8px 0;
 }
 
 .price{
-font-size:24px;
-font-weight:bold;
-color:var(--gold2);
-margin:10px 0;
+    font-size:29px;
+    font-weight:900;
+    color:#e7c45a;
+    direction:ltr;
 }
 
-.price small{
-font-size:11px;
-color:var(--muted);
+.price-unit{
+    color:#899caf;
+    font-size:12px;
 }
 
-.update-time{
-font-size:11px;
-color:var(--muted);
+.price-status{
+    margin-top:12px;
+    font-size:12px;
+    color:#76d49a;
 }
 
-.loading{
-color:var(--muted);
-}
+/* ===== FORMS ===== */
 
-/* PROFIT MODEL */
-
-.profit-box{
-margin-top:35px;
-padding:30px;
-border:1px solid var(--border);
-border-radius:20px;
-background:rgba(212,175,55,.05);
-}
-
-.profit-box h3{
-color:var(--gold2);
-margin-bottom:15px;
-}
-
-.profit-model{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
-margin-top:20px;
-}
-
-.profit-card{
-padding:22px;
-border-radius:15px;
-background:var(--card);
-border:1px solid rgba(255,255,255,.08);
-}
-
-.profit-card h4{
-margin-bottom:8px;
-}
-
-.customer{
-border-right:4px solid var(--green);
-}
-
-.owner{
-border-right:4px solid var(--gold);
-}
-
-.percent{
-font-size:32px;
-font-weight:bold;
-color:var(--gold2);
-}
-
-/* PLANS */
-
-.plans{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-margin-top:35px;
-}
-
-.plan{
-padding:30px;
-border-radius:20px;
-background:var(--card);
-border:1px solid var(--border);
-}
-
-.plan.featured{
-transform:translateY(-7px);
-box-shadow:0 18px 45px rgba(212,175,55,.13);
-}
-
-.plan-label{
-display:inline-block;
-padding:4px 10px;
-border-radius:20px;
-font-size:11px;
-margin-bottom:14px;
-}
-
-.gold-label{
-background:rgba(212,175,55,.16);
-color:var(--gold2);
-}
-
-.silver-label{
-background:rgba(199,203,209,.14);
-color:#e1e3e7;
-}
-
-.copper-label{
-background:rgba(184,115,51,.15);
-color:#e4a66d;
-}
-
-.plan h3{
-font-size:22px;
-}
-
-.plan ul{
-list-style:none;
-margin:20px 0;
-}
-
-.plan li{
-color:var(--muted);
-font-size:13px;
-padding:7px 0;
-border-bottom:1px dashed rgba(255,255,255,.08);
-}
-
-.plan li::before{
-content:"✓";
-color:var(--gold);
-margin-left:7px;
-}
-
-/* CALCULATOR */
-
-.calculator{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:25px;
-}
-
-.form-box,
-.result-box{
-background:var(--card);
-border:1px solid var(--border);
-border-radius:20px;
-padding:28px;
+.form-box{
+    background:#0d1b2c;
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:22px;
+    padding:25px;
 }
 
 label{
-display:block;
-color:#dce1e7;
-font-size:13px;
-margin-bottom:7px;
+    display:block;
+    color:#b8c5d4;
+    margin-bottom:7px;
+    font-size:13px;
 }
 
 input,
 select{
-width:100%;
-padding:13px 14px;
-margin-bottom:18px;
-border:1px solid rgba(255,255,255,.13);
-background:#071827;
-color:var(--white);
-border-radius:10px;
-outline:none;
-font-family:inherit;
+    width:100%;
+    padding:13px;
+    border-radius:12px;
+    border:1px solid #29405a;
+    background:#081422;
+    color:white;
+    font-family:inherit;
+    outline:none;
+    margin-bottom:15px;
 }
 
 input:focus,
 select:focus{
-border-color:var(--gold);
+    border-color:#d8b44a;
 }
 
-.btn{
-width:100%;
-border:0;
-padding:13px 18px;
-border-radius:10px;
-background:linear-gradient(135deg,var(--gold),#a98218);
-color:#101010;
-font-weight:bold;
-cursor:pointer;
-font-family:inherit;
-transition:.25s;
+/* ===== RESULT ===== */
+
+.result{
+    margin-top:18px;
+    padding:20px;
+    border-radius:17px;
+    background:#071321;
+    border:1px solid rgba(216,180,74,.22);
 }
 
-.btn:hover{
-transform:translateY(-2px);
+.result strong{
+    color:#e2c255;
 }
 
-.result-item{
-display:flex;
-justify-content:space-between;
-gap:15px;
-padding:14px 0;
-border-bottom:1px solid rgba(255,255,255,.08);
+/* ===== LEGAL ===== */
+
+.legal-card{
+    cursor:pointer;
 }
 
-.result-item span{
-color:var(--muted);
+.legal-content{
+    display:none;
+    margin-top:15px;
+    padding-top:15px;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#b6c4d4;
+    font-size:14px;
 }
 
-.result-item strong{
-color:var(--gold2);
+.legal-card.open .legal-content{
+    display:block;
 }
 
-.total{
-margin-top:20px;
-padding:20px;
-border-radius:13px;
-background:rgba(212,175,55,.08);
-text-align:center;
+/* ===== QUIZ ===== */
+
+.question{
+    background:#0d1b2c;
+    padding:20px;
+    border-radius:18px;
+    margin-bottom:16px;
+    border:1px solid rgba(255,255,255,.07);
 }
 
-.total small{
-display:block;
-color:var(--muted);
+.question h3{
+    font-size:16px;
+    margin-bottom:13px;
 }
 
-.total strong{
-display:block;
-color:var(--gold2);
-font-size:27px;
-margin-top:5px;
+.option{
+    display:block;
+    background:#111f31;
+    border:1px solid #243950;
+    padding:11px 14px;
+    margin:8px 0;
+    border-radius:11px;
+    cursor:pointer;
 }
 
-/* 5 YEAR CALCULATOR */
-
-.scenario{
-margin-top:35px;
-padding:30px;
-border-radius:22px;
-background:
-linear-gradient(
-145deg,
-rgba(184,115,51,.12),
-rgba(12,32,56,.9)
-);
-border:1px solid rgba(184,115,51,.4);
+.option:hover{
+    border-color:#d8b44a;
 }
 
-.scenario h3{
-color:#e4a66d;
-margin-bottom:10px;
+/* ===== INFO ===== */
+
+.info{
+    background:linear-gradient(135deg,#101f32,#0b1624);
+    padding:30px;
+    border-radius:25px;
+    border:1px solid rgba(216,180,74,.18);
 }
 
-.scenario-text{
-color:var(--muted);
-font-size:13px;
-margin-bottom:22px;
+.info p{
+    color:#b5c3d2;
 }
 
-.scenario-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:20px;
-}
-
-.scenario-result{
-margin-top:25px;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:12px;
-}
-
-.scenario-item{
-background:rgba(0,0,0,.2);
-border:1px solid rgba(255,255,255,.08);
-border-radius:14px;
-padding:18px;
-text-align:center;
-}
-
-.scenario-item span{
-display:block;
-font-size:11px;
-color:var(--muted);
-}
-
-.scenario-item strong{
-display:block;
-font-size:20px;
-color:var(--gold2);
-margin-top:5px;
-}
-
-.share{
-margin-top:22px;
-padding:18px;
-border-radius:14px;
-background:rgba(103,197,135,.08);
-border:1px solid rgba(103,197,135,.25);
-}
-
-.share strong{
-color:var(--green);
-}
-
-/* PURCHASE */
-
-.purchase-grid{
-display:grid;
-grid-template-columns:.9fr 1.1fr;
-gap:25px;
-}
-
-.preview{
-background:#f4f0df;
-color:#1d2731;
-border-radius:18px;
-padding:30px;
-border:5px solid #b9972d;
-}
-
-.preview h3{
-color:#76601a;
-}
-
-.preview p{
-font-size:13px;
-margin:10px 0;
-}
-
-.contract-box{
-margin-top:20px;
-padding:15px;
-border:1px dashed #8e7a32;
-border-radius:10px;
-background:rgba(255,255,255,.4);
-}
-
-/* FOOTER */
+/* ===== FOOTER ===== */
 
 footer{
-padding:40px 0;
-border-top:1px solid var(--border);
-background:#040d17;
+    border-top:1px solid rgba(255,255,255,.07);
+    text-align:center;
+    padding:30px 15px;
+    color:#77899d;
+    background:#050d17;
 }
 
-.footer-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:30px;
+footer strong{
+    color:#d8b44a;
 }
 
-footer h3{
-color:var(--gold2);
-margin-bottom:10px;
-}
-
-footer p{
-color:var(--muted);
-font-size:12px;
-}
-
-.copyright{
-text-align:center;
-margin-top:30px;
-padding-top:20px;
-border-top:1px solid rgba(255,255,255,.06);
-color:#758291;
-font-size:11px;
-}
-
-/* MOBILE */
+/* ===== RESPONSIVE ===== */
 
 @media(max-width:850px){
+    .navbar{
+        flex-direction:column;
+    }
 
-.hero-grid,
-.calculator,
-.purchase-grid{
-grid-template-columns:1fr;
+    .menu{
+        width:100%;
+    }
+
+    .menu button{
+        font-size:12px;
+        padding:8px 10px;
+    }
+
+    .price-grid{
+        grid-template-columns:1fr;
+    }
 }
 
-.cards,
-.plans,
-.metal-flow,
-.price-grid{
-grid-template-columns:1fr;
-}
+@media(max-width:600px){
+    main{
+        padding:18px 12px 50px;
+    }
 
-.profit-model{
-grid-template-columns:1fr;
-}
+    .hero{
+        min-height:420px;
+    }
 
-.scenario-grid{
-grid-template-columns:1fr;
-}
+    .hero h1{
+        font-size:32px;
+    }
 
-.scenario-result{
-grid-template-columns:1fr 1fr;
-}
+    .hero p{
+        font-size:14px;
+    }
 
-.plan.featured{
-transform:none;
+    .section-title h2{
+        font-size:24px;
+    }
 }
-
-.nav{
-flex-direction:column;
-padding:12px 0;
-}
-
-nav{
-justify-content:center;
-}
-
-.footer-grid{
-grid-template-columns:1fr;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
 <header>
+    <div class="navbar">
 
-<div class="container nav">
+        <div class="logo">
+            ⚖️ پارسا کرمی
+            <span>| مرکز حقوقی</span>
+        </div>
 
-<a href="#home" class="brand">
+        <nav class="menu">
 
-<div class="brand-icon">⚖</div>
+            <button class="active" onclick="showPage('home',this)">
+                🏠 خانه
+            </button>
 
-<div>
-<h1>پارسا کرمی</h1>
-<span>مرکز حقوقی و خدمات هوشمند</span>
-</div>
+            <button onclick="showPage('insurance',this)">
+                🛡️ بیمه فلزات
+            </button>
 
-</a>
+            <button onclick="showPage('prices',this)">
+                📈 قیمت آنلاین
+            </button>
 
-<nav>
+            <button onclick="showPage('calculator',this)">
+                🧮 محاسبه‌گر
+            </button>
 
-<a href="#home">خانه</a>
-<a href="#legal">خدمات حقوقی</a>
-<a href="#insurance">بیمه بیکاری فلزات</a>
-<a href="#prices">قیمت فلزات</a>
-<a href="#calculator">محاسبه‌گر</a>
-<a href="#scenario">سناریوی ۵ ساله</a>
-<a href="#purchase">خرید نمایشی</a>
-<a href="#contact">ارتباط</a>
+            <button onclick="showPage('legal',this)">
+                ⚖️ مرکز حقوقی
+            </button>
 
-</nav>
+            <button onclick="showPage('terms',this)">
+                📚 اصطلاحات
+            </button>
 
-</div>
+            <button onclick="showPage('tips',this)">
+                💡 نکات
+            </button>
 
+            <button onclick="showPage('quiz',this)">
+                📝 آزمون
+            </button>
+
+            <button onclick="showPage('about',this)">
+                👤 درباره من
+            </button>
+
+        </nav>
+    </div>
 </header>
 
 
 <main>
 
-<!-- HERO -->
+<!-- ================= HOME ================= -->
 
-<section class="hero" id="home">
+<section id="home" class="page active">
 
-<div class="container hero-grid">
+    <div class="hero">
 
-<div>
+        <div class="hero-content">
 
-<span class="badge">
-مرکز حقوقی و خدمات هوشمند
-</span>
+            <div class="badge">
+                مرکز حقوقی و ایده‌های نوین مالی
+            </div>
 
-<h2>
-راهکارهای نوین برای
-<strong>امنیت مالی و حقوقی</strong>
-</h2>
+            <h1>
+                به وب‌سایت رسمی
+                <span class="gold">پارسا کرمی</span>
+                خوش آمدید
+            </h1>
 
-<p>
-پارسا کرمی با تمرکز بر خدمات حقوقی، ایده‌های نوآورانه
-و ابزارهای هوشمند، بستری برای بررسی راهکارهای جدید
-مالی و قراردادی فراهم می‌کند.
-</p>
+            <p>
+                بستری برای آموزش حقوق، آشنایی با قوانین،
+                آزمون‌های حقوقی و معرفی طرح نوین
+                بیمه بیکاری مبتنی بر طلا، نقره و مس.
+            </p>
 
-</div>
+            <div class="hero-actions">
 
-<div class="hero-card">
+                <button class="btn btn-gold"
+                onclick="showPage('insurance')">
+                    مشاهده طرح بیمه
+                </button>
 
-<div class="symbol">⚖️</div>
+                <button class="btn btn-dark"
+                onclick="showPage('legal')">
+                    ورود به مرکز حقوقی
+                </button>
 
-<h3>پارسا کرمی</h3>
+            </div>
 
-<p>
-مرکز حقوقی و خدمات هوشمند
-</p>
+            <div style="margin-top:25px;font-size:28px">
+                ❤️
+            </div>
 
-</div>
+            <p style="margin-top:5px;color:#d8b44a">
+                کاربر عزیز، از حضور شما سپاسگزاریم.
+            </p>
 
-</div>
+        </div>
 
-</section>
+    </div>
 
+    <div class="stats">
 
-<!-- LEGAL -->
+        <div class="stat">
+            <strong>۳</strong>
+            فلز پایه طرح
+        </div>
 
-<section id="legal">
+        <div class="stat">
+            <strong>۸۰٪</strong>
+            سهم مشتری
+        </div>
 
-<div class="container">
+        <div class="stat">
+            <strong>۲۰٪</strong>
+            سهم صاحب بیمه
+        </div>
 
-<div class="section-title">
+        <div class="stat">
+            <strong>۲۴/۷</strong>
+            دسترسی آموزشی
+        </div>
 
-<h2>⚖️ خدمات حقوقی</h2>
-
-<p>
-بخشی از خدمات و موضوعات قابل بررسی
-</p>
-
-</div>
-
-<div class="cards">
-
-<div class="card">
-
-<div class="card-icon">📄</div>
-
-<h3>مشاوره حقوقی</h3>
-
-<p>
-بررسی مسائل و موضوعات حقوقی، قراردادی
-و اداری و ارائه راهنمایی اولیه.
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="card-icon">📝</div>
-
-<h3>بررسی قراردادها</h3>
-
-<p>
-بررسی ساختار قرارداد، تعهدات طرفین،
-ریسک‌های احتمالی و نکات مهم.
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="card-icon">🏛️</div>
-
-<h3>امور حقوقی و اداری</h3>
-
-<p>
-ارائه اطلاعات عمومی درباره فرآیندهای
-حقوقی، اداری و قراردادی.
-</p>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- INSURANCE -->
-
-<section id="insurance">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>🛡️ بیمه بیکاری فلزات</h2>
-
-<p>
-مدل مفهومی پیوند دادن دارایی‌های فلزی با حمایت مالی
-</p>
-
-</div>
-
-
-<div class="notice">
-
-<strong>
-⚠️ توجه مهم
-</strong>
-
-<p>
-این بخش در حال حاضر یک مدل مفهومی و آموزشی است
-و به‌تنهایی قرارداد بیمه یا تضمین پرداخت محسوب نمی‌شود.
-اجرای واقعی آن نیازمند طراحی حقوقی، اکچوئری، مقررات
-بیمه‌ای و مجوزهای لازم خواهد بود.
-</p>
-
-</div>
-
-
-<div class="concept">
-
-<h3>
-ایده «بیمه بیکاری فلزات» چیست؟
-</h3>
-
-<p>
-در این مدل فرضی، پرداخت‌های مشتری به سبدی متشکل
-از طلا، نقره و مس اختصاص پیدا می‌کند.
-</p>
-
-<p>
-ارزش این دارایی‌ها در طول زمان می‌تواند افزایش یا کاهش پیدا کند.
-در صورت ایجاد سود، سود حاصل طبق فرض این طرح به شکل
-<strong>۸۰٪ برای مشتری و ۲۰٪ برای متولی طرح</strong>
-تقسیم می‌شود.
-</p>
-
-<p>
-بنابراین ۲۰٪ سهم متولی، مبلغی جداگانه که از مشتری دریافت شود نیست؛
-بلکه سهم متولی از <strong>سود ایجادشده</strong> است.
-</p>
-
-
-<div class="metal-flow">
-
-<div class="metal gold">
-
-<div class="emoji">🥇</div>
-
-<h4>طلا</h4>
-
-<p>
-ذخیره ارزش با ارزش واحد بالاتر
-</p>
-
-</div>
-
-
-<div class="metal silver">
-
-<div class="emoji">🥈</div>
-
-<h4>نقره</h4>
-
-<p>
-دارایی با ارزش واحد پایین‌تر و قابلیت تنوع
-</p>
-
-</div>
-
-
-<div class="metal copper">
-
-<div class="emoji">🟠</div>
-
-<h4>مس</h4>
-
-<p>
-فلزی صنعتی با امکان رشد و نوسان متفاوت
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- PROFIT MODEL -->
-
-<div class="profit-box">
-
-<h3>
-💰 مدل تقسیم سود ۸۰ / ۲۰
-</h3>
-
-<p class="scenario-text">
-
-در این مدل مفهومی، اصل دارایی متعلق به مشتری است
-و سود ایجادشده از رشد ارزش فلزات طبق قرارداد فرضی
-به نسبت ۸۰٪ و ۲۰٪ تقسیم می‌شود.
-
-</p>
-
-<div class="profit-model">
-
-<div class="profit-card customer">
-
-<h4>👤 سهم مشتری</h4>
-
-<div class="percent">۸۰٪</div>
-
-<p>
-۸۰ درصد سود ناشی از افزایش ارزش دارایی‌های فلزی
-</p>
-
-</div>
-
-
-<div class="profit-card owner">
-
-<h4>🏢 سهم متولی طرح</h4>
-
-<div class="percent">۲۰٪</div>
-
-<p>
-۲۰ درصد سود ایجادشده؛ که در مدل مفهومی می‌تواند
-منبع تأمین هزینه‌ها و مزایای حمایت بیکاری باشد.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- PLANS -->
-
-<div class="section-title" style="margin-top:55px;">
-
-<h2>طرح‌های پیشنهادی</h2>
-
-<p>
-سه مدل مفهومی برای سبد فلزی
-</p>
-
-</div>
-
-
-<div class="plans">
-
-<div class="plan featured">
-
-<span class="plan-label gold-label">
-طرح اول
-</span>
-
-<h3>🥇 طرح طلایی</h3>
-
-<ul>
-
-<li>تمرکز بر طلا</li>
-<li>تقسیم سود ۸۰ / ۲۰</li>
-<li>پرداخت ماهانه قابل انتخاب</li>
-<li>محاسبه ارزش دارایی</li>
-<li>سناریوی حمایت بیکاری</li>
-
-</ul>
-
-</div>
-
-
-<div class="plan">
-
-<span class="plan-label silver-label">
-طرح دوم
-</span>
-
-<h3>🥈 طرح نقره‌ای</h3>
-
-<ul>
-
-<li>تمرکز بر نقره</li>
-<li>تقسیم سود ۸۰ / ۲۰</li>
-<li>پرداخت ماهانه قابل انتخاب</li>
-<li>محاسبه ارزش دارایی</li>
-<li>سناریوی حمایت بیکاری</li>
-
-</ul>
-
-</div>
-
-
-<div class="plan">
-
-<span class="plan-label copper-label">
-طرح سوم
-</span>
-
-<h3>🪙 طرح ترکیبی</h3>
-
-<ul>
-
-<li>ترکیب طلا، نقره و مس</li>
-<li>تقسیم سود ۸۰ / ۲۰</li>
-<li>تنوع در سبد</li>
-<li>محاسبه ارزش دارایی</li>
-<li>سناریوی حمایت بیکاری</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</div>
+<!-- ================= INSURANCE ================= -->
+
+<section id="insurance" class="page">
+
+    <div class="section-title">
+
+        <h2>🛡️ بیمه بیکاری مبتنی بر فلزات</h2>
+
+        <p>
+            یک ایده نوین برای حفظ ارزش پشتوانه مالی بیمه
+        </p>
+
+    </div>
+
+    <div class="info">
+
+        <h3 style="color:#e5c45c;margin-bottom:15px">
+            ایده طرح چیست؟
+        </h3>
+
+        <p>
+            در این مدل فرضی، مبلغ پرداختی مشتری به جای آنکه
+            صرفاً به صورت نقدی نگهداری شود، می‌تواند بر مبنای
+            طلا، نقره و مس به عنوان دارایی‌های پایه طرح در نظر گرفته شود.
+        </p>
+
+        <br>
+
+        <p>
+            در زمان تحقق شرایط مندرج در قرارداد،
+            ارزش دارایی یا سود حاصل طبق قرارداد محاسبه می‌شود.
+            در مدل فعلی این سایت، سود فرضی حاصل از فلزات
+            به صورت <strong>۸۰٪ برای مشتری و ۲۰٪ برای صاحب بیمه</strong>
+            در نظر گرفته شده است.
+        </p>
+
+        <br>
+
+        <p style="color:#d8b44a">
+            ⚠️ این صفحه یک نمونه مفهومی و آموزشی است و
+            به‌تنهایی قرارداد یا محصول بیمه‌ای دارای مجوز محسوب نمی‌شود.
+        </p>
+
+    </div>
+
+    <div class="grid" style="margin-top:22px">
+
+        <div class="card">
+            <h3>🟡 طلا</h3>
+            <p>
+                یکی از دارایی‌های اصلی مورد استفاده در
+                مدل مفهومی طرح.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>⚪ نقره</h3>
+            <p>
+                فلز دوم برای متنوع‌سازی پشتوانه طرح.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🟠 مس</h3>
+            <p>
+                فلزی صنعتی که در مدل پیشنهادی
+                به عنوان دارایی پایه در نظر گرفته شده است.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>📊 تقسیم سود</h3>
+            <p>
+                مدل فعلی سایت:
+                ۸۰٪ مشتری و ۲۰٪ صاحب بیمه.
+            </p>
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- PRICES -->
+<!-- ================= PRICES ================= -->
 
-<section id="prices">
+<section id="prices" class="page">
 
-<div class="container">
+    <div class="section-title">
 
-<div class="section-title">
+        <h2>📈 قیمت آنلاین فلزات</h2>
 
-<h2>📊 قیمت آنلاین فلزات</h2>
+        <p>
+            قیمت مرجع آنلاین طلا، نقره و مس
+        </p>
 
-<p>
-قیمت‌ها در این قسمت می‌توانند مستقیماً از سرویس قیمت‌گذاری
-دریافت و به مشتری نمایش داده شوند.
-</p>
+    </div>
 
-</div>
+    <div class="price-grid">
 
+        <div class="price-card">
 
-<div class="price-grid">
+            <div class="price-icon">🟡</div>
 
-<div class="price-card">
+            <div class="price-name">
+                طلا
+            </div>
 
-<div class="price-icon">🥇</div>
+            <div id="goldPrice" class="price">
+                در حال دریافت...
+            </div>
 
-<h3>طلا</h3>
+            <div class="price-unit">
+                دلار / اونس
+            </div>
 
-<div class="price" id="goldPrice">
-در انتظار قیمت...
-</div>
+            <div id="goldStatus" class="price-status">
+                در حال اتصال...
+            </div>
 
-<div class="update-time" id="goldTime">
-آخرین بروزرسانی: —
-</div>
-
-</div>
-
-
-<div class="price-card">
-
-<div class="price-icon">🥈</div>
-
-<h3>نقره</h3>
-
-<div class="price" id="silverPrice">
-در انتظار قیمت...
-</div>
-
-<div class="update-time" id="silverTime">
-آخرین بروزرسانی: —
-</div>
-
-</div>
+        </div>
 
 
-<div class="price-card">
+        <div class="price-card">
 
-<div class="price-icon">🟠</div>
+            <div class="price-icon">⚪</div>
 
-<h3>مس</h3>
+            <div class="price-name">
+                نقره
+            </div>
 
-<div class="price" id="copperPrice">
-در انتظار قیمت...
-</div>
+            <div id="silverPrice" class="price">
+                در حال دریافت...
+            </div>
 
-<div class="update-time" id="copperTime">
-آخرین بروزرسانی: —
-</div>
+            <div class="price-unit">
+                دلار / اونس
+            </div>
 
-</div>
+            <div id="silverStatus" class="price-status">
+                در حال اتصال...
+            </div>
 
-</div>
+        </div>
 
 
-<div class="notice" style="margin-top:25px;">
+        <div class="price-card">
 
-<strong>
-📌 نکته
-</strong>
+            <div class="price-icon">🟠</div>
 
-<p>
-برای نمایش قیمت واقعی باید این بخش به API معتبر قیمت فلزات
-متصل شود. اعداد این نسخه به‌صورت آزمایشی هستند و نباید
-به‌عنوان قیمت بازار تلقی شوند.
-</p>
+            <div class="price-name">
+                مس
+            </div>
 
-</div>
+            <div id="copperPrice" class="price">
+                در حال دریافت...
+            </div>
 
-</div>
+            <div class="price-unit">
+                دلار / واحد مرجع API
+            </div>
+
+            <div id="copperStatus" class="price-status">
+                در حال اتصال...
+            </div>
+
+        </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:25px">
+
+        <button class="btn btn-gold"
+        onclick="loadPrices()">
+            🔄 بروزرسانی قیمت‌ها
+        </button>
+
+        <p id="priceTime"
+        style="color:#8193a7;margin-top:10px;font-size:12px">
+            آخرین بروزرسانی: -
+        </p>
+
+    </div>
+
+    <div class="card" style="margin-top:22px">
+
+        <h3>ℹ️ نکته مهم</h3>
+
+        <p>
+            اعداد این بخش قیمت مرجع آنلاین هستند و ممکن است
+            با قیمت خرید و فروش داخلی، اجرت، مالیات، نرخ ارز
+            و شرایط بازار ایران تفاوت داشته باشند.
+        </p>
+
+    </div>
 
 </section>
 
 
-<!-- CALCULATOR -->
+<!-- ================= CALCULATOR ================= -->
 
-<section id="calculator">
+<section id="calculator" class="page">
 
-<div class="container">
+    <div class="section-title">
 
-<div class="section-title">
+        <h2>🧮 محاسبه‌گر طرح</h2>
 
-<h2>🧮 محاسبه‌گر طرح</h2>
+        <p>
+            محاسبه نمونه‌ای سهم مشتری و صاحب بیمه
+        </p>
 
-<p>
-محاسبه آزمایشی ارزش پرداخت‌ها و سود فرضی
-</p>
+    </div>
 
-</div>
+    <div class="form-box">
 
+        <label>
+            مبلغ سرمایه‌گذاری / پشتوانه
+        </label>
 
-<div class="calculator">
+        <input
+            id="capital"
+            type="number"
+            placeholder="مثلاً 100000000"
+        >
 
-<div class="form-box">
+        <label>
+            درصد سود فرضی
+        </label>
 
-<label>
-طرح موردنظر
-</label>
+        <input
+            id="profitPercent"
+            type="number"
+            value="10"
+        >
 
-<select id="calcPlan">
+        <button
+        class="btn btn-gold"
+        onclick="calculateInsurance()">
+            محاسبه
+        </button>
 
-<option value="gold">
-🥇 طرح طلایی
-</option>
+        <div id="calcResult" class="result">
 
-<option value="silver">
-🥈 طرح نقره‌ای
-</option>
+            اطلاعات را وارد کنید.
 
-<option value="copper">
-🟠 طرح مسی
-</option>
+        </div>
 
-<option value="combo">
-🪙 طرح ترکیبی
-</option>
-
-</select>
-
-
-<label>
-مبلغ ماهانه (تومان)
-</label>
-
-<input
-type="number"
-id="monthlyAmount"
-value="1000000"
-min="1"
->
-
-
-<label>
-مدت (ماه)
-</label>
-
-<input
-type="number"
-id="months"
-value="60"
-min="1"
-max="120"
->
-
-
-<label>
-درصد رشد فرضی فلز
-</label>
-
-<input
-type="number"
-id="growth"
-value="300"
-min="-100"
->
-
-
-<button
-class="btn"
-onclick="calculatePlan()"
->
-محاسبه
-</button>
-
-</div>
-
-
-<div class="result-box">
-
-<div class="result-item">
-
-<span>
-مجموع پرداخت مشتری
-</span>
-
-<strong id="totalPaid">
-۰ تومان
-</strong>
-
-</div>
-
-
-<div class="result-item">
-
-<span>
-سود فرضی
-</span>
-
-<strong id="profit">
-۰ تومان
-</strong>
-
-</div>
-
-
-<div class="result-item">
-
-<span>
-سهم مشتری از سود
-</span>
-
-<strong id="customerShare">
-۰ تومان
-</strong>
-
-</div>
-
-
-<div class="result-item">
-
-<span>
-سهم متولی از سود
-</span>
-
-<strong id="ownerShare">
-۰ تومان
-</strong>
-
-</div>
-
-
-<div class="total">
-
-<small>
-ارزش نهایی فرضی دارایی
-</small>
-
-<strong id="finalValue">
-۰ تومان
-</strong>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- 5 YEAR SCENARIO -->
+<!-- ================= LEGAL ================= -->
 
-<section id="scenario">
+<section id="legal" class="page">
 
-<div class="container">
+    <div class="section-title">
 
-<div class="section-title">
+        <h2>⚖️ مرکز حقوقی</h2>
 
-<h2>
-🚀 شبیه‌ساز رشد ۵ ساله
-</h2>
+        <p>
+            مجموعه‌ای از مواد و مقررات مهم برای مطالعه و آموزش
+        </p>
 
-<p>
-اگر مس، طلا یا نقره طی ۵ سال آینده رشد مشخصی داشته باشد،
-ارزش دارایی و سهم طرفین چقدر خواهد شد؟
-</p>
+    </div>
 
-</div>
+    <div class="grid">
 
+        <div class="card legal-card"
+        onclick="toggleCard(this)">
 
-<div class="scenario">
+            <h3>📜 ماده ۱۰ قانون مدنی</h3>
 
-<h3>
-🟠 مثال: رشد ۳۰۰٪ مس طی ۵ سال
-</h3>
+            <div class="legal-content">
 
-<p class="scenario-text">
+                قراردادهای خصوصی نسبت به کسانی که آن را
+                منعقد کرده‌اند، در صورتی که مخالف صریح قانون نباشد،
+                نافذ است.
 
-در این مثال فرض می‌کنیم مشتری امروز مبلغ مشخصی را
-در اختیار طرح قرار داده و ارزش آن دارایی طی ۵ سال
-<strong>۳۰۰٪ افزایش</strong> پیدا کند.
+                <br><br>
 
-اصل سرمایه حفظ می‌شود و فقط سود ایجادشده
-با نسبت ۸۰٪ برای مشتری و ۲۰٪ برای متولی تقسیم می‌شود.
+                <strong style="color:#d8b44a">
+                    نکته:
+                </strong>
 
-</p>
+                آزادی قراردادی اصل مهمی در حقوق قراردادهاست،
+                اما محدودیت‌های قانونی باید رعایت شود.
 
+            </div>
 
-<div class="scenario-grid">
-
-<div>
-
-<label>
-ارزش اولیه دارایی (تومان)
-</label>
-
-<input
-type="number"
-id="initialValue"
-value="100000000"
-min="1"
->
-
-</div>
+        </div>
 
 
-<div>
+        <div class="card legal-card"
+        onclick="toggleCard(this)">
 
-<label>
-درصد رشد طی ۵ سال
-</label>
+            <h3>📜 ماده ۲۱۹ قانون مدنی</h3>
 
-<input
-type="number"
-id="fiveYearGrowth"
-value="300"
->
+            <div class="legal-content">
 
-</div>
+                عقودی که بر طبق قانون واقع شده باشند،
+                بین متعاملین و قائم‌مقام آنها لازم‌الاتباع هستند،
+                مگر اینکه به رضای طرفین اقاله یا به علت قانونی فسخ شوند.
 
-</div>
+                <br><br>
 
+                <strong style="color:#d8b44a">
+                    نکته:
+                </strong>
 
-<button
-class="btn"
-onclick="calculateFiveYear()"
->
-محاسبه سناریوی ۵ ساله
-</button>
+                اصل بر لزوم قرارداد صحیح است.
 
+            </div>
 
-<div class="scenario-result">
-
-<div class="scenario-item">
-
-<span>
-ارزش اولیه
-</span>
-
-<strong id="initialResult">
-۰
-</strong>
-
-</div>
+        </div>
 
 
-<div class="scenario-item">
+        <div class="card legal-card"
+        onclick="toggleCard(this)">
 
-<span>
-سود ایجادشده
-</span>
+            <h3>📜 ماده ۲۲۰ قانون مدنی</h3>
 
-<strong id="profitResult">
-۰
-</strong>
+            <div class="legal-content">
 
-</div>
+                عقود نه فقط متعاملین را به اجرای چیزی که
+                در آن تصریح شده است ملزم می‌نماید، بلکه متعاملین
+                به کلیه نتایجی هم که به موجب عرف و عادت یا
+                به موجب قانون از عقد حاصل می‌شود ملزم هستند.
 
+            </div>
 
-<div class="scenario-item">
-
-<span>
-۸۰٪ سهم مشتری
-</span>
-
-<strong id="customerResult">
-۰
-</strong>
-
-</div>
+        </div>
 
 
-<div class="scenario-item">
+        <div class="card legal-card"
+        onclick="toggleCard(this)">
 
-<span>
-۲۰٪ سهم متولی
-</span>
+            <h3>📜 ماده ۲۲۱ قانون مدنی</h3>
 
-<strong id="ownerResult">
-۰
-</strong>
+            <div class="legal-content">
 
-</div>
+                اگر کسی تعهد اقدام به امری را بکند یا تعهد نماید
+                از انجام امری خودداری کند، در صورت تخلف مسئول
+                جبران خسارت طرف مقابل است، مشروط بر اینکه شرایط
+                قانونی مسئولیت فراهم باشد.
 
-</div>
+            </div>
+
+        </div>
 
 
-<div class="share">
+        <div class="card legal-card"
+        onclick="toggleCard(this)">
 
-<strong>
-🛡️ مدل حمایت بیکاری:
-</strong>
+            <h3>📜 ماده ۲۲۶ قانون مدنی</h3>
 
-در این مدل مفهومی، سهم ۲۰٪ متولی از سود می‌تواند
-طبق قرارداد به تأمین هزینه‌های طرح و مزایای حمایت
-از مشتری بیکار اختصاص پیدا کند.
+            <div class="legal-content">
 
-</div>
+                در مورد عدم ایفای تعهدات، شرایط مطالبه خسارت
+                و تعیین موعد انجام تعهد اهمیت دارد.
 
-</div>
+                <br><br>
 
-</div>
+                <strong style="color:#d8b44a">
+                    نکته:
+                </strong>
+
+                صرف وجود تعهد همیشه به معنی امکان مطالبه
+                فوری خسارت نیست و شرایط قانونی باید بررسی شود.
+
+            </div>
+
+        </div>
+
+
+        <div class="card legal-card"
+        onclick="toggleCard(this)">
+
+            <h3>📜 ماده ۳۰ قانون مدنی</h3>
+
+            <div class="legal-content">
+
+                هر مالکی نسبت به مایملک خود حق همه‌گونه تصرف
+                و انتفاع دارد، مگر در مواردی که قانون استثنا کرده باشد.
+
+            </div>
+
+        </div>
+
+
+        <div class="card legal-card"
+        onclick="toggleCard(this)">
+
+            <h3>📜 ماده ۳۱ قانون مدنی</h3>
+
+            <div class="legal-content">
+
+                هیچ مالی را از تصرف صاحب آن نمی‌توان بیرون کرد
+                مگر به حکم قانون.
+
+            </div>
+
+        </div>
+
+
+        <div class="card legal-card"
+        onclick="toggleCard(this)">
+
+            <h3>📜 ماده ۱۲۵۷ قانون مدنی</h3>
+
+            <div class="legal-content">
+
+                هرکس مدعی حقی باشد باید آن را اثبات کند و
+                مدعی‌علیه نیز در موارد قانونی می‌تواند دفاع و
+                ادعای خود را مطرح کند.
+
+            </div>
+
+        </div>
+
+
+        <div class="card legal-card"
+        onclick="toggleCard(this)">
+
+            <h3>📜 ماده ۱۲۸۵ قانون مدنی</h3>
+
+            <div class="legal-content">
+
+                اسناد کتبی در نظام ادله اثبات دعوا جایگاه مهمی دارند.
+
+                <br><br>
+
+                برای استفاده عملی، باید نوع سند و شرایط قانونی
+                آن نیز بررسی شود.
+
+            </div>
+
+        </div>
+
+
+        <div class="card legal-card"
+        onclick="toggleCard(this)">
+
+            <h3>📜 ماده ۱۳۰۹ قانون مدنی</h3>
+
+            <div class="legal-content">
+
+                در موضوع ادله اثبات دعوا، مقررات مربوط به سند،
+                شهادت و سایر ادله باید با توجه به قوانین جاری
+                و رویه قضایی بررسی شوند.
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="card" style="margin-top:22px">
+
+        <h3>⚠️ تذکر حقوقی</h3>
+
+        <p>
+            مطالب این قسمت آموزشی هستند و جایگزین مشاوره حقوقی،
+            بررسی متن کامل قانون، رأی دادگاه یا نظر وکیل نیستند.
+            پیش از استفاده عملی، متن قانون و آخرین اصلاحات آن بررسی شود.
+        </p>
+
+    </div>
 
 </section>
 
 
-<!-- PURCHASE -->
+<!-- ================= TERMS ================= -->
 
-<section id="purchase">
+<section id="terms" class="page">
 
-<div class="container">
+    <div class="section-title">
 
-<div class="section-title">
+        <h2>📚 اصطلاحات مهم حقوقی</h2>
 
-<h2>
-🧾 خرید نمایشی
-</h2>
+        <p>
+            اصطلاحات را ساده و کاربردی یاد بگیرید
+        </p>
 
-<p>
-نمونه نمایشی قرارداد و مشخصات طرح
-</p>
+    </div>
 
-</div>
+    <div class="grid">
 
+        <div class="card">
+            <h3>عقد</h3>
+            <p>
+                توافق حقوقی میان دو یا چند شخص که
+                آثار قانونی ایجاد می‌کند.
+            </p>
+        </div>
 
-<div class="purchase-grid">
+        <div class="card">
+            <h3>فسخ</h3>
+            <p>
+                برهم‌زدن قرارداد در مواردی که قانون یا قرارداد
+                حق فسخ را ایجاد کرده باشد.
+            </p>
+        </div>
 
-<div class="form-box">
+        <div class="card">
+            <h3>اقاله</h3>
+            <p>
+                برهم‌زدن قرارداد با توافق طرفین.
+            </p>
+        </div>
 
-<label>
-نام مشتری
-</label>
+        <div class="card">
+            <h3>خیار</h3>
+            <p>
+                اختیار قانونی یا قراردادی برای فسخ معامله
+                در شرایط مشخص.
+            </p>
+        </div>
 
-<input
-type="text"
-id="customerName"
-placeholder="نام و نام خانوادگی"
->
+        <div class="card">
+            <h3>اهلیت</h3>
+            <p>
+                توانایی قانونی شخص برای دارا شدن حق یا
+                اجرای آن.
+            </p>
+        </div>
 
+        <div class="card">
+            <h3>ذمه</h3>
+            <p>
+                وضعیت حقوقی شخص نسبت به تعهدات و دیون.
+            </p>
+        </div>
 
-<label>
-انتخاب فلز
-</label>
+        <div class="card">
+            <h3>تعهد</h3>
+            <p>
+                رابطه حقوقی که بر اساس آن شخص باید
+                کاری را انجام دهد یا از کاری خودداری کند.
+            </p>
+        </div>
 
-<select id="purchaseMetal">
+        <div class="card">
+            <h3>ضمان قهری</h3>
+            <p>
+                مسئولیتی که بدون قرارداد و بر اساس قانون
+                و وقوع شرایط خاص ایجاد می‌شود.
+            </p>
+        </div>
 
-<option>🥇 طلا</option>
-<option>🥈 نقره</option>
-<option>🟠 مس</option>
-<option>🪙 ترکیبی</option>
+        <div class="card">
+            <h3>دعوای حقوقی</h3>
+            <p>
+                مطالبه یا دفاع درباره یک حق یا رابطه حقوقی
+                در مرجع صالح.
+            </p>
+        </div>
 
-</select>
+        <div class="card">
+            <h3>دعوای کیفری</h3>
+            <p>
+                دعوایی مرتبط با ارتکاب جرم و مسئولیت کیفری.
+            </p>
+        </div>
 
+        <div class="card">
+            <h3>خواهان</h3>
+            <p>
+                شخصی که دعوا را مطرح می‌کند.
+            </p>
+        </div>
 
-<label>
-مبلغ
-</label>
+        <div class="card">
+            <h3>خوانده</h3>
+            <p>
+                شخصی که دعوا علیه او مطرح شده است.
+            </p>
+        </div>
 
-<input
-type="number"
-id="purchaseAmount"
-value="1000000"
->
-
-
-<button
-class="btn"
-onclick="createPreview()"
->
-ایجاد پیش‌نمایش قرارداد
-</button>
-
-</div>
-
-
-<div class="preview">
-
-<div class="preview-header">
-
-<h3>
-قرارداد نمونه
-</h3>
-
-<span>
-⚖️
-</span>
-
-</div>
-
-
-<div id="previewContent">
-
-<p class="empty-preview">
-اطلاعات مشتری را وارد کنید تا پیش‌نمایش
-نمایش داده شود.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- CONTACT -->
+<!-- ================= TIPS ================= -->
 
-<section id="contact">
+<section id="tips" class="page">
 
-<div class="container">
+    <div class="section-title">
 
-<div class="section-title">
+        <h2>💡 نکات حقوقی کاربردی</h2>
 
-<h2>
-📞 ارتباط
-</h2>
+        <p>
+            چند نکته ساده اما مهم
+        </p>
 
-<p>
-پارسا کرمی | مرکز حقوقی و خدمات هوشمند
-</p>
+    </div>
 
-</div>
+    <div class="grid">
 
-<div class="cards">
+        <div class="card">
+            <h3>۱. قرارداد را کامل بخوانید</h3>
+            <p>
+                قبل از امضا، تمام بندها و تعهدات را مطالعه کنید.
+            </p>
+        </div>
 
-<div class="card">
+        <div class="card">
+            <h3>۲. رسید دریافت کنید</h3>
+            <p>
+                پرداخت‌های مهم را تا حد امکان با مدرک قابل اثبات انجام دهید.
+            </p>
+        </div>
 
-<div class="card-icon">
-📱
-</div>
+        <div class="card">
+            <h3>۳. مدارک را نگهداری کنید</h3>
+            <p>
+                قراردادها، رسیدها، پیام‌ها و مدارک مرتبط
+                می‌توانند در اثبات ادعا اهمیت داشته باشند.
+            </p>
+        </div>
 
-<h3>
-تلفن
-</h3>
+        <div class="card">
+            <h3>۴. به مهلت‌ها توجه کنید</h3>
+            <p>
+                برخی اقدامات حقوقی و اعتراض‌ها دارای مهلت قانونی هستند.
+            </p>
+        </div>
 
-<p>
-09302869446
-</p>
+        <div class="card">
+            <h3>۵. سند بدون مطالعه امضا نکنید</h3>
+            <p>
+                حتی اگر به طرف مقابل اعتماد دارید، متن سند را دقیق بررسی کنید.
+            </p>
+        </div>
 
-</div>
+        <div class="card">
+            <h3>۶. متن قانون را بررسی کنید</h3>
+            <p>
+                قوانین ممکن است اصلاح شوند؛ همیشه نسخه جاری قانون را بررسی کنید.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>۷. پیام‌های مهم را پاک نکنید</h3>
+            <p>
+                در برخی اختلافات، سوابق ارتباطی می‌تواند اهمیت داشته باشد.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>۸. در پرونده مهم مشاوره بگیرید</h3>
+            <p>
+                موضوعات تخصصی را قبل از اقدام جدی با فرد متخصص بررسی کنید.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>۹. مشخصات طرف قرارداد را بررسی کنید</h3>
+            <p>
+                هویت و اختیار امضاکننده را تا حد امکان احراز کنید.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>۱۰. شفاهی را مکتوب کنید</h3>
+            <p>
+                توافق‌های مهم را تا حد امکان در قالب نوشته و قابل اثبات ثبت کنید.
+            </p>
+        </div>
+
+    </div>
+
+</section>
 
 
-<div class="card">
+<!-- ================= QUIZ ================= -->
 
-<div class="card-icon">
-📧
-</div>
+<section id="quiz" class="page">
 
-<h3>
-ایمیل
-</h3>
+    <div class="section-title">
 
-<p>
-parsakaramisarabii@gmail.com
-</p>
+        <h2>📝 آزمون حقوقی</h2>
 
-</div>
+        <p>
+            دانش حقوقی خودت را امتحان کن
+        </p>
+
+    </div>
+
+    <form id="quizForm">
+
+        <div class="question">
+
+            <h3>
+                ۱. اصل بر لزوم کدام مورد است؟
+            </h3>
+
+            <label class="option">
+                <input type="radio" name="q1" value="a">
+                قرارداد صحیح
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q1" value="b">
+                هر وعده شفاهی
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q1" value="c">
+                هر پیام
+            </label>
+
+        </div>
 
 
-<div class="card">
+        <div class="question">
 
-<div class="card-icon">
-🎓
-</div>
+            <h3>
+                ۲. خواهان چه کسی است؟
+            </h3>
 
-<h3>
-درباره
-</h3>
+            <label class="option">
+                <input type="radio" name="q2" value="a">
+                شخصی که دعوا علیه اوست
+            </label>
 
-<p>
-دانشجوی رشته حقوق و علاقه‌مند به
-ایده‌های حقوقی و مالی نوآورانه.
-</p>
+            <label class="option">
+                <input type="radio" name="q2" value="b">
+                شخصی که دعوا را مطرح می‌کند
+            </label>
 
-</div>
+            <label class="option">
+                <input type="radio" name="q2" value="c">
+                قاضی پرونده
+            </label>
 
-</div>
+        </div>
 
-</div>
+
+        <div class="question">
+
+            <h3>
+                ۳. اقاله چیست؟
+            </h3>
+
+            <label class="option">
+                <input type="radio" name="q3" value="a">
+                فسخ یک‌طرفه
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q3" value="b">
+                توافق طرفین برای برهم‌زدن قرارداد
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q3" value="c">
+                صدور رأی دادگاه
+            </label>
+
+        </div>
+
+
+        <div class="question">
+
+            <h3>
+                ۴. یکی از مهم‌ترین اقدامات قبل از امضای قرارداد چیست؟
+            </h3>
+
+            <label class="option">
+                <input type="radio" name="q4" value="a">
+                نخواندن قرارداد
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q4" value="b">
+                مطالعه دقیق مفاد قرارداد
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q4" value="c">
+                حذف مدارک
+            </label>
+
+        </div>
+
+
+        <div class="question">
+
+            <h3>
+                ۵. در مدل فعلی طرح بیمه این سایت، سود فرضی چگونه تقسیم می‌شود؟
+            </h3>
+
+            <label class="option">
+                <input type="radio" name="q5" value="a">
+                ۵۰٪ - ۵۰٪
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q5" value="b">
+                ۸۰٪ مشتری - ۲۰٪ صاحب بیمه
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q5" value="c">
+                ۲۰٪ مشتری - ۸۰٪ صاحب بیمه
+            </label>
+
+        </div>
+
+        <button
+        type="button"
+        class="btn btn-gold"
+        onclick="checkQuiz()">
+            بررسی پاسخ‌ها
+        </button>
+
+        <div id="quizResult"
+        class="result"
+        style="display:none">
+        </div>
+
+    </form>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="page">
+
+    <div class="section-title">
+
+        <h2>👤 درباره من</h2>
+
+        <p>
+            معرفی صاحب وب‌سایت
+        </p>
+
+    </div>
+
+    <div class="info">
+
+        <h2 style="color:#d8b44a">
+            پارسا کرمی
+        </h2>
+
+        <p style="margin-top:15px">
+            دانشجوی رشته حقوق
+        </p>
+
+        <br>
+
+        <p>
+            این وب‌سایت با هدف ایجاد یک فضای آموزشی و
+            معرفی ایده‌های نوین در حوزه حقوق و خدمات مالی
+            طراحی شده است.
+        </p>
+
+        <br>
+
+        <p>
+            هدف اصلی، ترکیب آموزش حقوقی ساده و قابل فهم
+            با ایده‌های جدید و کاربردی است.
+        </p>
+
+        <hr style="border:none;border-top:1px solid #23364d;margin:25px 0">
+
+        <p>
+            📞 شماره تماس:
+            <strong style="color:#e3c357">
+                09302869446
+            </strong>
+        </p>
+
+        <p>
+            📧 ایمیل:
+            <strong style="color:#e3c357">
+                parsakaramisarabii@gmail.com
+            </strong>
+        </p>
+
+    </div>
 
 </section>
 
@@ -1732,267 +1508,386 @@ parsakaramisarabii@gmail.com
 
 <footer>
 
-<div class="container">
+    <strong>پارسا کرمی</strong>
 
-<div class="footer-grid">
+    <br>
 
-<div>
+    مرکز حقوقی و ایده‌های نوین
 
-<h3>
-پارسا کرمی
-</h3>
+    <br>
 
-<p>
-مرکز حقوقی و خدمات هوشمند
-</p>
+    © 2026 تمامی حقوق محفوظ است.
 
-</div>
+    <br><br>
 
-
-<div>
-
-<h3>
-توضیح مهم
-</h3>
-
-<p>
-بیمه بیکاری فلزات در این وب‌سایت
-یک ایده و مدل شبیه‌سازی‌شده است و
-تا زمان اخذ مجوزها و طراحی قرارداد رسمی،
-تعهد بیمه‌ای محسوب نمی‌شود.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="copyright">
-
-© 2026 پارسا کرمی | تمامی حقوق محفوظ است.
-
-</div>
-
-</div>
+    <small>
+        محتوای آموزشی این وب‌سایت جایگزین مشاوره تخصصی حقوقی نیست.
+    </small>
 
 </footer>
 
 
 <script>
 
-/* FORMAT NUMBER */
+/* ================= PAGE NAVIGATION ================= */
 
-function formatMoney(number){
+function showPage(id,btn){
 
-return Math.round(number).toLocaleString("fa-IR")
-+
-" تومان";
+    document.querySelectorAll('.page')
+    .forEach(page=>{
+        page.classList.remove('active');
+    });
+
+    const target=document.getElementById(id);
+
+    if(target){
+        target.classList.add('active');
+    }
+
+    document.querySelectorAll('.menu button')
+    .forEach(button=>{
+        button.classList.remove('active');
+    });
+
+    if(btn){
+        btn.classList.add('active');
+    }
+
+    window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    });
+}
+
+
+/* ================= LEGAL CARDS ================= */
+
+function toggleCard(card){
+
+    card.classList.toggle('open');
 
 }
 
 
-/* MAIN CALCULATOR */
+/* ================= LIVE METAL PRICES ================= */
 
-function calculatePlan(){
+async function getMetalPrice(symbol){
 
-let monthly =
-Number(document.getElementById("monthlyAmount").value);
+    try{
 
-let months =
-Number(document.getElementById("months").value);
+        const response = await fetch(
+            `https://api.gold-api.com/price/${symbol}`
+        );
 
-let growth =
-Number(document.getElementById("growth").value);
+        if(!response.ok){
+            throw new Error('API Error');
+        }
 
-if(monthly<=0 || months<=0){
+        const data = await response.json();
 
-alert("لطفاً مقادیر معتبر وارد کنید.");
+        /*
+          API ممکن است نام فیلد قیمت را
+          در نسخه‌های مختلف متفاوت ارائه کند.
+        */
 
-return;
+        const value =
+            data.price ??
+            data.value ??
+            data.ask ??
+            data.rate ??
+            data.close;
 
-}
+        if(value === undefined){
+            throw new Error('Price field not found');
+        }
 
-let totalPaid =
-monthly * months;
+        return Number(value);
 
-let profit =
-totalPaid * (growth / 100);
+    }catch(error){
 
-let customerShare =
-profit * 0.80;
+        console.error(
+            'Metal price error:',
+            symbol,
+            error
+        );
 
-let ownerShare =
-profit * 0.20;
-
-let finalValue =
-totalPaid + profit;
-
-
-document.getElementById("totalPaid").innerText =
-formatMoney(totalPaid);
-
-document.getElementById("profit").innerText =
-formatMoney(profit);
-
-document.getElementById("customerShare").innerText =
-formatMoney(customerShare);
-
-document.getElementById("ownerShare").innerText =
-formatMoney(ownerShare);
-
-document.getElementById("finalValue").innerText =
-formatMoney(finalValue);
-
+        return null;
+    }
 }
 
 
-/* FIVE YEAR CALCULATOR */
+async function loadPrices(){
 
-function calculateFiveYear(){
+    document.getElementById('goldStatus')
+    .innerText='در حال دریافت...';
 
-let initial =
-Number(document.getElementById("initialValue").value);
+    document.getElementById('silverStatus')
+    .innerText='در حال دریافت...';
 
-let growth =
-Number(document.getElementById("fiveYearGrowth").value);
-
-if(initial<=0){
-
-alert("ارزش اولیه را وارد کنید.");
-
-return;
-
-}
-
-let profit =
-initial * growth / 100;
-
-let customer =
-profit * 0.80;
-
-let owner =
-profit * 0.20;
-
-document.getElementById("initialResult").innerText =
-formatMoney(initial);
-
-document.getElementById("profitResult").innerText =
-formatMoney(profit);
-
-document.getElementById("customerResult").innerText =
-formatMoney(customer);
-
-document.getElementById("ownerResult").innerText =
-formatMoney(owner);
-
-}
+    document.getElementById('copperStatus')
+    .innerText='در حال دریافت...';
 
 
-/* PURCHASE PREVIEW */
+    const [gold,silver,copper] =
+        await Promise.all([
+            getMetalPrice('XAU'),
+            getMetalPrice('XAG'),
+            getMetalPrice('HG')
+        ]);
 
-function createPreview(){
 
-let name =
-document.getElementById("customerName").value;
+    setPrice(
+        'goldPrice',
+        'goldStatus',
+        gold
+    );
 
-let metal =
-document.getElementById("purchaseMetal").value;
+    setPrice(
+        'silverPrice',
+        'silverStatus',
+        silver
+    );
 
-let amount =
-Number(document.getElementById("purchaseAmount").value);
+    setPrice(
+        'copperPrice',
+        'copperStatus',
+        copper
+    );
 
-if(!name){
 
-alert("لطفاً نام مشتری را وارد کنید.");
+    const now = new Date();
 
-return;
-
-}
-
-document.getElementById("previewContent").innerHTML = `
-
-<p>
-<strong>نام مشتری:</strong>
-${name}
-</p>
-
-<p>
-<strong>نوع طرح:</strong>
-${metal}
-</p>
-
-<p>
-<strong>مبلغ اولیه:</strong>
-${formatMoney(amount)}
-</p>
-
-<div class="contract-box">
-
-<p>
-این سند صرفاً پیش‌نمایش یک قرارداد مفهومی
-برای طرح بیمه بیکاری مبتنی بر فلزات است.
-</p>
-
-<p>
-در مدل فرضی، اصل دارایی متعلق به مشتری بوده
-و سود ایجادشده با نسبت
-<strong>۸۰٪ مشتری و ۲۰٪ متولی طرح</strong>
-تقسیم می‌شود.
-</p>
-
-<p>
-شرایط دریافت حمایت بیکاری، سقف پرداخت،
-مدت پوشش و سایر تعهدات باید در قرارداد رسمی
-تعیین شود.
-</p>
-
-</div>
-
-`;
+    document.getElementById('priceTime')
+    .innerText =
+        'آخرین بروزرسانی: ' +
+        now.toLocaleTimeString('fa-IR');
 
 }
 
 
-/* DEMO ONLINE PRICES */
+function setPrice(
+    priceId,
+    statusId,
+    value
+){
 
-/*
-برای قیمت واقعی باید این قسمت به API متصل شود.
-فعلاً قیمت نمونه نمایش داده می‌شود.
-*/
+    const priceElement =
+        document.getElementById(priceId);
 
-function loadDemoPrices(){
+    const statusElement =
+        document.getElementById(statusId);
 
-document.getElementById("goldPrice").innerText =
-"قیمت آنلاین";
 
-document.getElementById("silverPrice").innerText =
-"قیمت آنلاین";
+    if(
+        value === null ||
+        Number.isNaN(value)
+    ){
 
-document.getElementById("copperPrice").innerText =
-"قیمت آنلاین";
+        priceElement.innerText =
+            'دریافت نشد';
 
-let time =
-new Date().toLocaleTimeString("fa-IR");
+        statusElement.innerText =
+            '⚠️ اتصال برقرار نشد';
 
-document.getElementById("goldTime").innerText =
-"آخرین بروزرسانی: "+time;
+        statusElement.style.color='#f59e9e';
 
-document.getElementById("silverTime").innerText =
-"آخرین بروزرسانی: "+time;
+        return;
+    }
 
-document.getElementById("copperTime").innerText =
-"آخرین بروزرسانی: "+time;
+
+    priceElement.innerText =
+        Number(value).toLocaleString(
+            'en-US',
+            {
+                maximumFractionDigits:4
+            }
+        );
+
+
+    statusElement.innerText =
+        '● آنلاین';
+
+    statusElement.style.color='#76d49a';
 
 }
 
-loadDemoPrices();
+
+/* ================= CALCULATOR ================= */
+
+function calculateInsurance(){
+
+    const capital =
+        Number(
+            document.getElementById('capital').value
+        );
+
+    const profitPercent =
+        Number(
+            document.getElementById('profitPercent').value
+        );
 
 
-/* INITIAL CALCULATION */
+    if(
+        !capital ||
+        capital <= 0 ||
+        profitPercent < 0
+    ){
 
-calculatePlan();
+        document.getElementById('calcResult')
+        .innerHTML =
+            '⚠️ لطفاً اطلاعات معتبر وارد کنید.';
 
-calculateFiveYear();
+        return;
+    }
+
+
+    const profit =
+        capital *
+        profitPercent /
+        100;
+
+
+    const customerShare =
+        profit * .80;
+
+
+    const insurerShare =
+        profit * .20;
+
+
+    const finalValue =
+        capital + profit;
+
+
+    document.getElementById('calcResult')
+    .innerHTML = `
+
+        <p>
+            سرمایه اولیه:
+            <strong>
+                ${capital.toLocaleString('fa-IR')}
+            </strong>
+        </p>
+
+        <p>
+            سود فرضی:
+            <strong>
+                ${profit.toLocaleString('fa-IR')}
+            </strong>
+        </p>
+
+        <hr style="
+            border:none;
+            border-top:1px solid #263a51;
+            margin:15px 0;
+        ">
+
+        <p>
+            سهم مشتری — ۸۰٪:
+            <strong>
+                ${customerShare.toLocaleString('fa-IR')}
+            </strong>
+        </p>
+
+        <p>
+            سهم صاحب بیمه — ۲۰٪:
+            <strong>
+                ${insurerShare.toLocaleString('fa-IR')}
+            </strong>
+        </p>
+
+        <p style="margin-top:12px">
+            ارزش فرضی نهایی:
+            <strong>
+                ${finalValue.toLocaleString('fa-IR')}
+            </strong>
+        </p>
+
+    `;
+
+}
+
+
+/* ================= QUIZ ================= */
+
+function checkQuiz(){
+
+    const answers={
+
+        q1:'a',
+        q2:'b',
+        q3:'b',
+        q4:'b',
+        q5:'b'
+
+    };
+
+
+    let score=0;
+
+
+    for(
+        const question in answers
+    ){
+
+        const selected =
+            document.querySelector(
+                `input[name="${question}"]:checked`
+            );
+
+
+        if(
+            selected &&
+            selected.value === answers[question]
+        ){
+
+            score++;
+
+        }
+
+    }
+
+
+    const result =
+        document.getElementById('quizResult');
+
+
+    result.style.display='block';
+
+
+    let message='';
+
+
+    if(score===5){
+
+        message=
+            '🏆 فوق‌العاده! هر ۵ پاسخ درست است.';
+
+    }else if(score>=3){
+
+        message=
+            '👏 خوب بود! ' +
+            score +
+            ' پاسخ از ۵ پاسخ درست است.';
+
+    }else{
+
+        message=
+            '📚 نیاز به مرور بیشتری داری. ' +
+            score +
+            ' پاسخ از ۵ پاسخ درست است.';
+
+    }
+
+
+    result.innerHTML=message;
+
+}
+
+
+/* ================= START ================= */
+
+loadPrices();
 
 </script>
 
