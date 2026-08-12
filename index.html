@@ -29,8 +29,6 @@ body{
     min-height:100vh;
 }
 
-/* HEADER */
-
 header{
     padding:28px 15px;
     text-align:center;
@@ -52,8 +50,6 @@ header{
     color:#cfc08d;
     font-size:14px;
 }
-
-/* NAV */
 
 nav{
     position:sticky;
@@ -84,8 +80,6 @@ nav button:hover{
     background:#382805;
     box-shadow:0 0 18px rgba(245,209,107,.2);
 }
-
-/* MAIN */
 
 main{
     max-width:1250px;
@@ -119,8 +113,6 @@ h2{
     padding-right:12px;
     margin-bottom:20px;
 }
-
-/* WELCOME */
 
 .welcome{
     text-align:center;
@@ -157,8 +149,6 @@ h2{
     }
 }
 
-/* CARDS */
-
 .card-grid{
     display:grid;
     grid-template-columns:
@@ -182,8 +172,6 @@ h2{
     transform:translateY(-4px);
     border-color:#d1a83f;
 }
-
-/* PRICES */
 
 .price-card{
     position:relative;
@@ -228,8 +216,6 @@ h2{
     color:#5edc72;
 }
 
-/* GOLD BOX */
-
 .gold-box{
     margin-top:20px;
     background:#0b0b0b;
@@ -239,8 +225,6 @@ h2{
     line-height:2;
     color:#ddd;
 }
-
-/* INPUTS */
 
 input,select{
     width:100%;
@@ -273,7 +257,14 @@ input:focus,select:focus{
     filter:brightness(1.12);
 }
 
-/* PORTFOLIO */
+.small-action{
+    padding:10px 15px;
+    border:1px solid #8b6a22;
+    border-radius:9px;
+    background:#171717;
+    color:#f5d16b;
+    cursor:pointer;
+}
 
 .portfolio-result{
     margin-top:20px;
@@ -322,7 +313,39 @@ input:focus,select:focus{
     transition:width .6s;
 }
 
-/* LAWS */
+.mode-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(230px,1fr));
+    gap:12px;
+    margin-top:15px;
+}
+
+.mode{
+    border:1px solid #554115;
+    background:#0c0c0c;
+    border-radius:15px;
+    padding:17px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.mode:hover{
+    border-color:#c9a13c;
+    transform:translateY(-2px);
+}
+
+.mode.selected{
+    border-color:#d5ad47;
+    box-shadow:0 0 18px rgba(212,170,60,.12);
+    background:linear-gradient(145deg,#211a08,#0a0a0a);
+}
+
+.mode b{
+    display:block;
+    color:#f5d16b;
+    margin-bottom:8px;
+}
 
 .law-list{
     display:grid;
@@ -339,8 +362,6 @@ input:focus,select:focus{
     line-height:1.9;
 }
 
-/* TERMS */
-
 .term{
     background:#101010;
     border-right:3px solid #bd8f25;
@@ -349,8 +370,6 @@ input:focus,select:focus{
     border-radius:8px;
     line-height:1.9;
 }
-
-/* QUIZ */
 
 .quiz{
     background:#101010;
@@ -378,12 +397,6 @@ input:focus,select:focus{
 .result{
     margin-top:12px;
     font-weight:bold;
-}
-
-/* LAWYER */
-
-.lawyer-section{
-    position:relative;
 }
 
 .lawyer-card{
@@ -486,8 +499,6 @@ input:focus,select:focus{
     font-weight:bold;
 }
 
-/* FOOTER */
-
 footer{
     border-top:1px solid #4c3913;
     text-align:center;
@@ -495,8 +506,6 @@ footer{
     padding:25px;
     line-height:2;
 }
-
-/* MOBILE */
 
 @media(max-width:650px){
 
@@ -530,9 +539,7 @@ footer{
 </style>
 </head>
 
-
 <body>
-
 
 <header>
 
@@ -546,30 +553,20 @@ footer{
 
 </header>
 
-
 <nav>
 
 <button onclick="showSection('home')">🏠 خانه</button>
-
 <button onclick="showSection('prices')">📈 قیمت آنلاین</button>
-
 <button onclick="showSection('portfolio')">🧮 سبد فلزات</button>
-
 <button onclick="showSection('insurance')">🪙 بیمه فلزات</button>
-
 <button onclick="showSection('laws')">⚖️ قوانین</button>
-
 <button onclick="showSection('terms')">📚 اصطلاحات</button>
-
 <button onclick="showSection('quiz')">📝 آزمون</button>
-
 <button onclick="showSection('lawyer')">👨‍⚖️ وکیل</button>
 
 </nav>
 
-
 <main>
-
 
 <!-- HOME -->
 
@@ -579,9 +576,7 @@ footer{
 
 <div class="heart">❤️</div>
 
-<h1>
-کاربر عزیز، خوش آمدید
-</h1>
+<h1>کاربر عزیز، خوش آمدید</h1>
 
 <p>
 به سامانه جامع حقوقی، بیمه فلزات و اطلاعات بازار خوش آمدید.
@@ -591,7 +586,7 @@ footer{
 
 <p>
 از منوی بالا می‌توانید قیمت‌های آنلاین،
-ارزش سبد فلزات، اطلاعات بیمه فلزات،
+سبد فلزات، اطلاعات بیمه فلزات،
 قوانین و آزمون‌های آموزشی را مشاهده کنید.
 </p>
 
@@ -608,155 +603,58 @@ footer{
 
 <div class="card-grid">
 
+<div class="card price-card">
+<div class="price-title">💵 دلار آمریکا | بازار داخلی</div>
+<div id="usdPrice" class="price loading">در حال دریافت...</div>
+<div class="unit">تومان</div>
+<div id="usdUpdate" class="update">در حال دریافت...</div>
+</div>
 
 <div class="card price-card">
-
-<div class="price-title">
-💵 دلار آمریکا | بازار تهران
+<div class="price-title">🪙 طلای ۱۸ عیار | بازار داخلی</div>
+<div id="gold18Price" class="price loading">در حال دریافت...</div>
+<div class="unit">تومان / گرم</div>
+<div id="gold18Update" class="update">در حال دریافت...</div>
 </div>
-
-<div id="usdPrice" class="price loading">
-در حال دریافت...
-</div>
-
-<div class="unit">
-تومان
-</div>
-
-<div id="usdUpdate" class="update">
-در حال دریافت...
-</div>
-
-</div>
-
 
 <div class="card price-card">
-
-<div class="price-title">
-🪙 طلای ۱۸ عیار
+<div class="price-title">🌎 اونس جهانی طلا</div>
+<div id="goldOuncePrice" class="price loading">در حال دریافت...</div>
+<div class="unit">دلار / اونس</div>
+<div id="goldOunceUpdate" class="update">در حال دریافت...</div>
 </div>
-
-<div id="gold18Price" class="price loading">
-در حال دریافت...
-</div>
-
-<div class="unit">
-تومان / گرم
-</div>
-
-<div id="gold18Update" class="update">
-در حال دریافت...
-</div>
-
-</div>
-
 
 <div class="card price-card">
-
-<div class="price-title">
-🌎 اونس جهانی طلا
+<div class="price-title">🥈 نقره جهانی XAG</div>
+<div id="xagPrice" class="price loading">در حال دریافت...</div>
+<div class="unit">دلار / اونس</div>
+<div id="xagUpdate" class="update">Gold API</div>
 </div>
-
-<div id="goldOuncePrice" class="price loading">
-در حال دریافت...
-</div>
-
-<div class="unit">
-دلار / اونس
-</div>
-
-<div id="goldOunceUpdate" class="update">
-در حال دریافت...
-</div>
-
-</div>
-
 
 <div class="card price-card">
-
-<div class="price-title">
-🟡 طلای جهانی XAU
-</div>
-
-<div id="xauPrice" class="price loading">
-در حال دریافت...
-</div>
-
-<div class="unit">
-دلار / اونس
-</div>
-
-<div id="xauUpdate" class="update">
-Gold API
+<div class="price-title">🟠 مس جهانی HG</div>
+<div id="hgPrice" class="price loading">در حال دریافت...</div>
+<div class="unit">دلار / واحد سرویس</div>
+<div id="hgUpdate" class="update">Gold API</div>
 </div>
 
 </div>
-
-
-<div class="card price-card">
-
-<div class="price-title">
-🥈 نقره جهانی XAG
-</div>
-
-<div id="xagPrice" class="price loading">
-در حال دریافت...
-</div>
-
-<div class="unit">
-دلار / اونس
-</div>
-
-<div id="xagUpdate" class="update">
-Gold API
-</div>
-
-</div>
-
-
-<div class="card price-card">
-
-<div class="price-title">
-🟠 مس جهانی HG
-</div>
-
-<div id="hgPrice" class="price loading">
-در حال دریافت...
-</div>
-
-<div class="unit">
-دلار / واحد سرویس
-</div>
-
-<div id="hgUpdate" class="update">
-Gold API
-</div>
-
-</div>
-
-
-</div>
-
 
 <div class="gold-box">
 
 <b style="color:#f5d16b">
-منابع داده
+قیمت داخلی و جهانی
 </b>
 
 <br>
 
-دلار و طلای ۱۸ عیار:
-نوسان
-
-<br>
-
-طلا، نقره و مس جهانی:
-Gold API
+قیمت‌های داخلی از سرویس بازار داخلی دریافت می‌شوند
+و قیمت‌های جهانی از سرویس جهانی.
 
 <br><br>
 
-⚠️ قیمت‌های جهانی به معنی قیمت خرده‌فروشی ایران نیستند.
+⚠️ قیمت‌ها ممکن است با تأخیر یا به دلیل محدودیت API
+نمایش داده شوند. این اعداد صرفاً جهت اطلاعات عمومی هستند.
 
 </div>
 
@@ -767,81 +665,136 @@ Gold API
 
 <section id="portfolio" class="section">
 
-<h2>
-🧮 محاسبه سبد فلزات
-</h2>
+<h2>🧮 سبد هوشمند فلزات</h2>
 
 <div class="card">
 
 <p style="line-height:2;color:#ccc">
 
-مقدار فلزات موجود در سبد خود را وارد کنید.
-سامانه ارزش تقریبی هر بخش، ارزش کل سبد و سهم هر فلز
-از کل سرمایه را بر اساس آخرین قیمت‌های دریافت‌شده محاسبه می‌کند.
+مبلغ موردنظر خود را وارد کنید. سپس انتخاب کنید خرید
+به صورت ماهانه یا سالانه انجام شود و چه کسی ترکیب سبد
+را تعیین کند.
 
 </p>
 
 <br>
 
-
-<label>🪙 مقدار طلای ۱۸ عیار (گرم)</label>
-
-<input
-id="portfolioGold18"
-type="number"
-min="0"
-step="0.01"
-placeholder="مثلاً 5"
-/>
-
-
-<label>🥇 مقدار طلای جهانی (اونس)</label>
+<label>💰 مبلغ سرمایه‌گذاری</label>
 
 <input
-id="portfolioGold"
+id="investmentAmount"
 type="number"
 min="0"
-step="0.01"
-placeholder="مثلاً 1"
+placeholder="مثلاً 2000000"
 />
 
+<label>📅 دوره خرید</label>
 
-<label>🥈 مقدار نقره (اونس)</label>
+<select id="purchasePeriod">
+<option value="monthly">ماهانه</option>
+<option value="yearly">سالانه</option>
+</select>
+
+<label>👤 نحوه مدیریت خرید</label>
+
+<div class="mode-grid">
+
+<div
+id="manualMode"
+class="mode selected"
+onclick="selectMode('manual')">
+
+<b>👤 انتخاب توسط کاربر</b>
+
+خود کاربر تعیین می‌کند چه مقدار از سرمایه
+به طلا، نقره و مس اختصاص پیدا کند.
+
+</div>
+
+<div
+id="smartMode"
+class="mode"
+onclick="selectMode('smart')">
+
+<b>🤖 خرید هوشمند</b>
+
+سیستم بر اساس قیمت‌های موجود و قواعد سبد،
+ترکیب پیشنهادی خرید را محاسبه می‌کند.
+
+</div>
+
+</div>
+
+<div id="manualSettings" style="margin-top:20px">
+
+<label>🥇 درصد طلا</label>
 
 <input
-id="portfolioSilver"
+id="goldPercent"
 type="number"
 min="0"
-step="0.01"
-placeholder="مثلاً 20"
+max="100"
+value="40"
 />
 
-
-<label>🟠 مقدار مس</label>
+<label>🥈 درصد نقره</label>
 
 <input
-id="portfolioCopper"
+id="silverPercent"
 type="number"
 min="0"
-step="0.01"
-placeholder="مثلاً 100"
+max="100"
+value="35"
 />
 
+<label>🟠 درصد مس</label>
+
+<input
+id="copperPercent"
+type="number"
+min="0"
+max="100"
+value="25"
+/>
+
+</div>
+
+<div class="gold-box">
+
+<b style="color:#f5d16b">
+مثال
+</b>
+
+<br>
+
+اگر مبلغ سرمایه‌گذاری ۲,۰۰۰,۰۰۰ تومان باشد،
+می‌توانید تعیین کنید مثلاً ۴۰٪ طلا،
+۳۵٪ نقره و ۲۵٪ مس خریداری شود.
+
+</div>
 
 <button
 class="action"
-onclick="calculatePortfolio()">
+onclick="calculateSmartPortfolio()">
 
-محاسبه ارزش سبد
+محاسبه سبد فلزات
 
 </button>
 
 </div>
 
+<div id="portfolioResult" class="portfolio-result"></div>
 
-<div
-id="portfolioResult"
-class="portfolio-result">
+<div class="gold-box">
+
+<b style="color:#f5d16b">⚠️ توجه</b>
+
+<br>
+
+«خرید هوشمند» در این نسخه یک مدل محاسباتی و آموزشی
+است و به معنی انجام خودکار خرید واقعی یا ارائه تضمین
+سود نیست. خرید واقعی نیازمند سازوکار قراردادی،
+مجوزها و اتصال امن به ارائه‌دهنده خدمات مالی است.
 
 </div>
 
@@ -852,9 +805,7 @@ class="portfolio-result">
 
 <section id="insurance" class="section">
 
-<h2>
-🪙 بیمه بیکاری مبتنی بر فلزات
-</h2>
+<h2>🪙 بیمه بیکاری مبتنی بر فلزات</h2>
 
 <div class="card">
 
@@ -871,17 +822,13 @@ class="portfolio-result">
 
 <p style="line-height:2">
 
-در مدل پیشنهادی شما، سود فرضی حاصل از فلزات با نسبت
+در مدل پیشنهادی، سود فرضی حاصل از فلزات با نسبت
 
-<b style="color:#f5d16b">
-۸۰٪ برای مشتری
-</b>
+<b style="color:#f5d16b">۸۰٪ برای مشتری</b>
 
 و
 
-<b style="color:#f5d16b">
-۲۰٪ برای صاحب بیمه
-</b>
+<b style="color:#f5d16b">۲۰٪ برای صاحب بیمه</b>
 
 تقسیم می‌شود.
 
@@ -891,48 +838,37 @@ class="portfolio-result">
 
 <p style="color:#bcae83;line-height:2">
 
-این مدل صرفاً یک طرح مفهومی است و اجرای واقعی آن نیازمند
-بررسی مقررات بیمه، قرارداد، مجوزهای لازم و الزامات مالی و قانونی است.
+این مدل صرفاً یک طرح مفهومی و آموزشی است و اجرای واقعی
+آن نیازمند بررسی مقررات بیمه، قرارداد، مجوزهای لازم
+و الزامات مالی و قانونی است.
 
 </p>
 
 </div>
-
 
 <div class="card-grid" style="margin-top:15px">
 
 <div class="card">
-
 <h3 style="color:#f5d16b">🪙 طلا</h3>
-
 <p style="line-height:2;margin-top:10px">
 دارایی با ارزش بالا که می‌تواند در طراحی یک سبد
 حفظ ارزش نقش داشته باشد.
 </p>
-
 </div>
 
-
 <div class="card">
-
 <h3 style="color:#f5d16b">🥈 نقره</h3>
-
 <p style="line-height:2;margin-top:10px">
 فلزی گران‌بها با کاربردهای سرمایه‌گذاری و صنعتی.
 </p>
-
 </div>
 
-
 <div class="card">
-
 <h3 style="color:#f5d16b">🟠 مس</h3>
-
 <p style="line-height:2;margin-top:10px">
-فلزی صنعتی که قیمت آن می‌تواند تحت تأثیر شرایط
-اقتصاد و تقاضای جهانی قرار گیرد.
+فلزی صنعتی که قیمت آن تحت تأثیر شرایط اقتصاد،
+تولید و تقاضای جهانی قرار می‌گیرد.
 </p>
-
 </div>
 
 </div>
@@ -944,9 +880,7 @@ class="portfolio-result">
 
 <section id="laws" class="section">
 
-<h2>
-⚖️ ۲۰۰ نکته و ماده مهم قانونی
-</h2>
+<h2>⚖️ ۲۰۰ نکته و ماده مهم قانونی</h2>
 
 <div id="lawList" class="law-list"></div>
 
@@ -957,9 +891,7 @@ class="portfolio-result">
 
 <section id="terms" class="section">
 
-<h2>
-📚 ۵۰ اصطلاح و نکته حقوقی
-</h2>
+<h2>📚 ۵۰ اصطلاح و نکته حقوقی</h2>
 
 <div id="termList"></div>
 
@@ -970,9 +902,7 @@ class="portfolio-result">
 
 <section id="quiz" class="section">
 
-<h2>
-📝 ۲۰ آزمون حقوقی
-</h2>
+<h2>📝 ۲۰ آزمون حقوقی</h2>
 
 <div id="quizList"></div>
 
@@ -981,12 +911,9 @@ class="portfolio-result">
 
 <!-- LAWYER -->
 
-<section id="lawyer" class="section lawyer-section">
+<section id="lawyer" class="section">
 
-<h2>
-👨‍⚖️ مشاور و خدمات حقوقی
-</h2>
-
+<h2>👨‍⚖️ مشاور و خدمات حقوقی</h2>
 
 <div class="lawyer-card">
 
@@ -1010,7 +937,6 @@ class="portfolio-result">
 
 </div>
 
-
 <div class="lawyer-description">
 
 <p>
@@ -1027,7 +953,7 @@ class="portfolio-result">
 
 <p>
 
-هدف این بخش، فراهم‌کردن ارتباطی روشن و منظم
+هدف این بخش فراهم‌کردن ارتباطی روشن و منظم
 برای افرادی است که پیش از هرگونه اقدام حقوقی،
 نیازمند بررسی موضوع و دریافت راهنمایی تخصصی هستند.
 
@@ -1035,53 +961,33 @@ class="portfolio-result">
 
 </div>
 
-
 <div class="qualities">
 
-
 <div class="quality">
-
 <b>🎯 دقت در بررسی</b>
-
 توجه به جزئیات و ابعاد مختلف موضوعات حقوقی.
-
 </div>
 
-
 <div class="quality">
-
 <b>🤝 رویکرد مسئولانه</b>
-
-تلاش برای ارائه توضیحات روشن و قابل‌فهم برای مراجعه‌کننده.
-
+تلاش برای ارائه توضیحات روشن و قابل‌فهم.
 </div>
 
-
 <div class="quality">
-
 <b>📑 نظم و پیگیری</b>
-
 تمرکز بر بررسی منظم مستندات و موضوع پرونده.
-
 </div>
-
 
 <div class="quality">
-
 <b>🔎 نگاه تحلیلی</b>
-
 بررسی جوانب مختلف موضوع پیش از تصمیم‌گیری.
-
 </div>
 
-
 </div>
-
 
 <div class="phone">
 09127068454
 </div>
-
 
 <a
 class="call-btn"
@@ -1091,11 +997,9 @@ href="tel:09127068454">
 
 </a>
 
-
 </div>
 
 </section>
-
 
 </main>
 
@@ -1104,14 +1008,11 @@ href="tel:09127068454">
 
 سامانه حقوقی و بیمه فلزات
 <br>
-
 پارسا کرمی
 <br>
-
 این سامانه برای اطلاعات عمومی و آموزشی طراحی شده است.
 
 </footer>
-
 
 
 <script>
@@ -1120,40 +1021,29 @@ href="tel:09127068454">
    API KEY
 ===================================================== */
 
-/*
-کلید نوسان خودت را اینجا قرار بده.
-
-مثال:
-
-const NAVASAN_API_KEY = "کلید-خودت";
-
-برای سایت عمومی بهتر است بعداً کلید از طریق
-Backend/Proxy مخفی شود.
-*/
-
-const NAVASAN_API_KEY =
-"کلید_نوسان_خودت";
+const NAVASAN_API_KEY = "کلید_نوسان_خودت";
 
 
 /* =====================================================
-   قیمت‌های فعلی
+   قیمت‌های بازار
 ===================================================== */
 
 let marketPrices = {
 
-    usd: null,
-
-    gold18: null,
-
-    goldOunce: null,
-
-    xau: null,
-
-    xag: null,
-
-    hg: null
+    usd:null,
+    gold18:null,
+    goldOunce:null,
+    xag:null,
+    hg:null
 
 };
+
+
+/* =====================================================
+   حالت سبد
+===================================================== */
+
+let portfolioMode = "manual";
 
 
 /* =====================================================
@@ -1207,7 +1097,30 @@ function formatNumber(value){
 
 
 /* =====================================================
-   API نوسان
+   فرمت تومان
+===================================================== */
+
+function toman(value){
+
+    return formatNumber(value) + " تومان";
+
+}
+
+
+/* =====================================================
+   زمان
+===================================================== */
+
+function updateTime(){
+
+    return new Date()
+    .toLocaleTimeString("fa-IR");
+
+}
+
+
+/* =====================================================
+   نوسان
 ===================================================== */
 
 async function getNavasan(symbol){
@@ -1218,15 +1131,10 @@ async function getNavasan(symbol){
     ){
 
         throw new Error(
-            "API Key نوسان وارد نشده است."
+            "کلید API نوسان وارد نشده است."
         );
 
     }
-
-
-    /*
-    endpoint وب‌سرویس نوسان
-    */
 
     const url =
     "https://api.navasan.tech/latest/" +
@@ -1235,10 +1143,8 @@ async function getNavasan(symbol){
     "&item=" +
     encodeURIComponent(symbol);
 
-
     const response =
     await fetch(url);
-
 
     if(!response.ok){
 
@@ -1247,7 +1153,6 @@ async function getNavasan(symbol){
         );
 
     }
-
 
     return await response.json();
 
@@ -1264,10 +1169,8 @@ async function getGoldAPI(symbol){
     "https://api.gold-api.com/price/" +
     encodeURIComponent(symbol);
 
-
     const response =
     await fetch(url);
-
 
     if(!response.ok){
 
@@ -1276,7 +1179,6 @@ async function getGoldAPI(symbol){
         );
 
     }
-
 
     return await response.json();
 
@@ -1293,39 +1195,19 @@ function extractNavasanPrice(data){
         return null;
     }
 
-    if(
-        data.price !== undefined
-    ){
+    if(data.price !== undefined){
         return Number(data.price);
     }
 
-    if(
-        data.value !== undefined
-    ){
+    if(data.value !== undefined){
         return Number(data.value);
     }
 
-    if(
-        data.amount !== undefined
-    ){
+    if(data.amount !== undefined){
         return Number(data.amount);
     }
 
     return null;
-
-}
-
-
-/* =====================================================
-   زمان
-===================================================== */
-
-function updateTime(){
-
-    return new Date()
-    .toLocaleTimeString(
-        "fa-IR"
-    );
 
 }
 
@@ -1337,49 +1219,29 @@ function updateTime(){
 async function loadUSD(){
 
     const element =
-    document.getElementById(
-        "usdPrice"
-    );
+    document.getElementById("usdPrice");
 
     const update =
-    document.getElementById(
-        "usdUpdate"
-    );
-
+    document.getElementById("usdUpdate");
 
     try{
 
         const data =
-        await getNavasan(
-            "usd_sell"
-        );
-
+        await getNavasan("usd_sell");
 
         const price =
         extractNavasanPrice(data);
 
-
         if(price === null){
-
-            throw new Error(
-                "قیمت دلار دریافت نشد."
-            );
-
+            throw new Error("قیمت دلار دریافت نشد.");
         }
 
-
-        marketPrices.usd =
-        price;
-
+        marketPrices.usd = price;
 
         element.textContent =
         formatNumber(price);
 
-
-        element.classList.remove(
-            "loading"
-        );
-
+        element.classList.remove("loading");
 
         update.textContent =
         "آخرین دریافت: " +
@@ -1387,12 +1249,8 @@ async function loadUSD(){
 
     }catch(error){
 
-        element.textContent =
-        "خطا";
-
-        element.classList.add(
-            "error"
-        );
+        element.textContent = "خطا";
+        element.classList.add("error");
 
         update.textContent =
         error.message;
@@ -1403,55 +1261,37 @@ async function loadUSD(){
 
 
 /* =====================================================
-   طلای ۱۸
+   طلای ۱۸ عیار داخلی
 ===================================================== */
 
 async function loadGold18(){
 
     const element =
-    document.getElementById(
-        "gold18Price"
-    );
+    document.getElementById("gold18Price");
 
     const update =
-    document.getElementById(
-        "gold18Update"
-    );
-
+    document.getElementById("gold18Update");
 
     try{
 
         const data =
-        await getNavasan(
-            "18ayar"
-        );
-
+        await getNavasan("18ayar");
 
         const price =
         extractNavasanPrice(data);
 
-
         if(price === null){
-
             throw new Error(
                 "قیمت طلای ۱۸ دریافت نشد."
             );
-
         }
 
-
-        marketPrices.gold18 =
-        price;
-
+        marketPrices.gold18 = price;
 
         element.textContent =
         formatNumber(price);
 
-
-        element.classList.remove(
-            "loading"
-        );
-
+        element.classList.remove("loading");
 
         update.textContent =
         "آخرین دریافت: " +
@@ -1459,12 +1299,8 @@ async function loadGold18(){
 
     }catch(error){
 
-        element.textContent =
-        "خطا";
-
-        element.classList.add(
-            "error"
-        );
+        element.textContent = "خطا";
+        element.classList.add("error");
 
         update.textContent =
         error.message;
@@ -1475,69 +1311,51 @@ async function loadGold18(){
 
 
 /* =====================================================
-   اونس نوسان
+   اونس جهانی
 ===================================================== */
 
 async function loadGoldOunce(){
 
     const element =
-    document.getElementById(
-        "goldOuncePrice"
-    );
+    document.getElementById("goldOuncePrice");
 
     const update =
-    document.getElementById(
-        "goldOunceUpdate"
-    );
-
+    document.getElementById("goldOunceUpdate");
 
     try{
 
         const data =
-        await getNavasan(
-            "usd_xau"
-        );
-
+        await getGoldAPI("XAU");
 
         const price =
-        extractNavasanPrice(data);
+        Number(
+            data.price ??
+            data.value ??
+            data.close
+        );
 
-
-        if(price === null){
-
+        if(!price || isNaN(price)){
             throw new Error(
                 "قیمت اونس دریافت نشد."
             );
-
         }
-
 
         marketPrices.goldOunce =
         price;
 
-
         element.textContent =
-        "$ " +
         formatNumber(price);
 
-
-        element.classList.remove(
-            "loading"
-        );
-
+        element.classList.remove("loading");
 
         update.textContent =
-        "آخرین دریافت: " +
+        "Gold API | " +
         updateTime();
 
     }catch(error){
 
-        element.textContent =
-        "خطا";
-
-        element.classList.add(
-            "error"
-        );
+        element.textContent = "خطا";
+        element.classList.add("error");
 
         update.textContent =
         error.message;
@@ -1548,77 +1366,51 @@ async function loadGoldOunce(){
 
 
 /* =====================================================
-   طلا / نقره / مس جهانی
+   نقره
 ===================================================== */
 
-async function loadGlobalMetal(
-    symbol,
-    priceId,
-    updateId,
-    property
-){
+async function loadSilver(){
 
     const element =
-    document.getElementById(
-        priceId
-    );
+    document.getElementById("xagPrice");
 
     const update =
-    document.getElementById(
-        updateId
-    );
-
+    document.getElementById("xagUpdate");
 
     try{
 
         const data =
-        await getGoldAPI(
-            symbol
-        );
-
+        await getGoldAPI("XAG");
 
         const price =
-        Number(data.price);
-
-
-        if(
-            !price ||
-            isNaN(price)
-        ){
-
-            throw new Error(
-                "قیمت دریافت نشد."
-            );
-
-        }
-
-
-        marketPrices[property] =
-        price;
-
-
-        element.textContent =
-        "$ " +
-        formatNumber(price);
-
-
-        element.classList.remove(
-            "loading"
+        Number(
+            data.price ??
+            data.value ??
+            data.close
         );
 
+        if(!price || isNaN(price)){
+            throw new Error(
+                "قیمت نقره دریافت نشد."
+            );
+        }
+
+        marketPrices.xag =
+        price;
+
+        element.textContent =
+        formatNumber(price);
+
+        element.classList.remove("loading");
 
         update.textContent =
-        "آنلاین | " +
+        "Gold API | " +
         updateTime();
 
     }catch(error){
 
-        element.textContent =
-        "خطا";
-
-        element.classList.add(
-            "error"
-        );
+        element.textContent = "خطا";
+        element.classList.add("error");
 
         update.textContent =
         error.message;
@@ -1629,228 +1421,321 @@ async function loadGlobalMetal(
 
 
 /* =====================================================
-   بارگذاری همه قیمت‌ها
+   مس
 ===================================================== */
 
-async function loadAllPrices(){
+async function loadCopper(){
 
-    await Promise.all([
+    const element =
+    document.getElementById("hgPrice");
 
-        loadUSD(),
+    const update =
+    document.getElementById("hgUpdate");
 
-        loadGold18(),
+    try{
 
-        loadGoldOunce(),
+        const data =
+        await getGoldAPI("HG");
 
-        loadGlobalMetal(
-            "XAU",
-            "xauPrice",
-            "xauUpdate",
-            "xau"
-        ),
+        const price =
+        Number(
+            data.price ??
+            data.value ??
+            data.close
+        );
 
-        loadGlobalMetal(
-            "XAG",
-            "xagPrice",
-            "xagUpdate",
-            "xag"
-        ),
+        if(!price || isNaN(price)){
+            throw new Error(
+                "قیمت مس دریافت نشد."
+            );
+        }
 
-        loadGlobalMetal(
-            "HG",
-            "hgPrice",
-            "hgUpdate",
-            "hg"
-        )
+        marketPrices.hg =
+        price;
 
-    ]);
+        element.textContent =
+        formatNumber(price);
 
-}
+        element.classList.remove("loading");
 
+        update.textContent =
+        "Gold API | " +
+        updateTime();
 
-/* =====================================================
-   تبدیل دلار به تومان
-===================================================== */
+    }catch(error){
 
-function usdToToman(
-    usdValue
-){
+        element.textContent = "خطا";
+        element.classList.add("error");
 
-    if(
-        marketPrices.usd === null ||
-        usdValue === null ||
-        usdValue === undefined
-    ){
-
-        return null;
+        update.textContent =
+        error.message;
 
     }
 
+}
 
-    return usdValue *
-           marketPrices.usd;
+
+/* =====================================================
+   انتخاب حالت سبد
+===================================================== */
+
+function selectMode(mode){
+
+    portfolioMode = mode;
+
+    document
+    .getElementById("manualMode")
+    .classList.remove("selected");
+
+    document
+    .getElementById("smartMode")
+    .classList.remove("selected");
+
+    if(mode === "manual"){
+
+        document
+        .getElementById("manualMode")
+        .classList.add("selected");
+
+        document
+        .getElementById("manualSettings")
+        .style.display = "block";
+
+    }else{
+
+        document
+        .getElementById("smartMode")
+        .classList.add("selected");
+
+        document
+        .getElementById("manualSettings")
+        .style.display = "none";
+
+    }
 
 }
 
 
 /* =====================================================
-   محاسبه سبد فلزات
+   محاسبه سبد
 ===================================================== */
 
-function calculatePortfolio(){
+function calculateSmartPortfolio(){
 
-    const gold18 =
+    const amount =
     Number(
         document.getElementById(
-            "portfolioGold18"
+            "investmentAmount"
         ).value
-    ) || 0;
+    );
 
+    if(!amount || amount <= 0){
 
-    const gold =
-    Number(
-        document.getElementById(
-            "portfolioGold"
-        ).value
-    ) || 0;
-
-
-    const silver =
-    Number(
-        document.getElementById(
-            "portfolioSilver"
-        ).value
-    ) || 0;
-
-
-    const copper =
-    Number(
-        document.getElementById(
-            "portfolioCopper"
-        ).value
-    ) || 0;
-
-
-    if(
-        marketPrices.usd === null
-    ){
-
-        document.getElementById(
-            "portfolioResult"
-        ).innerHTML =
-
-        `<div class="card error">
-
-        ابتدا باید قیمت دلار دریافت شود.
-
-        </div>`;
+        alert(
+            "لطفاً مبلغ سرمایه‌گذاری را وارد کنید."
+        );
 
         return;
 
     }
 
 
-    let gold18Value =
-    marketPrices.gold18 !== null
-    ?
-    gold18 * marketPrices.gold18
-    :
-    0;
+    const period =
+    document.getElementById(
+        "purchasePeriod"
+    ).value;
 
 
-    let goldValue =
-    marketPrices.xau !== null
-    ?
-    gold * marketPrices.xau *
-    marketPrices.usd
-    :
-    0;
+    let goldPercent;
+    let silverPercent;
+    let copperPercent;
 
 
-    let silverValue =
-    marketPrices.xag !== null
-    ?
-    silver * marketPrices.xag *
-    marketPrices.usd
-    :
-    0;
+    /* حالت دستی */
+
+    if(portfolioMode === "manual"){
+
+        goldPercent =
+        Number(
+            document.getElementById(
+                "goldPercent"
+            ).value
+        );
+
+        silverPercent =
+        Number(
+            document.getElementById(
+                "silverPercent"
+            ).value
+        );
+
+        copperPercent =
+        Number(
+            document.getElementById(
+                "copperPercent"
+            ).value
+        );
+
+    }
+
+    /* حالت هوشمند */
+
+    else{
+
+        /*
+        این درصدها نمونه الگوریتم آموزشی هستند.
+        در نسخه واقعی می‌توان این بخش را به
+        موتور تحلیل بازار متصل کرد.
+        */
+
+        goldPercent = 45;
+        silverPercent = 35;
+        copperPercent = 20;
+
+    }
+
+
+    const totalPercent =
+    goldPercent +
+    silverPercent +
+    copperPercent;
+
+
+    if(
+        totalPercent !== 100
+    ){
+
+        alert(
+            "مجموع درصد طلا، نقره و مس باید دقیقاً ۱۰۰٪ باشد."
+        );
+
+        return;
+
+    }
+
+
+    const goldMoney =
+    amount *
+    goldPercent /
+    100;
+
+
+    const silverMoney =
+    amount *
+    silverPercent /
+    100;
+
+
+    const copperMoney =
+    amount *
+    copperPercent /
+    100;
 
 
     /*
-    برای مس:
-    مقدار واردشده در واحد داده‌شده
-    در قیمت سرویس ضرب می‌شود.
+    محاسبه مقدار فلزات
 
-    چون واحد دقیق قراردادهای مس می‌تواند
-    بسته به بازار/سرویس متفاوت باشد،
-    قبل از استفاده مالی واقعی باید واحد آن
-    با منبع قیمت تطبیق داده شود.
+    طلا:
+    قیمت داخلی هر گرم
+
+    نقره:
+    اگر قیمت XAG موجود باشد،
+    تبدیل تقریبی اونس به گرم انجام می‌شود.
+
+    مس:
+    چون واحد API ممکن است متفاوت باشد،
+    مقدار وزنی مس فقط در صورت وجود
+    قیمت معتبر محاسبه می‌شود.
     */
 
-    let copperValue =
-    marketPrices.hg !== null
-    ?
-    copper * marketPrices.hg *
-    marketPrices.usd
-    :
-    0;
 
+    let goldGrams = null;
 
-    const total =
-    gold18Value +
-    goldValue +
-    silverValue +
-    copperValue;
+    if(
+        marketPrices.gold18 &&
+        marketPrices.gold18 > 0
+    ){
 
-
-    if(total <= 0){
-
-        document.getElementById(
-            "portfolioResult"
-        ).innerHTML =
-
-        `<div class="card">
-
-        حداقل مقدار یکی از فلزات را وارد کنید.
-
-        </div>`;
-
-        return;
+        goldGrams =
+        goldMoney /
+        marketPrices.gold18;
 
     }
 
 
-    const gold18Percent =
-    gold18Value / total * 100;
+    let silverGrams = null;
+
+    if(
+        marketPrices.xag &&
+        marketPrices.xag > 0 &&
+        marketPrices.usd &&
+        marketPrices.usd > 0
+    ){
+
+        const silverOunceToman =
+        marketPrices.xag *
+        marketPrices.usd;
+
+        silverGrams =
+        silverMoney /
+        silverOunceToman *
+        31.1034768;
+
+    }
 
 
-    const goldPercent =
-    goldValue / total * 100;
+    let copperInfo =
+    "قیمت داخلی معتبر برای محاسبه وزن مس موجود نیست.";
 
 
-    const silverPercent =
-    silverValue / total * 100;
+    if(
+        marketPrices.hg &&
+        marketPrices.hg > 0 &&
+        marketPrices.usd &&
+        marketPrices.usd > 0
+    ){
+
+        copperInfo =
+        "مبلغ اختصاص‌یافته: " +
+        toman(copperMoney);
+
+    }
 
 
-    const copperPercent =
-    copperValue / total * 100;
+    const periodText =
+    period === "monthly"
+    ? "ماهانه"
+    : "سالانه";
 
 
+    const modeText =
+    portfolioMode === "manual"
+    ? "انتخاب توسط کاربر"
+    : "خرید هوشمند";
+
+
+    const result =
     document.getElementById(
         "portfolioResult"
-    ).innerHTML =
+    );
 
-    `
+
+    result.innerHTML = `
 
     <div class="total-box">
 
         <div class="total-label">
-        ارزش تقریبی کل سبد
+            💰 سرمایه انتخاب‌شده
         </div>
 
         <div class="total-value">
-        ${formatNumber(total)}
-        تومان
+            ${toman(amount)}
+        </div>
+
+        <div style="color:#aaa;margin-top:10px">
+            دوره: ${periodText}
+            <br>
+            روش مدیریت: ${modeText}
         </div>
 
     </div>
@@ -1859,48 +1744,27 @@ function calculatePortfolio(){
     <div class="portfolio-row">
 
         <b style="color:#f5d16b">
-        🪙 طلای ۱۸ عیار
+            🥇 طلا — ${formatNumber(goldPercent)}٪
         </b>
 
+        <br><br>
+
+        مبلغ اختصاص‌یافته:
+        <b>${toman(goldMoney)}</b>
+
         <br>
 
-        ارزش:
-        ${formatNumber(gold18Value)}
-        تومان
-
-        <br>
-
-        سهم:
-        ${gold18Percent.toFixed(2)}
-        %
-
-        <div class="progress">
-            <div
-            class="progress-bar"
-            style="width:${gold18Percent}%">
-            </div>
-        </div>
-
-    </div>
-
-
-    <div class="portfolio-row">
+        مقدار تقریبی:
 
         <b style="color:#f5d16b">
-        🟡 طلای جهانی
+
+        ${
+            goldGrams !== null
+            ? formatNumber(goldGrams) + " گرم"
+            : "قیمت در دسترس نیست"
+        }
+
         </b>
-
-        <br>
-
-        ارزش تقریبی:
-        ${formatNumber(goldValue)}
-        تومان
-
-        <br>
-
-        سهم:
-        ${goldPercent.toFixed(2)}
-        %
 
         <div class="progress">
             <div
@@ -1915,20 +1779,27 @@ function calculatePortfolio(){
     <div class="portfolio-row">
 
         <b style="color:#f5d16b">
-        🥈 نقره
+            🥈 نقره — ${formatNumber(silverPercent)}٪
         </b>
 
+        <br><br>
+
+        مبلغ اختصاص‌یافته:
+        <b>${toman(silverMoney)}</b>
+
         <br>
 
-        ارزش تقریبی:
-        ${formatNumber(silverValue)}
-        تومان
+        مقدار تقریبی:
 
-        <br>
+        <b style="color:#f5d16b">
 
-        سهم:
-        ${silverPercent.toFixed(2)}
-        %
+        ${
+            silverGrams !== null
+            ? formatNumber(silverGrams) + " گرم"
+            : "قیمت جهانی/دلار در دسترس نیست"
+        }
+
+        </b>
 
         <div class="progress">
             <div
@@ -1943,20 +1814,19 @@ function calculatePortfolio(){
     <div class="portfolio-row">
 
         <b style="color:#f5d16b">
-        🟠 مس
+            🟠 مس — ${formatNumber(copperPercent)}٪
         </b>
 
+        <br><br>
+
+        مبلغ اختصاص‌یافته:
+        <b>${toman(copperMoney)}</b>
+
         <br>
 
-        ارزش تقریبی:
-        ${formatNumber(copperValue)}
-        تومان
-
-        <br>
-
-        سهم:
-        ${copperPercent.toFixed(2)}
-        %
+        <span style="color:#aaa">
+            ${copperInfo}
+        </span>
 
         <div class="progress">
             <div
@@ -1970,10 +1840,19 @@ function calculatePortfolio(){
 
     <div class="gold-box">
 
-    ⚠️ این محاسبه بر اساس قیمت‌های دریافتی از API
-    انجام می‌شود و هزینه‌هایی مانند اجرت، مالیات،
-    اختلاف خرید و فروش، کارمزد و اختلاف بازار فیزیکی
-    را در نظر نمی‌گیرد.
+        <b style="color:#f5d16b">
+        🤖 نتیجه سیستم
+        </b>
+
+        <br><br>
+
+        ${
+            portfolioMode === "smart"
+            ?
+            "در حالت خرید هوشمند، ترکیب نمونه ۴۵٪ طلا، ۳۵٪ نقره و ۲۰٪ مس در نظر گرفته شده است. این درصدها نمونه آموزشی هستند و توصیه سرمایه‌گذاری قطعی محسوب نمی‌شوند."
+            :
+            "ترکیب سبد دقیقاً مطابق درصدهایی است که خود کاربر وارد کرده است."
+        }
 
     </div>
 
@@ -1983,446 +1862,686 @@ function calculatePortfolio(){
 
 
 /* =====================================================
-   ۵۰ اصطلاح
+   ۲۰۰ ماده و نکته آموزشی
+===================================================== */
+
+const laws = [
+
+"اصل برائت: هیچ‌کس مجرم شناخته نمی‌شود مگر جرم او در مرجع صالح اثبات شود.",
+"قانون باید به صورت روشن و قابل استناد مورد بررسی قرار گیرد.",
+"قرارداد معتبر باید دارای شرایط قانونی لازم باشد.",
+"رضایت طرفین یکی از ارکان مهم قرارداد است.",
+"اهلیت طرفین در انعقاد قرارداد اهمیت دارد.",
+"موضوع قرارداد باید معین یا قابل تعیین باشد.",
+"جهت معامله در موارد مقرر قانونی باید مشروع باشد.",
+"تعهد قراردادی می‌تواند موجب مسئولیت طرف متعهد شود.",
+"تخلف از تعهد ممکن است آثار حقوقی ایجاد کند.",
+"وجه التزام می‌تواند برای تخلف قراردادی تعیین شود.",
+"خسارت قابل مطالبه باید شرایط قانونی لازم را داشته باشد.",
+"اثبات ادعا بر عهده شخصی است که ادعا می‌کند.",
+"سند می‌تواند یکی از ادله اثبات دعوا باشد.",
+"اقرار از ادله مهم اثبات دعواست.",
+"شهادت در موارد مقرر قانونی می‌تواند مورد استناد قرار گیرد.",
+"کارشناس در امور تخصصی نظر کارشناسی ارائه می‌کند.",
+"دادخواست باید مطابق مقررات تنظیم و ارائه شود.",
+"صلاحیت دادگاه باید پیش از رسیدگی بررسی شود.",
+"ابلاغ قانونی یکی از مراحل مهم دادرسی است.",
+"رعایت مهلت‌های قانونی در دعاوی اهمیت دارد.",
+"اعتراض به رأی تابع شرایط و مهلت‌های قانونی است.",
+"تجدیدنظرخواهی در موارد مقرر قانونی امکان‌پذیر است.",
+"فرجام‌خواهی با تجدیدنظرخواهی تفاوت دارد.",
+"اجرای حکم پس از طی مراحل قانونی انجام می‌شود.",
+"قرارداد بیمه تابع مقررات خاص خود است.",
+"بیمه‌گذار و بیمه‌گر در قرارداد بیمه نقش‌های متفاوت دارند.",
+"موضوع بیمه باید در قرارداد مشخص باشد.",
+"حق بیمه مبلغی است که مطابق قرارداد پرداخت می‌شود.",
+"خطر بیمه‌شده باید در قرارداد مشخص شود.",
+"اصل حسن نیت در روابط قراردادی اهمیت دارد.",
+"اطلاعات نادرست می‌تواند بر اعتبار قرارداد اثر بگذارد.",
+"شرایط عمومی و خصوصی قرارداد باید بررسی شوند.",
+"فسخ با بطلان قرارداد یکسان نیست.",
+"اقاله به توافق طرفین برای برهم‌زدن قرارداد مربوط است.",
+"وکالت به معنای نمایندگی قراردادی در حدود اختیار است.",
+"وکیل باید در حدود اختیارات خود اقدام کند.",
+"وکالت‌نامه باید حدود اختیار نماینده را مشخص کند.",
+"مسئولیت مدنی ممکن است ناشی از ورود خسارت باشد.",
+"رابطه سببیت در مسئولیت مدنی اهمیت دارد.",
+"تقصیر در بسیاری از دعاوی مسئولیت مدنی بررسی می‌شود.",
+"ضرر مادی و معنوی می‌توانند موضوع مطالبه قرار گیرند.",
+"حق مالکیت از حقوق مهم مالی محسوب می‌شود.",
+"تصرف و مالکیت مفاهیم یکسانی نیستند.",
+"انتقال مالکیت ممکن است نیازمند تشریفات قانونی باشد.",
+"ثبت رسمی در موارد مقرر قانونی اهمیت دارد.",
+"اسناد رسمی آثار خاص قانونی دارند.",
+"اسناد عادی نیز در شرایطی قابل استناد هستند.",
+"چک سند تجاری با مقررات خاص است.",
+"صدور چک بدون محل می‌تواند آثار قانونی داشته باشد.",
+"مهلت‌های قانونی مربوط به چک باید رعایت شوند.",
+"ضمانت با حواله تفاوت حقوقی دارد.",
+"ضمانت می‌تواند تعهد شخص ثالث نسبت به دین باشد.",
+"رهن از حقوق تبعی مرتبط با دین است.",
+"اجاره رابطه حقوقی میان موجر و مستأجر ایجاد می‌کند.",
+"تعهدات موجر و مستأجر باید بررسی شوند.",
+"تخلیه ملک تابع شرایط قانونی است.",
+"سرقفلی با مالکیت عین ملک متفاوت است.",
+"حق کسب و پیشه مقررات خاص خود را دارد.",
+"قرارداد کار میان کارگر و کارفرما ایجاد می‌شود.",
+"حقوق و مزایای کارگر تابع قوانین مربوط است.",
+"بیمه اجتماعی کارکنان تابع مقررات خاص است.",
+"اخراج کارگر شرایط قانونی دارد.",
+"قرارداد کار می‌تواند مدت‌دار یا غیرمدت‌دار باشد.",
+"مالیات تابع قوانین مالیاتی کشور است.",
+"اظهارنامه مالیاتی از اسناد مهم مالیاتی است.",
+"پرداخت مالیات باید طبق مقررات انجام شود.",
+"فعالیت اقتصادی ممکن است مشمول مالیات شود.",
+"حقوق مصرف‌کننده در قوانین مختلف مورد حمایت قرار گرفته است.",
+"تبلیغات نباید موجب گمراهی مصرف‌کننده شود.",
+"قراردادهای الکترونیکی نیز می‌توانند آثار حقوقی داشته باشند.",
+"امضای الکترونیکی در شرایط مقرر قابل استناد است.",
+"داده‌های الکترونیکی می‌توانند در اثبات برخی موضوعات مؤثر باشند.",
+"حریم خصوصی اشخاص باید مورد توجه قرار گیرد.",
+"انتشار اطلاعات خصوصی بدون مجوز می‌تواند آثار قانونی داشته باشد.",
+"مالکیت فکری شامل حقوق مرتبط با آثار و اختراعات است.",
+"حق مؤلف از حقوق مالکیت فکری است.",
+"علامت تجاری می‌تواند مورد حمایت قانونی قرار گیرد.",
+"ثبت علامت تجاری برای حمایت از آن اهمیت دارد.",
+"اختراع در صورت وجود شرایط قانونی قابل ثبت است.",
+"قرارداد مشارکت باید سهم و تعهدات طرفین را مشخص کند.",
+"قرارداد مضاربه شرایط خاص حقوقی دارد.",
+"وکالت در فروش ملک باید با دقت تنظیم شود.",
+"انتقال مال غیر بدون مجوز قانونی می‌تواند مشکل حقوقی ایجاد کند.",
+"معامله صوری با معامله واقعی متفاوت است.",
+"قصد و رضای طرفین در معاملات اهمیت دارد.",
+"اشتباه ممکن است در برخی موارد بر اعتبار معامله اثر بگذارد.",
+"اکراه در شرایط قانونی می‌تواند بر اعتبار قرارداد اثر داشته باشد.",
+"تدلیس با فریب طرف قرارداد مرتبط است.",
+"خیار شرط می‌تواند برای مدت مشخصی ایجاد شود.",
+"خیار عیب در شرایط مقرر قانونی قابل اعمال است.",
+"خیار غبن با تفاوت فاحش ارزش مرتبط است.",
+"فسخ قرارداد با انحلال قانونی قرارداد تفاوت‌هایی دارد.",
+"اقرار باید با شرایط قانونی معتبر باشد.",
+"سوگند یکی از ادله اثبات دعوا در موارد مقرر است.",
+"کارشناسی برای تشخیص امور فنی و تخصصی انجام می‌شود.",
+"تأمین دلیل برای حفظ و ثبت دلایل در شرایط مقرر کاربرد دارد.",
+"دستور موقت در موارد قانونی قابل درخواست است.",
+"تأمین خواسته می‌تواند برای حفظ امکان وصول طلب استفاده شود.",
+"دعوی متقابل شرایط قانونی مشخصی دارد.",
+"ورود ثالث و جلب ثالث قواعد خاص دارند.",
+"اعتراض ثالث نسبت به رأی صادرشده در شرایط خاص مطرح می‌شود.",
+"اعاده دادرسی موارد قانونی مشخصی دارد.",
+"صلح می‌تواند برای پایان اختلاف استفاده شود.",
+"داوری روشی برای حل اختلاف خارج از رسیدگی معمول دادگاه است.",
+"شرط داوری باید به شکل معتبر در قرارداد درج شود.",
+"رأی داور در شرایط مقرر قابلیت اجرا دارد.",
+"میانجی‌گری بر حل توافقی اختلاف تمرکز دارد.",
+"تأخیر در انجام تعهد ممکن است موجب مسئولیت شود.",
+"قوه قاهره در شرایط خاص می‌تواند بر مسئولیت قراردادی اثر بگذارد.",
+"خسارت تأخیر تأدیه در شرایط قانونی قابل مطالبه است.",
+"دین باید در صورت مطالبه مطابق شرایط قانونی پرداخت شود.",
+"تعهد به نتیجه با تعهد به وسیله تفاوت دارد.",
+"تضمین انجام تعهد می‌تواند در قرارداد پیش‌بینی شود.",
+"ضمانت‌نامه بانکی دارای شرایط و آثار خاص است.",
+"اعتبار قرارداد باید پیش از امضا بررسی شود.",
+"پیوست‌های قرارداد باید مشخص و قابل شناسایی باشند.",
+"صفحات قرارداد بهتر است به شکل منظم و قابل کنترل امضا شوند.",
+"امضای سفید می‌تواند خطرات حقوقی ایجاد کند.",
+"دریافت رسید پرداخت در معاملات اهمیت دارد.",
+"مکاتبات قراردادی می‌توانند برای اثبات موضوع مؤثر باشند.",
+"صورت‌جلسه باید دقیق و روشن تنظیم شود.",
+"قرارداد شفاهی در برخی موارد ممکن است معتبر باشد ولی اثبات آن دشوارتر است.",
+"ثبت تعهدات مهم به صورت مکتوب ریسک اختلاف را کاهش می‌دهد.",
+"شروط قرارداد نباید برخلاف قوانین آمره باشند.",
+"قانون خاص در صورت تعارض ممکن است بر قانون عام مقدم باشد.",
+"تفسیر قرارداد باید با توجه به مفاد و قصد طرفین انجام شود.",
+"عرف در برخی روابط قراردادی می‌تواند مورد توجه قرار گیرد.",
+"تعهدات اصلی و فرعی باید از یکدیگر تفکیک شوند.",
+"شرط ضمانت اجرا بهتر است واضح و قابل اندازه‌گیری باشد.",
+"قراردادهای سرمایه‌گذاری باید ریسک‌ها را شفاف بیان کنند.",
+"سود قطعی با سود احتمالی تفاوت دارد.",
+"هیچ سرمایه‌گذاری بدون ریسک نیست.",
+"قیمت بازار ممکن است روزانه تغییر کند.",
+"قیمت جهانی فلز الزاماً برابر قیمت داخلی آن نیست.",
+"نرخ ارز بر ارزش ریالی برخی کالاها اثر می‌گذارد.",
+"هزینه خرید و فروش می‌تواند بر بازده واقعی اثر بگذارد.",
+"نگهداری فیزیکی فلزات دارای هزینه و ریسک است.",
+"مالکیت فلز باید با سند و قرارداد قابل اثبات باشد.",
+"تحویل فلز باید شرایط مشخص داشته باشد.",
+"خرید نیابتی نیازمند تعیین حدود اختیار است.",
+"نماینده نباید خارج از حدود اختیار اقدام کند.",
+"حسابداری معاملات فلزات باید شفاف باشد.",
+"ثبت تاریخ و قیمت خرید برای محاسبات آینده مفید است.",
+"سبد سرمایه‌گذاری می‌تواند شامل چند دارایی باشد.",
+"تنوع‌بخشی یکی از روش‌های مدیریت ریسک است.",
+"ترکیب سبد باید متناسب با قرارداد و هدف طرح باشد.",
+"بیمه با سرمایه‌گذاری مفاهیم یکسانی نیستند.",
+"طرح بیمه‌ای واقعی نیازمند بررسی مقررات بیمه است.",
+"دریافت وجه از مردم برای سرمایه‌گذاری می‌تواند نیازمند مجوز باشد.",
+"وعده سود تضمینی باید با دقت حقوقی بررسی شود.",
+"قرارداد باید مشخص کند مالک دارایی چه کسی است.",
+"ریسک کاهش قیمت فلز باید شفاف اعلام شود.",
+"ریسک نقدشوندگی باید در طراحی طرح بررسی شود.",
+"ریسک نوسان ارز باید مورد توجه قرار گیرد.",
+"ریسک نگهداری دارایی فیزیکی باید بررسی شود.",
+"بیمه‌نامه با قرارداد سرمایه‌گذاری تفاوت دارد.",
+"شرایط پرداخت خسارت باید در قرارداد روشن باشد.",
+"موارد استثنا باید پیش از انعقاد قرارداد مطالعه شوند.",
+"مهلت اعلام خسارت می‌تواند در قرارداد مشخص شود.",
+"مدارک خسارت باید مطابق شرایط قرارداد ارائه شوند.",
+"فرآیند رسیدگی به خسارت باید روشن باشد.",
+"اعتراض به تصمیم بیمه‌گر تابع مقررات مربوط است.",
+"مقررات بیمه برای هر نوع محصول ممکن است متفاوت باشد.",
+"محصول جدید مالی یا بیمه‌ای نیازمند بررسی حقوقی است.",
+"حفظ سوابق مالی و قراردادی اهمیت دارد.",
+"رسیدهای پرداخت باید نگهداری شوند.",
+"شماره قرارداد باید در مکاتبات ذکر شود.",
+"تغییر قرارداد بهتر است به صورت مکتوب انجام شود.",
+"فسخ قرارداد باید طبق شرایط مقرر انجام شود.",
+"ماده قانونی باید با متن رسمی قانون تطبیق داده شود.",
+"این سامانه جایگزین مشاوره تخصصی حقوقی نیست.",
+"پیش از تصمیم مالی مهم، شرایط و ریسک‌ها باید بررسی شوند.",
+"اطلاعات بازار ممکن است لحظه‌ای تغییر کند.",
+"قیمت نمایش‌داده‌شده لزوماً قیمت معامله نهایی نیست.",
+"کارمزد و مالیات احتمالی باید در محاسبات لحاظ شوند.",
+"برای خرید واقعی باید ارائه‌دهنده مجاز مشخص باشد.",
+"قرارداد خرید باید مقدار و کیفیت فلز را مشخص کند.",
+"عیار طلا باید در اسناد خرید مشخص باشد.",
+"خلوص نقره باید در قرارداد مشخص شود.",
+"وزن فلز باید با واحد روشن ثبت شود.",
+"نحوه تحویل باید در قرارداد مشخص شود.",
+"زمان تحویل باید روشن باشد.",
+"محل تحویل باید مشخص باشد.",
+"مسئولیت خسارت هنگام حمل باید تعیین شود.",
+"شرایط بازخرید باید شفاف باشد.",
+"قیمت بازخرید باید روش محاسبه مشخصی داشته باشد.",
+"اختلاف قیمت خرید و فروش باید برای مشتری روشن باشد.",
+"داده‌های قیمت باید دارای زمان آخرین به‌روزرسانی باشند.",
+"منبع قیمت باید تا حد امکان مشخص باشد.",
+"API صرفاً ابزار انتقال داده است و صحت تجاری معامله را تضمین نمی‌کند.",
+"امنیت کلید API باید رعایت شود.",
+"قرار دادن کلید خصوصی در کد عمومی ریسک امنیتی دارد.",
+"برای سامانه واقعی استفاده از Backend امن توصیه می‌شود.",
+"احراز هویت کاربران باید اصول امنیتی مناسب داشته باشد.",
+"اطلاعات مالی کاربران باید محافظت شود.",
+"رمز عبور نباید در متن ساده ذخیره شود.",
+"اطلاعات حساس نباید در LocalStorage بدون ضرورت ذخیره شود.",
+"ارتباط HTTPS برای سامانه واقعی ضروری است.",
+"ثبت رخدادهای امنیتی باید با رعایت حریم خصوصی انجام شود.",
+"نسخه پشتیبان از اطلاعات مهم باید تهیه شود.",
+"قوانین کشور محل فعالیت باید بررسی شوند.",
+"قرارداد بین طرفین باید قانون حاکم را مشخص کند.",
+"مرجع حل اختلاف بهتر است مشخص باشد.",
+"نشانی و مشخصات طرفین باید صحیح باشد.",
+"شماره ملی یا شناسه حقوقی در موارد لازم باید بررسی شود.",
+"نماینده شرکت باید اختیار قانونی داشته باشد.",
+"مهر شرکت به تنهایی جایگزین اختیار قانونی نیست.",
+"امضای افراد باید قابل انتساب باشد.",
+"مدارک هویتی باید مطابق مقررات بررسی شوند.",
+"قراردادهای چندطرفه نیازمند تعیین دقیق مسئولیت هر طرف هستند.",
+"تعارض منافع باید شفاف اعلام شود.",
+"اطلاعات نادرست در قرارداد می‌تواند باعث اختلاف شود.",
+"قبل از پرداخت وجه، هویت دریافت‌کننده بررسی شود.",
+"قبل از خرید دارایی، اعتبار فروشنده بررسی شود.",
+"رسید دیجیتال باید قابل پیگیری باشد.",
+"شماره تراکنش بانکی را نگهداری کنید.",
+"در معاملات بزرگ از قرارداد مکتوب استفاده کنید.",
+"شرایط فسخ و بازگشت وجه را از ابتدا مشخص کنید.",
+"از وعده‌های سود غیرواقعی پرهیز شود.",
+"تصمیم مالی باید بر اساس اطلاعات معتبر باشد.",
+"قیمت لحظه‌ای نباید به تنهایی مبنای تصمیم‌گیری قرار گیرد.",
+"ریسک سرمایه‌گذاری باید متناسب با توان مالی فرد باشد.",
+"مقدار سرمایه‌گذاری باید از توان تحمل زیان فراتر نرود.",
+"تنوع دارایی می‌تواند ریسک تمرکز را کاهش دهد.",
+"ترکیب سبد باید دوره‌ای بازبینی شود.",
+"بازبینی سبد به معنی تضمین سود نیست.",
+"خرید دوره‌ای می‌تواند روش برنامه‌ریزی سرمایه باشد.",
+"در خرید سالانه مبلغ کل دوره باید از ابتدا مشخص شود.",
+"در خرید ماهانه مبلغ هر دوره باید مشخص باشد.",
+"در خرید هوشمند قواعد تصمیم‌گیری باید شفاف باشند.",
+"کاربر باید بداند تصمیم خرید خودکار بر چه اساسی انجام می‌شود.",
+"هیچ الگوریتمی تضمین‌کننده سود نیست.",
+"اطلاعات مالی باید قبل از استفاده راستی‌آزمایی شود.",
+"در اختلاف حقوقی، اسناد و مدارک اهمیت زیادی دارند.",
+"مشاوره تخصصی می‌تواند از اختلافات آینده جلوگیری کند.",
+"این مطالب آموزشی هستند و جایگزین متن رسمی قانون نیستند.",
+"برای استناد حقوقی باید متن رسمی و به‌روز قانون بررسی شود."
+
+];
+
+while(laws.length < 200){
+    laws.push(
+        "نکته آموزشی تکمیلی: پیش از هر اقدام حقوقی یا مالی، شرایط قرارداد، مقررات جاری و مدارک مربوط به موضوع را بررسی کنید."
+    );
+}
+
+
+/* =====================================================
+   نمایش قوانین
+===================================================== */
+
+function loadLaws(){
+
+    const container =
+    document.getElementById("lawList");
+
+    container.innerHTML = "";
+
+    laws.slice(0,200).forEach(
+        (law,index)=>{
+
+            const div =
+            document.createElement("div");
+
+            div.className = "law";
+
+            div.innerHTML =
+            "<b style='color:#f5d16b'>ماده/نکته "+
+            (index+1)+
+            "</b><br>"+
+            law;
+
+            container.appendChild(div);
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   اصطلاحات
 ===================================================== */
 
 const terms = [
 
-"عقد: توافق قانونی میان دو یا چند شخص.",
-"تعهد: الزام شخص به انجام یا ترک یک عمل.",
-"مسئولیت مدنی: الزام به جبران خسارت واردشده.",
-"وکالت: اعطای اختیار انجام امور به شخص دیگر.",
-"موکل: شخصی که وکالت می‌دهد.",
-"وکیل: شخصی که به موجب وکالت اقدام می‌کند.",
-"خواهان: شخصی که دعوا را مطرح می‌کند.",
-"خوانده: شخصی که دعوا علیه او مطرح شده است.",
-"دادخواست: درخواست رسمی رسیدگی قضایی.",
-"شکواییه: اعلام جرم به مرجع قضایی.",
-"جرم: رفتاری که قانون برای آن مجازات تعیین کرده است.",
-"دیه: مالی که در موارد قانونی بابت جنایت پرداخت می‌شود.",
-"قصاص: مجازات مقرر در برخی جنایات.",
-"حد: مجازات شرعی مقرر در قانون.",
-"تعزیر: مجازاتی که در چارچوب قانون تعیین می‌شود.",
-"قرارداد: توافق دارای آثار حقوقی.",
-"فسخ: برهم زدن قرارداد در موارد قانونی یا قراردادی.",
-"اقاله: برهم زدن قرارداد با توافق طرفین.",
-"بطلان: بی‌اعتباری حقوقی یک عمل.",
-"خسارت: زیان قابل مطالبه طبق قانون.",
-"وجه التزام: مبلغ تعیین‌شده برای تخلف از تعهد.",
-"ضمانت: تعهد نسبت به مسئولیت یا دین.",
-"رهن: وثیقه قرار دادن مال برای تضمین دین.",
-"مستأجر: شخصی که مال را اجاره می‌کند.",
-"موجر: شخصی که مال را اجاره می‌دهد.",
-"اجاره: قراردادی برای استفاده از منفعت مال.",
-"مالکیت: حق قانونی نسبت به مال.",
-"تصرف: سلطه و اختیار عملی بر مال.",
-"ارث: انتقال قانونی دارایی پس از فوت.",
-"وصیت: تعیین تکلیف نسبت به اموال یا امور پس از فوت.",
-"شاهد: شخصی که موضوعی را مشاهده یا از آن اطلاع دارد.",
-"سند رسمی: سند تنظیم‌شده نزد مرجع رسمی صالح.",
-"سند عادی: سندی که رسمی محسوب نمی‌شود.",
-"ادله اثبات: ابزارهای قانونی اثبات ادعا.",
-"اقرار: اعلام شخص به وجود حقی علیه خود.",
-"شهادت: گواهی شخص نزد مرجع قانونی.",
-"کارشناس: متخصصی که درباره موضوع تخصصی اظهارنظر می‌کند.",
-"اعتراض: اعلام مخالفت با تصمیم یا ادعا.",
-"تجدیدنظر: درخواست بررسی مجدد رأی در مرجع بالاتر.",
-"فرجام‌خواهی: درخواست بررسی رأی در حدود صلاحیت قانونی.",
-"اجرای حکم: انجام مفاد حکم قطعی.",
-"قرار: تصمیم قضایی که معمولاً ماهیت حکم ندارد.",
-"حکم: تصمیم قضایی درباره موضوع دعوا.",
-"صلاحیت: اختیار قانونی مرجع برای رسیدگی.",
-"مرور زمان: گذشت مدت قانونی در موارد پیش‌بینی‌شده.",
-"تأمین دلیل: حفظ و ثبت دلیل برای استفاده در آینده.",
-"تأمین خواسته: توقیف مال برای تضمین امکان اجرای حق.",
-"حق: امتیاز یا اختیار قانونی شخص.",
-"تکلیف: الزام قانونی یا قراردادی شخص."
+["عقد","توافق حقوقی میان دو یا چند شخص که آثار قانونی ایجاد می‌کند."],
+["قرارداد","توافقی که برای ایجاد، تغییر یا پایان تعهدات تنظیم می‌شود."],
+["تعهد","الزام شخص به انجام یا ترک یک عمل."],
+["فسخ","برهم‌زدن قرارداد در مواردی که قانون یا قرارداد اجازه داده است."],
+["اقاله","برهم‌زدن قرارداد با توافق طرفین."],
+["وکالت","نمایندگی شخص برای انجام امور مشخص در حدود اختیار."],
+["ضمان","تعهد شخص نسبت به دین یا تعهد شخص دیگر."],
+["رهن","وثیقه قرار دادن مال برای تضمین یک تعهد."],
+["اجاره","واگذاری منافع مال برای مدت مشخص در برابر عوض."],
+["مالکیت","رابطه حقوقی شخص با مال و اختیارات قانونی نسبت به آن."],
+["تصرف","سلطه و استیلای عرفی بر مال."],
+["سند رسمی","سندی که مطابق تشریفات قانونی نزد مقام صالح تنظیم شده است."],
+["سند عادی","سندی که شرایط سند رسمی را ندارد."],
+["اقرار","اعلام حقی برای دیگری به زیان خود."],
+["شهادت","گواهی شخص درباره موضوعی که مورد ادعاست."],
+["کارشناس","فرد متخصصی که درباره امور فنی یا تخصصی اظهار نظر می‌کند."],
+["داوری","حل اختلاف توسط داور خارج از روند معمول دادگاه."],
+["تأمین خواسته","اقدامی برای حفظ امکان وصول طلب یا حق مورد ادعا."],
+["دستور موقت","دستور موقتی دادگاه برای جلوگیری از ایجاد یا گسترش خسارت."],
+["اعاده دادرسی","رسیدگی مجدد در موارد خاص پیش‌بینی‌شده قانونی."],
+["تجدیدنظر","اعتراض به رأی در مرجع بالاتر در موارد قانونی."],
+["فرجام‌خواهی","اعتراض به رأی در مواردی که قانون اجازه داده است."],
+["خسارت","زیانی که در شرایط قانونی ممکن است قابل جبران باشد."],
+["وجه التزام","مبلغی که برای تخلف از تعهد در قرارداد تعیین می‌شود."],
+["تدلیس","فریب طرف معامله از طریق عملیات متقلبانه."],
+["غبن","زیان ناشی از تفاوت فاحش ارزش عوضین در شرایط مقرر."],
+["عیب","نقصی که می‌تواند در شرایط قانونی آثار حقوقی داشته باشد."],
+["بیمه‌گر","شخص یا شرکت ارائه‌دهنده پوشش بیمه‌ای."],
+["بیمه‌گذار","شخصی که قرارداد بیمه را با بیمه‌گر منعقد می‌کند."],
+["حق بیمه","مبلغی که طبق قرارداد بیمه پرداخت می‌شود."],
+["خسارت بیمه","مبلغ یا تعهدی که طبق شرایط بیمه در صورت وقوع خطر پرداخت می‌شود."],
+["ریسک","احتمال وقوع نتیجه نامطلوب یا زیان."],
+["سبد دارایی","مجموعه‌ای از چند دارایی که در کنار هم نگهداری می‌شوند."],
+["تنوع‌بخشی","توزیع سرمایه بین چند دارایی برای مدیریت ریسک."],
+["نقدشوندگی","سهولت تبدیل دارایی به وجه نقد."],
+["قیمت لحظه‌ای","قیمتی که در زمان مشخص از بازار یا منبع داده دریافت می‌شود."],
+["اونس","واحد وزنی مورد استفاده در بازار جهانی فلزات."],
+["عیار","میزان خلوص طلا یا فلز گران‌بها."],
+["فلز گران‌بها","فلزاتی مانند طلا و نقره که ارزش اقتصادی بالایی دارند."],
+["فلز صنعتی","فلزی که کاربرد گسترده صنعتی دارد؛ مانند مس."],
+["API","رابط نرم‌افزاری برای دریافت یا ارسال داده میان سامانه‌ها."],
+["Backend","بخش سروری سامانه که منطق و پردازش‌های اصلی را انجام می‌دهد."],
+["Proxy","واسطی میان کاربر و سرویس اصلی که می‌تواند برای امنیت API استفاده شود."],
+["احراز هویت","فرآیند بررسی هویت کاربر."],
+["حریم خصوصی","حفاظت از اطلاعات و داده‌های شخصی افراد."],
+["مجوز","اجازه رسمی برای انجام فعالیتی که قانون برای آن الزام تعیین کرده است."],
+["سرمایه‌گذاری","اختصاص منابع با هدف دستیابی به منفعت یا حفظ ارزش."],
+["بازده","میزان نتیجه حاصل از یک سرمایه‌گذاری در دوره مشخص."],
+["سود احتمالی","سودی که قطعی نیست و به شرایط بازار یا قرارداد بستگی دارد."],
+["ریسک بازار","احتمال کاهش ارزش دارایی به دلیل تغییرات بازار."]
 
 ];
 
+function loadTerms(){
 
-const termList =
-document.getElementById(
-    "termList"
-);
+    const container =
+    document.getElementById("termList");
 
+    container.innerHTML = "";
 
-terms.forEach(
-(term,index)=>{
+    terms.forEach((term,index)=>{
 
-    const div =
-    document.createElement("div");
+        const div =
+        document.createElement("div");
 
-    div.className="term";
+        div.className = "term";
 
-    div.innerHTML =
-    "<b style='color:#f5d16b'>" +
-    (index+1) +
-    ". </b>" +
-    term;
+        div.innerHTML =
+        "<b style='color:#f5d16b'>"+
+        (index+1)+". "+
+        term[0]+
+        "</b><br>"+
+        term[1];
 
-    termList.appendChild(div);
-
-});
-
-
-/* =====================================================
-   ۲۰۰ نکته آموزشی
-===================================================== */
-
-const lawList =
-document.getElementById(
-    "lawList"
-);
-
-
-const lawSubjects = [
-
-"قواعد عمومی قراردادها",
-"تعهدات",
-"مسئولیت مدنی",
-"حقوق اموال",
-"حقوق خانواده",
-"حقوق کار",
-"حقوق تجارت",
-"اسناد و ادله",
-"آیین دادرسی",
-"حقوق کیفری"
-
-];
-
-
-for(
-let i=1;
-i<=200;
-i++
-){
-
-    const div =
-    document.createElement("div");
-
-    div.className="law";
-
-
-    const subject =
-    lawSubjects[
-        (i-1) %
-        lawSubjects.length
-    ];
-
-
-    div.innerHTML =
-
-    "<b style='color:#f5d16b'>" +
-
-    "نکته آموزشی شماره " +
-    i +
-
-    "</b>" +
-
-    "<br><br>" +
-
-    "موضوع: " +
-    subject +
-
-    "<br>" +
-
-    "این بخش برای آشنایی عمومی و آموزشی با مفاهیم حقوقی طراحی شده است. برای اقدام حقوقی واقعی باید متن قانون و شرایط پرونده بررسی شود.";
-
-    lawList.appendChild(div);
-
-}
-
-
-/* =====================================================
-   ۲۰ آزمون
-===================================================== */
-
-const questions = [
-
-{
-q:"قرارداد چیست؟",
-a:[
-"توافق دارای آثار حقوقی",
-"یک نامه شخصی",
-"فقط یک رسید"
-],
-correct:0
-},
-
-{
-q:"موکل چه کسی است؟",
-a:[
-"شخصی که وکالت می‌دهد",
-"قاضی",
-"کارشناس"
-],
-correct:0
-},
-
-{
-q:"خواهان چه کسی است؟",
-a:[
-"شخصی که دعوا را مطرح می‌کند",
-"شخصی که همیشه محکوم است",
-"شاهد"
-],
-correct:0
-},
-
-{
-q:"فسخ یعنی چه؟",
-a:[
-"برهم زدن قرارداد در موارد قانونی یا قراردادی",
-"نوشتن قرارداد",
-"پرداخت مالیات"
-],
-correct:0
-},
-
-{
-q:"خوانده چه کسی است؟",
-a:[
-"شخصی که دعوا علیه او مطرح شده",
-"شاهد",
-"وکیل"
-],
-correct:0
-},
-
-{
-q:"اقرار چیست؟",
-a:[
-"اعلام شخص به وجود حقی علیه خود",
-"گزارش کارشناس",
-"رأی دادگاه"
-],
-correct:0
-},
-
-{
-q:"سند رسمی چیست؟",
-a:[
-"سندی که نزد مرجع رسمی صالح تنظیم شده",
-"هر پیامک",
-"هر عکس"
-],
-correct:0
-},
-
-{
-q:"وجه التزام چیست؟",
-a:[
-"مبلغ تعیین‌شده برای تخلف از تعهد",
-"مالیات",
-"هزینه دادرسی"
-],
-correct:0
-},
-
-{
-q:"وکیل چه نقشی دارد؟",
-a:[
-"اقدام در حدود اختیار وکالت",
-"صدور حکم",
-"قانون‌گذاری"
-],
-correct:0
-},
-
-{
-q:"مسئولیت مدنی معمولاً مربوط به چیست؟",
-a:[
-"جبران خسارت",
-"صدور گذرنامه",
-"ثبت شرکت"
-],
-correct:0
-},
-
-{
-q:"رهن چه مفهومی دارد؟",
-a:[
-"وثیقه قرار دادن مال برای تضمین دین",
-"فروش قطعی مال",
-"اجاره ملک"
-],
-correct:0
-},
-
-{
-q:"شاهد چه کسی است؟",
-a:[
-"شخصی که از موضوع اطلاع دارد",
-"قاضی",
-"خواهان"
-],
-correct:0
-},
-
-{
-q:"دادخواست چیست؟",
-a:[
-"درخواست رسمی رسیدگی قضایی",
-"قبض بانکی",
-"قرارداد کاری"
-],
-correct:0
-},
-
-{
-q:"شکواییه برای چیست؟",
-a:[
-"اعلام جرم",
-"اجاره ملک",
-"خرید خودرو"
-],
-correct:0
-},
-
-{
-q:"تجدیدنظر یعنی چه؟",
-a:[
-"درخواست بررسی مجدد رأی در مرجع بالاتر",
-"لغو قانون",
-"تنظیم سند"
-],
-correct:0
-},
-
-{
-q:"مالکیت به چه معناست؟",
-a:[
-"حق قانونی نسبت به مال",
-"شهادت",
-"تعهد شفاهی"
-],
-correct:0
-},
-
-{
-q:"تعهد چیست؟",
-a:[
-"الزام به انجام یا ترک عمل",
-"فقط یک سند",
-"حکم کیفری"
-],
-correct:0
-},
-
-{
-q:"کارشناس چه کسی است؟",
-a:[
-"متخصص موضوع مورد بررسی",
-"خواهان",
-"خوانده"
-],
-correct:0
-},
-
-{
-q:"حکم چیست؟",
-a:[
-"تصمیم قضایی درباره موضوع دعوا",
-"قرارداد خصوصی",
-"رسید پرداخت"
-],
-correct:0
-},
-
-{
-q:"صلاحیت یعنی چه؟",
-a:[
-"اختیار قانونی مرجع برای رسیدگی",
-"حق مالکیت",
-"تعهد مالی"
-],
-correct:0
-}
-
-];
-
-
-const quizList =
-document.getElementById(
-    "quizList"
-);
-
-
-questions.forEach(
-(item,index)=>{
-
-    const box =
-    document.createElement("div");
-
-    box.className="quiz";
-
-
-    let html =
-
-    "<h3>" +
-    "آزمون " +
-    (index+1) +
-    "</h3>" +
-
-    "<p style='line-height:2'>" +
-    item.q +
-    "</p>";
-
-
-    item.a.forEach(
-    (answer,answerIndex)=>{
-
-        html +=
-
-        "<button onclick='checkAnswer(" +
-        index +
-        "," +
-        answerIndex +
-        ",this)'>" +
-
-        answer +
-
-        "</button><br>";
+        container.appendChild(div);
 
     });
 
-
-    html +=
-    "<div class='result'></div>";
+}
 
 
-    box.innerHTML =
-    html;
+/* =====================================================
+   آزمون
+===================================================== */
 
-    quizList.appendChild(box);
+const quizzes = [
 
-});
+{
+q:"کدام مورد یکی از عناصر مهم قرارداد است؟",
+options:[
+"موضوع معین",
+"رنگ قرارداد",
+"اندازه کاغذ",
+"نوع فونت"
+],
+answer:0
+},
+
+{
+q:"فسخ قرارداد به چه معناست؟",
+options:[
+"امضای قرارداد جدید",
+"برهم‌زدن قرارداد در موارد قانونی یا قراردادی",
+"افزایش قیمت",
+"تغییر آدرس"
+],
+answer:1
+},
+
+{
+q:"وجه التزام معمولاً برای چه موضوعی تعیین می‌شود؟",
+options:[
+"تخلف از تعهد",
+"تغییر رنگ سند",
+"صدور کارت بانکی",
+"ثبت تلفن"
+],
+answer:0
+},
+
+{
+q:"بیمه‌گذار چه نقشی دارد؟",
+options:[
+"طرف قرارداد بیمه که پوشش را دریافت می‌کند",
+"قاضی",
+"کارشناس رسمی",
+"داور"
+],
+answer:0
+},
+
+{
+q:"اونس در بازار فلزات بیشتر برای چه چیزی استفاده می‌شود؟",
+options:[
+"وزن فلزات گران‌بها",
+"تعداد سکه",
+"تعداد قرارداد",
+"نرخ مالیات"
+],
+answer:0
+},
+
+{
+q:"API چیست؟",
+options:[
+"رابط ارتباط نرم‌افزارها",
+"نوع فلز",
+"نوع بیمه",
+"سند مالکیت"
+],
+answer:0
+},
+
+{
+q:"تنوع‌بخشی در سبد به چه معناست؟",
+options:[
+"توزیع سرمایه میان دارایی‌های مختلف",
+"خرید فقط طلا",
+"فروش همه دارایی‌ها",
+"حذف اطلاعات"
+],
+answer:0
+},
+
+{
+q:"کدام مورد ریسک سرمایه‌گذاری است؟",
+options:[
+"نوسان قیمت",
+"فونت سایت",
+"اندازه صفحه",
+"رنگ دکمه"
+],
+answer:0
+},
+
+{
+q:"مس بیشتر چه نوع فلزی محسوب می‌شود؟",
+options:[
+"صنعتی",
+"حقوقی",
+"بیمه‌ای",
+"دیجیتال"
+],
+answer:0
+},
+
+{
+q:"طلای ۱۸ عیار به چه چیزی اشاره دارد؟",
+options:[
+"درجه خلوص طلا",
+"وزن یک اونس",
+"نرخ دلار",
+"نوع قرارداد"
+],
+answer:0
+},
+
+{
+q:"سند رسمی توسط چه مرجعی تنظیم می‌شود؟",
+options:[
+"مرجع صالح قانونی",
+"هر شخص عادی",
+"فروشگاه",
+"کاربر سایت"
+],
+answer:0
+},
+
+{
+q:"وکالت چه مفهومی دارد؟",
+options:[
+"نمایندگی در حدود اختیار",
+"مالکیت قطعی",
+"بیمه اجباری",
+"پرداخت مالیات"
+],
+answer:0
+},
+
+{
+q:"تدلیس با چه مفهومی ارتباط دارد؟",
+options:[
+"فریب در معامله",
+"پرداخت مالیات",
+"ثبت شرکت",
+"قیمت جهانی"
+],
+answer:0
+},
+
+{
+q:"نقدشوندگی یعنی چه؟",
+options:[
+"سهولت تبدیل دارایی به وجه نقد",
+"افزایش وزن طلا",
+"افزایش مالیات",
+"کاهش قرارداد"
+],
+answer:0
+},
+
+{
+q:"آیا قیمت جهانی طلا الزاماً برابر قیمت داخلی ایران است؟",
+options:[
+"خیر",
+"بله همیشه",
+"فقط در تابستان",
+"فقط در زمستان"
+],
+answer:0
+},
+
+{
+q:"در قرارداد بیمه چه چیزی باید روشن باشد؟",
+options:[
+"خطر و شرایط پوشش",
+"رنگ سایت",
+"نوع گوشی",
+"فونت"
+],
+answer:0
+},
+
+{
+q:"آیا API به تنهایی صحت یک معامله مالی را تضمین می‌کند؟",
+options:[
+"خیر",
+"بله",
+"همیشه",
+"فقط شب‌ها"
+],
+answer:0
+},
+
+{
+q:"برای سایت عمومی بهتر است کلید خصوصی API کجا نگهداری شود؟",
+options:[
+"Backend امن",
+"داخل متن صفحه",
+"داخل دکمه",
+"در عنوان سایت"
+],
+answer:0
+},
+
+{
+q:"خرید هوشمند در این نسخه چه ماهیتی دارد؟",
+options:[
+"مدل محاسباتی و آموزشی",
+"تضمین سود",
+"قرارداد بیمه قطعی",
+"حکم دادگاه"
+],
+answer:0
+},
+
+{
+q:"قبل از تصمیم مالی مهم چه کاری بهتر است انجام شود؟",
+options:[
+"بررسی ریسک و شرایط قرارداد",
+"اعتماد به تبلیغ",
+"نادیده گرفتن قرارداد",
+"حذف رسید"
+],
+answer:0
+}
+
+];
 
 
-function checkAnswer(
-questionIndex,
-answerIndex,
-button
-){
+function loadQuizzes(){
 
-    const question =
-    questions[
-        questionIndex
-    ];
+    const container =
+    document.getElementById("quizList");
 
+    container.innerHTML = "";
 
-    const result =
-    button
-    .parentElement
-    .querySelector(
-        ".result"
+    quizzes.forEach(
+        (quiz,index)=>{
+
+            const div =
+            document.createElement("div");
+
+            div.className = "quiz";
+
+            let html =
+            "<h3>آزمون "+
+            (index+1)+
+            "</h3>";
+
+            html +=
+            "<p style='line-height:2'>"+
+            quiz.q+
+            "</p>";
+
+            quiz.options.forEach(
+                (option,optIndex)=>{
+
+                    html += `
+                    <button
+                    onclick="checkQuiz(
+                    ${index},
+                    ${optIndex},
+                    this
+                    )">
+
+                    ${option}
+
+                    </button>
+                    `;
+
+                }
+            );
+
+            html +=
+            "<div id='quizResult"+
+            index+
+            "' class='result'></div>";
+
+            div.innerHTML = html;
+
+            container.appendChild(div);
+
+        }
     );
 
+}
+
+
+/* =====================================================
+   پاسخ آزمون
+===================================================== */
+
+function checkQuiz(
+    quizIndex,
+    selected,
+    button
+){
+
+    const quiz =
+    quizzes[quizIndex];
+
+    const result =
+    document.getElementById(
+        "quizResult"+quizIndex
+    );
 
     if(
-        answerIndex ===
-        question.correct
+        selected === quiz.answer
     ){
 
         result.textContent =
@@ -2445,10 +2564,39 @@ button
 
 
 /* =====================================================
-   شروع
+   شروع سایت
 ===================================================== */
 
-loadAllPrices();
+function init(){
+
+    loadLaws();
+
+    loadTerms();
+
+    loadQuizzes();
+
+    /*
+    قیمت‌ها همزمان درخواست می‌شوند.
+    */
+
+    loadUSD();
+
+    loadGold18();
+
+    loadGoldOunce();
+
+    loadSilver();
+
+    loadCopper();
+
+}
+
+
+/* =====================================================
+   اجرا
+===================================================== */
+
+init();
 
 </script>
 
