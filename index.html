@@ -2,30 +2,16 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>مرکز حقوقی، بیمه و سرمایه‌گذاری فلزات | پارسا کرمی</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
-
-:root{
-    --gold:#d4af37;
-    --gold2:#f1d477;
-    --dark:#080808;
-    --dark2:#111111;
-    --card:#171717;
-    --text:#f5f5f5;
-    --muted:#b8b8b8;
-    --border:rgba(212,175,55,.25);
-    --success:#48d597;
-    --danger:#ef6666;
-}
-
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
+    font-family:Tahoma,Arial,sans-serif;
 }
 
 html{
@@ -33,39 +19,33 @@ html{
 }
 
 body{
-    font-family:'Vazirmatn',Tahoma,sans-serif;
-    background:
-        radial-gradient(circle at 20% 10%,rgba(212,175,55,.08),transparent 25%),
-        radial-gradient(circle at 80% 40%,rgba(212,175,55,.05),transparent 25%),
-        var(--dark);
-    color:var(--text);
+    background:#080808;
+    color:#f5f5f5;
     line-height:1.9;
 }
 
-button,input,select{
-    font-family:inherit;
+:root{
+    --gold:#d4af37;
+    --gold2:#f4d77b;
+    --dark:#0b0b0b;
+    --card:#151515;
+    --border:rgba(212,175,55,.28);
+    --muted:#aaa;
 }
-
-a{
-    color:inherit;
-    text-decoration:none;
-}
-
-/* HEADER */
 
 header{
     position:sticky;
     top:0;
     z-index:1000;
-    backdrop-filter:blur(18px);
-    background:rgba(8,8,8,.88);
+    background:rgba(5,5,5,.95);
     border-bottom:1px solid var(--border);
+    backdrop-filter:blur(15px);
 }
 
-.navbar{
+.nav{
     max-width:1250px;
     margin:auto;
-    padding:16px 22px;
+    padding:15px 20px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -73,187 +53,125 @@ header{
 }
 
 .logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.logo-icon{
-    width:46px;
-    height:46px;
-    border:1px solid var(--gold);
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
     color:var(--gold2);
     font-size:21px;
-    box-shadow:0 0 20px rgba(212,175,55,.15);
-}
-
-.logo h2{
-    font-size:17px;
-    color:var(--gold2);
-}
-
-.logo span{
-    display:block;
-    color:#aaa;
-    font-size:11px;
+    font-weight:bold;
+    white-space:nowrap;
 }
 
 nav{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    gap:5px;
+    gap:7px;
 }
 
 nav a{
-    padding:8px 11px;
+    color:#eee;
+    text-decoration:none;
+    padding:7px 12px;
     border-radius:8px;
-    color:#ddd;
-    font-size:13px;
-    transition:.25s;
+    transition:.3s;
+    font-size:14px;
 }
 
 nav a:hover{
-    color:var(--gold2);
-    background:rgba(212,175,55,.08);
+    color:#111;
+    background:var(--gold);
 }
-
-/* HERO */
 
 .hero{
-    min-height:650px;
+    min-height:600px;
     display:flex;
     align-items:center;
-    position:relative;
-    overflow:hidden;
-}
-
-.hero:before{
-    content:"";
-    position:absolute;
-    width:500px;
-    height:500px;
-    background:rgba(212,175,55,.08);
-    filter:blur(90px);
-    border-radius:50%;
-    left:-100px;
-    top:100px;
+    justify-content:center;
+    text-align:center;
+    padding:80px 20px;
+    background:
+    radial-gradient(circle at center,rgba(212,175,55,.17),transparent 35%),
+    linear-gradient(135deg,#090909,#15120a,#050505);
 }
 
 .hero-content{
-    max-width:1250px;
-    width:100%;
-    margin:auto;
-    padding:90px 25px;
-    position:relative;
-    z-index:2;
+    max-width:900px;
 }
 
 .badge{
     display:inline-block;
-    border:1px solid var(--border);
+    border:1px solid var(--gold);
     color:var(--gold2);
-    background:rgba(212,175,55,.07);
-    padding:7px 16px;
+    padding:7px 17px;
     border-radius:30px;
-    font-size:13px;
     margin-bottom:20px;
 }
 
 .hero h1{
-    max-width:850px;
-    font-size:clamp(34px,6vw,70px);
-    line-height:1.35;
-    margin-bottom:20px;
-}
-
-.hero h1 span{
+    font-size:clamp(30px,5vw,60px);
     color:var(--gold2);
+    margin-bottom:15px;
 }
 
 .hero p{
-    max-width:700px;
-    color:#bbb;
-    font-size:17px;
-    margin-bottom:30px;
-}
-
-.buttons{
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
+    color:#ddd;
+    font-size:18px;
+    max-width:750px;
+    margin:auto;
 }
 
 .btn{
+    display:inline-block;
     border:0;
-    cursor:pointer;
-    padding:13px 22px;
+    background:linear-gradient(135deg,var(--gold),var(--gold2));
+    color:#111;
+    padding:12px 25px;
     border-radius:10px;
-    font-weight:700;
-    transition:.25s;
+    font-weight:bold;
+    cursor:pointer;
+    text-decoration:none;
+    transition:.3s;
+    margin:8px 3px;
 }
 
-.btn-gold{
-    background:linear-gradient(135deg,var(--gold),#9d7614);
-    color:#080808;
-}
-
-.btn-gold:hover{
+.btn:hover{
     transform:translateY(-3px);
-    box-shadow:0 10px 30px rgba(212,175,55,.2);
+    box-shadow:0 8px 25px rgba(212,175,55,.25);
 }
 
-.btn-dark{
-    background:#191919;
-    border:1px solid var(--border);
+.btn.dark{
+    background:#222;
     color:white;
+    border:1px solid var(--border);
 }
-
-.btn-dark:hover{
-    border-color:var(--gold);
-}
-
-/* SECTIONS */
 
 section{
     max-width:1250px;
     margin:auto;
-    padding:85px 22px;
+    padding:70px 20px;
 }
 
 .section-title{
     text-align:center;
-    margin-bottom:45px;
-}
-
-.section-title small{
-    color:var(--gold);
-    font-weight:700;
+    margin-bottom:40px;
 }
 
 .section-title h2{
+    color:var(--gold2);
     font-size:32px;
-    margin:8px 0;
 }
 
 .section-title p{
-    color:#999;
+    color:var(--muted);
+    margin-top:5px;
 }
-
-/* CARDS */
 
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:18px;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
 }
 
 .card{
-    background:linear-gradient(145deg,#191919,#101010);
+    background:linear-gradient(145deg,#171717,#0e0e0e);
     border:1px solid var(--border);
     border-radius:18px;
     padding:25px;
@@ -262,152 +180,158 @@ section{
 
 .card:hover{
     transform:translateY(-5px);
-    border-color:rgba(212,175,55,.65);
-    box-shadow:0 15px 45px rgba(0,0,0,.35);
-}
-
-.icon{
-    width:48px;
-    height:48px;
-    border-radius:12px;
-    background:rgba(212,175,55,.1);
-    color:var(--gold2);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-bottom:15px;
-    font-size:22px;
+    border-color:var(--gold);
+    box-shadow:0 10px 35px rgba(0,0,0,.35);
 }
 
 .card h3{
-    margin-bottom:8px;
-    color:#f3d77c;
-}
-
-.card p{
-    color:#aaa;
-    font-size:14px;
-}
-
-/* MARKET */
-
-.market-card{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:15px;
-}
-
-.price{
-    font-size:22px;
-    color:var(--gold2);
-    font-weight:800;
-}
-
-/* LAWYER */
-
-.lawyer{
-    display:grid;
-    grid-template-columns:260px 1fr;
-    gap:30px;
-    align-items:center;
-    background:linear-gradient(135deg,#151515,#0b0b0b);
-    border:1px solid var(--border);
-    border-radius:25px;
-    padding:30px;
-}
-
-.lawyer-photo{
-    height:300px;
-    border-radius:20px;
-    border:1px solid var(--border);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:
-        radial-gradient(circle,#2c2412,#111);
-    color:var(--gold2);
-    font-size:60px;
-}
-
-.lawyer h2{
     color:var(--gold2);
     margin-bottom:10px;
 }
 
-.lawyer-role{
-    color:#aaa;
-    margin-bottom:20px;
-}
-
-.info-list{
-    list-style:none;
-}
-
-.info-list li{
-    margin:7px 0;
+.card p{
     color:#ccc;
 }
 
-.info-list li::before{
-    content:"◆";
-    color:var(--gold);
-    margin-left:8px;
+.price{
+    font-size:25px;
+    color:var(--gold2);
+    font-weight:bold;
+    margin:10px 0;
 }
 
-/* SEARCH */
-
-.search-box{
-    margin-bottom:25px;
+.notice{
+    padding:15px 20px;
+    border-right:4px solid var(--gold);
+    background:#16130b;
+    border-radius:10px;
+    margin:20px 0;
+    color:#ddd;
 }
 
-.search-box input{
+form{
+    display:grid;
+    gap:15px;
+}
+
+label{
+    color:#ddd;
+    font-weight:bold;
+}
+
+input,select,textarea{
     width:100%;
-    background:#111;
-    color:white;
-    border:1px solid var(--border);
-    border-radius:12px;
-    padding:15px;
+    background:#0c0c0c;
+    color:#fff;
+    border:1px solid #333;
+    border-radius:10px;
+    padding:13px;
     outline:none;
 }
 
-.search-box input:focus{
+input:focus,select:focus,textarea:focus{
     border-color:var(--gold);
 }
 
-/* LEGAL */
-
-.legal-card{
-    position:relative;
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
 }
 
-.legal-number{
-    position:absolute;
-    left:18px;
-    top:15px;
-    color:var(--gold);
-    font-weight:800;
+.hidden{
+    display:none!important;
 }
 
-.legal-card h3{
-    padding-left:45px;
+.result{
+    background:#0b0b0b;
+    border:1px solid var(--border);
+    padding:20px;
+    border-radius:15px;
+    margin-top:20px;
 }
 
-.legal-card p{
-    margin-top:8px;
+.result-row{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    border-bottom:1px solid #282828;
+    padding:9px 0;
 }
 
-/* QUIZ */
+.result-row:last-child{
+    border-bottom:0;
+}
+
+.gold-text{
+    color:var(--gold2);
+}
+
+.progress{
+    height:9px;
+    background:#292929;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:7px;
+}
+
+.progress div{
+    height:100%;
+    background:linear-gradient(90deg,var(--gold),var(--gold2));
+}
+
+.tabs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    justify-content:center;
+    margin-bottom:25px;
+}
+
+.tab{
+    background:#171717;
+    color:#ddd;
+    border:1px solid #333;
+    padding:9px 16px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.tab.active{
+    background:var(--gold);
+    color:#111;
+}
+
+.search{
+    max-width:600px;
+    margin:0 auto 25px;
+}
+
+.list{
+    display:grid;
+    gap:12px;
+}
+
+.list-item{
+    background:#121212;
+    border:1px solid #292929;
+    padding:17px;
+    border-radius:12px;
+}
+
+.list-item strong{
+    color:var(--gold2);
+}
 
 .quiz-box{
-    max-width:800px;
+    max-width:850px;
     margin:auto;
 }
 
 .question{
-    font-size:19px;
-    font-weight:700;
+    font-size:20px;
     margin-bottom:20px;
+    color:#fff;
 }
 
 .options{
@@ -416,225 +340,77 @@ section{
 }
 
 .option{
-    background:#141414;
-    color:#eee;
+    background:#171717;
     border:1px solid #333;
-    padding:14px;
+    color:#eee;
+    padding:13px;
     border-radius:10px;
     cursor:pointer;
     text-align:right;
-    transition:.2s;
 }
 
 .option:hover{
     border-color:var(--gold);
 }
 
-.option.selected{
-    border-color:var(--gold);
-    background:rgba(212,175,55,.1);
+.option.correct{
+    background:#123d22;
+    border-color:#36b566;
 }
 
-.quiz-result{
-    margin-top:25px;
-    padding:20px;
-    border:1px solid var(--border);
+.option.wrong{
+    background:#4a1616;
+    border-color:#d44;
+}
+
+.receipt{
+    background:#f8f8f8;
+    color:#111;
     border-radius:15px;
+    padding:25px;
+    max-width:650px;
+    margin:25px auto;
+}
+
+.receipt h2{
+    color:#8b6b10;
     text-align:center;
-    display:none;
+    margin-bottom:15px;
 }
 
-/* INSURANCE */
-
-.plan{
-    position:relative;
-    overflow:hidden;
-}
-
-.plan strong{
-    color:var(--gold2);
-    font-size:28px;
-    display:block;
-    margin:10px 0;
-}
-
-/* BUY */
-
-.buy-card{
-    text-align:center;
-}
-
-.buy-card .price-big{
-    color:var(--gold2);
-    font-size:30px;
-    font-weight:800;
-    margin:15px 0;
-}
-
-/* MODAL */
-
-.modal{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.78);
-    backdrop-filter:blur(8px);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    z-index:2000;
-    padding:20px;
-}
-
-.modal.show{
+.receipt .line{
     display:flex;
+    justify-content:space-between;
+    border-bottom:1px dashed #aaa;
+    padding:8px 0;
 }
 
-.modal-box{
-    width:min(650px,100%);
-    max-height:90vh;
-    overflow:auto;
-    background:#121212;
-    border:1px solid var(--gold);
-    border-radius:22px;
-    padding:30px;
-    position:relative;
+.receipt .total{
+    font-weight:bold;
+    font-size:20px;
+    color:#735600;
 }
-
-.close{
-    position:absolute;
-    left:20px;
-    top:15px;
-    background:none;
-    border:0;
-    color:#aaa;
-    font-size:25px;
-    cursor:pointer;
-}
-
-.modal-title{
-    color:var(--gold2);
-    margin-bottom:25px;
-}
-
-.form-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-}
-
-.form-group{
-    display:flex;
-    flex-direction:column;
-    gap:6px;
-}
-
-.form-group.full{
-    grid-column:1/-1;
-}
-
-.form-group label{
-    color:#aaa;
-    font-size:13px;
-}
-
-.form-group input,
-.form-group select{
-    background:#0b0b0b;
-    color:white;
-    border:1px solid #333;
-    border-radius:9px;
-    padding:12px;
-    outline:none;
-}
-
-.form-group input:focus,
-.form-group select:focus{
-    border-color:var(--gold);
-}
-
-.purchase-result{
-    display:none;
-    margin-top:20px;
-}
-
-.result-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-}
-
-.result-item{
-    background:#191919;
-    border:1px solid #292929;
-    border-radius:10px;
-    padding:12px;
-}
-
-.result-item span{
-    display:block;
-    color:#999;
-    font-size:12px;
-}
-
-.result-item strong{
-    color:#f2d36b;
-}
-
-/* FOOTER */
 
 footer{
     border-top:1px solid var(--border);
-    background:#070707;
-    padding:45px 20px;
+    padding:35px 20px;
     text-align:center;
+    color:#aaa;
+    background:#050505;
 }
-
-footer h3{
-    color:var(--gold2);
-    margin-bottom:8px;
-}
-
-footer p{
-    color:#777;
-    font-size:13px;
-}
-
-.disclaimer{
-    max-width:850px;
-    margin:20px auto 0;
-    padding:12px;
-    border:1px solid #292929;
-    border-radius:10px;
-    color:#888;
-    font-size:12px;
-}
-
-/* RESPONSIVE */
 
 @media(max-width:800px){
+    .nav{
+        flex-direction:column;
+    }
 
-    nav{
-        display:none;
+    nav a{
+        font-size:12px;
+        padding:6px 8px;
     }
 
     .hero{
-        min-height:550px;
-    }
-
-    .lawyer{
-        grid-template-columns:1fr;
-    }
-
-    .lawyer-photo{
-        height:220px;
-    }
-
-    .form-grid{
-        grid-template-columns:1fr;
-    }
-
-    .form-group.full{
-        grid-column:auto;
+        min-height:500px;
     }
 }
 </style>
@@ -643,470 +419,364 @@ footer p{
 <body>
 
 <header>
-<div class="navbar">
+<div class="nav">
 
-    <div class="logo">
-        <div class="logo-icon">⚖</div>
-        <div>
-            <h2>پارسا کرمی</h2>
-            <span>مرکز حقوقی، بیمه و سرمایه‌گذاری فلزات</span>
-        </div>
-    </div>
+<div class="logo">پارسا کرمی</div>
 
-    <nav>
-        <a href="#home">خانه</a>
-        <a href="#market">قیمت آنلاین</a>
-        <a href="#portfolio">سبد سرمایه‌گذاری</a>
-        <a href="#insurance">بیمه</a>
-        <a href="#laws">قوانین</a>
-        <a href="#terms">اصطلاحات</a>
-        <a href="#quiz">آزمون</a>
-        <a href="#lawyer">وکیل</a>
-    </nav>
+<nav>
+<a href="#home">خانه</a>
+<a href="#market">قیمت‌ها</a>
+<a href="#portfolio">سبد سرمایه‌گذاری</a>
+<a href="#buy">خرید آزمایشی</a>
+<a href="#insurance">بیمه</a>
+<a href="#laws">قوانین</a>
+<a href="#terms">اصطلاحات</a>
+<a href="#quiz">آزمون</a>
+<a href="#lawyer">وکیل</a>
+</nav>
 
 </div>
 </header>
 
+<main>
 
-<!-- HERO -->
-
-<div class="hero" id="home">
-
+<section class="hero" id="home">
 <div class="hero-content">
 
-    <span class="badge">مرکز تخصصی خدمات حقوقی و سرمایه‌گذاری</span>
+<div class="badge">مرکز حقوقی، بیمه و سرمایه‌گذاری فلزات</div>
 
-    <h1>
-        حقوق، بیمه و سرمایه‌گذاری
-        <span>هوشمند فلزات</span>
-    </h1>
+<h1>پارسا کرمی</h1>
 
-    <p>
-        سامانه‌ای مفهومی برای آشنایی با خدمات حقوقی،
-        آموزش قوانین، مدیریت سبد فلزات و بررسی طرح‌های
-        آزمایشی سرمایه‌گذاری.
-    </p>
+<p>
+سامانه‌ای مفهومی برای آموزش حقوق، آشنایی با قوانین،
+مدیریت سبد فلزات و شبیه‌سازی خرید و سرمایه‌گذاری.
+</p>
 
-    <div class="buttons">
-        <a href="#portfolio" class="btn btn-gold">
-            مشاهده سبد سرمایه‌گذاری
-        </a>
+<br>
 
-        <a href="#laws" class="btn btn-dark">
-            ورود به کتابخانه حقوقی
-        </a>
-    </div>
+<a class="btn" href="#buy">شروع خرید آزمایشی</a>
+<a class="btn dark" href="#quiz">شروع آزمون حقوقی</a>
 
 </div>
-</div>
+</section>
 
-
-<!-- MARKET -->
 
 <section id="market">
 
 <div class="section-title">
-    <small>MARKET</small>
-    <h2>قیمت آنلاین بازار</h2>
-    <p>نمایش نمونه‌ای اطلاعات بازار برای طراحی سامانه</p>
+<h2>قیمت‌های آنلاین</h2>
+<p>نمایش نمونه‌ای قیمت‌ها برای محیط آزمایشی</p>
 </div>
 
 <div class="grid">
 
-    <div class="card market-card">
-        <div>
-            <h3>دلار</h3>
-            <p>قیمت تقریبی نمایشی</p>
-        </div>
-        <div class="price">—</div>
-    </div>
+<div class="card">
+<h3>طلا</h3>
+<div class="price" id="goldPrice">7,500,000 تومان</div>
+<p>قیمت نمونه هر گرم طلای ۱۸ عیار</p>
+</div>
 
-    <div class="card market-card">
-        <div>
-            <h3>طلای ۱۸ عیار</h3>
-            <p>قیمت هر گرم</p>
-        </div>
-        <div class="price">—</div>
-    </div>
+<div class="card">
+<h3>نقره</h3>
+<div class="price" id="silverPrice">120,000 تومان</div>
+<p>قیمت نمونه هر گرم نقره</p>
+</div>
 
-    <div class="card market-card">
-        <div>
-            <h3>اونس طلا</h3>
-            <p>USD / Ounce</p>
-        </div>
-        <div class="price">—</div>
-    </div>
+<div class="card">
+<h3>مس</h3>
+<div class="price" id="copperPrice">850,000 تومان</div>
+<p>قیمت نمونه هر کیلوگرم مس</p>
+</div>
 
-    <div class="card market-card">
-        <div>
-            <h3>نقره XAG</h3>
-            <p>USD / Ounce</p>
-        </div>
-        <div class="price">—</div>
-    </div>
-
-    <div class="card market-card">
-        <div>
-            <h3>مس HG</h3>
-            <p>Global Copper</p>
-        </div>
-        <div class="price">—</div>
-    </div>
+<div class="card">
+<h3>دلار</h3>
+<div class="price">95,000 تومان</div>
+<p>قیمت نمونه جهت شبیه‌سازی</p>
+</div>
 
 </div>
+
+<div class="notice">
+قیمت‌های این نسخه صرفاً برای شبیه‌سازی هستند و به معنی قیمت لحظه‌ای بازار یا پیشنهاد سرمایه‌گذاری نیستند.
+</div>
+
 </section>
 
-
-<!-- PORTFOLIO -->
 
 <section id="portfolio">
 
 <div class="section-title">
-    <small>SMART PORTFOLIO</small>
-    <h2>سبد هوشمند فلزات</h2>
-    <p>انتخاب آزمایشی ترکیب فلزات برای سرمایه‌گذاری</p>
+<h2>سبد هوشمند فلزات</h2>
+<p>تقسیم آزمایشی سرمایه میان طلا، نقره و مس</p>
 </div>
 
 <div class="grid">
 
-    <div class="card plan">
-        <div class="icon">🥇</div>
-        <h3>طرح طلایی</h3>
-        <p>تمرکز اصلی سبد روی طلا</p>
-        <strong>۴۰٪ طلا</strong>
-        <button class="btn btn-gold" onclick="openPurchase('طرح طلایی')">
-            خرید آزمایشی
-        </button>
-    </div>
+<div class="card">
+<h3>طلا</h3>
+<p>سهم پیشنهادی</p>
+<div class="price">40%</div>
+</div>
 
-    <div class="card plan">
-        <div class="icon">🥈</div>
-        <h3>طرح نقره‌ای</h3>
-        <p>تمرکز اصلی سبد روی نقره</p>
-        <strong>۳۵٪ نقره</strong>
-        <button class="btn btn-gold" onclick="openPurchase('طرح نقره‌ای')">
-            خرید آزمایشی
-        </button>
-    </div>
+<div class="card">
+<h3>نقره</h3>
+<p>سهم پیشنهادی</p>
+<div class="price">35%</div>
+</div>
 
-    <div class="card plan">
-        <div class="icon">🔶</div>
-        <h3>طرح مسی</h3>
-        <p>تمرکز اصلی سبد روی مس</p>
-        <strong>۲۵٪ مس</strong>
-        <button class="btn btn-gold" onclick="openPurchase('طرح مسی')">
-            خرید آزمایشی
-        </button>
-    </div>
+<div class="card">
+<h3>مس</h3>
+<p>سهم پیشنهادی</p>
+<div class="price">25%</div>
+</div>
 
 </div>
+
 </section>
 
 
-<!-- INSURANCE -->
+<section id="buy">
+
+<div class="section-title">
+<h2>خرید آزمایشی فلزات</h2>
+<p>شبیه‌سازی یک فرآیند خرید واقعی</p>
+</div>
+
+<div class="notice">
+این بخش کاملاً آزمایشی است. هیچ وجهی دریافت نمی‌شود و هیچ خرید واقعی انجام نمی‌گیرد.
+</div>
+
+<div class="card">
+
+<form id="buyForm">
+
+<div class="form-grid">
+
+<div>
+<label>نام و نام خانوادگی</label>
+<input id="buyerName" required placeholder="مثلاً پارسا کرمی">
+</div>
+
+<div>
+<label>شماره تماس</label>
+<input id="buyerPhone" required placeholder="09xxxxxxxxx">
+</div>
+
+</div>
+
+<div>
+<label>مبلغ سرمایه‌گذاری (تومان)</label>
+<input type="number" id="amount" min="100000" required placeholder="مثلاً 2000000">
+</div>
+
+<div>
+<label>نوع خرید</label>
+
+<select id="assetType">
+
+<option value="gold">طلا</option>
+<option value="silver">نقره</option>
+<option value="copper">مس</option>
+<option value="mixed">سبد ترکیبی</option>
+
+</select>
+
+</div>
+
+
+<div id="mixedBox" class="hidden">
+
+<label>درصد طلا</label>
+<input type="number" id="goldPercent" value="40" min="0" max="100">
+
+<label>درصد نقره</label>
+<input type="number" id="silverPercent" value="35" min="0" max="100">
+
+<label>درصد مس</label>
+<input type="number" id="copperPercent" value="25" min="0" max="100">
+
+<div class="notice">
+جمع درصدها باید دقیقاً ۱۰۰٪ باشد.
+</div>
+
+</div>
+
+
+<div>
+<label>مدت سرمایه‌گذاری</label>
+
+<select id="period">
+<option value="1">۱ سال</option>
+<option value="3">۳ سال</option>
+<option value="5">۵ سال</option>
+<option value="10">۱۰ سال</option>
+</select>
+
+</div>
+
+<button class="btn" type="button" onclick="previewPurchase()">
+محاسبه و بررسی اطلاعات
+</button>
+
+</form>
+
+<div id="purchasePreview" class="result hidden"></div>
+
+<div id="finalConfirm" class="hidden">
+
+<div class="notice">
+لطفاً اطلاعات زیر را بررسی کنید. در صورت تأیید، رسید آزمایشی صادر می‌شود.
+</div>
+
+<button class="btn" onclick="createReceipt()">
+تأیید نهایی و صدور رسید
+</button>
+
+</div>
+
+<div id="receiptContainer"></div>
+
+</div>
+
+</section>
+
 
 <section id="insurance">
 
 <div class="section-title">
-    <small>CONCEPT INSURANCE</small>
-    <h2>بیمه بیکاری مبتنی بر فلزات</h2>
-    <p>مدل مفهومی و آزمایشی سامانه</p>
+<h2>بیمه بیکاری مبتنی بر فلزات</h2>
+<p>طرح مفهومی و آزمایشی</p>
 </div>
 
 <div class="grid">
 
-    <div class="card">
-        <div class="icon">01</div>
-        <h3>ثبت‌نام</h3>
-        <p>
-            کاربر طرح موردنظر خود را انتخاب کرده
-            و مبلغ آزمایشی را مشخص می‌کند.
-        </p>
-    </div>
+<div class="card">
+<h3>طرح طلا</h3>
+<p>پشتوانه مفهومی مبتنی بر طلا</p>
+</div>
 
-    <div class="card">
-        <div class="icon">02</div>
-        <h3>تشکیل سبد</h3>
-        <p>
-            مبلغ فرضی میان طلا، نقره و مس
-            طبق طرح انتخابی تقسیم می‌شود.
-        </p>
-    </div>
+<div class="card">
+<h3>طرح نقره</h3>
+<p>پشتوانه مفهومی مبتنی بر نقره</p>
+</div>
 
-    <div class="card">
-        <div class="icon">03</div>
-        <h3>دوره بیکاری</h3>
-        <p>
-            در مدل مفهومی، ارزش سبد به‌عنوان
-            پشتوانه محاسبات در نظر گرفته می‌شود.
-        </p>
-    </div>
+<div class="card">
+<h3>طرح مس</h3>
+<p>پشتوانه مفهومی مبتنی بر مس</p>
+</div>
 
-    <div class="card">
-        <div class="icon">04</div>
-        <h3>محاسبه پرداخت</h3>
-        <p>
-            مبلغ قابل پرداخت براساس ارزش فرضی
-            سبد و قواعد طرح محاسبه می‌شود.
-        </p>
-    </div>
+<div class="card">
+<h3>طرح ترکیبی</h3>
+<p>ترکیب آزمایشی سه فلز برای ایجاد پشتوانه متنوع</p>
+</div>
 
 </div>
+
+<div class="notice">
+این ایده یک مدل مفهومی آموزشی است و در این سایت به‌عنوان محصول بیمه‌ای واقعی عرضه نمی‌شود.
+</div>
+
 </section>
 
-
-<!-- LAWYER -->
-
-<section id="lawyer">
-
-<div class="section-title">
-    <small>LEGAL COUNSEL</small>
-    <h2>وکیل مجموعه</h2>
-    <p>معرفی بخش مشاوره و خدمات حقوقی</p>
-</div>
-
-<div class="lawyer">
-
-    <div class="lawyer-photo">
-        ⚖
-    </div>
-
-    <div>
-        <h2>حشمت کرمی</h2>
-
-        <div class="lawyer-role">
-            وکیل دادگستری | مشاوره و خدمات حقوقی
-        </div>
-
-        <ul class="info-list">
-            <li>مشاوره حقوقی و قراردادی</li>
-            <li>بررسی و تنظیم قراردادها</li>
-            <li>پیگیری امور حقوقی و قضایی</li>
-            <li>مشاوره در اختلافات و دعاوی</li>
-            <li>ارائه خدمات حقوقی به اشخاص و کسب‌وکارها</li>
-        </ul>
-
-        <br>
-
-        <button class="btn btn-gold"
-                onclick="alert('اطلاعات تماس و رزرو مشاوره را می‌توانید در این بخش قرار دهید.')">
-            درخواست مشاوره
-        </button>
-    </div>
-
-</div>
-</section>
-
-
-<!-- TERMS -->
 
 <section id="terms">
 
 <div class="section-title">
-    <small>LEGAL DICTIONARY</small>
-    <h2>۵۰ اصطلاح حقوقی</h2>
-    <p>تعریف ساده و آموزشی اصطلاحات پرکاربرد حقوقی</p>
+<h2>۵۰ اصطلاح مهم حقوقی</h2>
+<p>مرجع آموزشی اصطلاحات حقوقی</p>
 </div>
 
-<div class="search-box">
-    <input id="termSearch"
-           type="text"
-           placeholder="جستجو در ۵۰ اصطلاح حقوقی..."
-           oninput="searchTerms()">
-</div>
+<input class="search" id="termSearch" oninput="searchTerms()" placeholder="جستجوی اصطلاح حقوقی...">
 
-<div class="grid" id="termsContainer"></div>
+<div id="termsList" class="list"></div>
 
 </section>
 
-
-<!-- LAWS -->
 
 <section id="laws">
 
 <div class="section-title">
-    <small>LEGAL LIBRARY</small>
-    <h2>۲۰۰ ماده قانونی منتخب</h2>
-    <p>کتابخانه آموزشی و قابل جستجو</p>
+<h2>بانک ۲۰۰ ماده و عنوان قانونی</h2>
+<p>مرجع آموزشی دسته‌بندی‌شده</p>
 </div>
 
-<div class="search-box">
-    <input id="lawSearch"
-           type="text"
-           placeholder="جستجو بر اساس شماره ماده یا موضوع..."
-           oninput="searchLaws()">
+<input class="search" id="lawSearch" oninput="searchLaws()" placeholder="جستجوی ماده یا عنوان...">
+
+<div class="tabs">
+
+<button class="tab active" onclick="filterLaws('همه',this)">همه</button>
+<button class="tab" onclick="filterLaws('مدنی',this)">مدنی</button>
+<button class="tab" onclick="filterLaws('کیفری',this)">کیفری</button>
+<button class="tab" onclick="filterLaws('آیین دادرسی',this)">آیین دادرسی</button>
+<button class="tab" onclick="filterLaws('تجارت',this)">تجارت</button>
+
 </div>
 
-<div class="grid" id="lawsContainer"></div>
+<div id="lawsList" class="list"></div>
+
+<div class="notice">
+توجه: این بانک برای آموزش و آشنایی اولیه طراحی شده است. برای استناد حقوقی باید متن رسمی و آخرین اصلاحات قوانین بررسی شود.
+</div>
 
 </section>
 
-
-<!-- QUIZ -->
 
 <section id="quiz">
 
 <div class="section-title">
-    <small>LEGAL QUIZ</small>
-    <h2>آزمون حقوقی</h2>
-    <p>۲۰ سؤال چهارگزینه‌ای</p>
+<h2>آزمون حقوقی</h2>
+<p>۲۰ سؤال چهارگزینه‌ای</p>
 </div>
 
 <div class="card quiz-box">
 
-    <div id="quizContent"></div>
-
-    <button id="nextBtn"
-            class="btn btn-gold"
-            onclick="nextQuestion()">
-        سؤال بعدی
-    </button>
-
-    <div id="quizResult" class="quiz-result"></div>
+<div id="quizContent"></div>
 
 </div>
 
 </section>
 
 
-<!-- BUY MODAL -->
+<section id="lawyer">
 
-<div class="modal" id="purchaseModal">
-
-<div class="modal-box">
-
-<button class="close" onclick="closePurchase()">×</button>
-
-<h2 class="modal-title">
-    خرید آزمایشی طرح
-</h2>
-
-<div class="form-grid">
-
-    <div class="form-group full">
-        <label>نام مشتری</label>
-        <input id="customerName"
-               type="text"
-               placeholder="مثلاً پارسا کرمی">
-    </div>
-
-    <div class="form-group">
-        <label>طرح انتخابی</label>
-        <select id="selectedPlan">
-            <option>طرح طلایی</option>
-            <option>طرح نقره‌ای</option>
-            <option>طرح مسی</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label>نوع خرید</label>
-        <select id="period">
-            <option>ماهانه</option>
-            <option>سالانه</option>
-        </select>
-    </div>
-
-    <div class="form-group full">
-        <label>مبلغ سرمایه‌گذاری آزمایشی (تومان)</label>
-        <input id="amount"
-               type="number"
-               min="100000"
-               value="2000000">
-    </div>
-
+<div class="section-title">
+<h2>وکیل</h2>
+<p>معرفی بخش حقوقی</p>
 </div>
+
+<div class="card" style="max-width:750px;margin:auto;text-align:center">
+
+<h3>حشمت کرمی</h3>
+
+<p>
+وکیل و مشاور حقوقی
+</p>
 
 <br>
 
-<button class="btn btn-gold"
-        style="width:100%"
-        onclick="calculatePurchase()">
-    ثبت خرید آزمایشی
-</button>
+<p>
+ارائه خدمات و مشاوره در زمینه‌های حقوقی،
+قراردادها، دعاوی و امور مرتبط با قوانین.
+</p>
 
-<div class="purchase-result" id="purchaseResult">
+<br>
 
-    <div class="card">
-
-        <h3>رسید خرید آزمایشی</h3>
-
-        <br>
-
-        <div class="result-grid">
-
-            <div class="result-item">
-                <span>نام مشتری</span>
-                <strong id="rName"></strong>
-            </div>
-
-            <div class="result-item">
-                <span>طرح</span>
-                <strong id="rPlan"></strong>
-            </div>
-
-            <div class="result-item">
-                <span>مبلغ خرید</span>
-                <strong id="rAmount"></strong>
-            </div>
-
-            <div class="result-item">
-                <span>سود فرضی</span>
-                <strong id="rProfit"></strong>
-            </div>
-
-            <div class="result-item">
-                <span>سهم مشتری</span>
-                <strong>۹۵٪</strong>
-            </div>
-
-            <div class="result-item">
-                <span>سهم مرکز</span>
-                <strong>۵٪</strong>
-            </div>
-
-            <div class="result-item">
-                <span>سود مشتری</span>
-                <strong id="rCustomerProfit"></strong>
-            </div>
-
-            <div class="result-item">
-                <span>ارزش نهایی فرضی</span>
-                <strong id="rFinal"></strong>
-            </div>
-
-        </div>
-
-        <br>
-
-        <p style="color:#aaa;font-size:12px">
-            وضعیت: خرید آزمایشی / مفهومی
-        </p>
-
-    </div>
-
+<div class="notice">
+برای استفاده واقعی از خدمات حقوقی، اطلاعات تماس و مجوزهای مربوط باید به‌صورت واقعی و قابل تأیید درج شوند.
 </div>
 
 </div>
-</div>
 
+</section>
 
-<!-- FOOTER -->
+</main>
+
 
 <footer>
 
-<h3>مرکز حقوقی، بیمه و سرمایه‌گذاری فلزات</h3>
+<p>© 2026 مرکز حقوقی، بیمه و سرمایه‌گذاری فلزات | پارسا کرمی</p>
 
-<p>
-پارسا کرمی | دانشجوی رشته حقوق
-</p>
-
-<div class="disclaimer">
-    این وب‌سایت در بخش‌های سرمایه‌گذاری و بیمه، نسخه آزمایشی و مفهومی دارد.
-    اطلاعات مالی نمایش‌داده‌شده به‌عنوان پیشنهاد سرمایه‌گذاری،
-    قرارداد بیمه یا تضمین سود تلقی نمی‌شود.
-    متن قوانین نیز باید با آخرین نسخه رسمی قوانین تطبیق داده شود.
-</div>
+<p>این وب‌سایت در بخش‌های سرمایه‌گذاری و بیمه دارای محتوای آزمایشی و مفهومی است.</p>
 
 </footer>
 
@@ -1114,18 +784,319 @@ footer p{
 <script>
 
 /* =========================
-   ۵۰ اصطلاح حقوقی
+   قیمت‌های آزمایشی
 ========================= */
 
-const terms = [
+const prices = {
+    gold:7500000,
+    silver:120000,
+    copper:850000
+};
 
-["۱","عقد","توافق دو یا چند اراده برای ایجاد یک اثر حقوقی."],
-["۲","قرارداد","توافق اشخاص برای ایجاد، تغییر یا پایان دادن به تعهدات."],
-["۳","تعهد","الزام قانونی یا قراردادی شخص به انجام یا ترک یک عمل."],
-["۴","طرفین قرارداد","اشخاصی که قرارداد را منعقد می‌کنند."],
-["۵","ایجاب","پیشنهاد انعقاد قرارداد با شرایط مشخص."],
-["۶","قبول","پذیرش ایجاب از سوی طرف مقابل."],
-["۷","اهلیت","توانایی قانونی شخص برای دارا شدن یا اجرای حق."],
-["۸","مالکیت","حق قانونی شخص نسبت به مال."],
-["۹","حق انتفاع","حق استفاده از مالی که مالکیت آن متعلق به دیگری است."],
-[
+
+/* =========================
+   خرید آزمایشی
+========================= */
+
+let currentPurchase = null;
+
+document.getElementById("assetType").addEventListener("change",function(){
+
+    document.getElementById("mixedBox")
+    .classList.toggle("hidden",this.value !== "mixed");
+
+});
+
+
+function formatMoney(number){
+
+    return Number(number).toLocaleString("fa-IR") + " تومان";
+
+}
+
+
+function calculateProfit(asset,amount,years){
+
+    /*
+    نرخ رشد سالانه صرفاً نمونه آموزشی است.
+    */
+
+    const rates = {
+        gold:0.12,
+        silver:0.10,
+        copper:0.14
+    };
+
+    return amount * Math.pow(1 + rates[asset],years);
+
+}
+
+
+function previewPurchase(){
+
+    const name = document.getElementById("buyerName").value.trim();
+    const phone = document.getElementById("buyerPhone").value.trim();
+    const amount = Number(document.getElementById("amount").value);
+    const type = document.getElementById("assetType").value;
+    const years = Number(document.getElementById("period").value);
+
+    if(!name || !phone || amount < 100000){
+
+        alert("لطفاً اطلاعات را کامل و صحیح وارد کنید.");
+        return;
+
+    }
+
+    let items = [];
+
+    if(type === "mixed"){
+
+        const gp = Number(document.getElementById("goldPercent").value);
+        const sp = Number(document.getElementById("silverPercent").value);
+        const cp = Number(document.getElementById("copperPercent").value);
+
+        if(gp + sp + cp !== 100){
+
+            alert("جمع درصدهای سبد ترکیبی باید دقیقاً ۱۰۰٪ باشد.");
+            return;
+
+        }
+
+        items = [
+            {
+                name:"طلا",
+                percent:gp,
+                amount:amount * gp / 100,
+                price:prices.gold,
+                asset:"gold"
+            },
+            {
+                name:"نقره",
+                percent:sp,
+                amount:amount * sp / 100,
+                price:prices.silver,
+                asset:"silver"
+            },
+            {
+                name:"مس",
+                percent:cp,
+                amount:amount * cp / 100,
+                price:prices.copper,
+                asset:"copper"
+            }
+        ];
+
+    }else{
+
+        const names = {
+            gold:"طلا",
+            silver:"نقره",
+            copper:"مس"
+        };
+
+        items = [{
+            name:names[type],
+            percent:100,
+            amount:amount,
+            price:prices[type],
+            asset:type
+        }];
+
+    }
+
+    let finalValue = 0;
+
+    items.forEach(item=>{
+
+        item.quantity = item.amount / item.price;
+
+        item.futureValue =
+        calculateProfit(item.asset,item.amount,years);
+
+        finalValue += item.futureValue;
+
+    });
+
+    const profit = finalValue - amount;
+    const profitPercent = (profit / amount) * 100;
+
+    currentPurchase = {
+        name,
+        phone,
+        amount,
+        type,
+        years,
+        items,
+        finalValue,
+        profit,
+        profitPercent
+    };
+
+    let html = `
+    <h3>بررسی خرید آزمایشی</h3>
+
+    <div class="result-row">
+        <span>خریدار</span>
+        <strong>${name}</strong>
+    </div>
+
+    <div class="result-row">
+        <span>شماره تماس</span>
+        <strong>${phone}</strong>
+    </div>
+
+    <div class="result-row">
+        <span>سرمایه اولیه</span>
+        <strong>${formatMoney(amount)}</strong>
+    </div>
+
+    <div class="result-row">
+        <span>مدت</span>
+        <strong>${years} سال</strong>
+    </div>
+    `;
+
+    items.forEach(item=>{
+
+        html += `
+        <div class="result-row">
+            <span>${item.name} (${item.percent}٪)</span>
+            <strong>${formatMoney(item.amount)}</strong>
+        </div>
+
+        <div class="result-row">
+            <span>مقدار تقریبی ${item.name}</span>
+            <strong>${item.quantity.toFixed(6)}</strong>
+        </div>
+        `;
+
+    });
+
+    html += `
+
+    <hr style="border-color:#333;margin:15px 0">
+
+    <div class="result-row">
+        <span>ارزش فرضی پایان دوره</span>
+        <strong class="gold-text">${formatMoney(finalValue)}</strong>
+    </div>
+
+    <div class="result-row">
+        <span>سود/زیان فرضی</span>
+        <strong class="gold-text">${formatMoney(profit)}</strong>
+    </div>
+
+    <div class="result-row">
+        <span>درصد سود فرضی</span>
+        <strong class="gold-text">${profitPercent.toFixed(2)}٪</strong>
+    </div>
+    `;
+
+    document.getElementById("purchasePreview").innerHTML = html;
+
+    document.getElementById("purchasePreview")
+    .classList.remove("hidden");
+
+    document.getElementById("finalConfirm")
+    .classList.remove("hidden");
+
+}
+
+
+function createReceipt(){
+
+    if(!currentPurchase) return;
+
+    const now = new Date();
+
+    const order =
+    "PK-" +
+    now.getFullYear() +
+    String(now.getMonth()+1).padStart(2,"0") +
+    String(now.getDate()).padStart(2,"0") +
+    "-" +
+    Math.floor(100000 + Math.random()*900000);
+
+    let rows = "";
+
+    currentPurchase.items.forEach(item=>{
+
+        rows += `
+        <div class="line">
+            <span>${item.name} (${item.percent}٪)</span>
+            <strong>${formatMoney(item.amount)}</strong>
+        </div>
+
+        <div class="line">
+            <span>مقدار</span>
+            <strong>${item.quantity.toFixed(6)}</strong>
+        </div>
+        `;
+
+    });
+
+    document.getElementById("receiptContainer").innerHTML = `
+
+    <div class="receipt" id="printReceipt">
+
+        <h2>رسید خرید آزمایشی</h2>
+
+        <div class="line">
+            <span>شماره سفارش</span>
+            <strong>${order}</strong>
+        </div>
+
+        <div class="line">
+            <span>تاریخ</span>
+            <strong>${now.toLocaleDateString("fa-IR")}</strong>
+        </div>
+
+        <div class="line">
+            <span>نام خریدار</span>
+            <strong>${currentPurchase.name}</strong>
+        </div>
+
+        <div class="line">
+            <span>شماره تماس</span>
+            <strong>${currentPurchase.phone}</strong>
+        </div>
+
+        <hr style="margin:15px 0">
+
+        ${rows}
+
+        <div class="line">
+            <span>سرمایه اولیه</span>
+            <strong>${formatMoney(currentPurchase.amount)}</strong>
+        </div>
+
+        <div class="line">
+            <span>مدت سرمایه‌گذاری</span>
+            <strong>${currentPurchase.years} سال</strong>
+        </div>
+
+        <div class="line total">
+            <span>سود فرضی</span>
+            <strong>${formatMoney(currentPurchase.profit)}</strong>
+        </div>
+
+        <div class="line total">
+            <span>ارزش فرضی نهایی</span>
+            <strong>${formatMoney(currentPurchase.finalValue)}</strong>
+        </div>
+
+        <br>
+
+        <p style="text-align:center;font-size:13px">
+        این رسید مربوط به خرید آزمایشی و آموزشی است و هیچ معامله یا پرداخت واقعی انجام نشده است.
+        </p>
+
+        <button class="btn" onclick="printReceipt()">
+        چاپ / ذخیره رسید
+        </button>
+
+    </div>
+    `;
+
+    document.getElementById("receiptContainer")
+    .scrollIntoView({behavio
