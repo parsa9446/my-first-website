@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,6 +12,7 @@
 content="راهنمای حرفه‌ای جاذبه‌های گردشگری شیراز، اصفهان و کرمانشاه">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -27,17 +30,21 @@ body{
     overflow-x:hidden;
 }
 
-/* =========================
+/* =========================================
    HERO
-========================= */
+========================================= */
 
 .hero{
     min-height:100vh;
+
     position:relative;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     text-align:center;
+
     overflow:hidden;
 
     background:
@@ -45,27 +52,34 @@ body{
         rgba(0,0,0,.25),
         rgba(2,8,15,.88)
     ),
-    url("https://images.unsplash.com/photo-1572252009286-268acec5ca0a?auto=format&fit=crop&w=1800&q=70")
+    url("https://images.unsplash.com/photo-1572252009286-268acec5ca0a?auto=format&fit=crop&w=1800&q=80")
     center/cover;
 }
 
 .hero::before{
     content:"";
+
     position:absolute;
+
     inset:-20%;
+
     background:
     radial-gradient(
         circle at center,
         rgba(255,210,90,.18),
         transparent 35%
     );
+
     animation:heroGlow 6s infinite alternate;
 }
 
 .hero-content{
     position:relative;
+
     z-index:3;
+
     padding:30px;
+
     animation:heroEnter 1.2s ease;
 }
 
@@ -89,13 +103,17 @@ body{
 
 .hero p{
     font-size:clamp(16px,3vw,25px);
+
     line-height:2;
+
     color:#eee;
 }
 
 .hero-button{
     display:inline-block;
+
     margin-top:30px;
+
     padding:16px 40px;
 
     border-radius:50px;
@@ -108,7 +126,9 @@ body{
     );
 
     color:#111;
+
     text-decoration:none;
+
     font-weight:bold;
 
     transition:.35s;
@@ -118,13 +138,16 @@ body{
 }
 
 .hero-button:hover{
-    transform:translateY(-6px) scale(1.04);
+    transform:
+    translateY(-6px)
+    scale(1.04);
 
     box-shadow:
     0 20px 60px rgba(255,196,50,.35);
 }
 
 @keyframes heroEnter{
+
     from{
         opacity:0;
         transform:translateY(60px);
@@ -134,9 +157,11 @@ body{
         opacity:1;
         transform:translateY(0);
     }
+
 }
 
 @keyframes heroGlow{
+
     from{
         transform:scale(.8);
         opacity:.4;
@@ -146,22 +171,27 @@ body{
         transform:scale(1.3);
         opacity:.9;
     }
+
 }
 
-/* =========================
+/* =========================================
    NAV
-========================= */
+========================================= */
 
 nav{
     position:fixed;
+
     top:15px;
     right:50%;
+
     transform:translateX(50%);
 
     width:min(94%,1100px);
 
     display:flex;
+
     justify-content:center;
+
     gap:28px;
 
     padding:13px 22px;
@@ -169,6 +199,7 @@ nav{
     border-radius:50px;
 
     background:rgba(5,12,20,.68);
+
     backdrop-filter:blur(18px);
 
     border:1px solid rgba(255,255,255,.12);
@@ -178,7 +209,9 @@ nav{
 
 nav a{
     color:#fff;
+
     text-decoration:none;
+
     transition:.3s;
 }
 
@@ -186,9 +219,9 @@ nav a:hover{
     color:#ffd45c;
 }
 
-/* =========================
+/* =========================================
    SECTION
-========================= */
+========================================= */
 
 section{
     padding:100px 6%;
@@ -196,12 +229,15 @@ section{
 
 .section-title{
     text-align:center;
+
     margin-bottom:55px;
 }
 
 .section-title h2{
     font-size:42px;
+
     color:#ffd35b;
+
     margin-bottom:15px;
 }
 
@@ -209,14 +245,17 @@ section{
     color:#aaa;
 }
 
-/* =========================
+/* =========================================
    CITY BUTTONS
-========================= */
+========================================= */
 
 .city-buttons{
     display:flex;
+
     justify-content:center;
+
     gap:14px;
+
     flex-wrap:wrap;
 
     margin-bottom:55px;
@@ -240,6 +279,7 @@ section{
 
 .city-btn:hover,
 .city-btn.active{
+
     background:
     linear-gradient(
         135deg,
@@ -255,11 +295,12 @@ section{
     0 10px 30px rgba(221,170,40,.2);
 }
 
-/* =========================
+/* =========================================
    GRID
-========================= */
+========================================= */
 
 .destination-grid{
+
     display:grid;
 
     grid-template-columns:
@@ -268,14 +309,15 @@ section{
     gap:30px;
 }
 
-/* =========================
+/* =========================================
    CARD
-========================= */
+========================================= */
 
 .destination{
+
     position:relative;
 
-    min-height:480px;
+    min-height:500px;
 
     border-radius:28px;
 
@@ -293,9 +335,12 @@ section{
     box-shadow .5s;
 
     animation:cardEnter .8s ease both;
+
+    cursor:pointer;
 }
 
 .destination:hover{
+
     transform:
     translateY(-12px)
     scale(1.015);
@@ -304,9 +349,12 @@ section{
     0 30px 80px rgba(0,0,0,.6);
 }
 
-/* IMAGE */
+/* =========================================
+   IMAGE
+========================================= */
 
 .destination-image{
+
     position:absolute;
 
     inset:0;
@@ -324,13 +372,18 @@ section{
 }
 
 .destination:hover .destination-image{
+
     transform:scale(1.09);
+
     filter:saturate(1.15);
 }
 
-/* DARK OVERLAY */
+/* =========================================
+   OVERLAY
+========================================= */
 
 .destination::after{
+
     content:"";
 
     position:absolute;
@@ -340,19 +393,62 @@ section{
     background:
     linear-gradient(
         to bottom,
-        transparent 20%,
-        rgba(0,0,0,.15) 35%,
-        rgba(0,0,0,.95) 100%
+        transparent 10%,
+        rgba(0,0,0,.12) 30%,
+        rgba(0,0,0,.96) 100%
     );
 
     z-index:1;
 }
 
-/* =========================
+/* =========================================
+   CLICK HINT
+========================================= */
+
+.click-hint{
+
+    position:absolute;
+
+    top:18px;
+
+    left:18px;
+
+    z-index:10;
+
+    padding:8px 13px;
+
+    border-radius:30px;
+
+    background:rgba(0,0,0,.5);
+
+    backdrop-filter:blur(10px);
+
+    color:#ffd65a;
+
+    font-size:11px;
+
+    border:1px solid rgba(255,214,90,.25);
+
+    opacity:.85;
+
+    transition:.3s;
+}
+
+.destination:hover .click-hint{
+
+    background:#ffd65a;
+
+    color:#111;
+
+    opacity:1;
+}
+
+/* =========================================
    CARD CONTENT
-========================= */
+========================================= */
 
 .destination-info{
+
     position:absolute;
 
     z-index:5;
@@ -365,6 +461,7 @@ section{
 }
 
 .destination-info h3{
+
     font-size:27px;
 
     color:#ffd45c;
@@ -373,6 +470,7 @@ section{
 }
 
 .destination-info p{
+
     color:#ddd;
 
     line-height:1.9;
@@ -383,6 +481,7 @@ section{
 }
 
 .location{
+
     display:inline-block;
 
     padding:7px 13px;
@@ -397,11 +496,12 @@ section{
     font-size:12px;
 }
 
-/* =========================
+/* =========================================
    MAP BUTTONS
-========================= */
+========================================= */
 
 .map-buttons{
+
     display:flex;
 
     gap:8px;
@@ -412,6 +512,7 @@ section{
 }
 
 .map-btn{
+
     text-decoration:none;
 
     padding:9px 15px;
@@ -425,34 +526,44 @@ section{
     transition:.3s;
 
     backdrop-filter:blur(8px);
+
+    position:relative;
+
+    z-index:20;
 }
 
 .map-btn:hover{
+
     transform:translateY(-3px);
 }
 
 .balad{
+
     background:#fff;
+
     color:#111;
 }
 
 .neshan{
+
     background:#18a85b;
+
     color:#fff;
 }
 
 .route{
+
     background:#d39b23;
+
     color:#111;
 }
 
-/* =========================
+/* =========================================
    MINI ANIMATIONS
-========================= */
-
-/* نور طلایی آثار تاریخی */
+========================================= */
 
 .gold-animation{
+
     position:absolute;
 
     width:220px;
@@ -477,6 +588,7 @@ section{
 }
 
 @keyframes goldPulse{
+
     0%,100%{
         transform:scale(.7);
         opacity:.25;
@@ -486,11 +598,11 @@ section{
         transform:scale(1.25);
         opacity:.75;
     }
+
 }
 
-/* موج آب */
-
 .water-animation{
+
     position:absolute;
 
     bottom:0;
@@ -515,6 +627,7 @@ section{
 }
 
 @keyframes waterWave{
+
     0%,100%{
         transform:
         translateX(-25px)
@@ -526,11 +639,11 @@ section{
         translateX(25px)
         scaleY(1.15);
     }
+
 }
 
-/* نسیم طبیعت */
-
 .nature-animation{
+
     position:absolute;
 
     width:12px;
@@ -575,11 +688,11 @@ section{
 
         opacity:0;
     }
+
 }
 
-/* نور شیشه رنگی */
-
 .color-animation{
+
     position:absolute;
 
     inset:0;
@@ -614,11 +727,8 @@ section{
     100%{
         background-position:100% 50%;
     }
-}
 
-/* =========================
-   CARD ENTER
-========================= */
+}
 
 @keyframes cardEnter{
 
@@ -631,11 +741,309 @@ section{
         opacity:1;
         transform:translateY(0);
     }
+
 }
 
-/* =========================
+/* =========================================
+   MODAL
+========================================= */
+
+.attraction-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:5000;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+    background:
+    rgba(0,0,0,.78);
+
+    backdrop-filter:blur(12px);
+
+    animation:modalFade .3s ease;
+}
+
+.attraction-modal.show{
+
+    display:flex;
+}
+
+@keyframes modalFade{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+.modal-box{
+
+    width:min(680px,95%);
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    position:relative;
+
+    padding:35px;
+
+    border-radius:32px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #142333,
+        #071019
+    );
+
+    border:1px solid rgba(255,214,90,.3);
+
+    box-shadow:
+    0 30px 100px rgba(0,0,0,.8);
+
+    text-align:center;
+
+    animation:modalBox .5s ease;
+}
+
+@keyframes modalBox{
+
+    from{
+        transform:
+        translateY(50px)
+        scale(.9);
+
+        opacity:0;
+    }
+
+    to{
+        transform:
+        translateY(0)
+        scale(1);
+
+        opacity:1;
+    }
+
+}
+
+.modal-close{
+
+    position:absolute;
+
+    top:15px;
+    left:15px;
+
+    width:40px;
+    height:40px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.modal-close:hover{
+
+    background:#ffd45c;
+
+    color:#111;
+
+    transform:rotate(90deg);
+}
+
+.modal-icon{
+
+    width:95px;
+    height:95px;
+
+    margin:5px auto 20px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    font-size:48px;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(255,214,90,.25),
+        rgba(255,214,90,.03)
+    );
+
+    border:1px solid rgba(255,214,90,.25);
+
+    box-shadow:
+    0 0 45px rgba(255,205,70,.15);
+
+    animation:
+    modalIconPulse 2s infinite;
+}
+
+@keyframes modalIconPulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+}
+
+.modal-box h2{
+
+    color:#ffd45c;
+
+    font-size:31px;
+
+    margin-bottom:15px;
+}
+
+.farewell{
+
+    font-size:19px;
+
+    color:#fff;
+
+    line-height:2;
+
+    margin-bottom:20px;
+}
+
+.special-box{
+
+    padding:22px;
+
+    border-radius:22px;
+
+    background:
+    rgba(255,214,90,.06);
+
+    border:
+    1px solid rgba(255,214,90,.16);
+
+    color:#ddd;
+
+    line-height:2.2;
+
+    margin-top:15px;
+}
+
+.special-title{
+
+    color:#ffd45c;
+
+    font-size:18px;
+
+    margin-bottom:10px;
+
+    font-weight:bold;
+}
+
+.random-button{
+
+    border:none;
+
+    cursor:pointer;
+
+    margin-top:18px;
+
+    padding:12px 24px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffd85b,
+        #a87512
+    );
+
+    color:#111;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.random-button:hover{
+
+    transform:
+    translateY(-3px)
+    scale(1.03);
+}
+
+/* =========================================
+   HAFEZ
+========================================= */
+
+.fal{
+
+    margin-top:20px;
+
+    padding:25px;
+
+    border-radius:22px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(116,78,20,.25),
+        rgba(0,0,0,.2)
+    );
+
+    border:1px solid rgba(255,214,90,.2);
+}
+
+.fal-text{
+
+    font-size:19px;
+
+    line-height:2.4;
+
+    color:#ffe9a3;
+}
+
+.fal-note{
+
+    margin-top:15px;
+
+    color:#aaa;
+
+    font-size:12px;
+}
+
+/* =========================================
    ABOUT
-========================= */
+========================================= */
 
 .info-box{
 
@@ -665,9 +1073,9 @@ section{
     0 20px 60px rgba(0,0,0,.25);
 }
 
-/* =========================
+/* =========================================
    FOOTER
-========================= */
+========================================= */
 
 footer{
 
@@ -681,16 +1089,18 @@ footer{
 }
 
 footer strong{
+
     color:#ffd45c;
 }
 
-/* =========================
+/* =========================================
    MOBILE
-========================= */
+========================================= */
 
 @media(max-width:700px){
 
     nav{
+
         justify-content:flex-start;
 
         overflow-x:auto;
@@ -699,66 +1109,98 @@ footer strong{
     }
 
     nav a{
+
         white-space:nowrap;
+
         font-size:12px;
     }
 
     section{
+
         padding:75px 5%;
     }
 
     .section-title h2{
+
         font-size:31px;
     }
 
     .destination{
-        min-height:450px;
+
+        min-height:460px;
     }
 
     .map-buttons{
+
         gap:6px;
     }
 
     .map-btn{
+
         padding:8px 11px;
     }
+
+    .modal-box{
+
+        padding:28px 20px;
+    }
+
+    .modal-box h2{
+
+        font-size:25px;
+    }
+
+    .farewell{
+
+        font-size:16px;
+    }
+
 }
 
-/* =========================
+/* =========================================
    REDUCE MOTION
-========================= */
+========================================= */
 
 @media(prefers-reduced-motion:reduce){
 
     *,
     *::before,
     *::after{
+
         animation:none!important;
+
         transition:none!important;
+
         scroll-behavior:auto!important;
     }
+
 }
+
 </style>
+
 </head>
 
 <body>
 
-<!-- =========================
+
+<!-- =========================================
      NAV
-========================= -->
+========================================= -->
 
 <nav>
 
 <a href="#home">خانه</a>
+
 <a href="#cities">مقصدها</a>
+
 <a href="#about">درباره ایران‌گرد</a>
 
 </nav>
 
 
-<!-- =========================
+<!-- =========================================
      HERO
-========================= -->
+========================================= -->
 
 <header class="hero" id="home">
 
@@ -767,9 +1209,13 @@ footer strong{
 <h1>ایران‌گرد</h1>
 
 <p>
+
 زیباترین جاذبه‌های ایران
+
 <br>
+
 در یک سفر دیجیتال متفاوت
+
 </p>
 
 <a
@@ -785,9 +1231,9 @@ class="hero-button">
 </header>
 
 
-<!-- =========================
+<!-- =========================================
      CITIES
-========================= -->
+========================================= -->
 
 <section id="cities">
 
@@ -809,27 +1255,33 @@ class="hero-button">
 <button
 class="city-btn active"
 onclick="showCity('shiraz',this)">
+
 شیراز
+
 </button>
 
 <button
 class="city-btn"
 onclick="showCity('isfahan',this)">
+
 اصفهان
+
 </button>
 
 <button
 class="city-btn"
 onclick="showCity('kermanshah',this)">
+
 کرمانشاه
+
 </button>
 
 </div>
 
 
-<!-- =====================================================
+<!-- =========================================
      SHIRAZ
-===================================================== -->
+========================================= -->
 
 <div id="shiraz" class="city">
 
@@ -838,14 +1290,24 @@ onclick="showCity('kermanshah',this)">
 
 <!-- تخت جمشید -->
 
-<article class="destination">
+<article
+class="destination"
+onclick="openAttraction(
+'تخت جمشید',
+'🏛️',
+'تاریخ هخامنشی',
+'تخت جمشید یکی از باشکوه‌ترین محوطه‌های باستانی ایران است و یادگاری مهم از دوران هخامنشیان به شمار می‌رود.'
+)">
 
 <img
 class="destination-image"
 loading="lazy"
-decoding="async"
-src="https://images.unsplash.com/photo-1572252009286-268acec5ca0a?auto=format&fit=crop&w=900&q=65"
+src="https://images.thenightly.com.au/publication/C-15606715/c7a083a57fb425d79731df3cff40cbecaa62aa4b-4x3-x626y0w4265h3199.jpg"
 alt="تخت جمشید">
+
+<div class="click-hint">
+برای تجربه بیشتر کلیک کن ✨
+</div>
 
 <div class="gold-animation"></div>
 
@@ -866,26 +1328,35 @@ alt="تخت جمشید">
 
 <a
 class="map-btn balad"
+onclick="event.stopPropagation()"
 target="_blank"
 rel="noopener"
 href="https://balad.ir/search/تخت-جمشید">
+
 بلد 🗺️
+
 </a>
 
 <a
 class="map-btn neshan"
+onclick="event.stopPropagation()"
 target="_blank"
 rel="noopener"
 href="https://neshan.org/maps/search/تخت%20جمشید">
+
 نشان 📍
+
 </a>
 
 <a
 class="map-btn route"
+onclick="event.stopPropagation()"
 target="_blank"
 rel="noopener"
 href="https://www.google.com/maps/dir/?api=1&destination=29.9368,52.8900">
+
 مسیریابی 🚗
+
 </a>
 
 </div>
@@ -897,14 +1368,24 @@ href="https://www.google.com/maps/dir/?api=1&destination=29.9368,52.8900">
 
 <!-- پاسارگاد -->
 
-<article class="destination">
+<article
+class="destination"
+onclick="openAttraction(
+'پاسارگاد',
+'👑',
+'میراث کوروش',
+'پاسارگاد یکی از مهم‌ترین محوطه‌های تاریخی ایران است و آرامگاه مشهور کوروش بزرگ در آن قرار دارد.'
+)">
 
 <img
 class="destination-image"
 loading="lazy"
-decoding="async"
 src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Pasargadae_-_Tomb_of_Cyrus.jpg/1280px-Pasargadae_-_Tomb_of_Cyrus.jpg"
 alt="پاسارگاد">
+
+<div class="click-hint">
+میراث ایران 👑
+</div>
 
 <div class="gold-animation"></div>
 
@@ -925,26 +1406,32 @@ alt="پاسارگاد">
 
 <a
 class="map-btn balad"
+onclick="event.stopPropagation()"
 target="_blank"
-rel="noopener"
 href="https://balad.ir/search/پاسارگاد">
+
 بلد 🗺️
+
 </a>
 
 <a
 class="map-btn neshan"
+onclick="event.stopPropagation()"
 target="_blank"
-rel="noopener"
 href="https://neshan.org/maps/search/پاسارگاد">
+
 نشان 📍
+
 </a>
 
 <a
 class="map-btn route"
+onclick="event.stopPropagation()"
 target="_blank"
-rel="noopener"
 href="https://www.google.com/maps/dir/?api=1&destination=30.2016,53.1767">
+
 مسیریابی 🚗
+
 </a>
 
 </div>
@@ -956,14 +1443,24 @@ href="https://www.google.com/maps/dir/?api=1&destination=30.2016,53.1767">
 
 <!-- نقش رستم -->
 
-<article class="destination">
+<article
+class="destination"
+onclick="openAttraction(
+'نقش رستم',
+'🗿',
+'آرامگاه شاهان',
+'نقش رستم مجموعه‌ای از آرامگاه‌های سنگی شاهان هخامنشی و نقش‌برجسته‌های تاریخی ایران است.'
+)">
 
 <img
 class="destination-image"
 loading="lazy"
-decoding="async"
 src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Naqsh_e_Rustam.jpg/1280px-Naqsh_e_Rustam.jpg"
 alt="نقش رستم">
+
+<div class="click-hint">
+تاریخ را لمس کن 🗿
+</div>
 
 <div class="gold-animation"></div>
 
@@ -984,26 +1481,32 @@ alt="نقش رستم">
 
 <a
 class="map-btn balad"
+onclick="event.stopPropagation()"
 target="_blank"
-rel="noopener"
 href="https://balad.ir/search/نقش-رستم">
+
 بلد 🗺️
+
 </a>
 
 <a
 class="map-btn neshan"
+onclick="event.stopPropagation()"
 target="_blank"
-rel="noopener"
 href="https://neshan.org/maps/search/نقش%20رستم">
+
 نشان 📍
+
 </a>
 
 <a
 class="map-btn route"
+onclick="event.stopPropagation()"
 target="_blank"
-rel="noopener"
 href="https://www.google.com/maps/dir/?api=1&destination=29.98889,52.87472">
+
 مسیریابی 🚗
+
 </a>
 
 </div>
@@ -1015,376 +1518,15 @@ href="https://www.google.com/maps/dir/?api=1&destination=29.98889,52.87472">
 
 <!-- مهارلو -->
 
-<article class="destination">
+<article
+class="destination"
+onclick="openAttraction(
+'دریاچه مهارلو',
+'🌸',
+'دریاچه صورتی',
+'دریاچه مهارلو در جنوب‌شرق شیراز قرار دارد و در برخی شرایط طبیعی می‌تواند رنگ صورتی یا سرخ پیدا کند.'
+)">
 
 <img
 class="destination-image"
-loading="lazy"
-decoding="async"
-src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=65"
-alt="دریاچه مهارلو">
-
-<div class="water-animation"></div>
-
-<div class="destination-info">
-
-<h3>🌸 دریاچه مهارلو</h3>
-
-<p>
-دریاچه نمکی اطراف شیراز که در شرایط
-مناسب می‌تواند رنگ صورتی به خود بگیرد.
-</p>
-
-<span class="location">
-📍 جنوب‌شرق شیراز
-</span>
-
-<div class="map-buttons">
-
-<a
-class="map-btn balad"
-target="_blank"
-rel="noopener"
-href="https://balad.ir/search/دریاچه-مهارلو">
-بلد 🗺️
-</a>
-
-<a
-class="map-btn neshan"
-target="_blank"
-rel="noopener"
-href="https://neshan.org/maps/search/دریاچه%20مهارلو">
-نشان 📍
-</a>
-
-<a
-class="map-btn route"
-target="_blank"
-rel="noopener"
-href="https://www.google.com/maps/dir/?api=1&destination=29.4575,52.806361">
-مسیریابی 🚗
-</a>
-
-</div>
-
-</div>
-
-</article>
-
-
-<!-- حافظیه -->
-
-<article class="destination">
-
-<img
-class="destination-image"
-loading="lazy"
-decoding="async"
-src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=65"
-alt="حافظیه شیراز">
-
-<div class="nature-animation"></div>
-
-<div class="destination-info">
-
-<h3>🌹 حافظیه</h3>
-
-<p>
-آرامگاه حافظ در باغی شاعرانه؛
-یکی از محبوب‌ترین دیدنی‌های شیراز.
-</p>
-
-<span class="location">
-📍 شیراز
-</span>
-
-<div class="map-buttons">
-
-<a class="map-btn balad"
-target="_blank"
-rel="noopener"
-href="https://balad.ir/search/حافظیه">
-بلد 🗺️
-</a>
-
-<a class="map-btn neshan"
-target="_blank"
-rel="noopener"
-href="https://neshan.org/maps/search/حافظیه">
-نشان 📍
-</a>
-
-<a class="map-btn route"
-target="_blank"
-rel="noopener"
-href="https://www.google.com/maps/search/?api=1&query=حافظیه+شیراز">
-مسیریابی 🚗
-</a>
-
-</div>
-
-</div>
-
-</article>
-
-
-<!-- نصیرالملک -->
-
-<article class="destination">
-
-<img
-class="destination-image"
-loading="lazy"
-decoding="async"
-src="https://images.unsplash.com/photo-1577083552431-6e5fd01988b5?auto=format&fit=crop&w=900&q=65"
-alt="مسجد نصیرالملک">
-
-<div class="color-animation"></div>
-
-<div class="destination-info">
-
-<h3>🌈 مسجد نصیرالملک</h3>
-
-<p>
-مسجد تاریخی معروف به مسجد صورتی
-با شیشه‌های رنگی و نورهای خیره‌کننده.
-</p>
-
-<span class="location">
-📍 شیراز
-</span>
-
-<div class="map-buttons">
-
-<a class="map-btn balad"
-target="_blank"
-rel="noopener"
-href="https://balad.ir/search/مسجد-نصیرالملک">
-بلد 🗺️
-</a>
-
-<a class="map-btn neshan"
-target="_blank"
-rel="noopener"
-href="https://neshan.org/maps/search/مسجد%20نصیرالملک">
-نشان 📍
-</a>
-
-<a class="map-btn route"
-target="_blank"
-rel="noopener"
-href="https://www.google.com/maps/search/?api=1&query=مسجد+نصیرالملک+شیراز">
-مسیریابی 🚗
-</a>
-
-</div>
-
-</div>
-
-</article>
-
-
-</div>
-</div>
-
-
-<!-- =====================================================
-     ISFAHAN
-===================================================== -->
-
-<div
-id="isfahan"
-class="city"
-style="display:none">
-
-<div class="destination-grid">
-
-
-<!-- نقش جهان -->
-
-<article class="destination">
-
-<img
-class="destination-image"
-loading="lazy"
-decoding="async"
-src="https://images.unsplash.com/photo-1576485290814-1c72aa4bbb8e?auto=format&fit=crop&w=900&q=65"
-alt="میدان نقش جهان اصفهان">
-
-<div class="gold-animation"></div>
-
-<div class="destination-info">
-
-<h3>🏛️ میدان نقش جهان</h3>
-
-<p>
-قلب تاریخی اصفهان و شاهکار معماری
-دوره صفوی.
-</p>
-
-<span class="location">
-📍 اصفهان
-</span>
-
-<div class="map-buttons">
-
-<a class="map-btn balad"
-target="_blank"
-rel="noopener"
-href="https://balad.ir/search/میدان-نقش-جهان">
-بلد 🗺️
-</a>
-
-<a class="map-btn neshan"
-target="_blank"
-rel="noopener"
-href="https://neshan.org/maps/search/میدان%20نقش%20جهان">
-نشان 📍
-</a>
-
-<a class="map-btn route"
-target="_blank"
-rel="noopener"
-href="https://www.google.com/maps/search/?api=1&query=میدان+نقش+جهان+اصفهان">
-مسیریابی 🚗
-</a>
-
-</div>
-
-</div>
-
-</article>
-
-
-<!-- سی و سه پل -->
-
-<article class="destination">
-
-<img
-class="destination-image"
-loading="lazy"
-decoding="async"
-src="https://images.unsplash.com/photo-1609947017136-9daf32a5eb16?auto=format&fit=crop&w=900&q=65"
-alt="سی و سه پل">
-
-<div class="water-animation"></div>
-
-<div class="destination-info">
-
-<h3>🌉 سی‌وسه‌پل</h3>
-
-<p>
-یکی از معروف‌ترین پل‌های تاریخی
-ایران و نماد شهر اصفهان.
-</p>
-
-<span class="location">
-📍 اصفهان
-</span>
-
-<div class="map-buttons">
-
-<a class="map-btn balad"
-target="_blank"
-rel="noopener"
-href="https://balad.ir/search/سی-و-سه-پل">
-بلد 🗺️
-</a>
-
-<a class="map-btn neshan"
-target="_blank"
-rel="noopener"
-href="https://neshan.org/maps/search/سی%20و%20سه%20پل">
-نشان 📍
-</a>
-
-<a class="map-btn route"
-target="_blank"
-rel="noopener"
-href="https://www.google.com/maps/search/?api=1&query=سی+و+سه+پل+اصفهان">
-مسیریابی 🚗
-</a>
-
-</div>
-
-</div>
-
-</article>
-
-
-<!-- پل خواجو -->
-
-<article class="destination">
-
-<img
-class="destination-image"
-loading="lazy"
-decoding="async"
-src="https://images.unsplash.com/photo-1609947017136-9daf32a5eb16?auto=format&fit=crop&w=900&q=65"
-alt="پل خواجو">
-
-<div class="water-animation"></div>
-
-<div class="destination-info">
-
-<h3>🌉 پل خواجو</h3>
-
-<p>
-شاهکار معماری صفوی و یکی از
-زیباترین پل‌های تاریخی ایران.
-</p>
-
-<span class="location">
-📍 اصفهان
-</span>
-
-<div class="map-buttons">
-
-<a class="map-btn balad"
-target="_blank"
-rel="noopener"
-href="https://balad.ir/search/پل-خواجو">
-بلد 🗺️
-</a>
-
-<a class="map-btn neshan"
-target="_blank"
-rel="noopener"
-href="https://neshan.org/maps/search/پل%20خواجو">
-نشان 📍
-</a>
-
-<a class="map-btn route"
-target="_blank"
-rel="noopener"
-href="https://www.google.com/maps/search/?api=1&query=پل+خواجو+اصفهان">
-مسیریابی 🚗
-</a>
-
-</div>
-
-</div>
-
-</article>
-
-
-<!-- چهل ستون -->
-
-<article class="destination">
-
-<img
-class="destination-image"
-loading="lazy"
-decoding="async"
-src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=900&q=65"
-alt="کاخ چهل ستون">
-
-<div class="gold-animation"></div>
-
-<div class="destination-info">
-
-<h3>🏰 کاخ چهل‌ستون</h3>
-
-<p>
-کاخ تاریخی صفوی با باغ ایرانی،
-ن
+loading="
