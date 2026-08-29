@@ -4,625 +4,1527 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ایران‌گرد | راهنمای گردشگری ایران</title>
-
-<meta name="description"
-content="راهنمای گردشگری شیراز، اصفهان و کرمانشاه با معرفی جاذبه‌ها، عکس، نقشه، فال حافظ و شعر">
+<title>ایران‌گرد | راهنمای حرفه‌ای گردشگری ایران</title>
 
 <style>
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
     font-family:Tahoma,Arial,sans-serif;
-    background:#f5f7fa;
-    color:#222;
-    line-height:1.8;
+    background:#07110e;
+    color:#fff;
+    overflow-x:hidden;
 }
 
-header{
-    background:linear-gradient(135deg,#063b35,#0b6659);
-    color:white;
-    padding:45px 20px;
+/* ================= LOADING ================= */
+
+.loader{
+    position:fixed;
+    inset:0;
+    background:#050b09;
+    z-index:9999;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    transition:1s;
+}
+
+.loader-logo{
+    font-size:55px;
+    color:#d9ad55;
+    animation:logoPulse 1.5s infinite;
+}
+
+.loader p{
+    margin-top:15px;
+    color:#aaa;
+}
+
+@keyframes logoPulse{
+    0%,100%{transform:scale(1);opacity:.7}
+    50%{transform:scale(1.12);opacity:1}
+}
+
+/* ================= HEADER ================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
     text-align:center;
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.82)
+    ),
+    url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Naqsh-e_Jahan_Square.jpg/1280px-Naqsh-e_Jahan_Square.jpg")
+    center/cover fixed;
 }
 
-header h1{
-    font-size:35px;
-    margin-bottom:10px;
+.hero::before{
+    content:"";
+    position:absolute;
+    width:700px;
+    height:700px;
+    border-radius:50%;
+    background:rgba(217,173,85,.12);
+    filter:blur(100px);
+    animation:lightMove 7s infinite alternate;
 }
 
-header p{
-    opacity:.9;
-    font-size:16px;
+@keyframes lightMove{
+    from{
+        transform:translate(-180px,-100px);
+    }
+    to{
+        transform:translate(180px,100px);
+    }
 }
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+    padding:30px;
+    animation:heroIn 1.5s ease;
+}
+
+@keyframes heroIn{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.hero h1{
+    font-size:clamp(55px,10vw,105px);
+    color:#e5bd69;
+    text-shadow:
+        0 0 15px rgba(229,189,105,.4),
+        0 0 50px rgba(229,189,105,.15);
+}
+
+.hero h2{
+    font-size:clamp(20px,4vw,35px);
+    margin:10px 0 20px;
+}
+
+.hero p{
+    color:#ddd;
+    font-size:18px;
+}
+
+.hero-btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 35px;
+    border-radius:40px;
+    background:linear-gradient(135deg,#e7c477,#b88932);
+    color:#111;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.4s;
+    box-shadow:0 10px 35px rgba(0,0,0,.4);
+}
+
+.hero-btn:hover{
+    transform:translateY(-6px) scale(1.04);
+    box-shadow:0 15px 50px rgba(229,189,105,.25);
+}
+
+/* ================= NAV ================= */
 
 nav{
-    background:#fff;
-    padding:12px;
     position:sticky;
     top:0;
-    z-index:20;
-    box-shadow:0 2px 10px #0001;
+    z-index:100;
+    padding:15px;
     text-align:center;
+    background:rgba(4,12,9,.92);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(217,173,85,.2);
 }
 
-nav button{
-    border:0;
-    background:#eee;
-    padding:10px 18px;
-    margin:4px;
-    border-radius:20px;
-    cursor:pointer;
+nav a{
+    color:#ddd;
+    text-decoration:none;
+    margin:0 12px;
     font-size:14px;
+    transition:.3s;
 }
 
-nav button.active,
-nav button:hover{
-    background:#0b6659;
+nav a:hover{
+    color:#e5bd69;
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+    padding:90px 5%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:15px;
+    color:#e5bd69;
+    font-size:38px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#999;
+    margin-bottom:45px;
+}
+
+/* ================= CITY BUTTON ================= */
+
+.city-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:45px;
+}
+
+.city-button{
+    cursor:pointer;
+    padding:13px 28px;
+    border-radius:30px;
+    border:1px solid #3c574d;
+    background:#0e1e18;
     color:#fff;
+    transition:.35s;
 }
 
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:25px 15px;
+.city-button:hover,
+.city-button.active{
+    background:linear-gradient(135deg,#e7c477,#ad7c2e);
+    color:#111;
+    border-color:#e5bd69;
+    transform:translateY(-3px);
 }
 
-.search{
-    width:100%;
-    padding:14px;
-    border:1px solid #ddd;
-    border-radius:12px;
-    margin-bottom:25px;
-    font-size:15px;
+.city{
+    display:none;
+    animation:cityIn .7s ease;
 }
 
-.city-title{
-    margin:35px 0 18px;
-    font-size:25px;
-    color:#07594e;
-    border-right:5px solid #d49b28;
-    padding-right:12px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:18px;
-}
-
-.card{
-    background:white;
-    border-radius:16px;
-    overflow:hidden;
-    box-shadow:0 5px 20px #00000012;
-    transition:.2s;
-}
-
-.card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 10px 25px #0002;
-}
-
-.card img{
-    width:100%;
-    height:160px;
-    object-fit:cover;
+.city.active{
     display:block;
 }
 
-.card-body{
-    padding:15px;
+@keyframes cityIn{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ================= CARDS ================= */
+
+.cards{
+    max-width:1450px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+    gap:28px;
+}
+
+.card{
+    background:
+    linear-gradient(
+        145deg,
+        rgba(25,48,40,.95),
+        rgba(8,20,16,.98)
+    );
+    border:1px solid rgba(217,173,85,.17);
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 15px 45px rgba(0,0,0,.35);
+    transition:.5s;
+    opacity:0;
+    transform:translateY(35px);
+    animation:cardIn .8s forwards;
+}
+
+.card:nth-child(2){animation-delay:.08s}
+.card:nth-child(3){animation-delay:.16s}
+.card:nth-child(4){animation-delay:.24s}
+.card:nth-child(5){animation-delay:.32s}
+.card:nth-child(6){animation-delay:.40s}
+.card:nth-child(7){animation-delay:.48s}
+.card:nth-child(8){animation-delay:.56s}
+.card:nth-child(9){animation-delay:.64s}
+.card:nth-child(10){animation-delay:.72s}
+
+@keyframes cardIn{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.card:hover{
+    transform:translateY(-12px) scale(1.015);
+    border-color:#d9ad55;
+    box-shadow:
+        0 25px 65px rgba(0,0,0,.5),
+        0 0 25px rgba(217,173,85,.08);
+}
+
+.card-image{
+    position:relative;
+    height:230px;
+    overflow:hidden;
+}
+
+.card-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.7s;
+}
+
+.card:hover img{
+    transform:scale(1.09);
+}
+
+.image-overlay{
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(
+        transparent 40%,
+        rgba(0,0,0,.7)
+    );
+}
+
+.number{
+    position:absolute;
+    top:15px;
+    right:15px;
+    width:42px;
+    height:42px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    background:rgba(0,0,0,.65);
+    border:1px solid rgba(229,189,105,.6);
+    color:#e5bd69;
+    font-weight:bold;
+}
+
+.card-content{
+    padding:22px;
 }
 
 .card h3{
-    color:#07594e;
-    margin-bottom:7px;
-    font-size:18px;
+    color:#e5bd69;
+    font-size:21px;
+    margin-bottom:8px;
 }
 
 .card p{
-    font-size:13px;
-    color:#666;
-    min-height:50px;
+    color:#c9c9c9;
+    font-size:14px;
+    line-height:2;
 }
 
-.buttons{
-    display:flex;
-    gap:8px;
-    margin-top:12px;
-}
-
-.btn{
-    flex:1;
-    text-align:center;
-    padding:8px;
-    border-radius:9px;
-    text-decoration:none;
+.location{
+    margin:13px 0;
+    color:#8db8a8;
     font-size:13px;
-    border:0;
-    cursor:pointer;
 }
 
 .map{
-    background:#0b6659;
-    color:white;
+    display:inline-block;
+    padding:8px 17px;
+    border-radius:20px;
+    border:1px solid #45685b;
+    color:#fff;
+    text-decoration:none;
+    font-size:13px;
+    transition:.3s;
 }
 
-.info{
-    background:#eee;
-    color:#333;
+.map:hover{
+    background:#e5bd69;
+    color:#111;
 }
 
-.panel{
-    background:white;
-    margin-top:40px;
-    padding:25px;
-    border-radius:18px;
-    box-shadow:0 5px 20px #0001;
+/* ================= SPECIAL BOXES ================= */
+
+.special{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
 }
 
-.panel h2{
-    color:#07594e;
+.box{
+    background:#0e1e18;
+    border:1px solid rgba(217,173,85,.2);
+    padding:30px;
+    border-radius:22px;
+    text-align:center;
+    transition:.4s;
+}
+
+.box:hover{
+    transform:translateY(-8px);
+    border-color:#d9ad55;
+}
+
+.icon{
+    font-size:48px;
     margin-bottom:15px;
 }
 
-.fal{
+.box h3{
+    color:#e5bd69;
+    margin-bottom:8px;
+}
+
+/* ================= FORTUNE ================= */
+
+.fortune{
+    max-width:800px;
+    margin:auto;
     text-align:center;
+    background:
+    linear-gradient(
+        145deg,
+        #142a22,
+        #09130f
+    );
+    padding:45px;
+    border-radius:30px;
+    border:1px solid rgba(217,173,85,.25);
 }
 
-.fal button{
-    background:#d49b28;
-    color:white;
-    border:0;
-    padding:12px 25px;
-    border-radius:10px;
-    cursor:pointer;
-    font-size:15px;
-}
-
-.result{
-    margin-top:18px;
-    padding:18px;
-    background:#fff8e6;
-    border-radius:12px;
-    display:none;
-}
-
-.poem{
-    text-align:center;
+#fortuneText{
+    min-height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#ddd;
     font-size:18px;
-    color:#555;
+    margin-bottom:25px;
 }
+
+.gold-btn{
+    border:0;
+    cursor:pointer;
+    padding:13px 28px;
+    border-radius:30px;
+    background:linear-gradient(135deg,#e7c477,#ad7c2e);
+    font-weight:bold;
+}
+
+/* ================= FOOTER ================= */
 
 footer{
-    margin-top:40px;
-    background:#063b35;
-    color:white;
+    padding:40px;
     text-align:center;
-    padding:25px;
-    font-size:13px;
+    background:#030806;
+    color:#777;
 }
+
+footer strong{
+    color:#d9ad55;
+}
+
+/* ================= MOBILE ================= */
 
 @media(max-width:600px){
-    header h1{
-        font-size:27px;
+
+    section{
+        padding:60px 4%;
     }
 
-    .grid{
-        grid-template-columns:1fr 1fr;
-        gap:10px;
+    nav a{
+        display:inline-block;
+        margin:4px 6px;
     }
 
-    .card img{
-        height:120px;
+    .hero{
+        background-attachment:scroll;
     }
 
-    .card-body{
-        padding:10px;
+    .card-image{
+        height:210px;
     }
 
-    .card h3{
-        font-size:15px;
-    }
-
-    .card p{
-        font-size:11px;
-    }
-
-    .btn{
-        font-size:11px;
+    .fortune{
+        padding:30px 20px;
     }
 }
+
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>🇮🇷 ایران‌گرد</h1>
-    <p>راهنمای ساده و جذاب گردشگری ایران</p>
-</header>
+<!-- LOADER -->
 
-<nav>
-    <button class="active" onclick="showCity('all',this)">همه</button>
-    <button onclick="showCity('شیراز',this)">🌹 شیراز</button>
-    <button onclick="showCity('اصفهان',this)">🏛️ اصفهان</button>
-    <button onclick="showCity('کرمانشاه',this)">⛰️ کرمانشاه</button>
-</nav>
+<div class="loader" id="loader">
+    <div class="loader-logo">🇮🇷</div>
+    <p>در حال آماده‌سازی سفر...</p>
+</div>
 
-<div class="container">
 
-<input
-class="search"
-id="search"
-placeholder="🔎 جاذبه مورد نظر را جستجو کنید..."
-oninput="searchPlaces()">
+<!-- HERO -->
 
-<div id="places"></div>
+<header class="hero">
 
-<section class="panel fal">
+<div class="hero-content">
 
-<h2>🔮 فال حافظ</h2>
+<h1>ایران‌گرد</h1>
+
+<h2>
+سفر کن؛ ایران را از نو کشف کن
+</h2>
 
 <p>
-برای گرفتن فال، روی دکمه زیر بزنید.
+راهنمای حرفه‌ای جاذبه‌های تاریخی، فرهنگی و طبیعی ایران
 </p>
 
-<br>
+<a href="#destinations" class="hero-btn">
+شروع سفر ✈️
+</a>
 
-<button onclick="falHafez()">گرفتن فال</button>
+</div>
 
-<div class="result" id="falResult"></div>
+</header>
+
+
+<!-- NAV -->
+
+<nav>
+
+<a href="#destinations">جاذبه‌ها</a>
+<a href="#icons">سبک سفر</a>
+<a href="#fortune">فال سفر</a>
+<a href="#poem">شعر</a>
+
+</nav>
+
+
+<!-- DESTINATIONS -->
+
+<section id="destinations">
+
+<h2 class="title">
+جاذبه‌های منتخب ایران
+</h2>
+
+<p class="subtitle">
+۳۰ مقصد دیدنی در سه شهر تاریخی ایران
+</p>
+
+
+<div class="city-buttons">
+
+<button
+class="city-button active"
+onclick="showCity('shiraz',this)">
+🌹 شیراز
+</button>
+
+<button
+class="city-button"
+onclick="showCity('isfahan',this)">
+🕌 اصفهان
+</button>
+
+<button
+class="city-button"
+onclick="showCity('kermanshah',this)">
+🏔️ کرمانشاه
+</button>
+
+</div>
+
+
+<!-- ================= SHIRAZ ================= -->
+
+<div class="city active" id="shiraz">
+
+<div class="cards">
+
+
+<!-- 1 -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Pers%C3%A9polis_01.jpg/1280px-Pers%C3%A9polis_01.jpg"
+alt="تخت جمشید">
+
+<div class="image-overlay"></div>
+
+<div class="number">۱</div>
+
+</div>
+
+<div class="card-content">
+
+<h3>🏛️ تخت جمشید</h3>
+
+<p>
+پایتخت تشریفاتی هخامنشیان و یکی از باشکوه‌ترین آثار تاریخی ایران.
+</p>
+
+<div class="location">
+📍 مرودشت، استان فارس
+</div>
+
+<a
+class="map"
+target="_blank"
+href="https://balad.ir/search/تخت%20جمشید">
+🗺️ نقشه
+</a>
+
+</div>
+</div>
+
+
+<!-- 2 -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Pasargadae_iran.jpg/1280px-Pasargadae_iran.jpg"
+alt="پاسارگاد">
+
+<div class="image-overlay"></div>
+
+<div class="number">۲</div>
+
+</div>
+
+<div class="card-content">
+
+<h3>🏺 پاسارگاد</h3>
+
+<p>
+مجموعه تاریخی ارزشمند هخامنشی و آرامگاه کوروش بزرگ.
+</p>
+
+<div class="location">
+📍 شهرستان پاسارگاد
+</div>
+
+<a class="map"
+target="_blank"
+href="https://balad.ir/search/پاسارگاد">
+🗺️ نقشه
+</a>
+
+</div>
+</div>
+
+
+<!-- 3 -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Maharloo_Lake.jpg/1280px-Maharloo_Lake.jpg"
+alt="دریاچه مهارلو">
+
+<div class="image-overlay"></div>
+
+<div class="number">۳</div>
+
+</div>
+
+<div class="card-content">
+
+<h3>🌸 دریاچه صورتی مهارلو</h3>
+
+<p>
+یکی از خاص‌ترین جاذبه‌های طبیعی اطراف شیراز که در شرایط مناسب صورتی‌رنگ می‌شود.
+</p>
+
+<div class="location">
+📍 جنوب شرقی شیراز
+</div>
+
+<a class="map"
+target="_blank"
+href="https://balad.ir/search/دریاچه%20مهارلو">
+🗺️ نقشه
+</a>
+
+</div>
+</div>
+
+
+<!-- 4 -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Nasir_ol_Molk_Mosque_2019.jpg/1280px-Nasir_ol_Molk_Mosque_2019.jpg"
+alt="مسجد نصیرالملک">
+
+<div class="image-overlay"></div>
+
+<div class="number">۴</div>
+
+</div>
+
+<div class="card-content">
+
+<h3>🕌 مسجد نصیرالملک</h3>
+
+<p>
+مسجد تاریخی معروف به مسجد صورتی با شیشه‌های رنگی و نورهای چشم‌نواز.
+</p>
+
+<div class="location">
+📍 شیراز
+</div>
+
+<a class="map"
+target="_blank"
+href="https://balad.ir/search/مسجد%20نصیرالملک">
+🗺️ نقشه
+</a>
+
+</div>
+</div>
+
+
+<!-- 5 -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Hafez_Tomb.jpg/1280px-Hafez_Tomb.jpg"
+alt="حافظیه">
+
+<div class="image-overlay"></div>
+
+<div class="number">۵</div>
+
+</div>
+
+<div class="card-content">
+
+<h3>📜 حافظیه</h3>
+
+<p>
+آرامگاه حافظ شیرازی؛ یکی از محبوب‌ترین مکان‌های فرهنگی و ادبی ایران.
+</p>
+
+<div class="location">
+📍 شیراز
+</div>
+
+<a class="map"
+target="_blank"
+href="https://balad.ir/search/حافظیه">
+🗺️ نقشه
+</a>
+
+</div>
+</div>
+
+
+<!-- 6 -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Saadi_Tomb.jpg/1280px-Saadi_Tomb.jpg"
+alt="سعدیه">
+
+<div class="image-overlay"></div>
+
+<div class="number">۶</div>
+
+</div>
+
+<div class="card-content">
+
+<h3>📚 سعدیه</h3>
+
+<p>
+آرامگاه سعدی، شاعر بزرگ فارسی و یکی از نمادهای فرهنگی شیراز.
+</p>
+
+<div class="location">
+📍 شیراز
+</div>
+
+<a class="map"
+target="_blank"
+href="https://balad.ir/search/سعدیه">
+🗺️ نقشه
+</a>
+
+</div>
+</div>
+
+
+<!-- 7 -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Shah_Cheragh.jpg/1280px-Shah_Cheragh.jpg"
+alt="شاهچراغ">
+
+<div class="image-overlay"></div>
+
+<div class="number">۷</div>
+
+</div>
+
+<div class="card-content">
+
+<h3>✨ شاهچراغ</h3>
+
+<p>
+زیارتگاه مشهور شیراز با معماری و آینه‌کاری‌های چشمگیر.
+</p>
+
+<div class="location">
+📍 شیراز
+</div>
+
+<a class="map"
+target="_blank"
+href="https://balad.ir/search/شاهچراغ">
+🗺️ نقشه
+</a>
+
+</div>
+</div>
+
+
+<!-- 8 -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Narenjestan_Qavam.jpg/1280px-Narenjestan_Qavam.jpg"
+alt="نارنجستان قوام">
+
+<div class="image-overlay"></div>
+
+<div class="number">۸</div>
+
+</div>
+
+<div class="card-content">
+
+<h3>🌿 نارنجستان قوام</h3>
+
+<p>
+عمارت و باغ تاریخی قوام با معماری باشکوه دوره قاجار.
+</p>
+
+<div class="location">
+📍 شیراز
+</div>
+
+<a class="map"
+target="_blank"
+href="https://balad.ir/search/نارنجستان%20قوام">
+🗺️ نقشه
+</a>
+
+</div>
+</div>
+
+
+<!-- 9 -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Naghsh_Rostam_01.jpg/1280px-Naghsh_Rostam_01.jpg"
+alt="نقش رستم">
+
+<div class="image-overlay"></div>
+
+<div class="number">۹</div>
+
+</div>
+
+<div class="card-content">
+
+<h3>🗿 نقش رستم</h3>
+
+<p>
+آرامگاه‌های سنگی شاهان هخامنشی و نقش‌برجسته‌های تاریخی ایران.
+</p>
+
+<div class="location">
+📍 نزدیکی مرودشت
+</div>
+
+<a class="map"
+target="_blank"
+href="https://balad.ir/search/نقش%20رستم">
+🗺️ نقشه
+</a>
+
+</div>
+</div>
+
+
+<!-- 10 -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Vakil_Mosque_Shiraz.jpg/1280px-Vakil_Mosque_Shiraz.jpg"
+alt="مسجد وکیل">
+
+<div class="image-overlay"></div>
+
+<div class="number">۱۰</div>
+
+</div>
+
+<div class="card-content">
+
+<h3>🕌 مسجد وکیل</h3>
+
+<p>
+مسجد تاریخی دوره زندیه با معماری باشکوه و ستون‌های سنگی زیبا.
+</p>
+
+<div class="location">
+📍 شیراز، بازار وکیل
+</div>
+
+<a class="map"
+target="_blank"
+href="https://balad.ir/search/مسجد%20وکیل">
+🗺️ نقشه
+</a>
+
+</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- ================= ISFAHAN ================= -->
+
+<div class="city" id="isfahan">
+
+<div class="cards">
+
+
+<div class="card">
+<div class="card-image">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Naqsh-e_Jahan_Square%2C_Isfahan.jpg/1280px-Naqsh-e_Jahan_Square%2C_Isfahan.jpg"
+alt="میدان نقش جهان">
+<div class="image-overlay"></div>
+<div class="number">۱</div>
+</div>
+<div class="card-content">
+<h3>🏛️ میدان نقش جهان</h3>
+<p>یکی از مشهورترین میدان‌های تاریخی جهان و قلب تاریخی اصفهان.</p>
+<div class="location">📍 مرکز اصفهان</div>
+<a class="map" target="_blank" href="https://balad.ir/search/میدان%20نقش%20جهان">🗺️ نقشه</a>
+</div>
+</div>
+
+
+<div class="card">
+<div class="card-image">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Imam_Mosque_Isfahan.jpg/1280px-Imam_Mosque_Isfahan.jpg"
+alt="مسجد امام">
+<div class="image-overlay"></div>
+<div class="number">۲</div>
+</div>
+<div class="card-content">
+<h3>🕌 مسجد امام</h3>
+<p>شاهکار معماری صفوی در میدان نقش جهان.</p>
+<div class="location">📍 میدان نقش جهان</div>
+<a class="map" target="_blank" href="https://balad.ir/search/مسجد%20امام%20اصفهان">🗺️ نقشه</a>
+</div>
+</div>
+
+
+<div class="card">
+<div class="card-image">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Sheikh_Lotfollah_Mosque_Isfahan.jpg/1280px-Sheikh_Lotfollah_Mosque_Isfahan.jpg"
+alt="مسجد شیخ لطف الله">
+<div class="image-overlay"></div>
+<div class="number">۳</div>
+</div>
+<div class="card-content">
+<h3>🕌 مسجد شیخ لطف‌الله</h3>
+<p>از شاهکارهای معماری صفوی در ضلع شرقی میدان نقش جهان.</p>
+<div class="location">📍 اصفهان</div>
+<a class="map" target="_blank" href="https://balad.ir/search/مسجد%20شیخ%20لطف%20الله">🗺️ نقشه</a>
+</div>
+</div>
+
+
+<div class="card">
+<div class="card-image">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Ali_Qapu_Isfahan.jpg/1280px-Ali_Qapu_Isfahan.jpg"
+alt="عالی قاپو">
+<div class="image-overlay"></div>
+<div class="number">۴</div>
+</div>
+<div class="card-content">
+<h3>🏰 کاخ عالی‌قاپو</h3>
+<p>کاخ تاریخی صفوی در ضلع غربی میدان نقش جهان.</p>
+<div class="location">📍 میدان نقش جهان</div>
+<a class="map" target="_blank" href="https://balad.ir/search/کاخ%20عالی%20قاپو">🗺️ نقشه</a>
+</div>
+</div>
+
+
+<div class="card">
+<div class="card-image">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Si-o-se-pol_Isfahan.jpg/1280px-Si-o-se-pol_Isfahan.jpg"
+alt="سی و سه پل">
+<div class="image-overlay"></div>
+<div class="number">۵</div>
+</div>
+<div class="card-content">
+<h3>🌉 سی‌وسه‌پل</h3>
+<p>پل تاریخی مشهور اصفهان بر روی زاینده‌رود.</p>
+<div class="location">📍 اصفهان</div>
+<a class="map" target="_blank" href="https://balad.ir/search/سی%20و%20سه%20پل">🗺️ نقشه</a>
+</div>
+</div>
+
+
+<div class="card">
+<div class="card-image">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Khaju_Bridge_Isfahan.jpg/1280px-Khaju_Bridge_Isfahan.jpg"
+alt="پل خواجو">
+<div class="image-overlay"></div>
+<div class="number">۶</div>
+</div>
+<div class="card-content">
+<h3>🌉 پل خواجو</h3>
+<p>یکی از زیباترین پل‌های تاریخی اصفهان.</p>
+<div class="location">📍 اصفهان</div>
+<a class="map" target="_blank" href="https://balad.ir/search/پل%20خواجو">🗺️ نقشه</a>
+</div>
+</div>
+
+
+<div class="card">
+<div class="card-image">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Vank_Cathedral_Isfahan.jpg/1280px-Vank_Cathedral_Isfahan.jpg"
+alt="کلیسای وانک">
+<div class="image-overlay"></div>
+<div class="number">۷</div>
+</div>
+<div class="card-content">
+<h3>⛪ کلیسای وانک</h3>
+<p>کلیسای تاریخی مشهور محله جلفای اصفهان.</p>
+<div class="location">📍 جلفای اصفهان</div>
+<a class="map" target="_blank" href="https://balad.ir/search/کلیسای%20وانک">🗺️ نقشه</a>
+</div>
+</div>
+
+
+<div class="card">
+<div class="card-image">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Hasht_Behesht_Isfahan.jpg/1280px-Hasht_Behesht_Isfahan.jpg"
+alt="کاخ هشت بهشت">
+<div class="image-overlay"></div>
+<div class="number">۸</div>
+</div>
+<div class="card-content">
+<h3>🌳 کاخ هشت‌بهشت</h3>
+<p>عمارت تاریخی زیبا در میان باغ‌های اصفهان.</p>
+<div class="location">📍 اصفهان</div>
+<a class="map" target="_blank" href="https://balad.ir/search/هشت%20بهشت%20اصفهان">🗺️ نقشه</a>
+</div>
+</div>
+
+
+<div class="card">
+<div class="card-image">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Jameh_Mosque_Isfahan.jpg/1280px-Jameh_Mosque_Isfahan.jpg"
+alt="مسجد جامع اصفهان">
+<div class="image-overlay"></div>
+<div class="number">۹</div>
+</div>
+<div class="card-content">
+<h3>🕌 مسجد جامع اصفهان</h3>
+<p>مجموعه‌ای تاریخی با معماری متعلق به دوره‌های گوناگون ایران.</p>
+<div class="location">📍 اصفهان</div>
+<a class="map" target="_blank" href="https://balad.ir/search/مسجد%20جامع%20اصفهان">🗺️ نقشه</a>
+</div>
+</div>
+
+
+<div class="card">
+<div class="card-image">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Chehel_Sotoun_Isfahan.jpg/1280px-Chehel_Sotoun_Isfahan.jpg"
+alt="چهل ستون">
+<div class="image-overlay"></div>
+<div class="number">۱۰</div>
+</div>
+<div class="card-content">
+<h3>🌳 کاخ چهل‌ستون</h3>
+<p>کاخ تاریخی صفوی با تالارها و نقاشی‌های مشهور.</p>
+<div class="location">📍 اصفهان</div>
+<a class="map" target="_blank" href="https://balad.ir/search/کاخ%20چهل%20ستون">🗺️ نقشه</a>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- ================= KERMANSHAH ================= -->
+
+<div class="city" id="kermanshah">
+
+<div class="cards">
+
+
+<div class="card">
+<div class="card-image">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Taq_e_Bostan_Kermanshah.jpg/1280px-Taq_e_Bostan_Kermanshah.jpg"
+alt="طاق بستان">
+<div class="image-overlay"></div>
+<div class="number">۱</div>
+</div>
+<div class="card-content">
+<h3>🏔️ طاق‌بستان</h3>
+<p>مجموعه‌ای ارزشمند از سنگ‌نگاره‌ها و طاق‌های دوره ساسانی.</p>
+<div class="location">📍 کرمانشاه</div>
+<a class="map" target="_blank" href="https://balad.ir/search/طاق%20بستان">🗺️ نقشه</a>
+</div>
+</div>
+
+
+<div class="card">
+<div class="card-image">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Bisotun_Iran.jpg/1280px-Bisotun_Iran.jpg"
+alt="بیستون">
+<div class="image-overlay"></div>
+<div class="number">۲</div>
+</div>
+<div class="card-content">
+<h3>🗿 بیستون</h3>
+<p>محوطه تاریخی مشهور با کتیبه داریوش بزرگ.</p>
+<div class="location">📍 شهرستان هرسین</div>
+<a class="map" target="_blank" href="https://balad.ir/search/بیستون">🗺️ نقشه</a>
+</div>
+</div>
+
+
+<!-- GORDKHAmeh -->
+
+<div class="card">
+<div class="card-image">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Dukkan-e_Daoud.jpg/1280px-Dukkan-e_Daoud.jpg"
+alt="گوردخمه دکان داوود">
+<div class="image-overlay"></div>
+<div class="number">۳</div>
+</div>
+<div class="card-content">
+<h3>🪨 گوردخمه دکان داوود</h3>
+<p>گوردخمه‌ای تاریخی در منطقه سرپل ذهاب و از آثار مهم باستانی غرب ایران.</p>
+<div class="location">📍 سرپل ذهاب</div>
+<a class="map" target="_blank" href="https://balad.ir/search/گوردخمه%20دکان%20داوود">🗺️ نقشه</a>
+</div>
+</div>
+
+
+<div class="card">
+<div class="card-image">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Paraw_Cave.jpg/1280px-Paraw_Cave.jpg"
+alt="غار پراو">
+<div class="image-overlay"></div>
+<div class="number">۴</div>
+</div>
+<div class="card-content">
+<h3>🧗 غار پراو</h3>
+<p>غار مشهور کوهستانی در ارتفاعات استان کرمانشاه.</p>
+<div class="location">📍 ارتفاعات کرمانشاه</div>
+<a class="map" target="_blank" href="https://balad.ir/search/غار%20پراو">🗺️ نقشه</a>
+</div>
+</div>
+
+
+<div class="card">
+<div class="card-image">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Ghar_e_Quri_Kaleh.jpg/1280px-Ghar_e_Quri_Kaleh.jpg"
+alt="غار قوری قلعه">
+<div class="image-overlay"></div>
+<div class="number">۵</div>
+</div>
+<div class="card-content">
+<h3>🪨 غار قوری‌قلعه</h3>
+<p>یکی از غارهای مشهور و دیدنی منطقه اورامانات.</p>
+<div class="location">📍 پاوه</div>
+<a class="map" target="_blank" href="https://balad.ir/search/غار%20قوری%20قلعه">🗺️ نقشه</a>
+</div>
+</div>
+
+
+<div class="card">
+<div class="card-image">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Anahita_Temple.jpg/1280px-Anahita_Temple.jpg"
+alt="معبد آناهیتا">
+<div class="image-overlay"></div>
+<div class="number">۶</div>
+</div>
+<div class="card-content">
+<h3>🏛️ معبد آناهیتا</h3>
+<p>محوطه تاریخی ارزشمند در کنگاور در مسیر کرمانشاه.</p>
+<div class="location">📍 کنگاور</div>
+<a class="map" target="_blank" href="https://balad.ir/search/معبد%20آناهیتا">🗺️ نقشه</a>
+</div>
+</div>
+
+
+<div class="card">
+<div class="card-image">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Kermanshah_Bazaar.jpg/1280px-Kermanshah_Bazaar.jpg"
+alt="بازار سنتی کرمانشاه">
+<div class="image-overlay"></div>
+<div class="number">۷</div>
+</div>
+<div class="card-content">
+<h3>🛍️ بازار سنتی کرمانشاه</h3>
+<p>بازاری تاریخی برای آشنایی با فضای سنتی و فرهنگ شهری کرمانشاه.</p>
+<div class="location">📍 کرمانشاه</div>
+<a class="map" target="_blank" href="https://balad.ir/search/بازار%20کرمانشاه">🗺️ نقشه</a>
+</div>
+</div>
+
+
+<div class="card">
+<div class="card-image">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Mosque_of_Shafei_Kermanshah.jpg/1280px-Mosque_of_Shafei_Kermanshah.jpg"
+alt="مسجد شافعی">
+<div class="image-overlay"></div>
+<div class="number">۸</div>
+</div>
+<div class="card-content">
+<h3>🕌 مسجد شافعی</h3>
+<p>یکی از بناهای مذهبی شناخته‌شده در بافت قدیمی کرمانشاه.</p>
+<div class="location">📍 کرمانشاه</div>
+<a class="map" target="_blank" href="https://balad.ir/search/مسجد%20شافعی">🗺️ نقشه</a>
+</div>
+</div>
+
+
+<div class="card">
+<div class="card-image">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Moaven_ol-Molk_Tekyeh.jpg/1280px-Moaven_ol-Molk_Tekyeh.jpg"
+alt="تکیه معاون الملک">
+<div class="image-overlay"></div>
+<div class="number">۹</div>
+</div>
+<div class="card-content">
+<h3>🏛️ تکیه معاون‌الملک</h3>
+<p>بنایی تاریخی با کاشی‌کاری‌های بسیار چشمگیر در کرمانشاه.</p>
+<div class="location">📍 کرمانشاه</div>
+<a class="map" target="_blank" href="https://balad.ir/search/تکیه%20معاون%20الملک">🗺️ نقشه</a>
+</div>
+</div>
+
+
+<div class="card">
+<div class="card-image">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Biglarbeigi_Tekyeh.jpg/1280px-Biglarbeigi_Tekyeh.jpg"
+alt="تکیه بیگلربیگی">
+<div class="image-overlay"></div>
+<div class="number">۱۰</div>
+</div>
+<div class="card-content">
+<h3>🏛️ تکیه بیگلربیگی</h3>
+<p>عمارت تاریخی زیبا با تزئینات آینه‌کاری و معماری سنتی.</p>
+<div class="location">📍 کرمانشاه</div>
+<a class="map" target="_blank" href="https://balad.ir/search/تکیه%20بیگلربیگی">🗺️ نقشه</a>
+</div>
+</div>
+
+</div>
+</div>
 
 </section>
 
-<section class="panel">
 
-<h2>📜 شعر امروز</h2>
+<!-- ================= ICONS ================= -->
 
-<div class="poem">
+<section id="icons">
 
-«خوشا شیراز و وضع بی‌مثالش<br>
-خداوندا نگه دار از زوالش»
+<h2 class="title">
+سبک سفر من 🎯
+</h2>
 
-<br><br>
+<p class="subtitle">
+حال‌وهوای سفر خودت را انتخاب کن
+</p>
 
-«به جهان خرم از آنم که جهان خرم از اوست<br>
-عاشقم بر همه عالم که همه عالم از اوست»
+<div class="special">
+
+<div class="box">
+<div class="icon">🏛️</div>
+<h3>تاریخی</h3>
+<p>تمدن، بناهای باستانی و تاریخ ایران</p>
+</div>
+
+<div class="box">
+<div class="icon">🏔️</div>
+<h3>طبیعت</h3>
+<p>کوه، دریاچه، غار و مناظر طبیعی</p>
+</div>
+
+<div class="box">
+<div class="icon">📸</div>
+<h3>عکاسی</h3>
+<p>مقصدهای جذاب برای ثبت تصاویر خاص</p>
+</div>
+
+<div class="box">
+<div class="icon">🌿</div>
+<h3>آرامش</h3>
+<p>مکان‌هایی برای فاصله گرفتن از شلوغی</p>
+</div>
 
 </div>
 
 </section>
 
+
+<!-- ================= FORTUNE ================= -->
+
+<section id="fortune">
+
+<h2 class="title">
+فال سفر 🔮
+</h2>
+
+<p class="subtitle">
+نیت کن و فال خودت را بگیر
+</p>
+
+<div class="fortune">
+
+<div id="fortuneText">
+✨ آماده‌ای؟
 </div>
+
+<button
+class="gold-btn"
+onclick="getFortune()">
+گرفتن فال 🔮
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================= POEM ================= -->
+
+<section id="poem">
+
+<h2 class="title">
+شعر سفر 📜
+</h2>
+
+<div class="fortune">
+
+<p style="font-size:19px;line-height:2.5">
+
+به راه بادیه رفتن به از نشستن باطل<br>
+که گر مراد نیابم به قدر وسع بکوشم
+
+</p>
+
+<p style="color:#e5bd69;margin-top:15px">
+— سعدی
+</p>
+
+</div>
+
+</section>
+
 
 <footer>
-ایران‌گرد © ۱۴۰۵ | سفر خوب، خاطره خوب
+
+<p>
+🇮🇷 <strong>ایران‌گرد</strong>
+</p>
+
+<p style="margin-top:10px">
+راهنمای حرفه‌ای گردشگری ایران
+</p>
+
+<p style="margin-top:15px">
+شیراز • اصفهان • کرمانشاه
+</p>
+
 </footer>
 
 
 <script>
 
-/* =========================
-   اطلاعات جاذبه‌ها
-========================= */
+/* LOADER */
 
-const places = [
+window.addEventListener("load",function(){
 
-/* -------- شیراز -------- */
+setTimeout(function(){
 
-["شیراز","تخت جمشید","مجموعه باستانی باشکوه هخامنشیان","Persepolis Iran"],
-["شیراز","پاسارگاد","آرامگاه کوروش بزرگ و مجموعه تاریخی پاسارگاد","Pasargadae Iran"],
-["شیراز","نقش رستم","مجموعه آرامگاه‌های شاهان هخامنشی","Naqsh-e Rostam Iran"],
-["شیراز","حافظیه","آرامگاه حافظ، شاعر بزرگ ایرانی","Hafez Tomb Shiraz"],
-["شیراز","سعدیه","آرامگاه سعدی شاعر بزرگ ایران","Saadi Tomb Shiraz"],
-["شیراز","باغ ارم","یکی از زیباترین باغ‌های تاریخی شیراز","Eram Garden Shiraz"],
-["شیراز","باغ نارنجستان قوام","باغ تاریخی و عمارت زیبای قوام","Narenjestan Qavam Shiraz"],
-["شیراز","مسجد نصیرالملک","مسجد معروف به مسجد صورتی","Nasir al Mulk Mosque Shiraz"],
-["شیراز","شاهچراغ","زیارتگاه معروف شهر شیراز","Shah Cheragh Shiraz"],
-["شیراز","ارگ کریم‌خان","ارگ تاریخی دوره زندیه","Arg Karim Khan Shiraz"],
-["شیراز","بازار وکیل","بازار تاریخی وکیل","Vakil Bazaar Shiraz"],
-["شیراز","حمام وکیل","حمام تاریخی دوره زندیه","Vakil Bath Shiraz"],
-["شیراز","مسجد وکیل","مسجد تاریخی دوره زندیه","Vakil Mosque Shiraz"],
-["شیراز","باغ دلگشا","باغ تاریخی نزدیک سعدیه","Delgosha Garden Shiraz"],
-["شیراز","دروازه قرآن","یکی از نمادهای تاریخی شیراز","Quran Gate Shiraz"],
-["شیراز","آرامگاه خواجوی کرمانی","آرامگاه شاعر ایرانی در نزدیکی دروازه قرآن","Khwaju Kermani Tomb"],
-["شیراز","باغ جهان‌نما","باغ تاریخی و زیبای شیراز","Jahan Nama Garden Shiraz"],
-["شیراز","موزه پارس","موزه تاریخی در باغ نظر","Pars Museum Shiraz"],
-["شیراز","باغ عفیف‌آباد","باغ و کاخ تاریخی عفیف‌آباد","Afif Abad Garden Shiraz"],
-["شیراز","خانه زینت‌الملک","خانه تاریخی دوره قاجار","Zinat ol Molk House Shiraz"],
-["شیراز","آبشار مارگون","یکی از معروف‌ترین آبشارهای فارس","Margoon Waterfall Iran"],
-["شیراز","دریاچه مهارلو","دریاچه صورتی معروف نزدیک شیراز","Maharloo Lake Iran"],
-["شیراز","روستای قلات","روستای تاریخی و خوش‌آب‌وهوا","Qalat Village Shiraz"],
-["شیراز","تنگه بستانک","منطقه طبیعی و سرسبز فارس","Bostanak Iran"],
-["شیراز","آتشکده صمیمی","بنای تاریخی زرتشتی در منطقه فارس","Shiraz Fire Temple"],
-["شیراز","قلعه دختر فارس","بنای تاریخی دوره ساسانی","Qal'eh Dokhtar Fars"],
-["شیراز","غار شاپور","غار تاریخی نزدیک کازرون","Shapur Cave Iran"],
-["شیراز","آرامگاه کوروش بزرگ","آرامگاه مشهور کوروش در پاسارگاد","Tomb of Cyrus Iran"],
-["شیراز","آرامگاه داریوش","آرامگاه داریوش در نقش رستم","Darius Tomb Naqsh Rostam"],
-["شیراز","تالار تخت جمشید","بخش مشهور مجموعه تخت جمشید","Persepolis Palace Iran"],
+document.getElementById("loader").style.opacity="0";
+
+setTimeout(function(){
+document.getElementById("loader").style.display="none";
+},1000);
+
+},800);
+
+});
 
 
-/* -------- اصفهان -------- */
+/* CITY SWITCH */
 
-["اصفهان","میدان نقش جهان","میدان تاریخی و مشهور اصفهان","Naqsh Jahan Square Isfahan"],
-["اصفهان","مسجد امام","شاهکار معماری صفوی","Imam Mosque Isfahan"],
-["اصفهان","مسجد شیخ لطف‌الله","مسجد معروف میدان نقش جهان","Sheikh Lotfollah Mosque"],
-["اصفهان","عالی‌قاپو","کاخ تاریخی صفوی","Ali Qapu Palace Isfahan"],
-["اصفهان","بازار قیصریه","بازار تاریخی میدان نقش جهان","Qeysarieh Bazaar Isfahan"],
-["اصفهان","سی‌وسه پل","پل تاریخی روی زاینده‌رود","Si o Se Pol Isfahan"],
-["اصفهان","پل خواجو","پل تاریخی و زیبای اصفهان","Khaju Bridge Isfahan"],
-["اصفهان","کاخ چهلستون","کاخ تاریخی دوره صفوی","Chehel Sotoun Isfahan"],
-["اصفهان","کاخ هشت‌بهشت","کاخ تاریخی در باغ هشت‌بهشت","Hasht Behesht Palace"],
-["اصفهان","منارجنبان","بنای تاریخی معروف با مناره‌های متحرک","Monar Jonban Isfahan"],
-["اصفهان","مسجد جامع اصفهان","یکی از مهم‌ترین مساجد تاریخی ایران","Jameh Mosque Isfahan"],
-["اصفهان","کلیسای وانک","کلیسای تاریخی ارامنه اصفهان","Vank Cathedral Isfahan"],
-["اصفهان","محله جلفا","محله تاریخی و فرهنگی اصفهان","Jolfa Isfahan"],
-["اصفهان","آتشگاه اصفهان","کوه و بنای تاریخی آتشگاه","Atashgah Isfahan"],
-["اصفهان","باغ پرندگان","مجموعه تفریحی و طبیعی","Bird Garden Isfahan"],
-["اصفهان","آکواریوم اصفهان","مجموعه آکواریوم و تفریحی","Isfahan Aquarium"],
-["اصفهان","موزه موسیقی اصفهان","موزه‌ای درباره موسیقی ایرانی","Music Museum Isfahan"],
-["اصفهان","موزه هنرهای معاصر","مجموعه هنری شهر اصفهان","Museum Contemporary Art Isfahan"],
-["اصفهان","حمام شیخ بهایی","بنای تاریخی دوره صفوی","Sheikh Bahai Bath"],
-["اصفهان","خانه مشروطه","خانه تاریخی و فرهنگی اصفهان","Constitution House Isfahan"],
-["اصفهان","مناره چهل دختران","مناره تاریخی اصفهان","Chehel Dokhtaran Minaret"],
-["اصفهان","پل مارنان","پل تاریخی روی زاینده‌رود","Marnan Bridge Isfahan"],
-["اصفهان","پل شهرستان","از پل‌های تاریخی اصفهان","Shahrestan Bridge Isfahan"],
-["اصفهان","کوه صفه","منطقه طبیعی و تفریحی اصفهان","Sofeh Mountain Isfahan"],
-["اصفهان","باغ گل‌ها","مجموعه گل و فضای سبز","Flower Garden Isfahan"],
-["اصفهان","آرامگاه صائب تبریزی","آرامگاه شاعر مشهور ایرانی","Saib Tabrizi Tomb"],
-["اصفهان","مسجد حکیم","مسجد تاریخی دوره صفوی","Hakim Mosque Isfahan"],
-["اصفهان","مسجد جامع عباسی","مسجد تاریخی میدان نقش جهان","Abbasi Mosque Isfahan"],
-["اصفهان","بازار بزرگ اصفهان","بازار تاریخی شهر","Isfahan Grand Bazaar"],
-["اصفهان","کاخ انگورستان ملک","خانه و باغ تاریخی اصفهان","Angurestan Malek Isfahan"],
+function showCity(city,button){
+
+document.querySelectorAll(".city")
+.forEach(function(item){
+item.classList.remove("active");
+});
+
+document.getElementById(city)
+.classList.add("active");
+
+document.querySelectorAll(".city-button")
+.forEach(function(item){
+item.classList.remove("active");
+});
+
+button.classList.add("active");
+
+document.getElementById("destinations")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
 
 
-/* -------- کرمانشاه -------- */
+/* FORTUNE */
 
-["کرمانشاه","طاق بستان","مجموعه سنگ‌نگاره‌های دوره ساسانی","Taq Bostan Kermanshah"],
-["کرمانشاه","بیستون","مجموعه تاریخی و سنگ‌نوشته داریوش","Bisotun Iran"],
-["کرمانشاه","سنگ‌نوشته بیستون","کتیبه معروف داریوش بزرگ","Behistun Inscription"],
-["کرمانشاه","تکیه معاون‌الملک","بنای تاریخی و کاشی‌کاری مشهور","Moaven ol Mamalek Kermanshah"],
-["کرمانشاه","تکیه بیگلربیگی","بنای تاریخی دوره قاجار","Biglarbegi Tekyeh"],
-["کرمانشاه","بازار سنتی کرمانشاه","بازار قدیمی و تاریخی شهر","Kermanshah Bazaar"],
-["کرمانشاه","مسجد شافعی‌ها","مسجد مشهور کرمانشاه","Shafei Mosque Kermanshah"],
-["کرمانشاه","مسجد جامع کرمانشاه","مسجد تاریخی شهر","Jame Mosque Kermanshah"],
-["کرمانشاه","سراب نیلوفر","منطقه طبیعی و دریاچه زیبا","Niloufar Spring Kermanshah"],
-["کرمانشاه","غار قوری قلعه","یکی از غارهای معروف ایران","Quri Qaleh Cave"],
-["کرمانشاه","پارک کوهستان","منطقه تفریحی و طبیعی","Kuhestan Park Kermanshah"],
-["کرمانشاه","باغ گل‌ها","باغ و فضای سبز شهری","Flower Garden Kermanshah"],
-["کرمانشاه","موزه تکیه معاون‌الملک","مجموعه فرهنگی تاریخی","Moaven ol Mamalek Museum"],
-["کرمانشاه","موزه سنگ و معدن","مجموعه‌ای از آثار و سنگ‌های منطقه","Kermanshah Stone Museum"],
-["کرمانشاه","چهارقاپو","بنای تاریخی دوره ساسانی","Chahar Qapu Kermanshah"],
-["کرمانشاه","معبد آناهیتا","نیایشگاه تاریخی در کنگاور","Anahita Temple Kangavar"],
-["کرمانشاه","سراب صحنه","منطقه طبیعی و آبشارهای زیبا","Sahneh Spring Kermanshah"],
-["کرمانشاه","آبشار پیران","آبشار زیبای منطقه ریجاب","Piran Waterfall Iran"],
-["کرمانشاه","ریجاب","منطقه کوهستانی و طبیعی","Rijab Kermanshah"],
-["کرمانشاه","دالاهو","منطقه کوهستانی زیبای کرمانشاه","Dalahu Kermanshah"],
-["کرمانشاه","گوردخمه دکان داوود","اثر تاریخی مربوط به دوره باستان","Dokan Davood Iran"],
-["کرمانشاه","گوردخمه اسحاق‌وند","مجموعه گوردخمه‌های تاریخی","Eshaqvand Kermanshah"],
-["کرمانشاه","سراب قنبر","منطقه طبیعی اطراف کرمانشاه","Qanbar Spring Kermanshah"],
-["کرمانشاه","طاق گرا","بنای تاریخی در مسیر کرمانشاه","Taq-e Gara Iran"],
-["کرمانشاه","پل کهنه کرمانشاه","پل تاریخی شهر","Old Bridge Kermanshah"],
-["کرمانشاه","کاروانسرای شاه عباسی بیستون","کاروانسرای تاریخی بیستون","Bisotun Caravanserai"],
-["کرمانشاه","سراب گرم","چشمه و منطقه طبیعی","Sarab Garm Kermanshah"],
-["کرمانشاه","روستای هجیج","روستای زیبای منطقه اورامانات","Hajij Village Iran"],
-["کرمانشاه","اورامانات","منطقه کوهستانی و فرهنگی زیبا","Hawraman Iran"],
-["کرمانشاه","آبشار بل","آبشار طبیعی منطقه اورامانات","Bel Waterfall Iran"]
+const fortunes=[
+
+"سفری در پیش داری که خاطره‌ای ماندگار برایت خواهد ساخت. ✨",
+
+"یک مقصد تازه می‌تواند نگاهت به زندگی را تغییر دهد. 🌄",
+
+"راهی که انتخاب می‌کنی، پر از اتفاق‌های خوب خواهد بود. ❤️",
+
+"وقت آن رسیده کمی از روزمرگی فاصله بگیری و راهی سفر شوی. ✈️",
+
+"در سفرت با شخص یا اتفاقی روبه‌رو می‌شوی که مدت‌ها یادت می‌ماند. 🌿",
+
+"مقصدی که مدت‌هاست در ذهنت داری، ارزش رفتن دارد. 🏔️"
 
 ];
 
-
-/* =========================
-   نمایش جاذبه‌ها
-========================= */
-
-function imageUrl(name){
-
-    return "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=700&q=70";
-
-}
-
-
-function showPlaces(filter="all", search=""){
-
-    const box=document.getElementById("places");
-
-    let list=places.filter(p=>{
-
-        const cityOK=filter==="all" || p[0]===filter;
-
-        const text=(p[1]+" "+p[2]).toLowerCase();
-
-        const searchOK=!search || text.includes(search.toLowerCase());
-
-        return cityOK && searchOK;
-
-    });
-
-    let html="";
-
-    const cities=["شیراز","اصفهان","کرمانشاه"];
-
-    cities.forEach(city=>{
-
-        const cityPlaces=list.filter(p=>p[0]===city);
-
-        if(!cityPlaces.length) return;
-
-        html+=`
-        <h2 class="city-title">
-            ${city==="شیراز"?"🌹":city==="اصفهان"?"🏛️":"⛰️"}
-            ${city}
-        </h2>
-
-        <div class="grid">
-        `;
-
-        cityPlaces.forEach(p=>{
-
-            const map=
-            "https://www.google.com/maps/search/?api=1&query="
-            +encodeURIComponent(p[1]+" "+p[0]);
-
-            html+=`
-
-            <article class="card">
-
-                <img
-                src="${imageUrl(p[3])}"
-                loading="lazy"
-                alt="${p[1]}">
-
-                <div class="card-body">
-
-                    <h3>📍 ${p[1]}</h3>
-
-                    <p>${p[2]}</p>
-
-                    <div class="buttons">
-
-                        <a
-                        class="btn map"
-                        href="${map}"
-                        target="_blank">
-                        🗺️ نقشه
-                        </a>
-
-                        <button
-                        class="btn info"
-                        onclick="showInfo('${p[1]}','${p[2]}')">
-                        ℹ️ اطلاعات
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-            `;
-
-        });
-
-        html+=`</div>`;
-
-    });
-
-    if(!html){
-
-        html=`
-        <div class="panel" style="text-align:center">
-        😕 جاذبه‌ای پیدا نشد.
-        </div>
-        `;
-
-    }
-
-    box.innerHTML=html;
-
-}
-
-
-/* =========================
-   فیلتر شهر
-========================= */
-
-let currentCity="all";
-
-function showCity(city,btn){
-
-    currentCity=city;
-
-    document.querySelectorAll("nav button")
-    .forEach(b=>b.classList.remove("active"));
-
-    btn.classList.add("active");
-
-    document.getElementById("search").value="";
-
-    showPlaces(city);
-
-}
-
-
-/* =========================
-   جستجو
-========================= */
-
-function searchPlaces(){
-
-    const value=document.getElementById("search").value;
-
-    showPlaces(currentCity,value);
-
-}
-
-
-/* =========================
-   اطلاعات
-========================= */
-
-function showInfo(name,desc){
-
-    alert(
-        "📍 "+name+
-        "\n\n"+
-        desc+
-        "\n\n"+
-        "برای مشاهده موقعیت روی نقشه، دکمه «نقشه» را بزنید."
-    );
-
-}
-
-
-/* =========================
-   فال حافظ
-========================= */
-
-const falha=[
-
-"به زودی خبری خوشحال‌کننده به تو خواهد رسید. صبر داشته باش.",
-
-"راهی که انتخاب کرده‌ای اگر با تلاش ادامه پیدا کند، نتیجه خوبی خواهد داشت.",
-
-"دیداری تازه در پیش داری که می‌تواند خاطره‌ای زیبا برایت بسازد.",
-
-"اگر نیتی در دل داری، عجله نکن؛ زمان مناسب نزدیک است.",
-
-"دوره‌ای تازه در زندگی تو آغاز خواهد شد؛ با امید قدم بردار.",
-
-"دوستی یا آشنایی تازه می‌تواند مسیر جالبی را پیش رویت قرار دهد."
-
+function getFortune(){
+
+const text=
+fortunes[
+Math.floor(Math.random()*fortunes.length)
 ];
 
-function falHafez(){
+const box=
+document.getElementById("fortuneText");
 
-    const result=
-    document.getElementById("falResult");
+box.style.opacity="0";
 
-    const random=
-    Math.floor(Math.random()*falha.length);
+setTimeout(function(){
 
-    result.innerHTML=
-    "🔮 فال شما:<br><br>"+
-    falha[random];
+box.innerText=text;
+box.style.opacity="1";
 
-    result.style.display="block";
+},300);
 
 }
-
-
-/* =========================
-   شروع سایت
-========================= */
-
-showPlaces();
 
 </script>
 
