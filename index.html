@@ -28,11 +28,8 @@ body{
     background:#07111f;
     color:#fff;
     overflow-x:hidden;
+    transition:.4s;
 }
-
-/* =========================
-   BACKGROUND
-========================= */
 
 body::before{
     content:"";
@@ -45,25 +42,25 @@ body::before{
     z-index:-2;
 }
 
-/* =========================
-   LOADER
-========================= */
+/* ================= LOADER ================= */
 
 .loader{
     position:fixed;
     inset:0;
-    background:
-    linear-gradient(135deg,#020617,#071a2e,#0b263d);
+    background:linear-gradient(135deg,#020617,#071a2e,#0b263d);
     display:flex;
     align-items:center;
     justify-content:center;
-    z-index:9999;
-    transition:1s;
+    z-index:99999;
+    opacity:1;
+    visibility:visible;
+    transition:opacity .7s ease,visibility .7s ease;
 }
 
 .loader.hide{
     opacity:0;
     visibility:hidden;
+    pointer-events:none;
 }
 
 .loader-box{
@@ -80,6 +77,7 @@ body::before{
     font-size:38px;
     background:linear-gradient(90deg,#ffd166,#fff,#00d4ff);
     -webkit-background-clip:text;
+    background-clip:text;
     color:transparent;
 }
 
@@ -88,16 +86,32 @@ body::before{
     margin-top:10px;
 }
 
-/* =========================
-   HEADER
-========================= */
+.loader-bar{
+    width:220px;
+    height:5px;
+    background:rgba(255,255,255,.1);
+    border-radius:20px;
+    overflow:hidden;
+    margin:25px auto 0;
+}
+
+.loader-bar span{
+    display:block;
+    width:0;
+    height:100%;
+    background:linear-gradient(90deg,#ffd166,#00d4ff);
+    animation:loading 1.2s ease forwards;
+}
+
+/* ================= HEADER ================= */
 
 header{
     position:sticky;
     top:0;
     z-index:1000;
     backdrop-filter:blur(18px);
-    background:rgba(3,12,24,.78);
+    -webkit-backdrop-filter:blur(18px);
+    background:rgba(3,12,24,.82);
     border-bottom:1px solid rgba(255,255,255,.08);
 }
 
@@ -116,7 +130,9 @@ header{
     font-weight:900;
     background:linear-gradient(90deg,#ffd166,#fff);
     -webkit-background-clip:text;
+    background-clip:text;
     color:transparent;
+    white-space:nowrap;
 }
 
 .logo span{
@@ -127,6 +143,7 @@ header{
     display:flex;
     gap:8px;
     flex-wrap:wrap;
+    justify-content:center;
 }
 
 .nav-links button{
@@ -161,9 +178,7 @@ header{
     font-size:18px;
 }
 
-/* =========================
-   HERO
-========================= */
+/* ================= HERO ================= */
 
 .hero{
     min-height:680px;
@@ -174,8 +189,9 @@ header{
     padding:80px 20px;
     position:relative;
     overflow:hidden;
+
     background:
-    linear-gradient(rgba(2,10,20,.65),rgba(2,10,20,.88)),
+    linear-gradient(rgba(2,10,20,.65),rgba(2,10,20,.9)),
     url("https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=2000&q=90")
     center/cover;
 }
@@ -211,6 +227,7 @@ header{
     background:linear-gradient(90deg,#fff,#ffd166,#00d4ff,#fff);
     background-size:300%;
     -webkit-background-clip:text;
+    background-clip:text;
     color:transparent;
     animation:gradient 6s infinite;
 }
@@ -260,9 +277,7 @@ header{
     background:rgba(255,255,255,.14);
 }
 
-/* =========================
-   SECTIONS
-========================= */
+/* ================= SECTIONS ================= */
 
 .section{
     max-width:1400px;
@@ -289,9 +304,38 @@ header{
     color:#9ca8b7;
 }
 
-/* =========================
-   CITY FILTER
-========================= */
+/* ================= SEARCH ================= */
+
+.search-box{
+    max-width:650px;
+    margin:0 auto 35px;
+    position:relative;
+}
+
+.search-box input{
+    width:100%;
+    padding:17px 55px 17px 20px;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.06);
+    color:#fff;
+    outline:none;
+    font-family:inherit;
+    font-size:15px;
+}
+
+.search-box input::placeholder{
+    color:#8f9baa;
+}
+
+.search-box span{
+    position:absolute;
+    right:20px;
+    top:14px;
+    font-size:22px;
+}
+
+/* ================= CITY FILTER ================= */
 
 .city-filter{
     display:flex;
@@ -318,37 +362,7 @@ header{
     color:#111;
 }
 
-/* =========================
-   SEARCH
-========================= */
-
-.search-box{
-    max-width:650px;
-    margin:0 auto 35px;
-    position:relative;
-}
-
-.search-box input{
-    width:100%;
-    padding:17px 55px 17px 20px;
-    border-radius:18px;
-    border:1px solid rgba(255,255,255,.12);
-    background:rgba(255,255,255,.06);
-    color:#fff;
-    outline:none;
-    font-family:inherit;
-}
-
-.search-box span{
-    position:absolute;
-    right:20px;
-    top:14px;
-    font-size:22px;
-}
-
-/* =========================
-   CARDS
-========================= */
+/* ================= CARDS ================= */
 
 .cards{
     display:grid;
@@ -376,6 +390,7 @@ header{
     height:260px;
     overflow:hidden;
     position:relative;
+    background:#101c2c;
 }
 
 .card-image img{
@@ -394,6 +409,7 @@ header{
     position:absolute;
     inset:0;
     background:linear-gradient(transparent 45%,rgba(0,0,0,.7));
+    pointer-events:none;
 }
 
 .city-tag{
@@ -475,10 +491,6 @@ header{
     color:#111;
 }
 
-/* =========================
-   SPECIAL CARD
-========================= */
-
 .card.special{
     border-color:rgba(255,105,180,.35);
 }
@@ -486,12 +498,11 @@ header{
 .card.special .card-body h3{
     background:linear-gradient(90deg,#ff8cc6,#ffd166);
     -webkit-background-clip:text;
+    background-clip:text;
     color:transparent;
 }
 
-/* =========================
-   FEATURES
-========================= */
+/* ================= FEATURES ================= */
 
 .features{
     display:grid;
@@ -528,9 +539,7 @@ header{
     font-size:14px;
 }
 
-/* =========================
-   ICON SELECTOR
-========================= */
+/* ================= ICON ================= */
 
 .icon-section{
     background:linear-gradient(135deg,rgba(0,212,255,.05),rgba(255,209,102,.05));
@@ -568,9 +577,7 @@ header{
     font-size:20px;
 }
 
-/* =========================
-   FAL
-========================= */
+/* ================= FAL ================= */
 
 .fal-box{
     max-width:850px;
@@ -597,15 +604,14 @@ header{
     line-height:2.3;
     min-height:80px;
     font-size:18px;
+    transition:.3s;
 }
 
 .fal-author{
     color:#ffd166;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* ================= FOOTER ================= */
 
 footer{
     padding:50px 25px;
@@ -624,9 +630,7 @@ footer p{
     line-height:2;
 }
 
-/* =========================
-   MODAL
-========================= */
+/* ================= MODAL ================= */
 
 .modal{
     position:fixed;
@@ -673,19 +677,50 @@ footer p{
     line-height:2;
 }
 
-/* =========================
-   ANIMATIONS
-========================= */
+/* ================= TOAST ================= */
+
+.toast{
+    position:fixed;
+    bottom:25px;
+    left:50%;
+    transform:translate(-50%,20px);
+    background:#101d30;
+    border:1px solid rgba(255,255,255,.12);
+    color:white;
+    padding:13px 22px;
+    border-radius:14px;
+    opacity:0;
+    pointer-events:none;
+    transition:.35s;
+    z-index:10000;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translate(-50%,0);
+}
+
+/* ================= ANIMATIONS ================= */
 
 @keyframes float{
-    0%,100%{transform:translateY(0)}
-    50%{transform:translateY(-12px)}
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
 }
 
 @keyframes gradient{
-    0%{background-position:0%}
-    50%{background-position:100%}
-    100%{background-position:0%}
+    0%{
+        background-position:0%;
+    }
+    50%{
+        background-position:100%;
+    }
+    100%{
+        background-position:0%;
+    }
 }
 
 @keyframes cardIn{
@@ -710,9 +745,16 @@ footer p{
     }
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+@keyframes loading{
+    from{
+        width:0;
+    }
+    to{
+        width:100%;
+    }
+}
+
+/* ================= RESPONSIVE ================= */
 
 @media(max-width:1100px){
 
@@ -756,6 +798,49 @@ footer p{
         padding:60px 15px;
     }
 
+    .card-image{
+        height:230px;
+    }
+
+}
+
+/* ================= LIGHT MODE ================= */
+
+body.light-mode{
+    background:#f4f7fb;
+    color:#111;
+}
+
+body.light-mode header{
+    background:rgba(255,255,255,.85);
+}
+
+body.light-mode .nav-links button{
+    color:#333;
+}
+
+body.light-mode .card,
+body.light-mode .feature{
+    background:#fff;
+    color:#111;
+}
+
+body.light-mode .card-body p,
+body.light-mode .feature p{
+    color:#5d6875;
+}
+
+body.light-mode .search-box input{
+    background:#fff;
+    color:#111;
+}
+
+body.light-mode .city-btn{
+    color:#222;
+}
+
+body.light-mode footer{
+    background:#e9eef5;
 }
 
 </style>
@@ -763,9 +848,7 @@ footer p{
 
 <body>
 
-<!-- =========================
-     LOADER
-========================= -->
+<!-- LOADER -->
 
 <div class="loader" id="loader">
 
@@ -777,14 +860,16 @@ footer p{
 
         <p>در حال آماده‌سازی سفر شما...</p>
 
+        <div class="loader-bar">
+            <span></span>
+        </div>
+
     </div>
 
 </div>
 
 
-<!-- =========================
-     HEADER
-========================= -->
+<!-- HEADER -->
 
 <header>
 
@@ -796,32 +881,34 @@ footer p{
 
     <div class="nav-links">
 
-        <button onclick="scrollToSection('home')">
-            خانه
-        </button>
+        <button onclick="scrollToSection('home')">خانه</button>
 
-        <button onclick="scrollToSection('places')">
-            جاذبه‌ها
-        </button>
+        <button onclick="scrollToSection('places')">جاذبه‌ها</button>
 
-        <button onclick="scrollToSection('features')">
-            امکانات
-        </button>
+        <button onclick="scrollToSection('features')">امکانات</button>
 
-        <button onclick="scrollToSection('fal')">
-            فال و شعر
-        </button>
+        <button onclick="scrollToSection('fal')">فال و شعر</button>
 
     </div>
 
     <div class="nav-actions">
 
-        <button class="icon-btn" onclick="toggleTheme()">
+        <button
+        class="icon-btn"
+        onclick="toggleTheme()"
+        title="تغییر حالت">
+
             🌙
+
         </button>
 
-        <button class="icon-btn" onclick="openModal()">
+        <button
+        class="icon-btn"
+        onclick="openModal()"
+        title="درباره سایت">
+
             ℹ️
+
         </button>
 
     </div>
@@ -831,9 +918,7 @@ footer p{
 </header>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
 
 <section class="hero" id="home">
 
@@ -879,9 +964,7 @@ footer p{
 </section>
 
 
-<!-- =========================
-     PLACES
-========================= -->
+<!-- PLACES -->
 
 <section class="section" id="places">
 
@@ -894,7 +977,7 @@ footer p{
     </h2>
 
     <p>
-        سه مقصد جذاب برای شروع ایران‌گردی
+        جاذبه‌های منتخب شیراز، اصفهان و کرمانشاه
     </p>
 
 </div>
@@ -907,39 +990,27 @@ footer p{
     <input
     id="search"
     type="text"
-    placeholder="جستجوی نام جاذبه..."
-    oninput="renderPlaces()">
+    placeholder="جستجوی نام جاذبه یا شهر..."
+    autocomplete="off">
 
 </div>
 
 
 <div class="city-filter">
 
-    <button
-    class="city-btn active"
-    data-city="all"
-    onclick="filterCity('all',this)">
+    <button class="city-btn active" data-city="all">
         همه
     </button>
 
-    <button
-    class="city-btn"
-    data-city="شیراز"
-    onclick="filterCity('شیراز',this)">
+    <button class="city-btn" data-city="شیراز">
         🌹 شیراز
     </button>
 
-    <button
-    class="city-btn"
-    data-city="اصفهان"
-    onclick="filterCity('اصفهان',this)">
+    <button class="city-btn" data-city="اصفهان">
         🕌 اصفهان
     </button>
 
-    <button
-    class="city-btn"
-    data-city="کرمانشاه"
-    onclick="filterCity('کرمانشاه',this)">
+    <button class="city-btn" data-city="کرمانشاه">
         🏔️ کرمانشاه
     </button>
 
@@ -951,9 +1022,7 @@ footer p{
 </section>
 
 
-<!-- =========================
-     FEATURES
-========================= -->
+<!-- FEATURES -->
 
 <section class="section" id="features">
 
@@ -982,7 +1051,7 @@ footer p{
 
         <p>
             دسترسی سریع به موقعیت جاذبه‌ها
-            در سرویس‌های مختلف نقشه.
+            در بلد، نشان و Google Maps.
         </p>
 
     </div>
@@ -1019,7 +1088,7 @@ footer p{
 
         <div class="feature-icon">🌙</div>
 
-        <h3>حالت شب</h3>
+        <h3>حالت شب و روز</h3>
 
         <p>
             ظاهر سایت را برای شب یا روز تنظیم کن.
@@ -1032,9 +1101,7 @@ footer p{
 </section>
 
 
-<!-- =========================
-     ICON
-========================= -->
+<!-- ICON -->
 
 <section class="section icon-section">
 
@@ -1055,47 +1122,19 @@ footer p{
 
 <div class="icon-selector">
 
-    <button
-    class="select-icon selected"
-    onclick="selectIcon(this,'🧳')">
-        🧳
-    </button>
+    <button class="select-icon selected" data-icon="🧳">🧳</button>
 
-    <button
-    class="select-icon"
-    onclick="selectIcon(this,'🏔️')">
-        🏔️
-    </button>
+    <button class="select-icon" data-icon="🏔️">🏔️</button>
 
-    <button
-    class="select-icon"
-    onclick="selectIcon(this,'🏖️')">
-        🏖️
-    </button>
+    <button class="select-icon" data-icon="🏖️">🏖️</button>
 
-    <button
-    class="select-icon"
-    onclick="selectIcon(this,'🏛️')">
-        🏛️
-    </button>
+    <button class="select-icon" data-icon="🏛️">🏛️</button>
 
-    <button
-    class="select-icon"
-    onclick="selectIcon(this,'🚗')">
-        🚗
-    </button>
+    <button class="select-icon" data-icon="🚗">🚗</button>
 
-    <button
-    class="select-icon"
-    onclick="selectIcon(this,'📸')">
-        📸
-    </button>
+    <button class="select-icon" data-icon="📸">📸</button>
 
-    <button
-    class="select-icon"
-    onclick="selectIcon(this,'🧭')">
-        🧭
-    </button>
+    <button class="select-icon" data-icon="🧭">🧭</button>
 
 </div>
 
@@ -1104,18 +1143,14 @@ footer p{
 
     آیکون انتخابی شما:
 
-    <strong id="selectedIcon">
-        🧳
-    </strong>
+    <strong id="selectedIcon">🧳</strong>
 
 </div>
 
 </section>
 
 
-<!-- =========================
-     FAL
-========================= -->
+<!-- FAL -->
 
 <section class="section" id="fal">
 
@@ -1151,14 +1186,13 @@ footer p{
     <div
     class="fal-author"
     id="falAuthor">
-
     </div>
 
     <br>
 
     <button
     class="btn btn-main"
-    onclick="getFal()">
+    id="falButton">
 
         ✨ فال بگیر
 
@@ -1169,9 +1203,7 @@ footer p{
 </section>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -1194,14 +1226,11 @@ footer p{
 </footer>
 
 
-<!-- =========================
-     MODAL
-========================= -->
+<!-- MODAL -->
 
 <div
 class="modal"
-id="modal"
-onclick="closeModal(event)">
+id="modal">
 
 <div class="modal-content">
 
@@ -1213,8 +1242,10 @@ onclick="closeModal(event)">
 
         <button
         class="close"
-        onclick="closeModal()">
+        id="closeModal">
+
             ×
+
         </button>
 
     </div>
@@ -1222,40 +1253,4 @@ onclick="closeModal(event)">
     <p>
 
         ایران‌گرد یک طراحی مفهومی برای معرفی
-        جاذبه‌های گردشگری ایران است.
-
-        <br><br>
-
-        در این نسخه، سه مقصد
-        <strong>شیراز، اصفهان و کرمانشاه</strong>
-        قرار گرفته‌اند.
-
-        <br><br>
-
-        برای هر جاذبه، تصویر، توضیح،
-        آدرس و گزینه‌های مسیریابی قرار داده شده است.
-
-    </p>
-
-</div>
-
-</div>
-
-
-<script>
-
-/* ==========================================
-   PLACES DATABASE
-========================================== */
-
-const places = [
-
-/* =====================
-   SHIRAZ
-===================== */
-
-{
-city:"شیراز",
-name:"حافظیه",
-icon:"📖",
-image:"https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1
+    
