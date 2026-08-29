@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ایران‌گرد | راهنمای حرفه‌ای گردشگری ایران</title>
 
 <meta name="description"
-content="راهنمای حرفه‌ای جاذبه‌های گردشگری شیراز، اصفهان و کرمانشاه">
+content="راهنمای حرفه‌ای گردشگری شیراز، اصفهان و کرمانشاه">
 
 <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
 
 *{
     margin:0;
@@ -24,1509 +24,1238 @@ html{
 }
 
 body{
-    font-family:Tahoma,Arial,sans-serif;
-    background:#050b12;
+    font-family:'Vazirmatn',Tahoma,sans-serif;
+    background:#07111f;
     color:#fff;
     overflow-x:hidden;
 }
 
-/* =========================================
-   HERO
-========================================= */
+/* =========================
+   BACKGROUND
+========================= */
 
-.hero{
-    min-height:100vh;
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 20% 20%,rgba(0,200,255,.08),transparent 30%),
+    radial-gradient(circle at 80% 70%,rgba(255,180,0,.07),transparent 30%);
+    pointer-events:none;
+    z-index:-2;
+}
 
-    position:relative;
+/* =========================
+   LOADER
+========================= */
 
+.loader{
+    position:fixed;
+    inset:0;
+    background:
+    linear-gradient(135deg,#020617,#071a2e,#0b263d);
     display:flex;
     align-items:center;
     justify-content:center;
+    z-index:9999;
+    transition:1s;
+}
 
+.loader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader-box{
     text-align:center;
+}
 
+.loader-icon{
+    font-size:75px;
+    animation:float 2s infinite ease-in-out;
+}
+
+.loader h1{
+    margin-top:15px;
+    font-size:38px;
+    background:linear-gradient(90deg,#ffd166,#fff,#00d4ff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.loader p{
+    color:#aaa;
+    margin-top:10px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(18px);
+    background:rgba(3,12,24,.78);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav{
+    max-width:1400px;
+    margin:auto;
+    padding:15px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:900;
+    background:linear-gradient(90deg,#ffd166,#fff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.logo span{
+    color:#00d4ff;
+}
+
+.nav-links{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+.nav-links button{
+    border:0;
+    background:transparent;
+    color:#ddd;
+    padding:10px 15px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+    font-family:inherit;
+}
+
+.nav-links button:hover{
+    background:rgba(255,255,255,.08);
+    color:#ffd166;
+}
+
+.nav-actions{
+    display:flex;
+    gap:8px;
+}
+
+.icon-btn{
+    width:42px;
+    height:42px;
+    border:1px solid rgba(255,255,255,.1);
+    background:rgba(255,255,255,.05);
+    color:white;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:680px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:80px 20px;
+    position:relative;
     overflow:hidden;
-
     background:
-    linear-gradient(
-        rgba(0,0,0,.25),
-        rgba(2,8,15,.88)
-    ),
-    url("https://images.unsplash.com/photo-1572252009286-268acec5ca0a?auto=format&fit=crop&w=1800&q=80")
+    linear-gradient(rgba(2,10,20,.65),rgba(2,10,20,.88)),
+    url("https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=2000&q=90")
     center/cover;
 }
 
-.hero::before{
+.hero::after{
     content:"";
-
     position:absolute;
-
-    inset:-20%;
-
-    background:
-    radial-gradient(
-        circle at center,
-        rgba(255,210,90,.18),
-        transparent 35%
-    );
-
-    animation:heroGlow 6s infinite alternate;
+    inset:auto 0 0;
+    height:180px;
+    background:linear-gradient(transparent,#07111f);
 }
 
 .hero-content{
     position:relative;
+    z-index:2;
+    max-width:900px;
+}
 
-    z-index:3;
-
-    padding:30px;
-
-    animation:heroEnter 1.2s ease;
+.hero-badge{
+    display:inline-block;
+    padding:8px 18px;
+    border:1px solid rgba(255,255,255,.18);
+    background:rgba(255,255,255,.08);
+    border-radius:100px;
+    margin-bottom:20px;
+    backdrop-filter:blur(10px);
 }
 
 .hero h1{
-    font-size:clamp(48px,9vw,100px);
-
-    background:
-    linear-gradient(
-        90deg,
-        #c58b20,
-        #ffe58a,
-        #fff,
-        #d49a24
-    );
-
+    font-size:clamp(42px,7vw,88px);
+    line-height:1.15;
+    font-weight:900;
+    background:linear-gradient(90deg,#fff,#ffd166,#00d4ff,#fff);
+    background-size:300%;
     -webkit-background-clip:text;
     color:transparent;
-
-    margin-bottom:20px;
+    animation:gradient 6s infinite;
 }
 
 .hero p{
-    font-size:clamp(16px,3vw,25px);
-
+    max-width:700px;
+    margin:25px auto;
+    color:#d6dce5;
+    font-size:18px;
     line-height:2;
-
-    color:#eee;
 }
 
-.hero-button{
-    display:inline-block;
-
-    margin-top:30px;
-
-    padding:16px 40px;
-
-    border-radius:50px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #ffd65a,
-        #9d6c0e
-    );
-
-    color:#111;
-
-    text-decoration:none;
-
-    font-weight:bold;
-
-    transition:.35s;
-
-    box-shadow:
-    0 10px 35px rgba(255,196,50,.2);
-}
-
-.hero-button:hover{
-    transform:
-    translateY(-6px)
-    scale(1.04);
-
-    box-shadow:
-    0 20px 60px rgba(255,196,50,.35);
-}
-
-@keyframes heroEnter{
-
-    from{
-        opacity:0;
-        transform:translateY(60px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
-}
-
-@keyframes heroGlow{
-
-    from{
-        transform:scale(.8);
-        opacity:.4;
-    }
-
-    to{
-        transform:scale(1.3);
-        opacity:.9;
-    }
-
-}
-
-/* =========================================
-   NAV
-========================================= */
-
-nav{
-    position:fixed;
-
-    top:15px;
-    right:50%;
-
-    transform:translateX(50%);
-
-    width:min(94%,1100px);
-
+.hero-buttons{
     display:flex;
-
     justify-content:center;
-
-    gap:28px;
-
-    padding:13px 22px;
-
-    border-radius:50px;
-
-    background:rgba(5,12,20,.68);
-
-    backdrop-filter:blur(18px);
-
-    border:1px solid rgba(255,255,255,.12);
-
-    z-index:1000;
+    gap:15px;
+    flex-wrap:wrap;
 }
 
-nav a{
-    color:#fff;
-
-    text-decoration:none;
-
+.btn{
+    border:0;
+    border-radius:14px;
+    padding:14px 24px;
+    font-family:inherit;
+    font-weight:700;
+    cursor:pointer;
     transition:.3s;
 }
 
-nav a:hover{
-    color:#ffd45c;
+.btn-main{
+    background:linear-gradient(135deg,#ffd166,#ff9f1c);
+    color:#111;
 }
 
-/* =========================================
-   SECTION
-========================================= */
+.btn-main:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 35px rgba(255,177,66,.25);
+}
 
-section{
-    padding:100px 6%;
+.btn-dark{
+    background:rgba(255,255,255,.08);
+    color:#fff;
+    border:1px solid rgba(255,255,255,.12);
+}
+
+.btn-dark:hover{
+    background:rgba(255,255,255,.14);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section{
+    max-width:1400px;
+    margin:auto;
+    padding:80px 25px;
 }
 
 .section-title{
     text-align:center;
+    margin-bottom:45px;
+}
 
-    margin-bottom:55px;
+.section-title small{
+    color:#00d4ff;
+    font-weight:700;
 }
 
 .section-title h2{
-    font-size:42px;
-
-    color:#ffd35b;
-
-    margin-bottom:15px;
+    font-size:40px;
+    margin:10px 0;
 }
 
 .section-title p{
-    color:#aaa;
+    color:#9ca8b7;
 }
 
-/* =========================================
-   CITY BUTTONS
-========================================= */
+/* =========================
+   CITY FILTER
+========================= */
 
-.city-buttons{
+.city-filter{
     display:flex;
-
     justify-content:center;
-
-    gap:14px;
-
+    gap:10px;
     flex-wrap:wrap;
-
-    margin-bottom:55px;
+    margin-bottom:35px;
 }
 
 .city-btn{
-    padding:14px 30px;
-
-    border-radius:50px;
-
-    background:#0c1723;
-
-    border:1px solid #765817;
-
-    color:#fff;
-
+    padding:12px 25px;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:100px;
+    background:rgba(255,255,255,.05);
+    color:white;
     cursor:pointer;
-
+    font-family:inherit;
     transition:.3s;
 }
 
-.city-btn:hover,
-.city-btn.active{
-
-    background:
-    linear-gradient(
-        135deg,
-        #e5b52e,
-        #79540e
-    );
-
+.city-btn.active,
+.city-btn:hover{
+    background:#ffd166;
     color:#111;
-
-    transform:translateY(-3px);
-
-    box-shadow:
-    0 10px 30px rgba(221,170,40,.2);
 }
 
-/* =========================================
-   GRID
-========================================= */
+/* =========================
+   SEARCH
+========================= */
 
-.destination-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(290px,1fr));
-
-    gap:30px;
-}
-
-/* =========================================
-   CARD
-========================================= */
-
-.destination{
-
+.search-box{
+    max-width:650px;
+    margin:0 auto 35px;
     position:relative;
-
-    min-height:500px;
-
-    border-radius:28px;
-
-    overflow:hidden;
-
-    background:#0c1621;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    box-shadow:
-    0 20px 60px rgba(0,0,0,.35);
-
-    transition:
-    transform .5s,
-    box-shadow .5s;
-
-    animation:cardEnter .8s ease both;
-
-    cursor:pointer;
 }
 
-.destination:hover{
-
-    transform:
-    translateY(-12px)
-    scale(1.015);
-
-    box-shadow:
-    0 30px 80px rgba(0,0,0,.6);
+.search-box input{
+    width:100%;
+    padding:17px 55px 17px 20px;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.06);
+    color:#fff;
+    outline:none;
+    font-family:inherit;
 }
 
-/* =========================================
-   IMAGE
-========================================= */
-
-.destination-image{
-
+.search-box span{
     position:absolute;
+    right:20px;
+    top:14px;
+    font-size:22px;
+}
 
-    inset:0;
+/* =========================
+   CARDS
+========================= */
 
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    position:relative;
+    overflow:hidden;
+    background:rgba(255,255,255,.055);
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:25px;
+    transition:.5s;
+    animation:cardIn .7s ease both;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:rgba(255,209,102,.35);
+    box-shadow:0 25px 60px rgba(0,0,0,.3);
+}
+
+.card-image{
+    height:260px;
+    overflow:hidden;
+    position:relative;
+}
+
+.card-image img{
     width:100%;
     height:100%;
-
     object-fit:cover;
-
-    transition:
-    transform 1s ease,
-    filter .6s ease;
-
-    filter:saturate(.9);
+    transition:.7s;
 }
 
-.destination:hover .destination-image{
-
-    transform:scale(1.09);
-
-    filter:saturate(1.15);
+.card:hover .card-image img{
+    transform:scale(1.1);
 }
 
-/* =========================================
-   OVERLAY
-========================================= */
-
-.destination::after{
-
+.card-image::after{
     content:"";
-
     position:absolute;
-
     inset:0;
-
-    background:
-    linear-gradient(
-        to bottom,
-        transparent 10%,
-        rgba(0,0,0,.12) 30%,
-        rgba(0,0,0,.96) 100%
-    );
-
-    z-index:1;
+    background:linear-gradient(transparent 45%,rgba(0,0,0,.7));
 }
 
-/* =========================================
-   CLICK HINT
-========================================= */
-
-.click-hint{
-
+.city-tag{
     position:absolute;
-
-    top:18px;
-
-    left:18px;
-
-    z-index:10;
-
-    padding:8px 13px;
-
-    border-radius:30px;
-
-    background:rgba(0,0,0,.5);
-
+    top:15px;
+    right:15px;
+    z-index:3;
+    padding:7px 13px;
+    border-radius:100px;
+    background:rgba(0,0,0,.55);
     backdrop-filter:blur(10px);
-
-    color:#ffd65a;
-
-    font-size:11px;
-
-    border:1px solid rgba(255,214,90,.25);
-
-    opacity:.85;
-
-    transition:.3s;
+    font-size:12px;
 }
 
-.destination:hover .click-hint{
-
-    background:#ffd65a;
-
-    color:#111;
-
-    opacity:1;
-}
-
-/* =========================================
-   CARD CONTENT
-========================================= */
-
-.destination-info{
-
+.favorite{
     position:absolute;
-
-    z-index:5;
-
-    right:0;
-    left:0;
-    bottom:0;
-
-    padding:25px;
+    top:15px;
+    left:15px;
+    z-index:3;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:0;
+    background:rgba(0,0,0,.55);
+    color:#fff;
+    cursor:pointer;
+    font-size:20px;
 }
 
-.destination-info h3{
+.favorite.active{
+    color:#ff4d6d;
+}
 
-    font-size:27px;
+.card-body{
+    padding:22px;
+}
 
-    color:#ffd45c;
-
+.card-body h3{
+    font-size:23px;
     margin-bottom:10px;
 }
 
-.destination-info p{
-
-    color:#ddd;
-
+.card-body p{
+    color:#aab4c2;
     line-height:1.9;
-
-    font-size:14px;
-
-    margin-bottom:12px;
+    min-height:75px;
 }
 
-.location{
-
-    display:inline-block;
-
-    padding:7px 13px;
-
-    border-radius:20px;
-
-    background:
-    rgba(255,211,80,.1);
-
-    color:#ffd35c;
-
-    font-size:12px;
+.address{
+    margin-top:15px;
+    color:#ffd166;
+    font-size:13px;
+    line-height:1.8;
 }
 
-/* =========================================
-   MAP BUTTONS
-========================================= */
-
-.map-buttons{
-
+.card-actions{
     display:flex;
-
-    gap:8px;
-
-    margin-top:16px;
-
+    gap:7px;
     flex-wrap:wrap;
+    margin-top:18px;
 }
 
 .map-btn{
-
+    flex:1;
+    min-width:90px;
+    padding:10px 8px;
+    border-radius:11px;
+    border:1px solid rgba(255,255,255,.1);
+    background:rgba(255,255,255,.06);
+    color:#fff;
     text-decoration:none;
-
-    padding:9px 15px;
-
-    border-radius:12px;
-
+    text-align:center;
     font-size:12px;
-
-    font-weight:bold;
-
     transition:.3s;
-
-    backdrop-filter:blur(8px);
-
-    position:relative;
-
-    z-index:20;
 }
 
 .map-btn:hover{
-
-    transform:translateY(-3px);
-}
-
-.balad{
-
-    background:#fff;
-
+    background:#ffd166;
     color:#111;
 }
 
-.neshan{
+/* =========================
+   SPECIAL CARD
+========================= */
 
-    background:#18a85b;
-
-    color:#fff;
+.card.special{
+    border-color:rgba(255,105,180,.35);
 }
 
-.route{
+.card.special .card-body h3{
+    background:linear-gradient(90deg,#ff8cc6,#ffd166);
+    -webkit-background-clip:text;
+    color:transparent;
+}
 
-    background:#d39b23;
+/* =========================
+   FEATURES
+========================= */
 
+.features{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.feature{
+    padding:30px 20px;
+    text-align:center;
+    border-radius:22px;
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s;
+}
+
+.feature:hover{
+    transform:translateY(-7px);
+}
+
+.feature-icon{
+    font-size:42px;
+    margin-bottom:15px;
+    animation:float 3s infinite ease-in-out;
+}
+
+.feature h3{
+    margin-bottom:10px;
+}
+
+.feature p{
+    color:#9ca8b7;
+    line-height:1.8;
+    font-size:14px;
+}
+
+/* =========================
+   ICON SELECTOR
+========================= */
+
+.icon-section{
+    background:linear-gradient(135deg,rgba(0,212,255,.05),rgba(255,209,102,.05));
+}
+
+.icon-selector{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.select-icon{
+    width:75px;
+    height:75px;
+    border-radius:20px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.1);
+    cursor:pointer;
+    font-size:30px;
+    transition:.3s;
+}
+
+.select-icon:hover,
+.select-icon.selected{
+    transform:translateY(-8px) scale(1.05);
+    background:#ffd166;
     color:#111;
 }
 
-/* =========================================
-   MINI ANIMATIONS
-========================================= */
+.selected-icon{
+    text-align:center;
+    margin-top:25px;
+    font-size:20px;
+}
 
-.gold-animation{
+/* =========================
+   FAL
+========================= */
 
-    position:absolute;
-
-    width:220px;
-    height:220px;
-
-    top:-100px;
-    right:-90px;
-
-    border-radius:50%;
-
+.fal-box{
+    max-width:850px;
+    margin:auto;
+    padding:50px 30px;
+    border-radius:30px;
+    text-align:center;
     background:
-    radial-gradient(
-        circle,
-        rgba(255,214,88,.5),
-        transparent 68%
-    );
-
-    z-index:2;
-
-    animation:
-    goldPulse 4s infinite ease-in-out;
+    radial-gradient(circle at top,#513d12,transparent 50%),
+    rgba(255,255,255,.045);
+    border:1px solid rgba(255,209,102,.2);
+    box-shadow:0 30px 80px rgba(0,0,0,.2);
 }
 
-@keyframes goldPulse{
-
-    0%,100%{
-        transform:scale(.7);
-        opacity:.25;
-    }
-
-    50%{
-        transform:scale(1.25);
-        opacity:.75;
-    }
-
+.fal-book{
+    font-size:70px;
+    animation:float 2.5s infinite;
 }
 
-.water-animation{
-
-    position:absolute;
-
-    bottom:0;
-    right:-10%;
-
-    width:120%;
-    height:90px;
-
-    z-index:3;
-
-    opacity:.55;
-
-    background:
-    radial-gradient(
-        ellipse at center,
-        rgba(255,255,255,.35),
-        transparent 65%
-    );
-
-    animation:
-    waterWave 3s infinite ease-in-out;
+.fal-result{
+    margin:25px auto;
+    max-width:650px;
+    color:#eee;
+    line-height:2.3;
+    min-height:80px;
+    font-size:18px;
 }
 
-@keyframes waterWave{
-
-    0%,100%{
-        transform:
-        translateX(-25px)
-        scaleY(.65);
-    }
-
-    50%{
-        transform:
-        translateX(25px)
-        scaleY(1.15);
-    }
-
+.fal-author{
+    color:#ffd166;
 }
 
-.nature-animation{
+/* =========================
+   FOOTER
+========================= */
 
-    position:absolute;
-
-    width:12px;
-    height:12px;
-
-    border-radius:50%;
-
-    background:#fff;
-
-    top:35%;
-    right:15%;
-
-    z-index:4;
-
-    box-shadow:
-    80px 30px 0 rgba(255,255,255,.6),
-    160px -20px 0 rgba(255,255,255,.4),
-    230px 60px 0 rgba(255,255,255,.5);
-
-    animation:
-    floatingParticles 4s infinite linear;
+footer{
+    padding:50px 25px;
+    text-align:center;
+    background:#030914;
+    border-top:1px solid rgba(255,255,255,.07);
 }
 
-@keyframes floatingParticles{
-
-    0%{
-        transform:
-        translateX(0)
-        translateY(30px);
-
-        opacity:0;
-    }
-
-    30%{
-        opacity:.8;
-    }
-
-    100%{
-        transform:
-        translateX(-100px)
-        translateY(-100px);
-
-        opacity:0;
-    }
-
+footer h2{
+    color:#ffd166;
+    margin-bottom:12px;
 }
 
-.color-animation{
+footer p{
+    color:#8d99a8;
+    line-height:2;
+}
 
-    position:absolute;
+/* =========================
+   MODAL
+========================= */
 
+.modal{
+    position:fixed;
     inset:0;
-
-    z-index:2;
-
-    opacity:.25;
-
-    background:
-    linear-gradient(
-        120deg,
-        #ff4f4f,
-        #46a7ff,
-        #ffd84a,
-        #9b5cff
-    );
-
-    background-size:300% 300%;
-
-    mix-blend-mode:screen;
-
-    animation:
-    glassMove 5s infinite alternate;
+    background:rgba(0,0,0,.75);
+    backdrop-filter:blur(10px);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:5000;
+    padding:20px;
 }
 
-@keyframes glassMove{
-
-    0%{
-        background-position:0% 50%;
-    }
-
-    100%{
-        background-position:100% 50%;
-    }
-
+.modal.show{
+    display:flex;
 }
 
-@keyframes cardEnter{
+.modal-content{
+    width:min(600px,100%);
+    background:#0b1727;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:25px;
+    padding:30px;
+    animation:modalIn .4s ease;
+}
 
+.modal-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.close{
+    border:0;
+    background:none;
+    color:white;
+    font-size:25px;
+    cursor:pointer;
+}
+
+.modal-content p{
+    color:#b5bfcb;
+    line-height:2;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-12px)}
+}
+
+@keyframes gradient{
+    0%{background-position:0%}
+    50%{background-position:100%}
+    100%{background-position:0%}
+}
+
+@keyframes cardIn{
     from{
         opacity:0;
-        transform:translateY(35px);
+        transform:translateY(30px);
     }
-
     to{
         opacity:1;
         transform:translateY(0);
     }
-
 }
 
-/* =========================================
-   MODAL
-========================================= */
-
-.attraction-modal{
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:5000;
-
-    display:none;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:20px;
-
-    background:
-    rgba(0,0,0,.78);
-
-    backdrop-filter:blur(12px);
-
-    animation:modalFade .3s ease;
-}
-
-.attraction-modal.show{
-
-    display:flex;
-}
-
-@keyframes modalFade{
-
+@keyframes modalIn{
     from{
         opacity:0;
+        transform:scale(.9);
     }
-
     to{
         opacity:1;
-    }
-
-}
-
-.modal-box{
-
-    width:min(680px,95%);
-
-    max-height:90vh;
-
-    overflow-y:auto;
-
-    position:relative;
-
-    padding:35px;
-
-    border-radius:32px;
-
-    background:
-    linear-gradient(
-        145deg,
-        #142333,
-        #071019
-    );
-
-    border:1px solid rgba(255,214,90,.3);
-
-    box-shadow:
-    0 30px 100px rgba(0,0,0,.8);
-
-    text-align:center;
-
-    animation:modalBox .5s ease;
-}
-
-@keyframes modalBox{
-
-    from{
-        transform:
-        translateY(50px)
-        scale(.9);
-
-        opacity:0;
-    }
-
-    to{
-        transform:
-        translateY(0)
-        scale(1);
-
-        opacity:1;
-    }
-
-}
-
-.modal-close{
-
-    position:absolute;
-
-    top:15px;
-    left:15px;
-
-    width:40px;
-    height:40px;
-
-    border-radius:50%;
-
-    border:1px solid rgba(255,255,255,.15);
-
-    background:rgba(255,255,255,.08);
-
-    color:#fff;
-
-    font-size:22px;
-
-    cursor:pointer;
-
-    transition:.3s;
-}
-
-.modal-close:hover{
-
-    background:#ffd45c;
-
-    color:#111;
-
-    transform:rotate(90deg);
-}
-
-.modal-icon{
-
-    width:95px;
-    height:95px;
-
-    margin:5px auto 20px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-
-    font-size:48px;
-
-    background:
-    radial-gradient(
-        circle,
-        rgba(255,214,90,.25),
-        rgba(255,214,90,.03)
-    );
-
-    border:1px solid rgba(255,214,90,.25);
-
-    box-shadow:
-    0 0 45px rgba(255,205,70,.15);
-
-    animation:
-    modalIconPulse 2s infinite;
-}
-
-@keyframes modalIconPulse{
-
-    0%,100%{
         transform:scale(1);
     }
+}
 
-    50%{
-        transform:scale(1.08);
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+    .cards{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .features{
+        grid-template-columns:repeat(2,1fr);
     }
 
 }
-
-.modal-box h2{
-
-    color:#ffd45c;
-
-    font-size:31px;
-
-    margin-bottom:15px;
-}
-
-.farewell{
-
-    font-size:19px;
-
-    color:#fff;
-
-    line-height:2;
-
-    margin-bottom:20px;
-}
-
-.special-box{
-
-    padding:22px;
-
-    border-radius:22px;
-
-    background:
-    rgba(255,214,90,.06);
-
-    border:
-    1px solid rgba(255,214,90,.16);
-
-    color:#ddd;
-
-    line-height:2.2;
-
-    margin-top:15px;
-}
-
-.special-title{
-
-    color:#ffd45c;
-
-    font-size:18px;
-
-    margin-bottom:10px;
-
-    font-weight:bold;
-}
-
-.random-button{
-
-    border:none;
-
-    cursor:pointer;
-
-    margin-top:18px;
-
-    padding:12px 24px;
-
-    border-radius:30px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #ffd85b,
-        #a87512
-    );
-
-    color:#111;
-
-    font-weight:bold;
-
-    transition:.3s;
-}
-
-.random-button:hover{
-
-    transform:
-    translateY(-3px)
-    scale(1.03);
-}
-
-/* =========================================
-   HAFEZ
-========================================= */
-
-.fal{
-
-    margin-top:20px;
-
-    padding:25px;
-
-    border-radius:22px;
-
-    background:
-    linear-gradient(
-        145deg,
-        rgba(116,78,20,.25),
-        rgba(0,0,0,.2)
-    );
-
-    border:1px solid rgba(255,214,90,.2);
-}
-
-.fal-text{
-
-    font-size:19px;
-
-    line-height:2.4;
-
-    color:#ffe9a3;
-}
-
-.fal-note{
-
-    margin-top:15px;
-
-    color:#aaa;
-
-    font-size:12px;
-}
-
-/* =========================================
-   ABOUT
-========================================= */
-
-.info-box{
-
-    max-width:1000px;
-
-    margin:auto;
-
-    padding:40px;
-
-    border-radius:28px;
-
-    background:
-    linear-gradient(
-        145deg,
-        #101d2b,
-        #07101a
-    );
-
-    border:
-    1px solid rgba(255,211,80,.13);
-
-    text-align:center;
-
-    line-height:2.2;
-
-    box-shadow:
-    0 20px 60px rgba(0,0,0,.25);
-}
-
-/* =========================================
-   FOOTER
-========================================= */
-
-footer{
-
-    padding:60px 20px;
-
-    text-align:center;
-
-    background:#03070b;
-
-    color:#777;
-}
-
-footer strong{
-
-    color:#ffd45c;
-}
-
-/* =========================================
-   MOBILE
-========================================= */
 
 @media(max-width:700px){
 
-    nav{
-
-        justify-content:flex-start;
-
-        overflow-x:auto;
-
-        gap:18px;
+    .nav{
+        flex-direction:column;
     }
 
-    nav a{
-
-        white-space:nowrap;
-
-        font-size:12px;
+    .nav-links{
+        justify-content:center;
     }
 
-    section{
-
-        padding:75px 5%;
+    .hero{
+        min-height:600px;
     }
 
-    .section-title h2{
-
-        font-size:31px;
+    .hero h1{
+        font-size:44px;
     }
 
-    .destination{
-
-        min-height:460px;
+    .cards{
+        grid-template-columns:1fr;
     }
 
-    .map-buttons{
-
-        gap:6px;
+    .features{
+        grid-template-columns:1fr;
     }
 
-    .map-btn{
-
-        padding:8px 11px;
-    }
-
-    .modal-box{
-
-        padding:28px 20px;
-    }
-
-    .modal-box h2{
-
-        font-size:25px;
-    }
-
-    .farewell{
-
-        font-size:16px;
-    }
-
-}
-
-/* =========================================
-   REDUCE MOTION
-========================================= */
-
-@media(prefers-reduced-motion:reduce){
-
-    *,
-    *::before,
-    *::after{
-
-        animation:none!important;
-
-        transition:none!important;
-
-        scroll-behavior:auto!important;
+    .section{
+        padding:60px 15px;
     }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
+<!-- =========================
+     LOADER
+========================= -->
 
-<!-- =========================================
-     NAV
-========================================= -->
+<div class="loader" id="loader">
 
-<nav>
+    <div class="loader-box">
 
-<a href="#home">خانه</a>
+        <div class="loader-icon">🧳</div>
 
-<a href="#cities">مقصدها</a>
+        <h1>ایران‌گرد</h1>
 
-<a href="#about">درباره ایران‌گرد</a>
+        <p>در حال آماده‌سازی سفر شما...</p>
 
-</nav>
-
-
-<!-- =========================================
-     HERO
-========================================= -->
-
-<header class="hero" id="home">
-
-<div class="hero-content">
-
-<h1>ایران‌گرد</h1>
-
-<p>
-
-زیباترین جاذبه‌های ایران
-
-<br>
-
-در یک سفر دیجیتال متفاوت
-
-</p>
-
-<a
-href="#cities"
-class="hero-button">
-
-شروع سفر ✈️
-
-</a>
+    </div>
 
 </div>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<nav class="nav">
+
+    <div class="logo">
+        ایران<span>‌گرد</span> 🇮🇷
+    </div>
+
+    <div class="nav-links">
+
+        <button onclick="scrollToSection('home')">
+            خانه
+        </button>
+
+        <button onclick="scrollToSection('places')">
+            جاذبه‌ها
+        </button>
+
+        <button onclick="scrollToSection('features')">
+            امکانات
+        </button>
+
+        <button onclick="scrollToSection('fal')">
+            فال و شعر
+        </button>
+
+    </div>
+
+    <div class="nav-actions">
+
+        <button class="icon-btn" onclick="toggleTheme()">
+            🌙
+        </button>
+
+        <button class="icon-btn" onclick="openModal()">
+            ℹ️
+        </button>
+
+    </div>
+
+</nav>
 
 </header>
 
 
-<!-- =========================================
-     CITIES
-========================================= -->
+<!-- =========================
+     HERO
+========================= -->
 
-<section id="cities">
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+    <div class="hero-badge">
+        🇮🇷 راهنمای حرفه‌ای گردشگری ایران
+    </div>
+
+    <h1>
+        ایران را<br>
+        جور دیگری ببین
+    </h1>
+
+    <p>
+        از باغ‌های خیال‌انگیز شیراز تا میدان نقش جهان
+        و شکوه کوهستان‌های کرمانشاه؛
+        مقصد بعدی خودت را پیدا کن.
+    </p>
+
+    <div class="hero-buttons">
+
+        <button
+        class="btn btn-main"
+        onclick="scrollToSection('places')">
+
+            ✨ کشف جاذبه‌ها
+
+        </button>
+
+        <button
+        class="btn btn-dark"
+        onclick="scrollToSection('fal')">
+
+            🔮 فال و شعر
+
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PLACES
+========================= -->
+
+<section class="section" id="places">
 
 <div class="section-title">
 
-<h2>
-مقصد خودت را انتخاب کن
-</h2>
+    <small>DESTINATIONS</small>
 
-<p>
-هر شهر، یک داستان؛ هر جاذبه، یک تجربه
-</p>
+    <h2>
+        جاذبه‌های شگفت‌انگیز
+    </h2>
 
-</div>
-
-
-<div class="city-buttons">
-
-<button
-class="city-btn active"
-onclick="showCity('shiraz',this)">
-
-شیراز
-
-</button>
-
-<button
-class="city-btn"
-onclick="showCity('isfahan',this)">
-
-اصفهان
-
-</button>
-
-<button
-class="city-btn"
-onclick="showCity('kermanshah',this)">
-
-کرمانشاه
-
-</button>
+    <p>
+        سه مقصد جذاب برای شروع ایران‌گردی
+    </p>
 
 </div>
 
 
-<!-- =========================================
-     SHIRAZ
-========================================= -->
+<div class="search-box">
 
-<div id="shiraz" class="city">
+    <span>🔎</span>
 
-<div class="destination-grid">
-
-
-<!-- تخت جمشید -->
-
-<article
-class="destination"
-onclick="openAttraction(
-'تخت جمشید',
-'🏛️',
-'تاریخ هخامنشی',
-'تخت جمشید یکی از باشکوه‌ترین محوطه‌های باستانی ایران است و یادگاری مهم از دوران هخامنشیان به شمار می‌رود.'
-)">
-
-<img
-class="destination-image"
-loading="lazy"
-src="https://images.thenightly.com.au/publication/C-15606715/c7a083a57fb425d79731df3cff40cbecaa62aa4b-4x3-x626y0w4265h3199.jpg"
-alt="تخت جمشید">
-
-<div class="click-hint">
-برای تجربه بیشتر کلیک کن ✨
-</div>
-
-<div class="gold-animation"></div>
-
-<div class="destination-info">
-
-<h3>🏛️ تخت جمشید</h3>
-
-<p>
-پایتخت تشریفاتی هخامنشیان و یکی از
-باشکوه‌ترین محوطه‌های باستانی ایران.
-</p>
-
-<span class="location">
-📍 مرودشت، استان فارس
-</span>
-
-<div class="map-buttons">
-
-<a
-class="map-btn balad"
-onclick="event.stopPropagation()"
-target="_blank"
-rel="noopener"
-href="https://balad.ir/search/تخت-جمشید">
-
-بلد 🗺️
-
-</a>
-
-<a
-class="map-btn neshan"
-onclick="event.stopPropagation()"
-target="_blank"
-rel="noopener"
-href="https://neshan.org/maps/search/تخت%20جمشید">
-
-نشان 📍
-
-</a>
-
-<a
-class="map-btn route"
-onclick="event.stopPropagation()"
-target="_blank"
-rel="noopener"
-href="https://www.google.com/maps/dir/?api=1&destination=29.9368,52.8900">
-
-مسیریابی 🚗
-
-</a>
+    <input
+    id="search"
+    type="text"
+    placeholder="جستجوی نام جاذبه..."
+    oninput="renderPlaces()">
 
 </div>
 
-</div>
 
-</article>
+<div class="city-filter">
 
+    <button
+    class="city-btn active"
+    data-city="all"
+    onclick="filterCity('all',this)">
+        همه
+    </button>
 
-<!-- پاسارگاد -->
+    <button
+    class="city-btn"
+    data-city="شیراز"
+    onclick="filterCity('شیراز',this)">
+        🌹 شیراز
+    </button>
 
-<article
-class="destination"
-onclick="openAttraction(
-'پاسارگاد',
-'👑',
-'میراث کوروش',
-'پاسارگاد یکی از مهم‌ترین محوطه‌های تاریخی ایران است و آرامگاه مشهور کوروش بزرگ در آن قرار دارد.'
-)">
+    <button
+    class="city-btn"
+    data-city="اصفهان"
+    onclick="filterCity('اصفهان',this)">
+        🕌 اصفهان
+    </button>
 
-<img
-class="destination-image"
-loading="lazy"
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Pasargadae_-_Tomb_of_Cyrus.jpg/1280px-Pasargadae_-_Tomb_of_Cyrus.jpg"
-alt="پاسارگاد">
-
-<div class="click-hint">
-میراث ایران 👑
-</div>
-
-<div class="gold-animation"></div>
-
-<div class="destination-info">
-
-<h3>👑 پاسارگاد</h3>
-
-<p>
-محوطه تاریخی هخامنشی و آرامگاه
-کوروش بزرگ؛ یکی از مهم‌ترین آثار ایران.
-</p>
-
-<span class="location">
-📍 پاسارگاد، فارس
-</span>
-
-<div class="map-buttons">
-
-<a
-class="map-btn balad"
-onclick="event.stopPropagation()"
-target="_blank"
-href="https://balad.ir/search/پاسارگاد">
-
-بلد 🗺️
-
-</a>
-
-<a
-class="map-btn neshan"
-onclick="event.stopPropagation()"
-target="_blank"
-href="https://neshan.org/maps/search/پاسارگاد">
-
-نشان 📍
-
-</a>
-
-<a
-class="map-btn route"
-onclick="event.stopPropagation()"
-target="_blank"
-href="https://www.google.com/maps/dir/?api=1&destination=30.2016,53.1767">
-
-مسیریابی 🚗
-
-</a>
+    <button
+    class="city-btn"
+    data-city="کرمانشاه"
+    onclick="filterCity('کرمانشاه',this)">
+        🏔️ کرمانشاه
+    </button>
 
 </div>
 
-</div>
 
-</article>
+<div class="cards" id="cards"></div>
+
+</section>
 
 
-<!-- نقش رستم -->
+<!-- =========================
+     FEATURES
+========================= -->
 
-<article
-class="destination"
-onclick="openAttraction(
-'نقش رستم',
-'🗿',
-'آرامگاه شاهان',
-'نقش رستم مجموعه‌ای از آرامگاه‌های سنگی شاهان هخامنشی و نقش‌برجسته‌های تاریخی ایران است.'
-)">
+<section class="section" id="features">
 
-<img
-class="destination-image"
-loading="lazy"
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Naqsh_e_Rustam.jpg/1280px-Naqsh_e_Rustam.jpg"
-alt="نقش رستم">
+<div class="section-title">
 
-<div class="click-hint">
-تاریخ را لمس کن 🗿
-</div>
+    <small>EXPERIENCE</small>
 
-<div class="gold-animation"></div>
+    <h2>
+        امکانات ایران‌گرد
+    </h2>
 
-<div class="destination-info">
-
-<h3>🗿 نقش رستم</h3>
-
-<p>
-آرامگاه‌های سنگی شاهان هخامنشی
-و مجموعه‌ای از نقش‌برجسته‌های تاریخی.
-</p>
-
-<span class="location">
-📍 مرودشت، فارس
-</span>
-
-<div class="map-buttons">
-
-<a
-class="map-btn balad"
-onclick="event.stopPropagation()"
-target="_blank"
-href="https://balad.ir/search/نقش-رستم">
-
-بلد 🗺️
-
-</a>
-
-<a
-class="map-btn neshan"
-onclick="event.stopPropagation()"
-target="_blank"
-href="https://neshan.org/maps/search/نقش%20رستم">
-
-نشان 📍
-
-</a>
-
-<a
-class="map-btn route"
-onclick="event.stopPropagation()"
-target="_blank"
-href="https://www.google.com/maps/dir/?api=1&destination=29.98889,52.87472">
-
-مسیریابی 🚗
-
-</a>
+    <p>
+        فقط یک سایت گردشگری نیست؛ یک تجربه سفر است.
+    </p>
 
 </div>
 
+
+<div class="features">
+
+    <div class="feature">
+
+        <div class="feature-icon">🗺️</div>
+
+        <h3>مسیریابی</h3>
+
+        <p>
+            دسترسی سریع به موقعیت جاذبه‌ها
+            در سرویس‌های مختلف نقشه.
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">❤️</div>
+
+        <h3>علاقه‌مندی‌ها</h3>
+
+        <p>
+            جاذبه‌های مورد علاقه خودت را
+            ذخیره کن.
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">🔎</div>
+
+        <h3>جستجوی سریع</h3>
+
+        <p>
+            جاذبه موردنظر را در چند ثانیه پیدا کن.
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">🌙</div>
+
+        <h3>حالت شب</h3>
+
+        <p>
+            ظاهر سایت را برای شب یا روز تنظیم کن.
+        </p>
+
+    </div>
+
 </div>
 
-</article>
+</section>
 
 
-<!-- مهارلو -->
+<!-- =========================
+     ICON
+========================= -->
 
-<article
-class="destination"
-onclick="openAttraction(
-'دریاچه مهارلو',
-'🌸',
-'دریاچه صورتی',
-'دریاچه مهارلو در جنوب‌شرق شیراز قرار دارد و در برخی شرایط طبیعی می‌تواند رنگ صورتی یا سرخ پیدا کند.'
-)">
+<section class="section icon-section">
 
-<img
-class="destination-image"
-loading="
+<div class="section-title">
+
+    <small>CHOOSE YOUR ICON</small>
+
+    <h2>
+        آیکون موردنظر
+    </h2>
+
+    <p>
+        حال‌وهوای سفر خودت را انتخاب کن.
+    </p>
+
+</div>
+
+
+<div class="icon-selector">
+
+    <button
+    class="select-icon selected"
+    onclick="selectIcon(this,'🧳')">
+        🧳
+    </button>
+
+    <button
+    class="select-icon"
+    onclick="selectIcon(this,'🏔️')">
+        🏔️
+    </button>
+
+    <button
+    class="select-icon"
+    onclick="selectIcon(this,'🏖️')">
+        🏖️
+    </button>
+
+    <button
+    class="select-icon"
+    onclick="selectIcon(this,'🏛️')">
+        🏛️
+    </button>
+
+    <button
+    class="select-icon"
+    onclick="selectIcon(this,'🚗')">
+        🚗
+    </button>
+
+    <button
+    class="select-icon"
+    onclick="selectIcon(this,'📸')">
+        📸
+    </button>
+
+    <button
+    class="select-icon"
+    onclick="selectIcon(this,'🧭')">
+        🧭
+    </button>
+
+</div>
+
+
+<div class="selected-icon">
+
+    آیکون انتخابی شما:
+
+    <strong id="selectedIcon">
+        🧳
+    </strong>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FAL
+========================= -->
+
+<section class="section" id="fal">
+
+<div class="section-title">
+
+    <small>HAFEZ</small>
+
+    <h2>
+        🔮 فال و شعر
+    </h2>
+
+    <p>
+        یک فال تصادفی از حافظ بگیر.
+    </p>
+
+</div>
+
+
+<div class="fal-box">
+
+    <div class="fal-book">
+        📖
+    </div>
+
+    <div
+    class="fal-result"
+    id="falResult">
+
+        برای گرفتن فال روی دکمه زیر بزن.
+
+    </div>
+
+    <div
+    class="fal-author"
+    id="falAuthor">
+
+    </div>
+
+    <br>
+
+    <button
+    class="btn btn-main"
+    onclick="getFal()">
+
+        ✨ فال بگیر
+
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <h2>
+        ایران‌گرد 🇮🇷
+    </h2>
+
+    <p>
+        ایران سرزمین تاریخ، شعر، طبیعت و خاطره است.
+        <br>
+        سفر بعدی تو از همین‌جا شروع می‌شود.
+    </p>
+
+    <br>
+
+    <p>
+        © 2026 IranGard
+    </p>
+
+</footer>
+
+
+<!-- =========================
+     MODAL
+========================= -->
+
+<div
+class="modal"
+id="modal"
+onclick="closeModal(event)">
+
+<div class="modal-content">
+
+    <div class="modal-head">
+
+        <h2>
+            درباره ایران‌گرد
+        </h2>
+
+        <button
+        class="close"
+        onclick="closeModal()">
+            ×
+        </button>
+
+    </div>
+
+    <p>
+
+        ایران‌گرد یک طراحی مفهومی برای معرفی
+        جاذبه‌های گردشگری ایران است.
+
+        <br><br>
+
+        در این نسخه، سه مقصد
+        <strong>شیراز، اصفهان و کرمانشاه</strong>
+        قرار گرفته‌اند.
+
+        <br><br>
+
+        برای هر جاذبه، تصویر، توضیح،
+        آدرس و گزینه‌های مسیریابی قرار داده شده است.
+
+    </p>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* ==========================================
+   PLACES DATABASE
+========================================== */
+
+const places = [
+
+/* =====================
+   SHIRAZ
+===================== */
+
+{
+city:"شیراز",
+name:"حافظیه",
+icon:"📖",
+image:"https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1
