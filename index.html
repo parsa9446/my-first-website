@@ -4,9 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>مرکز حقوقی، بیمه و سرمایه‌گذاری فلزات | پارسا کرمی</title>
+<title>سفرینو | راهنمای گردشگری ایران</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -18,1119 +20,995 @@ html{
 }
 
 body{
-    font-family:Tahoma,Arial,sans-serif;
-    background:#080808;
-    color:#f5f0df;
-    line-height:1.9;
-}
-
-:root{
-    --gold:#d4af37;
-    --gold2:#f3d36a;
-    --dark:#080808;
-    --card:#121212;
-    --card2:#181818;
-    --text:#f5f0df;
-    --muted:#aaa;
-    --green:#3ddc97;
-    --red:#ff6961;
+    font-family:Vazirmatn,Tahoma,sans-serif;
+    background:#071016;
+    color:white;
+    overflow-x:hidden;
 }
 
 a{
-    color:inherit;
     text-decoration:none;
+    color:inherit;
 }
 
-button,
-input,
-select,
-textarea{
-    font-family:inherit;
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        180deg,
+        rgba(3,12,18,.15),
+        rgba(3,12,18,.92)
+    ),
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/Persepolis.jpg")
+    center/cover;
 }
 
-button{
-    cursor:pointer;
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at 50% 42%,
+        transparent 0 18%,
+        rgba(0,0,0,.18) 48%,
+        rgba(0,0,0,.7) 100%
+    );
 }
 
-.container{
-    width:min(1180px,92%);
-    margin:auto;
-}
+/* =========================
+   NAVBAR
+========================= */
 
-header{
-    position:sticky;
+nav{
+    position:absolute;
+    z-index:5;
+
     top:0;
-    z-index:1000;
-    background:rgba(5,5,5,.95);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid rgba(212,175,55,.25);
-}
+    right:0;
+    left:0;
 
-.nav{
-    min-height:75px;
+    padding:25px 6%;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:20px;
 }
 
 .logo{
-    font-size:22px;
-    font-weight:bold;
-    color:var(--gold2);
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:-1px;
 }
 
 .logo span{
-    display:block;
-    color:#fff;
-    font-size:12px;
-    font-weight:normal;
+    color:#d7b56d;
 }
 
-.nav-links{
+.navlinks{
     display:flex;
-    gap:8px;
-    flex-wrap:wrap;
-    justify-content:center;
+    gap:26px;
+
+    font-size:14px;
+    color:#eee;
 }
 
-.nav-links a{
-    padding:7px 10px;
-    color:#ddd;
-    font-size:13px;
-    border-radius:8px;
-    transition:.3s;
+.navlinks a{
+    opacity:.85;
+    transition:.25s;
 }
 
-.nav-links a:hover{
-    color:#000;
-    background:var(--gold);
+.navlinks a:hover{
+    opacity:1;
+    color:#d7b56d;
 }
 
-.hero{
-    min-height:600px;
-    display:flex;
-    align-items:center;
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content{
+    position:relative;
+    z-index:3;
+
     text-align:center;
-    background:
-    radial-gradient(circle at 50% 20%,rgba(212,175,55,.16),transparent 35%),
-    linear-gradient(180deg,#101010,#080808);
-}
 
-.hero-box{
-    width:min(900px,100%);
-    margin:auto;
+    max-width:900px;
+    padding:30px;
 }
 
 .badge{
     display:inline-block;
-    padding:7px 15px;
-    border:1px solid rgba(212,175,55,.5);
-    border-radius:30px;
-    color:var(--gold2);
-    margin-bottom:20px;
+
+    padding:8px 16px;
+
+    border:1px solid rgba(255,255,255,.3);
+    border-radius:100px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(10px);
+
+    font-size:13px;
+
+    margin-bottom:22px;
 }
 
-.hero h1{
-    font-size:clamp(30px,5vw,58px);
-    color:var(--gold2);
-    margin-bottom:15px;
+h1{
+    font-size:clamp(45px,8vw,92px);
+
+    line-height:1.05;
+
+    font-weight:900;
+
+    letter-spacing:-4px;
+
+    text-shadow:
+    0 12px 45px #000;
+}
+
+h1 span{
+    color:#e5c47a;
 }
 
 .hero p{
+    margin:25px auto 30px;
+
+    max-width:650px;
+
+    color:#e9e9e9;
+
+    line-height:2;
+
+    font-size:17px;
+}
+
+.cta{
+    display:inline-flex;
+
+    gap:10px;
+
+    align-items:center;
+
+    padding:14px 25px;
+
+    border-radius:13px;
+
+    background:#d7b56d;
+
+    color:#101010;
+
+    font-weight:800;
+
+    box-shadow:
+    0 12px 35px rgba(215,181,109,.25);
+
+    transition:.25s;
+}
+
+.cta:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 18px 45px rgba(215,181,109,.4);
+}
+
+.scroll{
+    position:absolute;
+
+    z-index:4;
+
+    bottom:24px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:12px;
+
     color:#ddd;
-    font-size:18px;
+
+    opacity:.8;
+}
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section{
+    padding:90px 6%;
+}
+
+.section-head{
+    text-align:center;
+
     max-width:800px;
+
+    margin:0 auto 45px;
+}
+
+.section-head .eyebrow{
+    color:#d7b56d;
+
+    font-weight:700;
+
+    font-size:13px;
+
+    margin-bottom:10px;
+}
+
+.section-head h2{
+    font-size:clamp(30px,4vw,48px);
+
+    margin-bottom:14px;
+}
+
+.section-head p{
+    color:#aeb8bd;
+
+    line-height:2;
+}
+
+/* =========================
+   CITIES
+========================= */
+
+.cities{
+    background:
+    linear-gradient(
+        180deg,
+        #071016,
+        #0a151b
+    );
+}
+
+.city-tabs{
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:38px;
+}
+
+.tab{
+    cursor:pointer;
+
+    padding:11px 22px;
+
+    border:1px solid #26373e;
+
+    border-radius:100px;
+
+    color:#bdc6ca;
+
+    background:#0c1a21;
+
+    font-family:inherit;
+
+    transition:.25s;
+}
+
+.tab:hover{
+    transform:translateY(-2px);
+}
+
+.tab.active{
+    background:#d7b56d;
+
+    color:#111;
+
+    border-color:#d7b56d;
+
+    font-weight:800;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(280px,1fr)
+    );
+
+    gap:22px;
+
+    max-width:1250px;
+
     margin:auto;
 }
 
-.btn{
-    border:0;
-    padding:12px 22px;
-    border-radius:10px;
-    font-weight:bold;
+.card{
+    background:#0c1a21;
+
+    border:1px solid #1c3038;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
     transition:.3s;
-    display:inline-block;
+
+    box-shadow:
+    0 15px 45px rgba(0,0,0,.16);
 }
 
-.btn-gold{
-    background:linear-gradient(135deg,var(--gold),var(--gold2));
-    color:#080808;
+.card:hover{
+    transform:translateY(-8px);
+
+    border-color:#826b40;
 }
 
-.btn-dark{
-    background:#181818;
-    color:#fff;
-    border:1px solid #333;
+.card img{
+    width:100%;
+
+    height:225px;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+.card-body{
+    padding:20px;
+}
+
+.card h3{
+    font-size:20px;
+
+    margin-bottom:9px;
+}
+
+.card p{
+    font-size:13px;
+
+    color:#aeb8bd;
+
+    line-height:1.9;
+
+    min-height:50px;
+}
+
+.meta{
+    margin:15px 0;
+
+    color:#d8d8d8;
+
+    font-size:12px;
+
+    line-height:1.8;
+}
+
+.buttons{
+    display:flex;
+
+    gap:8px;
+}
+
+.btn{
+    flex:1;
+
+    text-align:center;
+
+    padding:10px;
+
+    border-radius:10px;
+
+    background:#162a32;
+
+    color:#ddd;
+
+    font-size:12px;
+
+    transition:.2s;
 }
 
 .btn:hover{
     transform:translateY(-2px);
-    box-shadow:0 8px 25px rgba(212,175,55,.2);
 }
 
-.hero-buttons{
-    margin-top:28px;
-    display:flex;
-    gap:12px;
-    justify-content:center;
-    flex-wrap:wrap;
+.btn.gold{
+    background:#d7b56d;
+
+    color:#111;
+
+    font-weight:800;
 }
 
-section{
-    padding:75px 0;
+/* =========================
+   TRAVEL ROUTES
+========================= */
+
+.routes{
+    background:#050c10;
 }
 
-.section-title{
-    text-align:center;
-    margin-bottom:40px;
-}
+.route{
+    max-width:1050px;
 
-.section-title h2{
-    color:var(--gold2);
-    font-size:32px;
-}
+    margin:auto;
 
-.section-title p{
-    color:var(--muted);
-}
-
-.grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:20px;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:18px;
 }
 
-.card{
-    background:linear-gradient(145deg,#151515,#0d0d0d);
-    border:1px solid rgba(212,175,55,.2);
-    border-radius:18px;
-    padding:24px;
-    box-shadow:0 10px 35px rgba(0,0,0,.25);
+.route-box{
+    padding:28px;
+
+    border:1px solid #20323a;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #0c1a21,
+        #091319
+    );
 }
 
-.card h3{
-    color:var(--gold2);
-    margin-bottom:10px;
-}
-
-.card p{
-    color:#ccc;
-}
-
-.icon{
-    font-size:35px;
-    margin-bottom:10px;
-}
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:15px;
-    margin-top:35px;
-}
-
-.stat{
-    background:#111;
-    border:1px solid #292929;
-    padding:20px;
-    text-align:center;
-    border-radius:14px;
-}
-
-.stat strong{
+.route-box strong{
     display:block;
-    color:var(--gold2);
-    font-size:28px;
-}
 
-.price-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-    gap:15px;
-}
+    color:#d7b56d;
 
-.price-card{
-    padding:25px;
-    border-radius:18px;
-    background:#111;
-    border:1px solid rgba(212,175,55,.25);
-    text-align:center;
-}
-
-.price{
     font-size:25px;
-    color:var(--gold2);
-    margin:10px 0;
+
+    margin-bottom:10px;
 }
 
-.small{
-    color:#999;
+.route-box p{
+    color:#aeb8bd;
+
+    line-height:2;
+
+    font-size:13px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:35px 6%;
+
+    text-align:center;
+
+    color:#7f8b90;
+
+    border-top:1px solid #1b2b31;
+
     font-size:12px;
 }
 
-form{
-    display:grid;
-    gap:14px;
-}
+/* =========================
+   MOBILE
+========================= */
 
-label{
-    color:#ddd;
-    font-size:14px;
-}
+@media(max-width:700px){
 
-input,
-select,
-textarea{
-    width:100%;
-    background:#090909;
-    color:#fff;
-    border:1px solid #333;
-    border-radius:10px;
-    padding:12px;
-    outline:none;
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-    border-color:var(--gold);
-}
-
-.tabs{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-bottom:20px;
-}
-
-.tab{
-    background:#171717;
-    color:#ddd;
-    border:1px solid #333;
-    padding:10px 16px;
-    border-radius:10px;
-}
-
-.tab.active{
-    background:var(--gold);
-    color:#000;
-    border-color:var(--gold);
-}
-
-.search{
-    margin-bottom:25px;
-}
-
-.law-list,
-.term-list{
-    display:grid;
-    gap:14px;
-}
-
-.law{
-    background:#111;
-    border:1px solid #292929;
-    border-radius:14px;
-    padding:18px;
-}
-
-.law-number{
-    color:var(--gold2);
-    font-weight:bold;
-}
-
-.law-title{
-    color:#fff;
-    margin:4px 0;
-}
-
-.law-text{
-    color:#bbb;
-    font-size:14px;
-}
-
-.term{
-    background:#111;
-    border:1px solid #292929;
-    border-radius:14px;
-    padding:18px;
-}
-
-.term strong{
-    color:var(--gold2);
-}
-
-.quiz-box{
-    background:#111;
-    border:1px solid rgba(212,175,55,.3);
-    border-radius:18px;
-    padding:25px;
-    margin-bottom:15px;
-}
-
-.option{
-    display:block;
-    padding:12px;
-    margin:8px 0;
-    background:#191919;
-    border:1px solid #333;
-    border-radius:10px;
-}
-
-.option:hover{
-    border-color:var(--gold);
-}
-
-.result{
-    display:none;
-    margin-top:20px;
-    padding:18px;
-    background:#151515;
-    border-radius:12px;
-    border:1px solid var(--gold);
-}
-
-.receipt{
-    display:none;
-    background:#f8f2df;
-    color:#171717;
-    border-radius:16px;
-    padding:25px;
-    margin-top:25px;
-}
-
-.receipt h3{
-    color:#8c6a00;
-}
-
-.receipt-line{
-    display:flex;
-    justify-content:space-between;
-    gap:15px;
-    border-bottom:1px dashed #aaa;
-    padding:7px 0;
-}
-
-.success{
-    color:#15945b;
-}
-
-.footer{
-    border-top:1px solid #222;
-    padding:45px 0;
-    text-align:center;
-    background:#050505;
-    color:#999;
-}
-
-.footer strong{
-    color:var(--gold2);
-}
-
-.notice{
-    padding:15px;
-    background:#17130a;
-    border:1px solid rgba(212,175,55,.3);
-    border-radius:12px;
-    color:#ddd;
-    margin-bottom:20px;
-}
-
-.hidden{
-    display:none!important;
-}
-
-.profile{
-    display:flex;
-    gap:25px;
-    align-items:center;
-    flex-wrap:wrap;
-}
-
-.profile-avatar{
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    display:grid;
-    place-items:center;
-    font-size:40px;
-    background:linear-gradient(135deg,var(--gold),#6c5110);
-    color:#111;
-}
-
-.purchase-summary{
-    background:#0d0d0d;
-    border:1px solid #292929;
-    border-radius:14px;
-    padding:20px;
-    margin-top:20px;
-}
-
-@media(max-width:800px){
-    .nav{
-        flex-direction:column;
-        padding:12px 0;
-    }
-
-    .nav-links{
-        max-height:130px;
-        overflow:auto;
-    }
-
-    .hero{
-        min-height:500px;
+    .navlinks{
+        display:none;
     }
 
     section{
-        padding:55px 0;
-    }
-}
-
-@media print{
-    body *{
-        visibility:hidden;
+        padding:65px 5%;
     }
 
-    #receipt,
-    #receipt *{
-        visibility:visible;
+    .route{
+        grid-template-columns:1fr;
     }
 
-    #receipt{
-        position:absolute;
-        top:0;
-        right:0;
-        width:100%;
+    h1{
+        letter-spacing:-2px;
     }
+
+    .hero p{
+        font-size:14px;
+    }
+
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<div class="container nav">
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero" id="home">
+
+<nav>
 
 <div class="logo">
-پارسا کرمی
-<span>مرکز حقوقی، بیمه و سرمایه‌گذاری فلزات</span>
+سفر<span>ینو</span>
 </div>
 
-<nav class="nav-links">
-<a href="#home">خانه</a>
-<a href="#prices">قیمت‌ها</a>
-<a href="#purchase">خرید آزمایشی</a>
-<a href="#portfolio">سبد سرمایه‌گذاری</a>
-<a href="#insurance">بیمه</a>
-<a href="#laws">قوانین</a>
-<a href="#terms">اصطلاحات</a>
-<a href="#quiz">آزمون</a>
-<a href="#lawyer">وکیل</a>
+<div class="navlinks">
+
+<a href="#home">
+خانه
+</a>
+
+<a href="#places">
+مقصدها
+</a>
+
+<a href="#routes">
+پیشنهاد سفر
+</a>
+
+</div>
+
 </nav>
 
+
+<div class="hero-content">
+
+<div class="badge">
+راهنمای هوشمند سفر در ایران
 </div>
+
+<h1>
+سفر کن،
+<span>کشف کن.</span>
+</h1>
+
+<p>
+از شکوه پارسه و باغ‌های شیراز تا نقش جهان اصفهان
+و سنگ‌نگاره‌های کرمانشاه؛
+مقصد بعدی‌ات را پیدا کن و ایران را جور دیگری ببین.
+</p>
+
+<a class="cta" href="#places">
+شروع ماجراجویی ↓
+</a>
+
+</div>
+
+
+<div class="scroll">
+برای کشف مقصدها اسکرول کنید
+</div>
+
 </header>
 
 
-<section class="hero" id="home">
-<div class="container hero-box">
+<!-- =========================
+     DESTINATIONS
+========================= -->
 
-<div class="badge">سامانه آموزشی و آزمایشی</div>
+<section class="cities" id="places">
 
-<h1>مرکز حقوقی، بیمه و سرمایه‌گذاری فلزات</h1>
+<div class="section-head">
 
-<p>
-سامانه‌ای مفهومی برای آموزش حقوق، آشنایی با قوانین،
-اصطلاحات حقوقی و شبیه‌سازی خرید و سرمایه‌گذاری در فلزات.
-</p>
-
-<div class="hero-buttons">
-<a class="btn btn-gold" href="#purchase">شروع خرید آزمایشی</a>
-<a class="btn btn-dark" href="#laws">مطالعه قوانین</a>
+<div class="eyebrow">
+DESTINATIONS
 </div>
 
-<div class="stats">
-<div class="stat">
-<strong>۱۰۰</strong>
-<span>ماده قانونی</span>
-</div>
-
-<div class="stat">
-<strong>۵۰</strong>
-<span>اصطلاح حقوقی</span>
-</div>
-
-<div class="stat">
-<strong>۲۰</strong>
-<span>آزمون</span>
-</div>
-
-<div class="stat">
-<strong>۴</strong>
-<span>نوع خرید آزمایشی</span>
-</div>
-</div>
-
-</div>
-</section>
-
-
-<section id="prices">
-<div class="container">
-
-<div class="section-title">
-<h2>قیمت‌های آزمایشی فلزات</h2>
-<p>ارقام زیر نمونه آموزشی هستند و قیمت واقعی بازار نیستند.</p>
-</div>
-
-<div class="price-grid">
-
-<div class="price-card">
-<div class="icon">🥇</div>
-<h3>طلا</h3>
-<div class="price" id="goldPrice">7,500,000</div>
-<div class="small">تومان / گرم</div>
-</div>
-
-<div class="price-card">
-<div class="icon">🥈</div>
-<h3>نقره</h3>
-<div class="price" id="silverPrice">120,000</div>
-<div class="small">تومان / گرم</div>
-</div>
-
-<div class="price-card">
-<div class="icon">🟠</div>
-<h3>مس</h3>
-<div class="price" id="copperPrice">850,000</div>
-<div class="small">تومان / کیلو</div>
-</div>
-
-<div class="price-card">
-<div class="icon">💵</div>
-<h3>دلار</h3>
-<div class="price" id="usdPrice">95,000</div>
-<div class="small">تومان</div>
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<section id="purchase">
-<div class="container">
-
-<div class="section-title">
-<h2>خرید آزمایشی فلزات</h2>
-<p>فرآیند شبیه‌سازی‌شده خرید با محاسبه مقدار، سود و صدور رسید</p>
-</div>
-
-<div class="notice">
-این بخش کاملاً آزمایشی و آموزشی است و پرداخت واقعی یا معامله واقعی انجام نمی‌دهد.
-</div>
-
-<div class="tabs">
-
-<button class="tab active" onclick="selectMetal('gold',this)">
-🥇 طلا
-</button>
-
-<button class="tab" onclick="selectMetal('silver',this)">
-🥈 نقره
-</button>
-
-<button class="tab" onclick="selectMetal('copper',this)">
-🟠 مس
-</button>
-
-<button class="tab" onclick="selectMetal('mixed',this)">
-🔗 ترکیبی
-</button>
-
-</div>
-
-<div class="card">
-
-<form id="purchaseForm">
-
-<input type="hidden" id="selectedMetal" value="gold">
-
-<div>
-<label>نام و نام خانوادگی</label>
-<input id="buyerName" required placeholder="مثلاً پارسا کرمی">
-</div>
-
-<div>
-<label>شماره تماس</label>
-<input id="buyerPhone" required placeholder="09xxxxxxxxx">
-</div>
-
-<div>
-<label>کد ملی</label>
-<input id="nationalId" placeholder="اختیاری">
-</div>
-
-<div>
-<label>مبلغ خرید به تومان</label>
-<input id="amount" type="number" min="100000" value="2000000" required>
-</div>
-
-<div>
-<label>مدت سرمایه‌گذاری</label>
-<select id="period">
-<option value="1">۱ سال</option>
-<option value="2">۲ سال</option>
-<option value="3">۳ سال</option>
-<option value="5">۵ سال</option>
-</select>
-</div>
-
-<div>
-<label>درصد سود فرضی سالانه</label>
-<input id="profitRate" type="number" value="20" min="0">
-</div>
-
-<div id="mixedAllocation" class="hidden">
-
-<label>درصد طلا</label>
-<input id="goldPercent" type="number" value="40">
-
-<label>درصد نقره</label>
-<input id="silverPercent" type="number" value="35">
-
-<label>درصد مس</label>
-<input id="copperPercent" type="number" value="25">
-
-</div>
-
-<button class="btn btn-gold" type="button" onclick="calculatePurchase()">
-محاسبه و ادامه
-</button>
-
-</form>
-
-<div id="purchaseSummary" class="purchase-summary hidden"></div>
-
-<div id="confirmArea" class="hidden" style="margin-top:20px">
-
-<button class="btn btn-gold" onclick="confirmPurchase()">
-تأیید نهایی خرید آزمایشی
-</button>
-
-<button class="btn btn-dark" onclick="cancelPurchase()">
-لغو
-</button>
-
-</div>
-
-<div id="receipt" class="receipt">
-
-<h3>🧾 رسید خرید آزمایشی</h3>
+<h2>
+سه شهر، هزار داستان
+</h2>
 
 <p>
-مرکز حقوقی، بیمه و سرمایه‌گذاری فلزات
+جاذبه‌ها را بر اساس شهر ببین،
+عکس‌ها را تماشا کن،
+آدرس را باز کن و مستقیم برای مسیریابی اقدام کن.
 </p>
 
-<div class="receipt-line">
-<span>شماره رسید</span>
-<strong id="receiptId"></strong>
 </div>
 
-<div class="receipt-line">
-<span>تاریخ</span>
-<strong id="receiptDate"></strong>
-</div>
 
-<div class="receipt-line">
-<span>خریدار</span>
-<strong id="receiptName"></strong>
-</div>
+<div class="city-tabs">
 
-<div class="receipt-line">
-<span>شماره تماس</span>
-<strong id="receiptPhone"></strong>
-</div>
+<button
+class="tab active"
+onclick="showCity('shiraz',this)">
+شیراز
+</button>
 
-<div class="receipt-line">
-<span>نوع خرید</span>
-<strong id="receiptMetal"></strong>
-</div>
+<button
+class="tab"
+onclick="showCity('isfahan',this)">
+اصفهان
+</button>
 
-<div class="receipt-line">
-<span>مبلغ اولیه</span>
-<strong id="receiptAmount"></strong>
-</div>
-
-<div class="receipt-line">
-<span>مدت سرمایه‌گذاری</span>
-<strong id="receiptPeriod"></strong>
-</div>
-
-<div class="receipt-line">
-<span>سود محاسبه‌شده</span>
-<strong id="receiptProfit"></strong>
-</div>
-
-<div class="receipt-line">
-<span>ارزش نهایی فرضی</span>
-<strong id="receiptFinal"></strong>
-</div>
-
-<br>
-
-<p class="success">
-✓ خرید آزمایشی با موفقیت ثبت شد.
-</p>
-
-<p class="small">
-این رسید صرفاً نمونه آموزشی است و ارزش مالی یا بانکی ندارد.
-</p>
-
-<br>
-
-<button class="btn btn-dark" onclick="window.print()">
-چاپ رسید
+<button
+class="tab"
+onclick="showCity('kermanshah',this)">
+کرمانشاه
 </button>
 
 </div>
 
+
+<div
+class="grid"
+id="cards">
 </div>
-</div>
+
 </section>
 
 
-<section id="portfolio">
-<div class="container">
+<!-- =========================
+     ROUTES
+========================= -->
 
-<div class="section-title">
-<h2>سبد هوشمند فلزات</h2>
-<p>نمونه تقسیم سرمایه بین فلزات</p>
+<section
+class="routes"
+id="routes">
+
+<div class="section-head">
+
+<div class="eyebrow">
+TRAVEL IDEAS
 </div>
 
-<div class="grid">
-
-<div class="card">
-<h3>🥇 طلا — ۴۰٪</h3>
-<p>دارایی اصلی با سهم بیشتر در سبد نمونه.</p>
-</div>
-
-<div class="card">
-<h3>🥈 نقره — ۳۵٪</h3>
-<p>برای ایجاد تنوع بیشتر در سبد آزمایشی.</p>
-</div>
-
-<div class="card">
-<h3>🟠 مس — ۲۵٪</h3>
-<p>بخش صنعتی و پرریسک‌تر سبد مفهومی.</p>
-</div>
-
-</div>
-
-<div class="card" style="margin-top:20px">
-
-<h3>محاسبه سبد</h3>
-
-<input id="portfolioAmount" type="number" value="10000000">
-
-<br><br>
-
-<button class="btn btn-gold" onclick="calculatePortfolio()">
-محاسبه سبد
-</button>
-
-<div id="portfolioResult" style="margin-top:20px"></div>
-
-</div>
-
-</div>
-</section>
-
-
-<section id="insurance">
-<div class="container">
-
-<div class="section-title">
-<h2>بیمه بیکاری مبتنی بر فلزات</h2>
-<p>مدل مفهومی و آزمایشی</p>
-</div>
-
-<div class="notice">
-این بخش یک ایده و شبیه‌سازی مفهومی است و بیمه واقعی محسوب نمی‌شود.
-</div>
-
-<div class="grid">
-
-<div class="card">
-<h3>۱. ثبت‌نام</h3>
-<p>اطلاعات فرد و مبلغ فرضی پوشش ثبت می‌شود.</p>
-</div>
-
-<div class="card">
-<h3>۲. تشکیل پشتوانه</h3>
-<p>مبلغ فرضی میان طلا، نقره یا مس تخصیص داده می‌شود.</p>
-</div>
-
-<div class="card">
-<h3>۳. دوره بیکاری</h3>
-<p>در صورت فعال‌شدن سناریوی آزمایشی، پرداخت فرضی محاسبه می‌شود.</p>
-</div>
-
-<div class="card">
-<h3>۴. محاسبه حمایت</h3>
-<p>ارزش فرضی سبد و میزان پرداخت محاسبه می‌شود.</p>
-</div>
-
-</div>
-
-<div class="card" style="margin-top:20px">
-
-<h3>ماشین حساب بیمه آزمایشی</h3>
-
-<label>مبلغ پشتوانه</label>
-<input id="insuranceAmount" type="number" value="50000000">
-
-<label>درصد پرداخت ماهانه</label>
-<input id="insurancePercent" type="number" value="5">
-
-<label>تعداد ماه</label>
-<input id="insuranceMonths" type="number" value="6">
-
-<br>
-
-<button class="btn btn-gold" onclick="calculateInsurance()">
-محاسبه
-</button>
-
-<div id="insuranceResult" style="margin-top:15px"></div>
-
-</div>
-
-</div>
-</section>
-
-
-<section id="laws">
-<div class="container">
-
-<div class="section-title">
-<h2>بانک ۱۰۰ ماده قانونی</h2>
-<p>خلاصه آموزشی مواد منتخب قوانین ایران</p>
-</div>
-
-<div class="notice">
-توجه: این بخش آموزشی است و جایگزین متن رسمی قانون یا مشاوره حقوقی نیست.
-</div>
-
-<input
-class="search"
-id="lawSearch"
-placeholder="جست‌وجو در شماره، عنوان یا متن ماده..."
-oninput="renderLaws()"
->
-
-<div id="lawList" class="law-list"></div>
-
-</div>
-</section>
-
-
-<section id="terms">
-<div class="container">
-
-<div class="section-title">
-<h2>۵۰ اصطلاح حقوقی</h2>
-<p>واژه‌های مهم و کاربردی حقوق</p>
-</div>
-
-<input
-class="search"
-id="termSearch"
-placeholder="جست‌وجوی اصطلاح..."
-oninput="renderTerms()"
->
-
-<div id="termList" class="term-list"></div>
-
-</div>
-</section>
-
-
-<section id="quiz">
-<div class="container">
-
-<div class="section-title">
-<h2>آزمون حقوقی</h2>
-<p>۲۰ سؤال چهارگزینه‌ای با پاسخ‌های متنوع</p>
-</div>
-
-<div id="quizContainer"></div>
-
-<button class="btn btn-gold" onclick="submitQuiz()">
-ثبت پاسخ‌ها و مشاهده نتیجه
-</button>
-
-<div id="quizResult" class="result"></div>
-
-</div>
-</section>
-
-
-<section id="lawyer">
-<div class="container">
-
-<div class="section-title">
-<h2>بخش وکالت</h2>
-<p>معرفی مجموعه حقوقی</p>
-</div>
-
-<div class="grid">
-
-<div class="card">
-
-<div class="profile">
-
-<div class="profile-avatar">پ</div>
-
-<div>
-<h3>پارسا کرمی</h3>
-<p>دانشجوی رشته حقوق</p>
-<p>
-فعال در حوزه آموزش حقوق و طراحی سامانه‌های
-آموزشی و سرمایه‌گذاری مفهومی.
-</p>
-</div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="profile">
-
-<div class="profile-avatar">ح</div>
-
-<div>
-<h3>حشمت کرمی</h3>
-<p>وکیل</p>
-<p>
-بخش معرفی و ارتباط با وکیل مجموعه.
-اطلاعات تماس می‌تواند در نسخه نهایی اضافه شود.
-</p>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<section>
-<div class="container">
-
-<div class="section-title">
-<h2>ارتباط با ما</h2>
-<p>فرم پیام آزمایشی</p>
-</div>
-
-<div class="card">
-
-<form onsubmit="sendMessage(event)">
-
-<label>نام</label>
-<input required>
-
-<label>شماره تماس</label>
-<input required>
-
-<label>موضوع</label>
-<input required>
-
-<label>پیام</label>
-<textarea rows="5" required></textarea>
-
-<button class="btn btn-gold">
-ارسال پیام
-</button>
-
-</form>
-
-</div>
-
-</div>
-</section>
-
-
-<footer class="footer">
-
-<div class="container">
+<h2>
+مسیرهای پیشنهادی
+</h2>
 
 <p>
-<strong>مرکز حقوقی، بیمه و سرمایه‌گذاری فلزات</strong>
-</p>
-
-<p>
-پارسا کرمی | سامانه آموزشی و آزمایشی
-</p>
-
-<p>
-© 2026 تمامی حقوق محفوظ است.
+برای یک سفر چندروزه،
+این ترکیب‌ها شروع خوبی هستند.
 </p>
 
 </div>
+
+
+<div class="route">
+
+<div class="route-box">
+
+<strong>
+شیراز
+</strong>
+
+<p>
+حافظیه → سعدیه → باغ ارم →
+نصیرالملک → وکیل → تخت‌جمشید
+</p>
+
+</div>
+
+
+<div class="route-box">
+
+<strong>
+اصفهان
+</strong>
+
+<p>
+نقش جهان → عالی‌قاپو →
+شیخ لطف‌الله → مسجد امام →
+سی‌وسه‌پل → خواجو → چهلستون
+</p>
+
+</div>
+
+
+<div class="route-box">
+
+<strong>
+کرمانشاه
+</strong>
+
+<p>
+طاق‌بستان → بیستون →
+تکیه معاون‌الملک →
+تکیه بیگلربیگی → بازار تاریخی
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+سفرینو — راهنمای گردشگری ایران
 
 </footer>
 
 
 <script>
 
-/* =========================================================
-   قیمت‌های آزمایشی
-========================================================= */
+/* =========================
+   DATA
+========================= */
 
-const prices = {
-    gold:7500000,
-    silver:120000,
-    copper:850000
+const data = {
+
+shiraz:[
+
+[
+"تخت جمشید",
+"Persepolis.jpg",
+"مجموعه باشکوه هخامنشی در نزدیکی شیراز.",
+"شیراز، مرودشت، مجموعه تخت جمشید"
+],
+
+[
+"حافظیه",
+"Tomb of Hafez.jpg",
+"آرامگاه حافظ در یکی از شناخته‌شده‌ترین فضاهای فرهنگی شیراز.",
+"شیراز، خیابان حافظ"
+],
+
+[
+"سعدیه",
+"Saadi Tomb.jpg",
+"آرامگاه سعدی، شاعر بزرگ ایرانی.",
+"شیراز، بلوار بوستان"
+],
+
+[
+"مسجد نصیرالملک",
+"Nasir al-Mulk Mosque.jpg",
+"معروف به مسجد صورتی؛ تماشای نور و شیشه‌های رنگی آن از جذابیت‌های اصلی بناست.",
+"شیراز، محله گود عربان"
+],
+
+[
+"باغ ارم",
+"Eram Garden.jpg",
+"باغ تاریخی و سرسبز با معماری و پوشش گیاهی چشمگیر.",
+"شیراز، خیابان ارم"
+],
+
+[
+"ارگ کریم‌خان",
+"Arg of Karim Khan.jpg",
+"قلعه تاریخی دوره زندیه در مرکز شهر.",
+"شیراز، میدان شهرداری"
+],
+
+[
+"بازار وکیل",
+"Vakil Bazaar.jpg",
+"بازار تاریخی وکیل با راسته‌ها و معماری سنتی.",
+"شیراز، خیابان زند"
+],
+
+[
+"نارنجستان قوام",
+"Qavam House.jpg",
+"عمارت و باغ قاجاری با آینه‌کاری و فضای نارنجستان.",
+"شیراز، خیابان لطفعلی‌خان زند"
+]
+
+],
+
+
+isfahan:[
+
+[
+"میدان نقش جهان",
+"Naqsh-e Jahan Square.jpg",
+"یکی از شاخص‌ترین میدان‌های تاریخی ایران و قلب گردشگری اصفهان.",
+"اصفهان، میدان نقش جهان"
+],
+
+[
+"مسجد امام",
+"Shah Mosque Isfahan.jpg",
+"شاهکاری از معماری و کاشی‌کاری دوره صفوی.",
+"اصفهان، ضلع جنوبی میدان نقش جهان"
+],
+
+[
+"مسجد شیخ لطف‌الله",
+"Sheikh Lotfollah Mosque.jpg",
+"مسجدی مشهور با گنبد و تزئینات ظریف صفوی.",
+"اصفهان، ضلع شرقی میدان نقش جهان"
+],
+
+[
+"کاخ عالی‌قاپو",
+"Ali Qapu Palace.jpg",
+"کاخ تاریخی صفوی مشرف به میدان نقش جهان.",
+"اصفهان، ضلع غربی میدان نقش جهان"
+],
+
+[
+"سی‌وسه‌پل",
+"Si-o-se-pol.jpg",
+"پل تاریخی صفوی بر زاینده‌رود.",
+"اصفهان، خیابان چهارباغ عباسی"
+],
+
+[
+"پل خواجو",
+"Khaju Bridge.jpg",
+"پل تاریخی و از نمادهای شناخته‌شده اصفهان.",
+"اصفهان، انتهای خیابان کمال اسماعیل"
+],
+
+[
+"کاخ چهلستون",
+"Chehel Sotoun.jpg",
+"باغ و کاخ صفوی با تالارهای نقاشی‌شده.",
+"اصفهان، میدان امام حسین"
+],
+
+[
+"کلیسای وانک",
+"Vank Cathedral.jpg",
+"از مهم‌ترین بناهای تاریخی محله جلفای اصفهان.",
+"اصفهان، جلفای نو"
+]
+
+],
+
+
+kermanshah:[
+
+[
+"طاق‌بستان",
+"Taq Bostan.jpg",
+"مجموعه سنگ‌نگاره‌ها و طاق‌های ساسانی در دامنه کوه.",
+"کرمانشاه، بلوار طاق‌بستان"
+],
+
+[
+"بیستون",
+"Behistun Inscription.jpg",
+"محوطه تاریخی بزرگ و مشهور با کتیبه و نقش‌برجسته داریوش.",
+"کرمانشاه، شهرستان هرسین، بیستون"
+],
+
+[
+"تکیه معاون‌الملک",
+"Tekyeh Moaven ol-Molk.jpg",
+"بنای تاریخی با کاشی‌کاری‌های بسیار چشمگیر.",
+"کرمانشاه، خیابان حداد عادل"
+],
+
+[
+"تکیه بیگلربیگی",
+"Tekyeh Biglarbeigi.jpg",
+"خانه و تکیه تاریخی با آینه‌کاری‌های نفیس.",
+"کرمانشاه، بافت تاریخی شهر"
+],
+
+[
+"بازار سنتی کرمانشاه",
+"Kermanshah Bazaar.jpg",
+"بازار تاریخی با راسته‌های متعدد و فضای سنتی.",
+"کرمانشاه، محدوده بازار تاریخی"
+],
+
+[
+"سراب نیلوفر",
+"Niloufar Lake Kermanshah.jpg",
+"منطقه طبیعی و تفریحی در اطراف کرمانشاه.",
+"کرمانشاه، حوالی سراب نیلوفر"
+]
+
+]
+
 };
 
 
-/* =========================================================
-   ۱۰۰ ماده قانونی - خلاصه آموزشی
-========================================================= */
+/* =========================
+   IMAGE
+========================= */
 
-const laws = [
+function img(name){
 
-["قانون مدنی","ماده ۱","مراحل ابلاغ و انتشار قوانین و مقررات مربوط به انتشار آنها را بیان می‌کند."],
-["قانون مدنی","ماده ۲","قوانین پس از انتشار و گذشت مهلت قانونی، لازم‌الاجرا می‌شوند مگر قانون ترتیب دیگری مقرر کرده باشد."],
-["قانون مدنی","ماده ۳","انتشار قوانین باید از طریق روزنامه رسمی انجام شود."],
-["قانون مدنی","ماده ۴","اصل بر این است که اثر قانون نسبت به آینده باشد و قانون نسبت به گذشته اثر نداشته باشد مگر استثنای قانونی."],
-["قانون مدنی","ماده ۵","ساکنان ایران در حدود استثناهای قانونی تابع قوانین ایران هستند."],
-["قانون مدنی","ماده ۶","قواعد مربوط به احوال شخصیه اتباع ایرانی در موارد مقرر قانونی مطرح است."],
-["قانون مدنی","ماده ۷","احوال شخصیه اتباع خارجی در حدود مقررات قانون مربوط به آنان تعیین می‌شود."],
-["قانون مدنی","ماده ۸","اموال غیرمنقول واقع در ایران از حیث حقوق مربوط به خود تابع قانون ایران هستند."],
-["قانون مدنی","ماده ۹","قراردادها و تعهدات اشخاص در حدود مقررات قانونی دارای آثار حقوقی هستند."],
-["قانون مدنی","ماده ۱۰","قراردادهای خصوصی تا زمانی که مخالف صریح قانون نباشند، نسبت به طرفین معتبرند."],
+return "https://commons.wikimedia.org/wiki/Special:FilePath/"
++ encodeURIComponent(name);
 
-["قانون مدنی","ماده ۱۱","اموال از نظر حقوقی به اموال عمومی و خصوصی تقسیم می‌شوند."],
-["قانون مدنی","ماده ۱۲","تعریف حقوقی مال غیرمنقول و موارد مربوط به آن را بیان می‌کند."],
-["قانون مدنی","ماده ۱۳","برخی اموال منقول به اعتبار وضعیت خود در دسته اموال غیرمنقول قرار می‌گیرند."],
-["قانون مدنی","ماده ۱۴","برخی حقوق و منافع مربوط به اموال غیرمنقول تابع مقررات همان اموال هستند."],
-["قانون مدنی","ماده ۱۵","برخی مصالح و موارد مرتبط با بنا در شرایط مقرر تابع احکام مال غیرمنقول هستند."],
-["قانون مدنی","ماده ۱۶","اموال و اشیای خاصی که برای استفاده در ملک اختصاص داده شده‌اند ممکن است حکم خاص داشته باشند."],
-["قانون مدنی","ماده ۱۷","برخی اشیای منقول به دلیل ارتباط با ملک در حکم غیرمنقول شناخته می‌شوند."],
-["قانون مدنی","ماده ۱۸","حقوقی که نسبت به اموال غیرمنقول ایجاد می‌شوند در حدود قانون دارای آثار خاص هستند."],
-["قانون مدنی","ماده ۱۹","مال منقول مالی است که بدون خرابی یا نقص اساسی امکان جابه‌جایی داشته باشد."],
-["قانون مدنی","ماده ۲۰","دیون و برخی حقوق مالی در حکم مال منقول محسوب می‌شوند."],
+}
 
-["قانون مدنی","ماده ۲۱","برخی دعاوی مربوط به اموال منقول در دسته دعاوی منقول قرار می‌گیرند."],
-["قانون مدنی","ماده ۲۲","حقوق و دعاوی مربوط به اموال غیرمنقول دارای آثار خاص قانونی هستند."],
-["قانون مدنی","ماده ۲۳","استفاده از اموال عمومی تابع قوانین و مقررات مربوط است."],
-["قانون مدنی","ماده ۲۴","اموال عمومی اصولاً تابع مقررات خاص خود بوده و قابل 
+
+/* =========================
+   SHOW CITY
+========================= */
+
+function showCity(city,el){
+
+document
+.querySelectorAll(".tab")
+.forEach(x =>
+x.classList.remove("active")
+);
+
+el.classList.add("active");
+
+
+document.getElementById("cards").innerHTML =
+
+data[city].map(x => `
+
+<article class="card">
+
+<img
+src="${img(x[1])}"
+alt="${x[0]}"
+loading="lazy"
+
+onerror="
+this.src='https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80'
+">
+
+<div class="card-body">
+
+<h3>
+${x[0]}
+</h3>
+
+<p>
+${x[2]}
+</p>
+
+<div class="meta">
+📍 ${x[3]}
+</div>
+
+<div class="buttons">
+
+<a
+class="btn gold"
+target="_blank"
+href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x[3])}">
+مسیریابی
+</a>
+
+<a
+class="btn"
+target="_blank"
+href="https://www.google.com/search?q=${encodeURIComponent(x[0]+' '+x[3])}">
+اطلاعات بیشتر
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+`).join("");
+
+}
+
+
+/* =========================
+   INITIAL CITY
+========================= */
+
+showCity(
+"shiraz",
+document.querySelector(".tab")
+);
+
+</script>
+
+</body>
+</html>
