@@ -4,13 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>سامانه تخصصی فلزات | پارسا کرمی</title>
+<title>پارساکوین | سامانه هوشمند فلزات</title>
 
 <style>
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
+}
+
+:root{
+    --gold:#d6ad55;
+    --gold2:#f2d27b;
+    --dark:#070707;
+    --dark2:#101010;
+    --card:#141414;
+    --text:#f4f1e8;
+    --muted:#aaa;
+    --danger:#d95c5c;
 }
 
 html{
@@ -20,11 +31,11 @@ html{
 body{
     font-family:Tahoma,Arial,sans-serif;
     background:
-        radial-gradient(circle at 10% 0%,rgba(212,175,55,.13),transparent 28%),
-        radial-gradient(circle at 90% 30%,rgba(212,175,55,.07),transparent 25%),
-        #080808;
-    color:#eee;
-    line-height:1.8;
+        radial-gradient(circle at top right,rgba(214,173,85,.12),transparent 30%),
+        radial-gradient(circle at bottom left,rgba(214,173,85,.08),transparent 30%),
+        #070707;
+    color:var(--text);
+    line-height:1.9;
 }
 
 button,
@@ -37,156 +48,150 @@ button{
     cursor:pointer;
 }
 
-.header{
+.container{
+    width:min(1150px,92%);
+    margin:auto;
+}
+
+/* HEADER */
+
+header{
     position:sticky;
     top:0;
     z-index:1000;
-    background:rgba(8,8,8,.94);
-    backdrop-filter:blur(14px);
-    border-bottom:1px solid rgba(212,175,55,.25);
+    background:rgba(7,7,7,.88);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(214,173,85,.18);
 }
 
-.header-inner{
-    max-width:1250px;
-    margin:auto;
-    min-height:78px;
-    padding:12px 20px;
+.nav{
+    min-height:76px;
     display:flex;
     align-items:center;
     justify-content:space-between;
     gap:20px;
 }
 
-.brand{
+.logo{
     display:flex;
     align-items:center;
     gap:12px;
 }
 
-.brand-logo{
+.logo-icon{
     width:48px;
     height:48px;
-    border:1px solid #d4af37;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    border:1px solid var(--gold);
+    border-radius:14px;
+    display:grid;
+    place-items:center;
+    color:var(--gold2);
     font-size:25px;
-    color:#d4af37;
-    background:#111;
+    box-shadow:0 0 20px rgba(214,173,85,.12);
 }
 
-.brand h2{
-    color:#d4af37;
+.logo-text strong{
+    display:block;
+    color:var(--gold2);
     font-size:18px;
 }
 
-.brand small{
-    color:#888;
-    display:block;
-    font-size:10px;
+.logo-text span{
+    color:#999;
+    font-size:11px;
 }
 
-.nav{
+nav{
     display:flex;
+    gap:8px;
     flex-wrap:wrap;
-    gap:7px;
 }
 
-.nav button{
-    background:#111;
-    color:#ccc;
-    border:1px solid #303030;
+nav a{
+    color:#ddd;
+    text-decoration:none;
+    padding:8px 13px;
     border-radius:10px;
-    padding:9px 12px;
+    font-size:13px;
     transition:.25s;
 }
 
-.nav button:hover,
-.nav button.active{
-    color:#111;
-    background:#d4af37;
-    border-color:#d4af37;
+nav a:hover{
+    color:#000;
+    background:var(--gold);
 }
 
-.container{
-    width:min(1200px,92%);
-    margin:auto;
-}
+/* HERO */
 
 .hero{
-    padding:75px 0 45px;
+    padding:90px 0 70px;
     text-align:center;
 }
 
 .badge{
     display:inline-block;
-    color:#d4af37;
-    border:1px solid rgba(212,175,55,.5);
-    background:rgba(212,175,55,.06);
+    border:1px solid rgba(214,173,85,.4);
+    background:rgba(214,173,85,.08);
+    color:var(--gold2);
     padding:8px 18px;
     border-radius:30px;
-    margin-bottom:22px;
+    font-size:13px;
+    margin-bottom:25px;
 }
 
 .hero h1{
-    font-size:clamp(30px,5vw,58px);
-    line-height:1.45;
+    font-size:clamp(34px,6vw,65px);
+    line-height:1.35;
+    margin-bottom:18px;
 }
 
-.gold{
-    color:#d4af37;
+.hero h1 span{
+    color:var(--gold2);
 }
 
-.hero-text{
-    max-width:850px;
-    margin:20px auto;
-    color:#aaa;
-    line-height:2.2;
-    font-size:15px;
+.hero p{
+    max-width:780px;
+    margin:auto;
+    color:#bbb;
+    font-size:16px;
 }
 
-.warning{
-    max-width:950px;
-    margin:25px auto;
-    padding:20px;
-    border:1px solid rgba(212,175,55,.25);
-    background:linear-gradient(145deg,#151515,#0d0d0d);
-    border-radius:20px;
-    color:#ccc;
+.hero-buttons{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
 }
 
-.warning strong{
-    color:#d4af37;
+.btn{
+    border:none;
+    border-radius:12px;
+    padding:13px 24px;
+    font-weight:bold;
+    transition:.25s;
 }
 
-.stats{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-    margin-top:35px;
+.btn-gold{
+    background:linear-gradient(135deg,var(--gold2),var(--gold));
+    color:#111;
 }
 
-.stat{
-    background:#111;
-    border:1px solid #292929;
-    border-radius:18px;
-    padding:22px 15px;
+.btn-dark{
+    background:#151515;
+    color:var(--gold2);
+    border:1px solid rgba(214,173,85,.35);
 }
 
-.stat strong{
-    display:block;
-    color:#d4af37;
-    font-size:27px;
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
 }
 
-.stat span{
-    color:#999;
-    font-size:12px;
-}
+/* SECTION */
 
-.section{
-    padding:55px 0;
+section{
+    padding:70px 0;
 }
 
 .section-title{
@@ -194,15 +199,21 @@ button{
     margin-bottom:35px;
 }
 
+.section-title small{
+    color:var(--gold);
+}
+
 .section-title h2{
-    color:#d4af37;
-    font-size:28px;
-    margin-bottom:7px;
+    font-size:30px;
+    margin:7px 0;
 }
 
 .section-title p{
-    color:#888;
+    color:#999;
+    font-size:14px;
 }
+
+/* INFO */
 
 .info-grid{
     display:grid;
@@ -212,142 +223,97 @@ button{
 
 .info-card{
     background:linear-gradient(145deg,#151515,#0d0d0d);
-    border:1px solid #292929;
-    border-radius:22px;
+    border:1px solid rgba(214,173,85,.16);
     padding:25px;
+    border-radius:20px;
     transition:.3s;
 }
 
 .info-card:hover{
     transform:translateY(-5px);
-    border-color:rgba(212,175,55,.5);
+    border-color:rgba(214,173,85,.45);
 }
 
-.icon{
-    font-size:36px;
+.info-icon{
+    font-size:30px;
     margin-bottom:10px;
 }
 
 .info-card h3{
-    color:#d4af37;
-    margin-bottom:10px;
+    color:var(--gold2);
+    margin-bottom:8px;
 }
 
 .info-card p{
     color:#aaa;
-    line-height:2;
-    font-size:14px;
-}
-
-.explain{
-    background:#101010;
-    border:1px solid #292929;
-    border-radius:22px;
-    padding:28px;
-    margin-top:25px;
-}
-
-.explain h3{
-    color:#d4af37;
-    margin-bottom:13px;
-}
-
-.explain p{
-    color:#aaa;
-    line-height:2.2;
-    margin-bottom:12px;
-}
-
-.list{
-    padding-right:20px;
-    color:#aaa;
-}
-
-.list li{
-    margin:9px 0;
-}
-
-.steps{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-}
-
-.step{
-    background:#111;
-    border:1px solid #292929;
-    border-radius:18px;
-    padding:22px;
-}
-
-.step-number{
-    width:40px;
-    height:40px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#d4af37;
-    color:#111;
-    border-radius:50%;
-    font-weight:bold;
-    margin-bottom:12px;
-}
-
-.step h3{
-    color:#ddd;
-    font-size:16px;
-}
-
-.step p{
-    color:#888;
     font-size:13px;
-    margin-top:6px;
 }
 
-.faq{
+/* CHOICE */
+
+.choice-grid{
     display:grid;
-    gap:12px;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
 }
 
-.faq-item{
+.choice{
     background:#111;
-    border:1px solid #292929;
-    border-radius:15px;
-    padding:18px;
+    border:1px solid rgba(214,173,85,.2);
+    padding:30px;
+    border-radius:22px;
+    transition:.3s;
 }
 
-.faq-item summary{
-    color:#d4af37;
-    cursor:pointer;
-    font-weight:bold;
+.choice:hover{
+    border-color:var(--gold);
+    transform:translateY(-4px);
 }
 
-.faq-item p{
-    color:#999;
-    margin-top:12px;
-    line-height:2;
+.choice.selected{
+    border-color:var(--gold2);
+    box-shadow:0 0 30px rgba(214,173,85,.1);
 }
 
-.form-box{
-    max-width:900px;
+.choice-icon{
+    font-size:42px;
+}
+
+.choice h3{
+    color:var(--gold2);
+    margin:12px 0;
+}
+
+.choice p{
+    color:#aaa;
+    font-size:13px;
+}
+
+.choice button{
+    margin-top:20px;
+    width:100%;
+}
+
+/* FORM */
+
+.panel{
+    max-width:850px;
     margin:auto;
-    background:linear-gradient(145deg,#151515,#0b0b0b);
-    border:1px solid rgba(212,175,55,.3);
+    background:linear-gradient(145deg,#151515,#0c0c0c);
+    border:1px solid rgba(214,173,85,.22);
     border-radius:25px;
     padding:30px;
-    box-shadow:0 20px 70px rgba(0,0,0,.35);
+    box-shadow:0 20px 70px rgba(0,0,0,.3);
 }
 
 .form-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:17px;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
 }
 
 .field{
-    display:flex;
-    flex-direction:column;
-    gap:8px;
+    margin-bottom:3px;
 }
 
 .field.full{
@@ -355,7 +321,9 @@ button{
 }
 
 .field label{
-    color:#bbb;
+    display:block;
+    margin-bottom:7px;
+    color:#ccc;
     font-size:13px;
 }
 
@@ -363,517 +331,460 @@ button{
 .field select{
     width:100%;
     padding:13px;
-    border-radius:11px;
-    border:1px solid #333;
     background:#080808;
+    border:1px solid #292929;
+    border-radius:11px;
     color:#fff;
     outline:none;
+    transition:.2s;
 }
 
 .field input:focus,
 .field select:focus{
-    border-color:#d4af37;
+    border-color:var(--gold);
+    box-shadow:0 0 0 3px rgba(214,173,85,.07);
 }
 
-.percent-grid{
+/* METAL */
+
+.metal-box{
+    background:#0a0a0a;
+    border:1px solid #252525;
+    border-radius:17px;
+    padding:20px;
+    margin-top:20px;
+}
+
+.metal-row{
     display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:9px;
+    grid-template-columns:90px 1fr 75px;
+    align-items:center;
+    gap:12px;
+    margin:15px 0;
+}
+
+.metal-row strong{
+    color:#ddd;
+}
+
+.metal-row input[type="range"]{
+    accent-color:var(--gold);
 }
 
 .percent{
-    background:#0b0b0b;
-    color:#ccc;
-    border:1px solid #333;
-    border-radius:10px;
-    padding:12px 5px;
-}
-
-.percent.selected{
-    background:#d4af37;
-    color:#111;
-    border-color:#d4af37;
+    text-align:center;
+    color:var(--gold2);
     font-weight:bold;
 }
 
-.custom-percent{
-    margin-top:10px;
-}
-
-.primary{
-    width:100%;
-    border:0;
-    border-radius:12px;
+.total-box{
+    text-align:center;
     padding:15px;
-    margin-top:18px;
-    background:linear-gradient(135deg,#d4af37,#a87e14);
-    color:#111;
-    font-weight:bold;
-    font-size:15px;
+    border-radius:12px;
+    background:rgba(214,173,85,.07);
+    border:1px dashed rgba(214,173,85,.4);
+    margin-top:15px;
 }
 
-.primary:hover{
-    filter:brightness(1.1);
+.total-box span{
+    color:var(--gold2);
+    font-size:20px;
 }
 
-.secondary{
-    border:1px solid #444;
-    background:#151515;
-    color:#ddd;
-    border-radius:10px;
-    padding:10px 15px;
-}
-
-.result{
+.warning{
     display:none;
-    margin-top:22px;
-    border:1px solid rgba(212,175,55,.3);
-    background:#090909;
-    border-radius:16px;
+    color:#ff8585;
+    text-align:center;
+    margin-top:10px;
+    font-size:13px;
+}
+
+.smart-result{
+    display:none;
+    margin-top:20px;
     padding:20px;
+    border-radius:15px;
+    background:rgba(214,173,85,.06);
+    border:1px solid rgba(214,173,85,.2);
 }
 
-.result.show{
-    display:block;
+.smart-result h4{
+    color:var(--gold2);
+    margin-bottom:10px;
 }
 
-.result-row{
+.smart-bars{
+    display:grid;
+    gap:9px;
+}
+
+.smart-line{
     display:flex;
     justify-content:space-between;
-    border-bottom:1px solid #222;
-    padding:8px 0;
-    gap:10px;
+    color:#bbb;
+    font-size:13px;
 }
 
-.result-row:last-child{
-    border-bottom:0;
-}
-
-.result-row strong{
-    color:#d4af37;
-}
+/* SIGNATURE */
 
 .signature-box{
-    margin-top:30px;
+    margin-top:25px;
+    background:#080808;
+    border:1px solid #282828;
+    border-radius:17px;
+    padding:18px;
 }
 
 .signature-title{
-    color:#d4af37;
-    margin-bottom:8px;
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    align-items:center;
+    margin-bottom:12px;
+}
+
+.signature-title h3{
+    color:var(--gold2);
+    font-size:17px;
+}
+
+.signature-title span{
+    color:#777;
+    font-size:11px;
 }
 
 #signatureCanvas{
-    display:block;
     width:100%;
     height:210px;
+    display:block;
     background:#fff;
-    border-radius:14px;
-    border:3px solid #d4af37;
+    border-radius:12px;
     touch-action:none;
     cursor:crosshair;
 }
 
 .signature-actions{
     display:flex;
-    align-items:center;
-    justify-content:space-between;
     gap:10px;
-    margin-top:10px;
+    margin-top:12px;
 }
 
-.signature-actions small{
-    color:#777;
+.signature-actions button{
+    flex:1;
 }
 
-/* گواهی */
+#signatureStatus{
+    color:#999;
+    font-size:11px;
+    margin-top:8px;
+}
 
-.certificate-wrap{
+/* RECEIPT */
+
+.receipt{
     display:none;
-    margin-top:40px;
+    max-width:900px;
+    margin:35px auto 0;
+}
+
+.receipt-card{
+    background:
+        radial-gradient(circle at 90% 10%,rgba(214,173,85,.1),transparent 25%),
+        #111;
+    border:1px solid rgba(214,173,85,.5);
+    border-radius:25px;
+    padding:35px;
+}
+
+.receipt-header{
+    text-align:center;
+    border-bottom:1px solid rgba(214,173,85,.2);
+    padding-bottom:20px;
+    margin-bottom:25px;
+}
+
+.receipt-header .symbol{
+    font-size:40px;
+}
+
+.receipt-header h2{
+    color:var(--gold2);
+}
+
+.receipt-header p{
+    color:#888;
+    font-size:11px;
+}
+
+.data-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+.data-item{
+    background:#090909;
+    border:1px solid #222;
+    border-radius:12px;
+    padding:12px;
+}
+
+.data-item small{
+    display:block;
+    color:#777;
+    font-size:10px;
+}
+
+.data-item strong{
+    color:#eee;
+    font-size:13px;
+}
+
+.code-box{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-top:18px;
+}
+
+.code-item{
+    text-align:center;
+    border:1px dashed var(--gold);
+    border-radius:12px;
+    padding:14px;
+}
+
+.code-item small{
+    display:block;
+    color:#888;
+}
+
+.code-item strong{
+    color:var(--gold2);
+    letter-spacing:1px;
 }
 
 .certificate{
+    margin-top:25px;
+    background:#f7f2df;
+    color:#151515;
+    border-radius:4px;
+    padding:45px 35px;
     position:relative;
-    max-width:1000px;
-    margin:auto;
-    background:#f5efdc;
-    color:#222;
-    border:10px double #b78b20;
-    padding:45px;
-    min-height:760px;
     overflow:hidden;
+    border:8px double #b58b36;
 }
 
 .certificate:before{
-    content:"";
+    content:"آزمایشی";
     position:absolute;
-    inset:18px;
-    border:1px solid #b78b20;
-    pointer-events:none;
+    top:45%;
+    left:10%;
+    transform:rotate(-25deg);
+    font-size:70px;
+    color:rgba(120,80,20,.07);
+    font-weight:bold;
 }
 
-.watermark{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    font-size:190px;
-    opacity:.045;
-}
-
-.cert-content{
+.cert-inner{
+    border:2px solid #b58b36;
+    padding:30px;
     position:relative;
     z-index:2;
 }
 
-.cert-header{
+.cert-top{
     text-align:center;
-}
-
-.cert-emblem{
-    width:75px;
-    height:75px;
-    margin:auto;
-    border:3px solid #a97d17;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:37px;
-    color:#8c6815;
-}
-
-.cert-header h2{
-    color:#76570e;
-    margin-top:12px;
-}
-
-.cert-header p{
-    color:#666;
-    font-size:11px;
-}
-
-.cert-title{
-    text-align:center;
-    margin:32px 0 25px;
-}
-
-.cert-title h1{
-    color:#74550d;
-    font-size:31px;
-}
-
-.demo-label{
-    display:inline-block;
-    margin-top:8px;
-    padding:5px 15px;
-    border:1px solid #b78b20;
-    border-radius:20px;
-    color:#74550d;
-    font-size:11px;
-}
-
-.cert-table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:20px;
-}
-
-.cert-table td{
-    border:1px solid #cdbb8a;
-    padding:11px;
-    font-size:12px;
-}
-
-.cert-table td:first-child{
-    width:29%;
-    background:#e9dfc2;
-    font-weight:bold;
-    color:#5f480d;
-}
-
-.cert-description{
-    margin-top:22px;
-    font-size:12px;
-    line-height:2;
-    text-align:justify;
-    color:#555;
-}
-
-.cert-footer{
-    display:grid;
-    grid-template-columns:1fr 1fr 1fr;
-    gap:20px;
-    text-align:center;
-    align-items:end;
-    margin-top:35px;
-}
-
-.cert-sign{
-    min-height:125px;
-}
-
-.cert-sign strong{
-    color:#684e0e;
-    font-size:12px;
-}
-
-#certificateSignature{
-    display:block;
-    width:180px;
-    height:80px;
-    object-fit:contain;
-    margin:10px auto;
-}
-
-.stamp{
-    width:90px;
-    height:90px;
-    border:3px double #947019;
-    border-radius:50%;
-    margin:8px auto;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:#76570e;
-    font-size:10px;
-    transform:rotate(-8deg);
-}
-
-.tracking{
-    text-align:center;
-    margin-top:30px;
-    color:#555;
-    font-size:11px;
-}
-
-.tracking strong{
-    color:#76570e;
-    letter-spacing:1px;
-}
-
-.certificate-actions{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    margin-top:18px;
-}
-
-.float-button{
-    position:fixed;
-    left:20px;
-    bottom:20px;
-    z-index:900;
-    border:0;
-    background:#d4af37;
-    color:#111;
-    border-radius:14px;
-    padding:13px 17px;
-    font-weight:bold;
-    box-shadow:0 10px 35px rgba(0,0,0,.5);
-}
-
-/* پنل تفکیکی */
-
-.overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.76);
-    backdrop-filter:blur(5px);
-    z-index:2000;
-    display:none;
-    align-items:stretch;
-    justify-content:flex-start;
-    padding:20px;
-}
-
-.overlay.open{
-    display:flex;
-}
-
-.side-panel{
-    width:min(440px,100%);
-    height:100%;
-    overflow-y:auto;
-    background:#111;
-    border:1px solid rgba(212,175,55,.4);
-    border-radius:22px;
-    padding:25px;
-    box-shadow:20px 0 70px rgba(0,0,0,.6);
-    animation:panelIn .3s ease;
-}
-
-@keyframes panelIn{
-    from{
-        opacity:0;
-        transform:translateX(-35px);
-    }
-    to{
-        opacity:1;
-        transform:translateX(0);
-    }
-}
-
-.panel-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    border-bottom:1px solid #b58b36;
+    padding-bottom:18px;
     margin-bottom:20px;
 }
 
-.panel-head h3{
-    color:#d4af37;
+.cert-top .brand{
+    font-size:28px;
+    font-weight:bold;
+    color:#6c4d18;
 }
 
-.close{
-    width:38px;
-    height:38px;
-    border:1px solid #333;
-    border-radius:10px;
-    background:#181818;
-    color:#fff;
-    font-size:20px;
+.cert-top .latin{
+    font-size:12px;
+    letter-spacing:4px;
+    color:#927035;
 }
 
-.bar{
-    height:13px;
-    background:#292929;
-    border-radius:20px;
-    overflow:hidden;
-    margin:8px 0 17px;
+.cert-top h2{
+    margin-top:15px;
+    font-size:22px;
 }
 
-.bar span{
-    display:block;
-    height:100%;
-    background:#d4af37;
+.cert-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:8px;
 }
 
-.split-total{
-    margin:20px 0;
-    padding:14px;
-    border-radius:12px;
-    background:#090909;
-    text-align:center;
-}
-
-.split-total strong{
-    color:#d4af37;
-}
-
-.split-warning{
-    display:none;
-    background:#381414;
-    color:#ff9b9b;
-    border:1px solid #713333;
-    padding:12px;
-    border-radius:10px;
-    margin-bottom:15px;
+.cert-field{
+    padding:8px;
+    border-bottom:1px dotted #b8a77d;
     font-size:12px;
 }
 
-.footer{
-    margin-top:70px;
-    border-top:1px solid #222;
-    padding:35px 20px;
+.cert-field b{
+    color:#6b4b18;
+}
+
+.cert-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:30px;
+    gap:20px;
+}
+
+.seal{
+    width:105px;
+    height:105px;
+    border:5px double #a22d2d;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    text-align:center;
+    color:#8c2424;
+    font-size:10px;
+    transform:rotate(-12deg);
+    font-weight:bold;
+}
+
+.digital-sign{
+    text-align:center;
+}
+
+.digital-sign img{
+    max-width:190px;
+    max-height:70px;
+}
+
+.digital-sign small{
+    display:block;
+    color:#555;
+}
+
+.disclaimer{
+    margin-top:25px;
+    padding:12px;
+    border:1px solid #c7b990;
+    background:#eee6ca;
+    color:#665b43;
+    text-align:center;
+    font-size:10px;
+}
+
+.cert-actions{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+.cert-actions button{
+    flex:1;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid rgba(214,173,85,.15);
+    padding:35px 0;
     text-align:center;
     color:#777;
+    font-size:12px;
 }
 
-.footer strong{
-    color:#d4af37;
+/* TOAST */
+
+.toast{
+    position:fixed;
+    bottom:25px;
+    right:50%;
+    transform:translateX(50%) translateY(100px);
+    background:#151515;
+    color:#fff;
+    border:1px solid var(--gold);
+    padding:12px 20px;
+    border-radius:12px;
+    z-index:5000;
+    opacity:0;
+    transition:.3s;
 }
 
-@media(max-width:950px){
-    .stats{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .info-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .steps{
-        grid-template-columns:1fr 1fr;
-    }
+.toast.show{
+    opacity:1;
+    transform:translateX(50%) translateY(0);
 }
 
-@media(max-width:650px){
-    .header-inner{
-        flex-direction:column;
+/* RESPONSIVE */
+
+@media(max-width:800px){
+    nav{
+        display:none;
     }
 
-    .nav{
-        justify-content:center;
-    }
-
-    .stats,
     .info-grid,
-    .steps,
-    .form-grid{
+    .choice-grid{
         grid-template-columns:1fr;
     }
 
-    .field.full{
-        grid-column:auto;
+    .form-grid,
+    .data-grid,
+    .code-box,
+    .cert-grid{
+        grid-template-columns:1fr;
     }
 
-    .percent-grid{
-        grid-template-columns:1fr 1fr 1fr;
+    .panel{
+        padding:20px;
     }
 
     .certificate{
-        padding:28px 17px;
+        padding:20px;
     }
 
-    .certificate:before{
-        inset:10px;
-    }
-
-    .cert-title h1{
-        font-size:23px;
+    .cert-inner{
+        padding:18px;
     }
 
     .cert-footer{
-        grid-template-columns:1fr;
-    }
-
-    .float-button{
-        left:12px;
-        bottom:12px;
-    }
-
-    .overlay{
-        padding:10px;
-    }
-
-    .side-panel{
-        width:100%;
+        flex-direction:column;
     }
 }
 
 @media print{
-    body *{
-        visibility:hidden;
+    body{
+        background:#fff;
     }
 
-    #certificate,
-    #certificate *{
-        visibility:visible;
+    header,
+    .hero,
+    #about,
+    #choiceSection,
+    #purchase,
+    footer,
+    .cert-actions,
+    .toast{
+        display:none !important;
     }
 
-    #certificate{
-        display:block!important;
-        position:absolute;
-        left:0;
-        top:0;
-        width:100%;
+    .receipt{
+        display:block !important;
         margin:0;
     }
 
-    .certificate-actions{
-        display:none;
+    .receipt-card{
+        border:none;
+        padding:0;
+    }
+
+    .certificate{
+        box-shadow:none;
     }
 }
 </style>
@@ -881,24 +792,24 @@ button{
 
 <body>
 
-<header class="header">
-<div class="header-inner">
+<header>
+<div class="container nav">
 
-<div class="brand">
-<div class="brand-logo">⚖</div>
-<div>
-<h2>پارسا کرمی</h2>
-<small>سامانه آزمایشی خدمات مبتنی بر فلزات</small>
-</div>
-</div>
+    <div class="logo">
+        <div class="logo-icon">⚜️</div>
+        <div class="logo-text">
+            <strong>پارساکوین</strong>
+            <span>PARSAQUIN</span>
+        </div>
+    </div>
 
-<nav class="nav">
-<button class="active" onclick="goTo('home')">خانه</button>
-<button onclick="goTo('about')">معرفی طرح</button>
-<button onclick="goTo('how')">نحوه کار</button>
-<button onclick="goTo('buy')">خرید آزمایشی</button>
-<button onclick="goTo('faq')">سؤالات متداول</button>
-</nav>
+    <nav>
+        <a href="#home">خانه</a>
+        <a href="#about">معرفی طرح</a>
+        <a href="#choiceSection">روش خرید</a>
+        <a href="#purchase">خرید آزمایشی</a>
+        <a href="#certificate">گواهی</a>
+    </nav>
 
 </div>
 </header>
@@ -906,149 +817,74 @@ button{
 
 <main>
 
-<!-- ================= HOME ================= -->
-
 <section class="hero" id="home">
 <div class="container">
 
-<div class="badge">
-⚖️ سامانه تخصصی حقوق و بازار فلزات
-</div>
+    <div class="badge">⚖️ سامانه آزمایشی هوشمند بیمه و فلزات</div>
 
-<h1>
-یک مدل <span class="gold">آزمایشی و هوشمند</span>
-برای آشنایی با طرح‌های مبتنی بر فلزات
-</h1>
+    <h1>
+        سرمایه‌گذاری هوشمند با
+        <span>پشتوانه فلزات</span>
+    </h1>
 
-<p class="hero-text">
-در این سامانه مشتری می‌تواند به‌صورت کاملاً آزمایشی با یک مدل
-مبتنی بر طلا، نقره و مس آشنا شود، مبلغ و درصد موردنظر خود را
-انتخاب کند، محاسبات نمایشی را مشاهده کند، امضای دیجیتال خود را
-ثبت کند و در پایان یک گواهی نمایشی دریافت کند.
-</p>
+    <p>
+        پارساکوین یک طرح مفهومی و آزمایشی برای شبیه‌سازی
+        خرید و تخصیص سرمایه میان طلا، نقره و مس است.
+        مشتری می‌تواند ترکیب موردنظر خود را انتخاب کند
+        یا تخصیص آزمایشی را به سامانه هوشمند بسپارد.
+    </p>
 
-<div class="warning">
-<strong>⚠️ نکته مهم:</strong>
-این سامانه یک نمونه نمایشی است. هیچ خرید واقعی، دریافت وجه،
-بیمه واقعی، سرمایه‌گذاری واقعی یا تعهد مالی در آن انجام نمی‌شود.
-تمام اعداد، محاسبات و گواهی‌ها صرفاً برای نمایش عملکرد سامانه هستند.
-</div>
+    <div class="hero-buttons">
+        <a href="#choiceSection" class="btn btn-gold">
+            شروع خرید آزمایشی
+        </a>
 
-<div class="stats">
-<div class="stat">
-<strong>۳</strong>
-<span>فلز پایه در مدل</span>
-</div>
-
-<div class="stat">
-<strong>۹۵٪</strong>
-<span>سهم مشتری در سناریوی نمایشی</span>
-</div>
-
-<div class="stat">
-<strong>۵٪</strong>
-<span>سهم خدمات در سناریوی نمایشی</span>
-</div>
-
-<div class="stat">
-<strong>۱۰۰٪</strong>
-<span>آزمایشی و غیرواقعی</span>
-</div>
-</div>
+        <a href="#about" class="btn btn-dark">
+            آشنایی با طرح
+        </a>
+    </div>
 
 </div>
 </section>
 
 
-<!-- ================= ABOUT ================= -->
-
-<section class="section" id="about">
+<section id="about">
 <div class="container">
 
 <div class="section-title">
-<h2>طرح ما دقیقاً چیست؟</h2>
-<p>توضیح کامل و ساده برای مشتری</p>
+    <small>ABOUT PARSAQUIN</small>
+    <h2>طرح پارساکوین چگونه کار می‌کند؟</h2>
+    <p>یک شبیه‌سازی ساده و قابل فهم برای تجربه فرآیند خرید و صدور گواهی</p>
 </div>
 
-<div class="explain">
+<div class="info-grid">
 
-<h3>ایده اصلی</h3>
+    <div class="info-card">
+        <div class="info-icon">🥇</div>
+        <h3>پشتوانه فلزات</h3>
+        <p>
+            در این مدل آزمایشی، سرمایه میان طلا، نقره و مس
+            تقسیم می‌شود تا مشتری بتواند یک سبد فلزی فرضی ایجاد کند.
+        </p>
+    </div>
 
-<p>
-ایده این مدل آن است که به جای نمایش یک مبلغ ساده و ثابت،
-ارزش و سهم مشتری در قالب یک سبد فرضی از فلزات نمایش داده شود.
-در این نمونه سه فلز اصلی یعنی طلا، نقره و مس در نظر گرفته شده‌اند.
-</p>
+    <div class="info-card">
+        <div class="info-icon">📊</div>
+        <h3>انتخاب آزاد یا هوشمند</h3>
+        <p>
+            مشتری می‌تواند درصد هر فلز را خودش تعیین کند
+            یا انتخاب درصدها را به حالت هوشمند آزمایشی بسپارد.
+        </p>
+    </div>
 
-<p>
-مشتری ابتدا مبلغ موردنظر خود را وارد می‌کند. سپس درصد موردنظر
-خود را انتخاب می‌کند و سیستم بر اساس اطلاعات واردشده، محاسبات
-نمایشی را انجام می‌دهد.
-</p>
-
-<p>
-در این نسخه، تقسیم نمونه مبلغ به صورت <strong class="gold">۹۵٪ سهم مشتری</strong>
-و <strong class="gold">۵٪ سهم خدمات</strong> نمایش داده می‌شود.
-این درصدها صرفاً بخشی از سناریوی آزمایشی هستند و به معنای قرارداد
-یا تعهد واقعی نیستند.
-</p>
-
-</div>
-
-
-<div class="info-grid" style="margin-top:25px">
-
-<div class="info-card">
-<div class="icon">🥇</div>
-<h3>طلا</h3>
-<p>
-طلا در مدل نمایشی به عنوان یکی از فلزات اصلی سبد در نظر گرفته
-می‌شود و می‌تواند در ترکیب انتخابی مشتری سهم بیشتری داشته باشد.
-</p>
-</div>
-
-<div class="info-card">
-<div class="icon">🥈</div>
-<h3>نقره</h3>
-<p>
-نقره دومین فلز مدل است. مقدار سهم آن می‌تواند در بخش محاسبه
-تفکیکی تغییر کند و سیستم مبلغ متناظر را نمایش دهد.
-</p>
-</div>
-
-<div class="info-card">
-<div class="icon">🔶</div>
-<h3>مس</h3>
-<p>
-مس نیز به عنوان سومین فلز در مدل آزمایشی قرار گرفته و مشتری
-می‌تواند درصد اختصاص‌یافته به آن را مشاهده و تغییر دهد.
-</p>
-</div>
-
-</div>
-
-
-<div class="explain">
-
-<h3>درصد انتخابی مشتری چه مفهومی دارد؟</h3>
-
-<p>
-در بخش خرید آزمایشی چند درصد آماده در اختیار مشتری قرار گرفته
-است؛ اما مشتری می‌تواند درصد دلخواه خود را نیز وارد کند.
-این درصد در گواهی آزمایشی ثبت می‌شود.
-</p>
-
-<ul class="list">
-<li>۱۰٪</li>
-<li>۲۵٪</li>
-<li>۵۰٪</li>
-<li>۷۵٪</li>
-<li>درصد دلخواه</li>
-</ul>
-
-<p>
-درصد انتخابی صرفاً یک پارامتر نمایشی برای سناریوی آزمایشی است.
-</p>
+    <div class="info-card">
+        <div class="info-icon">📜</div>
+        <h3>صدور گواهی</h3>
+        <p>
+            پس از تکمیل فرم، سامانه یک گواهی آزمایشی
+            با شماره گواهی، کد پیگیری، تاریخ شروع و پایان و امضای دیجیتال ایجاد می‌کند.
+        </p>
+    </div>
 
 </div>
 
@@ -1056,66 +892,57 @@ button{
 </section>
 
 
-<!-- ================= HOW ================= -->
-
-<section class="section" id="how">
+<section id="choiceSection">
 <div class="container">
 
 <div class="section-title">
-<h2>مراحل انجام فرآیند</h2>
-<p>از ورود اطلاعات تا دریافت گواهی</p>
+    <small>CHOOSE YOUR METHOD</small>
+    <h2>روش خرید را انتخاب کنید</h2>
+    <p>دو روش آزمایشی برای تخصیص سرمایه</p>
 </div>
 
-<div class="steps">
+<div class="choice-grid">
 
-<div class="step">
-<div class="step-number">۱</div>
-<h3>ثبت اطلاعات</h3>
-<p>
-نام، کد ملی آزمایشی، مبلغ و مدت طرح را وارد می‌کنید.
-</p>
-</div>
+    <div class="choice" id="customerChoice">
 
-<div class="step">
-<div class="step-number">۲</div>
-<h3>انتخاب درصد</h3>
-<p>
-درصد موردنظر خود را انتخاب یا درصد دلخواه را وارد می‌کنید.
-</p>
-</div>
+        <div class="choice-icon">👤</div>
 
-<div class="step">
-<div class="step-number">۳</div>
-<h3>امضای دیجیتال</h3>
-<p>
-با انگشت موبایل یا موس کامپیوتر امضای خود را داخل کادر می‌کشید.
-</p>
-</div>
+        <h3>خرید توسط مشتری</h3>
 
-<div class="step">
-<div class="step-number">۴</div>
-<h3>صدور گواهی</h3>
-<p>
-سیستم اطلاعات و امضا را روی گواهی آزمایشی نمایش می‌دهد.
-</p>
-</div>
+        <p>
+            شما درصد طلا، نقره و مس را مشخص می‌کنید.
+            سامانه مجموع درصدها را بررسی کرده و در صورت برابر بودن با ۱۰۰٪،
+            ترکیب انتخابی شما را ثبت می‌کند.
+        </p>
 
-</div>
+        <button
+            class="btn btn-gold"
+            onclick="selectMode('customer')">
+            انتخاب این روش
+        </button>
+
+    </div>
 
 
-<div class="explain">
+    <div class="choice" id="smartChoice">
 
-<h3>پنل محاسبه تفکیکی</h3>
+        <div class="choice-icon">🤖</div>
 
-<p>
-برای اینکه صفحه اصلی شلوغ نشود، محاسبه تفکیکی در یک پنل جداگانه
-قرار گرفته است. با دکمه «محاسبه تفکیکی» در گوشه صفحه، پنل باز
-می‌شود و می‌توانید درصد طلا، نقره و مس را تغییر دهید.
-</p>
+        <h3>خرید هوشمند توسط سامانه</h3>
 
-<p>
-اگر مجموع درصدها دقیقاً ۱۰۰٪ نباشد، سیستم به شما هشدار می‌دهد.
-</p>
+        <p>
+            سامانه با یک مدل نمایشی، ترکیب فلزات را بر اساس
+            وضعیت فرضی بازار تعیین می‌کند.
+            این بخش صرفاً برای نمایش قابلیت سامانه است.
+        </p>
+
+        <button
+            class="btn btn-dark"
+            onclick="selectMode('smart')">
+            انتخاب این روش
+        </button>
+
+    </div>
 
 </div>
 
@@ -1123,108 +950,253 @@ button{
 </section>
 
 
-<!-- ================= BUY ================= -->
-
-<section class="section" id="buy">
+<section id="purchase">
 <div class="container">
 
 <div class="section-title">
-<h2>خرید آزمایشی</h2>
-<p>اطلاعات زیر فقط برای ساخت سناریوی نمایشی استفاده می‌شوند.</p>
+    <small>DEMO PURCHASE</small>
+    <h2>خرید آزمایشی</h2>
+    <p>اطلاعات خود را وارد کنید تا گواهی آزمایشی صادر شود</p>
 </div>
 
-<div class="form-box">
+<div class="panel">
+
+<form id="purchaseForm">
 
 <div class="form-grid">
 
-<div class="field">
-<label>نام و نام خانوادگی</label>
-<input id="name" type="text" placeholder="مثلاً پارسا کرمی">
-</div>
+    <div class="field">
+        <label>نام و نام خانوادگی</label>
+        <input
+            id="fullName"
+            type="text"
+            placeholder="مثلاً پارسا کرمی"
+            required>
+    </div>
 
-<div class="field">
-<label>کد ملی</label>
-<input id="national" type="text"
-       inputmode="numeric"
-       maxlength="10"
-       placeholder="کد ملی آزمایشی">
-</div>
+    <div class="field">
+        <label>کد ملی</label>
+        <input
+            id="nationalId"
+            type="text"
+            inputmode="numeric"
+            maxlength="10"
+            placeholder="۱۰ رقم"
+            required>
+    </div>
 
-<div class="field">
-<label>مبلغ خرید آزمایشی (تومان)</label>
-<input id="amount" type="number"
-       min="1000"
-       placeholder="مثلاً 2,000,000">
-</div>
+    <div class="field">
+        <label>شماره تلفن همراه</label>
+        <input
+            id="phone"
+            type="tel"
+            inputmode="tel"
+            placeholder="09xxxxxxxxx"
+            required>
+    </div>
 
-<div class="field">
-<label>مدت طرح</label>
-<select id="duration">
-<option value="1">۱ ماهه</option>
-<option value="3">۳ ماهه</option>
-<option value="6">۶ ماهه</option>
-<option value="12">۱۲ ماهه</option>
-</select>
-</div>
+    <div class="field">
+        <label>مبلغ آزمایشی</label>
+        <input
+            id="amount"
+            type="number"
+            min="100000"
+            placeholder="مثلاً 2000000"
+            required>
+    </div>
 
+    <div class="field">
+        <label>مدت قرارداد آزمایشی</label>
 
-<div class="field full">
-<label>درصد انتخابی مشتری</label>
+        <select id="duration">
+            <option value="3">۳ ماه</option>
+            <option value="6">۶ ماه</option>
+            <option value="12">۱۲ ماه</option>
+        </select>
+    </div>
 
-<div class="percent-grid">
+    <div class="field">
+        <label>نوع روش خرید</label>
 
-<button class="percent selected" data-percent="10">۱۰٪</button>
-<button class="percent" data-percent="25">۲۵٪</button>
-<button class="percent" data-percent="50">۵۰٪</button>
-<button class="percent" data-percent="75">۷۵٪</button>
-<button class="percent" data-percent="custom">دلخواه</button>
-
-</div>
-
-<div class="custom-percent" id="customPercentBox" style="display:none">
-<input id="customPercent"
-       type="number"
-       min="1"
-       max="100"
-       placeholder="درصد دلخواه خود را وارد کنید">
-</div>
-
-<input id="selectedPercent" type="hidden" value="10">
-
-</div>
-
-
-<div class="field full">
-<label>نوع ترکیب آزمایشی</label>
-
-<select id="mix">
-<option value="smart">
-ترکیب هوشمند طلا، نقره و مس
-</option>
-
-<option value="gold">
-تمرکز بیشتر روی طلا
-</option>
-
-<option value="silver">
-تمرکز بیشتر روی نقره
-</option>
-
-<option value="copper">
-تمرکز بیشتر روی مس
-</option>
-</select>
-
-</div>
+        <input
+            id="modeDisplay"
+            type="text"
+            value="خرید توسط مشتری"
+            readonly>
+    </div>
 
 </div>
 
 
-<div class="result" id="result">
+<div class="metal-box" id="customerMetalBox">
 
-<div class="result-row">
-<span>مبلغ ثبت‌شده:</span>
-<strong id="showAmount">۰ تومان</strong>
+    <h3 style="color:var(--gold2);">
+        درصد تخصیص سرمایه
+    </h3>
+
+    <div class="metal-row">
+        <strong>🥇 طلا</strong>
+
+        <input
+            id="goldRange"
+            type="range"
+            min="0"
+            max="100"
+            value="40"
+            oninput="updatePercent()">
+
+        <div class="percent">
+            <span id="goldValue">40</span>٪
+        </div>
+    </div>
+
+
+    <div class="metal-row">
+        <strong>🥈 نقره</strong>
+
+        <input
+            id="silverRange"
+            type="range"
+            min="0"
+            max="100"
+            value="35"
+            oninput="updatePercent()">
+
+        <div class="percent">
+            <span id="silverValue">35</span>٪
+        </div>
+    </div>
+
+
+    <div class="metal-row">
+        <strong>🔶 مس</strong>
+
+        <input
+            id="copperRange"
+            type="range"
+            min="0"
+            max="100"
+            value="25"
+            oninput="updatePercent()">
+
+        <div class="percent">
+            <span id="copperValue">25</span>٪
+        </div>
+    </div>
+
+
+    <div class="total-box">
+        مجموع:
+        <span id="totalPercent">100</span>٪
+    </div>
+
+    <div
+        id="percentWarning"
+        class="warning">
+        مجموع درصدها باید دقیقاً ۱۰۰٪ باشد.
+    </div>
+
 </div>
 
-   
+
+<div
+    id="smartResult"
+    class="smart-result">
+
+    <h4>🤖 تخصیص هوشمند آزمایشی</h4>
+
+    <div class="smart-bars">
+
+        <div class="smart-line">
+            <span>🥇 طلا</span>
+            <strong id="smartGold">45٪</strong>
+        </div>
+
+        <div class="smart-line">
+            <span>🥈 نقره</span>
+            <strong id="smartSilver">30٪</strong>
+        </div>
+
+        <div class="smart-line">
+            <span>🔶 مس</span>
+            <strong id="smartCopper">25٪</strong>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="signature-box">
+
+    <div class="signature-title">
+
+        <h3>✍️ امضای دیجیتال مشتری</h3>
+
+        <span>
+            با لمس صفحه یا ماوس امضا کنید
+        </span>
+
+    </div>
+
+    <canvas id="signatureCanvas"></canvas>
+
+    <div class="signature-actions">
+
+        <button
+            type="button"
+            class="btn btn-dark"
+            onclick="clearSignature()">
+            پاک کردن امضا
+        </button>
+
+    </div>
+
+    <div id="signatureStatus">
+        هنوز امضایی ثبت نشده است.
+    </div>
+
+</div>
+
+
+<button
+    type="submit"
+    class="btn btn-gold"
+    style="width:100%;margin-top:25px;font-size:16px;">
+    📜 تأیید اطلاعات و صدور گواهی آزمایشی
+</button>
+
+</form>
+
+</div>
+
+
+<div
+    id="receipt"
+    class="receipt">
+
+<div class="receipt-card">
+
+<div class="receipt-header">
+
+    <div class="symbol">⚜️</div>
+
+    <h2>گواهی آزمایشی پارساکوین</h2>
+
+    <p>
+        PARSAQUIN — DEMO CERTIFICATE
+    </p>
+
+</div>
+
+
+<div class="data-grid">
+
+    <div class="data-item">
+        <small>نام مشتری</small>
+        <strong id="rName">-</strong>
+    </div>
+
+    <div class="data-item">
+        <small>کد ملی</small>
+        <strong id="rNational
