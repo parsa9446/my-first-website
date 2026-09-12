@@ -13,6 +13,10 @@
     padding:0;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:Tahoma,Arial,sans-serif;
     background:
@@ -35,6 +39,56 @@ body:before{
 .container{
     width:min(1100px,92%);
     margin:auto;
+}
+
+/* =========================
+   منوی سمت راست
+========================= */
+
+.side-menu{
+    position:fixed;
+    right:18px;
+    top:50%;
+    transform:translateY(-50%);
+    width:180px;
+    padding:14px;
+    border:1px solid rgba(212,175,55,.3);
+    border-radius:22px;
+    background:rgba(10,10,10,.94);
+    backdrop-filter:blur(12px);
+    box-shadow:0 15px 45px rgba(0,0,0,.5);
+    z-index:1000;
+}
+
+.side-title{
+    color:#d4af37;
+    text-align:center;
+    font-size:13px;
+    margin-bottom:10px;
+    padding-bottom:10px;
+    border-bottom:1px solid #292929;
+}
+
+.side-menu a{
+    display:block;
+    text-decoration:none;
+    color:#aaa;
+    padding:10px 11px;
+    margin:5px 0;
+    border-radius:11px;
+    font-size:12px;
+    transition:.25s;
+}
+
+.side-menu a:hover,
+.side-menu a.active{
+    color:#111;
+    background:linear-gradient(135deg,#d4af37,#f0d879);
+    transform:translateX(-3px);
+}
+
+.page-content{
+    margin-right:205px;
 }
 
 /* HEADER */
@@ -143,6 +197,7 @@ header{
     background:rgba(12,12,12,.9);
     border:1px solid rgba(212,175,55,.2);
     box-shadow:0 12px 40px rgba(0,0,0,.25);
+    scroll-margin-top:25px;
 }
 
 .section-title{
@@ -400,6 +455,7 @@ header{
     border:2px solid #d4af37;
     max-width:700px;
     margin:auto;
+    box-shadow:0 5px 25px rgba(0,0,0,.3);
 }
 
 canvas{
@@ -409,6 +465,7 @@ canvas{
     background:#fff;
     border-radius:10px;
     touch-action:none;
+    cursor:crosshair;
 }
 
 .signature-note{
@@ -584,6 +641,7 @@ canvas{
 
 .customer-sign img{
     max-width:220px;
+    width:100%;
     height:100px;
     object-fit:contain;
     background:white;
@@ -660,6 +718,33 @@ canvas{
     color:#fff;
 }
 
+/* پیام وضعیت */
+
+.status-message{
+    display:none;
+    margin-top:18px;
+    padding:13px;
+    border-radius:13px;
+    text-align:center;
+    font-size:13px;
+}
+
+.status-message.show{
+    display:block;
+}
+
+.status-message.success{
+    color:#9be29b;
+    background:rgba(50,120,50,.1);
+    border:1px solid #426942;
+}
+
+.status-message.error{
+    color:#ff9b9b;
+    background:rgba(120,50,50,.1);
+    border:1px solid #713d3d;
+}
+
 /* FOOTER */
 
 footer{
@@ -670,6 +755,37 @@ footer{
 }
 
 /* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .side-menu{
+        position:sticky;
+        top:8px;
+        right:auto;
+        transform:none;
+        width:100%;
+        margin:10px auto;
+        display:flex;
+        align-items:center;
+        gap:5px;
+        overflow-x:auto;
+        padding:8px;
+    }
+
+    .side-title{
+        display:none;
+    }
+
+    .side-menu a{
+        flex:0 0 auto;
+        margin:0;
+        white-space:nowrap;
+    }
+
+    .page-content{
+        margin-right:0;
+    }
+}
 
 @media(max-width:750px){
 
@@ -703,9 +819,33 @@ footer{
 
 <body>
 
-<div class="container">
+<!-- =========================
+     منوی سمت راست
+========================= -->
 
-<header>
+<nav class="side-menu">
+
+    <div class="side-title">
+        ⚖️ بخش‌های سامانه
+    </div>
+
+    <a href="#home" class="active">🏠 معرفی</a>
+    <a href="#applicant">👤 اطلاعات متقاضی</a>
+    <a href="#metalsMethod">🪙 ترکیب فلزات</a>
+    <a href="#signature">✍️ امضای دیجیتال</a>
+    <a href="#issue">📄 صدور گواهی</a>
+    <a href="#certificate">🏆 گواهی صادرشده</a>
+    <a href="#tracking">🔎 پیگیری</a>
+
+</nav>
+
+
+<div class="container page-content">
+
+<!-- HEADER -->
+
+<header id="home">
+
     <div class="header-box">
 
         <div class="logo">⚖</div>
@@ -723,8 +863,11 @@ footer{
         </div>
 
     </div>
+
 </header>
 
+
+<!-- HERO -->
 
 <section class="hero">
 
@@ -752,6 +895,8 @@ footer{
 </div>
 
 
+<!-- IDEA -->
+
 <section class="section">
 
     <h2 class="section-title">
@@ -775,6 +920,7 @@ footer{
 
         در محاسبه نمایشی این نسخه، سهم فرضی مشتری ۹۵ درصد و سهم
         فرضی سیستم ۵ درصد در نظر گرفته شده است.
+
     </p>
 
     <div class="metals">
@@ -811,7 +957,9 @@ footer{
 </section>
 
 
-<section class="section">
+<!-- APPLICANT -->
+
+<section class="section" id="applicant">
 
     <h2 class="section-title">
         👤 اطلاعات متقاضی
@@ -827,29 +975,36 @@ footer{
         <div class="field">
             <label>کد ملی</label>
             <input id="nationalId" type="text" maxlength="10"
+                   inputmode="numeric"
                    placeholder="۱۰ رقم">
         </div>
 
         <div class="field">
             <label>شماره تماس</label>
             <input id="phone" type="tel"
+                   inputmode="tel"
                    placeholder="مثلاً 09123456789">
         </div>
 
         <div class="field">
             <label>مبلغ قرارداد آزمایشی</label>
             <input id="amount" type="number"
+                   min="1"
                    placeholder="مثلاً 2000000">
         </div>
 
         <div class="field">
             <label>مدت قرارداد</label>
+
             <select id="duration">
+
                 <option value="1">۱ ماهه</option>
                 <option value="3">۳ ماهه</option>
                 <option value="6">۶ ماهه</option>
                 <option value="12">۱۲ ماهه</option>
+
             </select>
+
         </div>
 
     </div>
@@ -857,7 +1012,9 @@ footer{
 </section>
 
 
-<section class="section">
+<!-- METHODS -->
+
+<section class="section" id="metalsMethod">
 
     <h2 class="section-title">
         ⚙️ روش تعیین ترکیب فلزات
@@ -869,7 +1026,8 @@ footer{
 
     <div class="methods">
 
-        <div class="method" id="autoMethod"
+        <div class="method"
+             id="autoMethod"
              onclick="selectMethod('auto')">
 
             <h3>📊 پیشنهاد متغیر</h3>
@@ -882,7 +1040,8 @@ footer{
         </div>
 
 
-        <div class="method" id="manualMethod"
+        <div class="method"
+             id="manualMethod"
              onclick="selectMethod('manual')">
 
             <h3>✍️ تعیین توسط شخص</h3>
@@ -897,12 +1056,17 @@ footer{
     </div>
 
 
+    <!-- AUTO -->
+
     <div id="suggestion" class="suggestion">
 
         <div class="warning">
+
             📊 ترکیب زیر صرفاً یک پیشنهاد شبیه‌سازی‌شده است
             و به اطلاعات لحظه‌ای بازار متصل نیست.
+
         </div>
+
 
         <div class="bar-row">
 
@@ -955,12 +1119,18 @@ footer{
         </div>
 
 
-        <button class="btn dark" onclick="newSuggestion()">
+        <button class="btn dark"
+                type="button"
+                onclick="newSuggestion()">
+
             🔄 تغییر پیشنهاد
+
         </button>
 
     </div>
 
+
+    <!-- MANUAL -->
 
     <div id="manualAllocation" class="allocation">
 
@@ -970,150 +1140,4 @@ footer{
 
                 <h4>🪙 طلا</h4>
 
-                <input
-                    id="goldManual"
-                    type="number"
-                    min="0"
-                    max="100"
-                    value="40"
-                    oninput="checkTotal()">
-
-                <small>%</small>
-
-            </div>
-
-
-            <div class="percent-box">
-
-                <h4>🥈 نقره</h4>
-
-                <input
-                    id="silverManual"
-                    type="number"
-                    min="0"
-                    max="100"
-                    value="35"
-                    oninput="checkTotal()">
-
-                <small>%</small>
-
-            </div>
-
-
-            <div class="percent-box">
-
-                <h4>🔶 مس</h4>
-
-                <input
-                    id="copperManual"
-                    type="number"
-                    min="0"
-                    max="100"
-                    value="25"
-                    oninput="checkTotal()">
-
-                <small>%</small>
-
-            </div>
-
-        </div>
-
-
-        <div id="totalBox" class="total good">
-            مجموع درصدها: ۱۰۰٪
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="section">
-
-    <h2 class="section-title">
-        ✍️ امضای دیجیتال متقاضی
-    </h2>
-
-    <p class="explain">
-        داخل کادر زیر با انگشت یا ماوس امضای خود را به‌صورت
-        آزمایشی ثبت کنید.
-    </p>
-
-    <div class="signature-area">
-
-        <div class="signature-box">
-
-            <canvas id="signatureCanvas"></canvas>
-
-        </div>
-
-        <div class="signature-note">
-            امضا با انگشت در گوشی یا با ماوس در کامپیوتر
-        </div>
-
-        <div style="text-align:center">
-
-            <button class="btn dark"
-                    onclick="clearSignature()">
-                پاک کردن امضا
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="section">
-
-    <div style="text-align:center">
-
-        <h2 class="section-title">
-            📄 صدور گواهی آزمایشی
-        </h2>
-
-        <p class="explain">
-            پس از تکمیل اطلاعات و امضا، گواهی آزمایشی شما
-            ایجاد و یک کد پیگیری اختصاصی برای همین مرورگر
-            ذخیره می‌شود.
-        </p>
-
-        <button class="btn"
-                onclick="issueInsurance()">
-            ✨ صدور گواهی آزمایشی
-        </button>
-
-    </div>
-
-</section>
-
-
-<section id="certificate" class="section">
-
-    <div class="certificate">
-
-        <div class="cert-head">
-
-            <div class="cert-logo">⚖</div>
-
-            <h2>
-                گواهی آزمایشی بیمه مبتنی بر فلزات
-            </h2>
-
-            <p>
-                شرکت پارسا کرمی
-            </p>
-
-            <div id="certInsuranceNumber"
-                 class="cert-number">
-            </div>
-
-        </div>
-
-
-        <div class="cert-grid">
-
-            <div class="cert-item">
-                <span>نام و نام خانوادگی</span>
-                <strong id="certName
+              
