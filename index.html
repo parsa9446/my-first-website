@@ -3,1141 +3,1125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>سامانه بیمه مبتنی بر فلزات | پارسا کرمی</title>
+<title>سامانه فلزات | پارسا کرمی</title>
 
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html{
-    scroll-behavior:smooth;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
-    font-family:Tahoma,Arial,sans-serif;
-    background:
-        radial-gradient(circle at top right,#332500 0,#090909 35%,#030303 75%);
-    color:#fff;
-    min-height:100vh;
-    line-height:1.8;
+font-family:Tahoma,Arial,sans-serif;
+background:#0b0b0b;
+color:#eee;
+min-height:100vh;
 }
 
-body:before{
-    content:"";
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    background:
-        linear-gradient(115deg,transparent 40%,rgba(212,175,55,.035) 50%,transparent 60%);
-    z-index:-1;
+:root{
+--gold:#d8b45a;
+--gold2:#f3d889;
+--dark:#111;
+--border:rgba(216,180,90,.28);
 }
 
-.container{
-    width:min(1100px,92%);
-    margin:auto;
-}
+.app{display:flex;min-height:100vh}
 
-/* =========================
-   منوی سمت راست
-========================= */
-
-.side-menu{
-    position:fixed;
-    right:18px;
-    top:50%;
-    transform:translateY(-50%);
-    width:180px;
-    padding:14px;
-    border:1px solid rgba(212,175,55,.3);
-    border-radius:22px;
-    background:rgba(10,10,10,.94);
-    backdrop-filter:blur(12px);
-    box-shadow:0 15px 45px rgba(0,0,0,.5);
-    z-index:1000;
-}
-
-.side-title{
-    color:#d4af37;
-    text-align:center;
-    font-size:13px;
-    margin-bottom:10px;
-    padding-bottom:10px;
-    border-bottom:1px solid #292929;
-}
-
-.side-menu a{
-    display:block;
-    text-decoration:none;
-    color:#aaa;
-    padding:10px 11px;
-    margin:5px 0;
-    border-radius:11px;
-    font-size:12px;
-    transition:.25s;
-}
-
-.side-menu a:hover,
-.side-menu a.active{
-    color:#111;
-    background:linear-gradient(135deg,#d4af37,#f0d879);
-    transform:translateX(-3px);
-}
-
-.page-content{
-    margin-right:205px;
-}
-
-/* HEADER */
-
-header{
-    padding:25px 0 10px;
-}
-
-.header-box{
-    border:1px solid rgba(212,175,55,.35);
-    background:linear-gradient(145deg,rgba(30,30,30,.95),rgba(8,8,8,.95));
-    border-radius:25px;
-    padding:22px;
-    box-shadow:0 15px 50px rgba(0,0,0,.45);
-    text-align:center;
+/* منوی سمت راست */
+.sidebar{
+width:220px;
+position:fixed;
+right:0;
+top:0;
+bottom:0;
+background:#101010;
+border-left:1px solid var(--border);
+padding:22px 14px;
+z-index:10;
 }
 
 .logo{
-    width:75px;
-    height:75px;
-    margin:auto;
-    border:2px solid #d4af37;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:35px;
-    color:#d4af37;
-    box-shadow:0 0 30px rgba(212,175,55,.25);
+text-align:center;
+color:var(--gold2);
+font-size:20px;
+font-weight:bold;
+margin-bottom:7px;
 }
 
-.brand{
-    margin-top:10px;
-    font-size:26px;
-    color:#d4af37;
-    font-weight:bold;
+.logo-sub{
+text-align:center;
+color:#999;
+font-size:11px;
+margin-bottom:25px;
 }
 
-.subtitle{
-    color:#aaa;
-    margin-top:4px;
-    font-size:14px;
+.nav-btn{
+width:100%;
+border:1px solid transparent;
+background:transparent;
+color:#ccc;
+padding:13px 12px;
+margin-bottom:8px;
+border-radius:10px;
+text-align:right;
+cursor:pointer;
+font-family:inherit;
+font-size:14px;
+transition:.2s;
 }
 
-.demo-badge{
-    display:inline-block;
-    margin-top:12px;
-    padding:6px 15px;
-    border:1px solid rgba(212,175,55,.45);
-    border-radius:30px;
-    color:#e5c45c;
-    font-size:12px;
+.nav-btn:hover,
+.nav-btn.active{
+color:#111;
+background:linear-gradient(135deg,var(--gold2),var(--gold));
+border-color:var(--gold2);
 }
 
-/* HERO */
-
-.hero{
-    margin-top:25px;
-    padding:40px 25px;
-    text-align:center;
-    border-radius:28px;
-    background:
-        linear-gradient(145deg,rgba(212,175,55,.12),rgba(255,255,255,.025));
-    border:1px solid rgba(212,175,55,.25);
+/* محتوای اصلی */
+.content{
+width:calc(100% - 220px);
+margin-right:220px;
+padding:25px;
 }
 
-.hero h1{
-    color:#e6c65c;
-    font-size:34px;
-    margin-bottom:12px;
+.top{
+background:linear-gradient(135deg,#151515,#0e0e0e);
+border:1px solid var(--border);
+border-radius:16px;
+padding:25px;
+margin-bottom:20px;
 }
 
-.hero p{
-    max-width:800px;
-    margin:auto;
-    color:#ccc;
+.top h1{
+color:var(--gold2);
+font-size:25px;
+margin-bottom:8px;
 }
 
-.gold-line{
-    width:100px;
-    height:3px;
-    background:#d4af37;
-    margin:18px auto;
-    border-radius:10px;
+.top p{
+color:#aaa;
+font-size:13px;
+line-height:2;
 }
 
-/* WARNING */
+.page{display:none}
+.page.active{display:block}
 
-.warning{
-    margin-top:20px;
-    padding:18px;
-    border-radius:18px;
-    border:1px solid rgba(212,175,55,.4);
-    background:rgba(212,175,55,.07);
-    color:#e7d99e;
-    text-align:center;
-    font-size:13px;
+.card{
+background:#111;
+border:1px solid var(--border);
+border-radius:15px;
+padding:22px;
+margin-bottom:18px;
 }
 
-/* SECTIONS */
-
-.section{
-    margin-top:30px;
-    padding:28px;
-    border-radius:25px;
-    background:rgba(12,12,12,.9);
-    border:1px solid rgba(212,175,55,.2);
-    box-shadow:0 12px 40px rgba(0,0,0,.25);
-    scroll-margin-top:25px;
+.card h2{
+color:var(--gold2);
+margin-bottom:15px;
+font-size:19px;
 }
 
-.section-title{
-    color:#e4c35b;
-    font-size:23px;
-    margin-bottom:20px;
+.card p{
+color:#bbb;
+line-height:2;
+font-size:14px;
 }
 
-.explain{
-    color:#bbb;
-    font-size:14px;
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:14px;
 }
 
-/* METALS */
-
-.metals{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-    margin-top:22px;
+.stat{
+background:#151515;
+border:1px solid var(--border);
+border-radius:13px;
+padding:20px;
+text-align:center;
 }
 
-.metal{
-    padding:25px 18px;
-    text-align:center;
-    border-radius:20px;
-    background:linear-gradient(145deg,#151515,#080808);
-    border:1px solid rgba(212,175,55,.22);
-    transition:.3s;
+.stat strong{
+display:block;
+color:var(--gold2);
+font-size:22px;
+margin-bottom:8px;
 }
 
-.metal:hover{
-    transform:translateY(-7px);
-    border-color:#d4af37;
-    box-shadow:0 10px 35px rgba(212,175,55,.1);
+.stat span{
+color:#999;
+font-size:12px;
 }
-
-.metal-icon{
-    font-size:42px;
-    margin-bottom:8px;
-}
-
-.metal h3{
-    color:#e6c45a;
-    margin-bottom:7px;
-}
-
-.metal p{
-    color:#999;
-    font-size:13px;
-}
-
-/* FORM */
 
 .form-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px 15px;
 }
 
-.field{
-    display:flex;
-    flex-direction:column;
-    gap:7px;
+label{
+display:block;
+color:#ccc;
+margin:12px 0 7px;
+font-size:13px;
 }
 
-.field label{
-    color:#d8bf67;
-    font-size:13px;
+input,select{
+width:100%;
+padding:13px;
+background:#0b0b0b;
+border:1px solid #444;
+border-radius:9px;
+color:white;
+font-family:inherit;
+outline:none;
 }
 
-.field input,
-.field select{
-    width:100%;
-    padding:14px;
-    border-radius:13px;
-    border:1px solid #3b3b3b;
-    background:#111;
-    color:white;
-    outline:none;
-    font-family:inherit;
+input:focus,select:focus{
+border-color:var(--gold);
 }
 
-.field input:focus,
-.field select:focus{
-    border-color:#d4af37;
-    box-shadow:0 0 15px rgba(212,175,55,.1);
+.gold-btn{
+margin-top:18px;
+border:0;
+background:linear-gradient(135deg,var(--gold2),var(--gold));
+color:#111;
+padding:13px 22px;
+border-radius:9px;
+font-family:inherit;
+font-weight:bold;
+cursor:pointer;
 }
 
-/* METHODS */
+.gold-btn:hover{opacity:.9}
 
-.methods{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
-    margin-top:20px;
+.result{
+display:none;
+margin-top:18px;
+border:1px solid var(--gold);
+border-radius:12px;
+padding:17px;
+background:#15130d;
+line-height:2;
 }
 
-.method{
-    padding:22px;
-    border:1px solid #333;
-    border-radius:20px;
-    cursor:pointer;
-    transition:.3s;
-    background:#0d0d0d;
-}
+.result.show{display:block}
 
-.method:hover{
-    border-color:#d4af37;
-}
+/* =========================
+   گواهی A4
+========================= */
 
-.method.active{
-    border-color:#d4af37;
-    background:linear-gradient(145deg,rgba(212,175,55,.13),rgba(0,0,0,.5));
-    box-shadow:0 0 25px rgba(212,175,55,.08);
-}
-
-.method h3{
-    color:#e5c45c;
-    margin-bottom:7px;
-}
-
-.method p{
-    color:#999;
-    font-size:13px;
-}
-
-/* ALLOCATION */
-
-.allocation{
-    display:none;
-    margin-top:22px;
-}
-
-.allocation.show{
-    display:block;
-}
-
-.allocation-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-}
-
-.percent-box{
-    background:#111;
-    border:1px solid #333;
-    border-radius:17px;
-    padding:18px;
-    text-align:center;
-}
-
-.percent-box h4{
-    color:#e4c35b;
-    margin-bottom:8px;
-}
-
-.percent-box input{
-    text-align:center;
-    font-size:20px;
-}
-
-.total{
-    margin-top:15px;
-    text-align:center;
-    padding:13px;
-    border-radius:13px;
-    background:#111;
-    border:1px solid #333;
-}
-
-.total.good{
-    color:#9be29b;
-    border-color:#426942;
-}
-
-.total.bad{
-    color:#ff9b9b;
-    border-color:#713d3d;
-}
-
-/* SUGGESTION */
-
-.suggestion{
-    display:none;
-    margin-top:20px;
-}
-
-.suggestion.show{
-    display:block;
-}
-
-.bar-row{
-    margin:17px 0;
-}
-
-.bar-top{
-    display:flex;
-    justify-content:space-between;
-    color:#ccc;
-    font-size:13px;
-    margin-bottom:6px;
-}
-
-.bar{
-    height:13px;
-    border-radius:20px;
-    background:#222;
-    overflow:hidden;
-}
-
-.bar-fill{
-    height:100%;
-    background:linear-gradient(90deg,#8f7217,#e8cb61);
-    border-radius:20px;
-    transition:.7s;
-}
-
-/* BUTTON */
-
-.btn{
-    border:none;
-    padding:15px 25px;
-    border-radius:15px;
-    cursor:pointer;
-    font-family:inherit;
-    font-weight:bold;
-    background:linear-gradient(135deg,#d4af37,#f0d879);
-    color:#111;
-    transition:.3s;
-    margin-top:18px;
-}
-
-.btn:hover{
-    transform:translateY(-2px);
-    box-shadow:0 8px 25px rgba(212,175,55,.2);
-}
-
-.btn.dark{
-    background:#151515;
-    color:#d4af37;
-    border:1px solid #5a4920;
-}
-
-/* SIGNATURE */
-
-.signature-area{
-    margin-top:25px;
-}
-
-.signature-box{
-    background:#fff;
-    border-radius:16px;
-    padding:5px;
-    border:2px solid #d4af37;
-    max-width:700px;
-    margin:auto;
-    box-shadow:0 5px 25px rgba(0,0,0,.3);
-}
-
-canvas{
-    display:block;
-    width:100%;
-    height:200px;
-    background:#fff;
-    border-radius:10px;
-    touch-action:none;
-    cursor:crosshair;
-}
-
-.signature-note{
-    text-align:center;
-    color:#999;
-    font-size:12px;
-    margin-top:8px;
-}
-
-/* CERTIFICATE */
-
-#certificate{
-    display:none;
+.certificate-wrap{
+display:none;
+margin-top:20px;
 }
 
 .certificate{
-    position:relative;
-    overflow:hidden;
-    background:
-        radial-gradient(circle at center,rgba(212,175,55,.09),transparent 55%),
-        #090909;
-    border:2px solid #d4af37;
-    border-radius:25px;
-    padding:35px;
-    box-shadow:
-        0 0 0 7px rgba(212,175,55,.06),
-        0 25px 60px rgba(0,0,0,.5);
+position:relative;
+width:210mm;
+min-height:297mm;
+margin:0 auto;
+background:#faf8ef;
+color:#222;
+padding:18mm;
+border:5px double #b99a4c;
+box-shadow:0 10px 35px rgba(0,0,0,.45);
+overflow:hidden;
 }
 
-.certificate:before{
-    content:"نمونه آزمایشی";
-    position:absolute;
-    font-size:65px;
-    color:rgba(212,175,55,.035);
-    transform:rotate(-25deg);
-    left:50%;
-    top:45%;
-    white-space:nowrap;
-    pointer-events:none;
+/* قاب داخلی */
+.certificate:after{
+content:"";
+position:absolute;
+inset:8mm;
+border:1px solid #c6aa62;
+pointer-events:none;
 }
 
+/* واترمارک */
+.watermark{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%) rotate(-28deg);
+font-size:62px;
+font-weight:bold;
+color:rgba(150,115,40,.09);
+white-space:nowrap;
+z-index:0;
+}
+
+/* هدر */
 .cert-head{
-    text-align:center;
-    border-bottom:1px solid rgba(212,175,55,.3);
-    padding-bottom:20px;
+position:relative;
+z-index:2;
+text-align:center;
+border-bottom:2px solid #b99a4c;
+padding-bottom:15px;
 }
 
-.cert-logo{
-    width:70px;
-    height:70px;
-    margin:auto;
-    border:2px solid #d4af37;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#d4af37;
-    font-size:30px;
+.cert-symbol{
+width:62px;
+height:62px;
+border:2px solid #9c7d36;
+border-radius:50%;
+margin:0 auto 10px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:31px;
+color:#806522;
+background:#f6f0dd;
 }
 
-.cert-head h2{
-    color:#e6c65c;
-    margin-top:10px;
+.cert-head h1{
+font-size:25px;
+color:#806522;
+margin-bottom:7px;
 }
 
-.cert-head p{
-    color:#999;
-    font-size:12px;
+.cert-head h3{
+font-size:13px;
+font-weight:normal;
+color:#555;
 }
 
-.cert-number{
-    display:inline-block;
-    margin-top:12px;
-    padding:7px 15px;
-    border-radius:30px;
-    border:1px solid #5c4a1e;
-    color:#d8bd5e;
-    direction:ltr;
+.cert-meta{
+position:relative;
+z-index:2;
+display:flex;
+justify-content:space-between;
+margin:18px 0;
+font-size:11px;
+color:#555;
 }
 
-.cert-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:13px;
-    margin-top:25px;
+.cert-title{
+position:relative;
+z-index:2;
+text-align:center;
+margin:12px 0 20px;
 }
 
-.cert-item{
-    background:#101010;
-    border:1px solid #252525;
-    border-radius:13px;
-    padding:12px;
+.cert-title h2{
+font-size:20px;
+color:#765d21;
+margin-bottom:6px;
 }
 
-.cert-item span{
-    display:block;
-    color:#888;
-    font-size:11px;
+.cert-title p{
+font-size:11px;
+color:#666;
 }
 
-.cert-item strong{
-    color:#eee;
-    font-size:14px;
+.cert-table{
+position:relative;
+z-index:2;
+width:100%;
+border-collapse:collapse;
+margin-bottom:18px;
 }
 
-.cert-allocation{
-    margin-top:20px;
-    padding:18px;
-    border-radius:15px;
-    border:1px solid #332a14;
-    background:#0d0d0d;
+.cert-table td{
+border:1px solid #c6b98e;
+padding:12px 10px;
+font-size:11px;
 }
 
-.cert-allocation h3{
-    color:#d9bb55;
-    margin-bottom:12px;
+.cert-table td:nth-child(odd){
+background:#eee8d7;
+font-weight:bold;
+width:22%;
 }
 
-.alloc-line{
-    display:flex;
-    justify-content:space-between;
-    padding:6px 0;
-    border-bottom:1px solid #1d1d1d;
-    color:#bbb;
+.cert-note{
+position:relative;
+z-index:2;
+border:1px solid #c6b98e;
+background:#f4efdf;
+padding:13px;
+font-size:10px;
+line-height:2;
+text-align:justify;
 }
 
-.profit-box{
-    margin-top:20px;
-    padding:20px;
-    text-align:center;
-    border-radius:18px;
-    background:linear-gradient(145deg,rgba(212,175,55,.12),rgba(0,0,0,.5));
-    border:1px solid rgba(212,175,55,.3);
+.cert-signatures{
+position:relative;
+z-index:3;
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+margin-top:35px;
 }
 
-.profit-box span{
-    color:#999;
-    font-size:12px;
+/* مهر */
+.stamp{
+width:112px;
+height:112px;
+border:3px solid #98782c;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:#806522;
+font-size:10px;
+font-weight:bold;
+transform:rotate(-12deg);
+position:relative;
 }
 
-.profit-box strong{
-    display:block;
-    color:#e9cb62;
-    font-size:25px;
-    margin-top:4px;
+.stamp:before{
+content:"";
+position:absolute;
+inset:7px;
+border:1px solid #98782c;
+border-radius:50%;
+}
+
+.stamp span{
+position:relative;
+}
+
+/* امضا */
+.signature-box{
+text-align:center;
+min-width:220px;
+}
+
+.signature{
+font-family:"Brush Script MT","Segoe Script","Lucida Handwriting",cursive;
+font-size:40px;
+font-style:italic;
+font-weight:bold;
+color:#172c55;
+transform:rotate(-6deg);
+margin-bottom:3px;
+}
+
+.signature-line{
+width:200px;
+border-top:1px solid #777;
+padding-top:7px;
+font-size:10px;
+color:#555;
+margin:auto;
 }
 
 .cert-footer{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-    margin-top:25px;
+position:absolute;
+bottom:9mm;
+right:18mm;
+left:18mm;
+border-top:1px solid #c6b98e;
+padding-top:8px;
+text-align:center;
+font-size:8px;
+color:#777;
+z-index:3;
 }
 
-.seal{
-    width:130px;
-    height:130px;
-    border:3px double #d4af37;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:#d4af37;
-    font-size:12px;
-    margin:auto;
-    transform:rotate(-8deg);
+/* دکمه چاپ */
+.print-area{
+text-align:center;
+margin:20px 0;
 }
 
-.customer-sign{
-    text-align:center;
+.print-btn{
+border:0;
+background:linear-gradient(135deg,#f3d889,#d8b45a);
+color:#111;
+padding:13px 28px;
+border-radius:9px;
+font-family:inherit;
+font-weight:bold;
+cursor:pointer;
 }
 
-.customer-sign img{
-    max-width:220px;
-    width:100%;
-    height:100px;
-    object-fit:contain;
-    background:white;
-    border-radius:10px;
-    padding:5px;
-}
-
-.customer-sign p{
-    color:#aaa;
-    font-size:12px;
-    margin-top:4px;
-}
-
-.cert-disclaimer{
-    margin-top:25px;
-    padding:12px;
-    border-radius:12px;
-    background:#17130a;
-    border:1px solid #4b3d19;
-    color:#bcae80;
-    text-align:center;
-    font-size:11px;
-}
-
-/* TRACKING */
-
-.track-box{
-    max-width:600px;
-    margin:auto;
-    text-align:center;
-}
-
-.track-box input{
-    width:100%;
-    padding:16px;
-    background:#111;
-    border:1px solid #333;
-    color:#fff;
-    border-radius:14px;
-    text-align:center;
-    font-size:18px;
-    direction:ltr;
-}
-
-.track-result{
-    display:none;
-    margin-top:20px;
-    text-align:right;
-    background:#0d0d0d;
-    border:1px solid #413718;
-    border-radius:18px;
-    padding:20px;
-}
-
-.track-result.show{
-    display:block;
-}
-
-.track-result h3{
-    color:#e4c35b;
-    margin-bottom:15px;
-}
-
-.track-row{
-    display:flex;
-    justify-content:space-between;
-    gap:10px;
-    padding:8px 0;
-    border-bottom:1px solid #202020;
-    color:#bbb;
-}
-
-.track-row strong{
-    color:#fff;
-}
-
-/* پیام وضعیت */
-
-.status-message{
-    display:none;
-    margin-top:18px;
-    padding:13px;
-    border-radius:13px;
-    text-align:center;
-    font-size:13px;
-}
-
-.status-message.show{
-    display:block;
-}
-
-.status-message.success{
-    color:#9be29b;
-    background:rgba(50,120,50,.1);
-    border:1px solid #426942;
-}
-
-.status-message.error{
-    color:#ff9b9b;
-    background:rgba(120,50,50,.1);
-    border:1px solid #713d3d;
-}
-
-/* FOOTER */
-
-footer{
-    text-align:center;
-    color:#777;
-    font-size:12px;
-    padding:35px 0;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:900px){
-
-    .side-menu{
-        position:sticky;
-        top:8px;
-        right:auto;
-        transform:none;
-        width:100%;
-        margin:10px auto;
-        display:flex;
-        align-items:center;
-        gap:5px;
-        overflow-x:auto;
-        padding:8px;
-    }
-
-    .side-title{
-        display:none;
-    }
-
-    .side-menu a{
-        flex:0 0 auto;
-        margin:0;
-        white-space:nowrap;
-    }
-
-    .page-content{
-        margin-right:0;
-    }
-}
-
+/* موبایل */
 @media(max-width:750px){
 
-    .hero h1{
-        font-size:25px;
-    }
+.sidebar{width:175px}
 
-    .metals,
-    .methods,
-    .allocation-grid,
-    .form-grid,
-    .cert-grid,
-    .cert-footer{
-        grid-template-columns:1fr;
-    }
+.content{
+width:calc(100% - 175px);
+margin-right:175px;
+padding:12px;
+}
 
-    .section{
-        padding:20px;
-    }
+.grid,.form-grid{
+grid-template-columns:1fr;
+}
 
-    .certificate{
-        padding:22px 15px;
-    }
+.certificate{
+width:100%;
+min-height:auto;
+padding:25px;
+}
 
-    .brand{
-        font-size:21px;
-    }
+.cert-signatures{
+gap:20px;
+flex-wrap:wrap;
+}
+
+.watermark{font-size:35px}
+
+}
+
+@media(max-width:500px){
+
+.sidebar{width:145px;padding:12px 8px}
+
+.content{
+width:calc(100% - 145px);
+margin-right:145px;
+}
+
+.nav-btn{
+font-size:11px;
+padding:11px 7px;
+}
+
+.logo{font-size:15px}
+
+.logo-sub{font-size:9px}
+
+}
+
+/* چاپ */
+@media print{
+
+body{
+background:white;
+}
+
+.sidebar,
+.top,
+.content > .page:not(#certificate),
+.print-area,
+#certificate > .card{
+display:none !important;
+}
+
+.app,
+.content{
+display:block;
+width:100%;
+margin:0;
+padding:0;
+}
+
+#certificate{
+display:block !important;
+}
+
+.certificate-wrap{
+display:block !important;
+margin:0;
+}
+
+.certificate{
+width:210mm;
+min-height:297mm;
+margin:0;
+box-shadow:none;
+border:5px double #b99a4c;
+}
+
+@page{
+size:A4;
+margin:0;
+}
+
 }
 </style>
 </head>
 
 <body>
 
-<!-- =========================
-     منوی سمت راست
-========================= -->
+<div class="app">
 
-<nav class="side-menu">
+<aside class="sidebar">
 
-    <div class="side-title">
-        ⚖️ بخش‌های سامانه
-    </div>
+<div class="logo">⚖️ پارسا کرمی</div>
+<div class="logo-sub">سامانه تخصصی فلزات</div>
 
-    <a href="#home" class="active">🏠 معرفی</a>
-    <a href="#applicant">👤 اطلاعات متقاضی</a>
-    <a href="#metalsMethod">🪙 ترکیب فلزات</a>
-    <a href="#signature">✍️ امضای دیجیتال</a>
-    <a href="#issue">📄 صدور گواهی</a>
-    <a href="#certificate">🏆 گواهی صادرشده</a>
-    <a href="#tracking">🔎 پیگیری</a>
+<button class="nav-btn active" onclick="showPage('info',this)">
+ℹ️ اطلاعات
+</button>
 
-</nav>
+<button class="nav-btn" onclick="showPage('metals',this)">
+🥇 طرح فلزات
+</button>
 
+<button class="nav-btn" onclick="showPage('purchase',this)">
+🛒 خرید آزمایشی
+</button>
 
-<div class="container page-content">
+<button class="nav-btn" onclick="showPage('certificate',this)">
+📜 گواهی صادرشده
+</button>
 
-<!-- HEADER -->
+<button class="nav-btn" onclick="showPage('tracking',this)">
+🔎 کد پیگیری
+</button>
 
-<header id="home">
+</aside>
 
-    <div class="header-box">
+<main class="content">
 
-        <div class="logo">⚖</div>
-
-        <div class="brand">
-            شرکت پارسا کرمی
-        </div>
-
-        <div class="subtitle">
-            سامانه آزمایشی بیمه مبتنی بر فلزات
-        </div>
-
-        <div class="demo-badge">
-            نسخه آزمایشی و آموزشی
-        </div>
-
-    </div>
-
-</header>
+<div class="top">
+<h1>سامانه خدمات مبتنی بر فلزات</h1>
+<p>
+محیط آزمایشی جهت ثبت اطلاعات، انتخاب طرح، محاسبه سود فرضی
+و صدور گواهی الکترونیکی.
+</p>
+</div>
 
 
-<!-- HERO -->
+<!-- اطلاعات -->
 
-<section class="hero">
+<section id="info" class="page active">
 
-    <h1>بیمه مبتنی بر طلا، نقره و مس</h1>
+<div class="card">
 
-    <div class="gold-line"></div>
+<h2>درباره سامانه</h2>
 
-    <p>
-        در این طرح آزمایشی، مبلغ قرارداد به‌صورت فرضی میان فلزات
-        طلا، نقره و مس تخصیص داده می‌شود. هدف این سامانه نمایش
-        یک مدل مفهومی برای مدیریت سرمایه و پوشش مالی مبتنی بر
-        دارایی‌های فلزی است.
-    </p>
+<p>
+این سامانه یک نمونه آزمایشی از فرآیند ثبت طرح‌های مبتنی بر
+فلزات است. کاربر می‌تواند اطلاعات خود را وارد کرده، نوع طرح
+و مدت قرارداد را انتخاب کند و در پایان گواهی الکترونیکی دریافت نماید.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="stat">
+<strong>۹۵٪</strong>
+<span>سهم فرضی مشتری</span>
+</div>
+
+<div class="stat">
+<strong>۵٪</strong>
+<span>سهم فرضی سامانه</span>
+</div>
+
+<div class="stat">
+<strong>۳</strong>
+<span>فلز اصلی</span>
+</div>
+
+</div>
 
 </section>
 
 
-<div class="warning">
+<!-- فلزات -->
 
-    ⚠️ <strong>توجه:</strong>
-    این سامانه کاملاً آزمایشی و نمایشی است و گواهی صادرشده
-    فاقد اعتبار بیمه‌ای، قراردادی و مالی واقعی است.
-    اعداد سود نیز صرفاً محاسبات فرضی هستند و تضمین سود محسوب نمی‌شوند.
+<section id="metals" class="page">
+
+<div class="card">
+
+<h2>طرح مبتنی بر فلزات</h2>
+
+<p>
+در این مدل آزمایشی، ترکیب طرح می‌تواند شامل طلا، نقره و مس باشد.
+ارقام و محاسبات صرفاً جهت نمایش عملکرد سامانه هستند.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="stat">
+<strong>طلا</strong>
+<span>فلز اصلی طرح</span>
+</div>
+
+<div class="stat">
+<strong>نقره</strong>
+<span>بخش دوم ترکیب</span>
+</div>
+
+<div class="stat">
+<strong>مس</strong>
+<span>بخش سوم ترکیب</span>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- خرید -->
+
+<section id="purchase" class="page">
+
+<div class="card">
+
+<h2>ثبت خرید آزمایشی</h2>
+
+<div class="form-grid">
+
+<div>
+<label>نام و نام خانوادگی</label>
+<input id="fullName" type="text" placeholder="مثلاً پارسا کرمی">
+</div>
+
+<div>
+<label>کد ملی</label>
+<input id="nationalId" type="text" maxlength="10" placeholder="۱۰ رقم">
+</div>
+
+<div>
+<label>مبلغ فرضی (تومان)</label>
+<input id="amount" type="number" placeholder="2000000">
+</div>
+
+<div>
+<label>مدت قرارداد</label>
+<select id="duration">
+<option value="3">۳ ماهه</option>
+<option value="6">۶ ماهه</option>
+<option value="12">۱۲ ماهه</option>
+</select>
+</div>
+
+<div>
+<label>نوع طرح</label>
+<select id="plan">
+<option value="ترکیبی">طرح ترکیبی طلا، نقره و مس</option>
+<option value="طلا">طرح طلا</option>
+<option value="نقره">طرح نقره</option>
+<option value="مس">طرح مس</option>
+</select>
+</div>
+
+</div>
+
+<button class="gold-btn" onclick="createPurchase()">
+ثبت خرید آزمایشی
+</button>
+
+<div id="purchaseResult" class="result"></div>
+
+</div>
+
+</section>
+
+
+<!-- گواهی -->
+
+<section id="certificate" class="page">
+
+<div class="card">
+
+<h2>گواهی صادرشده</h2>
+
+<p>
+پس از ثبت خرید آزمایشی، گواهی در این قسمت نمایش داده می‌شود.
+</p>
+
+</div>
+
+<div id="certificateWrap" class="certificate-wrap">
+
+<div class="certificate">
+
+<div class="watermark">
+نمونه آزمایشی
+</div>
+
+<div class="cert-head">
+
+<div class="cert-symbol">⚖</div>
+
+<h1>پارسا کرمی</h1>
+
+<h3>
+سامانه تخصصی خدمات مبتنی بر فلزات
+</h3>
+
+</div>
+
+<div class="cert-meta">
+
+<span>
+شماره گواهی:
+<strong id="certNumber">---</strong>
+</span>
+
+<span>
+وضعیت: ثبت آزمایشی
+</span>
+
+</div>
+
+<div class="cert-title">
+
+<h2>گواهی ثبت طرح مبتنی بر فلزات</h2>
+
+<p>
+این گواهی در سامانه الکترونیکی صادر شده است.
+</p>
+
+</div>
+
+<table class="cert-table">
+
+<tr>
+<td>نام و نام خانوادگی</td>
+<td id="certName">---</td>
+
+<td>کد ملی</td>
+<td id="certNational">---</td>
+</tr>
+
+<tr>
+<td>نوع طرح</td>
+<td id="certPlan">---</td>
+
+<td>مبلغ ثبت‌شده</td>
+<td id="certAmount">---</td>
+</tr>
+
+<tr>
+<td>مدت قرارداد</td>
+<td id="certDuration">---</td>
+
+<td>تاریخ صدور</td>
+<td id="certIssue">---</td>
+</tr>
+
+<tr>
+<td>تاریخ اعتبار</td>
+<td id="certExpire">---</td>
+
+<td>کد پیگیری</td>
+<td id="certTracking">---</td>
+</tr>
+
+</table>
+
+<div class="cert-note">
+
+<strong>توضیحات:</strong><br>
+
+این گواهی در محیط آزمایشی سامانه صادر شده و اطلاعات،
+محاسبات و نتایج نمایش‌داده‌شده جنبه نمایشی دارند.
+این سند به‌تنهایی ایجادکننده تعهد بیمه‌ای، سرمایه‌گذاری
+یا مالی واقعی نیست.
+
+</div>
+
+<div class="cert-signatures">
+
+<div class="stamp">
+
+<span>
+پارسا کرمی<br>
+سامانه فلزات<br>
+نمونه آزمایشی<br>
+★ معتبر در Demo ★
+</span>
+
+</div>
+
+<div class="signature-box">
+
+<div class="signature">
+Parsa Karami
+</div>
+
+<div class="signature-line">
+امضای مسئول سامانه
+</div>
+
+</div>
+
+</div>
+
+<div class="cert-footer">
+سامانه آزمایشی خدمات مبتنی بر فلزات | پارسا کرمی
+</div>
+
+</div>
+
+<div class="print-area">
+
+<button class="print-btn" onclick="printCertificate()">
+🖨️ چاپ گواهی
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- پیگیری -->
+
+<section id="tracking" class="page">
+
+<div class="card">
+
+<h2>پیگیری گواهی</h2>
+
+<label>کد پیگیری آزمایشی</label>
+
+<input id="trackingInput" placeholder="مثلاً PK-123456">
+
+<button class="gold-btn" onclick="trackCertificate()">
+بررسی کد
+</button>
+
+<div id="trackingResult" class="result"></div>
+
+</div>
+
+</section>
+
+</main>
 
 </div>
 
 
-<!-- IDEA -->
+<script>
 
-<section class="section">
+let certificateData=null;
 
-    <h2 class="section-title">
-        🪙 ایده این طرح چیست؟
-    </h2>
 
-    <p class="explain">
+/* تغییر صفحه */
 
-        در این مدل مفهومی، شخص می‌تواند یک مبلغ فرضی را برای یک
-        دوره مشخص وارد سامانه کند و انتخاب کند که تخصیص فرضی آن
-        توسط سیستم پیشنهاد شود یا خودش درصد طلا، نقره و مس را
-        تعیین کند.
+function showPage(pageId,button){
 
-        <br><br>
+document.querySelectorAll(".page").forEach(function(page){
+page.classList.remove("active");
+});
 
-        سیستم در حالت پیشنهاد خودکار، یک ترکیب متغیر و شبیه‌سازی‌شده
-        ارائه می‌کند. در حالت دستی نیز شخص می‌تواند ترکیب مورد نظر
-        خود را مشخص کند؛ مجموع درصدها باید دقیقاً برابر ۱۰۰ درصد باشد.
+const page=document.getElementById(pageId);
 
-        <br><br>
+if(page){
+page.classList.add("active");
+}
 
-        در محاسبه نمایشی این نسخه، سهم فرضی مشتری ۹۵ درصد و سهم
-        فرضی سیستم ۵ درصد در نظر گرفته شده است.
+document.querySelectorAll(".nav-btn").forEach(function(btn){
+btn.classList.remove("active");
+});
 
-    </p>
+if(button){
+button.classList.add("active");
+}
 
-    <div class="metals">
+}
 
-        <div class="metal">
-            <div class="metal-icon">🪙</div>
-            <h3>طلا</h3>
-            <p>
-                فلزی با ارزش بالا که در این مدل به‌عنوان
-                یکی از اجزای تخصیص فرضی استفاده می‌شود.
-            </p>
-        </div>
 
-        <div class="metal">
-            <div class="metal-icon">🥈</div>
-            <h3>نقره</h3>
-            <p>
-                یکی دیگر از دارایی‌های فلزی مورد استفاده
-                در ترکیب آزمایشی سامانه.
-            </p>
-        </div>
+/* عدد تصادفی */
 
-        <div class="metal">
-            <div class="metal-icon">🔶</div>
-            <h3>مس</h3>
-            <p>
-                فلزی صنعتی که در مدل آزمایشی می‌تواند
-                بخشی از ترکیب سرمایه را تشکیل دهد.
-            </p>
-        </div>
+function randomNumber(length){
 
-    </div>
+let result="";
 
-</section>
+for(let i=0;i<length;i++){
+result+=Math.floor(Math.random()*10);
+}
 
+return result;
 
-<!-- APPLICANT -->
+}
 
-<section class="section" id="applicant">
 
-    <h2 class="section-title">
-        👤 اطلاعات متقاضی
-    </h2>
+/* فرمت مبلغ */
 
-    <div class="form-grid">
+function formatMoney(number){
 
-        <div class="field">
-            <label>نام و نام خانوادگی</label>
-            <input id="name" type="text" placeholder="مثلاً پارسا کرمی">
-        </div>
+return Number(number).toLocaleString("fa-IR")+" تومان";
 
-        <div class="field">
-            <label>کد ملی</label>
-            <input id="nationalId" type="text" maxlength="10"
-                   inputmode="numeric"
-                   placeholder="۱۰ رقم">
-        </div>
+}
 
-        <div class="field">
-            <label>شماره تماس</label>
-            <input id="phone" type="tel"
-                   inputmode="tel"
-                   placeholder="مثلاً 09123456789">
-        </div>
 
-        <div class="field">
-            <label>مبلغ قرارداد آزمایشی</label>
-            <input id="amount" type="number"
-                   min="1"
-                   placeholder="مثلاً 2000000">
-        </div>
+/* تاریخ */
 
-        <div class="field">
-            <label>مدت قرارداد</label>
+function todayPersian(){
 
-            <select id="duration">
+const d=new Date();
 
-                <option value="1">۱ ماهه</option>
-                <option value="3">۳ ماهه</option>
-                <option value="6">۶ ماهه</option>
-                <option value="12">۱۲ ماهه</option>
+const y=d.getFullYear()-621;
+const m=d.getMonth()+1;
+const day=d.getDate();
 
-            </select>
+return y+"/"+String(m).padStart(2,"0")+"/"+String(day).padStart(2,"0");
 
-        </div>
+}
 
-    </div>
 
-</section>
+/* تاریخ اعتبار */
 
+function expirationDate(months){
 
-<!-- METHODS -->
+const d=new Date();
 
-<section class="section" id="metalsMethod">
+d.setMonth(d.getMonth()+Number(months));
 
-    <h2 class="section-title">
-        ⚙️ روش تعیین ترکیب فلزات
-    </h2>
+const y=d.getFullYear()-621;
+const m=d.getMonth()+1;
+const day=d.getDate();
 
-    <p class="explain">
-        یکی از دو روش زیر را انتخاب کنید.
-    </p>
+return y+"/"+String(m).padStart(2,"0")+"/"+String(day).padStart(2,"0");
 
-    <div class="methods">
+}
 
-        <div class="method"
-             id="autoMethod"
-             onclick="selectMethod('auto')">
 
-            <h3>📊 پیشنهاد متغیر</h3>
+/* ایجاد خرید */
 
-            <p>
-                سیستم یک ترکیب آزمایشی و متغیر برای طلا،
-                نقره و مس پیشنهاد می‌کند.
-            </p>
+function createPurchase(){
 
-        </div>
+const name=document.getElementById("fullName").value.trim();
+const national=document.getElementById("nationalId").value.trim();
+const amount=document.getElementById("amount").value;
+const duration=document.getElementById("duration").value;
+const plan=document.getElementById("plan").value;
 
+if(!name || !national || !amount){
 
-        <div class="method"
-             id="manualMethod"
-             onclick="selectMethod('manual')">
+alert("لطفاً تمام اطلاعات را وارد کنید.");
+return;
 
-            <h3>✍️ تعیین توسط شخص</h3>
+}
 
-            <p>
-                درصد طلا، نقره و مس را خودتان تعیین کنید.
-                مجموع باید دقیقاً ۱۰۰٪ باشد.
-            </p>
+if(!/^\d{10}$/.test(national)){
 
-        </div>
+alert("کد ملی باید دقیقاً ۱۰ رقم باشد.");
+return;
 
-    </div>
+}
 
+if(Number(amount)<=0){
 
-    <!-- AUTO -->
+alert("مبلغ واردشده معتبر نیست.");
+return;
 
-    <div id="suggestion" class="suggestion">
+}
 
-        <div class="warning">
 
-            📊 ترکیب زیر صرفاً یک پیشنهاد شبیه‌سازی‌شده است
-            و به اطلاعات لحظه‌ای بازار متصل نیست.
+const tracking="PK-"+randomNumber(6);
+const certificateNumber="PK-C-"+randomNumber(7);
 
-        </div>
 
+/* سود کاملاً فرضی */
 
-        <div class="bar-row">
+const hypotheticalProfit=Number(amount)*0.10;
+const customerProfit=hypotheticalProfit*0.95;
+const systemShare=hypotheticalProfit*0.05;
 
-            <div class="bar-top">
-                <span>طلا</span>
-                <strong id="goldAutoText">55%</strong>
-            </div>
 
-            <div class="bar">
-                <div id="goldAutoBar"
-                     class="bar-fill"
-                     style="width:55%">
-                </div>
-            </div>
+certificateData={
+name:name,
+national:national,
+amount:Number(amount),
+duration:duration,
+plan:plan,
+tracking:tracking,
+certificateNumber:certificateNumber,
+issue:todayPersian(),
+expire:expirationDate(duration),
+customerProfit:customerProfit,
+systemShare:systemShare
+};
 
-        </div>
 
+/* نتیجه */
 
-        <div class="bar-row">
+const result=document.getElementById("purchaseResult");
 
-            <div class="bar-top">
-                <span>نقره</span>
-                <strong id="silverAutoText">25%</strong>
-            </div>
+result.innerHTML=
+"<b>خرید آزمایشی با موفقیت ثبت شد.</b><br>"+
+"طرح: "+plan+"<br>"+
+"مبلغ: "+formatMoney(amount)+"<br>"+
+"سود فرضی مشتری: "+formatMoney(customerProfit)+"<br>"+
+"سهم فرضی سامانه: "+formatMoney(systemShare)+"<br>"+
+"کد پیگیری: <b>"+tracking+"</b>";
 
-            <div class="bar">
-                <div id="silverAutoBar"
-                     class="bar-fill"
-                     style="width:25%">
-                </div>
-            </div>
+result.classList.add("show");
 
-        </div>
 
+/* اطلاعات گواهی */
 
-        <div class="bar-row">
+document.getElementById("certNumber").textContent=certificateNumber;
+document.getElementById("certName").textContent=name;
+document.getElementById("certNational").textContent=national;
+document.getElementById("certPlan").textContent=plan;
+document.getElementById("certAmount").textContent=formatMoney(amount);
+document.getElementById("certDuration").textContent=duration+" ماه";
+document.getElementById("certIssue").textContent=todayPersian();
+document.getElementById("certExpire").textContent=expirationDate(duration);
+document.getElementById("certTracking").textContent=tracking;
 
-            <div class="bar-top">
-                <span>مس</span>
-                <strong id="copperAutoText">20%</strong>
-            </div>
+document.getElementById("certificateWrap").style.display="block";
 
-            <div class="bar">
-                <div id="copperAutoBar"
-                     class="bar-fill"
-                     style="width:20%">
-                </div>
-            </div>
 
-        </div>
+/* انتقال به گواهی */
 
+const certificateButton=document.querySelectorAll(".nav-btn")[3];
 
-        <button class="btn dark"
-                type="button"
-                onclick="newSuggestion()">
+showPage("certificate",certificateButton);
 
-            🔄 تغییر پیشنهاد
+}
 
-        </button>
 
-    </div>
+/* چاپ */
 
+function printCertificate(){
 
-    <!-- MANUAL -->
+if(!certificateData){
 
-    <div id="manualAllocation" class="allocation">
+alert("ابتدا یک گواهی آزمایشی صادر کنید.");
+return;
 
-        <div class="allocation-grid">
+}
 
-            <div class="percent-box">
+window.print();
 
-                <h4>🪙 طلا</h4>
+}
 
-              
+
+/* پیگیری */
+
+function trackCertificate(){
+
+const input=document.getElementById("trackingInput").value.trim();
+const result=document.getElementById("trackingResult");
+
+if(!input){
+
+result.innerHTML="لطفاً کد پیگیری را وارد کنید.";
+result.classList.add("show");
+return;
+
+}
+
+if(certificateData && input===certificateData.tracking){
+
+result.innerHTML=
+"<b>✓ گواهی پیدا شد</b><br>"+
+"نام: "+certificateData.name+"<br>"+
+"طرح: "+certificateData.plan+"<br>"+
+"شماره گواهی: "+certificateData.certificateNumber+"<br>"+
+"تاریخ صدور: "+certificateData.issue+"<br>"+
+"تاریخ اعتبار: "+certificateData.expire+"<br>"+
+"وضعیت: ثبت‌شده در محیط آزمایشی";
+
+}else{
+
+result.innerHTML=
+"کد واردشده در این محیط آزمایشی پیدا نشد.";
+
+}
+
+result.classList.add("show");
+
+}
+
+</script>
+
+</body>
+    </html>
