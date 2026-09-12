@@ -2,1531 +2,1122 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>ایران‌گرد | راهنمای حرفه‌ای گردشگری ایران</title>
+<title>پارسا پوشش فلز | بیمه بیکاری مبتنی بر فلزات</title>
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-html{
-    scroll-behavior:smooth;
+:root{
+  --black:#070707;
+  --black2:#111;
+  --gold:#d7ad55;
+  --gold2:#f0d18a;
+  --text:#f5f5f5;
+  --muted:#aaa;
+  --border:rgba(215,173,85,.22);
 }
 
 body{
-    font-family:Tahoma,Arial,sans-serif;
-    background:#07110e;
-    color:#fff;
-    overflow-x:hidden;
+  font-family:Tahoma,Arial,sans-serif;
+  background:
+    radial-gradient(circle at top,rgba(215,173,85,.10),transparent 35%),
+    var(--black);
+  color:var(--text);
+  line-height:1.9;
 }
 
-/* ================= LOADING ================= */
-
-.loader{
-    position:fixed;
-    inset:0;
-    background:#050b09;
-    z-index:9999;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    transition:1s;
+.container{
+  width:min(1100px,92%);
+  margin:auto;
 }
 
-.loader-logo{
-    font-size:55px;
-    color:#d9ad55;
-    animation:logoPulse 1.5s infinite;
+header{
+  padding:22px 0;
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(7,7,7,.92);
+  backdrop-filter:blur(12px);
 }
 
-.loader p{
-    margin-top:15px;
-    color:#aaa;
+.header-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
 }
 
-@keyframes logoPulse{
-    0%,100%{transform:scale(1);opacity:.7}
-    50%{transform:scale(1.12);opacity:1}
+.logo{
+  font-size:20px;
+  font-weight:bold;
+  color:var(--gold2);
 }
 
-/* ================= HEADER ================= */
-
-.hero{
-    min-height:100vh;
-    position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    overflow:hidden;
-
-    background:
-    linear-gradient(
-        rgba(0,0,0,.45),
-        rgba(0,0,0,.82)
-    ),
-    url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Naqsh-e_Jahan_Square.jpg/1280px-Naqsh-e_Jahan_Square.jpg")
-    center/cover fixed;
+.logo small{
+  display:block;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:normal;
 }
-
-.hero::before{
-    content:"";
-    position:absolute;
-    width:700px;
-    height:700px;
-    border-radius:50%;
-    background:rgba(217,173,85,.12);
-    filter:blur(100px);
-    animation:lightMove 7s infinite alternate;
-}
-
-@keyframes lightMove{
-    from{
-        transform:translate(-180px,-100px);
-    }
-    to{
-        transform:translate(180px,100px);
-    }
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    max-width:900px;
-    padding:30px;
-    animation:heroIn 1.5s ease;
-}
-
-@keyframes heroIn{
-    from{
-        opacity:0;
-        transform:translateY(50px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-.hero h1{
-    font-size:clamp(55px,10vw,105px);
-    color:#e5bd69;
-    text-shadow:
-        0 0 15px rgba(229,189,105,.4),
-        0 0 50px rgba(229,189,105,.15);
-}
-
-.hero h2{
-    font-size:clamp(20px,4vw,35px);
-    margin:10px 0 20px;
-}
-
-.hero p{
-    color:#ddd;
-    font-size:18px;
-}
-
-.hero-btn{
-    display:inline-block;
-    margin-top:30px;
-    padding:15px 35px;
-    border-radius:40px;
-    background:linear-gradient(135deg,#e7c477,#b88932);
-    color:#111;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.4s;
-    box-shadow:0 10px 35px rgba(0,0,0,.4);
-}
-
-.hero-btn:hover{
-    transform:translateY(-6px) scale(1.04);
-    box-shadow:0 15px 50px rgba(229,189,105,.25);
-}
-
-/* ================= NAV ================= */
 
 nav{
-    position:sticky;
-    top:0;
-    z-index:100;
-    padding:15px;
-    text-align:center;
-    background:rgba(4,12,9,.92);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid rgba(217,173,85,.2);
+  display:flex;
+  gap:8px;
 }
 
 nav a{
-    color:#ddd;
-    text-decoration:none;
-    margin:0 12px;
-    font-size:14px;
-    transition:.3s;
+  color:#ddd;
+  text-decoration:none;
+  font-size:13px;
+  padding:7px 12px;
+  border-radius:20px;
 }
 
 nav a:hover{
-    color:#e5bd69;
+  background:rgba(215,173,85,.12);
+  color:var(--gold2);
 }
 
-/* ================= SECTIONS ================= */
+.hero{
+  padding:90px 0 70px;
+  text-align:center;
+}
+
+.badge{
+  display:inline-block;
+  border:1px solid var(--border);
+  color:var(--gold2);
+  padding:7px 18px;
+  border-radius:30px;
+  font-size:13px;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:clamp(30px,6vw,58px);
+  line-height:1.4;
+  margin-bottom:20px;
+}
+
+.hero h1 span{
+  color:var(--gold2);
+}
+
+.hero p{
+  max-width:800px;
+  margin:auto;
+  color:#bbb;
+  font-size:16px;
+}
+
+.btn{
+  border:0;
+  cursor:pointer;
+  padding:13px 25px;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+  color:#111;
+  font-weight:bold;
+  font-size:14px;
+  margin-top:25px;
+  transition:.25s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 30px rgba(215,173,85,.18);
+}
 
 section{
-    padding:90px 5%;
+  padding:65px 0;
 }
 
-.title{
-    text-align:center;
-    margin-bottom:15px;
-    color:#e5bd69;
-    font-size:38px;
+.section-title{
+  text-align:center;
+  margin-bottom:35px;
 }
 
-.subtitle{
-    text-align:center;
-    color:#999;
-    margin-bottom:45px;
+.section-title h2{
+  color:var(--gold2);
+  font-size:27px;
 }
 
-/* ================= CITY BUTTON ================= */
-
-.city-buttons{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:12px;
-    margin-bottom:45px;
+.section-title p{
+  color:var(--muted);
+  font-size:13px;
+  margin-top:7px;
 }
 
-.city-button{
-    cursor:pointer;
-    padding:13px 28px;
-    border-radius:30px;
-    border:1px solid #3c574d;
-    background:#0e1e18;
-    color:#fff;
-    transition:.35s;
+.intro{
+  background:linear-gradient(145deg,#101010,#080808);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:30px;
 }
 
-.city-button:hover,
-.city-button.active{
-    background:linear-gradient(135deg,#e7c477,#ad7c2e);
-    color:#111;
-    border-color:#e5bd69;
-    transform:translateY(-3px);
+.intro p{
+  color:#ccc;
+  margin-bottom:16px;
 }
 
-.city{
-    display:none;
-    animation:cityIn .7s ease;
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin-top:25px;
 }
 
-.city.active{
-    display:block;
+.info{
+  border:1px solid var(--border);
+  border-radius:17px;
+  padding:20px;
+  background:#0d0d0d;
 }
 
-@keyframes cityIn{
-    from{
-        opacity:0;
-        transform:translateY(25px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+.info strong{
+  display:block;
+  color:var(--gold2);
+  margin-bottom:6px;
 }
-
-/* ================= CARDS ================= */
 
 .cards{
-    max-width:1450px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
-    gap:28px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
 }
 
 .card{
-    background:
-    linear-gradient(
-        145deg,
-        rgba(25,48,40,.95),
-        rgba(8,20,16,.98)
-    );
-    border:1px solid rgba(217,173,85,.17);
-    border-radius:24px;
-    overflow:hidden;
-    box-shadow:0 15px 45px rgba(0,0,0,.35);
-    transition:.5s;
-    opacity:0;
-    transform:translateY(35px);
-    animation:cardIn .8s forwards;
-}
-
-.card:nth-child(2){animation-delay:.08s}
-.card:nth-child(3){animation-delay:.16s}
-.card:nth-child(4){animation-delay:.24s}
-.card:nth-child(5){animation-delay:.32s}
-.card:nth-child(6){animation-delay:.40s}
-.card:nth-child(7){animation-delay:.48s}
-.card:nth-child(8){animation-delay:.56s}
-.card:nth-child(9){animation-delay:.64s}
-.card:nth-child(10){animation-delay:.72s}
-
-@keyframes cardIn{
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+  background:linear-gradient(150deg,#121212,#090909);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:25px 18px;
+  transition:.25s;
 }
 
 .card:hover{
-    transform:translateY(-12px) scale(1.015);
-    border-color:#d9ad55;
-    box-shadow:
-        0 25px 65px rgba(0,0,0,.5),
-        0 0 25px rgba(217,173,85,.08);
-}
-
-.card-image{
-    position:relative;
-    height:230px;
-    overflow:hidden;
-}
-
-.card-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.7s;
-}
-
-.card:hover img{
-    transform:scale(1.09);
-}
-
-.image-overlay{
-    position:absolute;
-    inset:0;
-    background:
-    linear-gradient(
-        transparent 40%,
-        rgba(0,0,0,.7)
-    );
-}
-
-.number{
-    position:absolute;
-    top:15px;
-    right:15px;
-    width:42px;
-    height:42px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    border-radius:50%;
-    background:rgba(0,0,0,.65);
-    border:1px solid rgba(229,189,105,.6);
-    color:#e5bd69;
-    font-weight:bold;
-}
-
-.card-content{
-    padding:22px;
-}
-
-.card h3{
-    color:#e5bd69;
-    font-size:21px;
-    margin-bottom:8px;
-}
-
-.card p{
-    color:#c9c9c9;
-    font-size:14px;
-    line-height:2;
-}
-
-.location{
-    margin:13px 0;
-    color:#8db8a8;
-    font-size:13px;
-}
-
-.map{
-    display:inline-block;
-    padding:8px 17px;
-    border-radius:20px;
-    border:1px solid #45685b;
-    color:#fff;
-    text-decoration:none;
-    font-size:13px;
-    transition:.3s;
-}
-
-.map:hover{
-    background:#e5bd69;
-    color:#111;
-}
-
-/* ================= SPECIAL BOXES ================= */
-
-.special{
-    max-width:1100px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(230px,1fr));
-    gap:20px;
-}
-
-.box{
-    background:#0e1e18;
-    border:1px solid rgba(217,173,85,.2);
-    padding:30px;
-    border-radius:22px;
-    text-align:center;
-    transition:.4s;
-}
-
-.box:hover{
-    transform:translateY(-8px);
-    border-color:#d9ad55;
+  transform:translateY(-5px);
+  border-color:rgba(215,173,85,.55);
 }
 
 .icon{
-    font-size:48px;
-    margin-bottom:15px;
+  font-size:35px;
+  margin-bottom:10px;
 }
 
-.box h3{
-    color:#e5bd69;
-    margin-bottom:8px;
+.card h3{
+  color:var(--gold2);
+  margin-bottom:8px;
 }
 
-/* ================= FORTUNE ================= */
-
-.fortune{
-    max-width:800px;
-    margin:auto;
-    text-align:center;
-    background:
-    linear-gradient(
-        145deg,
-        #142a22,
-        #09130f
-    );
-    padding:45px;
-    border-radius:30px;
-    border:1px solid rgba(217,173,85,.25);
+.card p{
+  color:#aaa;
+  font-size:13px;
 }
 
-#fortuneText{
-    min-height:80px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#ddd;
-    font-size:18px;
-    margin-bottom:25px;
+.builder{
+  background:#0d0d0d;
+  border:1px solid var(--border);
+  border-radius:25px;
+  padding:28px;
 }
 
-.gold-btn{
-    border:0;
-    cursor:pointer;
-    padding:13px 28px;
-    border-radius:30px;
-    background:linear-gradient(135deg,#e7c477,#ad7c2e);
-    font-weight:bold;
+.mode-buttons{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  margin-bottom:25px;
 }
 
-/* ================= FOOTER ================= */
+.mode{
+  padding:20px;
+  border-radius:18px;
+  border:1px solid var(--border);
+  background:#101010;
+  color:#ddd;
+  cursor:pointer;
+  text-align:right;
+}
+
+.mode.active{
+  border-color:var(--gold);
+  background:rgba(215,173,85,.08);
+}
+
+.mode b{
+  color:var(--gold2);
+  display:block;
+  margin-bottom:5px;
+}
+
+label{
+  display:block;
+  color:#ccc;
+  margin:18px 0 7px;
+  font-size:14px;
+}
+
+input,select{
+  width:100%;
+  background:#080808;
+  border:1px solid #333;
+  color:#fff;
+  padding:13px;
+  border-radius:12px;
+  outline:none;
+}
+
+input:focus,select:focus{
+  border-color:var(--gold);
+}
+
+.manual{
+  display:none;
+}
+
+.sliders{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.slider-box{
+  border:1px solid #292929;
+  border-radius:15px;
+  padding:15px;
+}
+
+.slider-head{
+  display:flex;
+  justify-content:space-between;
+  color:var(--gold2);
+}
+
+input[type=range]{
+  padding:0;
+  accent-color:var(--gold);
+}
+
+.summary{
+  margin-top:25px;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:20px;
+  background:#090909;
+}
+
+.summary-row{
+  display:flex;
+  justify-content:space-between;
+  padding:8px 0;
+  border-bottom:1px solid #1c1c1c;
+}
+
+.summary-row:last-child{
+  border:0;
+}
+
+.gold{
+  color:var(--gold2);
+}
+
+.result{
+  display:none;
+  margin-top:35px;
+}
+
+.certificate{
+  background:#f2eee4;
+  color:#161616;
+  border-radius:8px;
+  padding:35px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+.certificate:before{
+  content:"";
+  position:absolute;
+  inset:12px;
+  border:2px solid #b18b42;
+  pointer-events:none;
+}
+
+.cert-inner{
+  position:relative;
+  z-index:1;
+  padding:15px;
+}
+
+.cert-header{
+  text-align:center;
+  border-bottom:2px solid #b18b42;
+  padding-bottom:18px;
+}
+
+.cert-logo{
+  width:65px;
+  height:65px;
+  margin:auto;
+  border:2px solid #b18b42;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+}
+
+.cert-header h2{
+  margin-top:10px;
+  color:#70531d;
+}
+
+.cert-header small{
+  color:#555;
+}
+
+.cert-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin:25px 0;
+}
+
+.cert-item{
+  background:#e7e0d0;
+  padding:11px;
+  border-radius:7px;
+}
+
+.cert-item span{
+  display:block;
+  font-size:11px;
+  color:#6d6d6d;
+}
+
+.cert-item b{
+  font-size:14px;
+}
+
+.cert-footer{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin-top:20px;
+  align-items:center;
+}
+
+.stamp{
+  width:115px;
+  height:115px;
+  border:3px solid #a33;
+  color:#922;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  transform:rotate(-10deg);
+  font-weight:bold;
+  font-size:12px;
+}
+
+.signature{
+  border-bottom:1px solid #777;
+  padding:15px 0;
+  font-family:Georgia,serif;
+  font-size:18px;
+  color:#222;
+}
+
+.warning{
+  margin-top:25px;
+  padding:12px;
+  background:#eee4cf;
+  border:1px solid #c4a76c;
+  border-radius:8px;
+  font-size:11px;
+  color:#59471f;
+  text-align:center;
+}
 
 footer{
-    padding:40px;
-    text-align:center;
-    background:#030806;
-    color:#777;
+  text-align:center;
+  color:#777;
+  padding:40px 0;
+  border-top:1px solid #171717;
+  font-size:12px;
 }
 
-footer strong{
-    color:#d9ad55;
-}
+@media(max-width:800px){
+  .cards{
+    grid-template-columns:repeat(2,1fr);
+  }
 
-/* ================= MOBILE ================= */
+  .info-grid{
+    grid-template-columns:1fr;
+  }
+
+  .sliders{
+    grid-template-columns:1fr;
+  }
+}
 
 @media(max-width:600px){
+  nav{
+    display:none;
+  }
 
-    section{
-        padding:60px 4%;
-    }
+  .hero{
+    padding:65px 0 45px;
+  }
 
-    nav a{
-        display:inline-block;
-        margin:4px 6px;
-    }
+  .cards{
+    grid-template-columns:1fr;
+  }
 
-    .hero{
-        background-attachment:scroll;
-    }
+  .mode-buttons{
+    grid-template-columns:1fr;
+  }
 
-    .card-image{
-        height:210px;
-    }
+  .cert-grid{
+    grid-template-columns:1fr;
+  }
 
-    .fortune{
-        padding:30px 20px;
-    }
+  .cert-footer{
+    grid-template-columns:1fr;
+  }
+
+  .certificate{
+    padding:25px 15px;
+  }
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- LOADER -->
+<header>
+  <div class="container header-inner">
+    <div class="logo">
+      پارسا پوشش فلز
+      <small>سامانه آزمایشی بیمه بیکاری مبتنی بر فلزات</small>
+    </div>
 
-<div class="loader" id="loader">
-    <div class="loader-logo">🇮🇷</div>
-    <p>در حال آماده‌سازی سفر...</p>
-</div>
-
-
-<!-- HERO -->
-
-<header class="hero">
-
-<div class="hero-content">
-
-<h1>ایران‌گرد</h1>
-
-<h2>
-سفر کن؛ ایران را از نو کشف کن
-</h2>
-
-<p>
-راهنمای حرفه‌ای جاذبه‌های تاریخی، فرهنگی و طبیعی ایران
-</p>
-
-<a href="#destinations" class="hero-btn">
-شروع سفر ✈️
-</a>
-
-</div>
-
+    <nav>
+      <a href="#about">طرح</a>
+      <a href="#portfolio">سبد بیمه</a>
+      <a href="#certificate">گواهی</a>
+    </nav>
+  </div>
 </header>
 
 
-<!-- NAV -->
+<main>
 
-<nav>
+<section class="hero">
+  <div class="container">
 
-<a href="#destinations">جاذبه‌ها</a>
-<a href="#icons">سبک سفر</a>
-<a href="#fortune">فال سفر</a>
-<a href="#poem">شعر</a>
+    <div class="badge">🛡️ سامانه هوشمند حمایت مبتنی بر فلزات</div>
 
-</nav>
+    <h1>
+      بیمه بیکاری با
+      <span>پشتوانه فلزات</span>
+    </h1>
 
+    <p>
+      یک مدل مفهومی برای ایجاد سازوکاری متفاوت در حمایت مالی از افراد
+      در دوره بیکاری؛ با استفاده از ترکیبی از طلا، نقره و مس به عنوان
+      مبنای ارزش‌گذاری و شبیه‌سازی.
+    </p>
 
-<!-- DESTINATIONS -->
+    <button class="btn" onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">
+      شروع انتخاب سبد
+    </button>
 
-<section id="destinations">
-
-<h2 class="title">
-جاذبه‌های منتخب ایران
-</h2>
-
-<p class="subtitle">
-۳۰ مقصد دیدنی در سه شهر تاریخی ایران
-</p>
-
-
-<div class="city-buttons">
-
-<button
-class="city-button active"
-onclick="showCity('shiraz',this)">
-🌹 شیراز
-</button>
-
-<button
-class="city-button"
-onclick="showCity('isfahan',this)">
-🕌 اصفهان
-</button>
-
-<button
-class="city-button"
-onclick="showCity('kermanshah',this)">
-🏔️ کرمانشاه
-</button>
-
-</div>
-
-
-<!-- ================= SHIRAZ ================= -->
-
-<div class="city active" id="shiraz">
-
-<div class="cards">
-
-
-<!-- 1 -->
-
-<div class="card">
-
-<div class="card-image">
-
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Pers%C3%A9polis_01.jpg/1280px-Pers%C3%A9polis_01.jpg"
-alt="تخت جمشید">
-
-<div class="image-overlay"></div>
-
-<div class="number">۱</div>
-
-</div>
-
-<div class="card-content">
-
-<h3>🏛️ تخت جمشید</h3>
-
-<p>
-پایتخت تشریفاتی هخامنشیان و یکی از باشکوه‌ترین آثار تاریخی ایران.
-</p>
-
-<div class="location">
-📍 مرودشت، استان فارس
-</div>
-
-<a
-class="map"
-target="_blank"
-href="https://balad.ir/search/تخت%20جمشید">
-🗺️ نقشه
-</a>
-
-</div>
-</div>
-
-
-<!-- 2 -->
-
-<div class="card">
-
-<div class="card-image">
-
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Pasargadae_iran.jpg/1280px-Pasargadae_iran.jpg"
-alt="پاسارگاد">
-
-<div class="image-overlay"></div>
-
-<div class="number">۲</div>
-
-</div>
-
-<div class="card-content">
-
-<h3>🏺 پاسارگاد</h3>
-
-<p>
-مجموعه تاریخی ارزشمند هخامنشی و آرامگاه کوروش بزرگ.
-</p>
-
-<div class="location">
-📍 شهرستان پاسارگاد
-</div>
-
-<a class="map"
-target="_blank"
-href="https://balad.ir/search/پاسارگاد">
-🗺️ نقشه
-</a>
-
-</div>
-</div>
-
-
-<!-- 3 -->
-
-<div class="card">
-
-<div class="card-image">
-
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Maharloo_Lake.jpg/1280px-Maharloo_Lake.jpg"
-alt="دریاچه مهارلو">
-
-<div class="image-overlay"></div>
-
-<div class="number">۳</div>
-
-</div>
-
-<div class="card-content">
-
-<h3>🌸 دریاچه صورتی مهارلو</h3>
-
-<p>
-یکی از خاص‌ترین جاذبه‌های طبیعی اطراف شیراز که در شرایط مناسب صورتی‌رنگ می‌شود.
-</p>
-
-<div class="location">
-📍 جنوب شرقی شیراز
-</div>
-
-<a class="map"
-target="_blank"
-href="https://balad.ir/search/دریاچه%20مهارلو">
-🗺️ نقشه
-</a>
-
-</div>
-</div>
-
-
-<!-- 4 -->
-
-<div class="card">
-
-<div class="card-image">
-
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Nasir_ol_Molk_Mosque_2019.jpg/1280px-Nasir_ol_Molk_Mosque_2019.jpg"
-alt="مسجد نصیرالملک">
-
-<div class="image-overlay"></div>
-
-<div class="number">۴</div>
-
-</div>
-
-<div class="card-content">
-
-<h3>🕌 مسجد نصیرالملک</h3>
-
-<p>
-مسجد تاریخی معروف به مسجد صورتی با شیشه‌های رنگی و نورهای چشم‌نواز.
-</p>
-
-<div class="location">
-📍 شیراز
-</div>
-
-<a class="map"
-target="_blank"
-href="https://balad.ir/search/مسجد%20نصیرالملک">
-🗺️ نقشه
-</a>
-
-</div>
-</div>
-
-
-<!-- 5 -->
-
-<div class="card">
-
-<div class="card-image">
-
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Hafez_Tomb.jpg/1280px-Hafez_Tomb.jpg"
-alt="حافظیه">
-
-<div class="image-overlay"></div>
-
-<div class="number">۵</div>
-
-</div>
-
-<div class="card-content">
-
-<h3>📜 حافظیه</h3>
-
-<p>
-آرامگاه حافظ شیرازی؛ یکی از محبوب‌ترین مکان‌های فرهنگی و ادبی ایران.
-</p>
-
-<div class="location">
-📍 شیراز
-</div>
-
-<a class="map"
-target="_blank"
-href="https://balad.ir/search/حافظیه">
-🗺️ نقشه
-</a>
-
-</div>
-</div>
-
-
-<!-- 6 -->
-
-<div class="card">
-
-<div class="card-image">
-
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Saadi_Tomb.jpg/1280px-Saadi_Tomb.jpg"
-alt="سعدیه">
-
-<div class="image-overlay"></div>
-
-<div class="number">۶</div>
-
-</div>
-
-<div class="card-content">
-
-<h3>📚 سعدیه</h3>
-
-<p>
-آرامگاه سعدی، شاعر بزرگ فارسی و یکی از نمادهای فرهنگی شیراز.
-</p>
-
-<div class="location">
-📍 شیراز
-</div>
-
-<a class="map"
-target="_blank"
-href="https://balad.ir/search/سعدیه">
-🗺️ نقشه
-</a>
-
-</div>
-</div>
-
-
-<!-- 7 -->
-
-<div class="card">
-
-<div class="card-image">
-
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Shah_Cheragh.jpg/1280px-Shah_Cheragh.jpg"
-alt="شاهچراغ">
-
-<div class="image-overlay"></div>
-
-<div class="number">۷</div>
-
-</div>
-
-<div class="card-content">
-
-<h3>✨ شاهچراغ</h3>
-
-<p>
-زیارتگاه مشهور شیراز با معماری و آینه‌کاری‌های چشمگیر.
-</p>
-
-<div class="location">
-📍 شیراز
-</div>
-
-<a class="map"
-target="_blank"
-href="https://balad.ir/search/شاهچراغ">
-🗺️ نقشه
-</a>
-
-</div>
-</div>
-
-
-<!-- 8 -->
-
-<div class="card">
-
-<div class="card-image">
-
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Narenjestan_Qavam.jpg/1280px-Narenjestan_Qavam.jpg"
-alt="نارنجستان قوام">
-
-<div class="image-overlay"></div>
-
-<div class="number">۸</div>
-
-</div>
-
-<div class="card-content">
-
-<h3>🌿 نارنجستان قوام</h3>
-
-<p>
-عمارت و باغ تاریخی قوام با معماری باشکوه دوره قاجار.
-</p>
-
-<div class="location">
-📍 شیراز
-</div>
-
-<a class="map"
-target="_blank"
-href="https://balad.ir/search/نارنجستان%20قوام">
-🗺️ نقشه
-</a>
-
-</div>
-</div>
-
-
-<!-- 9 -->
-
-<div class="card">
-
-<div class="card-image">
-
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Naghsh_Rostam_01.jpg/1280px-Naghsh_Rostam_01.jpg"
-alt="نقش رستم">
-
-<div class="image-overlay"></div>
-
-<div class="number">۹</div>
-
-</div>
-
-<div class="card-content">
-
-<h3>🗿 نقش رستم</h3>
-
-<p>
-آرامگاه‌های سنگی شاهان هخامنشی و نقش‌برجسته‌های تاریخی ایران.
-</p>
-
-<div class="location">
-📍 نزدیکی مرودشت
-</div>
-
-<a class="map"
-target="_blank"
-href="https://balad.ir/search/نقش%20رستم">
-🗺️ نقشه
-</a>
-
-</div>
-</div>
-
-
-<!-- 10 -->
-
-<div class="card">
-
-<div class="card-image">
-
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Vakil_Mosque_Shiraz.jpg/1280px-Vakil_Mosque_Shiraz.jpg"
-alt="مسجد وکیل">
-
-<div class="image-overlay"></div>
-
-<div class="number">۱۰</div>
-
-</div>
-
-<div class="card-content">
-
-<h3>🕌 مسجد وکیل</h3>
-
-<p>
-مسجد تاریخی دوره زندیه با معماری باشکوه و ستون‌های سنگی زیبا.
-</p>
-
-<div class="location">
-📍 شیراز، بازار وکیل
-</div>
-
-<a class="map"
-target="_blank"
-href="https://balad.ir/search/مسجد%20وکیل">
-🗺️ نقشه
-</a>
-
-</div>
-</div>
-
-</div>
-</div>
-
-
-<!-- ================= ISFAHAN ================= -->
-
-<div class="city" id="isfahan">
-
-<div class="cards">
-
-
-<div class="card">
-<div class="card-image">
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Naqsh-e_Jahan_Square%2C_Isfahan.jpg/1280px-Naqsh-e_Jahan_Square%2C_Isfahan.jpg"
-alt="میدان نقش جهان">
-<div class="image-overlay"></div>
-<div class="number">۱</div>
-</div>
-<div class="card-content">
-<h3>🏛️ میدان نقش جهان</h3>
-<p>یکی از مشهورترین میدان‌های تاریخی جهان و قلب تاریخی اصفهان.</p>
-<div class="location">📍 مرکز اصفهان</div>
-<a class="map" target="_blank" href="https://balad.ir/search/میدان%20نقش%20جهان">🗺️ نقشه</a>
-</div>
-</div>
-
-
-<div class="card">
-<div class="card-image">
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Imam_Mosque_Isfahan.jpg/1280px-Imam_Mosque_Isfahan.jpg"
-alt="مسجد امام">
-<div class="image-overlay"></div>
-<div class="number">۲</div>
-</div>
-<div class="card-content">
-<h3>🕌 مسجد امام</h3>
-<p>شاهکار معماری صفوی در میدان نقش جهان.</p>
-<div class="location">📍 میدان نقش جهان</div>
-<a class="map" target="_blank" href="https://balad.ir/search/مسجد%20امام%20اصفهان">🗺️ نقشه</a>
-</div>
-</div>
-
-
-<div class="card">
-<div class="card-image">
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Sheikh_Lotfollah_Mosque_Isfahan.jpg/1280px-Sheikh_Lotfollah_Mosque_Isfahan.jpg"
-alt="مسجد شیخ لطف الله">
-<div class="image-overlay"></div>
-<div class="number">۳</div>
-</div>
-<div class="card-content">
-<h3>🕌 مسجد شیخ لطف‌الله</h3>
-<p>از شاهکارهای معماری صفوی در ضلع شرقی میدان نقش جهان.</p>
-<div class="location">📍 اصفهان</div>
-<a class="map" target="_blank" href="https://balad.ir/search/مسجد%20شیخ%20لطف%20الله">🗺️ نقشه</a>
-</div>
-</div>
-
-
-<div class="card">
-<div class="card-image">
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Ali_Qapu_Isfahan.jpg/1280px-Ali_Qapu_Isfahan.jpg"
-alt="عالی قاپو">
-<div class="image-overlay"></div>
-<div class="number">۴</div>
-</div>
-<div class="card-content">
-<h3>🏰 کاخ عالی‌قاپو</h3>
-<p>کاخ تاریخی صفوی در ضلع غربی میدان نقش جهان.</p>
-<div class="location">📍 میدان نقش جهان</div>
-<a class="map" target="_blank" href="https://balad.ir/search/کاخ%20عالی%20قاپو">🗺️ نقشه</a>
-</div>
-</div>
-
-
-<div class="card">
-<div class="card-image">
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Si-o-se-pol_Isfahan.jpg/1280px-Si-o-se-pol_Isfahan.jpg"
-alt="سی و سه پل">
-<div class="image-overlay"></div>
-<div class="number">۵</div>
-</div>
-<div class="card-content">
-<h3>🌉 سی‌وسه‌پل</h3>
-<p>پل تاریخی مشهور اصفهان بر روی زاینده‌رود.</p>
-<div class="location">📍 اصفهان</div>
-<a class="map" target="_blank" href="https://balad.ir/search/سی%20و%20سه%20پل">🗺️ نقشه</a>
-</div>
-</div>
-
-
-<div class="card">
-<div class="card-image">
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Khaju_Bridge_Isfahan.jpg/1280px-Khaju_Bridge_Isfahan.jpg"
-alt="پل خواجو">
-<div class="image-overlay"></div>
-<div class="number">۶</div>
-</div>
-<div class="card-content">
-<h3>🌉 پل خواجو</h3>
-<p>یکی از زیباترین پل‌های تاریخی اصفهان.</p>
-<div class="location">📍 اصفهان</div>
-<a class="map" target="_blank" href="https://balad.ir/search/پل%20خواجو">🗺️ نقشه</a>
-</div>
-</div>
-
-
-<div class="card">
-<div class="card-image">
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Vank_Cathedral_Isfahan.jpg/1280px-Vank_Cathedral_Isfahan.jpg"
-alt="کلیسای وانک">
-<div class="image-overlay"></div>
-<div class="number">۷</div>
-</div>
-<div class="card-content">
-<h3>⛪ کلیسای وانک</h3>
-<p>کلیسای تاریخی مشهور محله جلفای اصفهان.</p>
-<div class="location">📍 جلفای اصفهان</div>
-<a class="map" target="_blank" href="https://balad.ir/search/کلیسای%20وانک">🗺️ نقشه</a>
-</div>
-</div>
-
-
-<div class="card">
-<div class="card-image">
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Hasht_Behesht_Isfahan.jpg/1280px-Hasht_Behesht_Isfahan.jpg"
-alt="کاخ هشت بهشت">
-<div class="image-overlay"></div>
-<div class="number">۸</div>
-</div>
-<div class="card-content">
-<h3>🌳 کاخ هشت‌بهشت</h3>
-<p>عمارت تاریخی زیبا در میان باغ‌های اصفهان.</p>
-<div class="location">📍 اصفهان</div>
-<a class="map" target="_blank" href="https://balad.ir/search/هشت%20بهشت%20اصفهان">🗺️ نقشه</a>
-</div>
-</div>
-
-
-<div class="card">
-<div class="card-image">
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Jameh_Mosque_Isfahan.jpg/1280px-Jameh_Mosque_Isfahan.jpg"
-alt="مسجد جامع اصفهان">
-<div class="image-overlay"></div>
-<div class="number">۹</div>
-</div>
-<div class="card-content">
-<h3>🕌 مسجد جامع اصفهان</h3>
-<p>مجموعه‌ای تاریخی با معماری متعلق به دوره‌های گوناگون ایران.</p>
-<div class="location">📍 اصفهان</div>
-<a class="map" target="_blank" href="https://balad.ir/search/مسجد%20جامع%20اصفهان">🗺️ نقشه</a>
-</div>
-</div>
-
-
-<div class="card">
-<div class="card-image">
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Chehel_Sotoun_Isfahan.jpg/1280px-Chehel_Sotoun_Isfahan.jpg"
-alt="چهل ستون">
-<div class="image-overlay"></div>
-<div class="number">۱۰</div>
-</div>
-<div class="card-content">
-<h3>🌳 کاخ چهل‌ستون</h3>
-<p>کاخ تاریخی صفوی با تالارها و نقاشی‌های مشهور.</p>
-<div class="location">📍 اصفهان</div>
-<a class="map" target="_blank" href="https://balad.ir/search/کاخ%20چهل%20ستون">🗺️ نقشه</a>
-</div>
-</div>
-
-</div>
-</div>
-
-
-<!-- ================= KERMANSHAH ================= -->
-
-<div class="city" id="kermanshah">
-
-<div class="cards">
-
-
-<div class="card">
-<div class="card-image">
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Taq_e_Bostan_Kermanshah.jpg/1280px-Taq_e_Bostan_Kermanshah.jpg"
-alt="طاق بستان">
-<div class="image-overlay"></div>
-<div class="number">۱</div>
-</div>
-<div class="card-content">
-<h3>🏔️ طاق‌بستان</h3>
-<p>مجموعه‌ای ارزشمند از سنگ‌نگاره‌ها و طاق‌های دوره ساسانی.</p>
-<div class="location">📍 کرمانشاه</div>
-<a class="map" target="_blank" href="https://balad.ir/search/طاق%20بستان">🗺️ نقشه</a>
-</div>
-</div>
-
-
-<div class="card">
-<div class="card-image">
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Bisotun_Iran.jpg/1280px-Bisotun_Iran.jpg"
-alt="بیستون">
-<div class="image-overlay"></div>
-<div class="number">۲</div>
-</div>
-<div class="card-content">
-<h3>🗿 بیستون</h3>
-<p>محوطه تاریخی مشهور با کتیبه داریوش بزرگ.</p>
-<div class="location">📍 شهرستان هرسین</div>
-<a class="map" target="_blank" href="https://balad.ir/search/بیستون">🗺️ نقشه</a>
-</div>
-</div>
-
-
-<!-- GORDKHAmeh -->
-
-<div class="card">
-<div class="card-image">
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Dukkan-e_Daoud.jpg/1280px-Dukkan-e_Daoud.jpg"
-alt="گوردخمه دکان داوود">
-<div class="image-overlay"></div>
-<div class="number">۳</div>
-</div>
-<div class="card-content">
-<h3>🪨 گوردخمه دکان داوود</h3>
-<p>گوردخمه‌ای تاریخی در منطقه سرپل ذهاب و از آثار مهم باستانی غرب ایران.</p>
-<div class="location">📍 سرپل ذهاب</div>
-<a class="map" target="_blank" href="https://balad.ir/search/گوردخمه%20دکان%20داوود">🗺️ نقشه</a>
-</div>
-</div>
-
-
-<div class="card">
-<div class="card-image">
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Paraw_Cave.jpg/1280px-Paraw_Cave.jpg"
-alt="غار پراو">
-<div class="image-overlay"></div>
-<div class="number">۴</div>
-</div>
-<div class="card-content">
-<h3>🧗 غار پراو</h3>
-<p>غار مشهور کوهستانی در ارتفاعات استان کرمانشاه.</p>
-<div class="location">📍 ارتفاعات کرمانشاه</div>
-<a class="map" target="_blank" href="https://balad.ir/search/غار%20پراو">🗺️ نقشه</a>
-</div>
-</div>
-
-
-<div class="card">
-<div class="card-image">
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Ghar_e_Quri_Kaleh.jpg/1280px-Ghar_e_Quri_Kaleh.jpg"
-alt="غار قوری قلعه">
-<div class="image-overlay"></div>
-<div class="number">۵</div>
-</div>
-<div class="card-content">
-<h3>🪨 غار قوری‌قلعه</h3>
-<p>یکی از غارهای مشهور و دیدنی منطقه اورامانات.</p>
-<div class="location">📍 پاوه</div>
-<a class="map" target="_blank" href="https://balad.ir/search/غار%20قوری%20قلعه">🗺️ نقشه</a>
-</div>
-</div>
-
-
-<div class="card">
-<div class="card-image">
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Anahita_Temple.jpg/1280px-Anahita_Temple.jpg"
-alt="معبد آناهیتا">
-<div class="image-overlay"></div>
-<div class="number">۶</div>
-</div>
-<div class="card-content">
-<h3>🏛️ معبد آناهیتا</h3>
-<p>محوطه تاریخی ارزشمند در کنگاور در مسیر کرمانشاه.</p>
-<div class="location">📍 کنگاور</div>
-<a class="map" target="_blank" href="https://balad.ir/search/معبد%20آناهیتا">🗺️ نقشه</a>
-</div>
-</div>
-
-
-<div class="card">
-<div class="card-image">
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Kermanshah_Bazaar.jpg/1280px-Kermanshah_Bazaar.jpg"
-alt="بازار سنتی کرمانشاه">
-<div class="image-overlay"></div>
-<div class="number">۷</div>
-</div>
-<div class="card-content">
-<h3>🛍️ بازار سنتی کرمانشاه</h3>
-<p>بازاری تاریخی برای آشنایی با فضای سنتی و فرهنگ شهری کرمانشاه.</p>
-<div class="location">📍 کرمانشاه</div>
-<a class="map" target="_blank" href="https://balad.ir/search/بازار%20کرمانشاه">🗺️ نقشه</a>
-</div>
-</div>
-
-
-<div class="card">
-<div class="card-image">
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Mosque_of_Shafei_Kermanshah.jpg/1280px-Mosque_of_Shafei_Kermanshah.jpg"
-alt="مسجد شافعی">
-<div class="image-overlay"></div>
-<div class="number">۸</div>
-</div>
-<div class="card-content">
-<h3>🕌 مسجد شافعی</h3>
-<p>یکی از بناهای مذهبی شناخته‌شده در بافت قدیمی کرمانشاه.</p>
-<div class="location">📍 کرمانشاه</div>
-<a class="map" target="_blank" href="https://balad.ir/search/مسجد%20شافعی">🗺️ نقشه</a>
-</div>
-</div>
-
-
-<div class="card">
-<div class="card-image">
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Moaven_ol-Molk_Tekyeh.jpg/1280px-Moaven_ol-Molk_Tekyeh.jpg"
-alt="تکیه معاون الملک">
-<div class="image-overlay"></div>
-<div class="number">۹</div>
-</div>
-<div class="card-content">
-<h3>🏛️ تکیه معاون‌الملک</h3>
-<p>بنایی تاریخی با کاشی‌کاری‌های بسیار چشمگیر در کرمانشاه.</p>
-<div class="location">📍 کرمانشاه</div>
-<a class="map" target="_blank" href="https://balad.ir/search/تکیه%20معاون%20الملک">🗺️ نقشه</a>
-</div>
-</div>
-
-
-<div class="card">
-<div class="card-image">
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Biglarbeigi_Tekyeh.jpg/1280px-Biglarbeigi_Tekyeh.jpg"
-alt="تکیه بیگلربیگی">
-<div class="image-overlay"></div>
-<div class="number">۱۰</div>
-</div>
-<div class="card-content">
-<h3>🏛️ تکیه بیگلربیگی</h3>
-<p>عمارت تاریخی زیبا با تزئینات آینه‌کاری و معماری سنتی.</p>
-<div class="location">📍 کرمانشاه</div>
-<a class="map" target="_blank" href="https://balad.ir/search/تکیه%20بیگلربیگی">🗺️ نقشه</a>
-</div>
-</div>
-
-</div>
-</div>
-
+  </div>
 </section>
 
 
-<!-- ================= ICONS ================= -->
+<section id="about">
+<div class="container">
 
-<section id="icons">
+<div class="section-title">
+  <h2>این طرح چیست؟</h2>
+  <p>آشنایی کامل با ایده بیمه بیکاری مبتنی بر فلزات</p>
+</div>
 
-<h2 class="title">
-سبک سفر من 🎯
-</h2>
+<div class="intro">
 
-<p class="subtitle">
-حال‌وهوای سفر خودت را انتخاب کن
+<p>
+ایده این طرح، طراحی یک مدل نوین برای بیمه بیکاری است که در آن
+به جای اینکه تمام ساختار مالی صرفاً بر پایه پول نقد قرار بگیرد،
+بخشی از مبنای ارزش‌گذاری طرح به فلزات ارزشمند و صنعتی مانند
+طلا، نقره و مس وابسته می‌شود.
 </p>
 
-<div class="special">
+<p>
+در این مدل، فرد می‌تواند برای یک دوره مشخص، سبد بیمه خود را انتخاب کند.
+این انتخاب می‌تواند توسط سامانه و بر اساس وضعیت بازار انجام شود،
+یا خود مشتری درصد اختصاص‌یافته به هر فلز را تعیین کند.
+</p>
 
-<div class="box">
-<div class="icon">🏛️</div>
-<h3>تاریخی</h3>
-<p>تمدن، بناهای باستانی و تاریخ ایران</p>
+<p>
+هدف مفهومی این ایده، ایجاد یک سازوکار قابل بررسی برای ترکیب
+حمایت در برابر بیکاری با دارایی‌هایی است که رفتار قیمتی متفاوتی
+دارند و می‌توانند در طراحی یک سبد متنوع مورد استفاده قرار گیرند.
+</p>
+
+<p>
+در مدل آزمایشی حاضر، <b class="gold">۹۵ درصد</b> منافع محاسبه‌شده
+به مشتری و <b class="gold">۵ درصد</b> به مجموعه ارائه‌دهنده مدل
+اختصاص داده می‌شود.
+این درصدها صرفاً مربوط به شبیه‌سازی حاضر هستند.
+</p>
+
+<div class="info-grid">
+
+<div class="info">
+<strong>🥇 طلا</strong>
+دارایی شناخته‌شده با نقش مهم در بازارهای مالی و ذخیره ارزش.
 </div>
 
-<div class="box">
-<div class="icon">🏔️</div>
-<h3>طبیعت</h3>
-<p>کوه، دریاچه، غار و مناظر طبیعی</p>
+<div class="info">
+<strong>🥈 نقره</strong>
+فلزی با کاربردهای صنعتی و رفتار قیمتی متفاوت از طلا.
 </div>
 
-<div class="box">
-<div class="icon">📸</div>
-<h3>عکاسی</h3>
-<p>مقصدهای جذاب برای ثبت تصاویر خاص</p>
-</div>
-
-<div class="box">
-<div class="icon">🌿</div>
-<h3>آرامش</h3>
-<p>مکان‌هایی برای فاصله گرفتن از شلوغی</p>
+<div class="info">
+<strong>🥉 مس</strong>
+فلزی صنعتی که قیمت آن می‌تواند تحت تأثیر فعالیت اقتصادی و تقاضای صنعتی قرار گیرد.
 </div>
 
 </div>
 
+</div>
+</div>
 </section>
 
 
-<!-- ================= FORTUNE ================= -->
+<section id="portfolio">
+<div class="container">
 
-<section id="fortune">
-
-<h2 class="title">
-فال سفر 🔮
-</h2>
-
-<p class="subtitle">
-نیت کن و فال خودت را بگیر
-</p>
-
-<div class="fortune">
-
-<div id="fortuneText">
-✨ آماده‌ای؟
+<div class="section-title">
+  <h2>سبد بیمه خود را انتخاب کنید</h2>
+  <p>دو روش برای ساخت سبد، با مدت ۳ تا ۱۲ ماه</p>
 </div>
 
-<button
-class="gold-btn"
-onclick="getFortune()">
-گرفتن فال 🔮
+<div class="builder">
+
+<div class="mode-buttons">
+
+<button class="mode active" id="smartBtn" onclick="setMode('smart')">
+  <b>🤖 سبد هوشمند</b>
+  سامانه بر اساس وضعیت بازار، یک ترکیب پیشنهادی ایجاد می‌کند.
+</button>
+
+<button class="mode" id="manualBtn" onclick="setMode('manual')">
+  <b>👤 سبد انتخابی مشتری</b>
+  درصد طلا، نقره و مس را خودتان تعیین کنید.
 </button>
 
 </div>
 
-</section>
 
+<div id="smart">
 
-<!-- ================= POEM ================= -->
+<label>مدت بیمه</label>
 
-<section id="poem">
+<select id="smartDuration">
+  <option value="3">۳ ماه</option>
+  <option value="6">۶ ماه</option>
+  <option value="9">۹ ماه</option>
+  <option value="12">۱۲ ماه</option>
+</select>
 
-<h2 class="title">
-شعر سفر 📜
-</h2>
+<div class="summary">
 
-<div class="fortune">
+<div class="summary-row">
+  <span>🥇 طلا</span>
+  <b class="gold" id="smartGold">50٪</b>
+</div>
 
-<p style="font-size:19px;line-height:2.5">
+<div class="summary-row">
+  <span>🥈 نقره</span>
+  <b class="gold" id="smartSilver">30٪</b>
+</div>
 
-به راه بادیه رفتن به از نشستن باطل<br>
-که گر مراد نیابم به قدر وسع بکوشم
+<div class="summary-row">
+  <span>🥉 مس</span>
+  <b class="gold" id="smartCopper">20٪</b>
+</div>
 
-</p>
-
-<p style="color:#e5bd69;margin-top:15px">
-— سعدی
+<p style="color:#888;font-size:11px;margin-top:12px">
+این ترکیب در نسخه آزمایشی به صورت نمونه تولید شده و نشان‌دهنده توصیه مالی واقعی نیست.
 </p>
 
 </div>
 
+</div>
+
+
+<div id="manual" class="manual">
+
+<label>مدت بیمه</label>
+
+<select id="manualDuration">
+  <option value="3">۳ ماه</option>
+  <option value="6">۶ ماه</option>
+  <option value="9">۹ ماه</option>
+  <option value="12">۱۲ ماه</option>
+</select>
+
+<div class="sliders">
+
+<div class="slider-box">
+<div class="slider-head">
+<span>🥇 طلا</span>
+<b id="goldValue">40٪</b>
+</div>
+<input type="range" id="gold" min="0" max="100" value="40">
+</div>
+
+<div class="slider-box">
+<div class="slider-head">
+<span>🥈 نقره</span>
+<b id="silverValue">35٪</b>
+</div>
+<input type="range" id="silver" min="0" max="100" value="35">
+</div>
+
+<div class="slider-box">
+<div class="slider-head">
+<span>🥉 مس</span>
+<b id="copperValue">25٪</b>
+</div>
+<input type="range" id="copper" min="0" max="100" value="25">
+</div>
+
+</div>
+
+<div class="summary">
+<div class="summary-row">
+<span>مجموع سبد</span>
+<b class="gold" id="total">100٪</b>
+</div>
+</div>
+
+</div>
+
+
+<hr style="border-color:#222;margin:30px 0">
+
+<label>مبلغ مورد نظر برای شبیه‌سازی</label>
+
+<input id="amount" type="number" placeholder="مثلاً ۲۰۰۰۰۰۰۰ تومان">
+
+<label>نام و نام خانوادگی</label>
+
+<input id="fullname" type="text" placeholder="نام و نام خانوادگی">
+
+<label>کد ملی</label>
+
+<input id="national" type="text" maxlength="10" placeholder="۱۰ رقم">
+
+<button class="btn" onclick="generateCertificate()">
+  ایجاد گواهی آزمایشی
+</button>
+
+<div id="error" style="color:#e78d8d;margin-top:15px;font-size:13px"></div>
+
+</div>
+
+</div>
 </section>
+
+
+<section id="certificate" class="result">
+<div class="container">
+
+<div class="section-title">
+<h2>گواهی نهایی</h2>
+<p>نتیجه شبیه‌سازی طرح</p>
+</div>
+
+<div class="certificate">
+
+<div class="cert-inner">
+
+<div class="cert-header">
+
+<div class="cert-logo">⚖️</div>
+
+<h2>پارسا پوشش فلز</h2>
+
+<strong>گواهی بیمه آزمایشی مبتنی بر فلزات</strong>
+
+<br>
+
+<small>
+شماره گواهی: <span id="certNumber"></span>
+</small>
+
+</div>
+
+
+<div class="cert-grid">
+
+<div class="cert-item">
+<span>نام دارنده</span>
+<b id="certName"></b>
+</div>
+
+<div class="cert-item">
+<span>کد ملی</span>
+<b id="certNational"></b>
+</div>
+
+<div class="cert-item">
+<span>مدت طرح</span>
+<b id="certDuration"></b>
+</div>
+
+<div class="cert-item">
+<span>نوع سبد</span>
+<b id="certMode"></b>
+</div>
+
+<div class="cert-item">
+<span>مبلغ شبیه‌سازی</span>
+<b id="certAmount"></b>
+</div>
+
+<div class="cert-item">
+<span>سهم مشتری</span>
+<b>۹۵٪</b>
+</div>
+
+<div class="cert-item">
+<span>طلا</span>
+<b id="certGold"></b>
+</div>
+
+<div class="cert-item">
+<span>نقره</span>
+<b id="certSilver"></b>
+</div>
+
+<div class="cert-item">
+<span>مس</span>
+<b id="certCopper"></b>
+</div>
+
+<div class="cert-item">
+<span>تاریخ صدور</span>
+<b id="certDate"></b>
+</div>
+
+</div>
+
+
+<div class="summary" style="background:#e7e0d0;color:#222">
+
+<div class="summary-row">
+<span>سود فرضی شبیه‌سازی</span>
+<b id="profit" style="color:#70531d"></b>
+</div>
+
+<div class="summary-row">
+<span>مبلغ فرضی پس از محاسبه</span>
+<b id="finalAmount" style="color:#70531d"></b>
+</div>
+
+</div>
+
+
+<div class="cert-footer">
+
+<div>
+
+<strong>امضای دیجیتال نمایشی</strong>
+
+<div class="signature" id="signature"></div>
+
+<small style="font-size:9px;color:#666">
+این امضا صرفاً برای شبیه‌سازی سامانه تولید شده است.
+</small>
+
+</div>
+
+<div style="display:flex;justify-content:center">
+
+<div class="stamp">
+پارسا پوشش فلز<br>
+مهر آزمایشی<br>
+فاقد اعتبار رسمی
+</div>
+
+</div>
+
+</div>
+
+
+<div class="warning">
+
+⚠️ این گواهی صرفاً یک نمونه آزمایشی و مفهومی است.
+این سند بیمه‌نامه واقعی، قرارداد بیمه، تضمین سود یا سند مالی محسوب نمی‌شود
+و فاقد اعتبار حقوقی و بیمه‌ای است.
+
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+</main>
 
 
 <footer>
-
-<p>
-🇮🇷 <strong>ایران‌گرد</strong>
-</p>
-
-<p style="margin-top:10px">
-راهنمای حرفه‌ای گردشگری ایران
-</p>
-
-<p style="margin-top:15px">
-شیراز • اصفهان • کرمانشاه
-</p>
-
+© ۱۴۰۵ پارسا پوشش فلز — سامانه آزمایشی بیمه بیکاری مبتنی بر فلزات
 </footer>
 
 
 <script>
 
-/* LOADER */
+let mode="smart";
 
-window.addEventListener("load",function(){
+function setMode(selected){
 
-setTimeout(function(){
+mode=selected;
 
-document.getElementById("loader").style.opacity="0";
+document.getElementById("smart").style.display=
+selected==="smart" ? "block" : "none";
 
-setTimeout(function(){
-document.getElementById("loader").style.display="none";
-},1000);
+document.getElementById("manual").style.display=
+selected==="manual" ? "block" : "none";
 
-},800);
+document.getElementById("smartBtn").classList.toggle(
+"active",selected==="smart"
+);
 
-});
-
-
-/* CITY SWITCH */
-
-function showCity(city,button){
-
-document.querySelectorAll(".city")
-.forEach(function(item){
-item.classList.remove("active");
-});
-
-document.getElementById(city)
-.classList.add("active");
-
-document.querySelectorAll(".city-button")
-.forEach(function(item){
-item.classList.remove("active");
-});
-
-button.classList.add("active");
-
-document.getElementById("destinations")
-.scrollIntoView({
-behavior:"smooth"
-});
+document.getElementById("manualBtn").classList.toggle(
+"active",selected==="manual"
+);
 
 }
 
 
-/* FORTUNE */
+const gold=document.getElementById("gold");
+const silver=document.getElementById("silver");
+const copper=document.getElementById("copper");
 
-const fortunes=[
+function updateSliders(){
 
-"سفری در پیش داری که خاطره‌ای ماندگار برایت خواهد ساخت. ✨",
+let g=+gold.value;
+let s=+silver.value;
+let c=+copper.value;
 
-"یک مقصد تازه می‌تواند نگاهت به زندگی را تغییر دهد. 🌄",
+let total=g+s+c;
 
-"راهی که انتخاب می‌کنی، پر از اتفاق‌های خوب خواهد بود. ❤️",
+document.getElementById("goldValue").textContent=g+"٪";
+document.getElementById("silverValue").textContent=s+"٪";
+document.getElementById("copperValue").textContent=c+"٪";
 
-"وقت آن رسیده کمی از روزمرگی فاصله بگیری و راهی سفر شوی. ✈️",
+document.getElementById("total").textContent=total+"٪";
 
-"در سفرت با شخص یا اتفاقی روبه‌رو می‌شوی که مدت‌ها یادت می‌ماند. 🌿",
+if(total!==100){
+document.getElementById("total").style.color="#d66";
+}else{
+document.getElementById("total").style.color="";
+}
 
-"مقصدی که مدت‌هاست در ذهنت داری، ارزش رفتن دارد. 🏔️"
+}
 
-];
+gold.oninput=updateSliders;
+silver.oninput=updateSliders;
+copper.oninput=updateSliders;
 
-function getFortune(){
 
-const text=
-fortunes[
-Math.floor(Math.random()*fortunes.length)
-];
+function formatMoney(number){
 
-const box=
-document.getElementById("fortuneText");
+return Number(number).toLocaleString("fa-IR")+" تومان";
 
-box.style.opacity="0";
+}
 
-setTimeout(function(){
 
-box.innerText=text;
-box.style.opacity="1";
+function randomCertificate(){
 
-},300);
+let year=1405;
+
+let random=Math.floor(100000+Math.random()*900000);
+
+return "PPF-"+year+"-"+random;
+
+}
+
+
+function digitalSignature(name,national,number){
+
+let text=name+"|"+national+"|"+number;
+
+let hash=0;
+
+for(let i=0;i<text.length;i++){
+
+hash=((hash<<5)-hash)+text.charCodeAt(i);
+
+hash|=0;
+
+}
+
+return "PPF-SIGN-"+Math.abs(hash)+"-"+Date.now().toString().slice(-6);
+
+}
+
+
+function generateCertificate(){
+
+let name=document.getElementById("fullname").value.trim();
+let national=document.getElementById("national").value.trim();
+let amount=Number(document.getElementById("amount").value);
+
+let error=document.getElementById("error");
+
+error.textContent="";
+
+if(name.length<3){
+
+error.textContent="لطفاً نام و نام خانوادگی را وارد کنید.";
+
+return;
+
+}
+
+if(!/^[0-9۰-۹]{10}$/.test(national)){
+
+error.textContent="کد ملی باید ۱۰ رقم باشد.";
+
+return;
+
+}
+
+if(!amount || amount<=0){
+
+error.textContent="لطفاً مبلغ شبیه‌سازی را وارد کنید.";
+
+return;
+
+}
+
+
+let duration;
+
+let g,s,c;
+
+if(mode==="smart"){
+
+duration=document.getElementById("smartDuration").value;
+
+g=50;
+s=30;
+c=20;
+
+}else{
+
+duration=document.getElementById("manualDuration").value;
+
+g=+gold.value;
+s=+silver.value;
+c=+copper.value;
+
+if(g+s+c!==100){
+
+error.textContent="مجموع درصدهای طلا، نقره و مس باید دقیقاً ۱۰۰٪ باشد.";
+
+return;
+
+}
+
+}
+
+
+/*
+محاسبه صرفاً نمونه و آزمایشی است.
+در نسخه متصل به بازار، این قسمت با داده‌های واقعی
+و فرمول مورد تأیید پروژه جایگزین می‌شود.
+*/
+
+let monthlyRate=
+
+duration==3 ? 0.025 :
+duration==6 ? 0.055 :
+duration==9 ? 0.085 :
+0.12;
+
+let theoreticalProfit=amount*monthlyRate;
+
+let customerProfit=theoreticalProfit*0.95;
+
+let finalAmount=amount+customerProfit;
+
+let number=randomCertificate();
+
+let today=new Date();
+
+let date=
+today.toLocaleDateString("fa-IR");
+
+document.getElementById("certNumber").textContent=number;
+
+document.getElementById("certName").textContent=name;
+
+document.getElementById("certNational").textContent=national;
+
+document.getElementById("certDuration").textContent=duration+" ماه";
+
+document.getElementById("certMode").textContent=
+mode==="smart" ? "هوشمند" : "انتخابی مشتری";
+
+document.getElementById("certAmount").textContent=
+formatMoney(amount);
+
+document.getElementById("certGold").textContent=g+"٪";
+
+document.getElementById("certSilver").textContent=s+"٪";
+
+document.getElementById("certCopper").textContent=c+"٪";
+
+document.getElementById("certDate").textContent=date;
+
+document.getElementById("profit").textContent=
+formatMoney(customerProfit);
+
+document.getElementById("finalAmount").textContent=
+formatMoney(finalAmount);
+
+document.getElementById("signature").textContent=
+digitalSignature(name,national,number);
+
+let result=document.querySelector(".result");
+
+result.style.display="block";
+
+result.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
 
 }
 
 </script>
 
 </body>
-</html>
+    </html>
