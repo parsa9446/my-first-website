@@ -1,1 +1,157 @@
-<!doctype html><html lang="fa" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PARSGUARD | گواهی سبد فلزات</title><style>*{box-sizing:border-box}body{margin:0;background:#080808;color:#eee;font-family:Tahoma,Arial,sans-serif;line-height:1.8}.wrap{max-width:900px;margin:auto;padding:20px}.head{text-align:center;padding:28px 10px}.logo{font-size:28px;color:#c9a227;font-weight:bold}.sub{color:#aaa}.box{background:#111;border:1px solid #c9a227;border-radius:18px;padding:22px;margin:15px 0;box-shadow:0 10px 35px #000}.intro{background:linear-gradient(135deg,#181818,#0b0b0b);border-right:4px solid #c9a227}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}label{display:block;color:#d7b83c;font-size:14px;margin-bottom:5px}input,select{width:100%;padding:13px;border-radius:10px;border:1px solid #555;background:#080808;color:#fff;font-size:15px}input:focus,select:focus{outline:1px solid #c9a227;border-color:#c9a227}.metals{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.metal{background:#171717;border:1px solid #555;border-radius:13px;padding:12px}.metal b{display:block;margin-bottom:5px}.gold b{color:#d8b42c}.silver b{color:#ddd}.copper b{color:#d58a55}.sum{margin-top:12px;padding:12px;border-radius:10px;background:#181818;text-align:center;color:#e5c64a}.btn{width:100%;padding:15px;border:0;border-radius:12px;background:linear-gradient(135deg,#e2c35a,#9c7711);color:#080808;font-size:17px;font-weight:bold;cursor:pointer}.btn:hover{filter:brightness(1.08)}.sig{background:#fff;color:#111;border-radius:10px;padding:8px;touch-action:none}.sig canvas{width:100%;height:180px;border:1px solid #bbb;background:#fff;border-radius:7px}.clear{margin-top:7px;background:#222;color:#fff;border:1px solid #777;padding:8px 15px;border-radius:8px}.certificate{display:none;background:#fff;color:#161616;border:10px solid #111;border-radius:4px;padding:10px;margin-top:25px}.paper{border:2px solid #c9a227;padding:35px 28px;position:relative;background:linear-gradient(180deg,#fff,#faf8f0)}.ct{text-align:center}.ct h1{margin:5px;color:#b38a16;font-size:28px}.ct h2{font-size:18px}.line{height:2px;background:#c9a227;margin:18px 0}.notice{font-size:12px;border:1px dashed #999;padding:8px;margin:15px 0;background:#fafafa}.details{display:grid;grid-template-columns:1fr 1fr;gap:10px}.item{border:1px solid #ddd;padding:9px;border-radius:7px}.item strong{color:#8b6a0b}.alloc{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:15px 0}.alloc div{padding:12px;text-align:center;border:1px solid #d7c27a;border-radius:8px;background:#fffdf5}.foot{display:flex;justify-content:space-between;gap:20px;margin-top:25px}.stamp{width:115px;height:115px;border:3px double #b08a18;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;color:#9a7612;font-weight:bold;font-size:13px;transform:rotate(-10deg)}.customerSig{width:230px;text-align:center}.customerSig img{max-width:210px;max-height:90px}.code{font-family:monospace;font-weight:bold;letter-spacing:1px}.print{display:none}@media(max-width:650px){.grid,.details{grid-template-columns:1fr}.metals,.alloc{grid-template-columns:1fr}.foot{flex-direction:column}.paper{padding:20px 14px}}@media print{body{background:#fff}.wrap{max-width:none;padding:0}.head,.formbox,.actions{display:none!important}.certificate{display:block!important;margin:0;border:8px solid #111}.paper{min-height:270mm}.print{display:block}} </style></head><body><div class="wrap"><header class="head"><div class="logo">⚖️ PARSGUARD</div><div class="sub">سامانه آزمایشی مدیریت و صدور گواهی سبد فلزات</div></header><section class="box intro"><h3>به سامانه صدور گواهی سبد فلزات خوش آمدید</h3><p>در این بخش می‌توانید مشخصات متقاضی، مدت قرارداد و درصد تخصیص فرضی سبد فلزات را وارد کنید. پس از تکمیل اطلاعات، یک گواهی نمونه برای مشاهده و چاپ ایجاد می‌شود.</p><div class="notice">این سامانه و گواهی تولیدشده در این نسخه، نمونه آزمایشی و غیررسمی است و به‌تنهایی اثبات‌کننده قرارداد، بیمه، سرمایه‌گذاری یا تعهد مالی واقعی نیست.</div></section><section class="box formbox"><h3>اطلاعات متقاضی</h3><div class="grid"><div><label>نام و نام خانوادگی</label><input id="name" placeholder="مثلاً پارسا کرمی"></div><div><label>کد ملی</label><input id="national" inputmode="numeric" maxlength="10" placeholder="۱۰ رقم"></div><div><label>شماره تلفن</label><input id="phone" inputmode="tel" placeholder="مثلاً 09123456789"></div><div><label>مدت قرارداد</label><select id="duration"></select></div></div><h3>درصد انتخابی سبد فلزات</h3><div class="metals"><div class="metal gold"><label>🟡 طلا</label><input id="gold" type="number" min="0" max="100" value="40" oninput="sum()"><small>درصد تخصیص طلا</small></div><div class="metal silver"><label>⚪ نقره</label><input id="silver" type="number" min="0" max="100" value="35" oninput="sum()"><small>درصد تخصیص نقره</small></div><div class="metal copper"><label>🟠 مس</label><input id="copper" type="number" min="0" max="100" value="25" oninput="sum()"><small>درصد تخصیص مس</small></div></div><div class="sum" id="total">مجموع: 100٪ ✓</div><h3>امضای دیجیتال مشتری</h3><div class="sig"><canvas id="canvas"></canvas><button type="button" class="clear" onclick="clearSig()">پاک کردن امضا</button></div><br><div class="actions"><button class="btn" onclick="makeCert()">صدور گواهی نمونه</button></div></section><section class="certificate" id="cert"><div class="paper"><div class="ct"><div style="font-size:16px;color:#111">PARSGUARD</div><h1>گواهی سبد فلزات</h1><h2>گواهی نمونه تخصیص سبد</h2></div><div class="line"></div><div class="notice">گواهی حاضر صرفاً یک نمونه آزمایشی دیجیتال است و بدون قرارداد معتبر و مجوزهای قانونی، سند رسمی یا تعهد مالی محسوب نمی‌شود.</div><div class="details"><div class="item"><strong>نام متقاضی:</strong> <span id="cname"></span></div><div class="item"><strong>کد ملی:</strong> <span id="cnational"></span></div><div class="item"><strong>شماره تلفن:</strong> <span id="cphone"></span></div><div class="item"><strong>مدت قرارداد:</strong> <span id="cduration"></span></div><div class="item"><strong>تاریخ صدور:</strong> <span id="cdate"></span></div><div class="item"><strong>کد گواهی:</strong> <span class="code" id="ccode"></span></div></div><h3 style="text-align:center;color:#8b6a0b">تخصیص انتخابی فلزات</h3><div class="alloc"><div>🟡 طلا<br><b id="cgold"></b>٪</div><div>⚪ نقره<br><b id="csilver"></b>٪</div><div>🟠 مس<br><b id="ccopper"></b>٪</div></div><p>این گواهی بر اساس اطلاعات واردشده توسط متقاضی و صرفاً برای نمایش نمونه صادر شده است.</p><div class="foot"><div><div class="stamp">PARSGUARD<br>نمونه آزمایشی</div></div><div class="customerSig"><b>امضای مشتری</b><br><img id="csig"><br><small>امضای ثبت‌شده در فرم</small></div></div><div class="line"></div><div style="text-align:center;font-size:11px">PARSGUARD | Metal Portfolio • گواهی آزمایشی</div></div></section><button class="btn print" onclick="window.print()">چاپ گواهی</button></div><script>for(let i=3;i<=24;i++){let o=document.createElement("option");o.value=i;o.textContent=i+" ماه";duration.appendChild(o)}function sum(){let a=+gold.value||0,b=+silver.value||0,c=+copper.value||0,t=a+b+c;total.textContent="مجموع: "+t+"٪ "+(t===100?"✓":"— باید دقیقاً 100٪ باشد");total.style.color=t===100?"#e5c64a":"#d55"}const cv=document.getElementById("canvas"),ctx=cv.getContext("2d");function resize(){let r=cv.getBoundingClientRect(),d=devicePixelRatio||1;cv.width=r.width*d;cv.height=180*d;ctx.scale(d,d);ctx.lineWidth=2;ctx.lineCap="round"}resize();let drawing=false,last=null;function pos(e){let r=cv.getBoundingClientRect(),p=e.touches?e.touches[0]:e;return{x:p.clientX-r.left,y:p.clientY-r.top}}cv.onmousedown=e=>{drawing=true;last=pos(e)};cv.onmousemove=e=>{if(!drawing)return;let p=pos(e);ctx.beginPath();ctx.moveTo(last.x,last.y);ctx.lineTo(p.x,p.y);ctx.stroke();last=p};window.onmouseup=()=>drawing=false;cv.ontouchstart=e=>{drawing=true;last=pos(e);e.preventDefault()};cv.ontouchmove=e=>{if(!drawing)return;let p=pos(e);ctx.beginPath();ctx.moveTo(last.x,last.y);ctx.lineTo(p.x,p.y);ctx.stroke();last=p;e.preventDefault()};cv.ontouchend=()=>drawing=false;function clearSig(){ctx.clearRect(0,0,cv.width,cv.height)}function makeCert(){let n=name.value.trim(),m=national.value.trim(),p=phone.value.trim(),t=+gold.value+ +silver.value+ +copper.value;if(!n||!m||!p)return alert("نام، کد ملی و شماره تلفن را وارد کنید.");if(!/^\\d{10}$/.test(m))return alert("کد ملی باید ۱۰ رقم باشد.");if(t!==100)return alert("مجموع درصد طلا، نقره و مس باید دقیقاً ۱۰۰٪ باشد.");cname.textContent=n;cnational.textContent=m;cphone.textContent=p;cduration.textContent=duration.value+" ماه";let d=new Date();cdate.textContent=d.toLocaleDateString("fa-IR");ccode.textContent="PG-"+Date.now().toString().slice(-8);cgold.textContent=gold.value;csilver.textContent=silver.value;ccopper.textContent=copper.value;csig.src=cv.toDataURL("image/png");cert.style.display="block";document.querySelector(".print").style.display="block";cert.scrollIntoView({behavior:"smooth"})}sum();</script></body></html>
+<!doctype html><html lang="fa" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PARSGUARD | گواهی سبد فلزات</title><style>
+*{box-sizing:border-box}body{margin:0;background:#080808;color:#eee;font-family:Tahoma,Arial,sans-serif;line-height:1.8}.wrap{max-width:900px;margin:auto;padding:20px}.head{text-align:center;padding:28px 10px}.logo{font-size:28px;color:#c9a227;font-weight:bold}.sub{color:#aaa}.box{background:#111;border:1px solid #c9a227;border-radius:18px;padding:22px;margin:15px 0;box-shadow:0 10px 35px #000}.intro{background:linear-gradient(135deg,#181818,#0b0b0b);border-right:4px solid #c9a227}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}label{display:block;color:#d7b83c;font-size:14px;margin-bottom:5px}input,select{width:100%;padding:13px;border-radius:10px;border:1px solid #555;background:#080808;color:#fff;font-size:15px}input:focus,select:focus{outline:1px solid #c9a227;border-color:#c9a227}.metals{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.metal{background:#171717;border:1px solid #555;border-radius:13px;padding:12px}.metal b{display:block;margin-bottom:5px}.gold label{color:#d8b42c}.silver label{color:#ddd}.copper label{color:#d58a55}.sum{margin-top:12px;padding:12px;border-radius:10px;background:#181818;text-align:center;color:#e5c64a}.btn{width:100%;padding:15px;border:0;border-radius:12px;background:linear-gradient(135deg,#e2c35a,#9c7711);color:#080808;font-size:17px;font-weight:bold;cursor:pointer}.btn:hover{filter:brightness(1.08)}.sig{background:#fff;color:#111;border-radius:10px;padding:8px}.sig canvas{display:block;width:100%;height:180px;border:1px solid #bbb;background:#fff;border-radius:7px;touch-action:none}.clear{margin-top:7px;background:#222;color:#fff;border:1px solid #777;padding:8px 15px;border-radius:8px}.certificate{display:none;background:#fff;color:#161616;border:10px solid #111;border-radius:4px;padding:10px;margin-top:25px}.paper{border:2px solid #c9a227;padding:35px 28px;position:relative;background:linear-gradient(180deg,#fff,#faf8f0)}.ct{text-align:center}.ct h1{margin:5px;color:#b38a16;font-size:28px}.ct h2{font-size:18px}.line{height:2px;background:#c9a227;margin:18px 0}.notice{font-size:12px;border:1px dashed #999;padding:8px;margin:15px 0;background:#fafafa}.details{display:grid;grid-template-columns:1fr 1fr;gap:10px}.item{border:1px solid #ddd;padding:9px;border-radius:7px}.item strong{color:#8b6a0b}.alloc{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:15px 0}.alloc div{padding:12px;text-align:center;border:1px solid #d7c27a;border-radius:8px;background:#fffdf5}.foot{display:flex;justify-content:space-between;gap:20px;margin-top:25px}.stamp{width:115px;height:115px;border:3px double #b08a18;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;color:#9a7612;font-weight:bold;font-size:13px;transform:rotate(-10deg)}.customerSig{width:230px;text-align:center}.customerSig img{max-width:210px;max-height:90px}.code{font-family:monospace;font-weight:bold;letter-spacing:1px}.print{display:none;margin-top:15px}@media(max-width:650px){.grid,.details{grid-template-columns:1fr}.metals,.alloc{grid-template-columns:1fr}.foot{flex-direction:column}.paper{padding:20px 14px}}@media print{body{background:#fff}.wrap{max-width:none;padding:0}.head,.formbox,.actions,.print{display:none!important}.certificate{display:block!important;margin:0;border:8px solid #111}.paper{min-height:270mm}}
+</style></head><body><div class="wrap">
+
+<header class="head"><div class="logo">⚖️ PARSGUARD</div><div class="sub">سامانه آزمایشی مدیریت و صدور گواهی سبد فلزات</div></header>
+
+<section class="box intro"><h3>به سامانه صدور گواهی سبد فلزات خوش آمدید</h3><p>در این بخش می‌توانید مشخصات متقاضی، مدت قرارداد و درصد تخصیص فرضی سبد فلزات را وارد کنید. پس از تکمیل اطلاعات، یک گواهی نمونه برای مشاهده و چاپ ایجاد می‌شود.</p><div class="notice">این سامانه و گواهی تولیدشده در این نسخه، نمونه آزمایشی و غیررسمی است و به‌تنهایی اثبات‌کننده قرارداد، بیمه، سرمایه‌گذاری یا تعهد مالی واقعی نیست.</div></section>
+
+<section class="box formbox"><h3>اطلاعات متقاضی</h3><div class="grid">
+<div><label>نام و نام خانوادگی</label><input id="name" placeholder="مثلاً پارسا کرمی"></div>
+<div><label>کد ملی</label><input id="national" inputmode="numeric" maxlength="10" placeholder="۱۰ رقم"></div>
+<div><label>شماره تلفن</label><input id="phone" inputmode="tel" placeholder="مثلاً 09123456789"></div>
+<div><label>مدت قرارداد</label><select id="duration"></select></div>
+</div>
+
+<h3>درصد انتخابی سبد فلزات</h3><div class="metals">
+<div class="metal gold"><label>🟡 طلا</label><input id="gold" type="number" min="0" max="100" value="40"><small>درصد تخصیص طلا</small></div>
+<div class="metal silver"><label>⚪ نقره</label><input id="silver" type="number" min="0" max="100" value="35"><small>درصد تخصیص نقره</small></div>
+<div class="metal copper"><label>🟠 مس</label><input id="copper" type="number" min="0" max="100" value="25"><small>درصد تخصیص مس</small></div>
+</div>
+
+<div class="sum" id="total">مجموع: 100٪ ✓</div>
+
+<h3>امضای دیجیتال مشتری</h3><div class="sig"><canvas id="canvas"></canvas><button type="button" class="clear" id="clearBtn">پاک کردن امضا</button></div><br>
+
+<div class="actions"><button type="button" class="btn" id="makeBtn">صدور گواهی نمونه</button></div></section>
+
+<section class="certificate" id="cert"><div class="paper">
+<div class="ct"><div style="font-size:16px;color:#111">PARSGUARD</div><h1>گواهی سبد فلزات</h1><h2>گواهی نمونه تخصیص سبد</h2></div><div class="line"></div>
+<div class="notice">گواهی حاضر صرفاً یک نمونه آزمایشی دیجیتال است و بدون قرارداد معتبر و مجوزهای قانونی، سند رسمی یا تعهد مالی محسوب نمی‌شود.</div>
+
+<div class="details">
+<div class="item"><strong>نام متقاضی:</strong> <span id="cname"></span></div>
+<div class="item"><strong>کد ملی:</strong> <span id="cnational"></span></div>
+<div class="item"><strong>شماره تلفن:</strong> <span id="cphone"></span></div>
+<div class="item"><strong>مدت قرارداد:</strong> <span id="cduration"></span></div>
+<div class="item"><strong>تاریخ صدور:</strong> <span id="cdate"></span></div>
+<div class="item"><strong>کد گواهی:</strong> <span class="code" id="ccode"></span></div>
+</div>
+
+<h3 style="text-align:center;color:#8b6a0b">تخصیص انتخابی فلزات</h3>
+<div class="alloc"><div>🟡 طلا<br><b id="cgold"></b>٪</div><div>⚪ نقره<br><b id="csilver"></b>٪</div><div>🟠 مس<br><b id="ccopper"></b>٪</div></div>
+
+<p>این گواهی بر اساس اطلاعات واردشده توسط متقاضی و صرفاً برای نمایش نمونه صادر شده است.</p>
+
+<div class="foot"><div><div class="stamp">PARSGUARD<br>نمونه آزمایشی</div></div><div class="customerSig"><b>امضای مشتری</b><br><img id="csig" alt="امضای مشتری"><br><small>امضای ثبت‌شده در فرم</small></div></div>
+
+<div class="line"></div><div style="text-align:center;font-size:11px">PARSGUARD | Metal Portfolio • گواهی آزمایشی</div>
+</div></section>
+
+<button type="button" class="btn print" id="printBtn">چاپ گواهی</button>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+
+const nameEl=$("name"),nationalEl=$("national"),phoneEl=$("phone"),durationEl=$("duration"),goldEl=$("gold"),silverEl=$("silver"),copperEl=$("copper"),totalEl=$("total"),certEl=$("cert"),printBtn=$("printBtn");
+
+for(let i=3;i<=24;i++){const o=document.createElement("option");o.value=i;o.textContent=i+" ماه";durationEl.appendChild(o)}
+
+function num(v){return Number(v)||0}
+
+function sum(){
+ const t=num(goldEl.value)+num(silverEl.value)+num(copperEl.value);
+ totalEl.textContent="مجموع: "+t+"٪ "+(t===100?"✓":"— باید دقیقاً 100٪ باشد");
+ totalEl.style.color=t===100?"#e5c64a":"#d55";
+ return t;
+}
+goldEl.addEventListener("input",sum);silverEl.addEventListener("input",sum);copperEl.addEventListener("input",sum);
+
+const cv=$("canvas"),ctx=cv.getContext("2d");
+let drawing=false;
+
+function resizeCanvas(){
+ const r=cv.getBoundingClientRect(),d=window.devicePixelRatio||1;
+ const old=cv.toDataURL();
+ cv.width=Math.max(1,Math.round(r.width*d));
+ cv.height=Math.max(1,Math.round(180*d));
+ ctx.setTransform(d,0,0,d,0,0);
+ ctx.lineWidth=2;
+ ctx.lineCap="round";
+ ctx.lineJoin="round";
+}
+resizeCanvas();
+
+function getPos(e){
+ const r=cv.getBoundingClientRect();
+ return {x:e.clientX-r.left,y:e.clientY-r.top};
+}
+
+cv.addEventListener("pointerdown",e=>{
+ drawing=true;
+ cv.setPointerCapture(e.pointerId);
+ const p=getPos(e);
+ ctx.beginPath();
+ ctx.moveTo(p.x,p.y);
+ e.preventDefault();
+});
+
+cv.addEventListener("pointermove",e=>{
+ if(!drawing)return;
+ const p=getPos(e);
+ ctx.lineTo(p.x,p.y);
+ ctx.stroke();
+ e.preventDefault();
+});
+
+cv.addEventListener("pointerup",()=>drawing=false);
+cv.addEventListener("pointercancel",()=>drawing=false);
+
+$("clearBtn").addEventListener("click",()=>{
+ ctx.clearRect(0,0,cv.width,cv.height);
+});
+
+function hasSignature(){
+ const data=ctx.getImageData(0,0,cv.width,cv.height).data;
+ for(let i=3;i<data.length;i+=4)if(data[i]>0)return true;
+ return false;
+}
+
+function makeCert(){
+ const n=nameEl.value.trim();
+ const m=nationalEl.value.trim();
+ const p=phoneEl.value.trim();
+ const t=sum();
+
+ if(!n){alert("لطفاً نام و نام خانوادگی را وارد کنید.");nameEl.focus();return}
+ if(!/^\\d{10}$/.test(m)){alert("کد ملی باید دقیقاً ۱۰ رقم باشد.");nationalEl.focus();return}
+ if(!p){alert("لطفاً شماره تلفن را وارد کنید.");phoneEl.focus();return}
+ if(t!==100){alert("مجموع درصد طلا، نقره و مس باید دقیقاً ۱۰۰٪ باشد.");return}
+
+ if(!hasSignature()){
+   if(!confirm("امضای دیجیتال وارد نشده است. آیا بدون امضا گواهی نمونه صادر شود؟"))return;
+ }
+
+ $("cname").textContent=n;
+ $("cnational").textContent=m;
+ $("cphone").textContent=p;
+ $("cduration").textContent=durationEl.value+" ماه";
+ $("cdate").textContent=new Date().toLocaleDateString("fa-IR");
+ $("ccode").textContent="PG-"+Date.now().toString().slice(-8);
+ $("cgold").textContent=goldEl.value;
+ $("csilver").textContent=silverEl.value;
+ $("ccopper").textContent=copperEl.value;
+
+ if(hasSignature())$("csig").src=cv.toDataURL("image/png");
+ else $("csig").removeAttribute("src");
+
+ certEl.style.display="block";
+ printBtn.style.display="block";
+ setTimeout(()=>certEl.scrollIntoView({behavior:"smooth",block:"start"}),100);
+}
+
+$("makeBtn").addEventListener("click",makeCert);
+printBtn.addEventListener("click",()=>window.print());
+sum();
+</script></body></html>
