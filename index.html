@@ -3,4 +3,27 @@
 const SUPABASE_URL="https://xtsuzhrcsyuxwuxpfflz.supabase.co/rest/v1/";
 const SUPABASE_KEY="sb_publishable_nWTrYF-4mOMC-eC0seQ17A_Tq5ad2da";
 const sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+</script><script>
+async function saveCertificateToSupabase(){
+  if(typeof sb==='undefined')return;
+  const {error}=await sb.from('certificates').insert({
+    full_name:data.name,
+    national_id:data.nid,
+    certificate_code:certificateId,
+    portfolio:{
+      type:type,
+      data:data,
+      assets:assets,
+      percent:percent,
+      signature:signatureData
+    },
+    changes:logs
+  });
+  if(error){
+    console.error(error);
+    toast('گواهی ساخته شد؛ ذخیره در پایگاه‌داده انجام نشد');
+  }else{
+    toast('✅ گواهی در پایگاه‌داده ذخیره شد');
+  }
+}
 </script></body></html>
